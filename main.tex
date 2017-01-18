@@ -43,6 +43,7 @@
 \usepackage{amsmath}	% Advanced maths commands
 \usepackage{amssymb}	% Extra maths symbols
 \usepackage{multirow}   % For tables 
+\usepackage{rotating}   % For sideways figures
 
 \newcommand\msun{{{{\rm M_\odot}}}}
 \newcommand{\ha}{H$\alpha$~}
@@ -50,8 +51,8 @@
 \newcommand{\hans}{H$\alpha$}
 \newcommand{\hbns}{H$\beta$}
 \newcommand\ion[2]{\text{#1\,\textsc{\lowercase{#2}}}}	% ionization states
-\def \ll {$\tt\lambda\lambda$}
-\def \l {$\tt \lambda$}
+\def \ll {$\lambda\lambda$}
+\def \l {$\lambda$}
 \def \kms {km\,s$^{-1}$}
 \newcommand{\ebv}{\ensuremath{E(B-V)}}
 \newcommand{\lt}{<} % these are used in bibliography 
@@ -88,7 +89,7 @@
 \include{FrontBackmatter/Titlepage}
 \include{FrontBackmatter/Titleback}
 \cleardoublepage\include{FrontBackmatter/Dedication}
-%\cleardoublepage\include{FrontBackmatter/Foreword}
+\cleardoublepage\include{FrontBackmatter/Foreword}
 \cleardoublepage\include{FrontBackmatter/Abstract}
 % \cleardoublepage\include{FrontBackmatter/Publications}
 \cleardoublepage\include{FrontBackmatter/Acknowledgments}
@@ -102,10 +103,13 @@
 % use \cleardoublepage here to avoid problems with pdfbookmark
 \cleardoublepage
 
-\include{Chapters/Chapter01}
-\include{Chapters/Chapter02}
-\include{Chapters/Chapter03}
-\include{Chapters/Chapter04}
+\include{Chapters/chapter01-intro}
+\include{Chapters/chapter02-nirsample}
+\include{Chapters/chapter03-bhm}
+\include{Chapters/chapter04-nlr}
+\include{Chapters/chapter05-2year}
+\include{Chapters/chapter06-hotdust}
+\include{Chapters/chapter07-conclusions}
 
 % ********************************************************************
 % Backmatter

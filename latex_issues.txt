@@ -1,0 +1,4 @@
+Issues I have encountered, and how I have solved them. 
+
+No section numbers. Problem with texlive version of titlesec. I installed a local version of this package in /home/lc585/texmf/tex/latex. Fixed.  
+
