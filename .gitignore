@@ -1,0 +1,12 @@
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fdb_latexmk
+*.blg
+*.py
+*.synctex.gz
+makefile
