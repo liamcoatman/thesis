@@ -7,6 +7,6 @@
 *.toc
 *.fdb_latexmk
 *.blg
-*.py
+*.pyc
 *.synctex.gz
 makefile
