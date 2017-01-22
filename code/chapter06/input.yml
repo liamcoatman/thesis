@@ -1,0 +1,246 @@
+run:
+ outdir: './results'
+ cat: '/data/lc585/SDSS/dr7qso_ULAS_ALLWISE_MATCHED_ONLY_v2.fits'
+ datset: DR7 # DR7, DR10
+ imin: 19.1
+ imax: 5.0
+ balflg_on: True
+ balflg: 0 # 1 for Bals, 0 for non-Bals
+ flxcorr_file: '/data/lc585/QSOSED/Results/140811/allsample_2/fluxcorr.array' # empirical correction 
+ ftgd_file: '/home/lc585/Dropbox/IoA/QSOSED/Model/ftgd_dr7.dat' # what filters to use as a function of redshift
+ plot: True
+ plot_type: 'allcolor'
+ residualplot: True
+ snrmin: 3.0
+ ftrlst:
+  u: y
+  g: y
+  r: y
+  i: y
+  z: y
+  Y: y
+  J: y
+  H: y
+  K: y
+  W1: y
+  W2: y
+  W3: n
+  W4: n
+
+run_mcmc:
+ outdir: '/data/lc585/QSOSED/Results/140808/fittest7'
+ cat: '/data/lc585/SDSS/dr7qso_ULAS_ALLWISE_MATCHED_ONLY_v2.fits'
+ datset: DR7 # DR7, DR10
+ imin: 19.1
+ imax: 12.0
+ balflg_on: True
+ balflg: 0 # 1 for Bals, 0 for non-Bals
+ flxcorr_file: 'None'
+ ftgd_file: 'ftgd_dr7.dat'
+ plot: True
+ plot_type: 'allcolor'
+ residualplot: False
+ snrmin: 0.0
+ mcmc:
+  niter: 10000
+  burnin: 100
+ ftrlst:
+  u: y
+  g: y
+  r: y
+  i: y
+  z: y
+  Y: y
+  J: y
+  H: y
+  K: y
+  W1: y
+  W2: y
+  W3: n
+  W4: n
+
+extlist:
+ outdir: '/data/lc585/QSOSED/Results/150730/sample1'
+ ebvcut: True
+ ebvmin: -0.075 # -0.075
+ ebvmax: 0.075 # 0.075
+ zmin: 2.0
+ zmax: 3.0
+ imin: 19.1 # 19.1
+ imax: 5.0
+ snrmin: 5.0
+ tabout: 'tabout.fits'
+ balflg_on: True
+ balflg: 0 # 1 for Bals, 0 for non-Bals
+ cat: '/data/lc585/SDSS/dr7qso_ULAS_ALLWISE_MATCHED_ONLY_v2.fits'
+ datset: DR7 # DR7, DR10
+ flxcorr_file: '/data/lc585/QSOSED/Results/140811/allsample_2/fluxcorr.array'
+ plot: False
+ requiremag:
+  u: n
+  g: n
+  r: n
+  i: n
+  z: n
+  Y: n
+  J: n
+  H: n
+  K: n
+  W1: y
+  W2: y
+  W3: n
+  W4: n
+
+runsingleobjfit:
+ outdir: '/data/lc585/QSOSED/Results/150812/sample1' # don't include trailing slash
+ dofit: True
+ fittable: # If 'dofit' is False, read fit parameters from this file.
+ makehtmltable: False
+ parallel: True
+ imod_file: 'None' # None / imod.list
+ ebv_file: 'None' # None / ebv.list
+ saveimodfile: False # save as imod.list
+ saveebvfile: False
+ flxcorr_file: '/data/lc585/QSOSED/Results/140811/allsample_2/fluxcorr.array'
+ cat: '/data/lc585/sample_magnitudes_v3.fits'
+ datset: DR7 # DR7, DR10
+ snrmin: 5.0
+ fitflg:
+  plslp1: False
+  plslp2: False
+  plbrk: False
+  bbt: False
+  bbflxnrm: True
+  elscal: False
+  scahal: False
+  galfra: False
+  ebv: True
+  imod: True
+  bbplslp: False
+  bbnrm: False
+ fitwavmin: 1300.0
+ fitwavmax: 23500.0 # 50000.0 # 23500.0
+ runsinglesedplot:
+  parallel: False
+ sedplotting:
+  img_links_column: 0
+  sdss_links_column: 1
+  altplot_links_column: 4
+  aladin_links_column: 2
+
+
+runhotdustplfit:
+ outdir: '/data/lc585/QSOSED/Results/150321/sample5'
+ cat: '/data/lc585/QSOSED/Results/150321/sample4/tabout.fits'
+ datset: 'DR7'
+ snrmin: 5.0
+ nrmfitwavmin: 2000.0
+ nrmfitwavmax: 9000.0
+ parallel: True
+ flxcorr_file_dr7: '/data/lc585/QSOSED/Results/140811/allsample_2/fluxcorr.array'
+ flxcorr_file_dr10: '/data/lc585/QSOSED/Results/140820/fit2/fluxcorr.array'
+ wavmin_bbpl: 9000.0
+ wavmax_bbpl: 50000.0 # 23500. 50000.
+ makehtmltable: False
+ sedplotting:
+  parallel: True
+  img_links_column: 0
+  sdss_links_column: 1
+
+residualplot: # v2 in qsofit_v7.
+ outdir: '/data/lc585/QSOSED/Results/141027/fit1'
+ objlistfile: '/data/lc585/QSOSED/Results/141027/fit1/obj.list'
+ modmagfile: '/data/lc585/QSOSED/Results/141027/fit1/modmag.list' # 'modmag.list' or None
+ flxcorr_file: '/data/lc585/QSOSED/Results/140811/allsample_2/fluxcorr.array'
+ flxcorr_outfile: 'fluxcorr.array'
+ fitwavmin: 2000.0
+ fitwavmax: 23500.0
+
+lumcalc:
+ flxcorr_file: '/data/lc585/QSOSED/Results/140811/allsample_2/fluxcorr.array'
+
+hotdustshape:
+ cat: '/data/lc585/QSOSED/Results/140811/extendmod/tab.fits'
+ datset: 'DR7'
+ fitwavmin: 10000.0
+ fitwavmax: 100000.0
+
+modwav:
+ min: 500.0
+ max: 60000.0
+ bin: 5.0
+
+magsys: ab # vega,ablam
+
+quasar:
+ imod: 18.0
+ pl:
+  slp1: 0.46
+  slp2: 0.03
+  brk: 2822.0
+  wavnrm: 5500.0
+  flxnrm: 1.0
+ bb:
+  t: 1216.0
+  flxnrm: 0.24 # 0.24
+  wavnrm: 20000.0
+  plslp: 4.17
+  plwavjoin: 9000.0
+  plnrm: 0.0448
+ el:
+  scal: 0.71
+  scahal: 0.86
+  whmin: 6000.0
+  whmax: 7000.0
+
+lyman:
+ t0: 0.751
+ b: 2.90
+ C: -0.132
+ z0: 3.5
+
+gal:
+ typ: Sb # Sa, Sb, Sc, E
+ fra: 0.31
+ znrm: 0.25
+ plind: 0.169 #  0.42? 0.225? Paul fits this in model.
+ wnmin: 4000.0
+ wnmax: 5000.0
+
+ext:
+ typ: qso # galactic, lmc, smc, qso
+ R: 3.0
+ EBV: 0.0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# #cat: '/data/lc585/QSOSED/Results/140523/tab_lowz.fits' # '/data/lc585/QSOSED/Results/140520/highztab.fits' '/data/lc585/QSOSED/Results/140501/table1.fits' # '/data/lc585/QSOSED/Results/140508/tab.fits' # '/data/sdss/DR10/AllWISE/DR10QSO_AllWISE_matched.fits' # '/data/sdss/DR10/AllWISE/DR10QSO_AllWISE_matched.fits' 'dr7qso_ULAS_ALLWISE.fits' '/data/lc585/QSOSED/Results/140501/table1.fits'
+
+
+
+# residualplot:
+#  objlistfile: 'obj.list'
+#  modmagfile: None # 'modmag.list' or None
+#  makecorr: False
+#  flxcorrout: 'flxcorr.array'
+#  flxcorrflg: True
+
+# output:
+#  type: allcolor # sed, color, allcolor
+#  col1: g # u, g, r, i, z, Y, J, H, K, W1, W2, W3, W4
+#  col2: r # u, g, r, i, z, Y, J, H, K, W1, W2, W3, W4
+#  rs: 1.05 # 0.25,0.35,...,3.95

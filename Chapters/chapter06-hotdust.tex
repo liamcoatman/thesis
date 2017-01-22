@@ -15,6 +15,11 @@
 
 While many authors have focused on studies of specific sub-sets of active galactic nuclei with extreme observational properties, what is missing is an understanding of how these extreme subsets relate to the population as a whole. 
 I have made some progress in addressing this problem using multi-wavelength spectral energy distributions of large ($\sim$100,000) samples of quasars. 
+I have constructed an SED model which is able to reproduce the average optical to near-infrared (NIR) colours of 10,000s of AGNs spanning a broad range in redshift/luminosity. 
+The goal of this work is to relate the intrinsic spread in SED properties to physical properties of the AGN. 
+
+First we will present model, show it can reproduce the average optical to near-infrared (NIR) colours of 10,000s of AGNs spanning a broad range in redshift/luminosity. 
+Then focus on the diversity in near-infrared emission, and relation to physical properties of quasars. 
 
 \section{Data}
 
@@ -105,6 +110,7 @@ UKIDSS fluxes and their associated errors are included in the DR10Q catalogue. T
 The Wide-field Infrared Explorer \citep[WISE;][]{wright10} mapped almost the sky in four mid-IR band-passes: $W1$ ($\lambda_{\rm eff} = 3.4\mu$m), $W2$ ($\lambda_{\rm eff} = 4.6\mu$m), $W3$ ($\lambda_{\rm eff} = 12\mu$m), and $W4$ ($\lambda_{\rm eff} = 22\mu$m). The WISE AllWISE Data Release (`AllWISE') combines data from the nine month cryogenic phase of the mission that led to the `AllSky' data release with data from the NEOWISE program \citep{mainzer11}. 
 
 Cross-referencing the SDSS DR7Q catalogue with the AllWISE catalogue resulted in 102,734 matches. Two objects (SDSS J083746.57+085839.6 and SDSS J092021.93+331125.7) were matched to multiple AllWISE objects, and were discarded from the sample. Cross-referencing the SDSS DR10Q catalogue with the AllWISE catalogue produced 116,666 matches. Four objects (SDSS J165812.28+3109000.6, SDSS J013053.17+034934.5, SDSS J151446.14+304241.8, and SDSSJ015615.57+034604.4) were matched to multiple AllWISE objects, and were discarded from the sample. 
+
 
 \section{Completeness of Photometry}
 
@@ -480,44 +486,44 @@ The best-fitting parameters from the fit are shown in Table \ref{tab:params}. Th
 \begin{figure}
   \centering
   \begin{minipage}[b]{0.49\textwidth}
-    \includegraphics[width=\textwidth]{figures/chapter06/ug.jpg}
+    \includegraphics[width=\textwidth]{figures/chapter06/sed_color_plots/ug.jpg}
   \end{minipage}
   \begin{minipage}[b]{0.49\textwidth}
-    \includegraphics[width=\textwidth]{figures/chapter06/gr.jpg}
+    \includegraphics[width=\textwidth]{figures/chapter06/sed_color_plots/gr.jpg}
   \end{minipage} \\
 \begin{minipage}[b]{0.49\textwidth}
-    \includegraphics[width=\textwidth]{figures/chapter06/ri.jpg}
+    \includegraphics[width=\textwidth]{figures/chapter06/sed_color_plots/ri.jpg}
   \end{minipage}
   \begin{minipage}[b]{0.49\textwidth}
-    \includegraphics[width=\textwidth]{figures/chapter06/iz.jpg}
+    \includegraphics[width=\textwidth]{figures/chapter06/sed_color_plots/iz.jpg}
   \end{minipage} \\
 \begin{minipage}[b]{0.49\textwidth}
-    \includegraphics[width=\textwidth]{figures/chapter06/zy.jpg}
+    \includegraphics[width=\textwidth]{figures/chapter06/sed_color_plots/zy.jpg}
   \end{minipage}
   \begin{minipage}[b]{0.49\textwidth}
-    \includegraphics[width=\textwidth]{figures/chapter06/yj.jpg}
+    \includegraphics[width=\textwidth]{figures/chapter06/sed_color_plots/yj.jpg}
   \end{minipage} 
 \end{figure}
 
 \begin{figure}
   \centering
   \begin{minipage}[b]{0.49\textwidth}
-    \includegraphics[width=\textwidth]{figures/chapter06/jh.jpg}
+    \includegraphics[width=\textwidth]{figures/chapter06/sed_color_plots/jh.jpg}
   \end{minipage}
   \begin{minipage}[b]{0.49\textwidth}
-    \includegraphics[width=\textwidth]{figures/chapter06/hk.jpg}
+    \includegraphics[width=\textwidth]{figures/chapter06/sed_color_plots/hk.jpg}
   \end{minipage} \\
 \begin{minipage}[b]{0.49\textwidth}
-    \includegraphics[width=\textwidth]{figures/chapter06/kw1.jpg}
+    \includegraphics[width=\textwidth]{figures/chapter06/sed_color_plots/kw1.jpg}
   \end{minipage}
   \begin{minipage}[b]{0.49\textwidth}
-    \includegraphics[width=\textwidth]{figures/chapter06/w1w2.jpg}
+    \includegraphics[width=\textwidth]{figures/chapter06/sed_color_plots/w1w2.jpg}
   \end{minipage} \\
 \begin{minipage}[b]{0.49\textwidth}
-    \includegraphics[width=\textwidth]{figures/chapter06/kw2.jpg}
+    \includegraphics[width=\textwidth]{figures/chapter06/sed_color_plots/kw2.jpg}
   \end{minipage}
   \begin{minipage}[b]{0.49\textwidth}
-    \includegraphics[width=\textwidth]{figures/chapter06/hw1.jpg}
+    \includegraphics[width=\textwidth]{figures/chapter06/sed_color_plots/hw1.jpg}
   \end{minipage} 
   \caption{Colours of median SED ({\it black circles}), individual objects ({\it grey points}), best-fitting uncorrected model ({\it black line}) and best-fitting corrected model ({\it red line}) as a function of redsfit.}
   \label{fig:colorplots}
@@ -582,7 +588,10 @@ The best-fitting parameters from the fit are shown in Table \ref{tab:params}. Th
 
 In Figure \ref{fig:residuals} we show the difference between the magnitudes from the best-fitting model and the median magnitudes from the sample. We have transformed the effective wavelengths of the band-passes to the rest frame of the quasars in each redshift bin, to give to the residuals as a function of rest-frame wavelength. In Figure \ref{fig:residuals} we represent the residuals measured in each band-pass using a different coloured line. Differences between residuals from different band-passes at the same rest-frame wavelength could indicate redshift evolution of the typical quasar SED. 
 
-The residuals indicate that over a large redshift range the model does a fairly good at reproducing the median observed colours of the DR7Q-matched sample. Most discrepancies are at the $<0.1$ mag level. The most noticeable feature in Figure \ref{fig:residuals} is a bump around 1$\mu$m, where the model underestimates the flux of the population by $\sim 0.1$ mag. Later on in Section \ref{sec:fluxcorrection} we will derive an empirical correction to the model which increases the flux slightly in the 8000 to 17000 \AA~ region of the rest frame spectrum. The red lines in Figure \ref{fig:colorplots} show the colours of this corrected model as a function of redshift. Although the correction improves the fit slightly, significant discrepancies do remain. The model's underestimation of the flux at in the 3$\mu$m region is probably due to the increasingly significant contribution to the flux from cooler dust at longer wavelengths, which is not included in our model. We will discuss this in more detail in Section \ref{sec:definingsample}. 
+The residuals indicate that over a large redshift range the model does a fairly good at reproducing the median observed colours of the DR7Q-matched sample. Most discrepancies are at the $<0.1$ mag level. 
+It is remarkable that a single model is so effective; the properties of a typical quasar to not change significantly over a wide range of redshifts and luminosities. On the other hand, for the individual objects there is a significant scatter about the mean. In general, our goal is to use this intrinsic spread in SED properties in order to understand the diversity in physical quasar properties. 
+
+The most noticeable feature in Figure \ref{fig:residuals} is a bump around 1$\mu$m, where the model underestimates the flux of the population by $\sim 0.1$ mag. Later on in Section \ref{sec:fluxcorrection} we will derive an empirical correction to the model which increases the flux slightly in the 8000 to 17000 \AA~ region of the rest frame spectrum. The red lines in Figure \ref{fig:colorplots} show the colours of this corrected model as a function of redshift. Although the correction improves the fit slightly, significant discrepancies do remain. The model's underestimation of the flux at in the 3$\mu$m region is probably due to the increasingly significant contribution to the flux from cooler dust at longer wavelengths, which is not included in our model. We will discuss this in more detail in Section \ref{sec:definingsample}. 
 
 Our fitting scheme scales the equivalent width of every emission line by the same amount. Observationally, the emission line ratios are not the same for every quasar, and the model to data discrepancies in certain regions are likely to be the result of this. In Figure \ref{fig:residuals} we mark the position of the H$\alpha$ emission line, which is typically very strong and broad and can contribute significantly to the flux even in a broad band-pass. The relatively large residuals around the wavelength of the H$\alpha$ line may suggest that our simple scaling scheme is insufficient, and we may need to allow the equivalent widths of certain prominent emission lines to vary freely. 
 
@@ -1280,7 +1289,7 @@ dust.
 \begin{figure}
 \centering
   \includegraphics[width=\columnwidth]{figures/chapter06/ntt_proposal_figure1.pdf}
-\caption{Rest-frame equivalent width and blueshift of the
+\caption{USE PLOT FROM RESEARCH PROPOSAL. Rest-frame equivalent width and blueshift of the
 \ion{C}{4} line for 7,115 SDSS DR7 quasars. The colours of the hexagons
 denote the median hot dust (T$\simeq$1200\,K) abundance for all
 quasars at a given equivalent width and blueshift. The hot dust
@@ -1296,7 +1305,7 @@ quasar. Systemic redshifts are obtained from Hewett and Wild (2010).}
 
 \begin{figure}
 \centering
-  \includegraphics[width=\columnwidth]{figures/chapter06/ntt_proposal_figure1.pdf}
+  \includegraphics[width=\columnwidth]{figures/chapter06/ntt_proposal_figure2.pdf}
 \caption{Representative rest-frame model spectra for the
 most hot-dust rich and hot-dust poor quasars in our SDSS sample, with
 error bars indicating the range of {\it WISE} W1, W2, and W3
@@ -1305,4 +1314,16 @@ rest frame of the quasar. Grey lines show the W1, W2, and W3 fluxes
 for our sample of highly reddened quasars.}
   \label{fig:}
 \end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\columnwidth]{figures/chapter05/bbt_correlations.pdf}
+    \caption{Black-body temperature plotted (from {\it left} to {\it right}) as a function of the ultra-violet luminosity, the black-hole mass and the Eddington ratio.}  
+    \label{fig:figure1}
+\end{figure}
+
+
+\section{Future Work}
+
+This work will be built on by, for example, investigating dust-extinction (combining our sample with moderately-reddened quasars from Maddox et al. 2012 and heavily-reddened quasars from Banerji et al. 2012-2015), broad-absorption line quasars, and/or radio properties. We will also investigate the sub-population of quasars for which we don't observe any emission from hot dust. 
 
