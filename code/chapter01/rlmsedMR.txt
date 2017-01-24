@@ -1,22 +1,3 @@
-Title: The Next Generation Atlas of Quasar Spectral Energy
-       Distributions from Radio to X-rays
-Authors: Zhaohui Shang, Michael S. Brotherton, Beverley J. Wills,
-         D. Wills, Sabrina L. Cales, Daniel A. Dale, Richard F. Green,
-         Jessie C. Runnoe, Rodrigo S. Nemmen, Sarah C. Gallagher,
-         Rajib Ganguly, Dean C. Hines, Benjamin J. Kelly, Gerard A. Kriss,
-         Jun Li, Baitian Tang, Yanxia Xie
-Table: Median SED for Radio-loud Quasars
-================================================================================
-Byte-by-byte Description of file: datafile.txt
---------------------------------------------------------------------------------
-   Bytes Format Units Label      Explanations
---------------------------------------------------------------------------------
-   1-  8 F8.4   [Hz]    LogFreq    Log of the frequency
-   9- 19 F11.5  ---     LogFlux    Log of nuFnu (arbitrary units)
-  20- 23 I4     ---     Nobj       Number of objects
-  24- 31 F8.3   ---     Sigma      Standard Deviation
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
   8.0867   -2.60028  57   0.601
   8.4600   -2.47227  51   0.570
   8.8333   -2.26884  54   0.496

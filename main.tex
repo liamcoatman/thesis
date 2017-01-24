@@ -46,6 +46,23 @@
 \usepackage{rotating}   % For sideways figures
 \usepackage{longtable}
 
+\usepackage{pdflscape}
+\usepackage{afterpage}
+\usepackage{capt-of}% or use the larger `caption` package
+
+% Fitting tables on to page
+\def\fudge#1#2{%
+\addtolength\textheight{#1}%
+\@colroom\textheight
+\vsize\textheight
+\@colht\textheight
+\def\LS@rot{%
+  \setbox\@outputbox\vbox{\hbox{\kern-#2\rotatebox{90}{\box\@outputbox}}}}%
+\clearpage}
+
+\newcounter{z}
+\def\z{\stepcounter{z}[[[[[\thez]]]]]}
+
 \newcommand\msun{{{{\rm M_\odot}}}}
 \newcommand{\ha}{H$\alpha$~}
 \newcommand{\hb}{H$\beta$~}

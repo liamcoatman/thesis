@@ -12,13 +12,15 @@ def make_table():
     df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0)
     df = df[df.SPEC_NIR != 'None']
 
-    # band?  
+    # wavelength  
     # programme 
     # duplicates
     # z_oiii 
     # luminosity 5100A 
     # link to optical spectra + sdss  
     # date 
+    # s/n 
+    # optical spectra 
      
     # names 
     names = []
@@ -41,63 +43,23 @@ def make_table():
     # instrument / telescope 
     def get_instr(row):
 
-        if row.INSTR == 'FIRE':
-            return pd.Series({'Instrument': 'FIRE', 
-                              'Telescope': 'Magellan-Baade'})
-
-        if row.INSTR == 'GNIRS':
-            return pd.Series({'Instrument': 'GNIRS', 
-                              'Telescope': 'Gemini-N'})
-
-        if row.INSTR == 'ISAAC':
-            return pd.Series({'Instrument': 'ISAAC', 
-                              'Telescope': 'VLT'})
-
-        if row.INSTR == 'LIRIS':
-            return pd.Series({'Instrument': 'LIRIS', 
-                              'Telescope': 'WHT'})
-
-        if row.INSTR == 'NIRI':
-            return pd.Series({'Instrument': 'NIRI', 
-                              'Telescope': 'Gemini-N'})
-
-        if row.INSTR == 'NIRSPEC':
-            return pd.Series({'Instrument': 'NIRSPEC', 
-                              'Telescope': 'Keck-II'})
-
-        if row.INSTR == 'SINF':
-            return pd.Series({'Instrument': 'SINFONI', 
-                              'Telescope': 'VLT'})
-
-        if row.INSTR == 'SINF_KK':
-            return pd.Series({'Instrument': 'SINFONI', 
-                              'Telescope': 'VLT'})
-
-        if row.INSTR == 'SOFI_JH':
-            return pd.Series({'Instrument': 'SofI', 
-                              'Telescope': 'NTT'})
-
-        if row.INSTR == 'SOFI_LC':
-            return pd.Series({'Instrument': 'SofI', 
-                              'Telescope': 'NTT'})
-
-        if row.INSTR == 'TRIPLE':
-            return pd.Series({'Instrument': 'TRIPLESPEC', 
-                              'Telescope': 'Palomar 200-inch'})
-
-        if row.INSTR == 'TRIPLE_S15':
-            return pd.Series({'Instrument': 'TRIPLESPEC', 
-                              'Telescope': 'ARC 3.5m'})
-
-        if row.INSTR == 'XSHOOT':
-            return pd.Series({'Instrument': 'XSHOOTER', 
-                              'Telescope': 'VLT'}) 
+        if row.INSTR == 'FIRE': return 'FIRE/Magellan'
+        if row.INSTR == 'GNIRS': return 'GNIRS/Gemini'
+        if row.INSTR == 'ISAAC': return 'ISAAC/VLT'
+        if row.INSTR == 'LIRIS': return 'LIRIS/WHT'
+        if row.INSTR == 'NIRI': return 'NIRI/Gemini'
+        if row.INSTR == 'NIRSPEC': return 'NIRSPEC/Keck'
+        if row.INSTR == 'SINF': return 'SINFONI/VLT'
+        if row.INSTR == 'SINF_KK': return 'SINFONI/VLT'
+        if row.INSTR == 'SOFI_JH': return 'SofI/NTT'
+        if row.INSTR == 'SOFI_LC': return 'SofI/NTT'
+        if row.INSTR == 'TRIPLE': return 'TRIPLESPEC/Hale'
+        if row.INSTR == 'TRIPLE_S15': return 'TRIPLESPEC/ARC'
+        if row.INSTR == 'XSHOOT': return 'XSHOOTER/VLT' 
 
     
-    df = df.apply(get_instr, axis=1)
+    instrument = df.apply(get_instr, axis=1)
 
-    instrument = df.Instrument.values 
-    telescope = df.Telescope.values
 
     # dates 
 
@@ -219,7 +181,6 @@ def make_table():
     # tnew['Exp'] = exptimes
     tnew['z'] = z
     tnew['instrument'] = instrument 
-    tnew['telescope'] = telescope 
     # tnew['imag'] = imag 
     # tnew['Opt. Spec.'] = specopt
     # tnew['S/N Ha'] = snr_ha

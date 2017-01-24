@@ -1,0 +1,34 @@
+\documentclass{article}
+\usepackage{lscape,longtable}
+\newcounter{z}
+\def\z{\stepcounter{z}[[[[[\thez]]]]]}
+
+
+\makeatletter
+
+\def\fudge#1#2{%
+\addtolength\textheight{#1}%
+\@colroom\textheight
+\vsize\textheight
+\@colht\textheight
+\def\LS@rot{%
+  \setbox\@outputbox\vbox{\hbox{\kern-#2\rotatebox{90}{\box\@outputbox}}}}%
+\clearpage}
+
+\makeatother
+
+\begin{document}
+\begin{landscape}
+\fudge{3cm}{1.5cm}% 3cm longer and raise by 1.5cm
+\begin{longtable}{l}
+\endhead
+\z\\\z\\\z\\\z\\\z\\\z\\\z\\\z\\\z\\\z\\\z\\\z\\
+\z\\\z\\\z\\\z\\\z\\\z\\\z\\\z\\\z\\\z\\\z\\\z\\
+\z\\\z\\\z\\\z\\\z\\\z\\\z\\\z\\\z\\\z\\\z\\\z\\
+\z\\\z\\\z\\\z\\\z\\\z\\\z\\\z\\\z\\\z\\\z\\\z\\
+\z\\\z\\\z\\\z\\\z\\\z\\\z\\\z\\\z\\\z\\\z\\\z\\
+\z\\\z\\\z\\\z\\\z\\\z\\\z\\\z\\\z\\\z\\\z\\\z\\
+\z\\\z\\\z\\\z\\\z\\\z\\\z\\\z\\\z\\\z\\\z\\\z\\
+\end{longtable}
+\end{landscape}
+\end{document}

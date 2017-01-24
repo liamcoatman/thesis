@@ -1,0 +1,28 @@
+2016-02-22 15:39:38
+ 
+QSO445
+ 
+Converged with chi-squared = 673.649848321, DOF = 333
+ 
+[[Variables]]
+    c:              0 (fixed)
+    g0_sigma:       3759.82327 (init= 5905.283)
+    g0_center:     -4999.99982 (init= 0)
+    g0_amplitude:   3396.72963 (init= 8278.576)
+    g0_fwhm:        8853.70704  == '2.3548200*g0_sigma'
+    g1_sigma:       9999.97181 (init= 5905.283)
+    g1_center:     -4999.99996 (init= 0)
+    g1_amplitude:   3673.00009 (init= 8278.576)
+    g1_fwhm:        23548.1336  == '2.3548200*g1_sigma'
+    g2_center:     -2037.94603 (init= 0)
+    g2_amplitude:   1654.33338 (init= 8278.576)
+    g2_sigma:       1632.76418 (init= 5905.283)
+    g2_fwhm:        3844.86575  == '2.3548200*g2_sigma'
+[[Correlations]] (unreported correlations are <  0.100)
+ 
+Peak: -2415.00 km/s 
+FWHM: 8158.00 km/s 
+Median: -3910.00 km/s 
+Sigma: 5147.33 km/s 
+Reduced chi-squared: 2.02 
+EQW: 28.15 A 

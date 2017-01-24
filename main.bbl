@@ -15008,60 +15008,6 @@
   \field{year}{2004}
 \endentry
 
-\entry{sulentic06}{article}{}
-  \name{author}{6}{}{%
-    {{}%
-     {{Sulentic}}{S.}%
-     {J.~W.}{J.~W.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Repetto}}{R.}%
-     {P.}{P.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Stirpe}}{S.}%
-     {G.~M.}{G.~M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Marziani}}{M.}%
-     {P.}{P.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Dultzin-Hacyan}}{D.}%
-     {D.}{D.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Calvani}}{C.}%
-     {M.}{M.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{galaxies: quasars: emission lines, galaxies: quasars: general, line:
-  profiles, black hole physics}
-  \strng{namehash}{SJW+1}
-  \strng{fullhash}{SJWRPSGMMPDDCM1}
-  \field{labelyear}{2006}
-  \field{sortinit}{S}
-  \verb{doi}
-  \verb 10.1051/0004-6361:20054153
-  \endverb
-  \verb{eprint}
-  \verb astro-ph/0606309
-  \endverb
-  \field{pages}{929\bibrangedash 939}
-  \field{title}{{VLT/ISAAC spectra of the H{$\beta$} region in
-  intermediate-redshift quasars. II. Black hole mass and Eddington ratio}}
-  \field{volume}{456}
-  \field{journaltitle}{\aap}
-  \field{month}{09}
-  \field{year}{2006}
-\endentry
-
 \entry{sulentic07}{article}{}
   \name{author}{5}{}{%
     {{}%

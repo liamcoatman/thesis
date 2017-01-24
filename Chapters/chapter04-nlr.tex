@@ -28,7 +28,7 @@ The paper is structured as follows.
 \section{Quasar Sample}
 
 \begin{figure}
-    \includegraphics[width=\columnwidth]{figures/chapter04/luminosity_z.pdf} 
+    \includegraphics[width=0.8\textwidth]{figures/chapter04/luminosity_z.pdf} 
     \caption{The ranges in redshift and luminosity covered by our sample, relative to the redshift-luminosity distribution of the SDSS DR7 quasar catalogue with measured [\ion{O}{III}] line properties \citep{shen11}. The gaps in our sample coverage at $z\sim1.8$ and $z\sim3$ are due to the near-infrared transmission windows. In regions of high point-density, contours show equally-spaced lines of constant probability density generated using a Gaussian kernel-density estimator.}     
     \label{fig:lzplane}
 \end{figure}
@@ -114,7 +114,7 @@ Prior to the fit, the spectra were inspected visually and regions significantly 
 {\bf However, the fits aren't always good. How to be quantative about this? Chi-squared values indicating bad fits? Also the fact that we sometimes model Fe as OIII. Discuss the limitations of using the Boroson \& Greene template? Even if don't use results, should discuss Gaussian fits and their limitations, because that's what most people will be using.}
 
 \begin{figure*}
-    \includegraphics[width=2\columnwidth]{figures/chapter04/example_spectrum_grid.pdf} 
+    \includegraphics[width=\textwidth]{figures/chapter04/example_spectrum_grid.pdf} 
     \caption{Multi-component Gaussian fits to the continuum-subtracted \hbns/[\ion{O}{III}] emission in 16 quasars, chosen to be the representative of the wide range of [\ion{O}{III}] line widths we measure in our sample. The data is shown in grey, the best-fitting parametric model in black, and the individual model components in orange. The broad \hb centroid is used to measure the systemic redshift, and $\Delta{v}$ is the velocity shift from the line rest-frame transition wavelength for \hbns. Below each fit we plot the data minus model residuals, scaled by the errors on the fluxes. {\bf Resample model at higher resolution.}}     
     \label{fig:example_spectrum_grid}
 \end{figure*}
@@ -122,14 +122,14 @@ Prior to the fit, the spectra were inspected visually and regions significantly 
 \subsection{Derived Parameters}
 
 \begin{figure*}
-    \includegraphics[width=2\columnwidth]{figures/chapter04/mfica_component_weights.pdf} 
+    \includegraphics[width=\textwidth]{figures/chapter04/mfica_component_weights.pdf} 
     \caption{The relative weight in each of the six positive ICA components for the high-luminosity (blue) and low luminosity samples (grey). In the high-luminosity sample \ion{Fe}{II} emission is stronger (component $w_1$). The core [\ion{O}{III}] emission is weaker (components $w_4$, $w_5$) but the strength of the blueshifted wing is the same ($w_6$).}     
     \label{fig:mfica_component_weights}
 \end{figure*}
 
 \begin{figure*}
     \centering
-    \includegraphics[width=1.5\columnwidth]{figures/chapter04/mfica_oiii_weight.pdf} 
+    \includegraphics[width=\textwidth]{figures/chapter04/mfica_oiii_weight.pdf} 
     \caption{The relative weight in the three ICA components corresponding to [\ion{O}{III}] emission ({\em left}) and the relative weight of the component most closely related to blueshifted [\ion{O}{III}] emission relative to all three [\ion{O}{III}] components ({\em right}). [\ion{O}{III}] emission is weaker in the high-luminosity sample, but the relative contribution but the fractional contribution from the blueshifted component to the total [\ion{O}{III}] emission is higher. Hence [\ion{O}{III}] is weaker, broader, and more asymmetric in the high-luminosity sample. See Zakamska discussion.}     
     \label{fig:mfica_oiii_weight}
 \end{figure*}
@@ -155,28 +155,29 @@ Prior to the fit, the spectra were inspected visually and regions significantly 
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.8\columnwidth]{figures/chapter04/mfica_oiii_w80_comparison.pdf} 
+    \includegraphics[width=0.6\textwidth]{figures/chapter04/mfica_oiii_w80_comparison.pdf} 
     \caption{Comparison of [\ion{O}{III}] velocity-widths in the high and low luminosity samples using the ICA component fits. If keep this need to explain in text how $w_{80}$ is calculated from ICA component fits.}
     \label{fig:mfica_oiii_w80_comparison}
 \end{figure}
 
 \begin{figure}
     \centering
-    \includegraphics[width=\columnwidth]{figures/chapter04/mfica_components.pdf} 
+    \includegraphics[width=0.6\textwidth]{figures/chapter04/mfica_components.pdf} 
     \caption{Black solid line is the median from the ICA fits to the high-luminosity sample. Black dashed line shows the median from the low-luminosity sample. The six positive ICA components are also shown.}     
     \label{fig:mfica_components}
 \end{figure}
 
 \begin{figure}
     \centering
-    \includegraphics[width=\columnwidth]{figures/chapter04/civ_blueshift_oiii_strength.pdf} 
-    \caption{[\ion{O}{III}] strength decreases as the \ion{C}{IV} blueshift increases, I run in to problems comparing the \ion{C}{IV} blueshift to the [\ion{O}{III}] blueshift / velocity-width. See similar thing if I use [\ion{O}{III}] EQW instead. Need to fix y ticks. Only showing the core components here. The \ion{C}{IV} blueshift is now measured relative to the NIR ICA redshift. I think this is trend is mostly being driven by the Eigenvector 1 correlations: as the blueshift increases the \ion{Fe}{II} strength increases and the [\ion{O}{III}] strength decreases. Doesn't appear to be driven by the luminositiy. Is this tighter than EV1 trend shown with Fe/OIII strength by other authors? }     
+    \includegraphics[width=\textwidth]{figures/chapter04/civ_blueshift_oiii_strength.pdf} 
+    \caption{[\ion{O}{III}] strength decreases as the \ion{C}{IV} blueshift increases, I run in to problems comparing the \ion{C}{IV} blueshift to the [\ion{O}{III}] blueshift / velocity-width. See similar thing if I use [\ion{O}{III}] EQW instead. Need to fix y ticks. Only showing the core components here. The \ion{C}{IV} blueshift is now measured relative to the NIR ICA redshift. I think this is trend is mostly being driven by the Eigenvector 1 correlations: as the blueshift increases the \ion{Fe}{II} strength increases and the [\ion{O}{III}] strength decreases. Doesn't appear to be driven by the luminositiy. Is this tighter than EV1 trend shown with Fe/OIII strength by other authors? Is the AGN NLR absent in objects where outflows have reached
+    kiloparsec scales, sweeping up the low-density material responsible for the [OIII]-emission?}     
     \label{fig:civ_blueshift_oiii_strength}
 \end{figure}
 
 \begin{figure}
     \centering
-    \includegraphics[width=\columnwidth]{figures/chapter04/civ_blueshift_oiii_blueshift_components.pdf} 
+    \includegraphics[width=\textwidth]{figures/chapter04/civ_blueshift_oiii_blueshift_components.pdf} 
     \caption{I think there is a trend here but at high blueshifts the OIII is undetected / very low S/N. Need to determin when we can believe OIII paramters. Why at low CIV blueshift is there a much bigger dynamic range than in [\ion{O}{III}] blueshifts in Fig. 13. Is it just because we have more objects?}     
     \label{fig:civ_blueshift_oiii_blueshift_components}
 \end{figure}
@@ -250,11 +251,12 @@ Need to describe sample used in ICA component decomposition and briefly describe
 \section{Measuring the quasar systemic redshift}
 
 
-\begin{figure*}
-    \includegraphics[width=2\columnwidth]{figures/chapter04/redshift_comparison.pdf} 
-    \caption{Redshift comparisons. Lots have been excluded from Ha/Hb so need to look at flags greater than one. What is the big peak?}       
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{figures/chapter04/redshift_comparison.pdf} 
+    \caption{Redshift comparisons. Lots have been excluded from Ha/Hb so need to look at flags greater than one. What is the big peak? Gaussian fit to the first one has failed. Find out why these plots look different to ones in paper.}       
     \label{fig:redshift_comparison}
-\end{figure*}
+\end{figure}
 
 Explain flags 
 Need to send paul redshifts 
@@ -450,6 +452,8 @@ Therefore, it is plausible that the correlation between the \ion{C}{IV} and [\io
 In Figure~\ref{fig:oiii_civ_blueshifts_luminosity} we color the data points by the luminosity, and no luminosity-dependent trends are apparent. 
 We find that both the [\ion{O}{III}] and \ion{C}{IV} blueshifts are correlated with the luminosity, but that these correlations are much weaker than the correlation between the [\ion{O}{III}] and \ion{C}{IV} blueshifts. 
 
+
+
 \section{Eigenvector one correlations}
 
 \begin{figure}
@@ -468,16 +472,20 @@ Same as \citet{shen16a}, we confirm that the EV1 correlations hold at high lumin
 See also Sulentic et al. 2004, 2006; Runnoe et al. 2013. 
 Make sure it's clear that \citet{shen16a} quasars make up a significant chunk of our sample. 
 
+\section{Mapping EV1 to CIV blueshift and EQW}
+
+
 \section{Signal to noise tests}
 
 
 \section{Broad Absorption Line Quasars}
 
-\begin{figure*}
-    \includegraphics[width=2\columnwidth]{figures/chapter04/bal_hists.pdf} 
-    \caption{The distribution of $w_{80}$ and $v_{10}$ for the 19 BALs are compared to the distribution for the non-BALs. These look rubbish. Cumulative distributions instead?}     
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{figures/chapter04/bal_hists.pdf} 
+    \caption{The distribution of $w_{80}$ and $v_{10}$ for the 19 BALs are compared to the distribution for the non-BALs. These look rubbish. Cumulative distributions instead? Try doing gaussian kernel density estimator}     
     \label{fig:bal_hists}
-\end{figure*}
+\end{figure}
 
 19 quasars in our catalogue are classified as broad absorption line (BAL) quasars, using the either the SDSS classification flags or the \citet{allen11} catalogue. 
 We find that the BAL quasars have typically broader [\ion{O}{III}] than the rest of the sample. 

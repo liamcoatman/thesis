@@ -34,6 +34,8 @@ def shang_sed():
     plt.tick_params(axis='both',which='major',labelsize=10)
     plt.tight_layout()
     
-    plt.savefig('shangsed.pdf')
+    plt.savefig('/home/lc585/thesis/figures/chapter01/shangsed.pdf')
 
+    plt.show() 
+    
     return None 
