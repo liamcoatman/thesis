@@ -22,6 +22,70 @@ import yaml
 from lmfit import Parameters
 import cPickle as pickle 
 from qsosed.loaddat import loaddat
+from PlottingTools.plot_setup import figsize, set_plot_properties
+
+set_plot_properties() # change style 
+
+def plot_model(ax,
+               datz,
+               datmag,
+               col1,
+               col2,
+               y_low_lim,
+               y_up_lim,
+               col_label,
+               mycm,
+               cset,
+               modz,
+               modarr,
+               datarr): 
+
+    #histogram definition
+    xyrange = [[0.5,3],[-0.8,2]] # data range
+    bins = [80,80] # number of bins
+    thresh = 3  #density threshold
+
+    #data definition
+    xdat, ydat = datz, datmag[:,col1] - datmag[:,col2]
+
+    # histogram the data
+    hh, locx, locy = scipy.histogram2d(xdat, ydat, range=xyrange, bins=bins)
+    posx = np.digitize(xdat, locx)
+    posy = np.digitize(ydat, locy)
+
+    #select points within the histogram
+    ind = (posx > 0) & (posx <= bins[0]) & (posy > 0) & (posy <= bins[1])
+    hhsub = hh[posx[ind] - 1, posy[ind] - 1] # values of the histogram where the points are
+    xdat1 = xdat[ind][hhsub < thresh] # low density points
+    ydat1 = ydat[ind][hhsub < thresh]
+    hh[hh < thresh] = np.nan # fill the areas with low density by NaNs
+
+    im = ax.imshow(np.flipud(hh.T),
+                   cmap=mycm,
+                   extent=np.array(xyrange).flatten(),
+                   interpolation='none',
+                   aspect='auto',
+                   )
+
+    ax.scatter(xdat1, ydat1,color=cset[-1],s=5)
+
+    ax.plot(modz,
+            modarr[:,col1] - modarr[:,col2],
+            color='k',
+            linewidth=2.0)
+
+    ax.plot(modz,
+            datarr[:,col1] - datarr[:,col2],
+            markerfacecolor='k',
+            linestyle='',
+            marker='o',
+            markersize=5.0)
+
+    ax.set_ylim(y_low_lim,y_up_lim)
+    ax.set_xlim(0.5, 3.0)
+    ax.set_ylabel(col_label)
+
+    return None 
 
 def plot():
 
@@ -224,8 +288,8 @@ def plot():
 
     col1 = [0,1,2,3,4,5,6,7,8,9,7,8]
     col2 = [1,2,3,4,5,6,7,8,9,10,9,10]
-    y_low_lim = [-0.5,-0.4,-0.3,-0.2,-0.4,-0.4,-0.3,-0.3,-0.4,-0.2,-0.2,-0.5]
-    y_up_lim = [1.5,0.8,0.5,0.5,0.5,0.8,0.4,0.6,1.0,1.0,1.6,2.0]
+    y_low_lim = [-0.5,-0.4,-0.3,-0.5,-1,-0.5,-0.5,-0.5,-0.6,-0.2,-0.4,-0.5]
+    y_up_lim = [1.5,0.8,0.7,0.5,1,1,0.8,1,1.5,1.2,2,2.0]
     col_label = ['$u$ - $g$',
                  '$g$ - $r$',
                  '$r$ - $i$',
@@ -254,61 +318,54 @@ def plot():
 
     outfile = ['ug','gr','ri','iz','zy','yj','jh','hk','kw1','w1w2','hw1','kw2']
 
-    for i in range(12):
+    fig1, axs1 = plt.subplots(3, 2, figsize=figsize(1.2, vscale=1), sharex=True) 
+    fig2, axs2 = plt.subplots(3, 2, figsize=figsize(1.2, vscale=1), sharex=True) 
 
-        fig, ax = plt.subplots(figsize=(5,4))
+    for i, ax in enumerate(axs1.flatten()):
+   
+        plot_model(ax,
+                   datz,
+                   datmag,
+                   col1[i],
+                   col2[i],
+                   y_low_lim[i],
+                   y_up_lim[i],
+                   col_label[i],
+                   mycm,
+                   cset,
+                   modz,
+                   modarr,
+                   datarr)
 
-        #histogram definition
-        xyrange = [[0.5,3],[-0.5,1]] # data range
-        bins = [80,50] # number of bins
-        thresh = 3  #density threshold
+    for i, ax in enumerate(axs2.flatten()):
+   
+        plot_model(ax,
+                   datz,
+                   datmag,
+                   col1[i+6],
+                   col2[i+6],
+                   y_low_lim[i+6],
+                   y_up_lim[i+6],
+                   col_label[i+6],
+                   mycm,
+                   cset,
+                   modz,
+                   modarr,
+                   datarr)
 
-        #data definition
-        xdat, ydat = datz, datmag[:,col1[i]] - datmag[:,col2[i]]
+    axs1[2, 0].set_xlabel(r'Redshift $z$')
+    axs2[2, 0].set_xlabel(r'Redshift $z$')
+    axs1[2, 1].set_xlabel(r'Redshift $z$')
+    axs2[2, 1].set_xlabel(r'Redshift $z$')
 
-        # histogram the data
-        hh, locx, locy = scipy.histogram2d(xdat, ydat, range=xyrange, bins=bins)
-        posx = np.digitize(xdat, locx)
-        posy = np.digitize(ydat, locy)
+    fig1.tight_layout()
+    fig2.tight_layout()
 
-        #select points within the histogram
-        ind = (posx > 0) & (posx <= bins[0]) & (posy > 0) & (posy <= bins[1])
-        hhsub = hh[posx[ind] - 1, posy[ind] - 1] # values of the histogram where the points are
-        xdat1 = xdat[ind][hhsub < thresh] # low density points
-        ydat1 = ydat[ind][hhsub < thresh]
-        hh[hh < thresh] = np.nan # fill the areas with low density by NaNs
+    fig1.savefig('/home/lc585/thesis/figures/chapter06/sed_color_plot_1.pdf')
+    fig2.savefig('/home/lc585/thesis/figures/chapter06/sed_color_plot_2.pdf')
 
-        im = ax.imshow(np.flipud(hh.T),
-                       cmap=mycm,
-                       extent=np.array(xyrange).flatten(),
-                       interpolation='none',
-                       aspect='auto',
-                       )
-        ax.scatter(xdat1, ydat1,color=cset[-1],s=5)
 
-        ax.plot(modz,
-                modarr[:,col1[i]] - modarr[:,col2[i]],
-                color='k',
-                linewidth=2.0)
-
-        ax.plot(modz,
-                datarr[:,col1[i]] - datarr[:,col2[i]],
-                markerfacecolor='k',
-                linestyle='',
-                marker='o',
-                markersize=5.0)
-
-        ax.set_ylim(y_low_lim[i],y_up_lim[i])
-        ax.set_xlim(0.5,3.0)
-        ax.set_ylabel(col_label[i],fontsize=14)
-        ax.set_xlabel(r'$z$',fontsize=14)
-        ax.tick_params(axis='both',which='major',labelsize=10)
-
-        plt.tight_layout()
-        plt.savefig('/home/lc585/thesis/figures/chapter06/sed_color_plots/'+ outfile[i] + '.jpg',format='jpg')
-        plt.clf()
-        
-
+    plt.show() 
 
     return None
 

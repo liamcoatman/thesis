@@ -1,7 +1,13 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from astropy.table import Table
-import running 
+# import running 
+from PlottingTools.plot_setup import figsize, set_plot_properties
+import brewer2mpl
+import palettable 
+cs = palettable.colorbrewer.qualitative.Set1_9.mpl_colors
+
+set_plot_properties() # change style 
 
 def bbt_vs_z_with_correction():
 
@@ -38,78 +44,6 @@ def bbt_vs_z_with_correction():
 
 
 
-def posterior_plot():
-
-    import matplotlib.pyplot as plt 
-    import pymc
-    import sys
-    sys.path.insert(0,'/home/lc585/Dropbox/IoA/QSOSED/Model/MCMC')
-    import sedfit_pymc_v2 as fit
-    from idlplot import plot,ploterror,oplot,tvhist2d,plothist
-
-    f = '/data/lc585/QSOSED/Results/140324_MCMC_CHAINS/0019.pickle'
-    pymcMC = pymc.database.pickle.load(f) 
-    plot_posteriors(pymcMC)
-
-    keys = ['ebv','elscal','imod']
-    
-        fig = plt.figure(figsize=(9.7,6.2))
-                    
-        counter = 0
-    for k1 in keys:
-        var1 = pymcMC.trace(k1)[:]
-        #chain for variable k1
-                
-        for k2 in keys:
-            var2 = pymcMC.trace(k2)[:]
-            #chain for variable k1  
-            
-                        ax = fig.add_subplot(3,3,counter+1)
-                        if k1 != k2:
-                            tvhist2d(var2,var1,noerase=True,bins=[30,30])
-                
-            else:
-                            plothist(var1,noerase=True,nbins=30)
-            
-                        if counter == 0:
-                            ax.set_xlabel('E(B-V)',fontsize=10)
-                            ax.set_ylabel('#',fontsize=10)
-
-                        if counter == 3:
-                            ax.set_xlabel('E(B-V)',fontsize=10)
-                            ax.set_ylabel('EW Scaling',fontsize=10)
-
-                        if counter == 4:
-                            ax.set_xlabel('EW Scaling',fontsize=10)
-                            ax.set_ylabel('#',fontsize=10)
-
-                        if counter == 6:
-                            ax.set_xlabel('E(B-V)',fontsize=10)
-                            ax.set_ylabel('Normalisation',fontsize=10)
-
-                        if counter == 7:
-                            ax.set_xlabel('EW Scaling',fontsize=10)
-                            ax.set_ylabel('Normalisation',fontsize=10)
-
-                        
-                        if counter == 8:
-                            ax.set_xlabel('Normalisation',fontsize=10)
-                            ax.set_ylabel('#',fontsize=10)                    
-            
-                         
-                        if (counter == 1) | (counter == 2) | (counter == 5): 
-                            plt.delaxes(ax)
-                        
-                      
-                        counter +=1
-                    
-                   
-
-                        plt.tick_params(axis='both',which='major',labelsize=8) 
-
-      
-        plt.tight_layout()
-    plt.savefig('test.pdf') 
 
 
 def shang_sed():
@@ -417,3 +351,389 @@ def ntt_proposal_figure2():
 
     return None
 
+def dr7_completeness():
+
+    
+
+    # Manda matched DR7Q to ALLWISE 
+    wisedat = Table.read('/data/sdss/DR7/AllWISE/DR7QSO_AllWISE_matched.fits')
+
+    # Main DR7Q
+    dr7dat = Table.read('/data/sdss/DR7/dr7qso.fit')
+
+    imin = np.arange(18.0,21.0,0.1)
+
+    w1frac, w2frac, w3frac, w4frac = [], [], [], [] 
+    for i in range(len(imin)):
+        objsall = wisedat[ (wisedat['IMAG'] < imin[i]) ]
+        objs = wisedat[ (wisedat['IMAG'] < imin[i]) & (wisedat['W1SNR_ALLWISE'] > 5.0) ]
+        w1frac.append(float(len(objs)) / float(len(objsall)) )
+        objs = wisedat[ (wisedat['IMAG'] < imin[i]) & (wisedat['W2SNR_ALLWISE'] > 5.0) ]
+        w2frac.append(float(len(objs)) / float(len(objsall)))
+        objs = wisedat[ (wisedat['IMAG'] < imin[i]) & (wisedat['W3SNR_ALLWISE'] > 5.0) ]
+        w3frac.append(float(len(objs)) / float(len(objsall))) 
+        objs = wisedat[ (wisedat['IMAG'] < imin[i]) & (wisedat['W4SNR_ALLWISE'] > 5.0) ]
+        w4frac.append(float(len(objs)) / float(len(objsall)))
+    
+    ulasdat = np.genfromtxt('/data/mbanerji/Projects/QSO/DR7QSO/DR7QSO_ULASDR9_ABmags.cat')
+    
+    YSNR = 1.0 / (ulasdat[:,18] * 0.4 * np.log(10) )
+    JSNR = 1.0 / (ulasdat[:,19] * 0.4 * np.log(10) )
+    HSNR =  1.0 / (ulasdat[:,20] * 0.4 * np.log(10) )
+    KSNR =  1.0 / (ulasdat[:,21] * 0.4 * np.log(10) )
+    
+    Yfrac, Jfrac, Hfrac, Kfrac, totalnum = [], [], [], [], [] 
+    for i in range(len(imin)):
+        objsall = ulasdat[ (ulasdat[:,7] < imin[i]) ]
+        objs = ulasdat[ (ulasdat[:,7] < imin[i]) & (YSNR > 5.0) ]
+        Yfrac.append(float(len(objs)) / float(len(objsall)) )
+        objs = ulasdat[ (ulasdat[:,7] < imin[i]) & (JSNR > 5.0)]
+        Jfrac.append(float(len(objs)) / float(len(objsall)) )
+        objs = ulasdat[ (ulasdat[:,7] < imin[i]) & (HSNR > 5.0) ]
+        Hfrac.append(float(len(objs)) / float(len(objsall)) )
+        objs = ulasdat[ (ulasdat[:,7] < imin[i]) & (KSNR > 5.0) ]
+        Kfrac.append(float(len(objs)) / float(len(objsall)) )
+    
+    totalnum = []
+    for i in range(len(imin)):
+        objsall = dr7dat[ (dr7dat['IMAG'] < imin[i]) ]
+        totalnum.append(len(objsall))
+    
+    fig = plt.figure(figsize=figsize(0.7))
+    ax = fig.add_subplot(111)
+    
+    set2 = brewer2mpl.get_map('Set2', 'qualitative', 7).mpl_colors
+    ax.plot(imin,Yfrac,label='Y',color=set2[0])
+    ax.plot(imin,Jfrac,label='J',color=set2[1])
+    ax.plot(imin,Hfrac,label='H',color=set2[2])
+    ax.plot(imin,Kfrac,label='K',color=set2[3])
+    ax.plot(imin,w1frac,label='W1',color=set2[4])
+    ax.plot(imin,w2frac,label='W2',color=set2[5])
+    ax.plot(imin,w3frac,label='W3',color=set2[6])
+    
+    plt.legend(loc='lower left',prop={'size':10})
+    
+    ax2 = ax.twinx()
+    ax2.plot(imin,totalnum,color='black',linestyle='--')
+    
+    ax2.axvline(19.1,color='grey')
+    ax.set_ylim(0.6,1.05)
+    ax2.set_ylim(0,110000)
+    
+    ax.set_xlabel(r'$i_{\rm min}$')
+    ax.set_ylabel('Completeness')
+    ax2.set_ylabel('Number of Objects')
+    
+    plt.tight_layout()
+
+    fig.savefig('/home/lc585/thesis/figures/chapter06/dr7completeness.pdf')
+    
+    plt.show() 
+
+    return None 
+
+def dr10_completeness():
+
+    wisedat = Table.read('/data/lc585/SDSS/DR10QSO_AllWISE_matched.fits')
+    
+    dat = Table.read('/data/sdss/DR10/DR10Q_v2.fits')
+    gmag_all = dat['PSFMAG'][:,1] - dat['EXTINCTION_RECAL'][:,1] + 0.03
+    
+    gmag_wise = wisedat['PSFMAG'][:,1] - wisedat['EXTINCTION_RECAL'][:,1] + 0.03
+
+    
+    ysnr = dat['YFLUX'] / dat['YFLUX_ERR']
+    jsnr = dat['JFLUX'] / dat['JFLUX_ERR']
+    hsnr = dat['HFLUX'] / dat['HFLUX_ERR']
+    ksnr = dat['KFLUX'] / dat['KFLUX_ERR']
+    
+    gmin = np.arange(18.0,22.5,0.1)
+    
+    yfrac, jfrac, hfrac, kfrac, w1frac, w2frac, w3frac, w4frac, totalnum = [], [], [], [], [], [], [], [], []
+    
+    for i in range(len(gmin)):
+        objsall = wisedat[ (gmag_wise < gmin[i]) ]
+        objs = wisedat[ (gmag_wise < gmin[i]) & (wisedat['W1SNR_ALLWISE'] > 5.0) ]
+        w1frac.append(float(len(objs)) / float(len(objsall)) )
+        objs = wisedat[ (gmag_wise < gmin[i]) & (wisedat['W2SNR_ALLWISE'] > 5.0) ]
+        w2frac.append(float(len(objs)) / float(len(objsall)))
+        objs = wisedat[ (gmag_wise < gmin[i]) & (wisedat['W3SNR_ALLWISE'] > 5.0) ]
+        w3frac.append(float(len(objs)) / float(len(objsall))) 
+        objs = wisedat[ (gmag_wise < gmin[i]) & (wisedat['W4SNR_ALLWISE'] > 5.0) ]
+        w4frac.append(float(len(objs)) / float(len(objsall)))
+        objsall = dat[ (dat['UKIDSS_MATCHED'] == 1) & (gmag_all < gmin[i]) ]
+        objs = dat[ (dat['UKIDSS_MATCHED'] == 1) & (gmag_all < gmin[i])  & (ysnr > 5.0) ]
+        yfrac.append(float(len(objs)) / float(len(objsall)) )
+        objs = dat[(dat['UKIDSS_MATCHED'] == 1) & (gmag_all < gmin[i]) & (jsnr > 5.0) ]
+        jfrac.append(float(len(objs)) / float(len(objsall)) )
+        objs = dat[(dat['UKIDSS_MATCHED'] == 1) & (gmag_all < gmin[i]) & (hsnr > 5.0) ]
+        hfrac.append(float(len(objs)) / float(len(objsall)) )
+        objs = dat[(dat['UKIDSS_MATCHED'] == 1) & (gmag_all < gmin[i]) & (ksnr > 5.0) ]
+        kfrac.append(float(len(objs)) / float(len(objsall)) )
+    
+    for i in range(len(gmin)):
+        objsall = dat[ (gmag_all < gmin[i]) ]
+        totalnum.append(len(objsall))
+    
+    fig = plt.figure(figsize=figsize(0.7))
+    ax = fig.add_subplot(111)
+    
+    set2 = brewer2mpl.get_map('Set2', 'qualitative', 7).mpl_colors
+
+    ax.plot(gmin,yfrac,label='Y',color=set2[0])
+    ax.plot(gmin,jfrac,label='J',color=set2[1])
+    ax.plot(gmin,hfrac,label='H',color=set2[2])
+    ax.plot(gmin,kfrac,label='K',color=set2[3])
+    ax.plot(gmin,w1frac,label='W1',color=set2[4])
+    ax.plot(gmin,w2frac,label='W2',color=set2[5])
+    ax.plot(gmin,w3frac,label='W3',color=set2[6])
+    # ax.plot(gmin,w4frac,label='W4')
+    
+    ax.axvline(22.0,color='grey')
+    
+    plt.legend(loc='lower left', prop={'size':10})
+    
+    ax2 = ax.twinx()
+    ax2.plot(gmin,totalnum,color='black',linestyle='--')
+    ax2.set_ylim(0,170000)
+    
+    ax.set_xlabel(r'$g_{\rm min}$')
+    ax.set_ylabel('Completeness')
+    ax2.set_ylabel('Number of Objects')
+
+    plt.tight_layout()
+    
+    plt.savefig('/home/lc585/thesis/figures/chapter06/dr10completeness.pdf')
+
+    plt.show() 
+
+    return None 
+
+
+def red_spectra():
+
+
+    set_plot_properties() # change style 
+    
+    from SpectraTools.get_spectra import read_boss_dr12_spec
+
+    fig, ax = plt.subplots(figsize=figsize(0.7))
+
+    wav, dw, flux, err = read_boss_dr12_spec('spec-4240-55455-0626.fits')
+    ax.plot(wav, flux, color=cs[-1], label='SDSSJ0240+0103')
+
+    wav, dw, flux, err = read_boss_dr12_spec('spec-5481-55983-0346.fits')
+    ax.plot(wav, flux + 10, color=cs[0], label='SDSSJ1500+0826')
+
+    plt.legend(frameon=False)
+
+    ax.set_xlim(4000, 9000)
+    ax.set_ylim(-5, 20)
+
+    ax.set_xlabel(r'Wavelength $\lambda$ [\AA]')
+    ax.set_ylabel('Flux F$_{\lambda}$ [Arbitary Units]')
+
+    fig.tight_layout() 
+
+    fig.savefig('/home/lc585/thesis/figures/chapter06/red_spectra.pdf')
+
+    plt.show() 
+
+
+    return None 
+
+def ebv_and_elscal_hist(): 
+
+    tab = Table.read('/data/lc585/QSOSED/Results/Red_Obj_Cat/RedObjCatExt_MCMC.fits')
+    
+    fig = plt.figure(figsize=(8,3))
+    
+    ax = fig.add_subplot(1,2,1)
+    ax.hist(tab['EBV_FIT'],histtype='step',color='black',bins=np.arange(0,0.5,0.05),log=True)
+    plt.tick_params(axis='both',which='major',labelsize=10)
+    ax.set_xlabel('E(B-V)',fontsize=12)
+    ax.set_ylabel('Number of Quasars')
+    plt.tight_layout()
+    
+    ax = fig.add_subplot(1,2,2)
+    ax.hist(tab['ELSCAL_FIT'],histtype='step',color='black',bins=np.arange(0,10,1),log=True)
+    ax.set_xlabel('Emission Line Scaling',fontsize=12)
+    plt.tick_params(axis='both',which='major',labelsize=10)
+    
+    plt.tight_layout()
+
+    fig.savefig('/home/lc585/thesis/figures/chapter06/ebv_and_elscal_hist.pdf')
+
+    plt.show() 
+
+    return None 
+
+def zhist_elscal():
+
+    tab = Table.read('/data/lc585/QSOSED/Results/Red_Obj_Cat/RedObjCatExt_MCMC.fits')
+       
+    fig = plt.figure(figsize=figsize(0.7))
+    ax = fig.add_subplot(1,1,1)
+    
+    npbins = np.arange(2,4.1,0.1)
+    
+    bins, edges = np.histogram( tab['Z'][ tab['ELSCAL_FIT'] < 0.01 ], bins=npbins)
+    bins_all, edges_all = np.histogram( tab['Z'], bins=npbins)
+    
+    bins = np.array(bins,dtype='float') / np.array(bins_all,dtype='float')
+    
+    left,right = edges[:-1],edges[1:]
+    
+    X = np.array([left,right]).T.flatten()
+    Y = np.array([bins,bins]).T.flatten()
+    
+    ax.plot(X,Y,color='black')
+  
+    ax.set_xlabel(r'$z$')
+    ax.set_ylabel('Fraction of weak emission line objects')
+    ax.set_xlim(2,4)
+    ax.set_ylim(0,0.7)
+    plt.tick_params(axis='both',which='major')
+
+    plt.tight_layout()
+    plt.savefig('/home/lc585/thesis/figures/chapter06/zhist_elscal.pdf') 
+    
+    plt.show() 
+
+    return None 
+
+
+def mcmc_triangle():
+
+    import pymc
+    import sys
+    sys.path.insert(0,'/home/lc585/Dropbox/IoA/QSOSED/Model/MCMC')
+    import sedfit_pymc_v2 as fit
+    from idlplot import plot,ploterror,oplot,tvhist2d,plothist
+    
+    f = '/data/lc585/QSOSED/Results/140324_MCMC_CHAINS/0019.pickle'
+    pymcMC = pymc.database.pickle.load(f) 
+    
+    keys = ['ebv','elscal','imod']
+    
+    fig = plt.figure(figsize=(9.7,6.2))
+                    
+    counter = 0
+    
+    for k1 in keys:
+        var1 = pymcMC.trace(k1)[:]
+        #chain for variable k1
+                
+        for k2 in keys:
+            var2 = pymcMC.trace(k2)[:]
+            #chain for variable k1  
+            
+            ax = fig.add_subplot(3,3,counter+1)
+
+            if k1 != k2:
+                tvhist2d(var2,var1,noerase=True,bins=[30,30])
+                
+            else:
+                 
+                plothist(var1,noerase=True,nbins=30)
+            
+                # if counter == 0:
+                #     ax.set_xlabel('E(B-V)')
+    
+                # if counter == 3:
+                #     ax.set_xlabel('E(B-V)')
+                #     ax.set_ylabel('EW Scaling')
+    
+                # if counter == 4:
+                #     ax.set_xlabel('EW Scaling')
+    
+                # if counter == 6:
+                #     ax.set_xlabel('E(B-V)')
+                #     ax.set_ylabel('Normalisation')
+    
+                # if counter == 7:
+                #     ax.set_xlabel('EW Scaling')
+                #     ax.set_ylabel('Normalisation')
+    
+                
+                # if counter == 8:
+                #     ax.set_xlabel('Normalisation')           
+            
+                 
+                # if (counter == 1) | (counter == 2) | (counter == 5): 
+                #     plt.delaxes(ax)
+                        
+            print counter              
+            counter +=1
+                    
+          
+    fig.tight_layout()
+
+    plt.show() 
+
+    return None 
+
+
+def posteriors():
+
+    import pymc
+    import sys
+    sys.path.insert(0,'/home/lc585/Dropbox/IoA/QSOSED/Model/MCMC')
+    from idlplot import plothist, tvhist2d
+
+    fig = plt.figure(figsize=(9.7,6.2))
+
+    f = '/data/lc585/QSOSED/Results/140324_MCMC_CHAINS/0019.pickle'
+    pymcMC = pymc.database.pickle.load(f) 
+
+    # plot the diagram with posterior distributions
+    keys = ['ebv','elscal','imod']
+    plt.clf() # clear plot
+    counter = 0
+    for k1 in keys:
+        var1 = pymcMC.trace(k1)[:]
+        #chain for variable k1
+        for k2 in keys:
+            var2 = pymcMC.trace(k2)[:]
+            #chain for variable k1  
+            ax = fig.add_subplot(3, 3, counter+1)
+
+            if k1!=k2:
+                tvhist2d(var2,var1,noerase=True,bins=[30,30])
+                
+            else:
+                plothist(var1,noerase=True,nbins=30)
+
+            if counter == 0:
+                ax.set_xlabel('E(B-V)')
+    
+            if counter == 3:
+                ax.set_xlabel('E(B-V)')
+                ax.set_ylabel('EW Scaling')
+    
+            if counter == 4:
+                ax.set_xlabel('EW Scaling')
+    
+            if counter == 6:
+                ax.set_xlabel('E(B-V)')
+                ax.set_ylabel('Normalisation')
+    
+            if counter == 7:
+                ax.set_xlabel('EW Scaling')
+                ax.set_ylabel('Normalisation')
+    
+            
+            if counter == 8:
+                ax.set_xlabel('Normalisation')           
+            
+            
+            if (counter == 1) | (counter == 2) | (counter == 5): 
+                plt.delaxes(ax)
+
+            counter +=1
+
+    fig.tight_layout() 
+
+    plt.savefig('/home/lc585/thesis/figures/chapter06/posteriors.pdf')
+
+    return None 
