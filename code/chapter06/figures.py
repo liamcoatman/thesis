@@ -1,12 +1,11 @@
 import matplotlib.pyplot as plt
 import numpy as np
-from astropy.table import Table
-# import running 
-from PlottingTools.plot_setup import figsize, set_plot_properties
+from astropy.table import Table, join
 import brewer2mpl
 import palettable 
 cs = palettable.colorbrewer.qualitative.Set1_9.mpl_colors
-
+from scipy import stats 
+from PlottingTools.plot_setup_thesis import figsize, set_plot_properties
 set_plot_properties() # change style 
 
 def bbt_vs_z_with_correction():
@@ -42,8 +41,7 @@ def bbt_vs_z_with_correction():
     
     plt.show() 
 
-
-
+    return None 
 
 
 def shang_sed():
@@ -602,78 +600,6 @@ def zhist_elscal():
 
     return None 
 
-
-def mcmc_triangle():
-
-    import pymc
-    import sys
-    sys.path.insert(0,'/home/lc585/Dropbox/IoA/QSOSED/Model/MCMC')
-    import sedfit_pymc_v2 as fit
-    from idlplot import plot,ploterror,oplot,tvhist2d,plothist
-    
-    f = '/data/lc585/QSOSED/Results/140324_MCMC_CHAINS/0019.pickle'
-    pymcMC = pymc.database.pickle.load(f) 
-    
-    keys = ['ebv','elscal','imod']
-    
-    fig = plt.figure(figsize=(9.7,6.2))
-                    
-    counter = 0
-    
-    for k1 in keys:
-        var1 = pymcMC.trace(k1)[:]
-        #chain for variable k1
-                
-        for k2 in keys:
-            var2 = pymcMC.trace(k2)[:]
-            #chain for variable k1  
-            
-            ax = fig.add_subplot(3,3,counter+1)
-
-            if k1 != k2:
-                tvhist2d(var2,var1,noerase=True,bins=[30,30])
-                
-            else:
-                 
-                plothist(var1,noerase=True,nbins=30)
-            
-                # if counter == 0:
-                #     ax.set_xlabel('E(B-V)')
-    
-                # if counter == 3:
-                #     ax.set_xlabel('E(B-V)')
-                #     ax.set_ylabel('EW Scaling')
-    
-                # if counter == 4:
-                #     ax.set_xlabel('EW Scaling')
-    
-                # if counter == 6:
-                #     ax.set_xlabel('E(B-V)')
-                #     ax.set_ylabel('Normalisation')
-    
-                # if counter == 7:
-                #     ax.set_xlabel('EW Scaling')
-                #     ax.set_ylabel('Normalisation')
-    
-                
-                # if counter == 8:
-                #     ax.set_xlabel('Normalisation')           
-            
-                 
-                # if (counter == 1) | (counter == 2) | (counter == 5): 
-                #     plt.delaxes(ax)
-                        
-            print counter              
-            counter +=1
-                    
-          
-    fig.tight_layout()
-
-    plt.show() 
-
-    return None 
-
-
 def posteriors():
 
     import pymc
@@ -735,5 +661,255 @@ def posteriors():
     fig.tight_layout() 
 
     plt.savefig('/home/lc585/thesis/figures/chapter06/posteriors.pdf')
+
+    return None 
+
+
+def ratio_tbb_beta(density=False):
+
+    from astropy.table import join
+
+    tab = Table.read('/data/lc585/QSOSED/Results/141203/sample1/out_add.fits')
+    
+    tab = tab[ tab['BBT_STDERR'] < 200.0 ]
+    tab = tab[ tab['BBFLXNRM_STDERR'] < 0.05]
+    tab = tab[ tab['CHI2_RED'] < 3.0]
+    
+    tab1 = Table.read('/data/lc585/QSOSED/Results/141124/sample2/out.fits') # 9000 - 23500 fit
+    tab2 = Table.read('/data/lc585/QSOSED/Results/141124/sample1/out.fits') # 10000 - 23500 fit
+    
+    tab1['BBPLSLP'] = tab1['BBPLSLP'] - 1.0
+    tab2['BBPLSLP'] = tab2['BBPLSLP'] - 1.0
+    
+    goodnames = Table()
+    goodnames['NAME'] = tab['NAME']
+    
+    tab1 = join( tab1, goodnames, join_type='right', keys='NAME')
+    tab2 = join( tab2, goodnames, join_type='right', keys='NAME')
+    
+    fig, ax = plt.subplots(figsize=figsize(1, vscale=0.8))
+
+    if not density: 
+
+        im = ax.hexbin(tab['BBT'],
+                       tab['RATIO_IR_UV'],
+                       C = tab1['BBPLSLP'],
+                       gridsize=(80,80))
+        
+        cb = plt.colorbar(im)
+        cb.set_label(r'$\beta_{\rm NIR}$')
+        
+        # Digitize beta
+        nbins = 20
+        bins = np.linspace(-1.5,1.5,nbins+1)
+        ind = np.digitize(tab1['BBPLSLP'],bins)
+        bbt_locus = [np.median(tab['BBT'][ind == j]) for j in range(1, nbins)]
+        ratio_locus = [np.median(tab['RATIO_IR_UV'][ind == j]) for j in range(1, nbins)]
+        ax.plot(bbt_locus[7:-2],ratio_locus[7:-2],color='black',linewidth=2.0)
+    
+    
+        ax.set_ylabel(r'$R_{{\rm NIR}/{\rm UV}}$')
+        ax.set_xlabel(r'$T_{\rm BB}$')
+    
+        ax.set_ylim(0,2)
+        ax.set_xlim(700,1900)
+    
+        fig.tight_layout()
+
+        fig.savefig('/home/lc585/thesis/figures/chapter06/ratio_tbb_beta.pdf')
+        
+    else:
+
+        from matplotlib import cm
+        from PlottingTools.truncate_colormap import truncate_colormap
+        mycm = cm.get_cmap('YlOrRd_r')
+        mycm.set_under('w')
+        cset = brewer2mpl.get_map('YlOrRd', 'sequential', 9).mpl_colors
+        mycm = truncate_colormap(mycm, 0.0, 0.8)
+
+        im = ax.hexbin(tab['BBT'],
+                       tab['RATIO_IR_UV'],
+                       gridsize=(80,80),
+                       cmap = mycm,
+                       mincnt=1)
+        
+        
+        cb = plt.colorbar(im)
+        cb.set_label(r'Number of Objects')
+        
+        ax.set_ylabel(r'$R_{{\rm NIR}/{\rm UV}}$')
+        ax.set_xlabel(r'$T_{\rm BB}$')
+    
+        ax.set_ylim(0,2)
+        ax.set_xlim(700,1900)
+    
+        fig.tight_layout()
+
+        fig.savefig('/home/lc585/thesis/figures/chapter06/ratio_tbb_beta_density.pdf')
+
+    plt.show() 
+
+    return None 
+
+
+
+
+def ratio_tbb_contours(): 
+
+
+    tab = Table.read('/data/lc585/QSOSED/Results/150309/sample4/out_add.fits')
+    
+    tab = tab[ ~np.isnan(tab['BBT_STDERR'])]
+    tab = tab[ tab['BBT_STDERR'] < 500. ]
+    tab = tab[ tab['BBT_STDERR'] > 5.0 ]
+    tab = tab[ (tab['LUM_IR_SIGMA']*tab['RATIO_IR_UV']) < 1.]
+    
+    tab = tab[ (tab['RATIO_IR_UV'] < 2.0) & (tab['RATIO_IR_UV'] > 0.0)]
+    tab = tab[ (tab['BBT'] > 600.0) & (tab['BBT'] < 2000.0)]
+    
+    m1, m2 = tab['BBT'], tab['RATIO_IR_UV']
+    
+    xmin = m1.min()
+    xmax = m1.max()
+    ymin = m2.min()
+    ymax = m2.max()
+    
+    X, Y = np.mgrid[xmin:xmax:100j, ymin:ymax:100j]
+    positions = np.vstack([X.ravel(), Y.ravel()])
+    values = np.vstack([m1, m2])
+    kernel = stats.gaussian_kde(values)
+    Z = np.reshape(kernel(positions).T, X.shape)
+    
+    # Sample from single (T,Norm) with gaussian errors on photometry. 
+    # Mock magnitude file made in model.py and then fit in runsingleobjfit.py.
+    
+    tab2 = Table.read('/data/lc585/QSOSED/Results/150309/sample5/out_add.fits')
+    
+    fig, ax = plt.subplots(figsize=figsize(1.0))
+    
+    CS = ax.contour(X,Y,Z, colors='grey', levels=[0.0015,0.003,0.0045,0.006,0.0075,0.009,0.0105])
+    
+    ax.scatter(tab2['BBT'],
+               tab2['RATIO_IR_UV'],
+               edgecolor='None',
+               color='black', 
+               s=8)
+    
+    ax.set_ylim(0,0.8)
+    ax.set_xlim(600,2000)
+    
+    ax.set_xlabel(r'$T_{BB}$')
+    ax.set_ylabel('$R_{NIR/UV}$')
+
+    fig.tight_layout() 
+
+    fig.savefig('/home/lc585/thesis/figures/chapter06/ratio_tbb_contours.pdf')
+    
+    plt.show() 
+
+    return None 
+
+
+def civ_hot_dust_beta():
+
+    tab = Table.read('/data/lc585/QSOSED/Results/140905/fit2/out_add.fits')
+    
+    
+    tab = tab[ tab['W3SNR'] > 3.0]
+    
+    tab = tab[ tab['BAL_FLAG'] == 0]
+    tab = tab[ tab['CIV_BLUESHIFT_PAUL'] < 10000.0]
+    tab = tab[ ~np.isnan(tab['CIV_EW_PAUL'])]
+    tab = tab[ tab['CIV_EW_PAUL'] > 10**1.2]
+    
+    
+    xdat = tab['CIV_BLUESHIFT_PAUL']
+    ydat = np.log10(tab['CIV_EW_PAUL'])
+    C = tab['BBPLSLP']
+    
+    fig, ax = plt.subplots(figsize=figsize(1, vscale=0.9))
+    
+    from LiamUtils import colormaps as cmaps
+    plt.register_cmap(name='inferno_r', cmap=cmaps.inferno_r)
+    plt.set_cmap(cmaps.inferno_r)
+
+    im = plt.hexbin(xdat,
+                    ydat,
+                    C=C,
+                    gridsize=(50, 15),
+                    mincnt=3,
+                    reduce_C_function=np.median,
+                    vmin=0.1,
+                    vmax=0.7,
+                    cmap='RdBu_r',
+                    edgecolor='black',
+                    linewidth=0.5)
+    
+    cb = fig.colorbar(im,ax=ax)
+    cb.set_label(r'Hot Dust Abundance')
+    cb.set_ticks(np.linspace(0.1, 0.7, 5))
+    cb.set_ticklabels(np.linspace(0, 1, 5))
+
+    ax.set_xlabel(r'C\,{\sc iv} Blueshift [km~$\rm{s}^{-1}$]')
+    ax.set_ylabel(r'Log C\,{\sc iv} EQW [\AA]')
+    
+    plt.xlim(-1000,4000)
+    plt.ylim(1, 2.2)
+    plt.tick_params(axis='both',which='major')
+    plt.tight_layout()
+
+    fig.savefig('/home/lc585/thesis/figures/chapter06/hot_dust_beta.pdf')
+    plt.show()
+
+    return None 
+
+def civ_hot_dust_ratio():
+
+    tab = Table.read('/data/lc585/QSOSED/Results/150211/sample2/out_add.fits')
+    
+    tab = tab[ ~np.isnan(tab['BBT_STDERR'])]
+    tab = tab[ tab['BBT_STDERR'] < 500. ]
+    tab = tab[ tab['BBT_STDERR'] > 5.0 ]
+    tab = tab[ (tab['LUM_IR_SIGMA']*tab['RATIO_IR_UV']) < 0.4] 
+    
+    civtab = Table.read('/data/lc585/QSOSED/Results/140827/civtab.fits')
+    
+    newtab = Table()
+        
+    newtab['NAME'] = civtab['NAME']
+    newtab['CIV_BLUESHIFT_PAUL'] = civtab['BLUESHIFT']
+    newtab['CIV_EW_PAUL'] = civtab['EW']
+    
+    tab = join( tab, newtab, keys='NAME', join_type= 'left')
+    
+    xdat = tab['CIV_BLUESHIFT_PAUL']
+    ydat = np.log10(tab['CIV_EW_PAUL'])
+    C = tab['RATIO_IR_UV']
+    
+    fig, ax = plt.subplots(figsize=figsize(1, vscale=0.9))
+
+    im = ax.hexbin(xdat,
+                   ydat,
+                   C=C,
+                   gridsize=(55,35),
+                   mincnt=2,
+                   reduce_C_function=np.median,
+                   cmap='jet',
+                   vmax=1.2,
+                   vmin=0.4)
+    
+    cb = fig.colorbar(im,ax=ax)
+    cb.set_label(r'$R_{NIR/UV}$')
+    
+    ax.set_xlabel(r'C$\,$IV Blueshift (km/s)')
+    ax.set_ylabel(r'Log$_{10}$(C$\,$IV REW ($\AA$))')
+    
+    ax.set_xlim(-500,3000)
+    ax.set_ylim(1.1,1.9)
+    
+    fig.tight_layout()
+
+    fig.savefig('/home/lc585/thesis/figures/chapter06/hot_dust_ratio.pdf')
+    plt.show()
 
     return None 

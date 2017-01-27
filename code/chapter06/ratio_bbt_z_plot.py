@@ -1,6 +1,30 @@
+from astropy.table import Table, join
+import matplotlib.pyplot as plt
+import numpy as np
+import brewer2mpl
+from matplotlib import cm
+import matplotlib.gridspec as gridspec
+from scipy import histogram2d
+from PlottingTools.truncate_colormap import truncate_colormap
+from PlottingTools import running 
+from PlottingTools.plot_setup import figsize, set_plot_properties
+
 def plot():  
 
-    fig = plt.figure(figsize=(8,12))
+    set_plot_properties() # change style 
+
+    tab = Table.read('/data/lc585/QSOSED/Results/141203/sample1/out_add.fits')
+    tab = tab[ tab['BBT_STDERR'] < 200.0 ]
+    tab = tab[ tab['BBFLXNRM_STDERR'] < 0.05]
+    tab = tab[ tab['CHI2_RED'] < 3.0]
+    tab = tab[ tab['LUM_IR'] > 40.0] # just gets rid of one annoying point
+
+    mycm = cm.get_cmap('YlOrRd_r')
+    mycm.set_under('w')
+    cset = brewer2mpl.get_map('YlOrRd', 'sequential', 9).mpl_colors
+    mycm = truncate_colormap(mycm, 0.0, 0.8)
+
+    fig = plt.figure(figsize=figsize(0.8, 1.8))
     
     gs = gridspec.GridSpec(9, 5)
     
@@ -44,12 +68,8 @@ def plot():
     ax1.scatter(xdat1, ydat1,color=cset[-1])
     
     
-    ax1.set_ylabel(r'$R_{{\rm NIR}/{\rm UV}}$',fontsize=14)
-    
-    for tick in ax1.xaxis.get_major_ticks():
-        tick.label.set_fontsize(10) 
-    for tick in ax1.yaxis.get_major_ticks():
-        tick.label.set_fontsize(10) 
+    ax1.set_ylabel(r'$R_{{\rm NIR}/{\rm UV}}$')
+
     ax1.set_ylim(0.,2.0)
     ax1.set_xlim(1,1.5)
     tabtmp = tab
@@ -102,15 +122,11 @@ def plot():
     
     axcb = fig.add_axes([0.13,0.05,0.6,0.02]) 
     clb = fig.colorbar(im, cax=axcb,orientation='horizontal') 
-    clb.set_label('Number of Objects',fontsize=14)
+    clb.set_label('Number of Objects')
     
-    ax2.set_xlabel(r'Redshift $z$',fontsize=14)
-    ax2.set_ylabel(r'$T_{\mathrm{BB}}$',fontsize=14)
-    
-    for tick in ax2.xaxis.get_major_ticks():
-        tick.label.set_fontsize(10) 
-    for tick in ax2.yaxis.get_major_ticks():
-        tick.label.set_fontsize(10) 
+    ax2.set_xlabel(r'Redshift $z$')
+    ax2.set_ylabel(r'$T_{\mathrm{BB}}$')
+
     ax2.set_ylim(500,1900)
     ax2.set_xlim(1,1.5)
     tabtmp = tab
@@ -125,7 +141,8 @@ def plot():
     ax5.hist(tab['BBT'], orientation='horizontal',color=cset[-1],bins=20)
     ax5.set_ylim(ax2.get_ylim())
     ax5.set_axis_off()
-    
-    plt.tick_params(axis='both',which='major',labelsize=10)
 
+    fig.savefig('/home/lc585/thesis/figures/chapter06/ratio_bbt_z.pdf')
+    plt.show() 
+    
     return None 
