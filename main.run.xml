@@ -41,14 +41,16 @@
   >
 ]>
 <requests version="1.0">
-  <internal package="biblatex" priority="9" active="0">
+  <internal package="biblatex" priority="9" active="1">
     <generic>latex</generic>
     <provides type="dynamic">
       <file>main.aux</file>
+      <file>main1-blx.aux</file>
       <file>main-blx.bib</file>
     </provides>
     <requires type="dynamic">
       <file>main.bbl</file>
+      <file>main1-blx.bbl</file>
     </requires>
     <requires type="static">
       <file>blx-compat.def</file>
@@ -60,9 +62,11 @@
       <file>biblatex.cfg</file>
       <file>american.lbx</file>
       <file>english.lbx</file>
+      <file>ngerman.lbx</file>
+      <file>german.lbx</file>
     </requires>
   </internal>
-  <external package="biblatex" priority="5" active="0">
+  <external package="biblatex" priority="5" active="1">
     <generic>bibtex</generic>
     <cmdline>
       <binary>bibtex8</binary>
@@ -85,6 +89,34 @@
     </requires>
     <requires type="editable">
       <file>Bibliography.bib</file>
+    </requires>
+    <requires type="static">
+      <file>biblatex.bst</file>
+    </requires>
+  </external>
+  <external package="biblatex" priority="5" active="1">
+    <generic>bibtex</generic>
+    <cmdline>
+      <binary>bibtex8</binary>
+      <option>--wolfgang</option>
+      <option>--min_crossrefs 2</option>
+      <infile>main1-blx</infile>
+    </cmdline>
+    <input>
+      <file>main1-blx.aux</file>
+    </input>
+    <output>
+      <file>main1-blx.bbl</file>
+    </output>
+    <provides type="dynamic">
+      <file>main1-blx.bbl</file>
+    </provides>
+    <requires type="dynamic">
+      <file>main1-blx.aux</file>
+      <file>main-blx.bib</file>
+    </requires>
+    <requires type="editable">
+      <file>ownpubs.bib</file>
     </requires>
     <requires type="static">
       <file>biblatex.bst</file>
