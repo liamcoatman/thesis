@@ -466,6 +466,35 @@
   \field{year}{2011}
 \endentry
 
+\entry{boroson92}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {{Boroson}}{B.}%
+     {T.~A.}{T.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Green}}{G.}%
+     {R.~F.}{R.~F.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Emission Spectra, Line Spectra, Quasars, Seyfert Galaxies, Astronomical
+  Spectroscopy, Computational Astrophysics, Principal Components Analysis, Red
+  Shift, Sky Surveys (Astronomy)}
+  \strng{namehash}{BTAGRF1}
+  \strng{fullhash}{BTAGRF1}
+  \field{labelyear}{1992}
+  \field{sortinit}{B}
+  \field{pages}{109\bibrangedash 135}
+  \field{title}{{The emission-line properties of low-redshift quasi-stellar
+  objects}}
+  \field{volume}{80}
+  \field{journaltitle}{\apjs}
+  \field{month}{05}
+  \field{year}{1992}
+\endentry
+
 \entry{bowler14}{article}{}
   \name{author}{4}{}{%
     {{}%
@@ -1425,6 +1454,40 @@
   \field{year}{2003}
 \endentry
 
+\entry{elitzur06}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {{Elitzur}}{E.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Shlosman}}{S.}%
+     {I.}{I.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Galaxies: Active, Galaxies: Nuclei, Galaxies: Seyfert, Infrared:
+  Galaxies, Galaxies: Quasars: General}
+  \strng{namehash}{EMSI1}
+  \strng{fullhash}{EMSI1}
+  \field{labelyear}{2006}
+  \field{sortinit}{E}
+  \verb{doi}
+  \verb 10.1086/508158
+  \endverb
+  \verb{eprint}
+  \verb astro-ph/0605686
+  \endverb
+  \field{pages}{L101\bibrangedash L104}
+  \field{title}{{The AGN-obscuring Torus: The End of the ``Doughnut''
+  Paradigm?}}
+  \field{volume}{648}
+  \field{journaltitle}{\apjl}
+  \field{month}{09}
+  \field{year}{2006}
+\endentry
+
 \entry{elvis94}{article}{}
   \name{author}{9}{}{%
     {{}%
@@ -1726,6 +1789,29 @@
   \field{eprintclass}{astro-ph.CO}
   \field{month}{11}
   \field{year}{2012}
+\endentry
+
+\entry{everett05}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {{Everett}}{E.}%
+     {J.~E.}{J.~E.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Galaxies: Active, Galaxies: Jets, Hydrodynamics, Magnetohydrodynamics:
+  MHD, Galaxies: Quasars: General, Radiative Transfer}
+  \strng{namehash}{EJE1}
+  \strng{fullhash}{EJE1}
+  \field{labelyear}{2005}
+  \field{sortinit}{E}
+  \field{pages}{689\bibrangedash 706}
+  \field{title}{{Radiative Transfer and Acceleration in Magnetocentrifugal
+  Winds}}
+  \field{volume}{631}
+  \field{journaltitle}{\apj}
+  \field{month}{10}
+  \field{year}{2005}
 \endentry
 
 \entry{fabian12}{article}{}
@@ -2711,6 +2797,52 @@
   \field{year}{2000}
 \endentry
 
+\entry{keating12}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {{Keating}}{K.}%
+     {S.~K.}{S.~K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Everett}}{E.}%
+     {J.~E.}{J.~E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Gallagher}}{G.}%
+     {S.~C.}{S.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Deo}}{D.}%
+     {R.~P.}{R.~P.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{galaxies: active, galaxies: Seyfert, hydrodynamics, infrared: general,
+  magnetohydrodynamics: MHD, quasars: general, radiative transfer}
+  \strng{namehash}{KSK+1}
+  \strng{fullhash}{KSKEJEGSCDRP1}
+  \field{labelyear}{2012}
+  \field{sortinit}{K}
+  \verb{doi}
+  \verb 10.1088/0004-637X/749/1/32
+  \endverb
+  \field{eid}{32}
+  \verb{eprint}
+  \verb 1202.4681
+  \endverb
+  \field{pages}{32}
+  \field{title}{{Sweeping Away the Mysteries of Dusty Continuous Winds in
+  Active Galactic Nuclei}}
+  \field{volume}{749}
+  \field{journaltitle}{\apj}
+  \field{eprinttype}{arXiv}
+  \field{month}{04}
+  \field{year}{2012}
+\endentry
+
 \entry{king15}{article}{}
   \name{author}{2}{}{%
     {{}%
@@ -2817,6 +2949,37 @@
   \field{journaltitle}{\apj}
   \field{month}{09}
   \field{year}{2006}
+\endentry
+
+\entry{konigl94}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {{Konigl}}{K.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Kartje}}{K.}%
+     {J.~F.}{J.~F.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Accretion Disks, Active Galactic Nuclei, Astronomical Models, Bl
+  Lacertae Objects, Computerized Simulation, Jet Flow, Magnetohydrodynamic
+  Flow, Quasars, Seyfert Galaxies, Stellar Winds, Cosmic Dust, Infrared
+  Spectra, Photoionization, Radiative Transfer, Radio Emission, Ultraviolet
+  Spectra, X Ray Spectra}
+  \strng{namehash}{KAKJF1}
+  \strng{fullhash}{KAKJF1}
+  \field{labelyear}{1994}
+  \field{sortinit}{K}
+  \field{pages}{446\bibrangedash 467}
+  \field{title}{{Disk-driven hydromagnetic winds as a key ingredient of active
+  galactic nuclei unification schemes}}
+  \field{volume}{434}
+  \field{journaltitle}{\apj}
+  \field{month}{10}
+  \field{year}{1994}
 \endentry
 
 \entry{kormendy13}{article}{}
@@ -5082,6 +5245,68 @@
   \field{journaltitle}{\aj}
   \field{month}{06}
   \field{year}{2006}
+\endentry
+
+\entry{richards11}{article}{}
+  \name{author}{9}{}{%
+    {{}%
+     {{Richards}}{R.}%
+     {G.~T.}{G.~T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Kruczek}}{K.}%
+     {N.~E.}{N.~E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Gallagher}}{G.}%
+     {S.~C.}{S.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hall}}{H.}%
+     {P.~B.}{P.~B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hewett}}{H.}%
+     {P.~C.}{P.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Leighly}}{L.}%
+     {K.~M.}{K.~M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Deo}}{D.}%
+     {R.~P.}{R.~P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Kratzer}}{K.}%
+     {R.~M.}{R.~M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Shen}}{S.}%
+     {Y.}{Y.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{line: profiles, quasars: absorption lines, quasars: emission lines,
+  quasars: general, radio continuum: galaxies}
+  \strng{namehash}{RGT+1}
+  \strng{fullhash}{RGTKNEGSCHPBHPCLKMDRPKRMSY1}
+  \field{labelyear}{2011}
+  \field{sortinit}{R}
+  \field{pages}{167}
+  \field{title}{{Unification of Luminous Type 1 Quasars through CIV Emission}}
+  \field{volume}{141}
+  \field{journaltitle}{\aj}
+  \field{month}{05}
+  \field{year}{2011}
 \endentry
 
 \entry{risaliti04}{inproceedings}{}
