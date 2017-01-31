@@ -4,6 +4,8 @@ import numpy as np
 import matplotlib.pyplot as plt 
 from scipy import stats 
 from PlottingTools.kde_contours import kde_contours
+import palettable 
+cs = palettable.colorbrewer.qualitative.Set1_9.mpl_colors
 
 def plot():
 
@@ -26,17 +28,17 @@ def plot():
     tab2 = tab2[ tab2['BBT_STDERR'] > 5.0 ]
     tab2 = tab2[ (tab2['LUM_IR_SIGMA']*tab2['RATIO_IR_UV']) < 0.4]
     
-    kde_contours(tab1['LUM_UV'], tab1['RATIO_IR_UV'], axs[0, 0])
-    kde_contours(tab2['LUM_UV'], tab2['RATIO_IR_UV'], axs[0, 0], color='red')
-    kde_contours(tab1['LOGBH'], tab1['RATIO_IR_UV'], axs[0, 1])
-    kde_contours(tab2['LOGBH'], tab2['RATIO_IR_UV'], axs[0, 1], color='red')
+    kde_contours(tab1['LUM_UV'], tab1['RATIO_IR_UV'], axs[0, 0], color=cs[-1])
+    kde_contours(tab2['LUM_UV'], tab2['RATIO_IR_UV'], axs[0, 0], color=cs[1])
+    kde_contours(tab1['LOGBH'], tab1['RATIO_IR_UV'], axs[0, 1], color=cs[-1])
+    kde_contours(tab2['LOGBH'], tab2['RATIO_IR_UV'], axs[0, 1], color=cs[1])
     kde_contours(tab1['LOGEDD_RATIO'][ tab1['LOGEDD_RATIO'] > -2.0] , 
                  tab1['RATIO_IR_UV'][ tab1['LOGEDD_RATIO'] > -2.0], 
-                 axs[0, 2])
+                 axs[0, 2], color=cs[-1])
     kde_contours(tab2['LOGEDD_RATIO'][ tab2['LOGEDD_RATIO'] > -2.0], 
                  tab2['RATIO_IR_UV'][ tab2['LOGEDD_RATIO'] > -2.0],
                  axs[0, 2],
-                 color='red')
+                 color=cs[1])
 
 
     tab1 = Table.read('/data/lc585/QSOSED/Results/141209/sample1/out_add.fits')
@@ -53,17 +55,17 @@ def plot():
     tab2 = tab2[ tab2['BBT_STDERR'] > 5.0 ]
     tab2 = tab2[ (tab2['LUM_IR_SIGMA']*tab2['RATIO_IR_UV']) < 0.4]
 
-    kde_contours(tab1['LUM_UV'], tab1['BBT'], axs[1, 0])
-    kde_contours(tab2['LUM_UV'], tab2['BBT'], axs[1, 0], color='red')
-    kde_contours(tab1['LOGBH'], tab1['BBT'], axs[1, 1])
-    kde_contours(tab2['LOGBH'], tab2['BBT'], axs[1, 1], color='red')
+    kde_contours(tab1['LUM_UV'], tab1['BBT'], axs[1, 0], color=cs[-1])
+    kde_contours(tab2['LUM_UV'], tab2['BBT'], axs[1, 0], color=cs[1])
+    kde_contours(tab1['LOGBH'], tab1['BBT'], axs[1, 1], color=cs[-1])
+    kde_contours(tab2['LOGBH'], tab2['BBT'], axs[1, 1], color=cs[1])
     kde_contours(tab1['LOGEDD_RATIO'][ tab1['LOGEDD_RATIO'] > -2.0] , 
                  tab1['BBT'][ tab1['LOGEDD_RATIO'] > -2.0], 
-                 axs[1, 2])
+                 axs[1, 2], color=cs[-1])
     kde_contours(tab2['LOGEDD_RATIO'][ tab2['LOGEDD_RATIO'] > -2.0], 
                  tab2['BBT'][ tab2['LOGEDD_RATIO'] > -2.0],
                  axs[1, 2],
-                 color='red')
+                 color=cs[1])
 
     axs[0, 0].set_xlim(45, 47)
     axs[0, 1].set_xlim(8, 10.5)

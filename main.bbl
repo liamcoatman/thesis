@@ -16,6 +16,169 @@
   {}
 \endgroup
 
+\entry{antonucci93}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {{Antonucci}}{A.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Active Galactic Nuclei, Astronomical Polarimetry, Quasars, Radio
+  Galaxies, Astronomical Spectroscopy, Bl Lacertae Objects, Blazars}
+  \strng{namehash}{AR1}
+  \strng{fullhash}{AR1}
+  \field{labelyear}{1993}
+  \field{sortinit}{A}
+  \verb{doi}
+  \verb 10.1146/annurev.aa.31.090193.002353
+  \endverb
+  \field{pages}{473\bibrangedash 521}
+  \field{title}{{Unified models for active galactic nuclei and quasars}}
+  \field{volume}{31}
+  \field{journaltitle}{\araa}
+  \field{year}{1993}
+\endentry
+
+\entry{banerji12}{article}{}
+  \name{author}{7}{}{%
+    {{}%
+     {{Banerji}}{B.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{McMahon}}{M.}%
+     {R.~G.}{R.~G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hewett}}{H.}%
+     {P.~C.}{P.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Alaghband-Zadeh}}{A.}%
+     {S.}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Gonzalez-Solares}}{G.}%
+     {E.}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Venemans}}{V.}%
+     {B.~P.}{B.~P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hawthorn}}{H.}%
+     {M.~J.}{M.~J.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{galaxies: active, quasars: emission lines, quasars: general, quasars:
+  individual}
+  \strng{namehash}{BM+1}
+  \strng{fullhash}{BMMRGHPCASGEVBPHMJ1}
+  \field{labelyear}{2012}
+  \field{sortinit}{B}
+  \verb{doi}
+  \verb 10.1111/j.1365-2966.2012.22099.x
+  \endverb
+  \verb{eprint}
+  \verb 1203.5530
+  \endverb
+  \field{pages}{2275\bibrangedash 2291}
+  \field{title}{{Heavily reddened quasars at $z\sim2$ in the UKIDSS Large Area
+  Survey: a transitional phase in AGN evolution}}
+  \field{volume}{427}
+  \field{journaltitle}{\mnras}
+  \field{eprinttype}{arXiv}
+  \field{eprintclass}{astro-ph.CO}
+  \field{month}{12}
+  \field{year}{2012}
+\endentry
+
+\entry{banerji13}{article}{}
+  \name{author}{5}{}{%
+    {{}%
+     {{Banerji}}{B.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{McMahon}}{M.}%
+     {R.~G.}{R.~G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hewett}}{H.}%
+     {P.~C.}{P.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Gonzalez-Solares}}{G.}%
+     {E.}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Koposov}}{K.}%
+     {S.~E.}{S.~E.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{galaxies: active, quasars: emission lines, quasars: general, quasars:
+  individual}
+  \strng{namehash}{BM+1}
+  \strng{fullhash}{BMMRGHPCGEKSE1}
+  \field{labelyear}{2013}
+  \field{sortinit}{B}
+  \verb{doi}
+  \verb 10.1093/mnrasl/sls023
+  \endverb
+  \verb{eprint}
+  \verb 1210.6668
+  \endverb
+  \field{pages}{L55\bibrangedash L59}
+  \field{title}{{Hyperluminous reddened broad-line quasars at $z\sim2$ from the
+  VISTA Hemisphere Survey and WISE all-sky survey}}
+  \field{volume}{429}
+  \field{journaltitle}{\mnras}
+  \field{eprinttype}{arXiv}
+  \field{eprintclass}{astro-ph.CO}
+  \field{month}{02}
+  \field{year}{2013}
+\endentry
+
+\entry{barvainis92}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {{Barvainis}}{B.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Active Galactic Nuclei, Cosmic Dust, Infrared Radiation, Interstellar
+  Extinction, Light Curve, Quasars, Accretion Disks, Emission Spectra,
+  Ultraviolet Astronomy}
+  \strng{namehash}{BR1}
+  \strng{fullhash}{BR1}
+  \field{labelyear}{1992}
+  \field{sortinit}{B}
+  \verb{doi}
+  \verb 10.1086/172012
+  \endverb
+  \field{pages}{502\bibrangedash 509}
+  \field{title}{{Dust reverberation - A model for the infrared variations of
+  Fairall 9}}
+  \field{volume}{400}
+  \field{journaltitle}{\apj}
+  \field{month}{12}
+  \field{year}{1992}
+\endentry
+
 \entry{becker13}{article}{}
   \name{author}{4}{}{%
     {{}%
@@ -95,6 +258,708 @@
   \field{journaltitle}{\apj}
   \field{month}{09}
   \field{year}{1995}
+\endentry
+
+\entry{bentz09}{article}{}
+  \name{author}{27}{}{%
+    {{}%
+     {{Bentz}}{B.}%
+     {M.~C.}{M.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Walsh}}{W.}%
+     {J.~L.}{J.~L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Barth}}{B.}%
+     {A.~J.}{A.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Baliber}}{B.}%
+     {N.}{N.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Bennert}}{B.}%
+     {V.~N.}{V.~N.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Canalizo}}{C.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Filippenko}}{F.}%
+     {A.~V.}{A.~V.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Ganeshalingam}}{G.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Gates}}{G.}%
+     {E.~L.}{E.~L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Greene}}{G.}%
+     {J.~E.}{J.~E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hidas}}{H.}%
+     {M.~G.}{M.~G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hiner}}{H.}%
+     {K.~D.}{K.~D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Lee}}{L.}%
+     {N.}{N.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Li}}{L.}%
+     {W.}{W.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Malkan}}{M.}%
+     {M.~A.}{M.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Minezaki}}{M.}%
+     {T.}{T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Sakata}}{S.}%
+     {Y.}{Y.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Serduke}}{S.}%
+     {F.~J.~D.}{F.~J.~D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Silverman}}{S.}%
+     {J.~M.}{J.~M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Steele}}{S.}%
+     {T.~N.}{T.~N.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Stern}}{S.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Street}}{S.}%
+     {R.~A.}{R.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Thornton}}{T.}%
+     {C.~E.}{C.~E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Treu}}{T.}%
+     {T.}{T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Wang}}{W.}%
+     {X.}{X.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Woo}}{W.}%
+     {J.-H.}{J.-H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Yoshii}}{Y.}%
+     {Y.}{Y.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{galaxies: active, galaxies: nuclei, galaxies: Seyfert}
+  \strng{namehash}{BMC+1}
+  \strng{fullhash}{BMCWJLBAJBNBVNCGFAVGMGELGJEHMGHKDLNLWMMAMTSYSFJDSJMSTNSDSRATCETTWXWJHYY1}
+  \field{labelyear}{2009}
+  \field{sortinit}{B}
+  \verb{doi}
+  \verb 10.1088/0004-637X/705/1/199
+  \endverb
+  \verb{eprint}
+  \verb 0908.0003
+  \endverb
+  \field{pages}{199\bibrangedash 217}
+  \field{title}{{The Lick AGN Monitoring Project: Broad-line Region Radii and
+  Black Hole Masses from Reverberation Mapping of H{$\beta$}}}
+  \field{volume}{705}
+  \field{journaltitle}{\apj}
+  \field{eprinttype}{arXiv}
+  \field{month}{11}
+  \field{year}{2009}
+\endentry
+
+\entry{blecha11}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {{Blecha}}{B.}%
+     {L.}{L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Cox}}{C.}%
+     {T.~J.}{T.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Loeb}}{L.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hernquist}}{H.}%
+     {L.}{L.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{accretion, accretion discs, black hole physics, gravitational waves,
+  galaxies: active, galaxies: evolution, galaxies: kinematics and dynamics}
+  \strng{namehash}{BL+1}
+  \strng{fullhash}{BLCTJLAHL1}
+  \field{labelyear}{2011}
+  \field{sortinit}{B}
+  \verb{doi}
+  \verb 10.1111/j.1365-2966.2010.18042.x
+  \endverb
+  \verb{eprint}
+  \verb 1009.4940
+  \endverb
+  \field{pages}{2154\bibrangedash 2182}
+  \field{title}{{Recoiling black holes in merging galaxies: relationship to
+  active galactic nucleus lifetimes, starbursts and the
+  M$_{BH}$-{$\sigma$}$_{*}$ relation}}
+  \field{volume}{412}
+  \field{journaltitle}{\mnras}
+  \field{eprinttype}{arXiv}
+  \field{eprintclass}{astro-ph.CO}
+  \field{month}{04}
+  \field{year}{2011}
+\endentry
+
+\entry{bowler14}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {{Bowler}}{B.}%
+     {R.~A.~A.}{R.~A.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hewett}}{H.}%
+     {P.~C.}{P.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Allen}}{A.}%
+     {J.~T.}{J.~T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Ferland}}{F.}%
+     {G.~J.}{G.~J.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{galaxies: active, quasars: absorption lines}
+  \strng{namehash}{BRAA+1}
+  \strng{fullhash}{BRAAHPCAJTFGJ1}
+  \field{labelyear}{2014}
+  \field{sortinit}{B}
+  \verb{doi}
+  \verb 10.1093/mnras/stu1730
+  \endverb
+  \verb{eprint}
+  \verb 1408.5808
+  \endverb
+  \field{pages}{359\bibrangedash 377}
+  \field{title}{{Line-driven radiative outflows in luminous quasars}}
+  \field{volume}{445}
+  \field{journaltitle}{\mnras}
+  \field{eprinttype}{arXiv}
+  \field{month}{11}
+  \field{year}{2014}
+\endentry
+
+\entry{boyle98}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {{Boyle}}{B.}%
+     {B.~J.}{B.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Terlevich}}{T.}%
+     {R.~J.}{R.~J.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Cosmology, Quasars, Luminous Intensity, Star Formation, Active
+  Galaxies, Starburst Galaxies, Statistical Analysis, Red Shift}
+  \strng{namehash}{BBJTRJ1}
+  \strng{fullhash}{BBJTRJ1}
+  \field{labelyear}{1998}
+  \field{sortinit}{B}
+  \field{pages}{L49\bibrangedash L51}
+  \field{title}{{The cosmological evolution of the QSO luminosity density and
+  of the star formation rate}}
+  \field{volume}{293}
+  \field{journaltitle}{\mnras}
+  \field{month}{01}
+  \field{year}{1998}
+\endentry
+
+\entry{brandt05}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {{Brandt}}{B.}%
+     {W.~N.}{W.~N.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hasinger}}{H.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{BWNHG1}
+  \strng{fullhash}{BWNHG1}
+  \field{labelyear}{2005}
+  \field{sortinit}{B}
+  \field{pages}{827\bibrangedash 859}
+  \field{title}{{Deep Extragalactic X-Ray Surveys}}
+  \field{volume}{43}
+  \field{journaltitle}{\araa}
+  \field{month}{09}
+  \field{year}{2005}
+\endentry
+
+\entry{brotherton15}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {{Brotherton}}{B.}%
+     {M.~S.}{M.~S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Runnoe}}{R.}%
+     {J.~C.}{J.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Shang}}{S.}%
+     {Z.}{Z.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{DiPompeo}}{D.}%
+     {M.~A.}{M.~A.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{accretion, accretion discs, black hole physics, galaxies: active,
+  quasars: emission lines, quasars: general, quasars: supermassive black holes}
+  \strng{namehash}{BMS+1}
+  \strng{fullhash}{BMSRJCSZDMA1}
+  \field{labelyear}{2015}
+  \field{sortinit}{B}
+  \field{pages}{1290\bibrangedash 1298}
+  \field{title}{{Bias in C IV-based quasar black hole mass scaling
+  relationships from reverberation mapped samples}}
+  \field{volume}{451}
+  \field{journaltitle}{\mnras}
+  \field{month}{08}
+  \field{year}{2015}
+\endentry
+
+\entry{brusa10}{article}{}
+  \name{author}{67}{}{%
+    {{}%
+     {{Brusa}}{B.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Civano}}{C.}%
+     {F.}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Comastri}}{C.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Miyaji}}{M.}%
+     {T.}{T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Salvato}}{S.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Zamorani}}{Z.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Cappelluti}}{C.}%
+     {N.}{N.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Fiore}}{F.}%
+     {F.}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hasinger}}{H.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Mainieri}}{M.}%
+     {V.}{V.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Merloni}}{M.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Bongiorno}}{B.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Capak}}{C.}%
+     {P.}{P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Elvis}}{E.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Gilli}}{G.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hao}}{H.}%
+     {H.}{H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Jahnke}}{J.}%
+     {K.}{K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Koekemoer}}{K.}%
+     {A.~M.}{A.~M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Ilbert}}{I.}%
+     {O.}{O.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Le Floc'h}}{L.}%
+     {E.}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Lusso}}{L.}%
+     {E.}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Mignoli}}{M.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Schinnerer}}{S.}%
+     {E.}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Silverman}}{S.}%
+     {J.~D.}{J.~D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Treister}}{T.}%
+     {E.}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Trump}}{T.}%
+     {J.~D.}{J.~D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Vignali}}{V.}%
+     {C.}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Zamojski}}{Z.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Aldcroft}}{A.}%
+     {T.}{T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Aussel}}{A.}%
+     {H.}{H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Bardelli}}{B.}%
+     {S.}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Bolzonella}}{B.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Cappi}}{C.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Caputi}}{C.}%
+     {K.}{K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Contini}}{C.}%
+     {T.}{T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Finoguenov}}{F.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Fruscione}}{F.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Garilli}}{G.}%
+     {B.}{B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Impey}}{I.}%
+     {C.~D.}{C.~D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Iovino}}{I.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Iwasawa}}{I.}%
+     {K.}{K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Kampczyk}}{K.}%
+     {P.}{P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Kartaltepe}}{K.}%
+     {J.}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Kneib}}{K.}%
+     {J.~P.}{J.~P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Knobel}}{K.}%
+     {C.}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Kovac}}{K.}%
+     {K.}{K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Lamareille}}{L.}%
+     {F.}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Leborgne}}{L.}%
+     {J.-F.}{J.-F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Le Brun}}{L.}%
+     {V.}{V.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Le Fevre}}{L.}%
+     {O.}{O.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Lilly}}{L.}%
+     {S.~J.}{S.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Maier}}{M.}%
+     {C.}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{McCracken}}{M.}%
+     {H.~J.}{H.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Pello}}{P.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Peng}}{P.}%
+     {Y.-J.}{Y.-J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Perez-Montero}}{P.}%
+     {E.}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{de Ravel}}{d.}%
+     {L.}{L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Sanders}}{S.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Scodeggio}}{S.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Scoville}}{S.}%
+     {N.~Z.}{N.~Z.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Tanaka}}{T.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Taniguchi}}{T.}%
+     {Y.}{Y.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Tasca}}{T.}%
+     {L.}{L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{de la Torre}}{d.}%
+     {S.}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Tresse}}{T.}%
+     {L.}{L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Vergani}}{V.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Zucca}}{Z.}%
+     {E.}{E.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{galaxies: active, surveys, X-rays: diffuse background, X-rays:
+  galaxies, X-rays: general}
+  \strng{namehash}{BM+2}
+  \strng{fullhash}{BMCFCAMTSMZGCNFFHGMVMABACPEMGRHHJKKAMIOLELEMMSESJDTETJDVCZMATAHBSBMCACKCTFAFAGBICDIAIKKPKJKJPKCKKLFLJFLVLOLSJMCMHJPRPYJPEdLSDSMSNZTMTYTLdSTLVDZE1}
+  \field{labelyear}{2010}
+  \field{sortinit}{B}
+  \verb{doi}
+  \verb 10.1088/0004-637X/716/1/348
+  \endverb
+  \verb{eprint}
+  \verb 1004.2790
+  \endverb
+  \field{pages}{348\bibrangedash 369}
+  \field{title}{{The XMM-Newton Wide-field Survey in the Cosmos Field
+  (XMM-COSMOS): Demography and Multiwavelength Properties of Obscured and
+  Unobscured Luminous Active Galactic Nuclei}}
+  \field{volume}{716}
+  \field{journaltitle}{\apj}
+  \field{eprinttype}{arXiv}
+  \field{eprintclass}{astro-ph.CO}
+  \field{month}{06}
+  \field{year}{2010}
 \endentry
 
 \entry{cutri13}{report}{}
@@ -275,6 +1140,238 @@
   \field{year}{2013}
 \endentry
 
+\entry{denney10}{article}{}
+  \name{author}{43}{}{%
+    {{}%
+     {{Denney}}{D.}%
+     {K.~D.}{K.~D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Peterson}}{P.}%
+     {B.~M.}{B.~M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Pogge}}{P.}%
+     {R.~W.}{R.~W.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Adair}}{A.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Atlee}}{A.}%
+     {D.~W.}{D.~W.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Au-Yong}}{A.}%
+     {K.}{K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Bentz}}{B.}%
+     {M.~C.}{M.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Bird}}{B.}%
+     {J.~C.}{J.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Brokofsky}}{B.}%
+     {D.~J.}{D.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Chisholm}}{C.}%
+     {E.}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Comins}}{C.}%
+     {M.~L.}{M.~L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Dietrich}}{D.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Doroshenko}}{D.}%
+     {V.~T.}{V.~T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Eastman}}{E.}%
+     {J.~D.}{J.~D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Efimov}}{E.}%
+     {Y.~S.}{Y.~S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Ewald}}{E.}%
+     {S.}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Ferbey}}{F.}%
+     {S.}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Gaskell}}{G.}%
+     {C.~M.}{C.~M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hedrick}}{H.}%
+     {C.~H.}{C.~H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Jackson}}{J.}%
+     {K.}{K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Klimanov}}{K.}%
+     {S.~A.}{S.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Klimek}}{K.}%
+     {E.~S.}{E.~S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Kruse}}{K.}%
+     {A.~K.}{A.~K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Lad{\'e}route}}{L.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Lamb}}{L.}%
+     {J.~B.}{J.~B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Leighly}}{L.}%
+     {K.}{K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Minezaki}}{M.}%
+     {T.}{T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Nazarov}}{N.}%
+     {S.~V.}{S.~V.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Onken}}{O.}%
+     {C.~A.}{C.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Petersen}}{P.}%
+     {E.~A.}{E.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Peterson}}{P.}%
+     {P.}{P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Poindexter}}{P.}%
+     {S.}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Sakata}}{S.}%
+     {Y.}{Y.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Schlesinger}}{S.}%
+     {K.~J.}{K.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Sergeev}}{S.}%
+     {S.~G.}{S.~G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Skolski}}{S.}%
+     {N.}{N.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Stieglitz}}{S.}%
+     {L.}{L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Tobin}}{T.}%
+     {J.~J.}{J.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Unterborn}}{U.}%
+     {C.}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Vestergaard}}{V.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Watkins}}{W.}%
+     {A.~E.}{A.~E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Watson}}{W.}%
+     {L.~C.}{L.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Yoshii}}{Y.}%
+     {Y.}{Y.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{galaxies: active, galaxies: nuclei, galaxies: Seyfert}
+  \strng{namehash}{DKD+1}
+  \strng{fullhash}{DKDPBMPRWAAADWAKBMCBJCBDJCECMLDMDVTEJDEYSESFSGCMHCHJKKSAKESKAKLALJBLKMTNSVOCAPEAPPPSSYSKJSSGSNSLTJJUCVMWAEWLCYY1}
+  \field{labelyear}{2010}
+  \field{sortinit}{D}
+  \field{pages}{715\bibrangedash 737}
+  \field{title}{{Reverberation Mapping Measurements of Black Hole Masses in Six
+  Local Seyfert Galaxies}}
+  \field{volume}{721}
+  \field{journaltitle}{\apj}
+  \field{month}{09}
+  \field{year}{2010}
+\endentry
+
 \entry{dunlop03}{article}{}
   \name{author}{6}{}{%
     {{}%
@@ -328,6 +1425,364 @@
   \field{year}{2003}
 \endentry
 
+\entry{elvis94}{article}{}
+  \name{author}{9}{}{%
+    {{}%
+     {{Elvis}}{E.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Wilkes}}{W.}%
+     {B.~J.}{B.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{McDowell}}{M.}%
+     {J.~C.}{J.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Green}}{G.}%
+     {R.~F.}{R.~F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Bechtold}}{B.}%
+     {J.}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Willner}}{W.}%
+     {S.~P.}{S.~P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Oey}}{O.}%
+     {M.~S.}{M.~S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Polomski}}{P.}%
+     {E.}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Cutri}}{C.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Astronomical Catalogs, Infrared Photometry, Quasars, Radio Astronomy,
+  Spectral Energy Distribution, Stellar Luminosity, Stellar Spectrophotometry,
+  Ultraviolet Astronomy, X Ray Spectra, Galactic Radiation, Heao 2, Infrared
+  Astronomy Satellite, Iue, Signal To Noise Ratios}
+  \strng{namehash}{EM+1}
+  \strng{fullhash}{EMWBJMJCGRFBJWSPOMSPECR1}
+  \field{labelyear}{1994}
+  \field{sortinit}{E}
+  \verb{doi}
+  \verb 10.1086/192093
+  \endverb
+  \field{pages}{1\bibrangedash 68}
+  \field{title}{{Atlas of quasar energy distributions}}
+  \field{volume}{95}
+  \field{journaltitle}{\apjs}
+  \field{month}{11}
+  \field{year}{1994}
+\endentry
+
+\entry{elvis12}{article}{}
+  \name{author}{42}{}{%
+    {{}%
+     {{Elvis}}{E.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hao}}{H.}%
+     {H.}{H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Civano}}{C.}%
+     {F.}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Brusa}}{B.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Salvato}}{S.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Bongiorno}}{B.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Capak}}{C.}%
+     {P.}{P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Zamorani}}{Z.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Comastri}}{C.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Jahnke}}{J.}%
+     {K.}{K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Lusso}}{L.}%
+     {E.}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Mainieri}}{M.}%
+     {V.}{V.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Trump}}{T.}%
+     {J.~R.}{J.~R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Ho}}{H.}%
+     {L.~C.}{L.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Aussel}}{A.}%
+     {H.}{H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Cappelluti}}{C.}%
+     {N.}{N.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Cisternas}}{C.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Frayer}}{F.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Gilli}}{G.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hasinger}}{H.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Huchra}}{H.}%
+     {J.~P.}{J.~P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Impey}}{I.}%
+     {C.~D.}{C.~D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Koekemoer}}{K.}%
+     {A.~M.}{A.~M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Lanzuisi}}{L.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Le Floc'h}}{L.}%
+     {E.}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Lilly}}{L.}%
+     {S.~J.}{S.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Liu}}{L.}%
+     {Y.}{Y.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{McCarthy}}{M.}%
+     {P.}{P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{McCracken}}{M.}%
+     {H.~J.}{H.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Merloni}}{M.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Roeser}}{R.}%
+     {H.-J.}{H.-J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Sanders}}{S.}%
+     {D.~B.}{D.~B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Sargent}}{S.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Scoville}}{S.}%
+     {N.}{N.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Schinnerer}}{S.}%
+     {E.}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Schiminovich}}{S.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Silverman}}{S.}%
+     {J.}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Taniguchi}}{T.}%
+     {Y.}{Y.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Vignali}}{V.}%
+     {C.}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Urry}}{U.}%
+     {C.~M.}{C.~M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Zamojski}}{Z.}%
+     {M.~A.}{M.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Zatloukal}}{Z.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{galaxies: evolution, quasars: general, surveys}
+  \strng{namehash}{EM+1}
+  \strng{fullhash}{EMHHCFBMSMBACPZGCAJKLEMVTJRHLCAHCNCMFDGRHGHJPICDKAMLGLELSJLYMPMHJMARHJSDBSMSNSESDSJTYVCUCMZMAZM1}
+  \field{labelyear}{2012}
+  \field{sortinit}{E}
+  \verb{doi}
+  \verb 10.1088/0004-637X/759/1/6
+  \endverb
+  \field{eid}{6}
+  \verb{eprint}
+  \verb 1209.1478
+  \endverb
+  \field{pages}{6}
+  \field{title}{{Spectral Energy Distributions of Type 1 Active Galactic Nuclei
+  in the COSMOS Survey. I. The XMM-COSMOS Sample}}
+  \field{volume}{759}
+  \field{journaltitle}{\apj}
+  \field{eprinttype}{arXiv}
+  \field{eprintclass}{astro-ph.CO}
+  \field{month}{11}
+  \field{year}{2012}
+\endentry
+
+\entry{fabian12}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {{Fabian}}{F.}%
+     {A.~C.}{A.~C.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{FAC1}
+  \strng{fullhash}{FAC1}
+  \field{labelyear}{2012}
+  \field{sortinit}{F}
+  \verb{doi}
+  \verb 10.1146/annurev-astro-081811-125521
+  \endverb
+  \verb{eprint}
+  \verb 1204.4114
+  \endverb
+  \field{pages}{455\bibrangedash 489}
+  \field{title}{{Observational Evidence of Active Galactic Nuclei Feedback}}
+  \field{volume}{50}
+  \field{journaltitle}{\araa}
+  \field{eprinttype}{arXiv}
+  \field{month}{09}
+  \field{year}{2012}
+\endentry
+
+\entry{ferrarese00}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {{Ferrarese}}{F.}%
+     {L.}{L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Merritt}}{M.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Black Hole Physics, Galaxies: Evolution, Galaxies: Kinematics and
+  Dynamics}
+  \strng{namehash}{FLMD1}
+  \strng{fullhash}{FLMD1}
+  \field{labelyear}{2000}
+  \field{sortinit}{F}
+  \field{pages}{L9\bibrangedash L12}
+  \field{title}{{A Fundamental Relation between Supermassive Black Holes and
+  Their Host Galaxies}}
+  \field{volume}{539}
+  \field{journaltitle}{\apjl}
+  \field{month}{08}
+  \field{year}{2000}
+\endentry
+
 \entry{francis91}{article}{}
   \name{author}{6}{}{%
     {{}%
@@ -377,6 +1832,1196 @@
   \field{journaltitle}{\apj}
   \field{month}{06}
   \field{year}{1991}
+\endentry
+
+\entry{gallagher07}{article}{}
+  \name{author}{6}{}{%
+    {{}%
+     {{Gallagher}}{G.}%
+     {S.~C.}{S.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hines}}{H.}%
+     {D.~C.}{D.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Blaylock}}{B.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Priddey}}{P.}%
+     {R.~S.}{R.~S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Brandt}}{B.}%
+     {W.~N.}{W.~N.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Egami}}{E.}%
+     {E.~E.}{E.~E.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Galaxies: Active, Galaxies: Quasars: Absorption Lines}
+  \strng{namehash}{GSC+1}
+  \strng{fullhash}{GSCHDCBMPRSBWNEEE1}
+  \field{labelyear}{2007}
+  \field{sortinit}{G}
+  \verb{doi}
+  \verb 10.1086/519438
+  \endverb
+  \verb{eprint}
+  \verb 0705.0538
+  \endverb
+  \field{pages}{157\bibrangedash 173}
+  \field{title}{{Radio through X-Ray Spectral Energy Distributions of 38 Broad
+  Absorption Line Quasars}}
+  \field{volume}{665}
+  \field{journaltitle}{\apj}
+  \field{eprinttype}{arXiv}
+  \field{month}{08}
+  \field{year}{2007}
+\endentry
+
+\entry{gebhardt00}{article}{}
+  \name{author}{15}{}{%
+    {{}%
+     {{Gebhardt}}{G.}%
+     {K.}{K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Bender}}{B.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Bower}}{B.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Dressler}}{D.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Faber}}{F.}%
+     {S.~M.}{S.~M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Filippenko}}{F.}%
+     {A.~V.}{A.~V.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Green}}{G.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Grillmair}}{G.}%
+     {C.}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Ho}}{H.}%
+     {L.~C.}{L.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Kormendy}}{K.}%
+     {J.}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Lauer}}{L.}%
+     {T.~R.}{T.~R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Magorrian}}{M.}%
+     {J.}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Pinkney}}{P.}%
+     {J.}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Richstone}}{R.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Tremaine}}{T.}%
+     {S.}{S.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Galaxies: General, Galaxies: Nuclei, Galaxies: Statistics}
+  \strng{namehash}{GK+1}
+  \strng{fullhash}{GKBRBGDAFSMFAVGRGCHLCKJLTRMJPJRDTS1}
+  \field{labelyear}{2000}
+  \field{sortinit}{G}
+  \field{pages}{L13\bibrangedash L16}
+  \field{title}{{A Relationship between Nuclear Black Hole Mass and Galaxy
+  Velocity Dispersion}}
+  \field{volume}{539}
+  \field{journaltitle}{\apjl}
+  \field{month}{08}
+  \field{year}{2000}
+\endentry
+
+\entry{glikman12}{article}{}
+  \name{author}{11}{}{%
+    {{}%
+     {{Glikman}}{G.}%
+     {E.}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Urrutia}}{U.}%
+     {T.}{T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Lacy}}{L.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Djorgovski}}{D.}%
+     {S.~G.}{S.~G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Mahabal}}{M.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Myers}}{M.}%
+     {A.~D.}{A.~D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Ross}}{R.}%
+     {N.~P.}{N.~P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Petitjean}}{P.}%
+     {P.}{P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Ge}}{G.}%
+     {J.}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Schneider}}{S.}%
+     {D.~P.}{D.~P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{York}}{Y.}%
+     {D.~G.}{D.~G.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{dust, extinction, quasars: general, surveys}
+  \strng{namehash}{GE+1}
+  \strng{fullhash}{GEUTLMDSGMAMADRNPPPGJSDPYDG1}
+  \field{labelyear}{2012}
+  \field{sortinit}{G}
+  \verb{doi}
+  \verb 10.1088/0004-637X/757/1/51
+  \endverb
+  \field{eid}{51}
+  \verb{eprint}
+  \verb 1207.2175
+  \endverb
+  \field{pages}{51}
+  \field{title}{{FIRST-2MASS Red Quasars: Transitional Objects Emerging from
+  the Dust}}
+  \field{volume}{757}
+  \field{journaltitle}{\apj}
+  \field{eprinttype}{arXiv}
+  \field{eprintclass}{astro-ph.CO}
+  \field{month}{09}
+  \field{year}{2012}
+\endentry
+
+\entry{greene05}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {{Greene}}{G.}%
+     {J.~E.}{J.~E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Ho}}{H.}%
+     {L.~C.}{L.~C.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Galaxies: Active, Galaxies: Jets, Galaxies: Nuclei, Galaxies: Seyfert,
+  Galaxies: Quasars: General}
+  \strng{namehash}{GJEHLC1}
+  \strng{fullhash}{GJEHLC1}
+  \field{labelyear}{2005}
+  \field{sortinit}{G}
+  \verb{doi}
+  \verb 10.1086/431897
+  \endverb
+  \verb{eprint}
+  \verb astro-ph/0508335
+  \endverb
+  \field{pages}{122\bibrangedash 129}
+  \field{title}{{Estimating Black Hole Masses in Active Galaxies Using the
+  H{$\alpha$} Emission Line}}
+  \field{volume}{630}
+  \field{journaltitle}{\apj}
+  \field{month}{09}
+  \field{year}{2005}
+\endentry
+
+\entry{hao10}{article}{}
+  \name{author}{16}{}{%
+    {{}%
+     {{Hao}}{H.}%
+     {H.}{H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Elvis}}{E.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Civano}}{C.}%
+     {F.}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Lanzuisi}}{L.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Brusa}}{B.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Lusso}}{L.}%
+     {E.}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Zamorani}}{Z.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Comastri}}{C.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Bongiorno}}{B.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Impey}}{I.}%
+     {C.~D.}{C.~D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Koekemoer}}{K.}%
+     {A.~M.}{A.~M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Le Floc'h}}{L.}%
+     {E.}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Salvato}}{S.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Sanders}}{S.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Trump}}{T.}%
+     {J.~R.}{J.~R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Vignali}}{V.}%
+     {C.}{C.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{galaxies: evolution, quasars: general}
+  \strng{namehash}{HH+1}
+  \strng{fullhash}{HHEMCFLGBMLEZGCABAICDKAMLESMSDTJRVC1}
+  \field{labelyear}{2010}
+  \field{sortinit}{H}
+  \verb{doi}
+  \verb 10.1088/2041-8205/724/1/L59
+  \endverb
+  \verb{eprint}
+  \verb 1009.3276
+  \endverb
+  \field{pages}{L59\bibrangedash L63}
+  \field{title}{{Hot-dust-poor Type 1 Active Galactic Nuclei in the COSMOS
+  Survey}}
+  \field{volume}{724}
+  \field{journaltitle}{\apjl}
+  \field{eprinttype}{arXiv}
+  \field{eprintclass}{astro-ph.CO}
+  \field{month}{11}
+  \field{year}{2010}
+\endentry
+
+\entry{hao11}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {{Hao}}{H.}%
+     {H.}{H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Elvis}}{E.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Civano}}{C.}%
+     {F.}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Lawrence}}{L.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{galaxies: evolution, quasars: general, surveys}
+  \strng{namehash}{HH+1}
+  \strng{fullhash}{HHEMCFLA1}
+  \field{labelyear}{2011}
+  \field{sortinit}{H}
+  \verb{doi}
+  \verb 10.1088/0004-637X/733/2/108
+  \endverb
+  \field{eid}{108}
+  \verb{eprint}
+  \verb 1011.0429
+  \endverb
+  \field{pages}{108}
+  \field{title}{{Hot-dust-poor Quasars in Mid-infrared and Optically Selected
+  Samples}}
+  \field{volume}{733}
+  \field{journaltitle}{\apj}
+  \field{eprinttype}{arXiv}
+  \field{eprintclass}{astro-ph.CO}
+  \field{month}{06}
+  \field{year}{2011}
+\endentry
+
+\entry{hao13}{article}{}
+  \name{author}{22}{}{%
+    {{}%
+     {{Hao}}{H.}%
+     {H.}{H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Elvis}}{E.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Bongiorno}}{B.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Zamorani}}{Z.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Merloni}}{M.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Kelly}}{K.}%
+     {B.~C.}{B.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Civano}}{C.}%
+     {F.}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Celotti}}{C.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Ho}}{H.}%
+     {L.~C.}{L.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Jahnke}}{J.}%
+     {K.}{K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Comastri}}{C.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Trump}}{T.}%
+     {J.~R.}{J.~R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Mainieri}}{M.}%
+     {V.}{V.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Salvato}}{S.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Brusa}}{B.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Impey}}{I.}%
+     {C.~D.}{C.~D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Koekemoer}}{K.}%
+     {A.~M.}{A.~M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Lanzuisi}}{L.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Vignali}}{V.}%
+     {C.}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Silverman}}{S.}%
+     {J.~D.}{J.~D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Urry}}{U.}%
+     {C.~M.}{C.~M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Schawinski}}{S.}%
+     {K.}{K.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{surveys - galaxies: evolution, quasars: general}
+  \strng{namehash}{HH+1}
+  \strng{fullhash}{HHEMBAZGMAKBCCFCAHLCJKCATJRMVSMBMICDKAMLGVCSJDUCMSK1}
+  \field{labelyear}{2013}
+  \field{sortinit}{H}
+  \verb{doi}
+  \verb 10.1093/mnras/stt1228
+  \endverb
+  \verb{eprint}
+  \verb 1210.3044
+  \endverb
+  \field{pages}{3104\bibrangedash 3121}
+  \field{title}{{A quasar-galaxy mixing diagram: quasar spectral energy
+  distribution shapes in the optical to near-infrared}}
+  \field{volume}{434}
+  \field{journaltitle}{\mnras}
+  \field{eprinttype}{arXiv}
+  \field{eprintclass}{astro-ph.GA}
+  \field{month}{10}
+  \field{year}{2013}
+\endentry
+
+\entry{hopkins06b}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {{Hopkins}}{H.}%
+     {P.~F.}{P.~F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hernquist}}{H.}%
+     {L.}{L.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Cosmology: Theory, Galaxies: Active, Galaxies: Evolution, Galaxies:
+  Quasars: General}
+  \strng{namehash}{HPFHL1}
+  \strng{fullhash}{HPFHL1}
+  \field{labelyear}{2006}
+  \field{sortinit}{H}
+  \verb{doi}
+  \verb 10.1086/505753
+  \endverb
+  \verb{eprint}
+  \verb astro-ph/0603180
+  \endverb
+  \field{pages}{1\bibrangedash 36}
+  \field{title}{{Fueling Low-Level AGN Activity through Stochastic Accretion of
+  Cold Gas}}
+  \field{volume}{166}
+  \field{journaltitle}{\apjs}
+  \field{month}{09}
+  \field{year}{2006}
+\endentry
+
+\entry{hopkins06a}{article}{}
+  \name{author}{6}{}{%
+    {{}%
+     {{Hopkins}}{H.}%
+     {P.~F.}{P.~F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hernquist}}{H.}%
+     {L.}{L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Cox}}{C.}%
+     {T.~J.}{T.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Di Matteo}}{D.}%
+     {T.}{T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Robertson}}{R.}%
+     {B.}{B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Springel}}{S.}%
+     {V.}{V.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Cosmology: Theory, Galaxies: Active, Galaxies: Evolution, Galaxies:
+  Nuclei, Galaxies: Quasars: General}
+  \strng{namehash}{HPF+1}
+  \strng{fullhash}{HPFHLCTJDTRBSV1}
+  \field{labelyear}{2006}
+  \field{sortinit}{H}
+  \verb{doi}
+  \verb 10.1086/499298
+  \endverb
+  \verb{eprint}
+  \verb astro-ph/0506398
+  \endverb
+  \field{pages}{1\bibrangedash 49}
+  \field{title}{{A Unified, Merger-driven Model of the Origin of Starbursts,
+  Quasars, the Cosmic X-Ray Background, Supermassive Black Holes, and Galaxy
+  Spheroids}}
+  \field{volume}{163}
+  \field{journaltitle}{\apjs}
+  \field{month}{03}
+  \field{year}{2006}
+\endentry
+
+\entry{jarvis06}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {{Jarvis}}{J.}%
+     {M.~J.}{M.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{McLure}}{M.}%
+     {R.~J.}{R.~J.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{galaxies: active: galaxies: nuclei: quasars: emission lines: quasars:
+  general: radio continuum: galaxies, galaxies: active, galaxies: nuclei,
+  quasars: emission lines, quasars: general, radio continuum: galaxies}
+  \strng{namehash}{JMJMRJ1}
+  \strng{fullhash}{JMJMRJ1}
+  \field{labelyear}{2006}
+  \field{sortinit}{J}
+  \field{pages}{182\bibrangedash 188}
+  \field{title}{{Orientation dependency of broad-line widths in quasars and
+  consequences for black hole mass estimation}}
+  \field{volume}{369}
+  \field{journaltitle}{\mnras}
+  \field{month}{06}
+  \field{year}{2006}
+\endentry
+
+\entry{jiang10}{article}{}
+  \name{author}{12}{}{%
+    {{}%
+     {{Jiang}}{J.}%
+     {L.}{L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Fan}}{F.}%
+     {X.}{X.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Brandt}}{B.}%
+     {W.~N.}{W.~N.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Carilli}}{C.}%
+     {C.~L.}{C.~L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Egami}}{E.}%
+     {E.}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hines}}{H.}%
+     {D.~C.}{D.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Kurk}}{K.}%
+     {J.~D.}{J.~D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Richards}}{R.}%
+     {G.~T.}{G.~T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Shen}}{S.}%
+     {Y.}{Y.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Strauss}}{S.}%
+     {M.~A.}{M.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Vestergaard}}{V.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Walter}}{W.}%
+     {F.}{F.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{JL+1}
+  \strng{fullhash}{JLFXBWNCCLEEHDCKJDRGTSYSMAVMWF1}
+  \field{labelyear}{2010}
+  \field{sortinit}{J}
+  \verb{doi}
+  \verb 10.1038/nature08877
+  \endverb
+  \verb{eprint}
+  \verb 1003.3432
+  \endverb
+  \field{pages}{380\bibrangedash 383}
+  \field{title}{{Dust-free quasars in the early Universe}}
+  \field{volume}{464}
+  \field{journaltitle}{\nat}
+  \field{eprinttype}{arXiv}
+  \field{eprintclass}{astro-ph.CO}
+  \field{month}{03}
+  \field{year}{2010}
+\endentry
+
+\entry{kaspi00}{article}{}
+  \name{author}{6}{}{%
+    {{}%
+     {{Kaspi}}{K.}%
+     {S.}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Smith}}{S.}%
+     {P.~S.}{P.~S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Netzer}}{N.}%
+     {H.}{H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Maoz}}{M.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Jannuzi}}{J.}%
+     {B.~T.}{B.~T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Giveon}}{G.}%
+     {U.}{U.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{GALAXIES: ACTIVE, GALAXIES: QUASARS: EMISSION LINES, GALAXIES: QUASARS:
+  GENERAL}
+  \strng{namehash}{KS+1}
+  \strng{fullhash}{KSSPSNHMDJBTGU1}
+  \field{labelyear}{2000}
+  \field{sortinit}{K}
+  \field{pages}{631\bibrangedash 649}
+  \field{title}{{Reverberation Measurements for 17 Quasars and the
+  Size-Mass-Luminosity Relations in Active Galactic Nuclei}}
+  \field{volume}{533}
+  \field{journaltitle}{\apj}
+  \field{month}{04}
+  \field{year}{2000}
+\endentry
+
+\entry{kaspi07}{article}{}
+  \name{author}{6}{}{%
+    {{}%
+     {{Kaspi}}{K.}%
+     {S.}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Brandt}}{B.}%
+     {W.~N.}{W.~N.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Maoz}}{M.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Netzer}}{N.}%
+     {H.}{H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Schneider}}{S.}%
+     {D.~P.}{D.~P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Shemmer}}{S.}%
+     {O.}{O.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Galaxies: Active, Galaxies: Nuclei, Galaxies: Seyfert, Galaxies:
+  Quasars: General}
+  \strng{namehash}{KS+1}
+  \strng{fullhash}{KSBWNMDNHSDPSO1}
+  \field{labelyear}{2007}
+  \field{sortinit}{K}
+  \field{pages}{997\bibrangedash 1007}
+  \field{title}{{Reverberation Mapping of High-Luminosity Quasars: First
+  Results}}
+  \field{volume}{659}
+  \field{journaltitle}{\apj}
+  \field{month}{04}
+  \field{year}{2007}
+\endentry
+
+\entry{kauffmann00}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {{Kauffmann}}{K.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Haehnelt}}{H.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{BLACK HOLE PHYSICS, GALAXIES: FORMATION, GALAXIES: NUCLEI, QUASARS:
+  GENERAL}
+  \strng{namehash}{KGHM1}
+  \strng{fullhash}{KGHM1}
+  \field{labelyear}{2000}
+  \field{sortinit}{K}
+  \verb{doi}
+  \verb 10.1046/j.1365-8711.2000.03077.x
+  \endverb
+  \verb{eprint}
+  \verb astro-ph/9906493
+  \endverb
+  \field{pages}{576\bibrangedash 588}
+  \field{title}{{A unified model for the evolution of galaxies and quasars}}
+  \field{volume}{311}
+  \field{journaltitle}{\mnras}
+  \field{month}{01}
+  \field{year}{2000}
+\endentry
+
+\entry{king15}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {{King}}{K.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Pounds}}{P.}%
+     {K.}{K.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{KAPK1}
+  \strng{fullhash}{KAPK1}
+  \field{labelyear}{2015}
+  \field{sortinit}{K}
+  \field{pages}{115\bibrangedash 154}
+  \field{title}{{Powerful Outflows and Feedback from Active Galactic Nuclei}}
+  \field{volume}{53}
+  \field{journaltitle}{\araa}
+  \field{month}{08}
+  \field{year}{2015}
+\endentry
+
+\entry{kollmeier06}{article}{}
+  \name{author}{12}{}{%
+    {{}%
+     {{Kollmeier}}{K.}%
+     {J.~A.}{J.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Onken}}{O.}%
+     {C.~A.}{C.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Kochanek}}{K.}%
+     {C.~S.}{C.~S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Gould}}{G.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Weinberg}}{W.}%
+     {D.~H.}{D.~H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Dietrich}}{D.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Cool}}{C.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Dey}}{D.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Eisenstein}}{E.}%
+     {D.~J.}{D.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Jannuzi}}{J.}%
+     {B.~T.}{B.~T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Le Floc'h}}{L.}%
+     {E.}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Stern}}{S.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Galaxies: Active, Galaxies: Nuclei, Surveys}
+  \strng{namehash}{KJA+1}
+  \strng{fullhash}{KJAOCAKCSGAWDHDMCRDAEDJJBTLESD1}
+  \field{labelyear}{2006}
+  \field{sortinit}{K}
+  \verb{doi}
+  \verb 10.1086/505646
+  \endverb
+  \verb{eprint}
+  \verb astro-ph/0508657
+  \endverb
+  \field{pages}{128\bibrangedash 139}
+  \field{title}{{Black Hole Masses and Eddington Ratios at 0.3 $\lt$ z $\lt$
+  4}}
+  \field{volume}{648}
+  \field{journaltitle}{\apj}
+  \field{month}{09}
+  \field{year}{2006}
+\endentry
+
+\entry{kormendy13}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {{Kormendy}}{K.}%
+     {J.}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Ho}}{H.}%
+     {L.~C.}{L.~C.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{KJHLC1}
+  \strng{fullhash}{KJHLC1}
+  \field{labelyear}{2013}
+  \field{sortinit}{K}
+  \field{pages}{511\bibrangedash 653}
+  \field{title}{{Coevolution (Or Not) of Supermassive Black Holes and Host
+  Galaxies}}
+  \field{volume}{51}
+  \field{journaltitle}{\araa}
+  \field{month}{08}
+  \field{year}{2013}
+\endentry
+
+\entry{krolik88}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {{Krolik}}{K.}%
+     {J.~H.}{J.~H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Begelman}}{B.}%
+     {M.~C.}{M.~C.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Black Holes (Astronomy), Galactic Nuclei, Interstellar Gas, Molecular
+  Clouds, Seyfert Galaxies, Energy Dissipation, Gravitational Fields, Size
+  Distribution, Stellar Winds}
+  \strng{namehash}{KJHBMC1}
+  \strng{fullhash}{KJHBMC1}
+  \field{labelyear}{1988}
+  \field{sortinit}{K}
+  \verb{doi}
+  \verb 10.1086/166414
+  \endverb
+  \field{pages}{702\bibrangedash 711}
+  \field{title}{{Molecular tori in Seyfert galaxies - Feeding the monster and
+  hiding it}}
+  \field{volume}{329}
+  \field{journaltitle}{\apj}
+  \field{month}{06}
+  \field{year}{1988}
+\endentry
+
+\entry{kuraszkiewicz03}{article}{}
+  \name{author}{14}{}{%
+    {{}%
+     {{Kuraszkiewicz}}{K.}%
+     {J.~K.}{J.~K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Wilkes}}{W.}%
+     {B.~J.}{B.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hooper}}{H.}%
+     {E.~J.}{E.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{McLeod}}{M.}%
+     {K.~K.}{K.~K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Wood}}{W.}%
+     {K.}{K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Bjorkman}}{B.}%
+     {J.}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Delain}}{D.}%
+     {K.~M.}{K.~M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hughes}}{H.}%
+     {D.~H.}{D.~H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Elvis}}{E.}%
+     {M.~S.}{M.~S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Impey}}{I.}%
+     {C.~D.}{C.~D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Lonsdale}}{L.}%
+     {C.~J.}{C.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Malkan}}{M.}%
+     {M.~A.}{M.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{McDowell}}{M.}%
+     {J.~C.}{J.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Whitney}}{W.}%
+     {B.}{B.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Galaxies: Active, Galaxies: Nuclei, Infrared: Galaxies, X-Rays:
+  Galaxies}
+  \strng{namehash}{KJK+1}
+  \strng{fullhash}{KJKWBJHEJMKKWKBJDKMHDHEMSICDLCJMMAMJCWB1}
+  \field{labelyear}{2003}
+  \field{sortinit}{K}
+  \verb{doi}
+  \verb 10.1086/374919
+  \endverb
+  \verb{eprint}
+  \verb astro-ph/0302572
+  \endverb
+  \field{pages}{128\bibrangedash 148}
+  \field{title}{{The Far-Infrared Spectral Energy Distributions of
+  X-Ray-selected Active Galaxies}}
+  \field{volume}{590}
+  \field{journaltitle}{\apj}
+  \field{month}{06}
+  \field{year}{2003}
+\endentry
+
+\entry{lawrence91}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {{Lawrence}}{L.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Active Galactic Nuclei, Radio Astronomy, Seyfert Galaxies, Spectral
+  Line Width, Cosmic Dust, Forbidden Bands, Optical Thickness}
+  \strng{namehash}{LA1}
+  \strng{fullhash}{LA1}
+  \field{labelyear}{1991}
+  \field{sortinit}{L}
+  \field{pages}{586\bibrangedash 592}
+  \field{title}{{The relative frequency of broad-lined and narrow-lined active
+  galactic nuclei - Implications for unified schemes}}
+  \field{volume}{252}
+  \field{journaltitle}{\mnras}
+  \field{month}{10}
+  \field{year}{1991}
+\endentry
+
+\entry{lawrence10}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {{Lawrence}}{L.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Elvis}}{E.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{accretion, accretion disks, galaxies: active, galaxies: nuclei,
+  quasars: general}
+  \strng{namehash}{LAEM1}
+  \strng{fullhash}{LAEM1}
+  \field{labelyear}{2010}
+  \field{sortinit}{L}
+  \verb{doi}
+  \verb 10.1088/0004-637X/714/1/561
+  \endverb
+  \field{pages}{561\bibrangedash 570}
+  \field{title}{{Misaligned Disks as Obscurers in Active Galaxies}}
+  \field{volume}{714}
+  \field{journaltitle}{\apj}
+  \field{month}{05}
+  \field{year}{2010}
 \endentry
 
 \entry{lawrence07}{article}{}
@@ -581,6 +3226,216 @@
   \field{year}{2014}
 \endentry
 
+\entry{lusso10}{article}{}
+  \name{author}{32}{}{%
+    {{}%
+     {{Lusso}}{L.}%
+     {E.}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Comastri}}{C.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Vignali}}{V.}%
+     {C.}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Zamorani}}{Z.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Brusa}}{B.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Gilli}}{G.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Iwasawa}}{I.}%
+     {K.}{K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Salvato}}{S.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Civano}}{C.}%
+     {F.}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Elvis}}{E.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Merloni}}{M.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Bongiorno}}{B.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Trump}}{T.}%
+     {J.~R.}{J.~R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Koekemoer}}{K.}%
+     {A.~M.}{A.~M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Schinnerer}}{S.}%
+     {E.}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Le Floc'h}}{L.}%
+     {E.}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Cappelluti}}{C.}%
+     {N.}{N.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Jahnke}}{J.}%
+     {K.}{K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Sargent}}{S.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Silverman}}{S.}%
+     {J.}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Mainieri}}{M.}%
+     {V.}{V.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Fiore}}{F.}%
+     {F.}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Bolzonella}}{B.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Le F{\`e}vre}}{L.}%
+     {O.}{O.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Garilli}}{G.}%
+     {B.}{B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Iovino}}{I.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Kneib}}{K.}%
+     {J.~P.}{J.~P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Lamareille}}{L.}%
+     {F.}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Lilly}}{L.}%
+     {S.}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Mignoli}}{M.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Scodeggio}}{S.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Vergani}}{V.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{galaxies: active, Galaxy: evolution, quasars: general, methods:
+  statistical}
+  \strng{namehash}{LE+1}
+  \strng{fullhash}{LECAVCZGBMGRIKSMCFEMMABATJRKAMSELECNJKSMSJMVFFBMLOGBIAKJPLFLSMMSMVD1}
+  \field{labelyear}{2010}
+  \field{sortinit}{L}
+  \verb{doi}
+  \verb 10.1051/0004-6361/200913298
+  \endverb
+  \field{eid}{A34}
+  \verb{eprint}
+  \verb 0912.4166
+  \endverb
+  \field{pages}{A34}
+  \field{title}{{The X-ray to optical-UV luminosity ratio of X-ray selected
+  type 1 AGN in XMM-COSMOS}}
+  \field{volume}{512}
+  \field{journaltitle}{\aap}
+  \field{eprinttype}{arXiv}
+  \field{eprintclass}{astro-ph.CO}
+  \field{month}{03}
+  \field{year}{2010}
+\endentry
+
+\entry{lynden-bell69}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {{Lynden-Bell}}{L.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{LD1}
+  \strng{fullhash}{LD1}
+  \field{labelyear}{1969}
+  \field{sortinit}{L}
+  \verb{doi}
+  \verb 10.1038/223690a0
+  \endverb
+  \field{pages}{690\bibrangedash 694}
+  \field{title}{{Galactic Nuclei as Collapsed Old Quasars}}
+  \field{volume}{223}
+  \field{journaltitle}{\nat}
+  \field{month}{08}
+  \field{year}{1969}
+\endentry
+
 \entry{maddox06}{article}{}
   \name{author}{2}{}{%
     {{}%
@@ -606,6 +3461,55 @@
   \field{journaltitle}{\mnras}
   \field{month}{04}
   \field{year}{2006}
+\endentry
+
+\entry{maddox12}{article}{}
+  \name{author}{5}{}{%
+    {{}%
+     {{Maddox}}{M.}%
+     {N.}{N.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hewett}}{H.}%
+     {P.~C.}{P.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{P{\'e}roux}}{P.}%
+     {C.}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Nestor}}{N.}%
+     {D.~B.}{D.~B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Wisotzki}}{W.}%
+     {L.}{L.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{surveys, quasars: general, infrared: general}
+  \strng{namehash}{MN+1}
+  \strng{fullhash}{MNHPCPCNDBWL1}
+  \field{labelyear}{2012}
+  \field{sortinit}{M}
+  \verb{doi}
+  \verb 10.1111/j.1365-2966.2012.21427.x
+  \endverb
+  \verb{eprint}
+  \verb 1206.1434
+  \endverb
+  \field{pages}{2876\bibrangedash 2895}
+  \field{title}{{The large area KX quasar catalogue - I. Analysis of the
+  photometric redshift selection and the complete quasar catalogue}}
+  \field{volume}{424}
+  \field{journaltitle}{\mnras}
+  \field{eprinttype}{arXiv}
+  \field{month}{08}
+  \field{year}{2012}
 \endentry
 
 \entry{mainzer11}{article}{}
@@ -868,6 +3772,382 @@
   \field{year}{2001}
 \endentry
 
+\entry{marchese12}{article}{}
+  \name{author}{6}{}{%
+    {{}%
+     {{Marchese}}{M.}%
+     {E.}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Della Ceca}}{D.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Caccianiga}}{C.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Severgnini}}{S.}%
+     {P.}{P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Corral}}{C.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Fanali}}{F.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{galaxies: active, galaxies: nuclei, accretion, accretion disks,
+  cosmology: observations, methods: statistical}
+  \strng{namehash}{ME+1}
+  \strng{fullhash}{MEDRCASPCAFR1}
+  \field{labelyear}{2012}
+  \field{sortinit}{M}
+  \verb{doi}
+  \verb 10.1051/0004-6361/201117562
+  \endverb
+  \field{eid}{A48}
+  \verb{eprint}
+  \verb 1111.4409
+  \endverb
+  \field{pages}{A48}
+  \field{title}{{The optical-UV spectral energy distribution of the unabsorbed
+  AGN population in the XMM-Newton Bright Serendipitous Survey}}
+  \field{volume}{539}
+  \field{journaltitle}{\aap}
+  \field{eprinttype}{arXiv}
+  \field{eprintclass}{astro-ph.CO}
+  \field{month}{03}
+  \field{year}{2012}
+\endentry
+
+\entry{mclure02}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {{McLure}}{M.}%
+     {R.~J.}{R.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Jarvis}}{J.}%
+     {M.~J.}{M.~J.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{galaxies: active, galaxies: fundamental parameters, galaxies:
+  high-redshift, galaxies: nuclei, quasars: emission lines, quasars: general}
+  \strng{namehash}{MRJJMJ1}
+  \strng{fullhash}{MRJJMJ1}
+  \field{labelyear}{2002}
+  \field{sortinit}{M}
+  \verb{doi}
+  \verb 10.1046/j.1365-8711.2002.05871.x
+  \endverb
+  \verb{eprint}
+  \verb astro-ph/0204473
+  \endverb
+  \field{pages}{109\bibrangedash 116}
+  \field{title}{{Measuring the black hole masses of high-redshift quasars}}
+  \field{volume}{337}
+  \field{journaltitle}{\mnras}
+  \field{month}{11}
+  \field{year}{2002}
+\endentry
+
+\entry{minezaki04}{article}{}
+  \name{author}{8}{}{%
+    {{}%
+     {{Minezaki}}{M.}%
+     {T.}{T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Yoshii}}{Y.}%
+     {Y.}{Y.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Kobayashi}}{K.}%
+     {Y.}{Y.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Enya}}{E.}%
+     {K.}{K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Suganuma}}{S.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Tomita}}{T.}%
+     {H.}{H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Aoki}}{A.}%
+     {T.}{T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Peterson}}{P.}%
+     {B.~A.}{B.~A.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{ISM: Dust, Extinction, Galaxies: Active, Galaxies: Individual: NGC
+  Number: NGC 4151, Galaxies: Seyfert, Infrared: Galaxies}
+  \strng{namehash}{MT+1}
+  \strng{fullhash}{MTYYKYEKSMTHATPBA1}
+  \field{labelyear}{2004}
+  \field{sortinit}{M}
+  \verb{doi}
+  \verb 10.1086/381364
+  \endverb
+  \verb{eprint}
+  \verb astro-ph/0311338
+  \endverb
+  \field{pages}{L35\bibrangedash L38}
+  \field{title}{{Inner Size of a Dust Torus in the Seyfert 1 Galaxy NGC 4151}}
+  \field{volume}{600}
+  \field{journaltitle}{\apjl}
+  \field{month}{01}
+  \field{year}{2004}
+\endentry
+
+\entry{mor11}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {{Mor}}{M.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Trakhtenbrot}}{T.}%
+     {B.}{B.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{catalogs, galaxies: active, infrared: galaxies}
+  \strng{namehash}{MRTB1}
+  \strng{fullhash}{MRTB1}
+  \field{labelyear}{2011}
+  \field{sortinit}{M}
+  \verb{doi}
+  \verb 10.1088/2041-8205/737/2/L36
+  \endverb
+  \field{eid}{L36}
+  \verb{eprint}
+  \verb 1105.3198
+  \endverb
+  \field{pages}{L36}
+  \field{title}{{Hot-dust Clouds with Pure-graphite Composition around type-I
+  Active Galactic Nuclei}}
+  \field{volume}{737}
+  \field{journaltitle}{\apjl}
+  \field{eprinttype}{arXiv}
+  \field{month}{08}
+  \field{year}{2011}
+\endentry
+
+\entry{mortlock11}{article}{}
+  \name{author}{17}{}{%
+    {{}%
+     {{Mortlock}}{M.}%
+     {D.~J.}{D.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Warren}}{W.}%
+     {S.~J.}{S.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Venemans}}{V.}%
+     {B.~P.}{B.~P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Patel}}{P.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hewett}}{H.}%
+     {P.~C.}{P.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{McMahon}}{M.}%
+     {R.~G.}{R.~G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Simpson}}{S.}%
+     {C.}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Theuns}}{T.}%
+     {T.}{T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Gonz{\'a}les-Solares}}{G.}%
+     {E.~A.}{E.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Adamson}}{A.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Dye}}{D.}%
+     {S.}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hambly}}{H.}%
+     {N.~C.}{N.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hirst}}{H.}%
+     {P.}{P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Irwin}}{I.}%
+     {M.~J.}{M.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Kuiper}}{K.}%
+     {E.}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Lawrence}}{L.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{R{\"o}ttgering}}{R.}%
+     {H.~J.~A.}{H.~J.~A.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{MDJ+1}
+  \strng{fullhash}{MDJWSJVBPPMHPCMRGSCTTGEAAADSHNCHPIMJKELARHJA1}
+  \field{labelyear}{2011}
+  \field{sortinit}{M}
+  \verb{doi}
+  \verb 10.1038/nature10159
+  \endverb
+  \verb{eprint}
+  \verb 1106.6088
+  \endverb
+  \field{pages}{616\bibrangedash 619}
+  \field{title}{{A luminous quasar at a redshift of z = 7.085}}
+  \field{volume}{474}
+  \field{journaltitle}{\nat}
+  \field{eprinttype}{arXiv}
+  \field{eprintclass}{astro-ph.CO}
+  \field{month}{06}
+  \field{year}{2011}
+\endentry
+
+\entry{narayanan10}{article}{}
+  \name{author}{11}{}{%
+    {{}%
+     {{Narayanan}}{N.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Dey}}{D.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hayward}}{H.}%
+     {C.~C.}{C.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Cox}}{C.}%
+     {T.~J.}{T.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Bussmann}}{B.}%
+     {R.~S.}{R.~S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Brodwin}}{B.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Jonsson}}{J.}%
+     {P.}{P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hopkins}}{H.}%
+     {P.~F.}{P.~F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Groves}}{G.}%
+     {B.}{B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Younger}}{Y.}%
+     {J.~D.}{J.~D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hernquist}}{H.}%
+     {L.}{L.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{dust, extinction, galaxies: formation, galaxies: high-redshift,
+  galaxies: ISM, galaxies: starburst, cosmology: theory}
+  \strng{namehash}{ND+1}
+  \strng{fullhash}{NDDAHCCCTJBRSBMJPHPFGBYJDHL1}
+  \field{labelyear}{2010}
+  \field{sortinit}{N}
+  \verb{doi}
+  \verb 10.1111/j.1365-2966.2010.16997.x
+  \endverb
+  \verb{eprint}
+  \verb 0910.2234
+  \endverb
+  \field{pages}{1701\bibrangedash 1720}
+  \field{title}{{A physical model for z \~{} 2 dust-obscured galaxies}}
+  \field{volume}{407}
+  \field{journaltitle}{\mnras}
+  \field{eprinttype}{arXiv}
+  \field{eprintclass}{astro-ph.CO}
+  \field{month}{09}
+  \field{year}{2010}
+\endentry
+
 \entry{oke83}{article}{}
   \name{author}{2}{}{%
     {{}%
@@ -898,6 +4178,33 @@
   \field{year}{1983}
 \endentry
 
+\entry{onken08}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {{Onken}}{O.}%
+     {C.~A.}{C.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Kollmeier}}{K.}%
+     {J.~A.}{J.~A.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{black hole physics, galaxies: active, quasars: emission lines, surveys}
+  \strng{namehash}{OCAKJA1}
+  \strng{fullhash}{OCAKJA1}
+  \field{labelyear}{2008}
+  \field{sortinit}{O}
+  \field{pages}{L13}
+  \field{title}{{An Improved Method for Using Mg II to Estimate Black Hole
+  Masses in Active Galactic Nuclei}}
+  \field{volume}{689}
+  \field{journaltitle}{\apjl}
+  \field{month}{12}
+  \field{year}{2008}
+\endentry
+
 \entry{pei92}{article}{}
   \name{author}{1}{}{%
     {{}%
@@ -925,6 +4232,29 @@
   \field{year}{1992}
 \endentry
 
+\entry{peterson93}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {{Peterson}}{P.}%
+     {B.~M.}{B.~M.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Active Galactic Nuclei, Astronomical Maps, Emission Spectra,
+  Reverberation, Astronomical Spectroscopy, Cross Correlation, Luminosity,
+  Spectral Line Width, Transfer Functions}
+  \strng{namehash}{PBM1}
+  \strng{fullhash}{PBM1}
+  \field{labelyear}{1993}
+  \field{sortinit}{P}
+  \field{pages}{247\bibrangedash 268}
+  \field{title}{{Reverberation mapping of active galactic nuclei}}
+  \field{volume}{105}
+  \field{journaltitle}{\pasp}
+  \field{month}{03}
+  \field{year}{1993}
+\endentry
+
 \entry{peterson95}{book}{}
   \name{author}{1}{}{%
     {{}%
@@ -943,6 +4273,351 @@
   \field{title}{{An Introduction to Active Galactic Nuclei}}
   \field{month}{02}
   \field{year}{1997}
+\endentry
+
+\entry{peterson10}{inproceedings}{}
+  \name{author}{1}{}{%
+    {{}%
+     {{Peterson}}{P.}%
+     {B.~M.}{B.~M.}%
+     {}{}%
+     {}{}}%
+  }
+  \name{editor}{3}{}{%
+    {{}%
+     {{Peterson}}{P.}%
+     {B.~M.}{B.~M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Somerville}}{S.}%
+     {R.~S.}{R.~S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Storchi-Bergmann}}{S.}%
+     {T.}{T.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{galaxies: active, galaxies: nuclei, techniques: spectroscopic}
+  \strng{namehash}{PBM1}
+  \strng{fullhash}{PBM1}
+  \field{labelyear}{2010}
+  \field{sortinit}{P}
+  \field{booktitle}{Co-Evolution of Central Black Holes and Galaxies}
+  \field{pages}{151\bibrangedash 160}
+  \field{series}{IAU Symposium}
+  \field{title}{{Toward Precision Measurement of Central Black Hole Masses}}
+  \field{volume}{267}
+  \field{month}{05}
+  \field{year}{2010}
+\endentry
+
+\entry{peterson14}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {{Peterson}}{P.}%
+     {B.~M.}{B.~M.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Active galactic nuclei, Black hole, Reverberation mapping}
+  \strng{namehash}{PBM1}
+  \strng{fullhash}{PBM1}
+  \field{labelyear}{2014}
+  \field{sortinit}{P}
+  \field{pages}{253\bibrangedash 275}
+  \field{title}{{Measuring the Masses of Supermassive Black Holes}}
+  \field{volume}{183}
+  \field{journaltitle}{\ssr}
+  \field{month}{09}
+  \field{year}{2014}
+\endentry
+
+\entry{peterson04}{article}{}
+  \name{author}{12}{}{%
+    {{}%
+     {{Peterson}}{P.}%
+     {B.~M.}{B.~M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Ferrarese}}{F.}%
+     {L.}{L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Gilbert}}{G.}%
+     {K.~M.}{K.~M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Kaspi}}{K.}%
+     {S.}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Malkan}}{M.}%
+     {M.~A.}{M.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Maoz}}{M.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Merritt}}{M.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Netzer}}{N.}%
+     {H.}{H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Onken}}{O.}%
+     {C.~A.}{C.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Pogge}}{P.}%
+     {R.~W.}{R.~W.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Vestergaard}}{V.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Wandel}}{W.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Galaxies: Active, Galaxies: Nuclei, Galaxies: Seyfert, Galaxies:
+  Quasars: Emission Lines}
+  \strng{namehash}{PBM+1}
+  \strng{fullhash}{PBMFLGKMKSMMAMDMDNHOCAPRWVMWA1}
+  \field{labelyear}{2004}
+  \field{sortinit}{P}
+  \field{pages}{682\bibrangedash 699}
+  \field{title}{{Central Masses and Broad-Line Region Sizes of Active Galactic
+  Nuclei. II. A Homogeneous Analysis of a Large Reverberation-Mapping
+  Database}}
+  \field{volume}{613}
+  \field{journaltitle}{\apj}
+  \field{month}{10}
+  \field{year}{2004}
+\endentry
+
+\entry{polletta00}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {{Polletta}}{P.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Courvoisier}}{C.}%
+     {T.~J.-L.}{T.~J.-L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hooper}}{H.}%
+     {E.~J.}{E.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Wilkes}}{W.}%
+     {B.~J.}{B.~J.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{GALAXIES: QUASARS: GENERAL, INFRARED: GALAXIES, RADIO CONTINUUM:
+  GALAXIES}
+  \strng{namehash}{PM+1}
+  \strng{fullhash}{PMCTJLHEJWBJ1}
+  \field{labelyear}{2000}
+  \field{sortinit}{P}
+  \verb{eprint}
+  \verb astro-ph/0006315
+  \endverb
+  \field{pages}{75\bibrangedash 96}
+  \field{title}{{The far-infrared emission of radio loud and radio quiet
+  quasars}}
+  \field{volume}{362}
+  \field{journaltitle}{\aap}
+  \field{month}{10}
+  \field{year}{2000}
+\endentry
+
+\entry{polletta07}{article}{}
+  \name{author}{21}{}{%
+    {{}%
+     {{Polletta}}{P.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Tajer}}{T.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Maraschi}}{M.}%
+     {L.}{L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Trinchieri}}{T.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Lonsdale}}{L.}%
+     {C.~J.}{C.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Chiappetti}}{C.}%
+     {L.}{L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Andreon}}{A.}%
+     {S.}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Pierre}}{P.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Le F{\`e}vre}}{L.}%
+     {O.}{O.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Zamorani}}{Z.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Maccagni}}{M.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Garcet}}{G.}%
+     {O.}{O.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Surdej}}{S.}%
+     {J.}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Franceschini}}{F.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Alloin}}{A.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Shupe}}{S.}%
+     {D.~L.}{D.~L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Surace}}{S.}%
+     {J.~A.}{J.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Fang}}{F.}%
+     {F.}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Rowan-Robinson}}{R.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Smith}}{S.}%
+     {H.~E.}{H.~E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Tresse}}{T.}%
+     {L.}{L.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Galaxies: Active, Infrared: Galaxies, Galaxies: Quasars: General,
+  X-Rays: Galaxies}
+  \strng{namehash}{PM+1}
+  \strng{fullhash}{PMTMMLTGLCJCLASPMLOZGMDGOSJFAADSDLSJAFFRMSHETL1}
+  \field{labelyear}{2007}
+  \field{sortinit}{P}
+  \verb{doi}
+  \verb 10.1086/518113
+  \endverb
+  \verb{eprint}
+  \verb astro-ph/0703255
+  \endverb
+  \field{pages}{81\bibrangedash 102}
+  \field{title}{{Spectral Energy Distributions of Hard X-Ray Selected Active
+  Galactic Nuclei in the XMM-Newton Medium Deep Survey}}
+  \field{volume}{663}
+  \field{journaltitle}{\apj}
+  \field{month}{07}
+  \field{year}{2007}
+\endentry
+
+\entry{rafiee11}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {{Rafiee}}{R.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hall}}{H.}%
+     {P.~B.}{P.~B.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{catalogs, methods: data analysis, quasars: emission lines, quasars:
+  general}
+  \strng{namehash}{RAHPB1}
+  \strng{fullhash}{RAHPB1}
+  \field{labelyear}{2011}
+  \field{sortinit}{R}
+  \verb{doi}
+  \verb 10.1088/0067-0049/194/2/42
+  \endverb
+  \field{eid}{42}
+  \verb{eprint}
+  \verb 1104.1828
+  \endverb
+  \field{pages}{42}
+  \field{title}{{Supermassive Black Hole Mass Estimates Using Sloan Digital Sky
+  Survey Quasar Spectra at 0.7 $\lt$ z $\lt$ 2}}
+  \field{volume}{194}
+  \field{journaltitle}{\apjs}
+  \field{eprinttype}{arXiv}
+  \field{month}{06}
+  \field{year}{2011}
 \endentry
 
 \entry{richards02}{article}{}
@@ -1194,6 +4869,7 @@
   \strng{namehash}{RGT+1}
   \strng{fullhash}{RGTLMSLJHPBGSCHDCFXPCVDETGBSDPVMYDGJSASFBTSAS1}
   \field{labelyear}{2006}
+  \field{extrayear}{1}
   \field{sortinit}{R}
   \field{pages}{470\bibrangedash 497}
   \field{title}{{Spectral Energy Distributions and Multiwavelength Selection of
@@ -1202,6 +4878,533 @@
   \field{journaltitle}{\apjs}
   \field{month}{10}
   \field{year}{2006}
+\endentry
+
+\entry{richards06b}{article}{}
+  \name{author}{37}{}{%
+    {{}%
+     {{Richards}}{R.}%
+     {G.~T.}{G.~T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Strauss}}{S.}%
+     {M.~A.}{M.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Fan}}{F.}%
+     {X.}{X.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hall}}{H.}%
+     {P.~B.}{P.~B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Jester}}{J.}%
+     {S.}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Schneider}}{S.}%
+     {D.~P.}{D.~P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Vanden Berk}}{V.}%
+     {D.~E.}{D.~E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Stoughton}}{S.}%
+     {C.}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Anderson}}{A.}%
+     {S.~F.}{S.~F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Brunner}}{B.}%
+     {R.~J.}{R.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Gray}}{G.}%
+     {J.}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Gunn}}{G.}%
+     {J.~E.}{J.~E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Ivezi{\'c}}}{I.}%
+     {{\v Z}.}{{\v Z}.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Kirkland}}{K.}%
+     {M.~K.}{M.~K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Knapp}}{K.}%
+     {G.~R.}{G.~R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Loveday}}{L.}%
+     {J.}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Meiksin}}{M.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Pope}}{P.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Szalay}}{S.}%
+     {A.~S.}{A.~S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Thakar}}{T.}%
+     {A.~R.}{A.~R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Yanny}}{Y.}%
+     {B.}{B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{York}}{Y.}%
+     {D.~G.}{D.~G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Barentine}}{B.}%
+     {J.~C.}{J.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Brewington}}{B.}%
+     {H.~J.}{H.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Brinkmann}}{B.}%
+     {J.}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Fukugita}}{F.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Harvanek}}{H.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Kent}}{K.}%
+     {S.~M.}{S.~M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Kleinman}}{K.}%
+     {S.~J.}{S.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Krzesi{\'n}ski}}{K.}%
+     {J.}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Long}}{L.}%
+     {D.~C.}{D.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Lupton}}{L.}%
+     {R.~H.}{R.~H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Nash}}{N.}%
+     {T.}{T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Neilsen}}{N.}%
+     {E.~H.}{E.~H.}%
+     {}{}%
+     {Jr.}{J.}}%
+    {{}%
+     {{Nitta}}{N.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Schlegel}}{S.}%
+     {D.~J.}{D.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Snedden}}{S.}%
+     {S.~A.}{S.~A.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Cosmology: Observations, Galaxies: Active, Galaxies: Luminosity
+  Function, Mass Function, Galaxies: Quasars: General, Surveys}
+  \strng{namehash}{RGT+1}
+  \strng{fullhash}{RGTSMAFXHPBJSSDPVDESCASFBRJGJGJEIZKMKKGRLJMAPASASTARYBYDGBJCBHJBJFMHMKSMKSJKJLDCLRHNTNJEHNASDJSSA1}
+  \field{labelyear}{2006}
+  \field{extrayear}{2}
+  \field{sortinit}{R}
+  \field{pages}{2766\bibrangedash 2787}
+  \field{title}{{The Sloan Digital Sky Survey Quasar Survey: Quasar Luminosity
+  Function from Data Release 3}}
+  \field{volume}{131}
+  \field{journaltitle}{\aj}
+  \field{month}{06}
+  \field{year}{2006}
+\endentry
+
+\entry{risaliti04}{inproceedings}{}
+  \name{author}{2}{}{%
+    {{}%
+     {{Risaliti}}{R.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Elvis}}{E.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \name{editor}{1}{}{%
+    {{}%
+     {{Barger}}{B.}%
+     {A.~J.}{A.~J.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{RGEM1}
+  \strng{fullhash}{RGEM1}
+  \field{labelyear}{2004}
+  \field{sortinit}{R}
+  \field{booktitle}{Supermassive Black Holes in the Distant Universe}
+  \verb{eprint}
+  \verb astro-ph/0403618
+  \endverb
+  \field{pages}{187}
+  \field{series}{Astrophysics and Space Science Library}
+  \field{title}{{A Panchromatic View of AGN}}
+  \field{volume}{308}
+  \field{month}{08}
+  \field{year}{2004}
+\endentry
+
+\entry{roseboom13}{article}{}
+  \name{author}{6}{}{%
+    {{}%
+     {{Roseboom}}{R.}%
+     {I.~G.}{I.~G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Lawrence}}{L.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Elvis}}{E.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Petty}}{P.}%
+     {S.}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Shen}}{S.}%
+     {Y.}{Y.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hao}}{H.}%
+     {H.}{H.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{quasars: general, infrared: general}
+  \strng{namehash}{RIG+1}
+  \strng{fullhash}{RIGLAEMPSSYHH1}
+  \field{labelyear}{2013}
+  \field{sortinit}{R}
+  \verb{doi}
+  \verb 10.1093/mnras/sts441
+  \endverb
+  \verb{eprint}
+  \verb 1205.4543
+  \endverb
+  \field{pages}{1494\bibrangedash 1501}
+  \field{title}{{IR-derived covering factors for a large sample of quasars from
+  WISE-UKIDSS-SDSS}}
+  \field{volume}{429}
+  \field{journaltitle}{\mnras}
+  \field{eprinttype}{arXiv}
+  \field{month}{02}
+  \field{year}{2013}
+\endentry
+
+\entry{ross14}{article}{}
+  \name{author}{13}{}{%
+    {{}%
+     {{Ross}}{R.}%
+     {N.~P.}{N.~P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hamann}}{H.}%
+     {F.}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Zakamska}}{Z.}%
+     {N.~L.}{N.~L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Richards}}{R.}%
+     {G.~T.}{G.~T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Villforth}}{V.}%
+     {C.}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Strauss}}{S.}%
+     {M.~A.}{M.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Greene}}{G.}%
+     {J.~E.}{J.~E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Alexandroff}}{A.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Brandt}}{B.}%
+     {W.~N.}{W.~N.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Liu}}{L.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Myers}}{M.}%
+     {A.~D.}{A.~D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Paris}}{P.}%
+     {I.}{I.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Schneider}}{S.}%
+     {D.~P.}{D.~P.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Astrophysics - Astrophysics of Galaxies, Astrophysics - Cosmology and
+  Nongalactic Astrophysics}
+  \strng{namehash}{RNP+1}
+  \strng{fullhash}{RNPHFZNLRGTVCSMAGJEARBWNLGMADPISDP1}
+  \field{labelyear}{2014}
+  \field{sortinit}{R}
+  \verb{eprint}
+  \verb 1405.1047
+  \endverb
+  \field{title}{{Extremely Red Quasars from SDSS, BOSS and WISE: Classification
+  of Optical Spectra}}
+  \field{journaltitle}{ArXiv e-prints}
+  \field{eprinttype}{arXiv}
+  \field{month}{05}
+  \field{year}{2014}
+\endentry
+
+\entry{runnoe13b}{article}{}
+  \name{author}{5}{}{%
+    {{}%
+     {{Runnoe}}{R.}%
+     {J.~C.}{J.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Brotherton}}{B.}%
+     {M.~S.}{M.~S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Shang}}{S.}%
+     {Z.}{Z.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Wills}}{W.}%
+     {B.~J.}{B.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{DiPompeo}}{D.}%
+     {M.~A.}{M.~A.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{accretion, accretion discs, black hole physics, galaxies: active,
+  quasars: general}
+  \strng{namehash}{RJC+1}
+  \strng{fullhash}{RJCBMSSZWBJDMA1}
+  \field{labelyear}{2013}
+  \field{sortinit}{R}
+  \field{pages}{135\bibrangedash 149}
+  \field{title}{{The orientation dependence of quasar single-epoch black hole
+  mass scaling relationships}}
+  \field{volume}{429}
+  \field{journaltitle}{\mnras}
+  \field{month}{02}
+  \field{year}{2013}
+\endentry
+
+\entry{sanders88}{article}{}
+  \name{author}{7}{}{%
+    {{}%
+     {{Sanders}}{S.}%
+     {D.~B.}{D.~B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Soifer}}{S.}%
+     {B.~T.}{B.~T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Elias}}{E.}%
+     {J.~H.}{J.~H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Madore}}{M.}%
+     {B.~F.}{B.~F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Matthews}}{M.}%
+     {K.}{K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Neugebauer}}{N.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Scoville}}{S.}%
+     {N.~Z.}{N.~Z.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Active Galactic Nuclei, Galactic Evolution, Infrared Sources
+  (Astronomy), Quasars, Astronomical Maps, Carbon Monoxide, Emission Spectra,
+  Infrared Photometry, Molecular Gases, Nonthermal Radiation, Spectral Energy
+  Distribution}
+  \strng{namehash}{SDB+1}
+  \strng{fullhash}{SDBSBTEJHMBFMKNGSNZ1}
+  \field{labelyear}{1988}
+  \field{sortinit}{S}
+  \verb{doi}
+  \verb 10.1086/165983
+  \endverb
+  \field{pages}{74\bibrangedash 91}
+  \field{title}{{Ultraluminous infrared galaxies and the origin of quasars}}
+  \field{volume}{325}
+  \field{journaltitle}{\apj}
+  \field{month}{02}
+  \field{year}{1988}
+\endentry
+
+\entry{sanders89}{article}{}
+  \name{author}{5}{}{%
+    {{}%
+     {{Sanders}}{S.}%
+     {D.~B.}{D.~B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Phinney}}{P.}%
+     {E.~S.}{E.~S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Neugebauer}}{N.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Soifer}}{S.}%
+     {B.~T.}{B.~T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Matthews}}{M.}%
+     {K.}{K.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Astronomical Spectroscopy, Continuous Spectra, Infrared Sources
+  (Astronomy), Quasars, Spectral Energy Distribution, Spectrum Analysis,
+  Accretion Disks, Blazars, Infrared Spectra, Seyfert Galaxies, Sky Surveys
+  (Astronomy)}
+  \strng{namehash}{SDB+1}
+  \strng{fullhash}{SDBPESNGSBTMK1}
+  \field{labelyear}{1989}
+  \field{sortinit}{S}
+  \verb{doi}
+  \verb 10.1086/168094
+  \endverb
+  \field{pages}{29\bibrangedash 51}
+  \field{title}{{Continuum energy distribution of quasars - Shapes and
+  origins}}
+  \field{volume}{347}
+  \field{journaltitle}{\apj}
+  \field{month}{12}
+  \field{year}{1989}
 \endentry
 
 \entry{schlegel98}{article}{}
@@ -1526,6 +5729,193 @@
   \field{year}{1973}
 \endentry
 
+\entry{shang11}{article}{}
+  \name{author}{17}{}{%
+    {{}%
+     {{Shang}}{S.}%
+     {Z.}{Z.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Brotherton}}{B.}%
+     {M.~S.}{M.~S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Wills}}{W.}%
+     {B.~J.}{B.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Wills}}{W.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Cales}}{C.}%
+     {S.~L.}{S.~L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Dale}}{D.}%
+     {D.~A.}{D.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Green}}{G.}%
+     {R.~F.}{R.~F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Runnoe}}{R.}%
+     {J.~C.}{J.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Nemmen}}{N.}%
+     {R.~S.}{R.~S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Gallagher}}{G.}%
+     {S.~C.}{S.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Ganguly}}{G.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hines}}{H.}%
+     {D.~C.}{D.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Kelly}}{K.}%
+     {B.~J.}{B.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Kriss}}{K.}%
+     {G.~A.}{G.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Li}}{L.}%
+     {J.}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Tang}}{T.}%
+     {B.}{B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Xie}}{X.}%
+     {Y.}{Y.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{atlases, galaxies: active, infrared: galaxies, quasars: general, radio
+  continuum: galaxies, ultraviolet: galaxies, X-rays: galaxies}
+  \strng{namehash}{SZ+1}
+  \strng{fullhash}{SZBMSWBJWDCSLDDAGRFRJCNRSGSCGRHDCKBJKGALJTBXY1}
+  \field{labelyear}{2011}
+  \field{sortinit}{S}
+  \verb{doi}
+  \verb 10.1088/0067-0049/196/1/2
+  \endverb
+  \field{eid}{2}
+  \verb{eprint}
+  \verb 1107.1855
+  \endverb
+  \field{pages}{2}
+  \field{title}{{The Next Generation Atlas of Quasar Spectral Energy
+  Distributions from Radio to X-Rays}}
+  \field{volume}{196}
+  \field{journaltitle}{\apjs}
+  \field{eprinttype}{arXiv}
+  \field{eprintclass}{astro-ph.CO}
+  \field{month}{09}
+  \field{year}{2011}
+\endentry
+
+\entry{shen13}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {{Shen}}{S.}%
+     {Y.}{Y.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{black hole physics, galaxies: active, quasars: general, surveys}
+  \strng{namehash}{SY1}
+  \strng{fullhash}{SY1}
+  \field{labelyear}{2013}
+  \field{sortinit}{S}
+  \field{pages}{61\bibrangedash 115}
+  \field{title}{{The mass of quasars}}
+  \field{volume}{41}
+  \field{journaltitle}{Bulletin of the Astronomical Society of India}
+  \field{eprintclass}{astro-ph.CO}
+  \field{month}{03}
+  \field{year}{2013}
+\endentry
+
+\entry{shen14}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {{Shen}}{S.}%
+     {Y.}{Y.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Ho}}{H.}%
+     {L.~C.}{L.~C.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{SYHLC1}
+  \strng{fullhash}{SYHLC1}
+  \field{labelyear}{2014}
+  \field{sortinit}{S}
+  \field{pages}{210\bibrangedash 213}
+  \field{title}{{The diversity of quasars unified by accretion and
+  orientation}}
+  \field{volume}{513}
+  \field{journaltitle}{\nat}
+  \field{month}{09}
+  \field{year}{2014}
+\endentry
+
+\entry{shen12}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {{Shen}}{S.}%
+     {Y.}{Y.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Liu}}{L.}%
+     {X.}{X.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{black hole physics, galaxies: active, quasars: general}
+  \strng{namehash}{SYLX1}
+  \strng{fullhash}{SYLX1}
+  \field{labelyear}{2012}
+  \field{sortinit}{S}
+  \field{pages}{125}
+  \field{title}{{Comparing Single-epoch Virial Black Hole Mass Estimators for
+  Luminous Quasars}}
+  \field{volume}{753}
+  \field{journaltitle}{\apj}
+  \field{month}{07}
+  \field{year}{2012}
+\endentry
+
 \entry{shen11}{article}{}
   \name{author}{13}{}{%
     {{}%
@@ -1607,6 +5997,740 @@
   \field{eprintclass}{astro-ph.CO}
   \field{month}{06}
   \field{year}{2011}
+\endentry
+
+\entry{silk98}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {{Silk}}{S.}%
+     {J.}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Rees}}{R.}%
+     {M.~J.}{M.~J.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{GALAXY FORMATION: SUPERMASSIVE BLACK HOLES, QUASARS: OUTFLOWS}
+  \strng{namehash}{SJRMJ1}
+  \strng{fullhash}{SJRMJ1}
+  \field{labelyear}{1998}
+  \field{sortinit}{S}
+  \verb{eprint}
+  \verb astro-ph/9801013
+  \endverb
+  \field{pages}{L1\bibrangedash L4}
+  \field{title}{{Quasars and galaxy formation}}
+  \field{volume}{331}
+  \field{journaltitle}{\aap}
+  \field{month}{03}
+  \field{year}{1998}
+\endentry
+
+\entry{suganuma06}{article}{}
+  \name{author}{9}{}{%
+    {{}%
+     {{Suganuma}}{S.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Yoshii}}{Y.}%
+     {Y.}{Y.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Kobayashi}}{K.}%
+     {Y.}{Y.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Minezaki}}{M.}%
+     {T.}{T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Enya}}{E.}%
+     {K.}{K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Tomita}}{T.}%
+     {H.}{H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Aoki}}{A.}%
+     {T.}{T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Koshida}}{K.}%
+     {S.}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Peterson}}{P.}%
+     {B.~A.}{B.~A.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{ISM: Dust, Extinction, Galaxies: Active, Galaxies: Individual: NGC
+  Number: NGC 3227, Galaxies: Individual: NGC Number: NGC 4051, Galaxies:
+  Individual: NGC Number: NGC 5548, Galaxies: Individual: NGC Number: NGC 7469,
+  Galaxies: Seyfert, Infrared: Galaxies}
+  \strng{namehash}{SM+1}
+  \strng{fullhash}{SMYYKYMTEKTHATKSPBA1}
+  \field{labelyear}{2006}
+  \field{sortinit}{S}
+  \verb{doi}
+  \verb 10.1086/499326
+  \endverb
+  \verb{eprint}
+  \verb astro-ph/0511697
+  \endverb
+  \field{pages}{46\bibrangedash 63}
+  \field{title}{{Reverberation Measurements of the Inner Radius of the Dust
+  Torus in Nearby Seyfert 1 Galaxies}}
+  \field{volume}{639}
+  \field{journaltitle}{\apj}
+  \field{month}{03}
+  \field{year}{2006}
+\endentry
+
+\entry{sunyaev80}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {{Sunyaev}}{S.}%
+     {R.~A.}{R.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Titarchuk}}{T.}%
+     {L.~G.}{L.~G.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Compton Effect, Plasma Clouds, Radiative Transfer, X Ray Scattering, X
+  Ray Sources, Electron Plasma, Iron, Line Shape, Plasma Radiation, Plasma
+  Temperature}
+  \strng{namehash}{SRATLG1}
+  \strng{fullhash}{SRATLG1}
+  \field{labelyear}{1980}
+  \field{sortinit}{S}
+  \field{pages}{121\bibrangedash 138}
+  \field{title}{{Comptonization of X-rays in plasma clouds - Typical radiation
+  spectra}}
+  \field{volume}{86}
+  \field{journaltitle}{\aap}
+  \field{month}{06}
+  \field{year}{1980}
+\endentry
+
+\entry{trakhtenbrot12}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {{Trakhtenbrot}}{T.}%
+     {B.}{B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Netzer}}{N.}%
+     {H.}{H.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{galaxies: active, galaxies: nuclei, quasars: emission lines - quasars:
+  general}
+  \strng{namehash}{TBNH1}
+  \strng{fullhash}{TBNH1}
+  \field{labelyear}{2012}
+  \field{sortinit}{T}
+  \verb{doi}
+  \verb 10.1111/j.1365-2966.2012.22056.x
+  \endverb
+  \verb{eprint}
+  \verb 1209.1096
+  \endverb
+  \field{pages}{3081\bibrangedash 3102}
+  \field{title}{{Black hole growth to z = 2 - I. Improved virial methods for
+  measuring M$_{BH}$ and L/L$_{Edd}$}}
+  \field{volume}{427}
+  \field{journaltitle}{\mnras}
+  \field{eprinttype}{arXiv}
+  \field{month}{12}
+  \field{year}{2012}
+\endentry
+
+\entry{treister12}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {{Treister}}{T.}%
+     {E.}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Schawinski}}{S.}%
+     {K.}{K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Urry}}{U.}%
+     {C.~M.}{C.~M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Simmons}}{S.}%
+     {B.~D.}{B.~D.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{galaxies: active, galaxies: interactions, galaxies: Seyfert, X-rays:
+  diffuse background, X-rays: galaxies}
+  \strng{namehash}{TE+1}
+  \strng{fullhash}{TESKUCMSBD1}
+  \field{labelyear}{2012}
+  \field{sortinit}{T}
+  \verb{doi}
+  \verb 10.1088/2041-8205/758/2/L39
+  \endverb
+  \field{eid}{L39}
+  \verb{eprint}
+  \verb 1209.5393
+  \endverb
+  \field{pages}{L39}
+  \field{title}{{Major Galaxy Mergers Only Trigger the Most Luminous Active
+  Galactic Nuclei}}
+  \field{volume}{758}
+  \field{journaltitle}{\apjl}
+  \field{eprinttype}{arXiv}
+  \field{eprintclass}{astro-ph.CO}
+  \field{month}{10}
+  \field{year}{2012}
+\endentry
+
+\entry{trichas12}{article}{}
+  \name{author}{23}{}{%
+    {{}%
+     {{Trichas}}{T.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Green}}{G.}%
+     {P.~J.}{P.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Silverman}}{S.}%
+     {J.~D.}{J.~D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Aldcroft}}{A.}%
+     {T.}{T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Barkhouse}}{B.}%
+     {W.}{W.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Cameron}}{C.}%
+     {R.~A.}{R.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Constantin}}{C.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Ellison}}{E.}%
+     {S.~L.}{S.~L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Foltz}}{F.}%
+     {C.}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Haggard}}{H.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Jannuzi}}{J.}%
+     {B.~T.}{B.~T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Kim}}{K.}%
+     {D.-W.}{D.-W.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Marshall}}{M.}%
+     {H.~L.}{H.~L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Mossman}}{M.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{P{\'e}rez}}{P.}%
+     {L.~M.}{L.~M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Romero-Colmenero}}{R.}%
+     {E.}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Ruiz}}{R.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Smith}}{S.}%
+     {M.~G.}{M.~G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Smith}}{S.}%
+     {P.~S.}{P.~S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Torres}}{T.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Wik}}{W.}%
+     {D.~R.}{D.~R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Wilkes}}{W.}%
+     {B.~J.}{B.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Wolfgang}}{W.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{galaxies: evolution, galaxies: Seyfert, galaxies: starburst, quasars:
+  general, techniques: spectroscopic, X-rays: galaxies}
+  \strng{namehash}{TM+1}
+  \strng{fullhash}{TMGPJSJDATBWCRACAESLFCHDJBTKDWMHLMAPLMRERASMGSPSTGWDRWBJWA1}
+  \field{labelyear}{2012}
+  \field{sortinit}{T}
+  \verb{doi}
+  \verb 10.1088/0067-0049/200/2/17
+  \endverb
+  \field{eid}{17}
+  \verb{eprint}
+  \verb 1204.5148
+  \endverb
+  \field{pages}{17}
+  \field{title}{{The Chandra Multi-wavelength Project: Optical Spectroscopy and
+  the Broadband Spectral Energy Distributions of X-Ray-selected AGNs}}
+  \field{volume}{200}
+  \field{journaltitle}{\apjs}
+  \field{eprinttype}{arXiv}
+  \field{eprintclass}{astro-ph.CO}
+  \field{month}{06}
+  \field{year}{2012}
+\endentry
+
+\entry{urrutia09}{article}{}
+  \name{author}{7}{}{%
+    {{}%
+     {{Urrutia}}{U.}%
+     {T.}{T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Becker}}{B.}%
+     {R.~H.}{R.~H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{White}}{W.}%
+     {R.~L.}{R.~L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Glikman}}{G.}%
+     {E.}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Lacy}}{L.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hodge}}{H.}%
+     {J.}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Gregg}}{G.}%
+     {M.~D.}{M.~D.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{galaxies: active, galaxies: evolution, quasars: absorption lines,
+  quasars: general}
+  \strng{namehash}{UT+1}
+  \strng{fullhash}{UTBRHWRLGELMHJGMD1}
+  \field{labelyear}{2009}
+  \field{sortinit}{U}
+  \verb{doi}
+  \verb 10.1088/0004-637X/698/2/1095
+  \endverb
+  \verb{eprint}
+  \verb 0808.3668
+  \endverb
+  \field{pages}{1095\bibrangedash 1109}
+  \field{title}{{The FIRST-2MASS Red Quasar Survey. II. An Anomalously High
+  Fraction of LoBALs in Searches for Dust-Reddened Quasars}}
+  \field{volume}{698}
+  \field{journaltitle}{\apj}
+  \field{eprinttype}{arXiv}
+  \field{month}{06}
+  \field{year}{2009}
+\endentry
+
+\entry{urry95}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {{Urry}}{U.}%
+     {C.~M.}{C.~M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Padovani}}{P.}%
+     {P.}{P.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{GALAXIES: ACTIVE, GALAXIES: FUNDAMENTAL PARAMETERS}
+  \strng{namehash}{UCMPP1}
+  \strng{fullhash}{UCMPP1}
+  \field{labelyear}{1995}
+  \field{sortinit}{U}
+  \verb{doi}
+  \verb 10.1086/133630
+  \endverb
+  \verb{eprint}
+  \verb astro-ph/9506063
+  \endverb
+  \field{pages}{803}
+  \field{title}{{Unified Schemes for Radio-Loud Active Galactic Nuclei}}
+  \field{volume}{107}
+  \field{journaltitle}{\pasp}
+  \field{month}{09}
+  \field{year}{1995}
+\endentry
+
+\entry{vestergaard02}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {{Vestergaard}}{V.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Galaxies: Active, Galaxies: Fundamental Parameters, Galaxies:
+  High-Redshift, Galaxies: Seyfert, Galaxies: Quasars: Emission Lines,
+  Ultraviolet: Galaxies}
+  \strng{namehash}{VM1}
+  \strng{fullhash}{VM1}
+  \field{labelyear}{2002}
+  \field{sortinit}{V}
+  \field{pages}{733\bibrangedash 752}
+  \field{title}{{Determining Central Black Hole Masses in Distant Active
+  Galaxies}}
+  \field{volume}{571}
+  \field{journaltitle}{\apj}
+  \field{month}{06}
+  \field{year}{2002}
+\endentry
+
+\entry{vestergaard09}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {{Vestergaard}}{V.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Osmer}}{O.}%
+     {P.~S.}{P.~S.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{cosmology: observations, galaxies: active, galaxies: luminosity
+  function, mass function, quasars: emission lines, quasars: general, surveys}
+  \strng{namehash}{VMOPS1}
+  \strng{fullhash}{VMOPS1}
+  \field{labelyear}{2009}
+  \field{sortinit}{V}
+  \field{pages}{800\bibrangedash 816}
+  \field{title}{{Mass Functions of the Active Black Holes in Distant Quasars
+  from the Large Bright Quasar Survey, the Bright Quasar Survey, and the
+  Color-selected Sample of the SDSS Fall Equatorial Stripe}}
+  \field{volume}{699}
+  \field{journaltitle}{\apj}
+  \field{eprintclass}{astro-ph.CO}
+  \field{month}{07}
+  \field{year}{2009}
+\endentry
+
+\entry{vestergaard06}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {{Vestergaard}}{V.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Peterson}}{P.}%
+     {B.~M.}{B.~M.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Galaxies: Active, Galaxies: Fundamental Parameters, Galaxies:
+  High-Redshift, Galaxies: Seyfert, Galaxies: Quasars: Emission Lines,
+  Ultraviolet: Galaxies}
+  \strng{namehash}{VMPBM1}
+  \strng{fullhash}{VMPBM1}
+  \field{labelyear}{2006}
+  \field{sortinit}{V}
+  \field{pages}{689\bibrangedash 709}
+  \field{title}{{Determining Central Black Hole Masses in Distant Active
+  Galaxies and Quasars. II. Improved Optical and UV Scaling Relationships}}
+  \field{volume}{641}
+  \field{journaltitle}{\apj}
+  \field{month}{04}
+  \field{year}{2006}
+\endentry
+
+\entry{volonteri07}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {{Volonteri}}{V.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Sikora}}{S.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Lasota}}{L.}%
+     {J.-P.}{J.-P.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Black Hole Physics, Cosmology: Theory, Galaxies: Evolution, Galaxies:
+  Quasars: General}
+  \strng{namehash}{VMSMLJP1}
+  \strng{fullhash}{VMSMLJP1}
+  \field{labelyear}{2007}
+  \field{sortinit}{V}
+  \verb{doi}
+  \verb 10.1086/521186
+  \endverb
+  \verb{eprint}
+  \verb 0706.3900
+  \endverb
+  \field{pages}{704\bibrangedash 713}
+  \field{title}{{Black Hole Spin and Galactic Morphology}}
+  \field{volume}{667}
+  \field{journaltitle}{\apj}
+  \field{eprinttype}{arXiv}
+  \field{month}{10}
+  \field{year}{2007}
+\endentry
+
+\entry{wall05}{article}{}
+  \name{author}{5}{}{%
+    {{}%
+     {{Wall}}{W.}%
+     {J.~V.}{J.~V.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Jackson}}{J.}%
+     {C.~A.}{C.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Shaver}}{S.}%
+     {P.~A.}{P.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hook}}{H.}%
+     {I.~M.}{I.~M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Kellermann}}{K.}%
+     {K.~I.}{K.~I.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{radio continuum: galaxies, galaxies: active, galaxies: evolution,
+  galaxies: quasars: general, galaxies: BL Lac objects: general, cosmology:
+  observations}
+  \strng{namehash}{WJV+1}
+  \strng{fullhash}{WJVJCASPAHIMKKI1}
+  \field{labelyear}{2005}
+  \field{sortinit}{W}
+  \verb{doi}
+  \verb 10.1051/0004-6361:20041786
+  \endverb
+  \verb{eprint}
+  \verb astro-ph/0408122
+  \endverb
+  \field{pages}{133\bibrangedash 148}
+  \field{title}{{The Parkes quarter-Jansky flat-spectrum sample. III. Space
+  density and evolution of QSOs}}
+  \field{volume}{434}
+  \field{journaltitle}{\aap}
+  \field{month}{04}
+  \field{year}{2005}
+\endentry
+
+\entry{wang13}{article}{}
+  \name{author}{6}{}{%
+    {{}%
+     {{Wang}}{W.}%
+     {H.}{H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Xing}}{X.}%
+     {F.}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Zhang}}{Z.}%
+     {K.}{K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Wang}}{W.}%
+     {T.}{T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Zhou}}{Z.}%
+     {H.}{H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Zhang}}{Z.}%
+     {S.}{S.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{dust, extinction, galaxies: nuclei, infrared: galaxies, quasars:
+  emission lines, quasars: general}
+  \strng{namehash}{WH+1}
+  \strng{fullhash}{WHXFZKWTZHZS1}
+  \field{labelyear}{2013}
+  \field{sortinit}{W}
+  \field{pages}{L15}
+  \field{title}{{Outflow and Hot Dust Emission in High-redshift Quasars}}
+  \field{volume}{776}
+  \field{journaltitle}{\apjl}
+  \field{month}{10}
+  \field{year}{2013}
+\endentry
+
+\entry{wang09}{article}{}
+  \name{author}{9}{}{%
+    {{}%
+     {{Wang}}{W.}%
+     {J.-G.}{J.-G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Dong}}{D.}%
+     {X.-B.}{X.-B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Wang}}{W.}%
+     {T.-G.}{T.-G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Ho}}{H.}%
+     {L.~C.}{L.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Yuan}}{Y.}%
+     {W.}{W.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Wang}}{W.}%
+     {H.}{H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Zhang}}{Z.}%
+     {K.}{K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Zhang}}{Z.}%
+     {S.}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Zhou}}{Z.}%
+     {H.}{H.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{black hole physics, galaxies: active, quasars: emission lines, quasars:
+  general}
+  \strng{namehash}{WJG+1}
+  \strng{fullhash}{WJGDXBWTGHLCYWWHZKZSZH1}
+  \field{labelyear}{2009}
+  \field{sortinit}{W}
+  \verb{doi}
+  \verb 10.1088/0004-637X/707/2/1334
+  \endverb
+  \verb{eprint}
+  \verb 0910.2848
+  \endverb
+  \field{pages}{1334\bibrangedash 1346}
+  \field{title}{{Estimating Black Hole Masses in Active Galactic Nuclei Using
+  the Mg II {$\lambda$}2800 Emission Line}}
+  \field{volume}{707}
+  \field{journaltitle}{\apj}
+  \field{eprinttype}{arXiv}
+  \field{month}{12}
+  \field{year}{2009}
 \endentry
 
 \entry{weymann91}{article}{}
@@ -1865,6 +6989,49 @@
   \field{eprintclass}{astro-ph.IM}
   \field{month}{12}
   \field{year}{2010}
+\endentry
+
+\entry{wu04}{article}{}
+  \name{author}{5}{}{%
+    {{}%
+     {{Wu}}{W.}%
+     {X.-B.}{X.-B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Wang}}{W.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Kong}}{K.}%
+     {M.~Z.}{M.~Z.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Liu}}{L.}%
+     {F.~K.}{F.~K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Han}}{H.}%
+     {J.~L.}{J.~L.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{black hole physics, galaxies: active, galaxies: nuclei, quasars:
+  general, quasars: emission lines}
+  \strng{namehash}{WXB+1}
+  \strng{fullhash}{WXBWRKMZLFKHJL1}
+  \field{labelyear}{2004}
+  \field{sortinit}{W}
+  \field{pages}{793\bibrangedash 798}
+  \field{title}{{Black hole mass estimation using a relation between the BLR
+  size and emission line luminosity of AGN}}
+  \field{volume}{424}
+  \field{journaltitle}{\aap}
+  \field{month}{09}
+  \field{year}{2004}
 \endentry
 
 \entry{york00}{article}{}
