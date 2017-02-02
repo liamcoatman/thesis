@@ -1,6 +1,3 @@
-
-
-
 def luminosity_z(): 
 
     from astropy.table import Table, join 
@@ -11,17 +8,20 @@ def luminosity_z():
     import os
     import time
     import numpy.ma as ma 
-    from PlottingTools.plot_setup import figsize, set_plot_properties
     import palettable 
     import matplotlib.patches as patches
     from matplotlib.ticker import NullFormatter, MaxNLocator, FuncFormatter
     import pandas as pd 
+    from PlottingTools.plot_setup_thesis import figsize, set_plot_properties 
+    from PlottingTools.kde_contours import kde_contours
+
+    set_plot_properties() # change style 
 
     cs = palettable.colorbrewer.qualitative.Set1_9.mpl_colors 
 
     # definitions for the axes
-    left, width = 0.1, 0.65
-    bottom, height = 0.1, 0.65
+    left, width = 0.13, 0.65
+    bottom, height = 0.13, 0.65
     bottom_h = left_h = left + width + 0.0
         
     rect_scatter = [left, bottom, width, height]
@@ -31,8 +31,8 @@ def luminosity_z():
     # no labels
     nullfmt = NullFormatter() 
     
-    fig = plt.figure(figsize=figsize(0.8, vscale=1.0))
-    
+    fig = plt.figure(figsize=figsize(1, vscale=1.0))
+
     axScatter = plt.axes(rect_scatter)
     axHistx = plt.axes(rect_histx)
     axHisty = plt.axes(rect_histy)
@@ -48,46 +48,18 @@ def luminosity_z():
     axHisty.set_xticks([])
     axHisty.set_yticks([])
     
-    
     t = Table.read('/data/lc585/SDSS/dr7_bh_Nov19_2013.fits')
     t = t[t['LOGLBOL'] > 0.0]
     t = t[t['Z_HW'] > 1.0]
 
-    m1, m2 = t['Z_HW'], t['LOGLBOL'] # Richards 2006 Bolometric correction
+    kde_contours(t['Z_HW'], 
+                 t['LOGLBOL'], 
+                 axScatter, 
+                 {'levels':[0.02, 0.05, 0.13, 0.2, 0.4, 0.8, 1.2]}, 
+                 {'label':'SDSS DR7'}, 
+                 color=cs[-1], 
+                 lims=(1.0, 5.0, 44.0, 48.0))
 
-    xmin = 1.0
-    xmax = 5.0
-    ymin = 44.0
-    ymax = 48.0
-    
-    X, Y = np.mgrid[xmin:xmax:100j, ymin:ymax:100j]
-    positions = np.vstack([X.ravel(), Y.ravel()])
-    values = np.vstack([m1, m2])
-    
-    kernel = stats.gaussian_kde(values)
-    
-    Z = np.reshape(kernel(positions).T, X.shape)
-    
-    CS = axScatter.contour(X, Y, Z, colors=[cs[-1]], levels=[0.02, 0.05, 0.13, 0.2, 0.4, 0.8, 1.2])
-    
-    # threshold = CS.levels[0]
-    threshold = 0.02
-    
-    z = kernel(values)
-    
-    # mask points above density threshold
-    x = np.ma.masked_where(z > threshold, m1)
-    y = np.ma.masked_where(z > threshold, m2)
-    
-    # plot unmasked points
-    axScatter.plot(x, 
-                   y, 
-                   markerfacecolor=cs[-1], 
-                   markeredgecolor='None', 
-                   linestyle='', 
-                   marker='o', 
-                   markersize=2, 
-                   label='SDSS DR7')
     
     df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0) 
     df.drop_duplicates(subset=['ID'], inplace=True)
@@ -105,16 +77,19 @@ def luminosity_z():
     axScatter.set_xlabel(r'Redshift $z$')
     axScatter.set_ylabel(r'log $L_{\mathrm{Bol}}$ [erg/s]')
     
-    legend = axScatter.legend(frameon=True, scatterpoints=1, numpoints=1, loc='lower right') 
+    legend = axScatter.legend(frameon=True, 
+                              scatterpoints=1, 
+                              numpoints=1, 
+                              loc='lower right') 
     
-    axHistx.hist(m1, 
+    axHistx.hist(t['Z_HW'], 
                  bins=np.arange(0.0, 5.0, 0.25), 
                  facecolor=cs[-1], 
                  edgecolor='None', 
                  alpha=0.4, 
                  normed=True)
     
-    axHisty.hist(m2, 
+    axHisty.hist(t['LOGLBOL'], 
                  bins=np.arange(44, 49, 0.25), 
                  facecolor=cs[-1], 
                  edgecolor='None', 

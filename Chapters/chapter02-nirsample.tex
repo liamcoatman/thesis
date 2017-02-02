@@ -1,12 +1,30 @@
 % !TEX root = ../main.tex
 
 %*****************************************
-\chapter{A near-infrared spectroscopic database of high-redshift quasars}\label{ch:chapter02}
+\chapter{A near-infrared spectroscopic database of high-redshift quasars}
+\label{ch:chapter02}
 %*****************************************
 
-Rest-frame optical quasar emission lines provide much information. 
-This includes black hole masses and systemic redshifts. 
-Rest-frame optical lines, including [\ion{O}{III}], \hb and \ha, are redshifted to infra-red wavelengths at redshifts $z\gtrsim$2. 
+With the exception of a handful of very nearby objects, the inner regions of AGN cannot be resolved. 
+Spectroscopic data is therefore invaluable to all AGN-related science. 
+The optical region includes a number of strong emission features, including the broad lines of \ha and \hb and the narrow lines of [\ion{O}{III}]. 
+As we will see in Chapter XX, the low-ionisation Balmer series are routinely used to derive black hole masses and quasar accretion rates. 
+As the strongest narrow emission line, [\ion{O}{III}] is used to measure the systemic redshift, and to probe quasar-driven outflows on galactic scales (see Chapter XX). 
+
+Large optical surveys have provided spectra for hundreds of thousands of AGN and quasars. 
+With it's twelth data release in 2016, the number of quasar spectra in the SDSS catalogue reached 200,000. 
+\todo{Get number.}
+However, the rest-frame optical region is redshifted beyond the reach of optical spectrographs at redshifts $z \gtrsim$0.4. 
+At redshifts $z\sim2$, near-infrared spectroscopy is required in order to study the rest-frame optical lines. 
+
+The number density of quasars in the Universe rises sharply as a function of redshift, and peaks at redshifts $2\lesssim z \lesssim 4$. 
+The star formation rate follows a similar evolutionary path. 
+
+
+
+
+
+ 
 However, the number of quasars at these redshifts with near-infrared spectra is limited. 
 This is unfortunate because the peak epoch of galaxy evolution is at redshifts $2\lesssim z \lesssim 4$. 
 
@@ -15,36 +33,36 @@ This is the largest sample constructed, and is invaluable in a number of investi
 Because of this I intend to publically release the data in the near future. 
 
 \begin{figure}
-    \includegraphics[width=0.8\columnwidth]{figures/chapter02/luminosity_z.pdf} 
+    \includegraphics[width=\textwidth]{figures/chapter02/luminosity_z.pdf} 
     \caption{The ranges in redshift and luminosity covered by our sample, relative to the redshift-luminosity distribution of the SDSS DR7 quasar catalogue. In regions of high point-density, contours show equally-spaced lines of constant probability density generated using a Gaussian kernel-density estimator. For the SDSS sample we use \citet{hewett10} redshifts and bolometric luminosities measured by \citet{shen11}. For the quasars in this paper the redshift is defined using the peak of the \hans/\hb emission and the luminosity is measured in the continuum at 1350\AA\, and converted to a bolometric quantity using the same conversion factor employed by \citet{shen11}. Eight objects are missing because we do not have enough information to calculate the bolometric luminosity.}     
     \label{fig:lzplane}
 \end{figure}
 
-\begin{landscape}% Landscape page
-    \centering % Center table
-    \begin{minipage}{\linewidth}
-    \renewcommand\footnoterule{}
-    \captionof{table}{The numbers of quasars, the spectrographs and telescopes used to obtain the near-infrared spectra, and the instrumental configurations.}
-    \begin{tabular}{ccccccc} 
+\begin{table}
+  \small
+  \centering
+  \caption{Summary of near-infrared spectroscopic database.}
+  \label{tab:specnums}
+    \begin{tabular}{cc} 
     \hline
-    Spectrograph & Telescope & Resolving power & Wavelength coverage & Slit width & Exposure times & Number \\
-    & & $\lambda/\Delta\lambda$ & $\mu$m & arcsec & hr & \\  
+    Instrument & Number \\  
     \hline
-    FIRE       & MAGELLAN & 6000      & 0.80-2.50 & 0.6       & 0.5-1.0    & 18 \\
-    GNIRS      & GEMINI-N & 5400      & 0.85-2.50 & 0.3-0.45 & 0.3-1.3  & 22 \\
-    ISAAC      & VLT      & 5100      & 1.40-1.82 & 0.6       & 0.6-1.3  & 0  \\
-    LIRIS      & WHT      & 945       & 1.39-2.42 & 1.0         & 0.2-0.8  & 15 \\
-    NIRI       & GEMINI-N & 520-825   & 1.43-1.96 & 0.47-0.75 & 0.5-2.7 & 0 \\
-    NIRSPEC    & Keck II  &           &           &           &         & 20 \\ 
-    SINFONI    & VLT      & 2000-3000 & 1.10-2.45\footnote{$J$, $H$ or $K$ filters were employed to ensure     coverage of the \hbns/[\ion{O}{III}] spectral region.} &  & 0.1-0.7  & 2 \\
-    SOFI       & NTT      & 1000-2000 & 1.53-2.52\footnote{Both the low resolution red grism and the medium     resolution grism, with $K$ and $H$ filters, were employed.} & 0.6       & 0.5-1.8  & 47 \\
-    TRIPLESPEC & ARC-3.5m & 2500-3500 & 0.95-2.46 & 1.1-1.5   & 1.0-1.5    & 33 \\
-    TRIPLESPEC & P200     & 2500-2700 & 1.00-2.40   & 1.0         &          & 23 \\
-    XSHOOTER   & VLT      & 4350-7450 & 0.30-2.50   & 0.5-1.6   &     0.2-0.8     & 4 \\
+    FIRE/Magellan   & 36 \\
+    GNIRS/Gemini    & 29 \\
+    ISAAC/VLT       & 13  \\
+    LIRIS/WHT       & 21  \\
+    NIRI/Gemini     & 31 \\
+    NIRSPEC/Keck    & 3   \\ 
+    SINFONI/VLT     & 84 \\
+    SofI/NTT        & 111 \\
+    TRIPLESPEC/ARC  & 38 \\
+    TRIPLESPEC/Hale & 60 \\
+    XSHOOTER/VLT    & 36  \\
+    \hline
+    Total & 462 \\
     \hline
     \end{tabular}
-    \end{minipage}
-\end{landscape}
+\end{table}
 
 
 
@@ -141,63 +159,32 @@ A further 36 quasars in our catalogue are bright SDSS quasars which were observe
 The objects were observed with the same science goals as the SOFI NTT large programme. 
 The spectra were reduced using a custom pipeline, again using algorithms in the LowRedux package. 
 
-
-\begin{table*}
-  \centering
-  \vspace*{-0.4cm}
-  \caption{The format of the table containing basic information on our sample. The full catalogue is available to download at the following URL.}
-  \label{tab:nirdatabase}
-  \vspace*{-0.1cm}
-  \begin{minipage}{16cm}
-  \centering
-    \begin{tabular}{ccc} 
-    \hline
-    & Units & Description \\ 
-    \hline
-    NAME & & Name of spectra  \\
-    DR7\_SPEC & & Name of SDSS/DR7 spectra \\
-    DR12\_SPEC & & Name of BOSS/DR12 spectra \\
-    ID & & Name of quasar (not unique) \\
-    DATE & & Date near-infrared spectra acquired  \\
-    RA & & \\
-    DEC & & \\
-    INSTR\_BAND & & Instrument configuration \\
-    INSTR & & Instrument used \\
-    z\_ICA & & \\
-    z\_Line & & \\
-    2massMag\_j & & \\
-    2massMag\_h & & \\
-    2massMag\_k & & \\
-    2massMagErr\_j & & \\
-    2massMagErr\_h & & \\
-    2massMagErr\_k & & \\
-    psfMag\_u & & \\
-    psfMag\_g & & \\
-    psfMag\_r & & \\
-    psfMag\_i & & \\
-    psfMag\_z & & \\
-    psfMagErr\_u & & \\
-    psfMagErr\_g & & \\
-    psfMagErr\_r & & \\
-    psfMagErr\_i & & \\
-    psfMagErr\_z & & \\
-    WISE\_W1MPRO & & \\
-    WISE\_W2MPRO & & \\
-    WISE\_W3MPRO & & \\
-    WISE\_W4MPRO & & \\
-    WISE\_W1SIGMPRO & & \\
-    WISE\_W2SIGMPRO & & \\
-    WISE\_W3SIGMPRO & & \\
-    WISE\_W4SIGMPRO & & \\
-    RADIO\_FLAG & & \\
-    BAL\_FLAG & & \\
-    \hline
+\begin{landscape}% Landscape page
+    \centering % Center table
+    \begin{minipage}{\linewidth}
+    \small
+    \renewcommand\footnoterule{}
+    \captionof{table}{Quasars in our near-infrared spectroscopic database. Only the first 15 entries are shown. The full table (including 462 objects) is available online. S/N is given per pixel.}
+    \begin{tabular}{lllllcccccc} 
+    \toprule
+     ID &        Date &             Ra &            Dec &            Instr. &  $\Delta\lambda$ [$\mu$m] &  $\Delta v$ [\kms] & S/N &  $z$([\ion{O}{III}]) & $z$(\hans) & $z$(\hbns) \\
+    \midrule
+     J000039-001804 &  2015-09-02 &  +00h00m39.00s &  -00d18m03.90s &         SofI/NTT &  1.50-2.54 &     154.0 &   4.9 &         &  2.1412 &  2.1391 \\
+ J000345-232353 &  2009-07-07 &  +00h03m45.00s &  -23d23m53.40s &      SINFONI/VLT &  1.44-1.87 &      36.0 &  12.7 &  2.2657 &         &  2.2653 \\
+ J000345-232353 &  2011-09-18 &  +00h03m45.00s &  -23d23m53.40s &         SofI/NTT &  1.48-1.83 &      63.0 &  36.0 &  2.2644 &         &  2.2776 \\
+ J000451-084450 &  2013-07-12 &  +00h04m50.66s &  -08d44m49.63s &     XSHOOTER/VLT &  0.31-2.28 &      15.0 &  10.3 &  3.0038 &         &  3.0052 \\
+ J000451-084452 &  2013-08-08 &  +00h04m50.91s &  -08d44m51.98s &     XSHOOTER/VLT &  0.31-2.28 &      15.0 &   5.4 &  2.9991 &         &         \\
+ J000500-003348 &  2015-09-01 &  +00h05m00.42s &  -00d33m48.20s &         SofI/NTT &  1.50-2.54 &     154.0 &   8.2 &         &  2.1842 &  2.1850 \\
+ J000501+010221 &  2015-09-02 &  +00h05m00.53s &  +01d02m20.80s &         SofI/NTT &  1.50-2.54 &     154.0 &   6.8 &         &  2.1334 &  2.1317 \\
+ J001016+001228 &  2015-09-04 &  +00h10m16.49s &  +00d12m27.60s &         SofI/NTT &  1.50-2.54 &     154.0 &   8.9 &         &  2.2855 &  2.2828 \\
+ J001247+001239 &  2013-06-06 &  +00h12m47.12s &  +00d12m39.49s &        ISAAC/VLT &  1.52-1.60 &      15.0 &  19.1 &         &         &  2.1618 \\
+ J001708+813508 &  2012-08-04 &  +00h17m08.48s &  +81d35m08.10s &  TRIPLESPEC/Hale &  0.94-2.80 &      39.0 &  36.5 &  3.3934 &         &         \\
+ J001919+010152 &  2015-09-04 &  +00h19m19.31s &  +01d01m52.20s &         SofI/NTT &  1.50-2.54 &     154.0 &   6.5 &  2.3120 &  2.3158 &  2.3154 \\
+ J001955-091316 &  2004-11-26 &  +00h19m54.67s &  -09d13m16.45s &     GNIRS/Gemini &  0.60-2.61 &      88.0 &   9.9 &         &  2.1207 &  2.1308 \\
+ J002018-233654 &  2009-07-07 &  +00h20m18.41s &  -23d36m53.80s &      SINFONI/VLT &  1.44-1.87 &      36.0 &  16.9 &  2.2975 &         &  2.2931 \\
+ J002023-414639 &  2009-07-08 &  +00h20m23.38s &  -41d46m38.90s &      SINFONI/VLT &  1.09-1.41 &      35.0 &  33.4 &  1.5733 &         &  1.5730 \\
+ J002111-242247 &  2009-07-16 &  +00h21m10.90s &  -24d22m47.20s &      SINFONI/VLT &  1.44-1.86 &      36.0 &  11.1 &  2.2622 &         &  2.2595 \\
+    \bottomrule
     \end{tabular}
-  \vspace*{-0.4cm}
-  \end{minipage}
-\end{table*}
-
-
-
-
-
+    \end{minipage}
+\end{landscape}

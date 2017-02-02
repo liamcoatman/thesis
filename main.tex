@@ -50,19 +50,6 @@
 \usepackage{afterpage}
 \usepackage{capt-of}% or use the larger `caption` package
 
-% Fitting tables on to page
-\def\fudge#1#2{%
-\addtolength\textheight{#1}%
-\@colroom\textheight
-\vsize\textheight
-\@colht\textheight
-\def\LS@rot{%
-  \setbox\@outputbox\vbox{\hbox{\kern-#2\rotatebox{90}{\box\@outputbox}}}}%
-\clearpage}
-
-\newcounter{z}
-\def\z{\stepcounter{z}[[[[[\thez]]]]]}
-
 \newcommand\msun{{{{\rm M_\odot}}}}
 \newcommand{\ha}{H$\alpha$~}
 \newcommand{\hb}{H$\beta$~}
@@ -104,16 +91,16 @@
 %********************************************************************
 % Frontmatter
 %*******************************************************
-\include{FrontBackmatter/DirtyTitlepage}
-\include{FrontBackmatter/Titlepage}
-\include{FrontBackmatter/Titleback}
-\cleardoublepage\include{FrontBackmatter/Dedication}
-\cleardoublepage\include{FrontBackmatter/Foreword}
-\cleardoublepage\include{FrontBackmatter/Abstract}
-\cleardoublepage\include{FrontBackmatter/Publications}
-\cleardoublepage\include{FrontBackmatter/Acknowledgments}
-\pagestyle{scrheadings}
-\cleardoublepage\include{FrontBackmatter/Contents}
+% \include{FrontBackmatter/DirtyTitlepage}
+% \include{FrontBackmatter/Titlepage}
+% \include{FrontBackmatter/Titleback}
+% \cleardoublepage\include{FrontBackmatter/Dedication}
+% \cleardoublepage\include{FrontBackmatter/Foreword}
+% \cleardoublepage\include{FrontBackmatter/Abstract}
+% \cleardoublepage\include{FrontBackmatter/Publications}
+% \cleardoublepage\include{FrontBackmatter/Acknowledgments}
+% \pagestyle{scrheadings}
+% \cleardoublepage\include{FrontBackmatter/Contents}
 %********************************************************************
 % Mainmatter
 %*******************************************************
@@ -122,12 +109,12 @@
 % use \cleardoublepage here to avoid problems with pdfbookmark
 \cleardoublepage
 
-\include{Chapters/chapter01-intro}
+% \include{Chapters/chapter01-intro}
 \include{Chapters/chapter02-nirsample}
-\include{Chapters/chapter03-bhm}
-\include{Chapters/chapter04-nlr}
-\include{Chapters/chapter05-sed}
-\include{Chapters/chapter06-conclusions}
+% \include{Chapters/chapter03-bhm}
+% \include{Chapters/chapter04-nlr}
+% \include{Chapters/chapter05-sed}
+% \include{Chapters/chapter06-conclusions}
 
 % ********************************************************************
 % Backmatter
