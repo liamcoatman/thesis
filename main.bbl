@@ -344,44 +344,57 @@
   \field{year}{2004}
 \endentry
 
-\entry{dallaglio08}{article}{}
-  \name{author}{3}{}{%
+\entry{coatman17}{article}{}
+  \name{author}{6}{}{%
     {{}%
-     {{Dall'Aglio}}{D.}%
-     {A.}{A.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Wisotzki}}{W.}%
+     {{Coatman}}{C.}%
      {L.}{L.}%
      {}{}%
      {}{}}%
     {{}%
-     {{Worseck}}{W.}%
-     {G.}{G.}%
+     {{Hewett}}{H.}%
+     {P.~C.}{P.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Banerji}}{B.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Richards}}{R.}%
+     {G.~T.}{G.~T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hennawi}}{H.}%
+     {J.~F.}{J.~F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Prochaska}}{P.}%
+     {J.~X.}{J.~X.}%
      {}{}%
      {}{}}%
   }
-  \keyw{cosmology: diffuse radiation, galaxies: intergalactic medium, galaxies:
-  quasars: absorption lines}
-  \strng{namehash}{DAWLWG1}
-  \strng{fullhash}{DAWLWG1}
-  \field{labelyear}{2008}
-  \field{sortinit}{D}
+  \keyw{galaxies: evolution}
+  \strng{namehash}{CL+1}
+  \strng{fullhash}{CLHPCBMRGTHJFPJX1}
+  \field{labelyear}{2017}
+  \field{sortinit}{C}
   \verb{doi}
-  \verb 10.1051/0004-6361:200810724
+  \verb 10.1093/mnras/stw2797
   \endverb
   \verb{eprint}
-  \verb 0807.5089
+  \verb 1610.08977
   \endverb
-  \field{pages}{465\bibrangedash 481}
-  \field{title}{{An unbiased measurement of the UV background and its evolution
-  via the proximity effect in quasar spectra}}
-  \field{volume}{491}
-  \field{journaltitle}{\aap}
+  \field{pages}{2120\bibrangedash 2142}
+  \field{title}{{Correcting C IV-based virial black hole masses}}
+  \field{volume}{465}
+  \field{journaltitle}{\mnras}
   \field{eprinttype}{arXiv}
-  \field{month}{11}
-  \field{year}{2008}
+  \field{month}{02}
+  \field{year}{2017}
 \endentry
 
 \entry{dekker00}{inproceedings}{}
@@ -1254,53 +1267,93 @@
   \field{year}{2007}
 \endentry
 
-\entry{maddox12}{article}{}
-  \name{author}{5}{}{%
+\entry{manchado98}{inproceedings}{}
+  \name{author}{13}{}{%
     {{}%
-     {{Maddox}}{M.}%
-     {N.}{N.}%
+     {{Manchado}}{M.}%
+     {A.}{A.}%
      {}{}%
      {}{}}%
     {{}%
-     {{Hewett}}{H.}%
-     {P.~C.}{P.~C.}%
+     {{Fuentes}}{F.}%
+     {F.~J.}{F.~J.}%
      {}{}%
      {}{}}%
     {{}%
-     {{P{\'e}roux}}{P.}%
-     {C.}{C.}%
+     {{Prada}}{P.}%
+     {F.}{F.}%
      {}{}%
      {}{}}%
     {{}%
-     {{Nestor}}{N.}%
-     {D.~B.}{D.~B.}%
+     {{Ballesteros}}{B.}%
+     {E.}{E.}%
      {}{}%
      {}{}}%
     {{}%
-     {{Wisotzki}}{W.}%
-     {L.}{L.}%
+     {{Barreto}}{B.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Carranza}}{C.}%
+     {J.~M.}{J.~M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Escudero}}{E.}%
+     {I.}{I.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Fragoso-Lopez}}{F.}%
+     {A.~B.}{A.~B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Joven-Alvarez}}{J.}%
+     {E.}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Manescau}}{M.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Pi}}{P.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Rodriguez-Ramos}}{R.}%
+     {L.~F.}{L.~F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Sosa}}{S.}%
+     {N.~A.}{N.~A.}%
      {}{}%
      {}{}}%
   }
-  \keyw{surveys, quasars: general, infrared: general}
-  \strng{namehash}{MN+1}
-  \strng{fullhash}{MNHPCPCNDBWL1}
-  \field{labelyear}{2012}
+  \name{editor}{1}{}{%
+    {{}%
+     {{Fowler}}{F.}%
+     {A.~M.}{A.~M.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{MA+1}
+  \strng{fullhash}{MAFFJPFBEBMCJMEIFABJEMAPMRLFSNA1}
+  \field{labelyear}{1998}
   \field{sortinit}{M}
-  \verb{doi}
-  \verb 10.1111/j.1365-2966.2012.21427.x
-  \endverb
-  \verb{eprint}
-  \verb 1206.1434
-  \endverb
-  \field{pages}{2876\bibrangedash 2895}
-  \field{title}{{The large area KX quasar catalogue - I. Analysis of the
-  photometric redshift selection and the complete quasar catalogue}}
-  \field{volume}{424}
-  \field{journaltitle}{\mnras}
-  \field{eprinttype}{arXiv}
+  \field{booktitle}{Infrared Astronomical Instrumentation}
+  \field{pages}{448\bibrangedash 455}
+  \field{series}{\procspie}
+  \field{title}{{LIRIS: a long-slit intermediate-resolution infrared
+  spectrograph for the WHT}}
+  \field{volume}{3354}
   \field{month}{08}
-  \field{year}{2012}
+  \field{year}{1998}
 \endentry
 
 \entry{moorwood98a}{article}{}
@@ -1444,7 +1497,7 @@
      {}{}}%
   }
   \keyw{Infrared Cameras: VLT}
-  \strng{namehash}{MA+1}
+  \strng{namehash}{MA+2}
   \strng{fullhash}{MACJGBPBJDBDNvAFGGHGRHTHGKJLCLJLMHMMNGPMSJSJ1}
   \field{labelyear}{1998}
   \field{sortinit}{M}
