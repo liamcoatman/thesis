@@ -6,7 +6,7 @@ import cPickle as pickle
 import os
 import time
 import numpy.ma as ma 
-from PlottingTools.plot_setup import figsize, set_plot_properties
+from PlottingTools.plot_setup_thesis import figsize, set_plot_properties
 import palettable 
 import matplotlib.patches as patches
 from matplotlib.ticker import NullFormatter, MaxNLocator, FuncFormatter
@@ -183,89 +183,12 @@ def civ_space_plot():
     axs[1].set_ylabel(r'log(C\,{\sc iv} EW) [\AA]')
     axs[2].set_ylabel(r'log(C\,{\sc iv} EW) [\AA]')
 
-    import sys 
-    sys.path.insert(0, '/home/lc585/Dropbox/IoA/BlackHoleMasses')
-    from wht_properties_v3 import get_wht_quasars
-
-    quasars = get_wht_quasars().all_quasars()
-
-    t1 = Table()
-    t1['SDSS_NAME'] = [i.sdss_name for i in quasars] 
-
-    t2 = Table()
-    t2['SDSS_NAME'] = t_hw['col1']
-    t2['Blueshift'] = t_hw['col2']
-    t2['EQW'] = t_hw['col3']
-
-    t3 = join(t1, t2, keys='SDSS_NAME', join_type='left')
-
-    axs[1].scatter(t3['Blueshift'],
-    	           np.log10(t3['EQW']),
-    	           c=cs[1],
-    	           s=25,
-    	           edgecolor='black',
-    	           label = 'Our Sample')
-
-    t4 = Table()
-    t4['SDSS_NAME'] = t_ica['col1']
-    t4['Blueshift'] = t_ica['col2']
-    t4['EQW'] = t_ica['col3']
-
-    t5 = join(t1, t4, keys='SDSS_NAME', join_type='left')
-
-    axs[2].scatter(t5['Blueshift'],
-                   np.log10(t5['EQW']),
-                   c=cs[1],
-                   s=25,
-                   edgecolor='black',
-                   label = 'Our Sample')
-
-    t6 = Table()
-    t6['SDSS_NAME'] = ['SDSSJ' + i for i in shen['SDSS_NAME']]
-    t6['CIV_EQW'] = shen['EW_CIV']
-    t6['VOFF_CIV_PEAK'] = shen['VOFF_CIV_PEAK']   
-
-    t7 = join(t1, t6,  keys='SDSS_NAME', join_type='left')
-
-    axs[0].scatter(t7['VOFF_CIV_PEAK'],
-                   np.log10(t7['CIV_EQW']),
-                   c=cs[1],
-                   s=25,
-                   edgecolor='black')
-
-
-    legend = axs[2].legend(frameon=True) 
-
-    axs[1].add_patch(patches.Rectangle((-499, np.log10(25)),     # (x,y)
-                                       714,                    # width
-                                       np.log10(40.0/25.0), # height
-                                       fill=False,
-                                       edgecolor='black',
-                                       linestyle='solid',
-                                       lw=1))      
-
-    axs[1].add_patch(patches.Rectangle((1219, np.log10(25)),     # (x,y)
-                                        203,                    # width
-                                        np.log10(40.0/25.0), # height
-                                        fill=False,
-                                        edgecolor='black',
-                                        linestyle='solid',
-                                        lw=1))  
-
-    axs[1].add_patch(patches.Rectangle((1981, np.log10(25)),     # (x,y)
-                                       1002,                    # width
-                                       np.log10(40.0/25.0), # height
-                                       fill=False,
-                                       edgecolor='black',
-                                       linestyle='solid',
-                                       lw=1))                                          
-
-    axs[0].text(-922, 2.12, '(a)', ha='center', va='center')
-    axs[1].text(-922, 2.12, '(b)', ha='center', va='center')
-    axs[2].text(-922, 2.12, '(c)', ha='center', va='center')
+    axs[0].text(4000, 2.12, '(a)', ha='center', va='center')
+    axs[1].text(4000, 2.12, '(b)', ha='center', va='center')
+    axs[2].text(4000, 2.12, '(c)', ha='center', va='center')
 
     fig.tight_layout()
-    fig.subplots_adjust(hspace=0.03)
+    fig.subplots_adjust(hspace=0.05)
 
     fig.savefig('/home/lc585/thesis/figures/chapter02/civ_space.pdf')
 
