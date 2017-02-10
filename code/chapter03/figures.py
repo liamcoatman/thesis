@@ -214,13 +214,11 @@ def composite_plot():
 
     set_plot_properties() # change style 
 
-    cs = palettable.colorbrewer.qualitative.Set1_4.mpl_colors
-
-    del cs[2]
+    cs = palettable.colorbrewer.qualitative.Set2_3.mpl_colors
 
     stem = '/data/vault/phewett/ICAtest/DR7_zica'
 
-    fig, ax = plt.subplots(figsize=(figsize(0.75)))
+    fig, ax = plt.subplots(figsize=(figsize(0.75, vscale=0.75)))
 
     #composites = ['civ_bs_p0002.comp',
     #              'civ_bs_p0598.comp',
@@ -242,16 +240,17 @@ def composite_plot():
 
     linestyles = ['-', '--', ':']
     lines = []
-    for i,composite in enumerate(composites):
+    for i, composite in enumerate(composites):
         f = np.genfromtxt( os.path.join(stem,composite))
         x_data = (f[:,0] - line_wlen ) * c / line_wlen
-        l, = ax.plot( x_data, f[:,1], lw=2, label=labels[i], color='black', linestyle=linestyles[i] )
+        l, = ax.plot( x_data, f[:,1], lw=2, label=labels[i], color=cs[i], linestyle='-')
         lines.append(l)
 
     ax.legend(handles=lines, labels=labels, prop={'size':10},frameon=True)
 
     ax.set_xlim(-10000,10000)
     ax.set_ylim(1,2.2)
+    ax.grid() 
 
     ax.set_xlabel(r'$\Delta v$ [km~$\rm{s}^{-1}$]')
     ax.set_ylabel(r'$F_{\lambda}$ [Scaled Units]')
@@ -260,7 +259,7 @@ def composite_plot():
 
     fig.tight_layout()
 
-    fig.savefig('/home/lc585/thesis/figures/chapter02/civ_composites.pdf')
+    fig.savefig('/home/lc585/thesis/figures/chapter03/civ_composites.pdf')
 
     plt.show() 
 
@@ -927,7 +926,7 @@ def test_corrections():
 
     cs = palettable.colorbrewer.qualitative.Set1_3.mpl_colors
 
-    fig, axs = plt.subplots(4, 1, figsize=figsize(0.7, vscale=2), sharex=True, sharey=True)
+    fig, axs = plt.subplots(4, 1, figsize=figsize(0.9, vscale=2), sharex=True, sharey=True)
     
 
     df = pd.read_csv('/home/lc585/BHMassPaper2_Submitted_Data/masterlist_liam_resubmitted.csv', index_col=0)
@@ -938,6 +937,8 @@ def test_corrections():
     df = df[df.BAL_FLAG != 1]
     df = df[df.WARN_1400_BEST == 0]
     df = df[['rescale' not in i for i in df.SPEC_NIR.values]]
+
+    for ax in axs: ax.grid() 
 
 
     #----- Our correction ------------------------------------
@@ -973,7 +974,6 @@ def test_corrections():
 
     axs[3].set_yscale('log')
     axs[3].set_ylim(0.1, 10)
-    axs[3].axhline(1, color='black', linestyle='--')
     axs[3].set_xlabel(r'C\,{\sc iv} Blueshift [km~$\rm{s}^{-1}$]')
 
     #-----------------------------------------------------------------------------------
@@ -994,7 +994,6 @@ def test_corrections():
                    s=25)
 
     axs[1].set_yscale('log')
-    axs[1].axhline(1, color='black', linestyle='--')
 
 
     bhm_hb_predicted_denney = 10**(df['LogMBH_CIV_VP06']\
@@ -1012,7 +1011,6 @@ def test_corrections():
                    s=25)
 
     axs[0].set_yscale('log')
-    axs[0].axhline(1, color='black', linestyle='--')
 
     log_bhm_hb_predicted_park = 7.48 + 0.52*np.log10((10**df['LogL1350'])*1e-44)\
                                 + 0.56*np.log10(df['FWHM_CIV_BEST']*1e-3)
@@ -1030,7 +1028,6 @@ def test_corrections():
                    s=25)
     
     axs[2].set_yscale('log')
-    axs[2].axhline(1, color='black', linestyle='--')
 
     fig.text(0.04, 0.5, r'BHM C\,{\sc iv} (Corrected) / BHM H$\alpha$', va='center', rotation='vertical')
 
@@ -1151,6 +1148,8 @@ def shen_comparison_hb():
     ax.set_xlabel(r'Shen (2016)~~FWHM(H$\beta$) [km~$\rm{s}^{-1}$]')
     ax.set_ylabel(r'FWHM(H$\beta$) [km~$\rm{s}^{-1}$]')
 
+    ax.xaxis.set_major_locator(MaxNLocator(5))
+    ax.yaxis.set_major_locator(MaxNLocator(5))
 
 
     fig.tight_layout()
@@ -1190,6 +1189,9 @@ def shen_comparison_ha():
 
     ax.set_xlabel(r'Shen \& Lui (2012)~~FWHM(H$\alpha$) [km~$\rm{s}^{-1}$]')
     ax.set_ylabel(r'FWHM(H$\alpha$) [km~$\rm{s}^{-1}$]')
+
+    ax.xaxis.set_major_locator(MaxNLocator(5))
+    ax.yaxis.set_major_locator(MaxNLocator(5))
 
     fig.tight_layout()
 
@@ -1238,6 +1240,8 @@ def shen_comparison_civ():
     ax.set_xlabel(r'Shen et al. (2011)~~FWHM(C\,{\sc iv}) [km~$\rm{s}^{-1}$]')
     ax.set_ylabel(r'FWHM(C\,{\sc iv}) [km~$\rm{s}^{-1}$]')
 
+    ax.xaxis.set_major_locator(MaxNLocator(5))
+    ax.yaxis.set_major_locator(MaxNLocator(5))
 
     fig.tight_layout()
 
@@ -1380,7 +1384,78 @@ def civ_ha_comparisons_paper1():
 
     return None 
 
-def civ_ha_comparisons_paper2(): 
+def civ_comparisons_paper2(): 
+
+    from matplotlib.ticker import MaxNLocator 
+
+    set_plot_properties() # change style 
+
+    cs = palettable.colorbrewer.qualitative.Set1_3.mpl_colors
+
+    df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0)
+    df = df[df.WARN_Ha == 0]
+    df = df[df.WARN_CIV == 0]
+    df = df[df.BAL_FLAG != 1]
+
+    bs_civ = df.Blueshift_CIV_Ha 
+    fwhm_civ = df.FWHM_CIV_BEST
+    sigma_civ = df.Sigma_CIV_BEST
+
+    fig, axs = plt.subplots(3, 
+                            1,
+                            figsize=(figsize(0.8, vscale=2)), 
+                            sharex=True) 
+
+    axs[0].plot(bs_civ,
+                fwhm_civ,
+                linestyle='',
+                marker='o', 
+                markersize=4,
+                markerfacecolor=cs[1],
+                markeredgecolor='None')
+    
+    axs[1].plot(bs_civ,
+                sigma_civ,
+                linestyle='',
+                marker='o', 
+                markersize=4,
+                markerfacecolor=cs[1],
+                markeredgecolor='None')
+    
+
+    axs[2].errorbar(bs_civ,
+                    fwhm_civ / sigma_civ,
+                    linestyle='',
+                    marker='o', 
+                    markersize=4,
+                    markerfacecolor=cs[1],
+                    markeredgecolor='None')
+
+
+    for ax in axs.flatten():
+        ax.xaxis.set_major_locator(MaxNLocator(5))
+        ax.yaxis.set_major_locator(MaxNLocator(5))
+        ax.grid()
+
+    axs[0].set_ylim(500,11000)
+    axs[1].set_ylim(1500, 6000)
+    axs[2].set_ylim(0.5, 3)
+
+
+    axs[2].set_xlabel(r'C\,{\sc iv} Blueshift [km~$\rm{s}^{-1}$]')
+    axs[0].set_ylabel(r'FWHM [km~$\rm{s}^{-1}$]')
+    axs[1].set_ylabel(r'$\sigma$ [km~$\rm{s}^{-1}$]')
+    axs[2].set_ylabel(r'FWHM/$\sigma$')
+
+    fig.tight_layout()  
+
+    fig.savefig('/home/lc585/thesis/figures/chapter03/civ_comparisons_paper2.pdf')
+    
+    plt.show() 
+
+    return None 
+
+def ha_comparisons_paper2(): 
 
     from matplotlib.ticker import MaxNLocator 
 
@@ -1396,96 +1471,58 @@ def civ_ha_comparisons_paper2():
 
     bs_civ = df.Blueshift_CIV_Ha 
     fwhm_ha = df.FWHM_Broad_Ha
-    fwhm_civ = df.FWHM_CIV_BEST
     sigma_ha = df.Sigma_Broad_Ha 
-    sigma_civ = df.Sigma_CIV_BEST
-
 
     fig, axs = plt.subplots(3, 
-                            2,
-                            figsize=(figsize(1, vscale=1)), 
+                            1,
+                            figsize=(figsize(0.8, vscale=2)), 
                             sharex=True) 
 
-    axs[0, 0].plot(bs_civ,
-                   fwhm_civ,
-                   linestyle='',
-                   marker='o', 
-                   markersize=3,
-                   markerfacecolor=cs[1],
-                   markeredgecolor='None')
+    axs[0].plot(bs_civ,
+                fwhm_ha,
+                linestyle='',
+                marker='o', 
+                markersize=4,
+                markerfacecolor=cs[1],
+                markeredgecolor='None')
     
-    axs[0, 1].plot(bs_civ,
-                   fwhm_ha,
-                   linestyle='',
-                   marker='o', 
-                   markersize=3,
-                   markerfacecolor=cs[0],
-                   markeredgecolor='None')
     
-    axs[1, 0].plot(bs_civ,
-                   sigma_civ,
-                   linestyle='',
-                   marker='o', 
-                   markersize=3,
-                   markerfacecolor=cs[1],
-                   markeredgecolor='None')
-    
-    axs[1, 1].plot(bs_civ,
-                   sigma_ha,
-                   linestyle='',
-                   marker='o', 
-                   markersize=3,
-                   markerfacecolor=cs[0],
-                   markeredgecolor='None')
+    axs[1].plot(bs_civ,
+                sigma_ha,
+                linestyle='',
+                marker='o', 
+                markersize=4,
+                markerfacecolor=cs[1],
+                markeredgecolor='None')
 
-    axs[2, 0].errorbar(bs_civ,
-                       fwhm_civ / sigma_civ,
-                       linestyle='',
-                       marker='o', 
-                       markersize=3,
-                       markerfacecolor=cs[1],
-                       markeredgecolor='None')
     
-    axs[2, 1].errorbar(bs_civ,
-                       fwhm_ha / sigma_ha,
-                       linestyle='',
-                       marker='o', 
-                       markersize=3,
-                       markerfacecolor=cs[0],
-                       markeredgecolor='None')
+    axs[2].errorbar(bs_civ,
+                    fwhm_ha / sigma_ha,
+                    linestyle='',
+                    marker='o', 
+                    markersize=4,
+                    markerfacecolor=cs[1],
+                    markeredgecolor='None')
 
     for ax in axs.flatten():
         ax.xaxis.set_major_locator(MaxNLocator(5))
         ax.yaxis.set_major_locator(MaxNLocator(5))
+        ax.grid() 
 
 
-    axs[0, 0].set_ylim(500,11000)
-    axs[0, 1].set_ylim(axs[0, 0].get_ylim())
-    axs[1, 0].set_ylim(1500, 6000)
-    axs[1, 1].set_ylim(500, 5000)
-    axs[2, 0].set_ylim(0.5, 3)
-    axs[2, 1].set_ylim(0.5, 3)
+    axs[0].set_ylim(500,11000)
+    axs[1].set_ylim(500, 5000)
+    axs[2].set_ylim(0.5, 3)
 
 
-    # axs[0,1].set_ylim(axs[0,0].get_ylim())
-
-    # axs[1,0].set_ylim(2500,5500)
-    # axs[1,1].set_ylim(1500,4500)
-    # axs[2,0].set_ylim(0.5,3)
-    # axs[2,1].set_ylim(axs[2,0].get_ylim())
-
-    axs[2,0].set_xlabel(r'C\,{\sc iv} Blueshift [km~$\rm{s}^{-1}$]')
-    axs[2,1].set_xlabel(r'C\,{\sc iv} Blueshift [km~$\rm{s}^{-1}$]')
-    axs[0,0].set_ylabel(r'FWHM [km~$\rm{s}^{-1}$]')
-    axs[1,0].set_ylabel(r'$\sigma$ [km~$\rm{s}^{-1}$]')
-    axs[2,0].set_ylabel(r'FWHM/$\sigma$')
-     
-    axs[0,0].set_title(r'C\,{\sc iv}')
-    axs[0,1].set_title(r'H$\alpha$')
+    axs[2].set_xlabel(r'C\,{\sc iv} Blueshift [km~$\rm{s}^{-1}$]')
+    axs[0].set_ylabel(r'FWHM [km~$\rm{s}^{-1}$]')
+    axs[1].set_ylabel(r'$\sigma$ [km~$\rm{s}^{-1}$]')
+    axs[2].set_ylabel(r'FWHM/$\sigma$')
     
     fig.tight_layout()  
 
-    fig.savefig('/home/lc585/thesis/figures/chapter03/civ_ha_comparisons_paper2.pdf')
+    fig.savefig('/home/lc585/thesis/figures/chapter03/ha_comparisons_paper2.pdf')
     
     plt.show() 
 
@@ -2244,5 +2281,51 @@ def ha_hb_composite():
     fig.savefig('/home/lc585/thesis/figures/chapter03/ha_hb_composite.pdf')
 
     plt.show() 
+
+    return None 
+
+
+def ha_edd_civ_bs(): 
+
+    """
+    Plot of Ha Eddington ratio against CIV blueshift
+    """
+
+    set_plot_properties() # change style  
+
+    cs = palettable.colorbrewer.qualitative.Set1_3.mpl_colors
+
+    df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0)
+    df = df[df.WARN_Ha == 0]
+    df = df[df.WARN_CIV_BEST == 0]
+    df = df[df.BAL_FLAG != 1]
+    # Try without civ constraints 
+
+    fig, ax = plt.subplots(figsize=(figsize(0.9, vscale=0.7)))
+    
+    ax.plot(df.Blueshift_CIV_Ha,
+            df.Edd_Ratio_Ha,
+            linestyle='',
+            marker='o',
+            markerfacecolor=cs[1],
+            markeredgecolor=cs[1],
+            markersize=5)
+    
+
+    
+    ax.set_yscale('log')
+    
+    ax.set_ylim(0.05, 3)
+    ax.set_xlim(-1000, 6000)
+    
+    ax.set_xlabel(r'C\,{\sc iv} Blueshift [km~${\rm s}^{-1}$]')
+    ax.set_ylabel( r'$L_{\rm Bol} / L_{\rm Edd} ({\rm H}\alpha)$' )
+    
+    ax.grid() 
+    fig.tight_layout()
+
+    plt.show() 
+    
+    fig.savefig('/home/lc585/thesis/figures/chapter03/ha_edd_civ_bs.pdf')
 
     return None 

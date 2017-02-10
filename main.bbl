@@ -518,6 +518,49 @@
   \field{year}{2002}
 \endentry
 
+\entry{coatman16}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {{Coatman}}{C.}%
+     {L.}{L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hewett}}{H.}%
+     {P.~C.}{P.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Banerji}}{B.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Richards}}{R.}%
+     {G.~T.}{G.~T.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{CL+1}
+  \strng{fullhash}{CLHPCBMRGT1}
+  \field{labelyear}{2016}
+  \field{sortinit}{C}
+  \verb{doi}
+  \verb 10.1093/mnras/stw1360
+  \endverb
+  \verb{eprint}
+  \verb 1606.02726
+  \endverb
+  \field{pages}{647\bibrangedash 665}
+  \field{title}{{CIV emission-line properties and systematic trends in quasar
+  black hole mass estimates}}
+  \field{volume}{461}
+  \field{journaltitle}{\mnras}
+  \field{eprinttype}{arXiv}
+  \field{month}{09}
+  \field{year}{2016}
+\endentry
+
 \entry{collin06}{article}{}
   \name{author}{4}{}{%
     {{}%
@@ -6512,37 +6555,6 @@
   \field{eprinttype}{arXiv}
   \field{month}{12}
   \field{year}{2012}
-\endentry
-
-\entry{tytler92}{article}{}
-  \name{author}{2}{}{%
-    {{}%
-     {{Tytler}}{T.}%
-     {D.}{D.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Fan}}{F.}%
-     {X.-M.}{X.-M.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{Emission Spectra, Frequency Shift, Line Spectra, Quasars, Radial
-  Velocity, Red Shift, Astronomical Catalogs, Radio Galaxies, Seyfert Galaxies}
-  \strng{namehash}{TDFXM1}
-  \strng{fullhash}{TDFXM1}
-  \field{labelyear}{1992}
-  \field{sortinit}{T}
-  \verb{doi}
-  \verb 10.1086/191642
-  \endverb
-  \field{pages}{1\bibrangedash 36}
-  \field{title}{{Systematic QSO emission-line velocity shifts and new unbiased
-  redshifts}}
-  \field{volume}{79}
-  \field{journaltitle}{\apjs}
-  \field{month}{03}
-  \field{year}{1992}
 \endentry
 
 \entry{venemans16}{article}{}
