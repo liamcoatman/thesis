@@ -224,6 +224,8 @@ def redshift_comparison():
     return None 
 
 
+
+
 def bal_hists():
 
     fig, axs = plt.subplots(2, 1, figsize=figsize(0.7, vscale=1.4))

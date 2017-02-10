@@ -11,6 +11,15 @@ import palettable
 import matplotlib.patches as patches
 from matplotlib.ticker import NullFormatter, MaxNLocator, FuncFormatter
 import pandas as pd 
+import astropy.constants as const 
+import astropy.units as u 
+import sys
+import matplotlib.gridspec as gridspec
+from lmfit import Parameters
+from SpectraTools.fit_line import wave2doppler
+from lmfit.models import GaussianModel, ConstantModel
+from PlottingTools.gausshermite import gausshermite_4, gausshermite_2
+from scipy.interpolate import interp1d
 
 def plot_MCMC_model(ax, xdata, ydata, sigma_y, trace, linestyle='--', label='', show_sigma=True):
 
@@ -41,9 +50,7 @@ def plot_MCMC_model(ax, xdata, ydata, sigma_y, trace, linestyle='--', label='', 
 
 def civ_space_plot():
 
-    set_plot_properties() # change style 
 
-    cs = palettable.colorbrewer.qualitative.Set2_8.mpl_colors
 
     # import ipdb; ipdb.set_trace()
     # t_hw = Table.read('/data/lc585/QSOSED/Results/140827/civtab.fits') # old blueshifts
@@ -259,7 +266,7 @@ def composite_plot():
 
     return None 
 
-def example_spectra():
+def example_liris_spectra():
 
     from fit_wht_spectra import get_line_fit_props
     from scipy import ndimage
@@ -327,7 +334,7 @@ def example_spectra():
 
     fig.tight_layout()
 
-    fig.savefig('/home/lc585/thesis/figures/chapter02/example_spectrum.pdf')
+    fig.savefig('/home/lc585/thesis/figures/chapter02/example_liris_spectrum.pdf')
 
     plt.show() 
 
@@ -530,125 +537,6 @@ def fitting_comparison():
    
     return None 
 
-
-def example_spectrum_grid():
-
-    """
-    Needs fixing
-    """
-    
-
-    fig = plt.figure(figsize=figsize(1.5, vscale = 2.15 * (np.sqrt(5.0)-1.0)/2.0))
-
-    # gridspec inside gridspec
-    outer_grid = gridspec.GridSpec(2, 3, wspace=0.0, hspace=0.05)
-
-    df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0)  
-    
-    names = ['QSO016',  
-             'QSO014',  
-             'QSO025',  
-             'QSO399',  
-             'QSO470',  
-             'QSO128']  
-
-    ylims = [[[-0.04, 4.5], [-0.04, 6.5]],
-             [[-0.04, 3.5], [-0.04, 2.5]],
-             [[-0.04, 3.0], [-0.04, 2.0]],
-             [[-0.04, 5.0], [-0.04, 3.5]],
-             [[-0.04, 4.0], [-0.04, 1.0]],
-             [[-0.04, 5.5], [-0.04, 4.5]]]
-
-    titles = ['J121427.77-030721.0',
-              'J103325.93+012836.3',
-              'J231441.63-082406.8',
-              'J121140.59+103002.0',
-              'J023359.72+004938.5',
-              'J094206.95+352307.4']
-
-
-
-    for i in range(4):
-
-        offset = df.ix[names[i], 'Median_Broad_Ha']
-        
-        inner_grid = gridspec.GridSpecFromSubplotSpec(12, 1, subplot_spec=outer_grid[i], wspace=0.0, hspace=0.0)
-        
-        ax = plt.Subplot(fig, inner_grid[:3])
-        ax.set_xticks([])
-        ax.set_yticks([])
-        ax.spines['bottom'].set_visible(False)
-        example_spectra(names[i], 'Ha', ax, offset)
-        ax.set_ylim(ylims[i][0])
-        ax.set_xlim(-12000, 12000)
-        ax.set_title(titles[i], size=11)
-        ax.text(0.05, 0.8, 'S/N: {}'.format(snr[i][0]), transform=ax.transAxes, zorder=10)
-        fig.add_subplot(ax)
-
-        if (i == 0) | (i == 3):
-            ax.text(0.05, 0.5, r'H$\alpha$', transform= ax.transAxes)
-
-        ax = plt.Subplot(fig, inner_grid[3])
-        ax.set_xticks([])
-        ax.spines['top'].set_visible(False)
-        example_residual(names[i], 'Ha', ax)
-        ax.set_xlim(-12000, 12000)
-        ax.set_ylim(-8, 8)
-        
-        if (i == 0) | (i == 3):
-            ax.set_yticks([-5,0,5])
-            ax.yaxis.set_ticks_position('left')
-        else:
-            ax.set_yticks([])
-
-        fig.add_subplot(ax)
-
-
-        #------------------------------------------------------
-
-        ax = plt.Subplot(fig, inner_grid[8:11])
-        ax.set_xticks([])
-        ax.set_yticks([])
-        ax.spines['bottom'].set_visible(False)
-        example_spectra(names[i], 'CIV', ax, offset)
-        ax.set_ylim(ylims[i][2])
-        ax.set_xlim(-12000, 12000)
-        ax.text(0.05, 0.8, 'S/N: {}'.format(snr[i][2]), transform=ax.transAxes, zorder=10)
-        fig.add_subplot(ax)
-
-        if (i == 0) | (i == 3):
-            ax.text(0.05, 0.5, r'C\,{\sc iv}', transform= ax.transAxes)
-
-        ax = plt.Subplot(fig, inner_grid[11])
-        
-        if i < 3:
-            ax.set_xticks([])
-        else:
-            ax.xaxis.set_ticks_position('bottom')
-
-        ax.spines['top'].set_visible(False)
-        example_residual(names[i], 'CIV', ax)
-        ax.set_xlim(-12000, 12000)
-        ax.set_ylim(-8, 8)
-        if (i == 0) | (i == 3):
-            ax.set_yticks([-5,0,5])
-            ax.yaxis.set_ticks_position('left')
-        else:
-            ax.set_yticks([])
-
-
-        fig.add_subplot(ax)
-
-
-    fig.text(0.50, 0.05, r'$\Delta v$ [km~$\rm{s}^{-1}$]', ha='center')
-    fig.text(0.05, 0.55, r'$F_{\lambda}$ [Arbitrary units]', rotation=90)
-
-    fig.savefig('/home/lc585/thesis/figures/chapter02/gridspectra_1.pdf')
- 
-    plt.show() 
-
-
-    return None 
 
 def get_data(data = 'linewidths'):
 
@@ -1164,6 +1052,1196 @@ def test_corrections():
     plt.subplots_adjust(hspace=0.1, left = 0.15)
 
     fig.savefig('/home/lc585/thesis/figures/chapter03/corrections.pdf')
+
+    plt.show() 
+
+    return None 
+
+def gaussian(mu, sig, x):
+    return (2.0 * np.pi * sig**2)**-0.5 * np.exp(-(x - mu)**2 / (2.0*sig**2))
+
+def log_likelihood(p, x):
+    return np.sum(np.log(gaussian(p[0], p[1], x.value) ))
+
+ 
+
+
+def ha_z_comparison(): 
+
+    set_plot_properties() # change style 
+
+    cs = palettable.colorbrewer.qualitative.Set1_8.mpl_colors
+
+    df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0) 
+    df = df[df.WARN_Ha == 0]
+    df = df[df.WARN_CIV_BEST == 0]
+    df = df[df.BAL_FLAG != 1]
+    
+    fig, axs = plt.subplots(2, 1, figsize=figsize(0.6, 1.3), sharex=True) 
+
+    xi = const.c.to(u.km/u.s)*(df.OIII_FIT_HA_Z - df.z_Broad_Ha)/(1.0 + df.OIII_FIT_HA_Z)
+    xi = xi[~np.isnan(xi)]
+    
+    axs[0].hist(xi,
+                histtype='stepfilled',
+                color=cs[1],
+                bins=np.arange(-1000, 1000, 100),
+                zorder=1,
+                normed=False)
+
+    print np.mean(xi), np.median(xi), np.std(xi)
+
+    df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0) 
+    df = df[df.WARN_Hb == 0]
+    df = df[df.WARN_CIV_BEST == 0]
+    df = df[df.BAL_FLAG != 1]
+
+    xi = const.c.to(u.km/u.s)*(df.OIII_FIT_HB_Z - df.z_Broad_Hb)/(1.0 + df.OIII_FIT_HB_Z)
+    xi = xi[~np.isnan(xi)]
+    
+    axs[1].hist(xi,
+                histtype='stepfilled',
+                color=cs[1],
+                bins=np.arange(-1000, 1000, 100),
+                zorder=1,
+                normed=False)
+
+    print np.mean(xi), np.median(xi), np.std(xi)
+
+    axs[1].set_xlabel(r'$c(z_{{\rm H}\alpha,1} - z_{{\rm H}\alpha,2}) / (1 + z_{{\rm H}\alpha,1})$ [km~$\rm{s}^{-1}$]')
+
+    fig.tight_layout() 
+
+    fig.savefig('/home/lc585/thesis/figures/chapter03/ha_z_comparison.pdf')
+
+    plt.show() 
+
+
+    
+    return None 
+
+
+def shen_comparison_hb():
+
+    set_plot_properties() # change style 
+
+    cs = palettable.colorbrewer.qualitative.Set1_3.mpl_colors
+    
+    fig, ax = plt.subplots(figsize=(figsize(0.8, vscale=0.9)))
+
+    df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0)
+    df = df[df.WARN_Hb == 0]
+    df = df[df.WARN_CIV_BEST == 0]
+    df = df[df.BAL_FLAG != 1]
+    df = df[['rescale' not in i for i in df.SPEC_NIR.values]]
+    df.dropna(subset=['FWHM_BROAD_HB_S16', 'FWHM_Broad_Hb'], inplace=True)
+
+    scatter1 = ax.scatter(df.loc[:, 'FWHM_BROAD_HB_S16'],
+                          df.loc[:,'FWHM_Broad_Hb'],
+                          c=cs[1],
+                          s=25,
+                          edgecolor='None')
+
+
+    ax.plot([2000,10000], [2000,10000], color='black', linestyle='--')
+    
+    ax.set_xlim(2000,10000)
+    ax.set_ylim(ax.get_xlim())
+
+    ax.set_xlabel(r'Shen (2016)~~FWHM(H$\beta$) [km~$\rm{s}^{-1}$]')
+    ax.set_ylabel(r'FWHM(H$\beta$) [km~$\rm{s}^{-1}$]')
+
+
+
+    fig.tight_layout()
+
+    fig.savefig('/home/lc585/thesis/figures/chapter03/shen_comparison_hb.pdf')
+
+    plt.show()
+
+    return None 
+
+def shen_comparison_ha():
+
+    set_plot_properties() # change style 
+
+    cs = palettable.colorbrewer.qualitative.Set1_3.mpl_colors
+    
+    fig, ax = plt.subplots(figsize=(figsize(0.8, vscale=0.9)))
+
+    
+    df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0)
+    df = df[df.WARN_Ha == 0]
+    df = df[df.WARN_CIV_BEST == 0]
+    df = df[df.BAL_FLAG != 1]  
+    df.dropna(subset=['FWHM_Ha_S12', 'FWHM_Broad_Ha'], inplace=True)  
+
+    scatter1 = ax.scatter(df.loc[:, 'FWHM_Ha_S12'],
+                          df.loc[:, 'FWHM_Broad_Ha'],
+                          c=cs[1],
+                          s=25,
+                          edgecolor='None')
+    
+    ax.plot([2000,9000], [2000,9000], color='black', linestyle='--')
+
+    
+    ax.set_xlim(2000,9000)
+    ax.set_ylim(ax.get_xlim())
+
+    ax.set_xlabel(r'Shen \& Lui (2012)~~FWHM(H$\alpha$) [km~$\rm{s}^{-1}$]')
+    ax.set_ylabel(r'FWHM(H$\alpha$) [km~$\rm{s}^{-1}$]')
+
+    fig.tight_layout()
+
+    fig.savefig('/home/lc585/thesis/figures/chapter03/shen_comparison_ha.pdf')
+
+    plt.show()
+
+    return None 
+
+def shen_comparison_civ():
+
+    set_plot_properties() # change style 
+
+    cs = palettable.colorbrewer.qualitative.Set1_3.mpl_colors
+    
+    fig, ax = plt.subplots(figsize=(figsize(0.8, vscale=0.9)))
+
+    df1 = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0)
+    df1 = df1[df1.WARN_Ha == 0]
+    df1 = df1[df1.WARN_CIV == 0]
+    df1 = df1[df1.BAL_FLAG != 1]
+    
+    df2 = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0)
+    df2 = df2[df2.WARN_Hb == 0]
+    df2 = df2[df2.WARN_CIV == 0]
+    df2 = df2[df2.BAL_FLAG != 1] 
+        
+    df = pd.concat([df1, df2]).drop_duplicates()
+    df[df.FWHM_CIV_S11 == 0.0] = np.nan
+    df = df.dropna(subset=['FWHM_CIV_S11', 'FWHM_CIV'])
+    df = df[df.SPEC_OPT == 'SDSS']
+    
+   
+    scatter1 = ax.scatter(df['FWHM_CIV_S11'],
+                          df['FWHM_CIV'],
+                          c=cs[1],
+                          s=25,
+                          edgecolor='None')
+
+    
+    ax.plot([1000,15000], [1000,15000], color='black', linestyle='--')
+    
+    ax.set_xlim(1000,10000)
+    ax.set_ylim(ax.get_xlim())
+
+    ax.set_xlabel(r'Shen et al. (2011)~~FWHM(C\,{\sc iv}) [km~$\rm{s}^{-1}$]')
+    ax.set_ylabel(r'FWHM(C\,{\sc iv}) [km~$\rm{s}^{-1}$]')
+
+
+    fig.tight_layout()
+
+    fig.savefig('/home/lc585/thesis/figures/chapter03/shen_comparison_civ.pdf')
+
+    plt.show()
+
+    return None 
+
+
+
+def civ_ha_comparisons_paper1(): 
+
+    set_plot_properties() # change style 
+
+    sys.path.insert(0, '/home/lc585/Dropbox/IoA/BlackHoleMasses')
+    from wht_properties_v4 import get_wht_quasars
+
+    cs = palettable.colorbrewer.qualitative.Set1_3.mpl_colors
+
+    quasars = get_wht_quasars()
+
+    bs_civ = np.array([i.get_blueshift_civ().value for i in quasars.all_quasars()])
+    bs_civ_err  = np.array([i.get_blueshift_civ_err().value for i in quasars.all_quasars()])
+    sdss_name = np.array([i.sdss_name for i in quasars.all_quasars()])
+    fwhm_ha = np.array([i.get_fwhm_ha_corr().value for i in quasars.all_quasars()])
+    fwhm_civ = np.array([i.get_fwhm_civ_corr().value for i in quasars.all_quasars()])
+    fwhm_ha_err = np.array([i.fwhm_ha_err.value for i in quasars.all_quasars()])
+    fwhm_civ_err = np.array([i.fwhm_civ_err.value for i in quasars.all_quasars()])
+    sigma_ha = np.array([i.get_sigma_ha_corr().value for i in quasars.all_quasars()])
+    sigma_civ = np.array([i.get_sigma_civ_corr().value for i in quasars.all_quasars()])
+    sigma_ha_err = np.array([i.sigma_ha_err.value for i in quasars.all_quasars()])
+    sigma_civ_err = np.array([i.sigma_civ_err.value for i in quasars.all_quasars()])
+
+
+    fig, axs = plt.subplots(3, 2,figsize=(figsize(1, vscale=1)), sharex=True) 
+
+    axs[0,0].errorbar(bs_civ[sdss_name != 'SDSSJ073813.19+271038.1'],
+                      fwhm_civ[sdss_name != 'SDSSJ073813.19+271038.1'],
+                      xerr=bs_civ_err[sdss_name != 'SDSSJ073813.19+271038.1'],
+                      yerr=fwhm_civ_err[sdss_name != 'SDSSJ073813.19+271038.1'],
+                      linestyle='',
+                      marker='o', 
+                      markersize=5,
+                      markerfacecolor=cs[1],
+                      markeredgecolor='None',
+                      ecolor=cs[1],
+                      capsize=0)
+    
+    axs[0,1].errorbar(bs_civ[sdss_name != 'SDSSJ073813.19+271038.1'],
+                      fwhm_ha[sdss_name != 'SDSSJ073813.19+271038.1'],
+                      xerr=bs_civ_err[sdss_name != 'SDSSJ073813.19+271038.1'],
+                      yerr=fwhm_ha_err[sdss_name != 'SDSSJ073813.19+271038.1'],
+                      linestyle='',
+                      marker='^', 
+                      markersize=5,
+                      markerfacecolor=cs[0],
+                      markeredgecolor='None',
+                      ecolor=cs[0],
+                      capsize=0)
+    
+    axs[1,0].errorbar(bs_civ[sdss_name != 'SDSSJ073813.19+271038.1'],
+                      sigma_civ[sdss_name != 'SDSSJ073813.19+271038.1'],
+                      xerr=bs_civ_err[sdss_name != 'SDSSJ073813.19+271038.1'],
+                      yerr=sigma_civ_err[sdss_name != 'SDSSJ073813.19+271038.1'],
+                      linestyle='',
+                      marker='o', 
+                      markersize=5,
+                      markerfacecolor=cs[1],
+                      markeredgecolor='None',
+                      ecolor=cs[1],
+                      capsize=0)
+    
+    axs[1,1].errorbar(bs_civ[sdss_name != 'SDSSJ073813.19+271038.1'],
+                      sigma_ha[sdss_name != 'SDSSJ073813.19+271038.1'],
+                      xerr=bs_civ_err[sdss_name != 'SDSSJ073813.19+271038.1'],
+                      yerr=sigma_ha_err[sdss_name != 'SDSSJ073813.19+271038.1'],
+                      linestyle='',
+                      marker='^', 
+                      markersize=5,
+                      markerfacecolor=cs[0],
+                      markeredgecolor='None',
+                      ecolor=cs[0],
+                      capsize=0)
+    
+    yerr = (fwhm_civ[sdss_name != 'SDSSJ073813.19+271038.1'] / sigma_civ[sdss_name != 'SDSSJ073813.19+271038.1']) * np.sqrt((fwhm_civ_err[sdss_name != 'SDSSJ073813.19+271038.1'] / fwhm_civ[sdss_name != 'SDSSJ073813.19+271038.1'])**2 + (sigma_civ_err[sdss_name != 'SDSSJ073813.19+271038.1'] / sigma_civ[sdss_name != 'SDSSJ073813.19+271038.1'])**2)
+    axs[2,0].errorbar(bs_civ[sdss_name != 'SDSSJ073813.19+271038.1'],
+                      fwhm_civ[sdss_name != 'SDSSJ073813.19+271038.1'] / sigma_civ[sdss_name != 'SDSSJ073813.19+271038.1'],
+                      xerr=bs_civ_err[sdss_name != 'SDSSJ073813.19+271038.1'],
+                      yerr=yerr,
+                      linestyle='',
+                      marker='o', 
+                      markersize=5,
+                      markerfacecolor=cs[1],
+                      markeredgecolor='None',
+                      ecolor=cs[1],
+                      capsize=0)
+    
+    yerr = (fwhm_ha[sdss_name != 'SDSSJ073813.19+271038.1'] / sigma_ha[sdss_name != 'SDSSJ073813.19+271038.1']) * np.sqrt((fwhm_ha_err[sdss_name != 'SDSSJ073813.19+271038.1'] / fwhm_ha[sdss_name != 'SDSSJ073813.19+271038.1'])**2 + (sigma_ha_err[sdss_name != 'SDSSJ073813.19+271038.1'] / sigma_ha[sdss_name != 'SDSSJ073813.19+271038.1'])**2)
+    axs[2,1].errorbar(bs_civ[sdss_name != 'SDSSJ073813.19+271038.1'],
+                      fwhm_ha[sdss_name != 'SDSSJ073813.19+271038.1'] / sigma_ha[sdss_name != 'SDSSJ073813.19+271038.1'],
+                      xerr=bs_civ_err[sdss_name != 'SDSSJ073813.19+271038.1'],
+                      yerr=yerr,
+                      linestyle='',
+                      marker='^', 
+                      markersize=5,
+                      markerfacecolor=cs[0],
+                      markeredgecolor='None',
+                      ecolor=cs[0],
+                      capsize=0)
+    
+    
+    
+    axs[0,0].axvline(1200, color='black', lw=1, linestyle='--')
+    axs[0,1].axvline(1200, color='black', lw=1, linestyle='--')
+    axs[1,0].axvline(1200, color='black', lw=1, linestyle='--')
+    axs[1,1].axvline(1200, color='black', lw=1, linestyle='--')
+    axs[2,0].axvline(1200, color='black', lw=1, linestyle='--')
+    axs[2,1].axvline(1200, color='black', lw=1, linestyle='--')
+     
+    axs[0,0].set_ylim(1000,10000)
+    axs[0,1].set_ylim(axs[0,0].get_ylim())
+    axs[1,0].set_ylim(2500,5500)
+    axs[1,1].set_ylim(1500,4500)
+    axs[2,0].set_ylim(0.5,3)
+    axs[2,1].set_ylim(axs[2,0].get_ylim())
+
+    axs[2,0].set_xlabel(r'C\,{\sc iv} Blueshift [km~$\rm{s}^{-1}$]')
+    axs[2,1].set_xlabel(r'C\,{\sc iv} Blueshift [km~$\rm{s}^{-1}$]')
+    axs[0,0].set_ylabel(r'FWHM [km~$\rm{s}^{-1}$]')
+    axs[1,0].set_ylabel(r'$\sigma$ [km~$\rm{s}^{-1}$]')
+    axs[2,0].set_ylabel(r'FWHM/$\sigma$')
+     
+    axs[0,0].set_title(r'C\,{\sc iv}')
+    axs[0,1].set_title(r'H$\alpha$')
+    
+    fig.tight_layout()  
+    
+    plt.show() 
+
+    return None 
+
+def civ_ha_comparisons_paper2(): 
+
+    from matplotlib.ticker import MaxNLocator 
+
+    set_plot_properties() # change style 
+
+    cs = palettable.colorbrewer.qualitative.Set1_3.mpl_colors
+
+    df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0)
+    df = df[df.WARN_Ha == 0]
+    df = df[df.WARN_CIV == 0]
+    df = df[df.BAL_FLAG != 1]
+
+
+    bs_civ = df.Blueshift_CIV_Ha 
+    fwhm_ha = df.FWHM_Broad_Ha
+    fwhm_civ = df.FWHM_CIV_BEST
+    sigma_ha = df.Sigma_Broad_Ha 
+    sigma_civ = df.Sigma_CIV_BEST
+
+
+    fig, axs = plt.subplots(3, 
+                            2,
+                            figsize=(figsize(1, vscale=1)), 
+                            sharex=True) 
+
+    axs[0, 0].plot(bs_civ,
+                   fwhm_civ,
+                   linestyle='',
+                   marker='o', 
+                   markersize=3,
+                   markerfacecolor=cs[1],
+                   markeredgecolor='None')
+    
+    axs[0, 1].plot(bs_civ,
+                   fwhm_ha,
+                   linestyle='',
+                   marker='o', 
+                   markersize=3,
+                   markerfacecolor=cs[0],
+                   markeredgecolor='None')
+    
+    axs[1, 0].plot(bs_civ,
+                   sigma_civ,
+                   linestyle='',
+                   marker='o', 
+                   markersize=3,
+                   markerfacecolor=cs[1],
+                   markeredgecolor='None')
+    
+    axs[1, 1].plot(bs_civ,
+                   sigma_ha,
+                   linestyle='',
+                   marker='o', 
+                   markersize=3,
+                   markerfacecolor=cs[0],
+                   markeredgecolor='None')
+
+    axs[2, 0].errorbar(bs_civ,
+                       fwhm_civ / sigma_civ,
+                       linestyle='',
+                       marker='o', 
+                       markersize=3,
+                       markerfacecolor=cs[1],
+                       markeredgecolor='None')
+    
+    axs[2, 1].errorbar(bs_civ,
+                       fwhm_ha / sigma_ha,
+                       linestyle='',
+                       marker='o', 
+                       markersize=3,
+                       markerfacecolor=cs[0],
+                       markeredgecolor='None')
+
+    for ax in axs.flatten():
+        ax.xaxis.set_major_locator(MaxNLocator(5))
+        ax.yaxis.set_major_locator(MaxNLocator(5))
+
+
+    axs[0, 0].set_ylim(500,11000)
+    axs[0, 1].set_ylim(axs[0, 0].get_ylim())
+    axs[1, 0].set_ylim(1500, 6000)
+    axs[1, 1].set_ylim(500, 5000)
+    axs[2, 0].set_ylim(0.5, 3)
+    axs[2, 1].set_ylim(0.5, 3)
+
+
+    # axs[0,1].set_ylim(axs[0,0].get_ylim())
+
+    # axs[1,0].set_ylim(2500,5500)
+    # axs[1,1].set_ylim(1500,4500)
+    # axs[2,0].set_ylim(0.5,3)
+    # axs[2,1].set_ylim(axs[2,0].get_ylim())
+
+    axs[2,0].set_xlabel(r'C\,{\sc iv} Blueshift [km~$\rm{s}^{-1}$]')
+    axs[2,1].set_xlabel(r'C\,{\sc iv} Blueshift [km~$\rm{s}^{-1}$]')
+    axs[0,0].set_ylabel(r'FWHM [km~$\rm{s}^{-1}$]')
+    axs[1,0].set_ylabel(r'$\sigma$ [km~$\rm{s}^{-1}$]')
+    axs[2,0].set_ylabel(r'FWHM/$\sigma$')
+     
+    axs[0,0].set_title(r'C\,{\sc iv}')
+    axs[0,1].set_title(r'H$\alpha$')
+    
+    fig.tight_layout()  
+
+    fig.savefig('/home/lc585/thesis/figures/chapter03/civ_ha_comparisons_paper2.pdf')
+    
+    plt.show() 
+
+    return None 
+
+def example_spectra(name, line, ax, offset):
+
+    from lmfit import Model
+
+
+    cs = palettable.colorbrewer.qualitative.Set1_9.mpl_colors
+    cs_light = palettable.colorbrewer.qualitative.Pastel1_9.mpl_colors
+
+    df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0)  
+    instr = df.ix[name, 'INSTR']
+
+    import sys
+    sys.path.insert(1, '/home/lc585/Dropbox/IoA/nirspec/python_code')
+    
+    if instr == 'FIRE': from fit_properties_fire import get_line_fit_props
+    if instr == 'GNIRS': from fit_properties_gnirs import get_line_fit_props
+    if instr == 'ISAAC': from fit_properties_isaac import get_line_fit_props
+    if instr == 'LIRIS': from fit_properties_liris import get_line_fit_props
+    if instr == 'NIRI': from fit_properties_niri import get_line_fit_props
+    if instr == 'NIRSPEC': from fit_properties_nirspec import get_line_fit_props
+    if instr == 'SOFI_JH': from fit_properties_sofi_jh import get_line_fit_props
+    if instr == 'SOFI_LC': from fit_properties_sofi_lc import get_line_fit_props
+    if instr == 'TRIPLE': from fit_properties_triple import get_line_fit_props
+    if instr == 'TRIPLE_S15': from fit_properties_triple_shen15 import get_line_fit_props
+    if instr == 'XSHOOT': from fit_properties_xshooter import get_line_fit_props
+    if instr == 'SINF': from fit_properties_sinfoni import get_line_fit_props
+    if instr == 'SINF_KK': from fit_properties_sinfoni_kurk import get_line_fit_props
+    
+    q = get_line_fit_props().all_quasars()
+    p = q[df.ix[name, 'NUM']]
+
+    if line == 'Ha': w0 = 6564.89*u.AA
+    if line == 'Hb': w0 = 4862.721*u.AA
+    if (line == 'CIV') | (line == 'CIV_XSHOOTER'): w0 = np.mean([1548.202,1550.774])*u.AA
+    
+    xs, step = np.linspace(-20000,
+                            20000,
+                            1000,
+                           retstep=True)
+
+    save_dir = os.path.join('/data/lc585/nearIR_spectra/linefits/', name, line)
+
+
+    parfile = open(os.path.join(save_dir,'my_params.txt'), 'r')
+    params = Parameters()
+    params.load(parfile)
+    parfile.close()
+
+    wav_file = os.path.join(save_dir, 'wav.txt')
+    parfile = open(wav_file, 'rb')
+    wav = pickle.load(parfile)
+    parfile.close()
+
+    flx_file = os.path.join(save_dir, 'flx.txt')
+    parfile = open(flx_file, 'rb')
+    flx = pickle.load(parfile)
+    parfile.close()
+
+    err_file = os.path.join(save_dir, 'err.txt')
+    parfile = open(err_file, 'rb')
+    err = pickle.load(parfile)
+    parfile.close()
+
+    sd_file = os.path.join(save_dir, 'sd.txt')
+    parfile = open(sd_file, 'rb')
+    sd = pickle.load(parfile)
+    parfile.close()
+
+    vdat = wave2doppler(wav, w0)
+
+    if (line == 'Hb') & (p.hb_model == 'Hb'):
+
+        mod = GaussianModel(prefix='oiii_4959_n_')
+    
+        mod += GaussianModel(prefix='oiii_5007_n_')
+    
+        mod += GaussianModel(prefix='oiii_4959_b_')
+    
+        mod += GaussianModel(prefix='oiii_5007_b_')
+    
+        if p.hb_narrow is True: 
+            mod += GaussianModel(prefix='hb_n_')  
+    
+        for i in range(p.hb_nGaussians):
+    
+            mod += GaussianModel(prefix='hb_b_{}_'.format(i))  
+
+         
+        g1 = GaussianModel()
+        p1 = g1.make_params()
+
+        p1['center'].value = params['oiii_5007_n_center'].value
+        p1['sigma'].value = params['oiii_5007_n_sigma'].value
+        p1['amplitude'].value = params['oiii_5007_n_amplitude'].value
+
+        ax.plot(np.sort(vdat.value) - offset, 
+                g1.eval(p1, x=np.sort(vdat.value)),
+                c=cs_light[4],
+                linestyle='-')
+
+        g1 = GaussianModel()
+        p1 = g1.make_params()
+
+        p1['center'].value = params['oiii_4959_n_center'].value
+        p1['sigma'].value = params['oiii_4959_n_sigma'].value
+        p1['amplitude'].value = params['oiii_4959_n_amplitude'].value
+
+        ax.plot(np.sort(vdat.value) - offset, 
+                g1.eval(p1, x=np.sort(vdat.value)),
+                c=cs_light[4],
+                linestyle='-')        
+
+        g1 = GaussianModel()
+        p1 = g1.make_params()
+
+        p1['center'].value = params['oiii_5007_b_center'].value
+        p1['sigma'].value = params['oiii_5007_b_sigma'].value
+        p1['amplitude'].value = params['oiii_5007_b_amplitude'].value
+
+        ax.plot(np.sort(vdat.value) - offset, 
+                g1.eval(p1, x=np.sort(vdat.value)),
+                c=cs_light[4],
+                linestyle='-')       
+
+        g1 = GaussianModel()
+        p1 = g1.make_params()
+
+        p1['center'].value = params['oiii_4959_b_center'].value
+        p1['sigma'].value = params['oiii_4959_b_sigma'].value
+        p1['amplitude'].value = params['oiii_4959_b_amplitude'].value   
+
+        ax.plot(np.sort(vdat.value) - offset, 
+                g1.eval(p1, x=np.sort(vdat.value)),
+                c=cs_light[4],
+                linestyle='-')             
+
+        for i in range(p.hb_nGaussians):
+    
+            g1 = GaussianModel()
+            p1 = g1.make_params()
+    
+            p1['center'].value = params['hb_b_{}_center'.format(i)].value
+            p1['sigma'].value = params['hb_b_{}_sigma'.format(i)].value
+            p1['amplitude'].value = params['hb_b_{}_amplitude'.format(i)].value  
+        
+            ax.plot(np.sort(vdat.value) - offset, 
+                    g1.eval(p1, x=np.sort(vdat.value)),
+                    c=cs_light[4])  
+    
+        if p.hb_narrow is True: 
+    
+            g1 = GaussianModel()
+            p1 = g1.make_params()
+        
+            p1['center'] = params['hb_n_center']
+            p1['sigma'] = params['hb_n_sigma']
+            p1['amplitude'] = params['hb_n_amplitude']   
+        
+            ax.plot(np.sort(vdat.value) - offset, 
+                    g1.eval(p1, x=np.sort(vdat.value)),
+                    c=cs_light[4],
+                    linestyle='-')                    
+
+    if (line == 'Ha') & (p.ha_model == 'Ha'):
+
+        mod = GaussianModel(prefix='ha_n_')  
+        mod += GaussianModel(prefix='nii_6548_n_')
+        mod += GaussianModel(prefix='nii_6584_n_')
+        mod += GaussianModel(prefix='sii_6717_n_')
+        mod += GaussianModel(prefix='sii_6731_n_')
+
+        for i in range(p.ha_nGaussians):
+            mod += GaussianModel(prefix='ha_b_{}_'.format(i))  
+
+        g1 = GaussianModel()
+        p1 = g1.make_params()
+
+        p1['center'].value = params['ha_n_center'].value
+        p1['sigma'].value = params['ha_n_sigma'].value
+        p1['amplitude'].value = params['ha_n_amplitude'].value
+
+        ax.plot(np.sort(vdat.value) - offset, 
+                g1.eval(p1, x=np.sort(vdat.value)),
+                c=cs_light[4],
+                linestyle='-')
+
+        g1 = GaussianModel()
+        p1 = g1.make_params()
+
+        p1['center'].value = params['nii_6548_n_center'].value
+        p1['sigma'].value = params['nii_6548_n_sigma'].value
+        p1['amplitude'].value = params['nii_6548_n_amplitude'].value
+
+        ax.plot(np.sort(vdat.value) - offset, 
+                g1.eval(p1, x=np.sort(vdat.value)),
+                c=cs_light[4],
+                linestyle='-')
+
+        g1 = GaussianModel()
+        p1 = g1.make_params()
+
+        p1['center'].value = params['nii_6584_n_center'].value
+        p1['sigma'].value = params['nii_6584_n_sigma'].value
+        p1['amplitude'].value = params['nii_6584_n_amplitude'].value
+
+        ax.plot(np.sort(vdat.value) - offset, 
+                g1.eval(p1, x=np.sort(vdat.value)),
+                c=cs_light[4],
+                linestyle='-')
+
+        g1 = GaussianModel()
+        p1 = g1.make_params()
+
+        p1['center'].value = params['sii_6717_n_center'].value
+        p1['sigma'].value = params['sii_6717_n_sigma'].value
+        p1['amplitude'].value = params['sii_6717_n_amplitude'].value
+
+        ax.plot(np.sort(vdat.value) - offset, 
+                g1.eval(p1, x=np.sort(vdat.value)),
+                c=cs_light[4],
+                linestyle='-')      
+                 
+        g1 = GaussianModel()
+        p1 = g1.make_params()
+
+        p1['center'].value = params['sii_6731_n_center'].value
+        p1['sigma'].value = params['sii_6731_n_sigma'].value
+        p1['amplitude'].value = params['sii_6731_n_amplitude'].value
+
+        ax.plot(np.sort(vdat.value) - offset, 
+                g1.eval(p1, x=np.sort(vdat.value)),
+                c=cs_light[4],
+                linestyle='-') 
+
+        for i in range(p.ha_nGaussians):
+
+            g1 = GaussianModel()
+            p1 = g1.make_params()
+
+            p1['center'].value = params['ha_b_{}_center'.format(i)].value
+            p1['sigma'].value = params['ha_b_{}_sigma'.format(i)].value
+            p1['amplitude'].value = params['ha_b_{}_amplitude'.format(i)].value  
+    
+            ax.plot(np.sort(vdat.value) - offset, 
+                    g1.eval(p1, x=np.sort(vdat.value)),
+                    c=cs_light[4])  
+
+
+    if ((line == 'CIV') | (line == 'CIV_XSHOOTER')) & (p.civ_model == 'GaussHermite'):
+
+        param_names = []
+
+        for i in range(p.civ_gh_order + 1):
+            
+            param_names.append('amp{}'.format(i))
+            param_names.append('sig{}'.format(i))
+            param_names.append('cen{}'.format(i))
+
+        if p.civ_gh_order == 0: 
+ 
+            mod = Model(gausshermite_0, independent_vars=['x'], param_names=param_names) 
+    
+        if p.civ_gh_order == 1: 
+ 
+            mod = Model(gausshermite_1, independent_vars=['x'], param_names=param_names) 
+     
+        if p.civ_gh_order == 2: 
+ 
+            mod = Model(gausshermite_2, independent_vars=['x'], param_names=param_names) 
+     
+        if p.civ_gh_order == 3: 
+ 
+            mod = Model(gausshermite_3, independent_vars=['x'], param_names=param_names) 
+     
+        if p.civ_gh_order == 4: 
+ 
+            mod = Model(gausshermite_4, independent_vars=['x'], param_names=param_names) 
+     
+        if p.civ_gh_order == 5: 
+ 
+            mod = Model(gausshermite_5, independent_vars=['x'], param_names=param_names) 
+
+        if p.civ_gh_order == 6: 
+ 
+            mod = Model(gausshermite_6, independent_vars=['x'], param_names=param_names) 
+
+    if (line == 'Ha') & (p.ha_model == 'MultiGauss'):
+
+        mod = ConstantModel()
+        
+        for i in range(p.ha_nGaussians):
+            gmod = GaussianModel(prefix='g{}_'.format(i))
+            mod += gmod
+
+        for i in range(p.ha_nGaussians):
+
+            g1 = GaussianModel()
+            p1 = g1.make_params()
+
+            p1['center'].value = params['g{}_center'.format(i)].value
+            p1['sigma'].value = params['g{}_sigma'.format(i)].value
+            p1['amplitude'].value = params['g{}_amplitude'.format(i)].value  
+    
+            ax.plot(np.sort(vdat.value) - offset, 
+                    g1.eval(p1, x=np.sort(vdat.value)),
+                    c=cs_light[4])  
+
+
+    vdat = vdat.value
+    
+    # ax.errorbar(vdat,
+    #             flx,
+    #             yerr=err,
+    #             linestyle='',
+    #             color='black',
+    #             lw=1,
+    #             alpha=1)
+
+    ax.plot(vdat - offset,
+            flx,
+            linestyle='-',
+            color='grey',
+            lw=1,
+            alpha=1,
+            zorder=5)
+
+    ax.plot(xs - offset,
+            mod.eval(params=params, x=xs/sd) ,
+            color='black',
+            lw=1,
+            zorder=6)
+
+    ax.axhline(0.0, color='black', linestyle=':')
+
+    # ax.set_xlim(-10000,12000)
+    # ax.set_ylim(0, 3.0)
+
+    # ax.set_xlabel(r'$\Delta v$ [km~$\rm{s}^{-1}$]')
+    # ax.set_ylabel(r' F$_{\lambda}$ [erg s$^{-1}$ cm$^{-2}$ \AA$^{-1}$]')
+
+    # fig.tight_layout()
+
+    # fig.savefig(name + '_' + line + '.pdf')
+    # plt.show() 
+
+    return None 
+
+def example_residual(name, line, ax):
+
+    from lmfit import Model
+
+    cs = palettable.colorbrewer.qualitative.Set1_9.mpl_colors
+
+    df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0)  
+    instr = df.ix[name, 'INSTR']
+
+    import sys
+    sys.path.insert(1, '/home/lc585/Dropbox/IoA/nirspec/python_code')
+    
+    if instr == 'FIRE': from fit_properties_fire import get_line_fit_props
+    if instr == 'GNIRS': from fit_properties_gnirs import get_line_fit_props
+    if instr == 'ISAAC': from fit_properties_isaac import get_line_fit_props
+    if instr == 'LIRIS': from fit_properties_liris import get_line_fit_props
+    if instr == 'NIRI': from fit_properties_niri import get_line_fit_props
+    if instr == 'NIRSPEC': from fit_properties_nirspec import get_line_fit_props
+    if instr == 'SOFI_JH': from fit_properties_sofi_jh import get_line_fit_props
+    if instr == 'SOFI_LC': from fit_properties_sofi_lc import get_line_fit_props
+    if instr == 'TRIPLE': from fit_properties_triple import get_line_fit_props
+    if instr == 'TRIPLE_S15': from fit_properties_triple_shen15 import get_line_fit_props
+    if instr == 'XSHOOT': from fit_properties_xshooter import get_line_fit_props
+    if instr == 'SINF': from fit_properties_sinfoni import get_line_fit_props
+    if instr == 'SINF_KK': from fit_properties_sinfoni_kurk import get_line_fit_props
+    
+    q = get_line_fit_props().all_quasars()
+    p = q[df.ix[name, 'NUM']]
+
+    if line == 'Ha': w0 = 6564.89*u.AA
+    if line == 'Hb': w0 = 4862.721*u.AA
+    if (line == 'CIV') | (line == 'CIV_XSHOOTER'): w0 = np.mean([1548.202,1550.774])*u.AA
+
+    save_dir = os.path.join('/data/lc585/nearIR_spectra/linefits/', name, line)
+
+    parfile = open(os.path.join(save_dir,'my_params.txt'), 'r')
+    params = Parameters()
+    params.load(parfile)
+    parfile.close()
+
+    wav_file = os.path.join(save_dir, 'wav.txt')
+    parfile = open(wav_file, 'rb')
+    wav = pickle.load(parfile)
+    parfile.close()
+
+    flx_file = os.path.join(save_dir, 'flx.txt')
+    parfile = open(flx_file, 'rb')
+    flx = pickle.load(parfile)
+    parfile.close()
+
+    err_file = os.path.join(save_dir, 'err.txt')
+    parfile = open(err_file, 'rb')
+    err = pickle.load(parfile)
+    parfile.close()
+
+    sd_file = os.path.join(save_dir, 'sd.txt')
+    parfile = open(sd_file, 'rb')
+    sd = pickle.load(parfile)
+    parfile.close()
+  
+    vdat = wave2doppler(wav, w0)
+
+    if (line == 'Hb') & (p.hb_model == 'Hb'):
+
+        mod = GaussianModel(prefix='oiii_4959_n_')
+    
+        mod += GaussianModel(prefix='oiii_5007_n_')
+    
+        mod += GaussianModel(prefix='oiii_4959_b_')
+    
+        mod += GaussianModel(prefix='oiii_5007_b_')
+    
+        if p.hb_narrow is True: 
+            mod += GaussianModel(prefix='hb_n_')  
+    
+        for i in range(p.hb_nGaussians):
+            mod += GaussianModel(prefix='hb_b_{}_'.format(i))  
+         
+      
+    if (line == 'Ha') & (p.ha_model == 'Ha'):
+
+        mod = GaussianModel(prefix='ha_n_')  
+        mod += GaussianModel(prefix='nii_6548_n_')
+        mod += GaussianModel(prefix='nii_6584_n_')
+        mod += GaussianModel(prefix='sii_6717_n_')
+        mod += GaussianModel(prefix='sii_6731_n_')
+
+        for i in range(p.ha_nGaussians):
+            mod += GaussianModel(prefix='ha_b_{}_'.format(i))  
+
+        
+    if ((line == 'CIV') | (line == 'CIV_XSHOOTER')) & (p.civ_model == 'GaussHermite'):
+
+        param_names = []
+
+        for i in range(p.civ_gh_order + 1):
+            
+            param_names.append('amp{}'.format(i))
+            param_names.append('sig{}'.format(i))
+            param_names.append('cen{}'.format(i))
+
+        if p.civ_gh_order == 0: 
+ 
+            mod = Model(gausshermite_0, independent_vars=['x'], param_names=param_names) 
+    
+        if p.civ_gh_order == 1: 
+ 
+            mod = Model(gausshermite_1, independent_vars=['x'], param_names=param_names) 
+     
+        if p.civ_gh_order == 2: 
+ 
+            mod = Model(gausshermite_2, independent_vars=['x'], param_names=param_names) 
+     
+        if p.civ_gh_order == 3: 
+ 
+            mod = Model(gausshermite_3, independent_vars=['x'], param_names=param_names) 
+     
+        if p.civ_gh_order == 4: 
+ 
+            mod = Model(gausshermite_4, independent_vars=['x'], param_names=param_names) 
+     
+        if p.civ_gh_order == 5: 
+ 
+            mod = Model(gausshermite_5, independent_vars=['x'], param_names=param_names) 
+
+        if p.civ_gh_order == 6: 
+ 
+            mod = Model(gausshermite_6, independent_vars=['x'], param_names=param_names) 
+
+    if (line == 'Ha') & (p.ha_model == 'MultiGauss'):
+
+        mod = ConstantModel()
+        
+        for i in range(p.ha_nGaussians):
+            gmod = GaussianModel(prefix='g{}_'.format(i))
+            mod += gmod
+
+    ax.plot(vdat,
+            (flx - mod.eval(params=params, x=vdat.value/sd)) / err,
+            color=cs[8],
+            lw=1)
+
+
+    ax.axhline(0.0, color='black', linestyle=':')
+
+
+    return None 
+
+def example_spectrum_grid():
+
+    set_plot_properties() # change style  
+
+    fig = plt.figure(figsize=figsize(1, vscale=1.5))
+
+    # gridspec inside gridspec
+    outer_grid = gridspec.GridSpec(2, 2, wspace=0.0, hspace=0.1)
+
+    df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0)  
+    
+    names = ['QSO016',  # GNIRS                      
+             'QSO025',  # GNIRS              
+             'QSO399',  # SOFI                             
+             'QSO128']  # P200/TRIPLESPEC    
+
+    # from python_code/get_snr 
+
+    snr = [[18, 22, 9],
+           [22, 16, 13],
+           [14, 8, 27],
+           [6, 9, 18]]
+
+    ylims = [[[-0.04, 4.5], [-0.04, 2.5], [-0.04, 6.5]],
+             [[-0.04, 3.0], [-0.04, 1.0], [-0.04, 2.0]],
+             [[-0.04, 5.0], [-0.04, 2.5], [-0.04, 3.5]],
+             [[-0.04, 5.5], [-0.04, 2.5], [-0.04, 4.5]]]
+
+    titles = ['J121427.77-030721.0',
+              'J231441.63-082406.8',
+              'J121140.59+103002.0',
+              'J094206.95+352307.4']
+
+
+
+    for i in range(4):
+
+        offset = df.ix[names[i], 'Median_Broad_Ha']
+        
+        inner_grid = gridspec.GridSpecFromSubplotSpec(12, 1, subplot_spec=outer_grid[i], wspace=0.0, hspace=0.0)
+        
+        ax = plt.Subplot(fig, inner_grid[:3])
+        ax.set_xticks([])
+        ax.set_yticks([])
+        ax.spines['bottom'].set_visible(False)
+        example_spectra(names[i], 'Ha', ax, offset)
+        ax.set_ylim(ylims[i][0])
+        ax.set_xlim(-12000, 12000)
+        ax.set_title(titles[i], fontsize=10)
+        ax.text(0.05, 0.8, 'S/N: {}'.format(snr[i][0]), transform=ax.transAxes, zorder=10)
+        fig.add_subplot(ax)
+
+        if (i == 0) | (i == 2):
+            ax.text(0.05, 0.5, r'H$\alpha$', transform= ax.transAxes)
+
+        ax = plt.Subplot(fig, inner_grid[3])
+        ax.set_xticks([])
+        ax.spines['top'].set_visible(False)
+        example_residual(names[i], 'Ha', ax)
+        ax.set_xlim(-12000, 12000)
+        ax.set_ylim(-8, 8)
+        
+        if (i == 0) | (i == 2):
+            ax.set_yticks([-5,0,5])
+            ax.yaxis.set_ticks_position('left')
+        else:
+            ax.set_yticks([])
+
+        fig.add_subplot(ax)
+
+
+
+        #--------------------------------------------------------
+
+        ax = plt.Subplot(fig, inner_grid[4:7])
+        ax.set_xticks([])
+        ax.set_yticks([])
+        ax.spines['bottom'].set_visible(False)
+        example_spectra(names[i], 'Hb', ax, offset)
+        ax.set_ylim(ylims[i][1])
+        ax.set_xlim(-12000, 12000)
+        ax.text(0.05, 0.8, 'S/N: {}'.format(snr[i][1]), transform=ax.transAxes, zorder=10)
+        fig.add_subplot(ax)
+
+        if (i == 0) | (i == 2):
+            ax.text(0.05, 0.5, r'H$\beta$', transform= ax.transAxes)
+
+        ax = plt.Subplot(fig, inner_grid[7])
+        ax.set_xticks([])
+        ax.spines['top'].set_visible(False)
+        example_residual(names[i], 'Hb', ax)
+        ax.set_xlim(-12000, 12000)
+        ax.set_ylim(-8, 8)
+        if (i == 0) | (i == 2):
+            ax.set_yticks([-5,0,5])
+            ax.yaxis.set_ticks_position('left')
+        else:
+            ax.set_yticks([])
+        fig.add_subplot(ax)
+
+        #------------------------------------------------------
+
+        ax = plt.Subplot(fig, inner_grid[8:11])
+        ax.set_xticks([])
+        ax.set_yticks([])
+        ax.spines['bottom'].set_visible(False)
+        example_spectra(names[i], 'CIV', ax, offset)
+        ax.set_ylim(ylims[i][2])
+        ax.set_xlim(-12000, 12000)
+        ax.text(0.05, 0.8, 'S/N: {}'.format(snr[i][2]), transform=ax.transAxes, zorder=10)
+        fig.add_subplot(ax)
+
+        if (i == 0) | (i == 2):
+            ax.text(0.05, 0.5, r'C\,{\sc iv}', transform= ax.transAxes)
+
+        ax = plt.Subplot(fig, inner_grid[11])
+        
+        if i < 2:
+            ax.set_xticks([])
+        else:
+            ax.xaxis.set_ticks_position('bottom')
+
+        ax.spines['top'].set_visible(False)
+        example_residual(names[i], 'CIV', ax)
+        ax.set_xlim(-12000, 12000)
+        ax.set_ylim(-8, 8)
+        if (i == 0) | (i == 2):
+            ax.set_yticks([-5,0,5])
+            ax.yaxis.set_ticks_position('left')
+        else:
+            ax.set_yticks([])
+
+
+        fig.add_subplot(ax)
+
+
+    fig.text(0.50, 0.05, r'$\Delta v$ [km~$\rm{s}^{-1}$]', ha='center')
+    fig.text(0.05, 0.55, r'$F_{\lambda}$ [Arbitrary units]', rotation=90)
+
+    fig.savefig('/home/lc585/thesis/figures/chapter03/example_spectrum_grid.pdf')
+
+ 
+    plt.show() 
+
+
+    return None 
+
+
+
+def ha_hb_composite():
+
+    from SpectraTools.get_nir_spec import get_nir_spec
+    from SpectraTools.make_composite import make_composite
+    from SpectraTools.fit_line import fit_line
+
+    set_plot_properties() # change style  
+
+    cs = palettable.colorbrewer.qualitative.Set1_3.mpl_colors
+
+    fig, ax = plt.subplots(figsize=figsize(1, vscale=0.8))
+
+    # Hb --------------------------------------------------------------------------------------
+
+    df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0)
+    df = df[df.OIII_FIT_HB_Z_FLAG == 1]
+ 
+    wav_new = np.arange(4700.0, 5100.0, 1.0) 
+
+    flux_array = []
+    wav_array = [] 
+    z_array = [] 
+    name_array = [] 
+        
+    for idx, row in df.iterrows():
+
+        save_dir = os.path.join('/data/lc585/nearIR_spectra/linefits/', idx, 'OIII') 
+
+        wav, flux = np.genfromtxt(os.path.join(save_dir, 'spec_cont_sub.txt'), unpack=True)
+
+        wav = wav * (1.0 + row.z_IR_OIII_FIT)
+
+        z = row.OIII_FIT_HB_Z
+        if row.OIII_Z_FLAG == 1:
+            z = row.OIII_FIT_Z_FULL_OIII_PEAK
+
+        flux_array.append(flux)
+        wav_array.append(wav)
+        z_array.append(z)
+        name_array.append(idx)
+
+    wav_array = np.array(wav_array)
+    flux_array = np.array(flux_array)
+    z_array = np.array(z_array)
+
+
+    wav_new, flux, err, ns  = make_composite(wav_new,
+                                             wav_array, 
+                                             flux_array, 
+                                             z_array,
+                                             names=name_array,
+                                             verbose=False)
+
+    vdat = wave2doppler(wav_new*u.AA, w0=4862.721*u.AA) 
+
+    ax.plot(vdat, flux / np.nanmax(flux), color=cs[0])
+
+
+    # Ha --------------------------------------------------------------------------------------
+    
+    df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0)
+    df = df[df.OIII_FIT_HA_Z_FLAG == 1]
+
+    wav_new = np.arange(6400.0, 6800.0, 1.0) 
+
+    flux_array = []
+    wav_array = [] 
+    z_array = [] 
+    name_array = []  
+        
+    for idx, row in df.iterrows():
+
+        save_dir = os.path.join('/data/lc585/nearIR_spectra/linefits/', idx, 'Ha_z') 
+
+        wav, flux = np.genfromtxt(os.path.join(save_dir, 'spec_cont_sub.txt'), unpack=True)
+
+        wav = wav * (1.0 + row.z_IR)
+       
+        flux_array.append(flux)
+        wav_array.append(wav)
+        z_array.append(row.OIII_FIT_HA_Z)
+        name_array.append(idx)
+
+    wav_array = np.array(wav_array)
+    flux_array = np.array(flux_array)
+    z_array = np.array(z_array)
+
+    wav_new, flux, err, ns  = make_composite(wav_new,
+                                             wav_array, 
+                                             flux_array, 
+                                             z_array,
+                                             names=name_array,
+                                             verbose=False)
+
+    vdat = wave2doppler(wav_new*u.AA, w0=6564.89*u.AA) 
+
+    ax.plot(vdat, flux / np.nanmax(flux), color=cs[1])
+
+    ax.set_xlim(-10000, 10000)
+    ax.set_ylim(-0.2, 1.2)
+    ax.set_xlabel(r'$\Delta v$ [km~$\rm{s}^{-1}$]')
+    ax.set_ylabel(r'$F_{\lambda}$ [Arbitrary units]')
+    plt.grid()
+
+    fig.tight_layout() 
+    
+    fig.savefig('/home/lc585/thesis/figures/chapter03/ha_hb_composite.pdf')
 
     plt.show() 
 
