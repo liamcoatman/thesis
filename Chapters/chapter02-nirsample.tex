@@ -36,11 +36,6 @@ Spectra were obtained within one or more of the $JHK$ pass-bands and the gaps in
 Obtaining near-infrared spectra of adequate resolution and signal-to-noise ratio (S/N) of even moderately bright quasars remains resource intensive. 
 As a consequence, at fixed redshift, the luminosities of the quasars are brighter than the average luminosity of the SDSS sample, although the dynamic range in luminosity is a full 1.5 decades.
 
-
-
-
-
-
 \begin{figure}
     \includegraphics[width=0.8\textwidth]{figures/chapter02/luminosity_z.pdf} 
     \caption{The ranges in redshift and luminosity covered by our sample, relative to the redshift-luminosity distribution of the SDSS DR7 quasar catalogue. In regions of high point-density, contours show equally-spaced lines of constant probability density generated using a Gaussian kernel-density estimator. For the SDSS sample we use \citet{hewett10} redshifts and bolometric luminosities measured by \citet{shen11}. For the quasars in out sample the redshift is defined using the peak of the \hans/\hb emission and the luminosity is measured in the continuum at 1350\AA\, and converted to a bolometric quantity using the same conversion factor employed by \citet{shen11}. \todoinline{Eight objects are missing because we do not have enough information to calculate the bolometric luminosity.}}     
@@ -86,8 +81,7 @@ In the remaineder of this chapter I will describe each of these sub-samples in t
 
 \subsubsection{Defining sample}
 
-We selected quasars from the SDSS DR7 spectroscopic quasar catalogue with a wide range of \ion{C}{IV} blueshifts. 
-\todo{Does the reader know about \ion{C}{IV} blueshifts?}
+We selected quasars from the SDSS DR7 spectroscopic quasar catalogue. 
 The sample was restricted to objects with redshifts $2.14 < z <2.51$ (7,258 quasars), to ensure that the \hb and \ha emission lines fall within the $H$- and $K$-bands respectively, allowing us to observe both simultaneously with the appropriate grism configuration.
 Given the limited number of quasars for which near-infrared spectra could be obtained, the quasar sample was further restricted to objects that are radio-quiet (5,980 quasars), show no evidence of broad absorption lines (BALs) in their spectra (5,299 quasars), and are free from significant dust extinction. 
 We removed radio-loud objects from our sample using the same radio-loud classification as \citet{shen11}, and BAL quasars using the classifications of both \citet{shen11} and \citet{allen11}. 
@@ -99,7 +93,10 @@ Finally, a flux-limit of $K<18.5$ (AB) was applied to ensure that spectra of suf
  
 We were able to obtain new infra-red spectra for 19 quasars from this sample of 412 possible targets. 
 The quasars included in this sub-sample were selected to have \ion{C}{IV}-emission shapes which span the full range observed in the population.
-Reliably quantifying the distribution of \ion{C}{IV}-emission shapes has been made possible thanks to redshift-determination algorithms \citep[][Allen \& Hewett 2016, in preparation]{hewett10} which are independent of the \ion{C}{IV}-emission shape. 
+Reliably quantifying the distribution of \ion{C}{IV}-emission shapes has been made possible thanks to improvements in the estimation of systemic redshifts from ultraviolet spectra. 
+The Allen \& Hewett (2017, in preparation) redshift estimation algorithm generates redshifts which are independent of the \ion{C}{IV}-emission shape.
+This has been a crucial factor in allowing us to quantify the distribution of \ion{C}{IV}-blueshifts in the observed quasar population as a whole, and thus select a sample of quasars with a range of \ion{C}{IV} blueshifts (see Section XX). 
+\todo{This paragraph could be more succinct}
 
 \subsubsection{Observations}
 
