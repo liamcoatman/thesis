@@ -561,6 +561,59 @@
   \field{year}{2016}
 \endentry
 
+\entry{coatman17}{article}{}
+  \name{author}{6}{}{%
+    {{}%
+     {{Coatman}}{C.}%
+     {L.}{L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hewett}}{H.}%
+     {P.~C.}{P.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Banerji}}{B.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Richards}}{R.}%
+     {G.~T.}{G.~T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hennawi}}{H.}%
+     {J.~F.}{J.~F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Prochaska}}{P.}%
+     {J.~X.}{J.~X.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{galaxies: evolution}
+  \strng{namehash}{CL+1}
+  \strng{fullhash}{CLHPCBMRGTHJFPJX1}
+  \field{labelyear}{2017}
+  \field{sortinit}{C}
+  \verb{doi}
+  \verb 10.1093/mnras/stw2797
+  \endverb
+  \verb{eprint}
+  \verb 1610.08977
+  \endverb
+  \field{pages}{2120\bibrangedash 2142}
+  \field{title}{{Correcting C IV-based virial black hole masses}}
+  \field{volume}{465}
+  \field{journaltitle}{\mnras}
+  \field{eprinttype}{arXiv}
+  \field{month}{02}
+  \field{year}{2017}
+\endentry
+
 \entry{collin06}{article}{}
   \name{author}{4}{}{%
     {{}%
@@ -3682,44 +3735,6 @@
   \field{year}{2016}
 \endentry
 
-\entry{mcgill08}{article}{}
-  \name{author}{4}{}{%
-    {{}%
-     {{McGill}}{M.}%
-     {K.~L.}{K.~L.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Woo}}{W.}%
-     {J.-H.}{J.-H.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Treu}}{T.}%
-     {T.}{T.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Malkan}}{M.}%
-     {M.~A.}{M.~A.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{Black Hole Physics, Galaxies: Active, Galaxies: Evolution, Galaxies:
-  Quasars: General}
-  \strng{namehash}{MKL+1}
-  \strng{fullhash}{MKLWJHTTMMA1}
-  \field{labelyear}{2008}
-  \field{sortinit}{M}
-  \field{pages}{703\bibrangedash 714}
-  \field{title}{{Comparing and Calibrating Black Hole Mass Estimators for
-  Distant Active Galactic Nuclei}}
-  \field{volume}{673}
-  \field{journaltitle}{\apj}
-  \field{month}{02}
-  \field{year}{2008}
-\endentry
-
 \entry{mclure02}{article}{}
   \name{author}{2}{}{%
     {{}%
@@ -6658,30 +6673,6 @@
   \field{volume}{384}
   \field{journaltitle}{\aap}
   \field{month}{03}
-  \field{year}{2002}
-\endentry
-
-\entry{vestergaard02}{article}{}
-  \name{author}{1}{}{%
-    {{}%
-     {{Vestergaard}}{V.}%
-     {M.}{M.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{Galaxies: Active, Galaxies: Fundamental Parameters, Galaxies:
-  High-Redshift, Galaxies: Seyfert, Galaxies: Quasars: Emission Lines,
-  Ultraviolet: Galaxies}
-  \strng{namehash}{VM1}
-  \strng{fullhash}{VM1}
-  \field{labelyear}{2002}
-  \field{sortinit}{V}
-  \field{pages}{733\bibrangedash 752}
-  \field{title}{{Determining Central Black Hole Masses in Distant Active
-  Galaxies}}
-  \field{volume}{571}
-  \field{journaltitle}{\apj}
-  \field{month}{06}
   \field{year}{2002}
 \endentry
 

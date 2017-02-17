@@ -48,9 +48,11 @@ def plot_MCMC_model(ax, xdata, ydata, sigma_y, trace, linestyle='--', label='', 
                         color=palettable.colorbrewer.qualitative.Pastel1_3.mpl_colors[1], 
                         zorder=1)
 
-def civ_space_plot():
+def civ_space_z_compare_plot():
 
+    set_plot_properties() # change style 
 
+    cs = palettable.colorbrewer.qualitative.Set2_3.mpl_colors
 
     # import ipdb; ipdb.set_trace()
     # t_hw = Table.read('/data/lc585/QSOSED/Results/140827/civtab.fits') # old blueshifts
@@ -80,7 +82,7 @@ def civ_space_plot():
       
     Z = np.reshape(kernel(positions).T, X.shape)
 
-    CS = axs[1].contour(X,Y,Z, colors=[cs[-1]])
+    CS = axs[1].contour(X,Y,Z, colors=['grey'])
 
     threshold = CS.levels[0]
 
@@ -91,7 +93,7 @@ def civ_space_plot():
     y = np.ma.masked_where(z > threshold, m2)
 
     # plot unmasked points
-    axs[1].scatter(x, y, c='grey', edgecolor='None', s=3, label='SDSS DR7', rasterized=True)
+    axs[1].scatter(x, y, c='grey', edgecolor='None', s=3, label='SDSS DR7', rasterized=False)
 
     axs[1].set_xlim(-1400,4500)
     axs[1].set_ylim(1,2.2)
@@ -118,7 +120,7 @@ def civ_space_plot():
       
     Z = np.reshape(kernel(positions).T, X.shape)
 
-    CS = axs[2].contour(X,Y,Z, colors=[cs[-1]])
+    CS = axs[2].contour(X,Y,Z, colors=['grey'])
 
     threshold = CS.levels[0]
 
@@ -129,7 +131,7 @@ def civ_space_plot():
     y = np.ma.masked_where(z > threshold, m2)
 
     # plot unmasked points
-    axs[2].scatter(x, y, c='grey', edgecolor='None', s=3, label='SDSS DR7', rasterized=True)
+    axs[2].scatter(x, y, c='grey', edgecolor='None', s=3, label='SDSS DR7', rasterized=False)
 
     axs[2].set_xlim(axs[1].get_xlim())
     axs[2].set_ylim(axs[1].get_ylim())
@@ -169,7 +171,7 @@ def civ_space_plot():
     
     Z = np.reshape(kernel(positions).T, X.shape)
     
-    CS = axs[0].contour(X, Y, Z, colors=[cs[-1]])
+    CS = axs[0].contour(X, Y, Z, colors=['grey'])
     
     threshold = CS.levels[0]
     
@@ -180,7 +182,7 @@ def civ_space_plot():
     y = np.ma.masked_where(z > threshold, m2)
 
     # plot unmasked points
-    axs[0].scatter(x, y, c='grey', edgecolor='None', s=3, label='SDSS DR7', rasterized=True)
+    axs[0].scatter(x, y, c='grey', edgecolor='None', s=3, label='SDSS DR7', rasterized=False)
 
     axs[0].set_xlim(axs[1].get_xlim())
     axs[0].set_ylim(axs[1].get_ylim())
@@ -197,7 +199,7 @@ def civ_space_plot():
     fig.tight_layout()
     fig.subplots_adjust(hspace=0.05)
 
-    fig.savefig('/home/lc585/thesis/figures/chapter02/civ_space.pdf')
+    fig.savefig('/home/lc585/thesis/figures/chapter03/civ_space_z_compare.pdf')
 
     plt.show() 
 
@@ -1074,7 +1076,7 @@ def ha_z_comparison():
     df = df[df.WARN_CIV_BEST == 0]
     df = df[df.BAL_FLAG != 1]
     
-    fig, axs = plt.subplots(2, 1, figsize=figsize(0.6, 1.3), sharex=True) 
+    fig, axs = plt.subplots(2, 1, figsize=figsize(0.9, 1.3), sharex=True) 
 
     xi = const.c.to(u.km/u.s)*(df.OIII_FIT_HA_Z - df.z_Broad_Ha)/(1.0 + df.OIII_FIT_HA_Z)
     xi = xi[~np.isnan(xi)]
@@ -1423,6 +1425,9 @@ def civ_comparisons_paper2():
                 markeredgecolor='None')
     
 
+    print df.loc[df.Blueshift_CIV_Ha < 1500.0, 'Sigma_CIV_BEST'].median() 
+    print df.loc[df.Blueshift_CIV_Ha > 1500.0, 'Sigma_CIV_BEST'].median() 
+
     axs[2].errorbar(bs_civ,
                     fwhm_civ / sigma_civ,
                     linestyle='',
@@ -1461,7 +1466,7 @@ def ha_comparisons_paper2():
 
     set_plot_properties() # change style 
 
-    cs = palettable.colorbrewer.qualitative.Set1_3.mpl_colors
+    cs = palettable.colorbrewer.qualitative.Set2_3.mpl_colors
 
     df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0)
     df = df[df.WARN_Ha == 0]
@@ -1485,7 +1490,8 @@ def ha_comparisons_paper2():
                 markersize=4,
                 markerfacecolor=cs[1],
                 markeredgecolor='None')
-    
+
+    print np.mean(fwhm_ha[bs_civ > 2000.0]), np.std(fwhm_ha[bs_civ > 2000.0])     
     
     axs[1].plot(bs_civ,
                 sigma_ha,
@@ -1523,6 +1529,79 @@ def ha_comparisons_paper2():
     fig.tight_layout()  
 
     fig.savefig('/home/lc585/thesis/figures/chapter03/ha_comparisons_paper2.pdf')
+    
+    plt.show() 
+
+    return None 
+
+def hb_comparisons_paper2(): 
+
+    from matplotlib.ticker import MaxNLocator 
+
+    set_plot_properties() # change style 
+
+    cs = palettable.colorbrewer.qualitative.Set2_3.mpl_colors
+
+    df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0)
+    df = df[df.WARN_Hb == 0]
+    df = df[df.WARN_CIV == 0]
+    df = df[df.BAL_FLAG != 1]
+
+
+    bs_civ = df.Blueshift_CIV_Hb 
+    fwhm_hb = df.FWHM_Broad_Hb
+    sigma_hb = df.Sigma_Broad_Hb 
+
+    fig, axs = plt.subplots(3, 
+                            1,
+                            figsize=(figsize(0.8, vscale=2)), 
+                            sharex=True) 
+
+    axs[0].plot(bs_civ,
+                fwhm_hb,
+                linestyle='',
+                marker='o', 
+                markersize=4,
+                markerfacecolor=cs[0],
+                markeredgecolor='None')
+    
+    
+    axs[1].plot(bs_civ,
+                sigma_hb,
+                linestyle='',
+                marker='o', 
+                markersize=4,
+                markerfacecolor=cs[0],
+                markeredgecolor='None')
+
+    
+    axs[2].errorbar(bs_civ,
+                    fwhm_hb / sigma_hb,
+                    linestyle='',
+                    marker='o', 
+                    markersize=4,
+                    markerfacecolor=cs[0],
+                    markeredgecolor='None')
+
+    for ax in axs.flatten():
+        ax.xaxis.set_major_locator(MaxNLocator(5))
+        ax.yaxis.set_major_locator(MaxNLocator(5))
+        ax.grid() 
+
+
+    axs[0].set_ylim(500,11000)
+    axs[1].set_ylim(500, 5000)
+    axs[2].set_ylim(0.5, 3)
+
+
+    axs[2].set_xlabel(r'C\,{\sc iv} Blueshift [km~$\rm{s}^{-1}$]')
+    axs[0].set_ylabel(r'FWHM [km~$\rm{s}^{-1}$]')
+    axs[1].set_ylabel(r'$\sigma$ [km~$\rm{s}^{-1}$]')
+    axs[2].set_ylabel(r'FWHM/$\sigma$')
+    
+    fig.tight_layout()  
+
+    fig.savefig('/home/lc585/thesis/figures/chapter03/hb_comparisons_paper2.pdf')
     
     plt.show() 
 
@@ -2086,7 +2165,7 @@ def example_spectrum_grid():
         ax.set_ylim(-8, 8)
         
         if (i == 0) | (i == 2):
-            ax.set_yticks([-5,0,5])
+            ax.set_yticks([-8,0,8])
             ax.yaxis.set_ticks_position('left')
         else:
             ax.set_yticks([])
@@ -2117,7 +2196,7 @@ def example_spectrum_grid():
         ax.set_xlim(-12000, 12000)
         ax.set_ylim(-8, 8)
         if (i == 0) | (i == 2):
-            ax.set_yticks([-5,0,5])
+            ax.set_yticks([-8,0,8])
             ax.yaxis.set_ticks_position('left')
         else:
             ax.set_yticks([])
@@ -2150,7 +2229,7 @@ def example_spectrum_grid():
         ax.set_xlim(-12000, 12000)
         ax.set_ylim(-8, 8)
         if (i == 0) | (i == 2):
-            ax.set_yticks([-5,0,5])
+            ax.set_yticks([-8,0,8])
             ax.yaxis.set_ticks_position('left')
         else:
             ax.set_yticks([])
@@ -2327,5 +2406,151 @@ def ha_edd_civ_bs():
     plt.show() 
     
     fig.savefig('/home/lc585/thesis/figures/chapter03/ha_edd_civ_bs.pdf')
+
+    return None 
+
+
+def civ_space_plot():
+
+    """
+    Plot all objects. 
+    Exclude BALs. 
+    Use my parameteric measure of the CIV blueshift, since otherwise won't have everything. 
+    Use peak of broad Ha / Hb to give systemic redshift. 
+    """
+
+    set_plot_properties() # change style   
+
+    cs = palettable.colorbrewer.qualitative.Set1_9.mpl_colors 
+
+    # definitions for the axes
+    left, width = 0.1, 0.65
+    bottom, height = 0.1, 0.65
+    bottom_h = left_h = left + width + 0.0
+    
+    rect_scatter = [left, bottom, width, height]
+    rect_histx = [left, bottom_h, width, 0.2]
+    rect_histy = [left_h, bottom, 0.2, height]
+
+    # no labels
+    nullfmt = NullFormatter() 
+
+    fig = plt.figure(figsize=figsize(1.0, vscale=1.0))
+
+    axScatter = plt.axes(rect_scatter)
+    axHistx = plt.axes(rect_histx)
+    axHisty = plt.axes(rect_histy)
+
+    # no labels
+    axHistx.xaxis.set_major_formatter(nullfmt)
+    axHistx.yaxis.set_major_formatter(nullfmt)
+    axHisty.xaxis.set_major_formatter(nullfmt)
+    axHisty.yaxis.set_major_formatter(nullfmt)
+
+    axHistx.set_xticks([])
+    axHistx.set_yticks([])
+    axHisty.set_xticks([])
+    axHisty.set_yticks([])
+
+    t_ica = Table.read('/data/vault/phewett/LiamC/liam_civpar_zica_160115.dat', format='ascii') # new ICA 
+        
+    m1, m2 = t_ica['col2'], np.log10( t_ica['col3'])
+
+    badinds = np.isnan(m1) | np.isnan(m2) | np.isinf(m1) | np.isinf(m2)
+
+    m1 = m1[~badinds]
+    m2 = m2[~badinds]
+
+    xmin = -1000.0
+    xmax = 3500.0
+    ymin = 1.0
+    ymax = 2.5
+
+    X, Y = np.mgrid[xmin:xmax:100j, ymin:ymax:100j]
+    positions = np.vstack([X.ravel(), Y.ravel()])
+    values = np.vstack([m1, m2])
+
+    kernel = stats.gaussian_kde(values)
+      
+    Z = np.reshape(kernel(positions).T, X.shape)
+
+    CS = axScatter.contour(X,Y,Z, colors=[cs[-1]])
+
+    threshold = CS.levels[0]
+
+    z = kernel(values)
+
+    # mask points above density threshold
+    x = np.ma.masked_where(z > threshold, m1)
+    y = np.ma.masked_where(z > threshold, m2)
+
+    # plot unmasked points
+    axScatter.scatter(x, y, c=cs[-1], edgecolor='None', s=3, label='SDSS DR7' )
+
+    df1 = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0)
+    df1 = df1[df1.WARN_Ha == 0]
+    df1 = df1[df1.WARN_CIV == 0]
+    df1 = df1[df1.BAL_FLAG != 1]
+    
+    df2 = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0)
+    df2 = df2[df2.WARN_Hb == 0]
+    df2 = df2[df2.WARN_CIV == 0]
+    df2 = df2[df2.BAL_FLAG != 1] 
+        
+    df = pd.concat([df1, df2]).drop_duplicates()
+
+    axScatter.scatter(df.Blueshift_CIV_Balmer_Best,
+                      np.log10(df.EQW_CIV_BEST),
+                      c=cs[1],
+                      s=20,
+                      edgecolor='None',
+                      label = 'This paper',
+                      zorder=10)
+   
+    
+    axScatter.set_xlim(-2000, 6000)
+    axScatter.set_ylim(1,2.2)
+
+    axScatter.set_xlabel(r'C\,{\sc iv} Blueshift [km~$\rm{s}^{-1}$]')
+    axScatter.set_ylabel(r'log(C\,{\sc iv} EW) [\AA]')
+
+    legend = axScatter.legend(frameon=True, scatterpoints=1) 
+
+    axHistx.hist(m1, 
+                 bins=np.arange(-2000, 6000, 500), 
+                 facecolor=cs[-1], 
+                 edgecolor='None', 
+                 alpha=0.4, 
+                 normed=True)
+
+    axHisty.hist(m2, 
+                 bins=np.arange(1, 2.2, 0.1), 
+                 facecolor=cs[-1], 
+                 edgecolor='None', 
+                 orientation='horizontal', 
+                 alpha=0.4, 
+                 normed=True)
+
+    axHistx.hist(df.Blueshift_CIV_Balmer_Best, 
+                 bins=np.arange(-2000, 6000, 500), 
+                 histtype='step', 
+                 edgecolor=cs[1], 
+                 normed=True, 
+                 lw=2)
+
+    axHisty.hist(np.log10(df.EQW_CIV_BEST), 
+                 bins=np.arange(1, 2.2, 0.1), 
+                 histtype='step', 
+                 edgecolor=cs[1], 
+                 normed=True, 
+                 lw=2, 
+                 orientation='horizontal')
+
+    axHistx.set_xlim(axScatter.get_xlim())
+    axHisty.set_ylim(axScatter.get_ylim())
+
+    fig.savefig('/home/lc585/thesis/figures/chapter03/civ_space.pdf')
+
+    plt.show()
 
     return None 
