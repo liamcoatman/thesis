@@ -394,7 +394,7 @@ def oiii_core_strength_blueshift():
                     edgecolor='None',
                     facecolor=cs[1],
                     zorder=2,
-                    s=20)    
+                    s=10)    
 
     ax.set_xlim(0.025, 0.4)
     ax.set_ylim(0, 3)
@@ -402,7 +402,7 @@ def oiii_core_strength_blueshift():
     # ax.set_yscale('log')
 
     ax.set_xlabel(r"$\displaystyle {(w_4 + w_5)} / {\sum_{i=1}^6 w_i}$")
-    ax.set_ylabel(r"$\displaystyle {(w_4 + w_5)} / {\sum_{i=1}^6 w_i}$")
+    ax.set_ylabel(r"$\displaystyle w_6 / {(w_4 + w_5)}$")
 
     fig.tight_layout()
 
@@ -636,5 +636,98 @@ def compare_gaussian_ica(name):
 
 
     plt.show()
+
+    return None 
+
+
+def snr_test():
+
+    from get_errors_oiii import get_errors_oiii
+    import collections 
+
+    cs = palettable.colorbrewer.sequential.Blues_3.mpl_colors  
+    set1 = palettable.colorbrewer.qualitative.Set1_9.mpl_colors 
+
+    df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0)
+
+    snrs = ['2p5', '5p0', '7p5', '15p0', '20p0', '50p0']    
+    
+    new_dict = collections.OrderedDict() 
+
+    fig, axs = plt.subplots(2, 1, figsize=figsize(0.9,  vscale=(np.sqrt(5.0)-1.0)), sharex=True)
+
+    for i, name in enumerate(['QSO559', 'QSO004']): 
+
+        for snr in snrs:                   
+    
+            # returns dictionary of dictionaries 
+            new_dict.update({snr: get_errors_oiii(name + '_snr_' + snr, plot=False, snr_test=True)})
+    
+        p50 = np.array([x['oiii_5007_w80']['p50'] for x in new_dict.values()])
+        p16 = np.array([x['oiii_5007_w80']['p16'] for x in new_dict.values()])
+        p84 = np.array([x['oiii_5007_w80']['p84'] for x in new_dict.values()])
+    
+        lower_error = p50 - p16
+        upper_error = p84 - p50 
+    
+        ytrue = new_dict['50p0']['oiii_5007_w80']['p50'] 
+    
+        axs[i].errorbar([2.5, 5, 7.5, 15, 20, 50],
+                    p50 / ytrue, 
+                    yerr=[lower_error / ytrue, upper_error / ytrue],
+                    color='black')
+        
+        axs[i].axhline(1.0, color='black', linestyle='--')
+        
+        axs[i].set_xlim(0, 55) 
+        axs[i].set_ylim(0.6, 1.4)
+    
+        axs[i].axhspan(0.9, 1.1, color=cs[1])
+        # axs[i].axhspan(0.8, 0.9, color=cs[0])
+        # axs[i].axhspan(1.1, 1.2, color=cs[0])
+    
+        axs[i].axvline(df.ix[name].OIII_FIT_SNR_CONTINUUM, color=set1[0], linestyle='--')
+    
+        axs[i].set_ylabel(r'$\Delta w_{80}$')
+        axs[i].set_yticks([0.6, 0.8, 1, 1.2, 1.4])
+
+    axs[1].set_xlabel('S/N')
+
+    fig.tight_layout()
+
+    fig.subplots_adjust(hspace=0.05)
+
+    fig.savefig('/home/lc585/thesis/figures/chapter04/snr_test.pdf') 
+
+    plt.show()
+
+
+
+    return None 
+
+
+def oiii_strength_hist():
+
+    df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0)
+    df = df[df.mfica_flag == 1]
+
+
+    fig, ax = plt.subplots(figsize=figsize(0.8, vscale=0.8))
+
+    ax.hist(df.oiii_strength,
+            bins=np.arange(0, 0.5, 0.025),
+            facecolor=cs[1],
+            histtype='stepfilled')
+    ax.axvline(0.1165, color=cs[0], linestyle='--')
+
+    ax.set_xlabel(r"$\displaystyle {\sum_{i=3}^6 w_i} / {\sum_{i=1}^6 w_i}$")
+    ax.set_ylabel(r"Count")
+
+    fig.tight_layout()
+
+    fig.savefig('/home/lc585/thesis/figures/chapter04/oiii_strength_hist.pdf') 
+
+    plt.show() 
+
 
     return None 

@@ -30,20 +30,20 @@ These studies often report exceptionally large [\ion{O}{III}] widths, with FWHM 
 This could suggets that AGN efficiency in driving galaxy-wide outflows increases with AGN luminosity (e.g. Hopkins et al. 2016). 
 In addition, [\ion{O}{III}] is often very weak, or is missing entirely \citep[e.g.][]{netzer04}. 
 
-In this chapter we analyse the [\ion{O}{III}] properties of a sample of 358 high-luminosity, redshift $1.5 < z < 4$ quasars. 
+In this chapter we analyse the [\ion{O}{III}] properties of a sample of 345 high-luminosity, redshift $1.5 < z < 4$ quasars. 
 The large sample size will help to put these observations in context of the AGN population as a whole.
 We will analyse the [\ion{O}{III}] emission properties as a function of key properties of the quasar, e.g. BH mass, luminosity, and accretion rate. 
 
 \section{Quasar Sample}
 
-We have assembled a catalogue of 358 high-luminosity, redshift $1.5 < z < 4$ quasars, with high-quality near-infrared spectra covering the broad Balmer \hb line and the strong, narrow [\ion{O}{III}] doublet.
+We have assembled a catalogue of 345 high-luminosity, redshift $1.5 < z < 4$ quasars, with high-quality near-infrared spectra covering the broad Balmer \hb line and the strong, narrow [\ion{O}{III}] doublet.
 This is the largest study of the narrow line region properties of high-$z$ quasars ever undertaken. 
 The quasar sample is summarised in Table~\ref{tab:specnums}.
 
 \begin{table}
   \centering
   \small 
-  \caption{The numbers of quasars with [\ion{O}{III}] line measurements and the spectrographs and telescopes used to obtain the near-infrared spectra. Further details on the instrumental configurations are given in paper I. {\bf Check numbers.} }
+  \caption{The numbers of quasars with [\ion{O}{III}] line measurements and the spectrographs and telescopes used to obtain the near-infrared spectra.}
   \label{tab:specnums}
     \begin{tabular}{ccc} 
     \hline
@@ -52,7 +52,7 @@ The quasar sample is summarised in Table~\ref{tab:specnums}.
     \hline
     FIRE         & MAGELLAN  & 32 \\
     GNIRS        & GEMINI-N  & 29 \\
-    ISAAC        & VLT       & 8 \\
+    ISAAC        & VLT       & 6 \\
     LIRIS        & WHT       & 5 \\
     NIRI         & GEMINI-N  & 29 \\
     NIRSPEC      & Keck II   & 3 \\
@@ -60,7 +60,7 @@ The quasar sample is summarised in Table~\ref{tab:specnums}.
     SOFI         & NTT       & 78 \\
     TRIPLESPEC   & ARC-3.5m  & 27 \\
     TRIPLESPEC   & P200      & 46 \\
-    XSHOOTER     & VLT       & 25 \\
+    XSHOOTER     & VLT       & 24 \\
     \hline
     & & 144 \\
     \hline
@@ -104,9 +104,9 @@ In a later section we demonstrate how this spectrum can be extremely well fit by
 
 
 
+Make sure I cam calculating EQW properly - I think I am doing relative to Fe right now. 
 
-
-
+Some which are low EQW or S/N I fit with fixed model just to get an estimate of the EQW. 
 
 The following model is then fit to the spectra in the wavelength interval 4700-5100\,\AA.
 The fit is done as a function of the Doppler velocity shift, and we adopt the wavelength 4862.721\AA\, (the laboratory \hb wavelength) to transform wavelengths into equivalent Doppler velocities.
@@ -139,6 +139,177 @@ No theoretical justification that the wing compoent should have a Gaussian profi
 And decomposition depends on S/N, spectral resolution. 
 Instead we use non-parameteric measures from the whole profile. 
 
+
+\subsection{Approach Two: Independent Component Analysis}
+
+Independent component analysis (ICA) is a blind source separatation tecnique for separating a signal in to linearly mixed statistically independent subcomponents. 
+Unlike the more widely-used principle component ananlysis technique, ICA produces non-negative components which allows for a physical interpretation of the components and weights.  
+ICA has been succesfully applied to model the spectra of emission-line galaxies \citep{allen13} and BAL quasars \citep{allen11}. 
+The quasar spectra can be thought of as a set of observations, $\bm{x}$, which are made up of statistically independent components, $\bm{c}$, that are combined by some mixing matric, $\bm{W}$:
+
+\begin{equation}
+    \bm{x} = \bm{W}\bm{c}
+\end{equation}
+
+ICA reverses this proces and describes how the observed data are generated. 
+Both the independent components and the mixing matrix are unknown, but can be gound by solving:
+
+\begin{equation}
+    \bm{c} = \bm{W}^{-1}\bm{x}.
+\end{equation}
+
+The components were solved for using a sample of 2,154 SDSS quasars at redshifts XX. 
+\todo{Ask Paul for details.}
+At these redshifts the SDSS spectrograph covers the rest-frame region XX-XX\AA where \hb and [\ion{O}{III}] lie. 
+The individual spectra were first adjusted to give the same overall shape as a model quasar template spectrum.
+Six positive independent components and four additional components that could be negative were found to be sufficient to reconstruct the spectrum, without over-fitting. 
+Each quasar spectrum can then be represented as a linear combination of the independent components: 
+
+\begin{equation}
+    x_j = \sum_{i=1}^{10} c_{ij}W_{ij}
+\end{equation}
+
+For each quasar in our NIR sample perform a variance-weighted least-squares minimisation to determine the optimum value of the components weights. 
+A power-law was fit to the quasar template spectrum in emission line free windows at 4200-4230, 4435-4700 and 5100-5535 \AA. 
+Each of the components is then divided by the power-law. 
+An identical process is performed on each of the spectrum to be fitted, so that there is essentially zero shape in both the components and the spectrum to be fitted. 
+
+We do a preliminary fit. 
+First six components constrained to have positive weights. 
+Good fits were achieved for 334 out of the 358 spectra. 
+Fit is done in log-wavelength. 
+
+An example is shown in Fig.~\ref{fig:mfica_components}. 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/chapter04/mfica_components.pdf} 
+    \caption{Black solid line is the median from the ICA fits to the high-luminosity sample. Black dashed line shows the median from the low-luminosity sample. The six positive ICA components are also shown.}     
+    \label{fig:mfica_components}
+\end{figure}
+
+Although the ICA is analysis is not based on any physics,  there appears to be a direct correspondence between the individual components and the different emission features which contribute to the spectra (Fig.~\ref{fig:mfica_components}). 
+This correspondence is summarised in Table~\ref{tab:icacomps}. 
+The component $w_1$ seems to correspond to \ion{Fe}{II} emission, the components $w_2$ and $w_3$ to broad \hb emission, the components $w_4$ and $w_5$ to narrow [\ion{O}{III}] emission at the systemic redshift, and the component $w_6$ to broad, blueshifted [\ion{O}{III}] emission. 
+
+\begin{table}
+  \centering
+  \caption{Approximate physical origin of the ICA components.}
+  \label{tab:icacomps}
+    \begin{tabular}{cc} 
+    \hline
+    Component & Origin \\
+    \hline
+    $w_1$& \ion{Fe}{II} \\
+    $w_2$& \hbns \\
+    $w_3$& \hbns \\
+    $w_4$& [\ion{O}{III}] core \\
+    $w_5$& [\ion{O}{III}] core \\
+    $w_6$& [\ion{O}{III}] wing \\
+    \hline
+    \end{tabular}
+\end{table} 
+
+\subsection{Bad ICA fits}
+
+There are 24 cases where the the ICA components are unable to reproduce the quasar spectrum. 
+These are normally when we have very broad [\ion{O}{III}]. 
+These are clearly lacking in any significant number in the low redshift sample used to generate the ICA components. 
+
+\subsection{Reconstructing the [\ion{O}{III}] profile}
+
+We take our best fitting ICA component weights, and set the first three to zero. 
+We define the boundaries of [\ion{O}{III}]\l5008 as being between 4900 and 5500\AA. 
+The blue wing of [\ion{O}{III}]\l5008 is blended, and so to recover the intrinsic profile we instead use the blue wing of [\ion{O}{III}]\l4960. 
+
+
+Doesn't this need to be scaled? 
+
+
+
+
+    inds1 = (comps_wav > 4900.0) & (comps_wav < 4980 - peak_diff)
+    inds2 = (comps_wav > 4980.0) & (comps_wav < 5050.0)
+
+    wav_5008 = np.concatenate((comps_wav[inds1] + peak_diff, comps_wav[inds2]))
+    flux_5008 = np.concatenate((flux[inds1], flux[inds2]))
+
+
+
+
+\subsubsection{Defining a sample for Gaussian fits}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/chapter04/oiii_strength_hist.pdf} 
+    \caption{Anything to the left of the line [\ion{O}{III}] is too weak to derive paramters from Gaussian fits. Excludes 148 objects.}     
+    \label{fig:oiii_strength_hist}
+\end{figure}
+
+We have already done the Gaussian fits. 
+In this section we define a sample of objects for which we believe the emission line properties we infer to be reliable.
+
+First of all we flag objects where the [\ion{O}{III}] emission is too weak. 
+To do this we look at the distribution of power which is in the [\ion{O}{III}] weights. 
+This is shown in Figure~\ref{fig:oiii_strength_hist}. 
+We exclude all objects where the [\ion{O}{III}] strength is less than 0.1165. 
+This corresponds to an equivalent width of XX. 
+
+We use the ICA components to generate high S/N representations of the spectra. 
+We take the error spectrum from the object, and scale it so that the S/N (which is measured in the continuum and is quoted per pixel) is \{2.5, 5, 7.5, 10, 15, 20, 50\}. 
+We interpolate the ICA model flux on to the wavelength of the object. 
+For each S/N, we run our line-fitting procedure 500 times. 
+In each of the 500 trials the flux is drawn randomly from a Normal distribution with $(\mu = F_\lambda, \sigma = \sigma_\lambda)$.
+
+In the next step, we calculate the 16th, 50th and 84th percentiles of the distribution of $w_{80}$ values. 
+This is shown in Figure~\ref{fig:snr_test}, where the marker denotes the 50th percentile, and the lower and upper error bars the 16th and 84th percentiles respectively. 
+As expected, the uncertainty on $w_{80}$ increases as the S/N of the spectrum decreases. 
+The true value of $w_{80}$ is defined as being the value in the highest S/N reliation of the spectrum (S/N=50). 
+If the fractional change in $w_{80}$ at the actual S/N of the spectrum is greater than 10 per cent, or the error in $w_{80}$ is greater than 50 per cent, then the measurements are flagged as being unreliable. 
+
+We also exclude the 24 objects where the ICA fits failed, because we can't perform the S/N test for these objects. 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\columnwidth]{figures/chapter04/snr_test.pdf} 
+    \caption{}
+    \label{fig:snr_test}
+\end{figure}
+
+
+
+
+
+
+We exclude the objects for which the ICA fit failed to reproduce the spectrum (24 objects). 
+If the emission is too  
+
+
+
+
+
+Looked at distribution of OIII strength. 
+Excluded objects below cut. 
+Then also exclude S/N based on simulations 
+Reconstruct high S/N spectrum using MFICA components 
+Then degrade S/N:
+Take typical noise spectrum for each instrument and add a scaled version of this. 
+Simulate 500 trials for each S/N level. 
+Take median and 68\% as the measurement and its error
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \begin{figure*}
     \includegraphics[width=\textwidth]{figures/chapter04/example_spectrum_grid.pdf} 
     \caption{Multi-component Gaussian fits to the continuum-subtracted \hbns/[\ion{O}{III}] emission in 16 quasars, chosen to be the representative of the wide range of [\ion{O}{III}] line widths we measure in our sample. The data is shown in grey, the best-fitting parametric model in black, and the individual model components in orange. The broad \hb centroid is used to measure the systemic redshift, and $\Delta{v}$ is the velocity shift from the line rest-frame transition wavelength for \hbns. Below each fit we plot the data minus model residuals, scaled by the errors on the fluxes. {\bf Resample model at higher resolution.}}     
@@ -160,23 +331,7 @@ Instead we use non-parameteric measures from the whole profile.
     \label{fig:mfica_oiii_weight}
 \end{figure*}
 
-\begin{table}
-  \centering
-  \caption{Approximate physical origin of the ICA components.}
-  \label{tab:icacomps}
-    \begin{tabular}{cc} 
-    \hline
-    Component & Origin \\
-    \hline
-    $w_1$& \ion{Fe}{II} \\
-    $w_2$& \hbns \\
-    $w_3$& \hbns \\
-    $w_4$& [\ion{O}{III}] core \\
-    $w_5$& [\ion{O}{III}] core \\
-    $w_6$& [\ion{O}{III}] wing \\
-    \hline
-    \end{tabular}
-\end{table} 
+
 
 
 \begin{figure}
@@ -186,12 +341,6 @@ Instead we use non-parameteric measures from the whole profile.
     \label{fig:mfica_oiii_w80_comparison}
 \end{figure}
 
-\begin{figure}
-    \centering
-    \includegraphics[width=0.6\textwidth]{figures/chapter04/mfica_components.pdf} 
-    \caption{Black solid line is the median from the ICA fits to the high-luminosity sample. Black dashed line shows the median from the low-luminosity sample. The six positive ICA components are also shown.}     
-    \label{fig:mfica_components}
-\end{figure}
 
 \begin{figure}
     \centering
@@ -248,12 +397,7 @@ Note that $v_{50}$ is not suitable because when [\ion{O}{III}] is low S/N we fit
 
 {\bf The line width measures are not at present corrected for instrumental broadening, but this can easily be done.}
 
-\begin{figure}
-    \centering
-    \includegraphics[width=\columnwidth]{figures/chapter04/snr_test.pdf} 
-    \caption{}
-    \label{fig:snr_test}
-\end{figure}
+
 
 
 \subsection{Other flags}
@@ -267,6 +411,8 @@ Low S/N. Includes some of the strong iron emitters.
 
 74 objects where [\ion{O}{III}] is undetected, although I don't have a rigorous definition of what this means. 
 Merge with 2? 
+Section on deriving upper limits. 
+
 
 
 \section{ICA Component Fits}
