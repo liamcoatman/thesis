@@ -16,6 +16,9 @@ from lmfit.models import GaussianModel
 from SpectraTools.fit_line import doppler2wave, wave2doppler, PseudoContinuum
 from lmfit import Model
 from barak import spec
+import matplotlib.gridspec as gridspec
+from astropy.table import Table 
+from scipy import stats 
 
 set_plot_properties() # change style 
 cs = palettable.colorbrewer.qualitative.Set1_9.mpl_colors 
@@ -359,6 +362,152 @@ def civ_blueshift_oiii_strength():
     plt.show() 
 
     return None 
+
+def civ_blueshift_oiii_blueshift():
+
+    set_plot_properties() # change style 
+
+    fig, ax = plt.subplots(figsize=figsize(0.9, vscale=0.8))
+    
+    df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0) 
+    df = df[df.OIII_FLAG_2 > 0]
+    df = df[df.OIII_EQW_FLAG == 0]
+    df = df[df.OIII_SNR_FLAG == 0]
+    df = df[df.OIII_BAD_FIT_FLAG == 0]
+    df = df[df.FE_FLAG == 0]
+    df = df[df.WARN_CIV_BEST == 0]
+    df = df[df.BAL_FLAG != 1]
+    df1 = df[df.OIII_EXTREM_FLAG == 0]
+    df2 = df[df.OIII_EXTREM_FLAG == 1]
+
+  
+    w0 = np.mean([1548.202,1550.774])*u.AA  
+
+    median_wav = doppler2wave(df1.Median_CIV_BEST.values*(u.km/u.s), w0) * (1.0 + df1.z_IR.values)
+    blueshift_civ = const.c.to('km/s') * (w0 - median_wav / (1.0 + df1.OIII_FIT_Z_FULL_OIII_PEAK)) / w0
+
+
+    ax.plot(blueshift_civ, 
+            df1.OIII_FIT_VEL_FULL_OIII_PEAK - df1.OIII_5007_V10,
+            linestyle='',
+            marker='o', 
+            markerfacecolor=cs[1],
+            markeredgecolor='None')
+
+    median_wav = doppler2wave(df2.Median_CIV_BEST.values*(u.km/u.s), w0) * (1.0 + df2.z_IR.values)
+    blueshift_civ = const.c.to('km/s') * (w0 - median_wav / (1.0 + df2.OIII_FIT_Z_FULL_OIII_PEAK)) / w0
+
+
+    ax.plot(blueshift_civ, 
+            df2.OIII_FIT_VEL_FULL_OIII_PEAK - df2.OIII_5007_V10,
+            linestyle='',
+            marker='o', 
+            markerfacecolor=cs[0],
+            markeredgecolor='None')    
+
+
+
+    ax.set_xlabel(r'C\,{\sc iv} Blueshift [km~$\rm{s}^{-1}$]')
+    ax.set_ylabel(r'[O\,{\sc iii}] Blueshift [km~$\rm{s}^{-1}$]')
+    
+    
+    fig.tight_layout()
+    
+    fig.savefig('/home/lc585/thesis/figures/chapter04/civ_blueshift_oiii_blueshift.pdf')
+
+    plt.show() 
+
+    return None 
+
+
+def eqw_lum():
+
+    fig, ax = plt.subplots(figsize=figsize(0.8, vscale=0.9))
+    
+    df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0) 
+    df = df[df.OIII_FLAG_2 > 0]
+    df = df[df.OIII_BAD_FIT_FLAG == 0]
+    df = df[df.FE_FLAG == 0]
+    df1 = df[df.OIII_EQW_FLAG == 0]
+    df2 = df[df.OIII_EQW_FLAG == 1]
+
+    
+    s = ax.scatter(np.log10(9.26) + df1.LogL5100,
+                   np.log10(df1.OIII_5007_EQW_3), 
+                   facecolor=cs[1], 
+                   edgecolor='None',
+                   s=15,
+                   zorder=10)
+
+
+
+    df2.loc[df2.OIII_5007_EQW_MEAN < 0.0, 'OIII_5007_EQW_MEAN'] = 0.0 
+    ul = df2.OIII_5007_EQW_MEAN + df2.OIII_5007_EQW_STD
+
+    s = ax.errorbar(np.log10(9.26) + df2.LogL5100,
+                    np.log10(ul), 
+                    yerr=0.2,
+                    zorder=10, 
+                    linestyle='None', 
+                    uplims=True,
+                    color=cs[1])
+
+
+
+    t = Table.read('/data/lc585/SDSS/dr7_bh_Nov19_2013.fits')
+    t = t[t['LOGLBOL'] > 0.0]
+    t = t[t['EW_OIII_5007'] > 0.0]
+    
+    m1, m2 = t['LOGLBOL'], np.log10(t['EW_OIII_5007'])
+    
+    xmin = 44.0
+    xmax = 48.0
+    ymin = -1.0
+    ymax = 3.0
+    
+    X, Y = np.mgrid[xmin:xmax:100j, ymin:ymax:100j]
+    positions = np.vstack([X.ravel(), Y.ravel()])
+    values = np.vstack([m1, m2])
+    
+    kernel = stats.gaussian_kde(values)
+    
+    Z = np.reshape(kernel(positions).T, X.shape)
+    
+    CS = ax.contour(X, Y, Z, colors=[cs[-1]])
+    
+    threshold = CS.levels[0]
+    
+    z = kernel(values)
+    
+    # mask points above density threshold
+    x = np.ma.masked_where(z > threshold, m1)
+    y = np.ma.masked_where(z > threshold, m2)
+    
+    # plot unmasked points
+    ax.plot(x, 
+            y, 
+            markerfacecolor=cs[-1], 
+            markeredgecolor='None', 
+            linestyle='', 
+            marker='o', 
+            markersize=2, 
+            label='SDSS DR7')
+    
+    ax.set_ylabel(r'log EQW (\AA)')
+    ax.set_xlabel(r'log $L_{\mathrm{Bol}}$ [erg/s]')
+    
+    ax.set_xlim(44.5, 49)
+    ax.set_ylim(-1, 3)
+
+    fig.tight_layout() 
+
+    fig.savefig('/home/lc585/thesis/figures/chapter04/eqw_lum.pdf')
+
+    plt.show() 
+
+    return None 
+
+# eqw_lum() 
 
 
 def oiii_core_strength_blueshift():
@@ -731,3 +880,586 @@ def oiii_strength_hist():
 
 
     return None 
+
+def oiii_eqw_hist():
+
+    df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0)
+    df = df[df.OIII_FLAG_2 > 0]
+    df = df[df.OIII_BAD_FIT_FLAG == 0]
+    df = df[df.FE_FLAG == 0]
+
+    fig, ax = plt.subplots(figsize=figsize(0.8, vscale=0.8))
+
+    ax.hist(df.loc[df.OIII_5007_EQW_3 > 8.0, 'OIII_5007_EQW_3'],
+            bins=np.arange(0, 100, 8),
+            facecolor=cs[1],
+            edgecolor='None',
+            histtype='stepfilled')
+
+    ax.hist(df.loc[df.OIII_5007_EQW_3 <= 8.0, 'OIII_5007_EQW_3'],
+            bins=np.arange(0, 100, 8),
+            facecolor=cs[0],
+            edgecolor='None', 
+            histtype='stepfilled')
+
+
+    # ax.axvline(0.1165, color=cs[0], linestyle='--')
+
+    ax.set_xlabel(r"[O\,{\sc iii}] EQW [\AA]")
+    ax.set_ylabel(r"Count")
+
+    fig.tight_layout()
+
+    fig.savefig('/home/lc585/thesis/figures/chapter04/oiii_eqw_hist.pdf') 
+
+    plt.show() 
+
+
+    return None 
+
+def example_spectra(name, ax, nrebin, plot_model=True):
+
+    from lmfit import Model
+
+    cs = palettable.colorbrewer.qualitative.Set1_9.mpl_colors
+    cs_light = palettable.colorbrewer.qualitative.Pastel1_9.mpl_colors
+
+    df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0)  
+    instr = df.ix[name, 'INSTR']
+
+    import sys
+    sys.path.insert(1, '/home/lc585/Dropbox/IoA/nirspec/python_code')
+    
+    if instr == 'FIRE': from fit_properties_oiii_fire import get_line_fit_props
+    if instr == 'GNIRS': from fit_properties_oiii_gnirs import get_line_fit_props
+    if instr == 'ISAAC': from fit_properties_oiii_isaac import get_line_fit_props
+    if instr == 'LIRIS': from fit_properties_oiii_liris import get_line_fit_props
+    if instr == 'NIRI': from fit_properties_oiii_niri import get_line_fit_props
+    if instr == 'NIRSPEC': from fit_properties_oiii_nirspec import get_line_fit_props
+    if instr == 'SOFI_JH': from fit_properties_oiii_sofi_jh import get_line_fit_props
+    if instr == 'SOFI_LC': from fit_properties_oiii_sofi_lc import get_line_fit_props
+    if instr == 'TRIPLE': from fit_properties_oiii_triple import get_line_fit_props
+    if instr == 'TRIPLE_S15': from fit_properties_oiii_triple_shen15 import get_line_fit_props
+    if instr == 'XSHOOT': from fit_properties_oiii_xshooter import get_line_fit_props
+    if instr == 'SINF': from fit_properties_oiii_sinfoni import get_line_fit_props
+    if instr == 'SINF_KK': from fit_properties_oiii_sinfoni_kurk import get_line_fit_props
+    
+    q = get_line_fit_props().all_quasars()
+    p = q[df.ix[name, 'NUM']]
+
+    w0 = 4862.721*u.AA
+ 
+    xs, step = np.linspace(-20000,
+                            20000,
+                            1000,
+                           retstep=True)
+
+    save_dir = os.path.join('/data/lc585/nearIR_spectra/linefits/', name, 'OIII')
+
+    parfile = open(os.path.join(save_dir,'my_params.txt'), 'r')
+    params = Parameters()
+    params.load(parfile)
+    parfile.close()
+
+    wav_file = os.path.join(save_dir, 'wav.txt')
+    parfile = open(wav_file, 'rb')
+    wav = pickle.load(parfile)
+    parfile.close()
+
+    flx_file = os.path.join(save_dir, 'flx.txt')
+    parfile = open(flx_file, 'rb')
+    flx = pickle.load(parfile)
+    parfile.close()
+
+    err_file = os.path.join(save_dir, 'err.txt')
+    parfile = open(err_file, 'rb')
+    err = pickle.load(parfile)
+    parfile.close()
+
+    sd_file = os.path.join(save_dir, 'sd.txt')
+    parfile = open(sd_file, 'rb')
+    sd = pickle.load(parfile)
+    parfile.close()
+
+    vdat = wave2doppler(wav, w0)
+
+
+    if plot_model: 
+
+        mod = GaussianModel(prefix='oiii_4959_n_')
+    
+        mod += GaussianModel(prefix='oiii_5007_n_')
+    
+        mod += GaussianModel(prefix='oiii_4959_b_')
+    
+        mod += GaussianModel(prefix='oiii_5007_b_')
+    
+        if p.hb_narrow is True: 
+            mod += GaussianModel(prefix='hb_n_')  
+    
+        for i in range(p.hb_nGaussians):
+    
+            mod += GaussianModel(prefix='hb_b_{}_'.format(i))  
+    
+        g1 = GaussianModel()
+        p1 = g1.make_params()
+    
+        p1['center'].value = params['oiii_5007_n_center'].value
+        p1['sigma'].value = params['oiii_5007_n_sigma'].value
+        p1['amplitude'].value = params['oiii_5007_n_amplitude'].value
+    
+        ax.plot(np.sort(vdat.value), 
+                g1.eval(p1, x=np.sort(vdat.value)),
+                c=cs_light[4],
+                linestyle='-')
+    
+        g1 = GaussianModel()
+        p1 = g1.make_params()
+    
+        p1['center'].value = params['oiii_4959_n_center'].value
+        p1['sigma'].value = params['oiii_4959_n_sigma'].value
+        p1['amplitude'].value = params['oiii_4959_n_amplitude'].value
+    
+        ax.plot(np.sort(vdat.value), 
+                g1.eval(p1, x=np.sort(vdat.value)),
+                c=cs_light[4],
+                linestyle='-')        
+    
+        g1 = GaussianModel()
+        p1 = g1.make_params()
+    
+        p1['center'].value = params['oiii_5007_b_center'].value
+        p1['sigma'].value = params['oiii_5007_b_sigma'].value
+        p1['amplitude'].value = params['oiii_5007_b_amplitude'].value
+    
+        ax.plot(np.sort(vdat.value), 
+                g1.eval(p1, x=np.sort(vdat.value)),
+                c=cs_light[4],
+                linestyle='-')       
+    
+        g1 = GaussianModel()
+        p1 = g1.make_params()
+    
+        p1['center'].value = params['oiii_4959_b_center'].value
+        p1['sigma'].value = params['oiii_4959_b_sigma'].value
+        p1['amplitude'].value = params['oiii_4959_b_amplitude'].value   
+    
+        ax.plot(np.sort(vdat.value), 
+                g1.eval(p1, x=np.sort(vdat.value)),
+                c=cs_light[4],
+                linestyle='-')             
+    
+        for i in range(p.hb_nGaussians):
+    
+            g1 = GaussianModel()
+            p1 = g1.make_params()
+    
+            p1['center'].value = params['hb_b_{}_center'.format(i)].value
+            p1['sigma'].value = params['hb_b_{}_sigma'.format(i)].value
+            p1['amplitude'].value = params['hb_b_{}_amplitude'.format(i)].value  
+    
+            ax.plot(np.sort(vdat.value), 
+                    g1.eval(p1, x=np.sort(vdat.value)),
+                    c=cs_light[4])  
+    
+        if p.hb_narrow is True: 
+    
+            g1 = GaussianModel()
+            p1 = g1.make_params()
+    
+            p1['center'] = params['hb_n_center']
+            p1['sigma'] = params['hb_n_sigma']
+            p1['amplitude'] = params['hb_n_amplitude']   
+    
+            ax.plot(np.sort(vdat.value), 
+                    g1.eval(p1, x=np.sort(vdat.value)),
+                    c=cs_light[4],
+                    linestyle='-')                    
+    
+    
+        # vdat, flx, err = rebin(vdat.value, flx, err, nrebin)
+        vdat = vdat.value
+    
+        ax.plot(xs,
+                mod.eval(params=params, x=xs/sd) ,
+                color='black',
+                lw=1,
+                zorder=6)
+
+    ax.plot(vdat,
+            flx,
+            linestyle='-',
+            color='lightgray',
+            lw=1,
+            alpha=1,
+            zorder=0)
+
+    ax.axhline(0.0, color='black', linestyle=':')
+
+    return None 
+
+def example_residual(name, ax):
+
+    from lmfit import Model
+
+    cs = palettable.colorbrewer.qualitative.Set1_9.mpl_colors
+    cs_light = palettable.colorbrewer.qualitative.Pastel1_9.mpl_colors
+
+    df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0)  
+    instr = df.ix[name, 'INSTR']
+
+    import sys
+    sys.path.insert(1, '/home/lc585/Dropbox/IoA/nirspec/python_code')
+    
+    if instr == 'FIRE': from fit_properties_oiii_fire import get_line_fit_props
+    if instr == 'GNIRS': from fit_properties_oiii_gnirs import get_line_fit_props
+    if instr == 'ISAAC': from fit_properties_oiii_isaac import get_line_fit_props
+    if instr == 'LIRIS': from fit_properties_oiii_liris import get_line_fit_props
+    if instr == 'NIRI': from fit_properties_oiii_niri import get_line_fit_props
+    if instr == 'NIRSPEC': from fit_properties_oiii_nirspec import get_line_fit_props
+    if instr == 'SOFI_JH': from fit_properties_oiii_sofi_jh import get_line_fit_props
+    if instr == 'SOFI_LC': from fit_properties_oiii_sofi_lc import get_line_fit_props
+    if instr == 'TRIPLE': from fit_properties_oiii_triple import get_line_fit_props
+    if instr == 'TRIPLE_S15': from fit_properties_oiii_triple_shen15 import get_line_fit_props
+    if instr == 'XSHOOT': from fit_properties_oiii_xshooter import get_line_fit_props
+    if instr == 'SINF': from fit_properties_oiii_sinfoni import get_line_fit_props
+    if instr == 'SINF_KK': from fit_properties_oiii_sinfoni_kurk import get_line_fit_props
+    
+    q = get_line_fit_props().all_quasars()
+    p = q[df.ix[name, 'NUM']]
+
+    w0 = 4862.721*u.AA
+  
+    save_dir = os.path.join('/data/lc585/nearIR_spectra/linefits/', name, 'OIII')
+
+    parfile = open(os.path.join(save_dir,'my_params.txt'), 'r')
+    params = Parameters()
+    params.load(parfile)
+    parfile.close()
+
+    wav_file = os.path.join(save_dir, 'wav.txt')
+    parfile = open(wav_file, 'rb')
+    wav = pickle.load(parfile)
+    parfile.close()
+
+    flx_file = os.path.join(save_dir, 'flx.txt')
+    parfile = open(flx_file, 'rb')
+    flx = pickle.load(parfile)
+    parfile.close()
+
+    err_file = os.path.join(save_dir, 'err.txt')
+    parfile = open(err_file, 'rb')
+    err = pickle.load(parfile)
+    parfile.close()
+
+    sd_file = os.path.join(save_dir, 'sd.txt')
+    parfile = open(sd_file, 'rb')
+    sd = pickle.load(parfile)
+    parfile.close()
+  
+    vdat = wave2doppler(wav, w0)
+   
+    mod = GaussianModel(prefix='oiii_4959_n_')
+
+    mod += GaussianModel(prefix='oiii_5007_n_')
+
+    mod += GaussianModel(prefix='oiii_4959_b_')
+
+    mod += GaussianModel(prefix='oiii_5007_b_')
+
+    if p.hb_narrow is True: 
+        mod += GaussianModel(prefix='hb_n_')  
+
+    for i in range(p.hb_nGaussians):
+        mod += GaussianModel(prefix='hb_b_{}_'.format(i))  
+
+    ax.plot(vdat,
+            (flx - mod.eval(params=params, x=vdat.value/sd)) / err,
+            color='lightgray',
+            lw=1)
+
+    ax.axhline(0.0, color='black', linestyle=':')
+
+
+    return None 
+
+def example_spectrum_grid_extreme_oiii():
+
+    fig = plt.figure(figsize=figsize(1, vscale=1.8))
+
+    # gridspec inside gridspec
+    outer_grid = gridspec.GridSpec(6, 3, wspace=0.0, hspace=0.15)
+
+    df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0)  
+    
+
+
+    names = ['QSO007',
+             'QSO053',
+             'QSO055',
+             'QSO058',
+             'QSO107',
+             'QSO152',
+             'QSO335',
+             'QSO354',
+             'QSO360',
+             'QSO361',
+             'QSO368',
+             'QSO375',
+             'QSO423',
+             'QSO424',
+             'QSO522',
+             'QSO602',
+             'QSO620',
+             'QSO615']      
+
+
+    ylims = [[0.0, 0.8],
+             [0.0, 0.9],
+             [0.0, 0.5],
+             [0.0, 0.8],
+             [0.0, 0.8],
+             [0.0, 0.7],
+             [0.0, 1.0],
+             [0.0, 0.8],
+             [0.0, 0.7],
+             [0.0, 0.8],
+             [0.0, 2.0],
+             [0.0, 0.8],
+             [0.0, 1.0],
+             [0.0, 0.5],
+             [0.0, 0.4],
+             [0.0, 0.8],
+             [0.0, 0.5],
+             [0.0, 1.5]]
+
+    titles = ['J040954-041137',
+              'J162549+264659',
+              'J163456+301438',
+              'J011150+140141',
+              'J001708+813508',
+              'J144516+095836',
+              'J005758-264315',
+              'J112443-170517',
+              'J133336+164904',
+              'J134427-103542',
+              'J145103-232931',
+              'J120148+120630',
+              'J110325-264516',
+              'J024008-230915',
+              'J084402+050358',
+              'J110916-115449',
+              'J220530-254222',
+              'J144424-104542'] 
+
+    rebins = [1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1] 
+             
+    for i in range(len(names)):
+ 
+        inner_grid = gridspec.GridSpecFromSubplotSpec(4, 1, subplot_spec=outer_grid[i], wspace=0.0, hspace=0.0)
+        
+        ax = plt.Subplot(fig, inner_grid[:3])
+        ax.set_xticks([])
+        ax.set_yticks([])
+        ax.spines['bottom'].set_visible(False)
+        example_spectra(names[i], ax, rebins[i])
+        ax.set_ylim(ylims[i])
+        ax.set_xlim(-5000, 15000)
+        ax.set_title(titles[i], size=9, y=0.95)
+
+
+
+        fig.add_subplot(ax)
+
+        ax = plt.Subplot(fig, inner_grid[3])
+        ax.spines['top'].set_visible(False)
+        example_residual(names[i], ax)
+        ax.set_xlim(-5000, 15000)
+        ax.set_ylim(-8, 8)
+        
+        if (i % 3 == 0):
+            ax.set_yticks([-5,0,5])
+            ax.yaxis.set_ticks_position('left')
+        else:
+            ax.set_yticks([])
+
+        if i < 15:
+            ax.set_xticks([])
+        else:
+            ax.set_xticks([0, 5000, 10000])
+            ax.xaxis.set_ticks_position('bottom')
+
+        fig.add_subplot(ax)
+
+    fig.text(0.5, 0.05, r'$\Delta v$ [km~$\rm{s}^{-1}$]', ha='center')
+    fig.text(0.05, 0.55, r'Relative $F_{\lambda}$', rotation=90)
+    
+    fig.savefig('/home/lc585/thesis/figures/chapter04/example_spectrum_grid_extreme_oiii.pdf')
+
+    plt.show() 
+
+
+    
+    return None 
+
+def example_spectrum_grid_extreme_fe():
+
+    fig = plt.figure(figsize=figsize(1, vscale=2))
+
+    # gridspec inside gridspec
+    outer_grid = gridspec.GridSpec(8, 3, wspace=0.0, hspace=0.17)
+
+    df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0)  
+    
+    names = ['QSO015',
+             'QSO038',
+             'QSO169',
+             'QSO307',
+             'QSO381',
+             'QSO537',
+             'QSO538',
+             'QSO540',
+             'QSO546',
+             'QSO551',
+             'QSO560',
+             'QSO569',
+             'QSO570',
+             'QSO587',
+             'QSO589',
+             'QSO590',
+             'QSO601',
+             'QSO611',
+             'QSO618',
+             'QSO619',
+             'QSO624',
+             'QSO629',
+             'QSO640']
+
+    ylims = [[0.0, 0.7],
+             [0.0, 1.2],
+             [0.0, 0.7],
+             [0.0, 0.4],
+             [0.0, 1.0],
+             [0.0, 0.5],
+             [0.0, 1.2],
+             [0.0, 0.9],
+             [0.0, 1.0],
+             [0.0, 0.2],
+             [0.0, 0.7],
+             [0.0, 0.9],
+             [0.0, 0.8],
+             [0.0, 0.4],
+             [0.0, 0.5],
+             [0.0, 1.1],
+             [0.0, 0.7],
+             [0.0, 1],
+             [0.0, 0.5],
+             [0.0, 0.5],
+             [0.0, 0.7],
+             [0.0, 0.3],
+             [0.0, 0.8]]  
+
+
+    titles = ['J104915-011038',
+              'J092747+290721',
+              'J212912-153841',
+              'J214507-303046',
+              'J102510+045247',
+              'J123355+031328',
+              'J125141+080718',
+              'J141949+060654',
+              'J204010-065403',
+              'J223820-092106',
+              'J005202+010129',
+              'J012257-334844',
+              'J012337-323828',
+              'J025055-361635',
+              'J025634-401300',
+              'J030211-314030',
+              'J105651-114122',
+              'J134104-073947',
+              'J214950-444405',
+              'J215052-315824',
+              'J223246-363203',
+              'J232539-065259',
+              'J115302+215118']
+
+
+    rebins = [1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1]
+             
+    for i in range(len(names)):
+ 
+        
+        
+        ax = plt.subplot(outer_grid[i])
+        ax.set_xticks([])
+        ax.set_yticks([])
+        example_spectra(names[i], ax, rebins[i], plot_model=False)
+        ax.set_ylim(ylims[i])
+        ax.set_xlim(-5000, 15000)
+        ax.set_title(titles[i], size=9, y=0.94)
+        # ax.axvline(df.loc[names[i], 'OIII_FIT_VEL_HB_PEAK'], c=cs[0], linestyle=':')
+        v4959 = wave2doppler(4960.295*u.AA, w0=4862.721*u.AA).value 
+        v5007 = wave2doppler(5008.239*u.AA, w0=4862.721*u.AA).value 
+        ax.axvline(df.loc[names[i], 'OIII_FIT_VEL_HB_PEAK'] + v4959, c=cs[0], linestyle=':')
+        ax.axvline(df.loc[names[i], 'OIII_FIT_VEL_HB_PEAK'] + v5007, c=cs[0], linestyle=':')
+
+        fig.add_subplot(ax)
+
+        if i < 20:
+            ax.set_xticks([])
+        else:
+            ax.set_xticks([0, 5000, 10000])
+            ax.xaxis.set_ticks_position('bottom')
+
+        fig.add_subplot(ax)
+
+    fig.text(0.5, 0.05, r'$\Delta v$ [km~$\rm{s}^{-1}$]', ha='center')
+    fig.text(0.05, 0.55, r'Relative $F_{\lambda}$', rotation=90)
+    
+    fig.savefig('/home/lc585/thesis/figures/chapter04/example_spectrum_grid_extreme_fe.pdf')
+
+    plt.show() 
+
+
+    
+    return None     

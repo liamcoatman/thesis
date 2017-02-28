@@ -1118,59 +1118,6 @@
   \field{year}{2016}
 \endentry
 
-\entry{coatman17}{article}{}
-  \name{author}{6}{}{%
-    {{}%
-     {{Coatman}}{C.}%
-     {L.}{L.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Hewett}}{H.}%
-     {P.~C.}{P.~C.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Banerji}}{B.}%
-     {M.}{M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Richards}}{R.}%
-     {G.~T.}{G.~T.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Hennawi}}{H.}%
-     {J.~F.}{J.~F.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Prochaska}}{P.}%
-     {J.~X.}{J.~X.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{galaxies: evolution}
-  \strng{namehash}{CL+1}
-  \strng{fullhash}{CLHPCBMRGTHJFPJX1}
-  \field{labelyear}{2017}
-  \field{sortinit}{C}
-  \verb{doi}
-  \verb 10.1093/mnras/stw2797
-  \endverb
-  \verb{eprint}
-  \verb 1610.08977
-  \endverb
-  \field{pages}{2120\bibrangedash 2142}
-  \field{title}{{Correcting C IV-based virial black hole masses}}
-  \field{volume}{465}
-  \field{journaltitle}{\mnras}
-  \field{eprinttype}{arXiv}
-  \field{month}{02}
-  \field{year}{2017}
-\endentry
-
 \entry{dunn10}{article}{}
   \name{author}{9}{}{%
     {{}%
