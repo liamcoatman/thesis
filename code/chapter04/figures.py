@@ -805,12 +805,14 @@ def snr_test():
 
     fig, axs = plt.subplots(2, 1, figsize=figsize(0.9,  vscale=(np.sqrt(5.0)-1.0)), sharex=True)
 
-    for i, name in enumerate(['QSO559', 'QSO004']): 
+    ids = ['J100627+480420', 'J124948+060714']
+
+    for i, name in enumerate(['QSO011', 'QSO028']): 
 
         for snr in snrs:                   
     
             # returns dictionary of dictionaries 
-            new_dict.update({snr: get_errors_oiii(name + '_snr_' + snr, plot=False, snr_test=True)})
+            new_dict.update({snr: get_errors_oiii(name + '_snr_' + snr, plot=False, snr_test=True, model='gaussians')})
     
         p50 = np.array([x['oiii_5007_w80']['p50'] for x in new_dict.values()])
         p16 = np.array([x['oiii_5007_w80']['p16'] for x in new_dict.values()])
@@ -822,9 +824,10 @@ def snr_test():
         ytrue = new_dict['50p0']['oiii_5007_w80']['p50'] 
     
         axs[i].errorbar([2.5, 5, 7.5, 15, 20, 50],
-                    p50 / ytrue, 
-                    yerr=[lower_error / ytrue, upper_error / ytrue],
-                    color='black')
+                        p50 / ytrue, 
+                        yerr=[lower_error / ytrue, upper_error / ytrue],
+                        color='black',
+                        label=ids[i])
         
         axs[i].axhline(1.0, color='black', linestyle='--')
         
@@ -839,6 +842,8 @@ def snr_test():
     
         axs[i].set_ylabel(r'$\Delta w_{80}$')
         axs[i].set_yticks([0.6, 0.8, 1, 1.2, 1.4])
+        
+        axs[i].annotate(ids[i], xy=(50, 1.3), ha='right') 
 
     axs[1].set_xlabel('S/N')
 
@@ -917,7 +922,7 @@ def oiii_eqw_hist():
 
     return None 
 
-def example_spectra(name, ax, nrebin, plot_model=True):
+def example_spectra(name, ax, nrebin, plot_model=True, data_color='black'):
 
     from lmfit import Model
 
@@ -1089,7 +1094,7 @@ def example_spectra(name, ax, nrebin, plot_model=True):
     ax.plot(vdat,
             flx,
             linestyle='-',
-            color='lightgray',
+            color=data_color,
             lw=1,
             alpha=1,
             zorder=0)
@@ -1319,7 +1324,133 @@ def example_spectrum_grid_extreme_oiii():
     
     return None 
 
+def example_spectrum_grid():
+
+    fig = plt.figure(figsize=figsize(1, vscale=1.5))
+
+    # gridspec inside gridspec
+    outer_grid = gridspec.GridSpec(5, 3, wspace=0.0, hspace=0.15)
+
+    df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0)  
+    
+
+
+    names = ['QSO003',
+             'QSO009',
+             'QSO012',
+             'QSO032',
+             'QSO034',
+             'QSO035',
+             'QSO113',
+             'QSO120',
+             'QSO176',
+             'QSO177',
+             'QSO178',
+             'QSO329',
+             'QSO478',
+             'QSO517',
+             'QSO567']      
+
+
+    ylims = [[0.0, 1],
+             [0.0, 2.5],
+             [0.0, 3],
+             [0.0, 1.8],
+             [0.0, 9],
+             [0.0, 13],
+             [0.0, 1.2],
+             [0.0, 2],
+             [0.0, 0.3],
+             [0.0, 1],
+             [0.0, 0.8],
+             [0.0, 0.6],
+             [0.0, 1.2],
+             [0.0, 0.9],
+             [0.0, 0.8]]
+
+    titles = ['J013930+001331',
+              'J091209+005857',
+              'J101900-005420',
+              'J080050+354250',
+              'J084158+392121',
+              'J084200+392140',
+              'J023146+132255',
+              'J080151+113456',
+              'J003136+003421',
+              'J091432+010912',
+              'J093226+092526',
+              'J222007-280323',
+              'J002948-095639',
+              'J025906+001122',
+              'J010737-385325'] 
+
+    rebins = [1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1] 
+             
+    for i in range(len(names)):
+ 
+        inner_grid = gridspec.GridSpecFromSubplotSpec(4, 1, subplot_spec=outer_grid[i], wspace=0.0, hspace=0.0)
+        
+        ax = plt.Subplot(fig, inner_grid[:3])
+        ax.set_xticks([])
+        ax.set_yticks([])
+        ax.spines['bottom'].set_visible(False)
+        example_spectra(names[i], ax, rebins[i], data_color='lightgrey')
+        ax.set_ylim(ylims[i])
+        ax.set_xlim(-5000, 15000)
+        ax.set_title(titles[i], size=9, y=0.95)
+
+
+
+        fig.add_subplot(ax)
+
+        ax = plt.Subplot(fig, inner_grid[3])
+        ax.spines['top'].set_visible(False)
+        example_residual(names[i], ax)
+        ax.set_xlim(-5000, 15000)
+        ax.set_ylim(-8, 8)
+        
+        if (i % 3 == 0):
+            ax.set_yticks([-5,0,5])
+            ax.yaxis.set_ticks_position('left')
+        else:
+            ax.set_yticks([])
+
+        if i < 12:
+            ax.set_xticks([])
+        else:
+            ax.set_xticks([0, 5000, 10000])
+            ax.xaxis.set_ticks_position('bottom')
+
+        fig.add_subplot(ax)
+
+    fig.text(0.5, 0.05, r'$\Delta v$ [km~$\rm{s}^{-1}$]', ha='center')
+    fig.text(0.05, 0.55, r'Relative $F_{\lambda}$', rotation=90)
+    
+    fig.savefig('/home/lc585/thesis/figures/chapter04/example_spectrum_grid.pdf')
+
+    plt.show() 
+
+
+    
+    return None 
+
 def example_spectrum_grid_extreme_fe():
+
+    cs = palettable.colorbrewer.qualitative.Set1_9.mpl_colors
 
     fig = plt.figure(figsize=figsize(1, vscale=2))
 
@@ -1433,7 +1564,7 @@ def example_spectrum_grid_extreme_fe():
         ax = plt.subplot(outer_grid[i])
         ax.set_xticks([])
         ax.set_yticks([])
-        example_spectra(names[i], ax, rebins[i], plot_model=False)
+        example_spectra(names[i], ax, rebins[i], plot_model=False, data_color=cs[-1])
         ax.set_ylim(ylims[i])
         ax.set_xlim(-5000, 15000)
         ax.set_title(titles[i], size=9, y=0.94)
