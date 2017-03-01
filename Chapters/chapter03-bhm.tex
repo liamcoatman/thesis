@@ -62,14 +62,14 @@ As we demonstrate in Section~\ref{sec:effectiveness}, the quasars have \ion{C}{I
 
 \subsection{Near-infrared data}
 
-The near-infrared data has been described in Chapter~\ref{ch:chapter02} and the telescopes/spectrographs used are summarised in Table~\ref{tab:specnums}. 
+The near-infrared data has been described in Chapter~\ref{ch:chapter02} and the telescopes/spectrographs used are summarised in Table~\ref{tab:specnums_ch3}. 
 We have sub-divided our sample into two overlapping groups: quasars with reliable \ha line measurements (the `\ha sample') and quasars with reliable \hb measurements (the `\hb sample').
 
 \begin{table*}
   \small
   \centering
   \caption{The numbers of quasars with reliable \ha and \hb line measurements, and the spectrographs and telescopes used to obtain the near-infrared spectra}
-  \label{tab:specnums}
+  \label{tab:specnums_ch3}
   \centering
     \begin{tabular}{cccc} 
     \hline
@@ -108,7 +108,7 @@ The XSHOOTER spectra are moderate resolution ($\sim6000$) and conver the full op
 
 Conventionally, single-epoch virial estimates of the BH mass are a function of the line-of-sight velocity width of a broad emission line and the quasar luminosity. 
 The velocity width is a proxy for the virial velocity in the broad line region (BLR) and, as revealed in reverberation-mapping studies, the luminosity is a proxy for the typical size of the BLR \citep[the $R-L$ relation; e.g.][]{kaspi00,kaspi07}. 
-Most reverberation mapping campaigns have employed \hb time-lags and velocity widths, but the line-widths of \ha and \ion{Mg}{II}$\lambda$2800 have been shown to yield consistent BH masses \citep[e.g.][]{mclure02,greene05,onken08,shen08,wang09,rafiee11,mejia-restrepo16}. 
+Most reverberation mapping campaigns have employed \hb time-lags and velocity widths, but the line-widths of \ha and \ion{Mg}{II}$\lambda$2800 have been shown to yield consistent BH masses \citep[e.g.][]{mclure02,greene05b,onken08,shen08,wang09,rafiee11,mejia-restrepo16}. 
 In Section~\ref{sec:hahbcomparison} we verify that the \ha and \hb line-widths yield consistent BH for the 99 quasars in our sample with measurements of both.     
 
 In our work, a robust measure of the \ion{C}{IV} emission-line `blueshift' provides the basis for the corrected \ion{C}{IV} velocity-width measurements, and hence BH masses.
@@ -415,30 +415,30 @@ A further practical advantage is that, given the typical S/N of current survey-q
 \label{sec:hahbcomparison}
 
 BH-mass calibrations which use the width of the broad \hb emission line as a proxy for the virial velocity are widely regarded as the most reliable, since most reverberation mapping employs the \hb line and the $R-L$ relation has been established using \hbns.
-When \hb is not available, \ha has been shown to be a reliable substitute \citep[e.g.][]{greene05,shen11,shen12}. 
+When \hb is not available, \ha has been shown to be a reliable substitute \citep[e.g.][]{greene05b,shen11,shen12}. 
 
 \begin{figure}
     \centering 
     \includegraphics[width=0.8\columnwidth]{figures/chapter03/ha_hb_width_comparison.pdf} 
-    \caption{Comparison of \ha and \hb FWHM measurements for 99 quasars. The solid line is our best-fitting power-law model, and the blue-shaded region shows the 2-$\sigma$ uncertainties on the model parameters. The dashed line is the relation found by \citet{greene05} using a sample of $z<0.35$ SDSS AGN.} 
+    \caption{Comparison of \ha and \hb FWHM measurements for 99 quasars. The solid line is our best-fitting power-law model, and the blue-shaded region shows the 2-$\sigma$ uncertainties on the model parameters. The dashed line is the relation found by \citet{greene05b} using a sample of $z<0.35$ SDSS AGN.} 
     \label{fig:hahbcomp}
 \end{figure}
 
 In our sample, we have 99 quasars with reliable measurements of both \ha and \hb lines. 
 The 99 objects include 21 quasars which were excluded from the main 308-object catalogue because the \ion{C}{IV} FWHM and/or blueshift could not be measured reliably. 
 The line widths are compared in Fig.~\ref{fig:hahbcomp} and, as expected, a tight correlation is observed.  
-\citet{greene05}, using a sample of 162 quasars with high S/N SDSS spectra at $z < 0.35$, established the following relation between the \ha and \hb FWHMs
+\citet{greene05b}, using a sample of 162 quasars with high S/N SDSS spectra at $z < 0.35$, established the following relation between the \ha and \hb FWHMs
 
 \begin{equation}
   \mathrm{FWHM}(\mathrm{H}\beta) = \left( 1.07 \pm 0.07 \right) \times 10^3 \left( \frac{ \mathrm{FWHM}(\mathrm{H}\alpha) }{10^3 ~\mathrm{km}~\mathrm{s}^{-1} } \right)^{(1.03 \pm 0.03)}
 \end{equation}
 
 The relation is shown as the dashed line in Fig.~\ref{fig:hahbcomp}.
-The root-mean-square scatter about this relation is 0.07\,dex, compared to the $\sim$0.1\,dex found by \citet{greene05}. 
-However, we find a systematic offset, in the sense that the \hb line-widths we measure are on average larger by 270\kms\, than predicted by the \citet{greene05} relation. 
-As our sample covers higher redshifts and luminosities than the sample in \citet{greene05}, we derive a new relation between the \ha and \hb FWHMs.       
+The root-mean-square scatter about this relation is 0.07\,dex, compared to the $\sim$0.1\,dex found by \citet{greene05b}. 
+However, we find a systematic offset, in the sense that the \hb line-widths we measure are on average larger by 270\kms\, than predicted by the \citet{greene05b} relation. 
+As our sample covers higher redshifts and luminosities than the sample in \citet{greene05b}, we derive a new relation between the \ha and \hb FWHMs.       
 
-We assume a relation of the same form used by \citet{greene05}, i.e. a simple power-law, and infer the model parameters by fitting a linear model (with slope $\alpha$ and intercept $\beta$) in log-log space.
+We assume a relation of the same form used by \citet{greene05b}, i.e. a simple power-law, and infer the model parameters by fitting a linear model (with slope $\alpha$ and intercept $\beta$) in log-log space.
 The fit is performed within a Bayesian framework described by \citet{hogg10}. 
 Each data point is treated as being drawn from a distribution function that is a convolution of the projection of the point's covariance tensor, of variance $\Sigma_i^2$, with a Gaussian of variance $V$ representing the intrinsic variance in the data.
 The log-likelihood is then given by 
@@ -464,8 +464,8 @@ The solid line in Fig.~\ref{fig:hahbcomp} is the maximum likelihood solution
 
 \noindent and the shaded region shows the 2$\sigma$ uncertainties on the model parameters.
 
-As discussed above, our relation is displaced to slightly higher \hb FWHM than the \citet{greene05} relation -- the offset is 210\kms\, for a quasar with \ha FWHM 4500\kms.  
-We infer a power-law index that, although slightly shallower, is consistent with the \citet{greene05} index within the quoted uncertainties. 
+As discussed above, our relation is displaced to slightly higher \hb FWHM than the \citet{greene05b} relation -- the offset is 210\kms\, for a quasar with \ha FWHM 4500\kms.  
+We infer a power-law index that, although slightly shallower, is consistent with the \citet{greene05b} index within the quoted uncertainties. 
 The intrinsic scatter in the data, $\sigma_I$, we infer from  the fit is 0.04 dex. 
 This is smaller than the total scatter seen in Fig.~\ref{fig:hahbcomp} (0.06 dex), which suggests that measurement errors make a significant contribution to the total scatter in the relation. 
 
@@ -601,7 +601,7 @@ However, as can be seen from the similarity of Equations \ref{eq:hafwhm} and \re
 Virial BH masses were calculated using the widely adopted \citet{vestergaard06} calibrations. 
 The \citet{vestergaard06} \ion{C}{IV} FWHM calibration uses the monochromatic continuum luminosity at 1350\,\AA\, to predict the BLR radius and corresponds to ($a=6.66$, $b=2$, $c=0.53$) in Eq.~\ref{eq:virialmass}. 
 For the \hb calibration, \citet{vestergaard06} use the monochromatic continuum luminosity at 5100\,\AA\, and calibration coefficients corresponding to ($a=6.91$, $b=2$, $c=0.5$).
-BH masses are computed using the line and continuum properties given in Table~\ref{tab:specmeasure}, and we convert our \ha emission-line velocity-width measures to predicted \hb widths using Eq.~\ref{eq:hb2ha}.
+BH masses are computed using the line and continuum properties given in Table~\ref{tab:specmeasure}, and we convert our \ha emission-line velocity-width measures to predicted \hb widths using Eq.~\ref{eq:ha2hb}.
 
 In the lower panels of Figs.~\ref{fig:correction_ha} and \ref{fig:correction_hb} the \ion{C}{IV}-based estimates are compared to the \hans/\hb estimates as a function of the \ion{C}{IV} blueshift. 
 There is a strong systematic error in the \ion{C}{IV}-based masses as a function of blueshift, which is a direct consequence of the FWHM trend described in the previous section. 
@@ -655,19 +655,19 @@ For quasars at very high redshifts, $z\sim6$, systemic redshifts can also be der
 However, in general, for example in determining the BH-masses of quasars at redshifts $z>2$, if only the rest-frame ultraviolet region is available determining a reliable systemic redshift is non-trivial. 
 
 The SDSS DR7 pipeline redshifts are not sufficiently reliable to measure the \ion{C}{IV} blueshift accurately because, in part, the \ion{C}{IV} emission line itself contributes to the determination of the quasar redshifts. 
-This is demonstated in Fig.~\ref{fig:civ_space}a, in which we plot the \ion{C}{IV}-blueshift versus \ion{C}{IV}-emission equivalent width (EW) using the SDSS pipeline redshifts and the blueshifts calculated by \citet{shen11}.  
-A strong trend in the blueshift values as a function of line EW is not evident in Fig.~\ref{fig:civ_space}a; structure in the parameter space is being masked because the \ion{C}{IV} emission line is itself being used in the determination of the quasar redshifts. 
+This is demonstated in Fig.~\ref{fig:civ_space_z_compare}a, in which we plot the \ion{C}{IV}-blueshift versus \ion{C}{IV}-emission equivalent width (EW) using the SDSS pipeline redshifts and the blueshifts calculated by \citet{shen11}.  
+A strong trend in the blueshift values as a function of line EW is not evident in Fig.~\ref{fig:civ_space_z_compare}a; structure in the parameter space is being masked because the \ion{C}{IV} emission line is itself being used in the determination of the quasar redshifts. 
 
 \begin{figure}
     \centering 
     \includegraphics[width=8cm]{figures/chapter03/civ_space_z_compare.pdf}
     \caption{Rest-frame EW versus blueshift of the broad \ion{C}{IV}-emission line for 32,157 SDSS DR7 quasars at $1.6 < z < 3.0$. Panel (a) uses \ion{C}{IV} line parameters from \citet{shen11} and SDSS pipeline systemic redshifts. Panels (b) and (c) use systemic redshifts from \citet{hewett10} and Allen \& Hewett (2017, in preparation) respectively, and \ion{C}{IV} line measurements described in Sec.~\ref{sec:civmeasure}. In regions of high point-density, contours show equally-spaced lines of constant probability density generated using a Gaussian kernel-density estimator.} 
-    \label{fig:civ_space}
+    \label{fig:civ_space_z_compare}
 \end{figure}
 
 The redshift-determination scheme of \citet{hewett10} provided much improved redshifts, not least because the redshift estimates for the majority of quasars were derived using emission-lines other than the \ion{C}{IV}-line itself. 
-Figure \ref{fig:civ_space}b shows SDSS DR7 quasars in the same \ion{C}{IV} parameter space as Figure \ref{fig:civ_space}a, but now using \citet{hewett10} redshifts. 
-The improved redshift estimates are predominantly responsible for the differences seen in Fig.~\ref{fig:civ_space}a and b; the appearance in Fig.~\ref{fig:civ_space}b of the extension to high blueshift for quasars with low \ion{C}{IV} EW is particularly evident.
+Figure \ref{fig:civ_space_z_compare}b shows SDSS DR7 quasars in the same \ion{C}{IV} parameter space as Figure \ref{fig:civ_space_z_compare}a, but now using \citet{hewett10} redshifts. 
+The improved redshift estimates are predominantly responsible for the differences seen in Fig.~\ref{fig:civ_space_z_compare}a and b; the appearance in Fig.~\ref{fig:civ_space_z_compare}b of the extension to high blueshift for quasars with low \ion{C}{IV} EW is particularly evident.
 
 \citet{shen16b} and our own work shows that there is an intrinsic variation of $\sigma$$\simeq$220\kms in the velocity centroids of the broad-line region relative to a systemic-frame defined by the quasar narrow-line regions.
 The redshifts for quasars in the SDSS DR10 and DR12 catalogues \citep{paris14,paris17} possess errors of $\simeq$500-750\kms \citep{paris12, font-ribera13}. The impact of low spectrum S/N for fainter quasars in all the SDSS data releases increases the uncertainty further. 
@@ -711,14 +711,14 @@ In a forthcoming work, Allen \& Hewett (in preparation) will present a new redsh
 The low-ionization emission lines visible in the rest-frame ultraviolet (over wavelengths from \ion{Mg}{II}$\lambda\lambda$2796,2803 down to the \ion{O}{I}$\lambda$1304+\ion{Si}{II}$\lambda$1307 blend) using the new redshift-algorithm are located at rest-frame wavelengths in excellent agreement with the systemic redshift defined using the rest-frame narrow-line optical \ion{O}{III} doublet and broad-line \hb and \hans.
 SED-dependent systematic errors are below the apparent inherent dispersion of $\simeq220$\kms associated with broad emission line redshifts \citep{shen16b}.
 
-Figure~\ref{fig:civ_space}c shows the \ion{C}{IV} emission line parameters calculated using the Allen \& Hewett redshift-estimation algorithm.  
-The systematic trends seen in Fig.~\ref{fig:civ_space}b, in particular the extension to high blueshift at low \ion{C}{IV} EW, become more apparent in Fig.~\ref{fig:civ_space}c, as expected from consideration of the known SED-related errors in the redshifts from \citet{hewett10}.
+Figure~\ref{fig:civ_space_z_compare}c shows the \ion{C}{IV} emission line parameters calculated using the Allen \& Hewett redshift-estimation algorithm.  
+The systematic trends seen in Fig.~\ref{fig:civ_space_z_compare}b, in particular the extension to high blueshift at low \ion{C}{IV} EW, become more apparent in Fig.~\ref{fig:civ_space_z_compare}c, as expected from consideration of the known SED-related errors in the redshifts from \citet{hewett10}.
 A population of quasars with only modest blueshifts and low EW is also apparently still present. 
 
 \subsubsection{\ion{C}{IV} emission line blueshift measurements}
 \label{sec:civmeasure}
 
-The differences in the distribution of \ion{C}{IV} emission line properties seen in the three panels of Fig.~\ref{fig:civ_space} are due primarily to the change in the systemic redshift estimates. 
+The differences in the distribution of \ion{C}{IV} emission line properties seen in the three panels of Fig.~\ref{fig:civ_space_z_compare} are due primarily to the change in the systemic redshift estimates. 
 It is also necessary, however, to obtain a measure of the \ion{C}{IV} emission line `location' in order to calculate the blueshifts. 
 When working with moderately-sized samples, parametric fits to the emission-line profile may be undertaken using careful mask-definition to minimise the effect of absorption features on the profiles used for the parametrization, and this is the approach we followed in Section~\ref{sec:spec_measures}.
 
@@ -814,7 +814,7 @@ The scatter is 0.24 dex at low \ion{C}{IV} blueshifts ($\sim$0\kms) and 0.10 dex
 \end{figure}
 
 There has been a considerable amount of attention regarding the relative merits of using the FWHM or dispersion to characterise the velocity width \citep[e.g.][]{denney13}.
-The existence of a trend in the \ion{C}{IV}-dispersion values with \ion{C}{IV} blueshift is evident from inspection of the bottom left panel of Fig.~\ref{fig:line_comparison} but the systematic trend relative to the spread at fixed blueshift is significantly smaller than when using \ion{C}{IV} FWHM. 
+The existence of a trend in the \ion{C}{IV}-dispersion values with \ion{C}{IV} blueshift is evident from inspection of the bottom left panel of Fig.~\ref{fig:line_comparison_civ} but the systematic trend relative to the spread at fixed blueshift is significantly smaller than when using \ion{C}{IV} FWHM. 
 Therefore, without the blueshift information, using the line dispersion would yield a more accurate BH mass than the FWHM (Fig.~\ref{fig:dispersion_comparison}). 
 
 The correlation between the \ha and \ion{C}{IV} line dispersion is, however, weak. 
@@ -914,7 +914,7 @@ This includes improving our understanding of the origin of quasars with exceptio
 
 \subsection{Systematic biases in Balmer-based masses}
 
-The interpretation described in the preceding section requires some caution since the emission-line shape (characterized by the value of FWHM/$\sigma$) of \ha is also changing as a function of the \ion{C}{IV} blueshift (Fig.~\ref{fig:line_comparison}). 
+The interpretation described in the preceding section requires some caution since the emission-line shape (characterized by the value of FWHM/$\sigma$) of \ha is also changing as a function of the \ion{C}{IV} blueshift (Fig.~\ref{fig:line_comparison_ha}). 
 At low \ion{C}{IV} blueshifts there are a range of shapes, but all of the quasars exhibiting large \ion{C}{IV} blueshifts have peaky \ha profiles with FWHM/$\sigma \simeq 1$. 
 This raises the question of whether the \ha FWHM is a reliable proxy for the virial-induced velocity dispersion for the full range of \ha line shapes we have in our sample. 
 
@@ -922,9 +922,9 @@ This raises the question of whether the \ha FWHM is a reliable proxy for the vir
 When calibrating the virial-product to masses derived independently using the BH mass \---\ stellar velocity dispersion ($M_\odot-\sigma$) relation, \citet{collin06} find that the scaling factor, $f$, is a factor $\sim2$ larger for their Population `1' sources (with FWHM/$\sigma < 2.35$ and essentially equivalent to population A of Sulentic and co-workers and to the high-blueshift quasars here) than for their Population 2 (with FWHM/$\sigma > 2.35$). 
 For single-epoch BH-mass estimates, assuming a constant value of $f$, as is normally done \citep[e.g.][]{vestergaard06}, means that Population 1 masses will be underestimated and Population 2 will be overestimated.
 In the context of this result from \citet{collin06}, our high-blueshift objects all possess peaky \hans-lines and, while our quasar sample probes much higher luminosities and masses, the true BH-masses may also be underestimated.
-Adopting such an interpretation, the amplitude of the trend seen in Fig.~\ref{fig:bhm_blueshift} might not be so pronounced.
+Adopting such an interpretation, the amplitude of the trend seen in Figs.~\ref{fig:correction_ha} and \ref{fig:correction_hb} might not be so pronounced.
 
-As mentioned in Section~\ref{ch:2-sec:intro} and discussed in \citet{richards11}, quasars with current reverberation mapping measurements have a restricted range of \ion{C}{IV}-line shapes. 
+As mentioned in Section~\ref{ch:intro} and discussed in \citet{richards11}, quasars with current reverberation mapping measurements have a restricted range of \ion{C}{IV}-line shapes. 
 There are currently very few reverberation-mapping measurements of quasars with large \ion{C}{IV} blueshifts but the results of the large on-going statistical reverberation mapping projects \citep[e.g.][]{shen15} for luminous quasars at high-redshift will go some way to establishing whether the quasar broad line regions producing Balmer emission look the same for objects with very different \ion{C}{IV}-emission blueshifts. 
 
 Although the EV1-trends \citep{sulentic00b,shen14} are most likely driven by the accretion rate, orientation may also have a role to play in determining the observed properties of the BLR. 
@@ -942,7 +942,7 @@ Overall, therefore, orientation does not appear to be the dominant effect in det
 
 Classical high-ionization BAL (HiBAL) quasars are also predominantly Population A objects in the scheme of \citet{sulentic00b}. 
 \todo{Do I actually say BALs are removed from sample?}
-There are no HiBAL quasars in our sample by design (Section~\ref{sec:selection}) but it is generally accepted that quasars which show high-ionisation BALs are likely to be radiating with relatively high $L/L_{\rm Edd}$ \citep[e.g.][]{zhang14}. 
+There are no HiBAL quasars in our sample by design but it is generally accepted that quasars which show high-ionisation BALs are likely to be radiating with relatively high $L/L_{\rm Edd}$ \citep[e.g.][]{zhang14}. 
 We therefore propose that the subset of the quasar population that exhibits large \ion{C}{IV}-emission blueshifts, with high-EW and narrow-\ha emission lines, may be directly related to the HiBAL quasar population \---\ perhaps even the `parent' population \citep{richards06conf}. 
 A prediction of such a linkage is that near-infrared observations of the rest-frame optical spectra of HiBAL quasars will show strong, relatively narrow, Balmer emission lines, very similar to those of the quasars with high \ion{C}{IV}-blueshifts presented in this chapter \citep[see][for such a study]{runnoe13b}. 
 \todo{I must have a few BALs. Make a composite spectra of Balmer lines of BALs?}

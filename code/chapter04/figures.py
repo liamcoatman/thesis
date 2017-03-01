@@ -419,6 +419,168 @@ def civ_blueshift_oiii_blueshift():
 
     return None 
 
+def ev1():
+
+    """
+    Try change CIV blueshift to relative to ICA redshift
+    """ 
+
+    df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0) 
+    df = df[df.OIII_FLAG_2 > 0]
+    # df = df[df.OIII_EQW_FLAG == 0]
+    # df = df[df.OIII_SNR_FLAG == 0]
+    df = df[df.OIII_BAD_FIT_FLAG == 0]
+    df = df[df.FE_FLAG == 0]
+    df = df[df.OIII_FIT_HB_Z_FLAG > 0] # not really what this flag was for, so be careful 
+    df = df[(df.WARN_CIV_BEST == 0) | (df.WARN_CIV_BEST == 1)]
+    df = df[df.BAL_FLAG != 1]
+    df = df[np.log10(df.EQW_CIV_BEST) > 1.2]
+
+    fig, axs = plt.subplots(2, 1, figsize=figsize(1, vscale=1.6), sharex=True)
+
+    from LiamUtils import colormaps as cmaps
+    plt.register_cmap(name='viridis', cmap=cmaps.viridis)
+    plt.set_cmap(cmaps.viridis)
+
+    # ---------------------------------------------------------------------------------------------------
+
+    t_ica = Table.read('/data/vault/phewett/LiamC/liam_civpar_zica_160115.dat', format='ascii') # new ICA 
+        
+    m1, m2 = t_ica['col2'], np.log10( t_ica['col3'])
+
+    badinds = np.isnan(m1) | np.isnan(m2) | np.isinf(m1) | np.isinf(m2)
+
+    m1 = m1[~badinds]
+    m2 = m2[~badinds]
+
+    xmin = -1000.0
+    xmax = 3500.0
+    ymin = 1.0
+    ymax = 2.5
+
+    X, Y = np.mgrid[xmin:xmax:100j, ymin:ymax:100j]
+    positions = np.vstack([X.ravel(), Y.ravel()])
+    values = np.vstack([m1, m2])
+
+    kernel = stats.gaussian_kde(values)
+      
+    Z = np.reshape(kernel(positions).T, X.shape)
+
+    CS = axs[0].contour(X, Y, Z, colors=[cs[-1]])
+    CS = axs[1].contour(X, Y, Z, colors=[cs[-1]])
+
+    #----------------------------------------------------
+
+    im = axs[0].scatter(df.Blueshift_CIV_Balmer_Best,
+                        np.log10(df.EQW_CIV_BEST),
+                        c = np.log10(df.OIII_5007_EQW_3), 
+                        edgecolor='None',
+                        s=25,
+                        vmin=-0.4, vmax=1.4)
+
+    cb = fig.colorbar(im, ax=axs[0])
+    cb.set_label(r'log [O\,{\sc iii}] EW [\AA]')
+
+    axs[0].set_xlim(-1000, 5000)
+    axs[0].set_ylim(1,2.2)
+
+    axs[0].set_ylabel(r'log(C\,{\sc iv} EW) [\AA]')
+
+    # -----------------------------------------
+
+    im = axs[1].scatter(df.Blueshift_CIV_Balmer_Best,
+                        np.log10(df.EQW_CIV_BEST),
+                        c = df.FWHM_Broad_Hb, 
+                        edgecolor='None',
+                        s=25,
+                        vmin=1500, vmax=10000)
+
+    cb = fig.colorbar(im, ax=axs[1])
+    cb.set_label(r'H$\beta$ FHWM [km~$\rm{s}^{-1}$]')
+
+    axs[1].set_xlim(-1000, 5000)
+    axs[1].set_ylim(1,2.2)
+
+    axs[1].set_ylabel(r'log(C\,{\sc iv} EW) [\AA]')
+    axs[1].set_xlabel(r'C\,{\sc iv} Blueshift [km~$\rm{s}^{-1}$]')
+
+    # -----------------------------------------
+
+    fig.tight_layout()
+
+    fig.savefig('/home/lc585/thesis/figures/chapter04/ev1.pdf')
+    
+    plt.show()
+
+def test():
+
+    """
+    Try change CIV blueshift to relative to ICA redshift
+    """ 
+
+    df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0) 
+    df = df[df.mfica_flag > 0]
+    df = df[(df.WARN_CIV_BEST == 0)]
+    df = df[df.BAL_FLAG != 1]
+    df = df[np.log10(df.EQW_CIV_BEST) > 1.2]
+
+    fig, ax = plt.subplots(1, 1, figsize=figsize(1, vscale=0.8))
+
+    from LiamUtils import colormaps as cmaps
+    plt.register_cmap(name='viridis', cmap=cmaps.viridis)
+    plt.set_cmap(cmaps.viridis)
+
+    # ---------------------------------------------------------------------------------------------------
+
+    # t_ica = Table.read('/data/vault/phewett/LiamC/liam_civpar_zica_160115.dat', format='ascii') # new ICA 
+        
+    # m1, m2 = t_ica['col2'], np.log10( t_ica['col3'])
+
+    # badinds = np.isnan(m1) | np.isnan(m2) | np.isinf(m1) | np.isinf(m2)
+
+    # m1 = m1[~badinds]
+    # m2 = m2[~badinds]
+
+    # xmin = -1000.0
+    # xmax = 3500.0
+    # ymin = 1.0
+    # ymax = 2.5
+
+    # X, Y = np.mgrid[xmin:xmax:100j, ymin:ymax:100j]
+    # positions = np.vstack([X.ravel(), Y.ravel()])
+    # values = np.vstack([m1, m2])
+
+    # kernel = stats.gaussian_kde(values)
+      
+    # Z = np.reshape(kernel(positions).T, X.shape)
+
+    # CS = ax.contour(X, Y, Z, colors=[cs[-1]])
+  
+    #----------------------------------------------------
+
+    im = ax.scatter(df.Blueshift_CIV_Balmer_Best,
+                    np.log10(df.EQW_CIV_BEST),
+                    c = np.log10(df.OIII_5007_EQW_3), 
+                    edgecolor='None',
+                    s=25)
+
+    cb = fig.colorbar(im, ax=ax)
+    cb.set_label('')
+
+    ax.set_xlim(-1000, 5000)
+    ax.set_ylim(1,2.2)
+
+    ax.set_ylabel(r'log(C\,{\sc iv} EW) [\AA]')
+    ax.set_xlabel(r'C\,{\sc iv} Blueshift [km~$\rm{s}^{-1}$]')
+
+  
+    fig.tight_layout()
+
+    
+    plt.show()
+
+    return None 
+
 
 def eqw_lum():
 
@@ -436,7 +598,7 @@ def eqw_lum():
                    np.log10(df1.OIII_5007_EQW_3), 
                    facecolor=cs[1], 
                    edgecolor='None',
-                   s=15,
+                   s=10,
                    zorder=10)
 
 
