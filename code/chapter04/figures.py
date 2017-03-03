@@ -19,6 +19,9 @@ from barak import spec
 import matplotlib.gridspec as gridspec
 from astropy.table import Table 
 from scipy import stats 
+from lmfit.models import GaussianModel, LorentzianModel, PowerLawModel, ConstantModel, LinearModel
+from scipy.interpolate import interp1d 
+import numpy.ma as ma 
 
 set_plot_properties() # change style 
 cs = palettable.colorbrewer.qualitative.Set1_9.mpl_colors 
@@ -1084,7 +1087,12 @@ def oiii_eqw_hist():
 
     return None 
 
-def example_spectra(name, ax, nrebin, plot_model=True, data_color='black'):
+def example_spectra(name, 
+                    ax, 
+                    nrebin, 
+                    plot_model=True, 
+                    data_color='black',
+                    voffset=0.0):
 
     from lmfit import Model
 
@@ -1175,7 +1183,7 @@ def example_spectra(name, ax, nrebin, plot_model=True, data_color='black'):
         p1['sigma'].value = params['oiii_5007_n_sigma'].value
         p1['amplitude'].value = params['oiii_5007_n_amplitude'].value
     
-        ax.plot(np.sort(vdat.value), 
+        ax.plot(np.sort(vdat.value) - voffset, 
                 g1.eval(p1, x=np.sort(vdat.value)),
                 c=cs_light[4],
                 linestyle='-')
@@ -1187,7 +1195,7 @@ def example_spectra(name, ax, nrebin, plot_model=True, data_color='black'):
         p1['sigma'].value = params['oiii_4959_n_sigma'].value
         p1['amplitude'].value = params['oiii_4959_n_amplitude'].value
     
-        ax.plot(np.sort(vdat.value), 
+        ax.plot(np.sort(vdat.value) - voffset, 
                 g1.eval(p1, x=np.sort(vdat.value)),
                 c=cs_light[4],
                 linestyle='-')        
@@ -1199,7 +1207,7 @@ def example_spectra(name, ax, nrebin, plot_model=True, data_color='black'):
         p1['sigma'].value = params['oiii_5007_b_sigma'].value
         p1['amplitude'].value = params['oiii_5007_b_amplitude'].value
     
-        ax.plot(np.sort(vdat.value), 
+        ax.plot(np.sort(vdat.value) - voffset, 
                 g1.eval(p1, x=np.sort(vdat.value)),
                 c=cs_light[4],
                 linestyle='-')       
@@ -1211,7 +1219,7 @@ def example_spectra(name, ax, nrebin, plot_model=True, data_color='black'):
         p1['sigma'].value = params['oiii_4959_b_sigma'].value
         p1['amplitude'].value = params['oiii_4959_b_amplitude'].value   
     
-        ax.plot(np.sort(vdat.value), 
+        ax.plot(np.sort(vdat.value) - voffset, 
                 g1.eval(p1, x=np.sort(vdat.value)),
                 c=cs_light[4],
                 linestyle='-')             
@@ -1225,7 +1233,7 @@ def example_spectra(name, ax, nrebin, plot_model=True, data_color='black'):
             p1['sigma'].value = params['hb_b_{}_sigma'.format(i)].value
             p1['amplitude'].value = params['hb_b_{}_amplitude'.format(i)].value  
     
-            ax.plot(np.sort(vdat.value), 
+            ax.plot(np.sort(vdat.value) - voffset, 
                     g1.eval(p1, x=np.sort(vdat.value)),
                     c=cs_light[4])  
     
@@ -1238,7 +1246,7 @@ def example_spectra(name, ax, nrebin, plot_model=True, data_color='black'):
             p1['sigma'] = params['hb_n_sigma']
             p1['amplitude'] = params['hb_n_amplitude']   
     
-            ax.plot(np.sort(vdat.value), 
+            ax.plot(np.sort(vdat.value) - voffset, 
                     g1.eval(p1, x=np.sort(vdat.value)),
                     c=cs_light[4],
                     linestyle='-')                    
@@ -1247,13 +1255,13 @@ def example_spectra(name, ax, nrebin, plot_model=True, data_color='black'):
         # vdat, flx, err = rebin(vdat.value, flx, err, nrebin)
         vdat = vdat.value
     
-        ax.plot(xs,
+        ax.plot(xs - voffset,
                 mod.eval(params=params, x=xs/sd) ,
                 color='black',
                 lw=1,
                 zorder=6)
 
-    ax.plot(vdat,
+    ax.plot(vdat - voffset,
             flx,
             linestyle='-',
             color=data_color,
@@ -1261,11 +1269,12 @@ def example_spectra(name, ax, nrebin, plot_model=True, data_color='black'):
             alpha=1,
             zorder=0)
 
+
     ax.axhline(0.0, color='black', linestyle=':')
 
     return None 
 
-def example_residual(name, ax):
+def example_residual(name, ax, voffset=0.0):
 
     from lmfit import Model
 
@@ -1340,7 +1349,7 @@ def example_residual(name, ax):
     for i in range(p.hb_nGaussians):
         mod += GaussianModel(prefix='hb_b_{}_'.format(i))  
 
-    ax.plot(vdat,
+    ax.plot(vdat - voffset,
             (flx - mod.eval(params=params, x=vdat.value/sd)) / err,
             color='lightgray',
             lw=1)
@@ -1570,7 +1579,11 @@ def example_spectrum_grid():
         ax.set_xticks([])
         ax.set_yticks([])
         ax.spines['bottom'].set_visible(False)
-        example_spectra(names[i], ax, rebins[i], data_color='lightgrey')
+        example_spectra(names[i], 
+                        ax, 
+                        rebins[i], 
+                        data_color='lightgrey', 
+                        voffset=df.loc[names[i], 'OIII_FIT_VEL_FULL_OIII_PEAK'])
         ax.set_ylim(ylims[i])
         ax.set_xlim(-5000, 15000)
         ax.set_title(titles[i], size=9, y=0.95)
@@ -1614,10 +1627,10 @@ def example_spectrum_grid_extreme_fe():
 
     cs = palettable.colorbrewer.qualitative.Set1_9.mpl_colors
 
-    fig = plt.figure(figsize=figsize(1, vscale=2))
+    fig = plt.figure(figsize=figsize(1, vscale=1.5))
 
     # gridspec inside gridspec
-    outer_grid = gridspec.GridSpec(8, 3, wspace=0.0, hspace=0.17)
+    outer_grid = gridspec.GridSpec(6, 4, wspace=0.0, hspace=0.17)
 
     df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0)  
     
@@ -1738,15 +1751,16 @@ def example_spectrum_grid_extreme_fe():
 
         fig.add_subplot(ax)
 
-        if i < 20:
+        if i < 19:
             ax.set_xticks([])
         else:
             ax.set_xticks([0, 5000, 10000])
             ax.xaxis.set_ticks_position('bottom')
+            ax.xaxis.set_ticklabels(['0', '5000', '10000'], rotation=45)
 
         fig.add_subplot(ax)
 
-    fig.text(0.5, 0.05, r'$\Delta v$ [km~$\rm{s}^{-1}$]', ha='center')
+    fig.text(0.5, 0.02, r'$\Delta v$ [km~$\rm{s}^{-1}$]', ha='center')
     fig.text(0.05, 0.55, r'Relative $F_{\lambda}$', rotation=90)
     
     fig.savefig('/home/lc585/thesis/figures/chapter04/example_spectrum_grid_extreme_fe.pdf')
@@ -1756,3 +1770,260 @@ def example_spectrum_grid_extreme_fe():
 
     
     return None     
+
+
+def mfica_components(name): 
+
+    from SpectraTools.fit_line import make_model_mfica, mfica_model, mfica_get_comp
+
+    fig, ax = plt.subplots(figsize=figsize(1, vscale=0.8))
+
+    df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0) 
+
+    comps_wav, comps, weights = make_model_mfica(mfica_n_weights=10)
+    
+    for i in range(10): 
+        weights['w{}'.format(i+1)].value = df.loc[name, 'mfica_w{}'.format(i+1)]    
+
+    weights['shift'].value = df.loc[name, 'mfica_shift']    
+
+    flux = mfica_model(weights, comps, comps_wav, comps_wav)
+
+    ax.plot(comps_wav, 
+            flux, 
+            color='black', 
+            lw=1)
+
+    set2 = palettable.colorbrewer.qualitative.Set2_3.mpl_colors 
+    set3 = palettable.colorbrewer.qualitative.Set3_5.mpl_colors 
+    colors = [set3[0], set3[2], set3[3], set3[4]]
+    
+
+    labels = ['w1', 'w2', 'w3', 'w4+w5+w6']
+
+    for i in range(3):
+
+        ax.plot(comps_wav, 
+                mfica_get_comp(i+1, weights, comps, comps_wav, comps_wav),
+                color=colors[i],
+                label=labels[i])
+
+    flx_oiii_4 = mfica_get_comp(4, weights, comps, comps_wav, comps_wav)
+    flx_oiii_5 = mfica_get_comp(5, weights, comps, comps_wav, comps_wav)
+    flx_oiii_6 = mfica_get_comp(6, weights, comps, comps_wav, comps_wav)
+
+    ax.plot(comps_wav, 
+            flx_oiii_4 + flx_oiii_5 + flx_oiii_6,
+            color=colors[3],
+            label=labels[3])    
+
+    ax.legend(loc='upper center', bbox_to_anchor=(0.5, 1.05),
+              ncol=4, fancybox=True, shadow=True)
+
+
+    save_dir = os.path.join('/data/lc585/nearIR_spectra/linefits/', name, 'MFICA')
+
+    wav_file = os.path.join(save_dir, 'wav.txt')
+    parfile = open(wav_file, 'rb')
+    wav = pickle.load(parfile)
+    parfile.close()
+
+    flx_file = os.path.join(save_dir, 'flx.txt')
+    parfile = open(flx_file, 'rb')
+    flx = pickle.load(parfile)
+    parfile.close()
+
+    err_file = os.path.join(save_dir, 'err.txt')
+    parfile = open(err_file, 'rb')
+    err = pickle.load(parfile)
+    parfile.close()
+
+    ax.plot(wav,
+            flx,
+            linestyle='-',
+            color='lightgrey',
+            lw=1,
+            alpha=1,
+            zorder=0)
+
+ 
+    ax.set_xlim(4700, 5100)
+    ax.set_ylim(0, 2.5)
+
+    ax.set_xlabel(r'Wavelength [\AA]') 
+    ax.set_ylabel(r'$F_{\lambda}$ [Arbitrary units]')
+
+    fig.tight_layout() 
+
+
+    
+
+    fig.savefig('/home/lc585/thesis/figures/chapter04/mfica_components.pdf')
+
+    plt.show() 
+
+
+    return None 
+
+def oiii_reconstruction(name):
+
+    from SpectraTools.fit_line import make_model_mfica, mfica_model, mfica_get_comp
+
+    df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0) 
+
+    cs = palettable.colorbrewer.diverging.RdBu_7.mpl_colors 
+    cs_light = palettable.colorbrewer.qualitative.Pastel1_9.mpl_colors
+
+
+    comps_wav, comps, w = make_model_mfica(mfica_n_weights=10)
+    
+    w['w1'].value = 0.0 
+    w['w2'].value = 0.0
+    w['w3'].value = 0.0
+    w['w4'].value = df.loc[name, 'mfica_w4']
+    w['w5'].value = df.loc[name, 'mfica_w5']
+    w['w6'].value = df.loc[name, 'mfica_w6']
+    w['w7'].value = df.loc[name, 'mfica_w7']
+    w['w8'].value = df.loc[name, 'mfica_w8']
+    w['w9'].value = df.loc[name, 'mfica_w9']
+    w['w10'].value = df.loc[name, 'mfica_w10']
+    w['shift'].value = df.loc[name, 'mfica_shift']
+
+    flux = mfica_model(w, comps, comps_wav, comps_wav)
+
+    """
+    We use the blue wing of the 4960 peak to reconstruct the 
+    5008 peak
+    """
+
+    peak_diff = 5008.239 - 4960.295
+
+    # just made up these boundaries
+    inds1 = (comps_wav > 4900.0) & (comps_wav < 4980 - peak_diff)
+    inds2 = (comps_wav > 4980.0) & (comps_wav < 5050.0)
+
+    wav_5008 = np.concatenate((comps_wav[inds1] + peak_diff, comps_wav[inds2]))
+    flux_5008 = np.concatenate((flux[inds1], flux[inds2]))
+
+    """
+    Fit linear model and subtract background
+    """
+
+    xfit = np.concatenate((wav_5008[:10], wav_5008[-10:]))
+    yfit = np.concatenate((flux_5008[:10], flux_5008[-10:]))
+
+    mod = LinearModel()
+    out = mod.fit(yfit, x=xfit, slope=0.0, intercept=0.0)
+
+    flux_5008 = flux_5008 - mod.eval(params=out.params, x=wav_5008)
+
+    """
+    If flux is negative set to zero
+    """
+
+    flux_5008[flux_5008 < 0.0] = 0.0 
+
+
+    xs = np.arange(wav_5008.min(), wav_5008.max(), 0.01)
+    vs = wave2doppler(xs*u.AA, 5008.239*u.AA)
+
+    f = interp1d(wav_5008, flux_5008)
+
+    cdf = np.cumsum(f(xs) / np.sum(f(xs))) 
+
+    fig, ax = plt.subplots(figsize=figsize(1, vscale=0.8))
+  
+
+    ax.plot(comps_wav, flux, color='grey') 
+    ax.axhline(0.0, color='black', linestyle='--')
+    ax.set_xlim(4900, 5100)
+    
+    ax.plot(wav_5008, flux_5008, color='black', lw=2)
+
+    save_dir = os.path.join('/data/lc585/nearIR_spectra/linefits/', name, 'MFICA')
+
+    wav_file = os.path.join(save_dir, 'wav.txt')
+    parfile = open(wav_file, 'rb')
+    wav = pickle.load(parfile)
+    parfile.close()
+
+    flx_file = os.path.join(save_dir, 'flx.txt')
+    parfile = open(flx_file, 'rb')
+    flx = pickle.load(parfile)
+    parfile.close()
+
+    err_file = os.path.join(save_dir, 'err.txt')
+    parfile = open(err_file, 'rb')
+    err = pickle.load(parfile)
+    parfile.close()
+
+    comps_wav, comps, weights = make_model_mfica(mfica_n_weights=10) 
+    weights['w1'].value = df.loc[name, 'mfica_w1']
+    weights['w2'].value = df.loc[name, 'mfica_w2']
+    weights['w3'].value = df.loc[name, 'mfica_w3']
+
+    wav = np.array(wav[~ma.getmask(wav)])
+    flx = np.array(flx[~ma.getmask(flx)])
+
+
+
+    flx -=  mfica_get_comp(1, weights, comps, comps_wav, wav)
+    flx -=  mfica_get_comp(2, weights, comps, comps_wav, wav)
+    flx -=  mfica_get_comp(3, weights, comps, comps_wav, wav)
+    flx -=  mod.eval(params=out.params, x=wav)
+
+    ax.plot(wav,
+            flx,
+            linestyle='-',
+            color=cs_light[1],
+            lw=1,
+            alpha=1,
+            zorder=0)
+
+    ax.set_xlim(4925, 5075)
+    ax.set_ylim(-1, 6)
+
+    ax.set_xlabel(r'Wavelength [\AA]') 
+    ax.set_ylabel(r'$F_{\lambda}$ [Arbitrary units]')
+
+    fig.tight_layout()
+
+    fig.savefig('/home/lc585/thesis/figures/chapter04/oiii_reconstruction.pdf')
+
+    plt.show()
+
+    return None 
+
+
+def parameters_grid():
+
+    from PlottingTools.corner_plot import corner_plot
+
+    df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0) 
+    df = df[df.OIII_FLAG_2 > 0]
+    df = df[df.OIII_EQW_FLAG == 0]
+    df = df[df.OIII_SNR_FLAG == 0]
+    df = df[df.OIII_BAD_FIT_FLAG == 0]
+    df = df[df.FE_FLAG == 0]
+    df = df[df.OIII_5007_EQW_3 < 100.0] # just for the purposes of plotting 
+    df = df[df.OIII_BROAD_OFF == False] # otherwise asymetry always zero
+
+    print len(df)
+    
+    chain = np.array([df.OIII_5007_W80.values*1e-3, df.OIII_5007_R, df.OIII_5007_EQW_3]).T
+    
+    corner_plot(chain,
+                nbins=20,
+                axis_labels=[r'$w_{80}$ [1000~km~$\rm{s}^{-1}$]', 'Asymmetry', r'EQW [\AA]'],
+                wspace=0.07,
+                hspace=0.07,
+                nticks=5,
+                figsize=figsize(1, 1),
+                fontsize=10, 
+                tickfontsize=10,
+                fname='/home/lc585/thesis/figures/chapter04/parameters_grid.pdf')
+
+
+    plt.show() 
+
+    return None
