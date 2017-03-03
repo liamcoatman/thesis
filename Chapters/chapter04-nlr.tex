@@ -45,6 +45,12 @@ In 165 the spectra extend to the broad \ha emission at 6565\AA, and in 260 optic
 This is the largest study of the narrow line region properties of high-$z$ quasars ever undertaken. 
 The quasar sample is summarised in Table~\ref{tab:specnums_ch4}.
 
+\subsection{Low-$z$ sample}
+
+To test for variation in the [\ion{O}{III}] emission line properties with redshift and/or luminosity, we use a sample of quasars selected from the \ac{SDSS}. 
+\todo{Details of sample}. 
+
+
 \begin{table}
   \centering
   \small 
@@ -373,7 +379,7 @@ Could make a linear model of the \ac{ICA} component weights and fit to the \ion{
 
 \begin{figure}
     \includegraphics[width=\columnwidth]{figures/chapter04/ev1.pdf} 
-    \caption{The high-$z$ \ac{EV1} parameter space of \ion{C}{IV} blueshift and \ac{EQW}. Our sample is shown with points, and quasars from the full \ac{SDSS} catalogue are shown with grey contours. The [\ion{O}{III}] EQW varies systematically with position in the \ion{C}{IV} blueshift-\ac{EQW} parameter space (a) but \hb FWHM shows signficantly less systematic variation (b)..      
+    \caption{The high-$z$ \ac{EV1} parameter space of \ion{C}{IV} blueshift and \ac{EQW}. Our sample is shown with points, and quasars from the full \ac{SDSS} catalogue are shown with grey contours. The [\ion{O}{III}] EQW varies systematically with position in the \ion{C}{IV} blueshift-\ac{EQW} parameter space (a) but \hb FWHM shows signficantly less systematic variation (b).}      
     \label{fig:ev1}
 \end{figure}
 
@@ -400,28 +406,29 @@ Make sure it's clear that \citet{shen16a} quasars make up a significant chunk of
 \end{figure}
 
 Figure~\ref{fig:example_spectrum_grid_extreme_oiii} shows the spectra of 18 objects which we visually identified as having exceptionally broad [\ion{O}{III}] emission profiles. 
-
-
+For all of these objects the [\ion{O}{III}] emission is heavily blended. 
+One consequence of this is that there is a significant degeneracy when the emission is decomposed in to individual contributions from \ion{Fe}{II}, \hb and [\ion{O}{III}]. 
+We not that there is a similarity between these objects and the four quasars presented in \citet{zakamska16}. 
 
 \subsection{\ac{ICA} fits}
 
-\begin{figure*}
+\begin{figure}
     \includegraphics[width=\textwidth]{figures/chapter04/mfica_component_weights.pdf} 
-    \caption{The relative weight in each of the six positive \ac{ICA} components for the high-luminosity (blue) and low luminosity samples (grey). In the high-luminosity sample \ion{Fe}{II} emission is stronger (component $w_1$). The core [\ion{O}{III}] emission is weaker (components $w_4$, $w_5$) but the strength of the blueshifted wing is the same ($w_6$).}     
+    \caption{The relative weight in each of the six positive \ac{ICA} components for the high-luminosity (blue) and low luminosity samples (grey). In the high-luminosity sample \ion{Fe}{II} emission is stronger (component $w_1$). The core [\ion{O}{III}] emission (components $w_4$, $w_5$) is weaker but the strength of the blueshifted wing ($w_6$)is the same.}     
     \label{fig:mfica_component_weights}
-\end{figure*}
+\end{figure}
 
-\begin{figure*}
+\begin{figure}
     \centering
     \includegraphics[width=\textwidth]{figures/chapter04/mfica_oiii_weight.pdf} 
-    \caption{The relative weight in the three \ac{ICA} components corresponding to [\ion{O}{III}] emission ({\em left}) and the relative weight of the component most closely related to blueshifted [\ion{O}{III}] emission relative to all three [\ion{O}{III}] components ({\em right}). [\ion{O}{III}] emission is weaker in the high-luminosity sample, but the relative contribution but the fractional contribution from the blueshifted component to the total [\ion{O}{III}] emission is higher. Hence [\ion{O}{III}] is weaker, broader, and more asymmetric in the high-luminosity sample.}     
+    \caption{The relative weight in the three \ac{ICA} components corresponding to [\ion{O}{III}] emission ({\em left}) and the relative weight of the component most closely related to blueshifted [\ion{O}{III}] emission relative to all three [\ion{O}{III}] components ({\em right}). [\ion{O}{III}] emission is weaker in the high-luminosity sample, but the relative contribution from the blueshifted component to the total [\ion{O}{III}] emission is higher.}     
     \label{fig:mfica_oiii_weight}
-\end{figure*}
+\end{figure}
 
 \begin{figure}
     \centering
     \includegraphics[width=\columnwidth]{figures/chapter04/oiii_core_strength_blueshift.pdf} 
-    \caption{}     
+    \caption{Anti-correlation between the relative contribution from the wing to the total [\ion{O}{III}] profile and the strength of the core.}     
     \label{fig:oiii_core_strength_blueshift}
 \end{figure}
 
@@ -447,20 +454,28 @@ In this section we compare the \ac{ICA} component weights in our low-$z$ and hig
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{figures/chapter04/civ_blueshift_oiii_strength.pdf} 
-    \caption{[\ion{O}{III}] strength decreases as the \ion{C}{IV} blueshift increases. See similar thing if I use [\ion{O}{III}] \ac{EQW} instead. Only showing the core components here. The \ion{C}{IV} blueshift is now measured relative to the NIR \ac{ICA} redshift. I think this is trend is mostly being driven by the Eigenvector 1 correlations: as the blueshift increases the \ion{Fe}{II} strength increases and the [\ion{O}{III}] strength decreases. Doesn't appear to be driven by the luminositiy. Is this tighter than \ac{EV1} trend shown with Fe/OIII strength by other authors? Is the \ac{AGN} \ac{NLR} absent in objects where outflows have reached
-    kiloparsec scales, sweeping up the low-density material responsible for the [OIII]-emission?}     
+    \caption{The strength of core [\ion{O}{III}] as a function of the \ion{C}{IV} blueshift. The \ion{C}{IV} blueshift is measured relative to the NIR \ac{ICA} redshift.}     
     \label{fig:civ_blueshift_oiii_strength}
 \end{figure}
 
 \begin{figure}
     \centering
+    \includegraphics[width=\textwidth]{figures/chapter04/civ_blueshift_oiii_eqw.pdf} 
+    \caption{The strength [\ion{O}{III}] EQW as a function of the \ion{C}{IV} blueshift. The \ion{C}{IV} blueshift is measured relative to the NIR \ac{ICA} redshift.}     
+    \label{fig:civ_blueshift_oiii_eqw}
+\end{figure}
+
+\begin{figure}
+    \centering
     \includegraphics[width=\columnwidth]{figures/chapter04/mfica_composites.pdf} 
-    \caption{\ac{ICA} median weights as a functino of the CIV blueshift.}     
+    \caption{Median \ac{ICA}-reconstructed spectra as a function of the \ion{C}{IV} blueshift.}     
     \label{fig:mfica_composites}
 \end{figure}
 
 In Figure~\ref{fig:civ_blueshift_oiii_strength} we show how the [\ion{O}{III}] strength varies as a function of the \ion{C}{IV} blueshift. 
 There is a very well defined relation: when \ion{C}{IV} is strongly blueshifted [\ion{O}{III}] is very weak. 
+Is the \ac{AGN} \ac{NLR} absent in objects where outflows have reached kiloparsec scales, sweeping up the low-density material responsible for the [\ion{O}{III}]-emission?
+If the \ac{BLR} outflows can escape, they are very fast and wouldn't need long to clear out the \ac{NLR} gas. 
 
 This is shown in a different way in Figure~\ref{fig:mfica_composites}. 
 Here we divide our sample in to four bins according to the \ion{C}{IV} blueshift. 
@@ -489,7 +504,7 @@ Our work shows that the \ac{ICA} component weights change systematically along t
 \begin{figure}
     \centering
     \includegraphics[width=0.8\linewidth]{figures/chapter04/redshift_comparison.pdf} 
-    \caption{Redshift comparisons. Lots have been excluded from Ha/Hb so need to look at flags greater than one. What is the big peak? Gaussian fit to the first one has failed. Find out why these plots look different to ones in paper.}       
+    \caption{Comparison of systemic redshift estimates using [\ion{O}{III}], broad \hb and broad \ha. In all cases the line location is defined as the peak wavelength of the best-fitting model. There are 93, 73 and 83 objects in (a), (b) and (c) respectively. The mean and standard deviation have been calculated by fitting a Gaussian function to the distribution. \todoinline{Need to look at flags>1 for \ha and \hb.} \todoinline{Is peak around zero in (a) real?}}       
     \label{fig:redshift_comparison}
 \end{figure}
 
@@ -532,30 +547,11 @@ The redshift is then measured at the peak flux of the \ha model, including both 
 
 \subsection{\ac{ICA}}
 
-\todo{Need to recalculat \ac{ICA} redshifts since shift to fit in log space}. 
 Benefit of \ac{ICA} is that it works regarless of the [\ion{O}{III}] strength. 
 
 Can also describe what I found trying to get redshifts from broad \hans, \hbns? (Narrow components generally very weak at these luminosities so can't be used.)
 Generally find no systematic errors but large ($\sim$1000\kms\, scatter).
 Comparing NIR \ac{ICA} to [\ion{O}{III}] for the [\ion{O}{III}] with high \ac{S/N} I find small (few hundred \kms) scatter. 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 \section{Luminosity/redshift-evolution of [\ion{O}{III}] properties}
 
@@ -626,6 +622,7 @@ In Chapter~\ref{ch:bhmass} we demonstrated that the quasars in our sample cover 
 
 The \ion{C}{IV} velocity centroid measurements are taken directly from Chapter~\ref{ch:bhmass}. 
 We define the `location' of the [\ion{O}{III}] emission using $v_{10}$, although the results are the same if $v_{20}$, $v_{50}$ etc. are used instead.
+The [\ion{O}{III}] is therefore very tightly correlated with the [\ion{O}{III}] width, except for the asymmetry. 
 
 In Figure~\ref{fig:oiii_civ_blueshifts} we show the \ion{C}{IV} blueshifts against the [\ion{O}{III}] blueshifts.
 This comparison is done for a sub-sample of 146 objects where we have good measurements of the \ion{C}{IV}, [\ion{O}{III}] profiles. 

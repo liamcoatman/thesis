@@ -88,7 +88,6 @@ def mfica_component_weights():
     fig.subplots_adjust(bottom=0.12, left=0.05)
 
     fig.text(0.50, 0.03, r"$\displaystyle\frac{w_i}{\sum_{i=1}^6 w_i}$", ha='center')
-    fig.text(0.02, 0.6, 'Normalised counts', rotation=90)
 
     fig.savefig('/home/lc585/thesis/figures/chapter04/mfica_component_weights.pdf')
 
@@ -99,12 +98,19 @@ def mfica_component_weights():
 
 def redshift_comparison(): 
 
-    fig, axs = plt.subplots(3, 1, figsize=figsize(0.6, 2))
+    fig, axs = plt.subplots(3, 1, figsize=figsize(1, 2))
 
  
     df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0) 
-    df = df[df.OIII_FLAG_2 == 1]
-    df = df[df.OIII_FIT_HB_Z_FLAG == 1]
+    df = df[df.OIII_FLAG_2 > 0]
+    df = df[df.OIII_EQW_FLAG == 0]
+    df = df[df.OIII_SNR_FLAG == 0]
+    df = df[df.OIII_BAD_FIT_FLAG == 0]
+    df = df[df.FE_FLAG == 0]
+    
+    df = df[df.OIII_FIT_HB_Z_FLAG == 1] # need to relax this 
+
+    print len(df)
 
     xi = const.c.to(u.km/u.s)*(df.OIII_FIT_Z_FULL_OIII_PEAK - df.OIII_FIT_HB_Z)/(1.0 + df.OIII_FIT_Z_FULL_OIII_PEAK)
 
@@ -141,11 +147,23 @@ def redshift_comparison():
                 verticalalignment='center',
                 transform = axs[0].transAxes)
 
+    axs[0].text(0.9, 0.9, '(a)',
+                horizontalalignment='center',
+                verticalalignment='center',
+                transform = axs[0].transAxes)
+
     #------------------------------------------------------------
 
     df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0) 
-    df = df[df.OIII_FLAG_2 == 1]
-    df = df[df.OIII_FIT_HA_Z_FLAG == 1]
+    df = df[df.OIII_FLAG_2 > 0]
+    df = df[df.OIII_EQW_FLAG == 0]
+    df = df[df.OIII_SNR_FLAG == 0]
+    df = df[df.OIII_BAD_FIT_FLAG == 0]
+    df = df[df.FE_FLAG == 0]
+
+    df = df[df.OIII_FIT_HA_Z_FLAG == 1] # need to relax this 
+
+    print len(df)
 
     xi = const.c.to(u.km/u.s)*(df.OIII_FIT_Z_FULL_OIII_PEAK - df.OIII_FIT_HA_Z)/(1.0 + df.OIII_FIT_Z_FULL_OIII_PEAK)
 
@@ -175,11 +193,17 @@ def redshift_comparison():
                 verticalalignment='center',
                 transform = axs[1].transAxes)
 
+    axs[1].text(0.9, 0.9, '(b)',
+                horizontalalignment='center',
+                verticalalignment='center',
+                transform = axs[1].transAxes)
     #-------------------------------------------------------------
 
     df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0) 
-    df = df[df.OIII_FIT_HB_Z_FLAG == 1]
-    df = df[df.OIII_FIT_HA_Z_FLAG == 1]
+    df = df[df.OIII_FIT_HB_Z_FLAG == 1] # need to relax this 
+    df = df[df.OIII_FIT_HA_Z_FLAG == 1] # need to relax this 
+
+    print len(df)
 
     xi = const.c.to(u.km/u.s)*(df.OIII_FIT_HB_Z - df.OIII_FIT_HA_Z)/(1.0 + df.OIII_FIT_HB_Z)
 
@@ -206,6 +230,11 @@ def redshift_comparison():
 
     axs[2].text(0.05, 0.82, r'$\sigma = {0:.0f}$'.format(p_fit[1]),
                 horizontalalignment='left',
+                verticalalignment='center',
+                transform = axs[2].transAxes)
+
+    axs[2].text(0.9, 0.9, '(c)',
+                horizontalalignment='center',
                 verticalalignment='center',
                 transform = axs[2].transAxes)
 
@@ -364,7 +393,59 @@ def civ_blueshift_oiii_strength():
 
     plt.show() 
 
-    return None 
+    return None
+
+def civ_blueshift_oiii_eqw():
+
+    set_plot_properties() # change style 
+
+    fig, ax = plt.subplots(figsize=figsize(1, vscale=0.7))
+    
+    df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0) 
+    df = df[df.OIII_FLAG_2 > 0]
+    df = df[df.OIII_BAD_FIT_FLAG == 0]
+    df = df[df.FE_FLAG == 0]
+    df = df[df.WARN_CIV_BEST == 0]
+    df = df[df.BAL_FLAG != 1]
+        
+    df.dropna(subset=['Median_CIV_BEST'], inplace=True)
+    
+    w0 = np.mean([1548.202,1550.774])*u.AA  
+    median_wav = doppler2wave(df.Median_CIV_BEST.values*(u.km/u.s), w0) * (1.0 + df.z_IR.values)
+    blueshift_civ = const.c.to('km/s') * (w0 - median_wav / (1.0 + df.z_ICA_FIT)) / w0
+
+    
+    from LiamUtils import colormaps as cmaps
+    plt.register_cmap(name='viridis', cmap=cmaps.viridis)
+    plt.set_cmap(cmaps.viridis)
+
+
+    im = ax.scatter(blueshift_civ,
+                    df.OIII_5007_EQW_3,
+                    c=df.LogL5100,
+                    edgecolor='None',
+                    zorder=2,
+                    s=30)    
+
+    
+    cb = fig.colorbar(im)
+    cb.set_label(r'log L$_{5100{\rm \AA}}$')
+
+
+    ax.set_xlim(-1000, 5000)
+    ax.set_ylim(-10, 100)
+
+    ax.set_xlabel(r'C\,{\sc iv} Blueshift [km~$\rm{s}^{-1}$]')
+    ax.set_ylabel(r"[O\,{\sc iii}] EQW [\AA]")
+
+
+    fig.tight_layout()
+
+    fig.savefig('/home/lc585/thesis/figures/chapter04/civ_blueshift_oiii_eqw.pdf')
+
+    plt.show() 
+
+    return None  
 
 def civ_blueshift_oiii_blueshift():
 
