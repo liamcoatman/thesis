@@ -22,6 +22,8 @@ from scipy import stats
 from lmfit.models import GaussianModel, LorentzianModel, PowerLawModel, ConstantModel, LinearModel
 from scipy.interpolate import interp1d 
 import numpy.ma as ma 
+from astropy.cosmology import WMAP9 as cosmoWMAP
+import math
 
 set_plot_properties() # change style 
 cs = palettable.colorbrewer.qualitative.Set1_9.mpl_colors 
@@ -2193,3 +2195,83 @@ def parameters_grid():
     plt.show() 
 
     return None
+
+
+def oiii_luminosity_z_w80():
+
+    fig, ax = plt.subplots(figsize=figsize(1, vscale=0.8))
+    
+    # Our sample ------------------------------------------------
+
+    df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0) 
+    df = df[df.OIII_FLAG_2 == 1]
+    
+    ax.scatter(df.z_IR.values, 
+               df.OIII_5007_LUM_2, 
+               c=df.OIII_5007_W80,
+               edgecolor='None',
+               vmin=192.0,
+               vmax=3268.0,
+               cmap='YlGnBu',
+               marker='o')
+
+    
+    # Zakamska & Greene 2014 --------------------------------------------
+    
+    t = Table.read('/home/lc585/Dropbox/IoA/nirspec/tables/Reyes_kinematics.fits')
+    
+    ax.scatter(t['z'].data, 
+               np.log10(t['oiiilum']*1e42), 
+               c=t['w80'],
+               edgecolor='None',
+               vmin=192.0,
+               vmax=3268.0,
+               cmap='YlGnBu',
+               marker='^')
+        
+    # Harrison+16 ----------------------------------------------------------------
+    
+    df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/harrison+16.dat', index_col=0)
+    
+    df.SA.replace(to_replace='<(.*)', value=np.nan, inplace=True, regex=True)
+    df.SB.replace(to_replace='<(.*)', value=np.nan, inplace=True, regex=True)
+    
+    df[['SA', 'SB']] = df[['SA', 'SB']].apply(pd.to_numeric)
+    
+    df[['SA', 'SB']] = df[['SA', 'SB']].fillna(value=0.0)
+    
+    df['SA+SB'] = df['SA'] + df['SB']
+    
+    df = df[df['SA+SB'] > 0.0] 
+    
+    flx = df['SA+SB'].values * 1.0e-17 * u.erg / u.s / u.cm / u.cm 
+    
+    lumdist = cosmoWMAP.luminosity_distance(df['zL'].values).to(u.cm) 
+    
+    lum_oiii = flx * (1.0 + df['zL'].values) * 4.0 * math.pi * lumdist**2 
+    
+    im = ax.scatter(df.zL, 
+                    np.log10(lum_oiii.value), 
+                    c=df.W80,
+                    edgecolor='None',
+                    vmin=192.0,
+                    vmax=3268.0,
+                    cmap='YlGnBu',
+                    marker='s')
+
+    #---------------------------------------------------------------------------
+
+    cb = fig.colorbar(im) 
+    cb.set_label(r'w$_{80}$ [km~$\rm{s}^{-1}$]')
+
+    ax.set_xlim(0, 4)
+
+    ax.set_xlabel(r'Redshift $z$')
+    ax.set_ylabel(r'log $L_{\rm[OIII]}$ [erg/s]')
+
+    fig.tight_layout()
+
+    fig.savefig('/home/lc585/thesis/figures/chapter04/oiii_luminosity_z_w80.pdf')
+    plt.show() 
+
+    return None 
