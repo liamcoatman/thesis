@@ -555,7 +555,11 @@ def ev1():
 
     #----------------------------------------------------
 
-    im = axs[0].scatter(df.Blueshift_CIV_Balmer_Best,
+    w0 = np.mean([1548.202,1550.774])*u.AA  
+    median_wav = doppler2wave(df.Median_CIV_BEST.values*(u.km/u.s), w0) * (1.0 + df.z_IR.values)
+    blueshift_civ = const.c.to('km/s') * (w0 - median_wav / (1.0 + df.z_ICA_FIT)) / w0
+
+    im = axs[0].scatter(blueshift_civ,
                         np.log10(df.EQW_CIV_BEST),
                         c = np.log10(df.OIII_5007_EQW_3), 
                         edgecolor='None',
@@ -572,7 +576,7 @@ def ev1():
 
     # -----------------------------------------
 
-    im = axs[1].scatter(df.Blueshift_CIV_Balmer_Best,
+    im = axs[1].scatter(blueshift_civ,
                         np.log10(df.EQW_CIV_BEST),
                         c = df.FWHM_Broad_Hb, 
                         edgecolor='None',
@@ -595,6 +599,87 @@ def ev1():
     fig.savefig('/home/lc585/thesis/figures/chapter04/ev1.pdf')
     
     plt.show()
+
+
+    return None 
+
+def ev1_lowz():
+
+    from PlottingTools.kde_contours import kde_contours
+
+    fig, ax = plt.subplots(1, 1, figsize=figsize(1, vscale=0.9))
+
+    t = Table.read('/data/lc585/SDSS/dr7_bh_Nov19_2013.fits') 
+
+    xi = t['EW_FE_HB_4434_4684'] / t['EW_BROAD_HB']
+    yi = t['FWHM_BROAD_HB'] 
+
+    drop = np.isnan(xi) | np.isnan(yi) | np.isinf(xi) | np.isinf(yi)
+
+    xi = xi[~drop]
+    yi = yi[~drop]
+
+    xmin = 0.0
+    xmax = 3.0
+    ymin = 500.0
+    ymax = 12000.0 
+
+    X, Y = np.mgrid[xmin:xmax:100j, ymin:ymax:100j]
+    positions = np.vstack([X.ravel(), Y.ravel()])
+    values = np.vstack([xi, yi])
+
+    kernel = stats.gaussian_kde(values)
+      
+    Z = np.reshape(kernel(positions).T, X.shape)
+
+    ax.imshow(np.flipud(Z.T), 
+              extent=(xmin, xmax, ymin, ymax), 
+              aspect='auto', 
+              zorder=0, 
+              cmap='Blues',
+              vmax=0.00015)
+
+    kde_contours(xi, 
+                 yi, 
+                 ax, 
+                 color='black',
+                 lims=[xmin, xmax, ymin, ymax],
+                 plotpoints=False)
+
+
+    ax.set_xlim(xmin, xmax)
+    ax.set_ylim(ymin, ymax)
+
+    #
+
+    df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0) 
+    df = df[df.OIII_FLAG_2 > 0]
+    df = df[df.OIII_BAD_FIT_FLAG == 0]
+    df = df[df.FE_FLAG == 0]
+
+    df = df[df.WARN_Hb == 0]
+
+    df = df[df.INSTR != 'ISAAC'] # don't have wavelength coverage to constrain Fe 
+    
+    ax.plot(df.EQW_FE_4434_4684 / df.EQW_Broad_Hb,
+            df.FWHM_Broad_Hb,
+            linestyle='',
+            marker='o',
+            markerfacecolor=cs[0])
+
+
+    # -----------------------------------------
+
+    ax.set_xlabel(r'R$_{\rm FeII}$')
+    ax.set_ylabel(r'FWHM H$\beta$ [km~$\rm{s}^{-1}$]')
+
+    fig.tight_layout()
+
+    fig.savefig('/home/lc585/thesis/figures/chapter04/ev1_lowz.pdf')
+    
+    plt.show()
+
+    return None 
 
 def test():
 
@@ -1680,7 +1765,7 @@ def example_spectrum_grid():
         ax.set_ylim(-8, 8)
         
         if (i % 3 == 0):
-            ax.set_yticks([-5,0,5])
+            ax.set_yticks([-5,5])
             ax.yaxis.set_ticks_position('left')
         else:
             ax.set_yticks([])

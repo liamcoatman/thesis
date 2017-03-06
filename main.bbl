@@ -2745,6 +2745,44 @@
   \field{year}{1976}
 \endentry
 
+\entry{sulentic00b}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {{Sulentic}}{S.}%
+     {J.~W.}{J.~W.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Zwitter}}{Z.}%
+     {T.}{T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Marziani}}{M.}%
+     {P.}{P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Dultzin-Hacyan}}{D.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Galaxies: Seyfert, Line: Formation, Line: Profiles, Galaxies: Quasars:
+  General}
+  \strng{namehash}{SJW+1}
+  \strng{fullhash}{SJWZTMPDD1}
+  \field{labelyear}{2000}
+  \field{sortinit}{S}
+  \field{pages}{L5\bibrangedash L9}
+  \field{title}{{Eigenvector 1: An Optimal Correlation Space for Active
+  Galactic Nuclei}}
+  \field{volume}{536}
+  \field{journaltitle}{\apjl}
+  \field{month}{06}
+  \field{year}{2000}
+\endentry
+
 \entry{sulentic04}{article}{}
   \name{author}{6}{}{%
     {{}%
