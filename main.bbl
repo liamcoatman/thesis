@@ -62,41 +62,6 @@
   \field{year}{2013}
 \endentry
 
-\entry{becker95}{article}{}
-  \name{author}{3}{}{%
-    {{}%
-     {{Becker}}{B.}%
-     {R.~H.}{R.~H.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{White}}{W.}%
-     {R.~L.}{R.~L.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Helfand}}{H.}%
-     {D.~J.}{D.~J.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{RADIO CONTINUUM: GENERAL, SURVEYS}
-  \strng{namehash}{BRHWRLHDJ1}
-  \strng{fullhash}{BRHWRLHDJ1}
-  \field{labelyear}{1995}
-  \field{sortinit}{B}
-  \verb{doi}
-  \verb 10.1086/176166
-  \endverb
-  \field{pages}{559}
-  \field{title}{{The FIRST Survey: Faint Images of the Radio Sky at Twenty
-  Centimeters}}
-  \field{volume}{450}
-  \field{journaltitle}{\apj}
-  \field{month}{09}
-  \field{year}{1995}
-\endentry
-
 \entry{boroson92}{article}{}
   \name{author}{2}{}{%
     {{}%
@@ -347,59 +312,6 @@
   \field{year}{2013}
 \endentry
 
-\entry{dunlop03}{article}{}
-  \name{author}{6}{}{%
-    {{}%
-     {{Dunlop}}{D.}%
-     {J.~S.}{J.~S.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{McLure}}{M.}%
-     {R.~J.}{R.~J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Kukula}}{K.}%
-     {M.~J.}{M.~J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Baum}}{B.}%
-     {S.~A.}{S.~A.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{O'Dea}}{O.}%
-     {C.~P.}{C.~P.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Hughes}}{H.}%
-     {D.~H.}{D.~H.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{black hole physics, galaxies: active, galaxies: photometry, quasars:
-  general, infrared: galaxies}
-  \strng{namehash}{DJS+1}
-  \strng{fullhash}{DJSMRJKMJBSAOCPHDH1}
-  \field{labelyear}{2003}
-  \field{sortinit}{D}
-  \verb{doi}
-  \verb 10.1046/j.1365-8711.2003.06333.x
-  \endverb
-  \verb{eprint}
-  \verb astro-ph/0108397
-  \endverb
-  \field{pages}{1095\bibrangedash 1135}
-  \field{title}{{Quasars, their host galaxies and their central black holes}}
-  \field{volume}{340}
-  \field{journaltitle}{\mnras}
-  \field{month}{04}
-  \field{year}{2003}
-\endentry
-
 \entry{elitzur06}{article}{}
   \name{author}{2}{}{%
     {{}%
@@ -432,6 +344,309 @@
   \field{journaltitle}{\apjl}
   \field{month}{09}
   \field{year}{2006}
+\endentry
+
+\entry{elvis94}{article}{}
+  \name{author}{9}{}{%
+    {{}%
+     {{Elvis}}{E.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Wilkes}}{W.}%
+     {B.~J.}{B.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{McDowell}}{M.}%
+     {J.~C.}{J.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Green}}{G.}%
+     {R.~F.}{R.~F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Bechtold}}{B.}%
+     {J.}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Willner}}{W.}%
+     {S.~P.}{S.~P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Oey}}{O.}%
+     {M.~S.}{M.~S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Polomski}}{P.}%
+     {E.}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Cutri}}{C.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Astronomical Catalogs, Infrared Photometry, Quasars, Radio Astronomy,
+  Spectral Energy Distribution, Stellar Luminosity, Stellar Spectrophotometry,
+  Ultraviolet Astronomy, X Ray Spectra, Galactic Radiation, Heao 2, Infrared
+  Astronomy Satellite, Iue, Signal To Noise Ratios}
+  \strng{namehash}{EM+1}
+  \strng{fullhash}{EMWBJMJCGRFBJWSPOMSPECR1}
+  \field{labelyear}{1994}
+  \field{sortinit}{E}
+  \verb{doi}
+  \verb 10.1086/192093
+  \endverb
+  \field{pages}{1\bibrangedash 68}
+  \field{title}{{Atlas of quasar energy distributions}}
+  \field{volume}{95}
+  \field{journaltitle}{\apjs}
+  \field{month}{11}
+  \field{year}{1994}
+\endentry
+
+\entry{elvis12}{article}{}
+  \name{author}{42}{}{%
+    {{}%
+     {{Elvis}}{E.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hao}}{H.}%
+     {H.}{H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Civano}}{C.}%
+     {F.}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Brusa}}{B.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Salvato}}{S.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Bongiorno}}{B.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Capak}}{C.}%
+     {P.}{P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Zamorani}}{Z.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Comastri}}{C.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Jahnke}}{J.}%
+     {K.}{K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Lusso}}{L.}%
+     {E.}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Mainieri}}{M.}%
+     {V.}{V.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Trump}}{T.}%
+     {J.~R.}{J.~R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Ho}}{H.}%
+     {L.~C.}{L.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Aussel}}{A.}%
+     {H.}{H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Cappelluti}}{C.}%
+     {N.}{N.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Cisternas}}{C.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Frayer}}{F.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Gilli}}{G.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hasinger}}{H.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Huchra}}{H.}%
+     {J.~P.}{J.~P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Impey}}{I.}%
+     {C.~D.}{C.~D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Koekemoer}}{K.}%
+     {A.~M.}{A.~M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Lanzuisi}}{L.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Le Floc'h}}{L.}%
+     {E.}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Lilly}}{L.}%
+     {S.~J.}{S.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Liu}}{L.}%
+     {Y.}{Y.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{McCarthy}}{M.}%
+     {P.}{P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{McCracken}}{M.}%
+     {H.~J.}{H.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Merloni}}{M.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Roeser}}{R.}%
+     {H.-J.}{H.-J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Sanders}}{S.}%
+     {D.~B.}{D.~B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Sargent}}{S.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Scoville}}{S.}%
+     {N.}{N.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Schinnerer}}{S.}%
+     {E.}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Schiminovich}}{S.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Silverman}}{S.}%
+     {J.}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Taniguchi}}{T.}%
+     {Y.}{Y.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Vignali}}{V.}%
+     {C.}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Urry}}{U.}%
+     {C.~M.}{C.~M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Zamojski}}{Z.}%
+     {M.~A.}{M.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Zatloukal}}{Z.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{galaxies: evolution, quasars: general, surveys}
+  \strng{namehash}{EM+1}
+  \strng{fullhash}{EMHHCFBMSMBACPZGCAJKLEMVTJRHLCAHCNCMFDGRHGHJPICDKAMLGLELSJLYMPMHJMARHJSDBSMSNSESDSJTYVCUCMZMAZM1}
+  \field{labelyear}{2012}
+  \field{sortinit}{E}
+  \verb{doi}
+  \verb 10.1088/0004-637X/759/1/6
+  \endverb
+  \field{eid}{6}
+  \verb{eprint}
+  \verb 1209.1478
+  \endverb
+  \field{pages}{6}
+  \field{title}{{Spectral Energy Distributions of Type 1 Active Galactic Nuclei
+  in the COSMOS Survey. I. The XMM-COSMOS Sample}}
+  \field{volume}{759}
+  \field{journaltitle}{\apj}
+  \field{eprinttype}{arXiv}
+  \field{eprintclass}{astro-ph.CO}
+  \field{month}{11}
+  \field{year}{2012}
 \endentry
 
 \entry{everett05}{article}{}
@@ -713,6 +928,141 @@
   \field{year}{2011}
 \endentry
 
+\entry{hao13}{article}{}
+  \name{author}{22}{}{%
+    {{}%
+     {{Hao}}{H.}%
+     {H.}{H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Elvis}}{E.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Bongiorno}}{B.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Zamorani}}{Z.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Merloni}}{M.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Kelly}}{K.}%
+     {B.~C.}{B.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Civano}}{C.}%
+     {F.}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Celotti}}{C.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Ho}}{H.}%
+     {L.~C.}{L.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Jahnke}}{J.}%
+     {K.}{K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Comastri}}{C.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Trump}}{T.}%
+     {J.~R.}{J.~R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Mainieri}}{M.}%
+     {V.}{V.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Salvato}}{S.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Brusa}}{B.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Impey}}{I.}%
+     {C.~D.}{C.~D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Koekemoer}}{K.}%
+     {A.~M.}{A.~M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Lanzuisi}}{L.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Vignali}}{V.}%
+     {C.}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Silverman}}{S.}%
+     {J.~D.}{J.~D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Urry}}{U.}%
+     {C.~M.}{C.~M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Schawinski}}{S.}%
+     {K.}{K.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{surveys - galaxies: evolution, quasars: general}
+  \strng{namehash}{HH+1}
+  \strng{fullhash}{HHEMBAZGMAKBCCFCAHLCJKCATJRMVSMBMICDKAMLGVCSJDUCMSK1}
+  \field{labelyear}{2013}
+  \field{sortinit}{H}
+  \verb{doi}
+  \verb 10.1093/mnras/stt1228
+  \endverb
+  \verb{eprint}
+  \verb 1210.3044
+  \endverb
+  \field{pages}{3104\bibrangedash 3121}
+  \field{title}{{A quasar-galaxy mixing diagram: quasar spectral energy
+  distribution shapes in the optical to near-infrared}}
+  \field{volume}{434}
+  \field{journaltitle}{\mnras}
+  \field{eprinttype}{arXiv}
+  \field{eprintclass}{astro-ph.GA}
+  \field{month}{10}
+  \field{year}{2013}
+\endentry
+
 \entry{jiang10}{article}{}
   \name{author}{12}{}{%
     {{}%
@@ -873,6 +1223,100 @@
   \field{year}{1994}
 \endentry
 
+\entry{kuraszkiewicz03}{article}{}
+  \name{author}{14}{}{%
+    {{}%
+     {{Kuraszkiewicz}}{K.}%
+     {J.~K.}{J.~K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Wilkes}}{W.}%
+     {B.~J.}{B.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hooper}}{H.}%
+     {E.~J.}{E.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{McLeod}}{M.}%
+     {K.~K.}{K.~K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Wood}}{W.}%
+     {K.}{K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Bjorkman}}{B.}%
+     {J.}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Delain}}{D.}%
+     {K.~M.}{K.~M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hughes}}{H.}%
+     {D.~H.}{D.~H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Elvis}}{E.}%
+     {M.~S.}{M.~S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Impey}}{I.}%
+     {C.~D.}{C.~D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Lonsdale}}{L.}%
+     {C.~J.}{C.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Malkan}}{M.}%
+     {M.~A.}{M.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{McDowell}}{M.}%
+     {J.~C.}{J.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Whitney}}{W.}%
+     {B.}{B.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Galaxies: Active, Galaxies: Nuclei, Infrared: Galaxies, X-Rays:
+  Galaxies}
+  \strng{namehash}{KJK+1}
+  \strng{fullhash}{KJKWBJHEJMKKWKBJDKMHDHEMSICDLCJMMAMJCWB1}
+  \field{labelyear}{2003}
+  \field{sortinit}{K}
+  \verb{doi}
+  \verb 10.1086/374919
+  \endverb
+  \verb{eprint}
+  \verb astro-ph/0302572
+  \endverb
+  \field{pages}{128\bibrangedash 148}
+  \field{title}{{The Far-Infrared Spectral Energy Distributions of
+  X-Ray-selected Active Galaxies}}
+  \field{volume}{590}
+  \field{journaltitle}{\apj}
+  \field{month}{06}
+  \field{year}{2003}
+\endentry
+
 \entry{lawrence07}{article}{}
   \name{author}{22}{}{%
     {{}%
@@ -999,80 +1443,191 @@
   \field{year}{2007}
 \endentry
 
-\entry{leipski14}{article}{}
-  \name{author}{10}{}{%
+\entry{lusso10}{article}{}
+  \name{author}{32}{}{%
     {{}%
-     {{Leipski}}{L.}%
+     {{Lusso}}{L.}%
+     {E.}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Comastri}}{C.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Vignali}}{V.}%
      {C.}{C.}%
      {}{}%
      {}{}}%
     {{}%
-     {{Meisenheimer}}{M.}%
-     {K.}{K.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Walter}}{W.}%
-     {F.}{F.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Klaas}}{K.}%
-     {U.}{U.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Dannerbauer}}{D.}%
-     {H.}{H.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{De Rosa}}{D.}%
+     {{Zamorani}}{Z.}%
      {G.}{G.}%
      {}{}%
      {}{}}%
     {{}%
-     {{Fan}}{F.}%
-     {X.}{X.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Haas}}{H.}%
+     {{Brusa}}{B.}%
      {M.}{M.}%
      {}{}%
      {}{}}%
     {{}%
-     {{Krause}}{K.}%
+     {{Gilli}}{G.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Iwasawa}}{I.}%
+     {K.}{K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Salvato}}{S.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Civano}}{C.}%
+     {F.}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Elvis}}{E.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Merloni}}{M.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Bongiorno}}{B.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Trump}}{T.}%
+     {J.~R.}{J.~R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Koekemoer}}{K.}%
+     {A.~M.}{A.~M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Schinnerer}}{S.}%
+     {E.}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Le Floc'h}}{L.}%
+     {E.}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Cappelluti}}{C.}%
+     {N.}{N.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Jahnke}}{J.}%
+     {K.}{K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Sargent}}{S.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Silverman}}{S.}%
+     {J.}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Mainieri}}{M.}%
+     {V.}{V.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Fiore}}{F.}%
+     {F.}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Bolzonella}}{B.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Le F{\`e}vre}}{L.}%
      {O.}{O.}%
      {}{}%
      {}{}}%
     {{}%
-     {{Rix}}{R.}%
-     {H.-W.}{H.-W.}%
+     {{Garilli}}{G.}%
+     {B.}{B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Iovino}}{I.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Kneib}}{K.}%
+     {J.~P.}{J.~P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Lamareille}}{L.}%
+     {F.}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Lilly}}{L.}%
+     {S.}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Mignoli}}{M.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Scodeggio}}{S.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Vergani}}{V.}%
+     {D.}{D.}%
      {}{}%
      {}{}}%
   }
-  \keyw{galaxies: active, infrared: galaxies, quasars: general}
-  \strng{namehash}{LC+1}
-  \strng{fullhash}{LCMKWFKUDHDGFXHMKORHW1}
-  \field{labelyear}{2014}
+  \keyw{galaxies: active, Galaxy: evolution, quasars: general, methods:
+  statistical}
+  \strng{namehash}{LE+1}
+  \strng{fullhash}{LECAVCZGBMGRIKSMCFEMMABATJRKAMSELECNJKSMSJMVFFBMLOGBIAKJPLFLSMMSMVD1}
+  \field{labelyear}{2010}
   \field{sortinit}{L}
   \verb{doi}
-  \verb 10.1088/0004-637X/785/2/154
+  \verb 10.1051/0004-6361/200913298
   \endverb
-  \field{eid}{154}
+  \field{eid}{A34}
   \verb{eprint}
-  \verb 1402.5976
+  \verb 0912.4166
   \endverb
-  \field{pages}{154}
-  \field{title}{{Spectral Energy Distributions of QSOs at z {\gt} 5: Common
-  Active Galactic Nucleus-heated Dust and Occasionally Strong Star-formation}}
-  \field{volume}{785}
-  \field{journaltitle}{\apj}
+  \field{pages}{A34}
+  \field{title}{{The X-ray to optical-UV luminosity ratio of X-ray selected
+  type 1 AGN in XMM-COSMOS}}
+  \field{volume}{512}
+  \field{journaltitle}{\aap}
   \field{eprinttype}{arXiv}
-  \field{eprintclass}{astro-ph.GA}
-  \field{month}{04}
-  \field{year}{2014}
+  \field{eprintclass}{astro-ph.CO}
+  \field{month}{03}
+  \field{year}{2010}
 \endentry
 
 \entry{maddox06}{article}{}
@@ -1362,6 +1917,63 @@
   \field{year}{2001}
 \endentry
 
+\entry{marchese12}{article}{}
+  \name{author}{6}{}{%
+    {{}%
+     {{Marchese}}{M.}%
+     {E.}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Della Ceca}}{D.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Caccianiga}}{C.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Severgnini}}{S.}%
+     {P.}{P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Corral}}{C.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Fanali}}{F.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{galaxies: active, galaxies: nuclei, accretion, accretion disks,
+  cosmology: observations, methods: statistical}
+  \strng{namehash}{ME+1}
+  \strng{fullhash}{MEDRCASPCAFR1}
+  \field{labelyear}{2012}
+  \field{sortinit}{M}
+  \verb{doi}
+  \verb 10.1051/0004-6361/201117562
+  \endverb
+  \field{eid}{A48}
+  \verb{eprint}
+  \verb 1111.4409
+  \endverb
+  \field{pages}{A48}
+  \field{title}{{The optical-UV spectral energy distribution of the unabsorbed
+  AGN population in the XMM-Newton Bright Serendipitous Survey}}
+  \field{volume}{539}
+  \field{journaltitle}{\aap}
+  \field{eprinttype}{arXiv}
+  \field{eprintclass}{astro-ph.CO}
+  \field{month}{03}
+  \field{year}{2012}
+\endentry
+
 \entry{minezaki04}{article}{}
   \name{author}{8}{}{%
     {{}%
@@ -1517,24 +2129,174 @@
   \field{year}{1992}
 \endentry
 
-\entry{peterson95}{book}{}
-  \name{author}{1}{}{%
+\entry{polletta00}{article}{}
+  \name{author}{4}{}{%
     {{}%
-     {{Peterson}}{P.}%
-     {B.~M.}{B.~M.}%
+     {{Polletta}}{P.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Courvoisier}}{C.}%
+     {T.~J.-L.}{T.~J.-L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hooper}}{H.}%
+     {E.~J.}{E.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Wilkes}}{W.}%
+     {B.~J.}{B.~J.}%
      {}{}%
      {}{}}%
   }
-  \strng{namehash}{PBM1}
-  \strng{fullhash}{PBM1}
-  \field{labelyear}{1997}
+  \keyw{GALAXIES: QUASARS: GENERAL, INFRARED: GALAXIES, RADIO CONTINUUM:
+  GALAXIES}
+  \strng{namehash}{PM+1}
+  \strng{fullhash}{PMCTJLHEJWBJ1}
+  \field{labelyear}{2000}
   \field{sortinit}{P}
-  \field{booktitle}{An introduction to active galactic nuclei, Publisher:
-  Cambridge, New York Cambridge University Press, 1997 Physical description
-  xvi, 238 p.~ISBN 0521473489}
-  \field{title}{{An Introduction to Active Galactic Nuclei}}
-  \field{month}{02}
-  \field{year}{1997}
+  \verb{eprint}
+  \verb astro-ph/0006315
+  \endverb
+  \field{pages}{75\bibrangedash 96}
+  \field{title}{{The far-infrared emission of radio loud and radio quiet
+  quasars}}
+  \field{volume}{362}
+  \field{journaltitle}{\aap}
+  \field{month}{10}
+  \field{year}{2000}
+\endentry
+
+\entry{polletta07}{article}{}
+  \name{author}{21}{}{%
+    {{}%
+     {{Polletta}}{P.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Tajer}}{T.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Maraschi}}{M.}%
+     {L.}{L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Trinchieri}}{T.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Lonsdale}}{L.}%
+     {C.~J.}{C.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Chiappetti}}{C.}%
+     {L.}{L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Andreon}}{A.}%
+     {S.}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Pierre}}{P.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Le F{\`e}vre}}{L.}%
+     {O.}{O.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Zamorani}}{Z.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Maccagni}}{M.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Garcet}}{G.}%
+     {O.}{O.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Surdej}}{S.}%
+     {J.}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Franceschini}}{F.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Alloin}}{A.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Shupe}}{S.}%
+     {D.~L.}{D.~L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Surace}}{S.}%
+     {J.~A.}{J.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Fang}}{F.}%
+     {F.}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Rowan-Robinson}}{R.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Smith}}{S.}%
+     {H.~E.}{H.~E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Tresse}}{T.}%
+     {L.}{L.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Galaxies: Active, Infrared: Galaxies, Galaxies: Quasars: General,
+  X-Rays: Galaxies}
+  \strng{namehash}{PM+1}
+  \strng{fullhash}{PMTMMLTGLCJCLASPMLOZGMDGOSJFAADSDLSJAFFRMSHETL1}
+  \field{labelyear}{2007}
+  \field{sortinit}{P}
+  \verb{doi}
+  \verb 10.1086/518113
+  \endverb
+  \verb{eprint}
+  \verb astro-ph/0703255
+  \endverb
+  \field{pages}{81\bibrangedash 102}
+  \field{title}{{Spectral Energy Distributions of Hard X-Ray Selected Active
+  Galactic Nuclei in the XMM-Newton Medium Deep Survey}}
+  \field{volume}{663}
+  \field{journaltitle}{\apj}
+  \field{month}{07}
+  \field{year}{2007}
 \endentry
 
 \entry{richards02}{article}{}
@@ -1856,6 +2618,42 @@
   \field{journaltitle}{\aj}
   \field{month}{05}
   \field{year}{2011}
+\endentry
+
+\entry{risaliti04}{inproceedings}{}
+  \name{author}{2}{}{%
+    {{}%
+     {{Risaliti}}{R.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Elvis}}{E.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \name{editor}{1}{}{%
+    {{}%
+     {{Barger}}{B.}%
+     {A.~J.}{A.~J.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{RGEM1}
+  \strng{fullhash}{RGEM1}
+  \field{labelyear}{2004}
+  \field{sortinit}{R}
+  \field{booktitle}{Supermassive Black Holes in the Distant Universe}
+  \verb{eprint}
+  \verb astro-ph/0403618
+  \endverb
+  \field{pages}{187}
+  \field{series}{Astrophysics and Space Science Library}
+  \field{title}{{A Panchromatic View of AGN}}
+  \field{volume}{308}
+  \field{month}{08}
+  \field{year}{2004}
 \endentry
 
 \entry{roseboom13}{article}{}
@@ -2210,28 +3008,116 @@
   \field{year}{2010}
 \endentry
 
-\entry{shakura73}{article}{}
-  \name{author}{2}{}{%
+\entry{shang11}{article}{}
+  \name{author}{17}{}{%
     {{}%
-     {{Shakura}}{S.}%
-     {N.~I.}{N.~I.}%
+     {{Shang}}{S.}%
+     {Z.}{Z.}%
      {}{}%
      {}{}}%
     {{}%
-     {{Sunyaev}}{S.}%
-     {R.~A.}{R.~A.}%
+     {{Brotherton}}{B.}%
+     {M.~S.}{M.~S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Wills}}{W.}%
+     {B.~J.}{B.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Wills}}{W.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Cales}}{C.}%
+     {S.~L.}{S.~L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Dale}}{D.}%
+     {D.~A.}{D.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Green}}{G.}%
+     {R.~F.}{R.~F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Runnoe}}{R.}%
+     {J.~C.}{J.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Nemmen}}{N.}%
+     {R.~S.}{R.~S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Gallagher}}{G.}%
+     {S.~C.}{S.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Ganguly}}{G.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hines}}{H.}%
+     {D.~C.}{D.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Kelly}}{K.}%
+     {B.~J.}{B.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Kriss}}{K.}%
+     {G.~A.}{G.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Li}}{L.}%
+     {J.}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Tang}}{T.}%
+     {B.}{B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Xie}}{X.}%
+     {Y.}{Y.}%
      {}{}%
      {}{}}%
   }
-  \strng{namehash}{SNISRA1}
-  \strng{fullhash}{SNISRA1}
-  \field{labelyear}{1973}
+  \keyw{atlases, galaxies: active, infrared: galaxies, quasars: general, radio
+  continuum: galaxies, ultraviolet: galaxies, X-rays: galaxies}
+  \strng{namehash}{SZ+1}
+  \strng{fullhash}{SZBMSWBJWDCSLDDAGRFRJCNRSGSCGRHDCKBJKGALJTBXY1}
+  \field{labelyear}{2011}
   \field{sortinit}{S}
-  \field{pages}{337\bibrangedash 355}
-  \field{title}{{Black holes in binary systems. Observational appearance.}}
-  \field{volume}{24}
-  \field{journaltitle}{\aap}
-  \field{year}{1973}
+  \verb{doi}
+  \verb 10.1088/0067-0049/196/1/2
+  \endverb
+  \field{eid}{2}
+  \verb{eprint}
+  \verb 1107.1855
+  \endverb
+  \field{pages}{2}
+  \field{title}{{The Next Generation Atlas of Quasar Spectral Energy
+  Distributions from Radio to X-Rays}}
+  \field{volume}{196}
+  \field{journaltitle}{\apjs}
+  \field{eprinttype}{arXiv}
+  \field{eprintclass}{astro-ph.CO}
+  \field{month}{09}
+  \field{year}{2011}
 \endentry
 
 \entry{shen14}{article}{}
@@ -2412,6 +3298,177 @@
   \field{journaltitle}{\apj}
   \field{month}{03}
   \field{year}{2006}
+\endentry
+
+\entry{sunyaev80}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {{Sunyaev}}{S.}%
+     {R.~A.}{R.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Titarchuk}}{T.}%
+     {L.~G.}{L.~G.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Compton Effect, Plasma Clouds, Radiative Transfer, X Ray Scattering, X
+  Ray Sources, Electron Plasma, Iron, Line Shape, Plasma Radiation, Plasma
+  Temperature}
+  \strng{namehash}{SRATLG1}
+  \strng{fullhash}{SRATLG1}
+  \field{labelyear}{1980}
+  \field{sortinit}{S}
+  \field{pages}{121\bibrangedash 138}
+  \field{title}{{Comptonization of X-rays in plasma clouds - Typical radiation
+  spectra}}
+  \field{volume}{86}
+  \field{journaltitle}{\aap}
+  \field{month}{06}
+  \field{year}{1980}
+\endentry
+
+\entry{trichas12}{article}{}
+  \name{author}{23}{}{%
+    {{}%
+     {{Trichas}}{T.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Green}}{G.}%
+     {P.~J.}{P.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Silverman}}{S.}%
+     {J.~D.}{J.~D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Aldcroft}}{A.}%
+     {T.}{T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Barkhouse}}{B.}%
+     {W.}{W.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Cameron}}{C.}%
+     {R.~A.}{R.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Constantin}}{C.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Ellison}}{E.}%
+     {S.~L.}{S.~L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Foltz}}{F.}%
+     {C.}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Haggard}}{H.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Jannuzi}}{J.}%
+     {B.~T.}{B.~T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Kim}}{K.}%
+     {D.-W.}{D.-W.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Marshall}}{M.}%
+     {H.~L.}{H.~L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Mossman}}{M.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{P{\'e}rez}}{P.}%
+     {L.~M.}{L.~M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Romero-Colmenero}}{R.}%
+     {E.}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Ruiz}}{R.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Smith}}{S.}%
+     {M.~G.}{M.~G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Smith}}{S.}%
+     {P.~S.}{P.~S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Torres}}{T.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Wik}}{W.}%
+     {D.~R.}{D.~R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Wilkes}}{W.}%
+     {B.~J.}{B.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Wolfgang}}{W.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{galaxies: evolution, galaxies: Seyfert, galaxies: starburst, quasars:
+  general, techniques: spectroscopic, X-rays: galaxies}
+  \strng{namehash}{TM+1}
+  \strng{fullhash}{TMGPJSJDATBWCRACAESLFCHDJBTKDWMHLMAPLMRERASMGSPSTGWDRWBJWA1}
+  \field{labelyear}{2012}
+  \field{sortinit}{T}
+  \verb{doi}
+  \verb 10.1088/0067-0049/200/2/17
+  \endverb
+  \field{eid}{17}
+  \verb{eprint}
+  \verb 1204.5148
+  \endverb
+  \field{pages}{17}
+  \field{title}{{The Chandra Multi-wavelength Project: Optical Spectroscopy and
+  the Broadband Spectral Energy Distributions of X-Ray-selected AGNs}}
+  \field{volume}{200}
+  \field{journaltitle}{\apjs}
+  \field{eprinttype}{arXiv}
+  \field{eprintclass}{astro-ph.CO}
+  \field{month}{06}
+  \field{year}{2012}
 \endentry
 
 \entry{wang13}{article}{}
@@ -2675,727 +3732,6 @@
   \field{eprintclass}{astro-ph.IM}
   \field{month}{12}
   \field{year}{2010}
-\endentry
-
-\entry{york00}{article}{}
-  \name{author}{141}{}{%
-    {{}%
-     {{York}}{Y.}%
-     {D.~G.}{D.~G.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Adelman}}{A.}%
-     {J.}{J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Anderson}}{A.}%
-     {J.~E.}{J.~E.}%
-     {}{}%
-     {Jr.}{J.}}%
-    {{}%
-     {{Anderson}}{A.}%
-     {S.~F.}{S.~F.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Annis}}{A.}%
-     {J.}{J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Bahcall}}{B.}%
-     {N.~A.}{N.~A.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Bakken}}{B.}%
-     {J.~A.}{J.~A.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Barkhouser}}{B.}%
-     {R.}{R.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Bastian}}{B.}%
-     {S.}{S.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Berman}}{B.}%
-     {E.}{E.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Boroski}}{B.}%
-     {W.~N.}{W.~N.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Bracker}}{B.}%
-     {S.}{S.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Briegel}}{B.}%
-     {C.}{C.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Briggs}}{B.}%
-     {J.~W.}{J.~W.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Brinkmann}}{B.}%
-     {J.}{J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Brunner}}{B.}%
-     {R.}{R.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Burles}}{B.}%
-     {S.}{S.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Carey}}{C.}%
-     {L.}{L.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Carr}}{C.}%
-     {M.~A.}{M.~A.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Castander}}{C.}%
-     {F.~J.}{F.~J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Chen}}{C.}%
-     {B.}{B.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Colestock}}{C.}%
-     {P.~L.}{P.~L.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Connolly}}{C.}%
-     {A.~J.}{A.~J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Crocker}}{C.}%
-     {J.~H.}{J.~H.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Csabai}}{C.}%
-     {I.}{I.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Eisenstein}}{E.}%
-     {D.}{D.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Ellman}}{E.}%
-     {N.}{N.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Elms}}{E.}%
-     {B.~R.}{B.~R.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Evans}}{E.}%
-     {M.~L.}{M.~L.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Fan}}{F.}%
-     {X.}{X.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Federwitz}}{F.}%
-     {G.~R.}{G.~R.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Fiscelli}}{F.}%
-     {L.}{L.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Friedman}}{F.}%
-     {S.}{S.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Frieman}}{F.}%
-     {J.~A.}{J.~A.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Fukugita}}{F.}%
-     {M.}{M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Gillespie}}{G.}%
-     {B.}{B.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Gunn}}{G.}%
-     {J.~E.}{J.~E.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Gurbani}}{G.}%
-     {V.~K.}{V.~K.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{de Haas}}{d.}%
-     {E.}{E.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Haldeman}}{H.}%
-     {M.}{M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Harris}}{H.}%
-     {F.~H.}{F.~H.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Hayes}}{H.}%
-     {J.}{J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Heckman}}{H.}%
-     {T.~M.}{T.~M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Hennessy}}{H.}%
-     {G.~S.}{G.~S.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Hindsley}}{H.}%
-     {R.~B.}{R.~B.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Holm}}{H.}%
-     {S.}{S.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Holmgren}}{H.}%
-     {D.~J.}{D.~J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Huang}}{H.}%
-     {C.-h.}{C.-h.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Hull}}{H.}%
-     {C.}{C.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Husby}}{H.}%
-     {D.}{D.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Ichikawa}}{I.}%
-     {S.-I.}{S.-I.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Ichikawa}}{I.}%
-     {T.}{T.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Ivezi{\'c}}}{I.}%
-     {{\v Z}.}{{\v Z}.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Kent}}{K.}%
-     {S.}{S.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Kim}}{K.}%
-     {R.~S.~J.}{R.~S.~J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Kinney}}{K.}%
-     {E.}{E.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Klaene}}{K.}%
-     {M.}{M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Kleinman}}{K.}%
-     {A.~N.}{A.~N.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Kleinman}}{K.}%
-     {S.}{S.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Knapp}}{K.}%
-     {G.~R.}{G.~R.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Korienek}}{K.}%
-     {J.}{J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Kron}}{K.}%
-     {R.~G.}{R.~G.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Kunszt}}{K.}%
-     {P.~Z.}{P.~Z.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Lamb}}{L.}%
-     {D.~Q.}{D.~Q.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Lee}}{L.}%
-     {B.}{B.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Leger}}{L.}%
-     {R.~F.}{R.~F.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Limmongkol}}{L.}%
-     {S.}{S.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Lindenmeyer}}{L.}%
-     {C.}{C.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Long}}{L.}%
-     {D.~C.}{D.~C.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Loomis}}{L.}%
-     {C.}{C.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Loveday}}{L.}%
-     {J.}{J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Lucinio}}{L.}%
-     {R.}{R.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Lupton}}{L.}%
-     {R.~H.}{R.~H.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{MacKinnon}}{M.}%
-     {B.}{B.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Mannery}}{M.}%
-     {E.~J.}{E.~J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Mantsch}}{M.}%
-     {P.~M.}{P.~M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Margon}}{M.}%
-     {B.}{B.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{McGehee}}{M.}%
-     {P.}{P.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{McKay}}{M.}%
-     {T.~A.}{T.~A.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Meiksin}}{M.}%
-     {A.}{A.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Merelli}}{M.}%
-     {A.}{A.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Monet}}{M.}%
-     {D.~G.}{D.~G.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Munn}}{M.}%
-     {J.~A.}{J.~A.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Narayanan}}{N.}%
-     {V.~K.}{V.~K.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Nash}}{N.}%
-     {T.}{T.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Neilsen}}{N.}%
-     {E.}{E.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Neswold}}{N.}%
-     {R.}{R.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Newberg}}{N.}%
-     {H.~J.}{H.~J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Nichol}}{N.}%
-     {R.~C.}{R.~C.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Nicinski}}{N.}%
-     {T.}{T.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Nonino}}{N.}%
-     {M.}{M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Okada}}{O.}%
-     {N.}{N.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Okamura}}{O.}%
-     {S.}{S.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Ostriker}}{O.}%
-     {J.~P.}{J.~P.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Owen}}{O.}%
-     {R.}{R.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Pauls}}{P.}%
-     {A.~G.}{A.~G.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Peoples}}{P.}%
-     {J.}{J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Peterson}}{P.}%
-     {R.~L.}{R.~L.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Petravick}}{P.}%
-     {D.}{D.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Pier}}{P.}%
-     {J.~R.}{J.~R.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Pope}}{P.}%
-     {A.}{A.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Pordes}}{P.}%
-     {R.}{R.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Prosapio}}{P.}%
-     {A.}{A.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Rechenmacher}}{R.}%
-     {R.}{R.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Quinn}}{Q.}%
-     {T.~R.}{T.~R.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Richards}}{R.}%
-     {G.~T.}{G.~T.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Richmond}}{R.}%
-     {M.~W.}{M.~W.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Rivetta}}{R.}%
-     {C.~H.}{C.~H.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Rockosi}}{R.}%
-     {C.~M.}{C.~M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Ruthmansdorfer}}{R.}%
-     {K.}{K.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Sandford}}{S.}%
-     {D.}{D.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Schlegel}}{S.}%
-     {D.~J.}{D.~J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Schneider}}{S.}%
-     {D.~P.}{D.~P.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Sekiguchi}}{S.}%
-     {M.}{M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Sergey}}{S.}%
-     {G.}{G.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Shimasaku}}{S.}%
-     {K.}{K.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Siegmund}}{S.}%
-     {W.~A.}{W.~A.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Smee}}{S.}%
-     {S.}{S.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Smith}}{S.}%
-     {J.~A.}{J.~A.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Snedden}}{S.}%
-     {S.}{S.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Stone}}{S.}%
-     {R.}{R.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Stoughton}}{S.}%
-     {C.}{C.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Strauss}}{S.}%
-     {M.~A.}{M.~A.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Stubbs}}{S.}%
-     {C.}{C.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{SubbaRao}}{S.}%
-     {M.}{M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Szalay}}{S.}%
-     {A.~S.}{A.~S.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Szapudi}}{S.}%
-     {I.}{I.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Szokoly}}{S.}%
-     {G.~P.}{G.~P.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Thakar}}{T.}%
-     {A.~R.}{A.~R.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Tremonti}}{T.}%
-     {C.}{C.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Tucker}}{T.}%
-     {D.~L.}{D.~L.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Uomoto}}{U.}%
-     {A.}{A.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Vanden Berk}}{V.}%
-     {D.}{D.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Vogeley}}{V.}%
-     {M.~S.}{M.~S.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Waddell}}{W.}%
-     {P.}{P.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Wang}}{W.}%
-     {S.-i.}{S.-i.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Watanabe}}{W.}%
-     {M.}{M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Weinberg}}{W.}%
-     {D.~H.}{D.~H.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Yanny}}{Y.}%
-     {B.}{B.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Yasuda}}{Y.}%
-     {N.}{N.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{SDSS Collaboration}}{S.}%
-     {}{}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{Cosmology: Observations, Instrumentation: Miscellaneous}
-  \strng{namehash}{YDG+1}
-  \strng{fullhash}{YDGAJAJJEASFAJBNABJABRBSBEBWNBSBCBJWBJBRBSCLCMACFJCBCPLCAJCJHCIEDENEBREMLFXFGRFLFSFJAFMGBGJEGVKdEHMHFHHJHTMHGSHRBHSHDJHChHCHDISIITIZKSKRSJKEKMKANKSKGRKJKRGKPZLDQLBLRFLSLCLDCLCLJLRLRHMBMEJMPMMBMPMTAMAMAMDGMJANVKNTNENRNHJNRCNTNMONOSOJPORPAGPJPRLPDPJRPA}
-  \field{labelyear}{2000}
-  \field{sortinit}{Y}
-  \field{pages}{1579\bibrangedash 1587}
-  \field{title}{{The Sloan Digital Sky Survey: Technical Summary}}
-  \field{volume}{120}
-  \field{journaltitle}{\aj}
-  \field{month}{09}
-  \field{year}{2000}
 \endentry
 
 \entry{zhang14}{article}{}

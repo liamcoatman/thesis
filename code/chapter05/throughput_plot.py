@@ -6,12 +6,12 @@ def plot():
     import yaml 
     from qsosed.load import load
     import numpy as np
-    from qsosed.SEDModel import model 
+    from qsosed.sedmodel import model 
     import matplotlib.pyplot as plt 
     from qsosed.pl import pl 
     from qsosed.bb import bb
     import cosmolopy.distance as cd
-    from PlottingTools.plot_setup import figsize, set_plot_properties
+    from PlottingTools.plot_setup_thesis import figsize, set_plot_properties
     import palettable 
     from lmfit import Parameters
     from qsosed.qsrmod import qsrmod
@@ -33,7 +33,7 @@ def plot():
     redshift = 2.0
     scahal = 0.8 
     
-    with open('input.yml', 'r') as f:
+    with open('/home/lc585/qsosed/input.yml', 'r') as f:
         parfile = yaml.load(f)
     
     fittingobj = load(parfile)
@@ -45,7 +45,7 @@ def plot():
     params.add('plslp2', value = plslp2)
     params.add('plbrk', value = plbrk)
     params.add('bbt', value = bbt)
-    params.add('bbflxnrm', value = bbflxnrm)
+    params.add('bbflxnrm', value = 2.0)
     params.add('elscal', value = elscal)
     params.add('galfra', value = galfra)
     params.add('ebv', value = ebv)
@@ -69,8 +69,8 @@ def plot():
     lyctmp = fittingobj.get_lyctmp()
     whmin = fittingobj.get_whmin()
     whmax = fittingobj.get_whmax()
-    cosmo = {'omega_M_0':0.3, 'omega_lambda_0':0.7, 'h':0.7}
-    cosmo = cd.set_omega_k_0(cosmo)
+    qsomag = fittingobj.get_qsomag()
+    cosmo = fittingobj.get_cosmo()
 
     nftr = len(bp)
     
@@ -93,14 +93,14 @@ def plot():
                                 whmin,
                                 whmax,
                                 cosmo,
-                                flxcorr)
+                                flxcorr,
+                                qsomag)
            
     magtmp = flx2mag(params,wavlentmp,fluxtmp,bp,dlam,zromag,ftrlst)
 
-    fig = plt.figure(figsize=figsize(0.8))
+    fig = plt.figure(figsize=figsize(1, vscale=0.8))
     ax1 = fig.add_subplot(111)
-    ax1.loglog(wavlentmp,0.1*fluxtmp,color='black',label=r'$z=0.5$')
-    ax1.text(5272,0.3,r'$z=0.5$')
+    ax1.loglog(wavlentmp,0.5*fluxtmp,color='black',label=r'$z=0.5$')
 
     redshift = 2.0
     wavlentmp, fluxtmp = qsrmod(params,
@@ -120,11 +120,11 @@ def plot():
                                 whmin,
                                 whmax,
                                 cosmo,
-                                flxcorr)
+                                flxcorr,
+                                qsomag)
            
     magtmp = flx2mag(params,wavlentmp,fluxtmp,bp,dlam,zromag,ftrlst)
-    ax1.loglog(wavlentmp,0.5*fluxtmp,color='black',label=r'$z=2.0$')
-    ax1.text(10927,1.5,r'$z=2.0$')
+    ax1.loglog(wavlentmp,5*fluxtmp,color='black',label=r'$z=2.0$')
     
     redshift = 3.5
     wavlentmp, fluxtmp = qsrmod(params,
@@ -144,27 +144,33 @@ def plot():
                                 whmin,
                                 whmax,
                                 cosmo,
-                                flxcorr)
+                                flxcorr,
+                                qsomag)
            
     magtmp = flx2mag(params,wavlentmp,fluxtmp,bp,dlam,zromag,ftrlst)
-    ax1.loglog(wavlentmp,2.0*fluxtmp,color='black',label=r'$z=3.5$')
-    ax1.text(16766,6,r'$z=3.5$')
+    ax1.loglog(wavlentmp,50*fluxtmp,color='black',label=r'$z=3.5$')
 
-    ax1.set_xlabel(r'log($\lambda$) (${\rm \AA}$)')
-    ax1.set_ylabel(r'log($F_{\lambda}$) (Arbitary Units)')
-    ax1.loglog(wavlentmp,1.e10/wavlentmp**2,linestyle='--')
+    ax1.set_xlabel(r'log $\lambda$ [${\rm \AA}$]')
+    ax1.set_ylabel(r'log $F_{\lambda}$ [Arbitary Units]')
+    # ax1.loglog(wavlentmp,1.e10/wavlentmp**2,linestyle='--')
     ax2 = ax1.twinx()
+    ax2.set_yticks([])
     labs = ['u','g','r','i','z','Y','J','H','K','W1','W2','W3']
     colormap = plt.cm.jet 
     plt.gca().set_color_cycle([colormap(k) for k in np.linspace(0, 1.0, len(fittingobj.get_lameff())-1)])
     xpos = fittingobj.get_lameff()
     xpos[:5] = xpos[:5] - 200.0
-    xpos[5] = 9945
-    xpos[6] = 11960
-    xpos[7] = 15483
-    xpos[8] = 21183
-    xpos[9] = 30632
-    xpos[10] = 43486
+    xpos[5] = 10405
+    xpos[6] = 12505
+    xpos[7] = 16411
+    xpos[8] = 21942
+    xpos[9] = 33500
+    xpos[10] = 46027
+    xpos[11] = 112684
+
+    ax2.text(19225,3.923,r'$z=3.5$',ha='right')
+    ax2.text(11674,3.099,r'$z=2.0$',ha='right')
+    ax2.text(6735,2.135,r'$z=0.5$',ha='right')
 
     for i in range(len(bp[:-1])):
         wavtmp = ( bp[i][0,:] )  
@@ -172,13 +178,13 @@ def plot():
         ax2.plot(wavtmp,flxtmp)
         ax2.text(xpos[i],0.2,r'${}$'.format(labs[i]), ha='center')
     
-    ax2.set_ylim(0,3)
-    ax1.set_ylim(1e-3,100)
+    ax2.set_ylim(0,5)
+    ax1.set_ylim(1e-3,200)
     ax1.set_xlim(2800,190000)
     ax2.set_xlim(ax1.get_xlim())
     plt.tight_layout()
 
-    fig.savefig('/home/lc585/thesis/figures/chapter06/throughput.pdf')
+    fig.savefig('/home/lc585/thesis/figures/chapter05/throughput.pdf')
     plt.show() 
 
     return None 

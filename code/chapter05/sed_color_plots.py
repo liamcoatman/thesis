@@ -25,6 +25,7 @@ from PlottingTools.plot_setup_thesis import figsize, set_plot_properties
 from PlottingTools.truncate_colormap import truncate_colormap
 import palettable 
 from scipy.interpolate import interp1d
+from matplotlib.ticker import MaxNLocator
 
 set_plot_properties() # change style 
 
@@ -124,8 +125,8 @@ def plot():
 
 
 
-    fig1, axs1 = plt.subplots(3, 2, figsize=figsize(1.2, vscale=1), sharex=True) 
-    fig2, axs2 = plt.subplots(3, 2, figsize=figsize(1.2, vscale=1), sharex=True) 
+    fig1, axs1 = plt.subplots(3, 2, figsize=figsize(1, vscale=1.4), sharex=True) 
+    fig2, axs2 = plt.subplots(3, 2, figsize=figsize(1, vscale=1.4), sharex=True) 
 
     for i, ax in enumerate(axs1.flatten()):
 
@@ -142,7 +143,7 @@ def plot():
                 color=cs[0])
 
 
-        ax.set_ylabel(col_label[i])
+        ax.set_title(col_label[i], size=10)
     
         ax.set_ylim(np.nanmin(ydat)-0.2, np.nanmax(ydat)+0.2)
 
@@ -164,7 +165,7 @@ def plot():
                 color=cs[0])
 
 
-        ax.set_ylabel(col_label[i])
+        ax.set_title(col_label[i], size=10)
     
         ax.set_ylim(np.nanmin(ydat)-0.2, np.nanmax(ydat)+0.2)
 
@@ -205,6 +206,8 @@ def plot():
                 modarr[:,col1[i]] - modarr[:, col2[i]],
                 color=cs[1])
 
+        ax.yaxis.set_major_locator(MaxNLocator(6))
+
 
     for i, ax in enumerate(axs2.flatten()):
     
@@ -214,6 +217,8 @@ def plot():
                 modarr[:,col1[i]] - modarr[:, col2[i]],
                 color=cs[1])
 
+        ax.yaxis.set_major_locator(MaxNLocator(6))
+
 
     axs1[2, 0].set_xlabel(r'Redshift $z$')
     axs2[2, 0].set_xlabel(r'Redshift $z$')
@@ -222,6 +227,11 @@ def plot():
 
     fig1.tight_layout()
     fig2.tight_layout()
+
+    fig1.subplots_adjust(wspace=0.2, hspace=0.15)
+    fig2.subplots_adjust(wspace=0.2, hspace=0.15)
+
+
 
     fig1.savefig('/home/lc585/thesis/figures/chapter05/sed_color_plot_1.pdf')
     fig2.savefig('/home/lc585/thesis/figures/chapter05/sed_color_plot_2.pdf')

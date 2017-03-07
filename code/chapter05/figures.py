@@ -913,3 +913,34 @@ def civ_hot_dust_ratio():
     plt.show()
 
     return None 
+
+def shang_sed():
+
+    import matplotlib.pyplot as plt
+    import numpy as np
+    from scipy.constants import c
+    
+    rltab = np.genfromtxt('/home/lc585/thesis/code/chapter01/rlmsedMR.txt')
+    
+    fig = plt.figure(figsize=figsize(1, 0.8))
+    ax = fig.add_subplot(111)
+    
+    ax.plot( 1.0e10 * c / (10**rltab[:,0]), 10**rltab[:,1], color='black', label='Radio-loud' )
+       
+    ax.set_xlabel(r'Wavelength [${\rm \AA}$]')
+    ax.set_ylabel( r'log ${\lambda}f_{\lambda}$ [Arbitrary Units]')
+    
+    ax.set_xscale('log')
+    ax.set_yscale('log')
+    
+    ax.set_ylim(1e-2,12)
+    ax.set_xlim(10,10**8)
+
+    
+    plt.tight_layout()
+    
+    plt.savefig('/home/lc585/thesis/figures/chapter05/shangsed.pdf')
+
+    plt.show() 
+    
+    return None 
