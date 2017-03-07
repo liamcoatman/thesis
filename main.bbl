@@ -16,52 +16,6 @@
   {}
 \endgroup
 
-\entry{becker13}{article}{}
-  \name{author}{4}{}{%
-    {{}%
-     {{Becker}}{B.}%
-     {G.~D.}{G.~D.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Hewett}}{H.}%
-     {P.~C.}{P.~C.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Worseck}}{W.}%
-     {G.}{G.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Prochaska}}{P.}%
-     {J.~X.}{J.~X.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{intergalactic medium, quasars: absorption lines, cosmology:
-  observations, large-scale structure of Universe}
-  \strng{namehash}{BGD+1}
-  \strng{fullhash}{BGDHPCWGPJX1}
-  \field{labelyear}{2013}
-  \field{sortinit}{B}
-  \verb{doi}
-  \verb 10.1093/mnras/stt031
-  \endverb
-  \verb{eprint}
-  \verb 1208.2584
-  \endverb
-  \field{pages}{2067\bibrangedash 2081}
-  \field{title}{{A refined measurement of the mean transmitted flux in the
-  Ly{$\alpha$} forest over 2 {\lt} z {\lt} 5 using composite quasar spectra}}
-  \field{volume}{430}
-  \field{journaltitle}{\mnras}
-  \field{eprinttype}{arXiv}
-  \field{eprintclass}{astro-ph.CO}
-  \field{month}{04}
-  \field{year}{2013}
-\endentry
-
 \entry{boroson92}{article}{}
   \name{author}{2}{}{%
     {{}%

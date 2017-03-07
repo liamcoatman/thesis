@@ -148,10 +148,44 @@ The model spectrum is shown in Figure \ref{fig:modelsed}, with each of the main 
 
 Thermal accretion disk emission in the 0.1 - 1 $\mu$m region is characterised by a broken power-law with three free parameters: a break-wavelength $\lambda_{\rm break}$, a blue power-law index $\alpha_{\rm blue}$ for wavelengths shorter than the break wavelength, and a red power-law index $\alpha_{\rm red}$ for wavelengths longer than the break wavelength.
 
-
 \subsection{Balmer Continuum}
 
-See code. 
+
+
+
+
+
+
+ # Add Balmer Continuum and blur to simulate effect of bulk-velocity
+    # shifts comparable to those present in emission lines
+
+    wbcnrm = parfile['quasar']['balmercont']['wbcnrm']
+    wbedge = parfile['quasar']['balmercont']['wbedge']
+    bcnrm = parfile['quasar']['balmercont']['bcnrm']
+    tbc = parfile['quasar']['balmercont']['tbc']
+    taube = parfile['quasar']['balmercont']['taube']
+    vfwhm = parfile['quasar']['balmercont']['vfwhm']
+
+gauss = Gaussian1DKernel(stddev=psigma)
+    flux_bc = convolve(flux_bc, gauss)
+
+    """
+    inputs 
+    
+    wavlen = wavelength array 
+    tbb = balmer continuum temperature
+    fnorm = balmer continuum normalisation 
+    taube = optical depth at balmer edge 
+    wavbe = wavelength of balmer edge 
+    wnorm = arbitary normalisation wavelength  
+    relacc = related to computer precision - get rid of this 
+
+    returns flux density per unit frequency 
+
+    See https://arxiv.org/pdf/1311.6653 and Grandi (1982)
+
+    See also Shen & Liu (2012)
+
 
 \subsection{Hot Dust}
 
@@ -161,8 +195,7 @@ Thermal emission from hot dust, which dominates the \ac{SED} at wavelengths long
   F_\lambda =\frac{2 hc^2}{\lambda^5}\frac{1}{ e^{\frac{hc}{\lambda k_\mathrm{B}T}} - 1}, 
 \end{eqnarray}
 
-with two free parameters: the temperature $T_{\rm BB}$ and normalisation. 
-
+with two free parameters: the temperature $T_$ and normalisation relative to the power-law continuum. 
 
 \subsection{Emission Lines}
 
@@ -175,166 +208,87 @@ A single free parameter, EL$_{\rm scale}$, scales the equivalent widths of all e
 
 where $F_{\lambda, \rm el}$ is the line flux in the template, $F_{\lambda,\rm cont}$ is the continuum flux in the template, and $F_{\lambda}$ is the continuum flux in the model.  
 
+
+scahal = params['scahal'].value
+
+    # Normalise such that continuum flux at wavnrm equal to that
+    # of the reference continuum at wavnrm
+    inorm = wav2num(wavlen, wavnrm)
+    flux = conval[inorm] * flux / flux[inorm]
+
+    # Calculate Baldwin Effect Scaling for Halpha
+    zbenrm = parfile['quasar']['el']['zbenrm']
+    beslp = parfile['quasar']['el']['beslp']
+
+    # Line added to stop enormous BE evolution at low z 
+    zval = np.max([redshift, zbenrm]) 
+
+    # I think this is the absolute magnitude of the SDSS sample as 
+    # a function of redshift, which is not the same as how the 
+    # absolute magnitude of a object of a given flux changes 
+    # as a function of redshift 
+    qsomag_itp = interp1d(qsomag[:, 0], qsomag[:, 1])
+
+    # Absolute magnitude at redshift z minus
+    # normalisation absolute magnitude
+    vallum = qsomag_itp(zval) - qsomag_itp(zbenrm) 
+
+    # Convert to luminosity 
+    vallum = 10.0**(-0.4*vallum)
+
+    scabe = vallum**(-beslp) 
+     
+    # ftmp = np.zeros_like(flux)
+    # ftmp[:whmin] = linval[:whmin] * np.abs(elscal) * flux[:whmin] / conval[:whmin]
+    # ftmp[whmax:] = linval[whmax:] * np.abs(elscal) * flux[whmax:] / conval[whmax:]
+
+     
+    flux[:whmin] = flux[:whmin] + linval[:whmin] * np.abs(elscal) * flux[:whmin] / conval[:whmin]
+    flux[whmax:] = flux[whmax:] + linval[whmax:] * np.abs(elscal) * flux[whmax:] / conval[whmax:]
+
+    # Scaling for Ha with Baldwin effect 
+    scatmp = elscal * scahal / scabe
+    # ftmp[whmin:whmax] = linval[whmin:whmax] * np.abs(scatmp) * flux[whmin:whmax] / conval[whmin:whmax] 
+    flux[whmin:whmax] = flux[whmin:whmax] + \
+                        linval[whmin:whmax] * np.abs(scatmp) * flux[whmin:whmax] / conval[whmin:whmax] 
+
+
 \subsection{Host Galaxy}
 
 Emission from the host galaxy must be accounted for, particularly in the region around the $1\mu$m inflection point in the quasar SED. 
 We use a $z=0$ Sb template from \citet{mannucci01}, which does not evolve with redshift.
-The template $F_{\lambda, {\rm Gal}}$ is scaled by a constant factor $C$, which is a free paramter in our optimisation procedure.  
-We define a new parameter, $\eta$, the fractional contribution from the host galaxy to the total flux in the interval 4000 and 5000\AA for a quasar at redshift $z_{\rm nrm}$: 
+The template is scaled by a multiplicative factor $C$ and added to the \ac{AGN} \ac{SED}. 
+We define a new parameter, $\eta$, the fractional contribution from the host galaxy to the total flux in the interval 4000 and 5000\AA:
 
 \begin{eqnarray}
-  \label{eq:eta}
-  \eta = \frac{CF_{\rm Gal}(z_{\rm nrm})}{F_{\rm AGN}(z_{\rm nrm}) + CF_{\rm Gal}(z_{\rm nrm})}
+  \eta \equiv \frac{CF_{\rm Gal}}{F_{\rm AGN} + CF_{\rm Gal}},
 \end{eqnarray}
 
-where $F_{\rm Gal}(z_{\rm nrm})$ and $F_{\rm AGN}(z_{\rm nrm})$ are the flux of the galaxy and \ac{AGN} respectively. 
+where $F_{\rm Gal}$ and $F_{\rm AGN}$ are the flux of the galaxy and \ac{AGN} respectively. 
 Rearranging for the scaling factor $C$ gives:
 
+\begin{eqnarray}
+  C = \frac{\eta}{1 - \eta} \frac{F_{\rm AGN}}{F_{\rm Gal}}.
+\end{eqnarray}
 
-
-
-
-
-
-
-
-The host galaxy luminosity $L_{\rm Gal}$ as a fraction of the \ac{AGN} luminosity $L_{\rm AGN}$ decreases as the \ac{AGN} luminosity increases. 
-Our quasar sample is flux limited, and so the typical \ac{AGN} luminosity increases as a function of redshift. 
-
-
-
-
-
-
-We characterise this relation by scaling the host galaxy fraction with a power-law
-
-
-We characterise the relationship between the luminosity of the AGN  and the luminosity of the host galaxy  as a power-law
+The fractional contribution to the total emission coming from the host galaxy changes as a function of the \ac{AGN} luminosity and, in a flux-limited sample, the mean \ac{AGN} luminosity increases as the redshift increases. 
+We parameterize the \ac{AGN} luminosity dependence of the host galaxy luminosity as a power-law:
 
 \begin{eqnarray}
   \label{eq:lgal}
-  L_{\rm Gal} = L_{\rm AGN}^{\beta} 
+  \frac{L_{\rm Gal}}{L_{\rm AGN}} &=& L_{\rm AGN}^{\beta - 1} 
 \end{eqnarray}
 
-with power-law index fixed at $\beta=0.42$ \citep{maddox06}.
-\todo{Check this is what I use.} 
-Dividing both sides of Equations \ref{eq:lgal} by the luminosity of the AGN gives the luminosity of the host galaxy relative to the luminosity of the AGN
+with slope $\beta=0.42$ \citep{maddox06}. 
+The galaxy scaling factor $C$ becomes 
 
 \begin{eqnarray}
-  \frac{L_{\rm Gal}}{L_{\rm AGN}} = L_{\rm AGN}^{\beta - 1} 
+  C &=& \frac{\eta}{1 - \eta} \frac{F_{\rm AGN}}{F_{\rm Gal}} \left[ \frac{ L_{\rm Gal}(z)} {L_{\rm AGN}(z)} \right] \left[ \frac{ L_{\rm Gal}(z_{\rm nrm})} {L_{\rm AGN}(z_{\rm nrm})} \right]^{-1} \\
+  &=& \frac{\eta}{1 - \eta} \frac{F_{\rm AGN}}{F_{\rm Gal}} \left[ \frac{L_{\rm AGN(z)}} {L_{\rm AGN(z_{\rm nrm}})} \right]^{\beta -1}, 
 \end{eqnarray}
 
-which for $\beta < 1$ decreases with increasing AGN luminosity. 
-
-Take typical AGN luminosity as a function of redshift. 
-
-In a flux limited sample, the AGN luminosity will tend to increase with redshift and so the luminosity of the host galaxy relative to the luminosity of the quasar will decrease with increasing redshift. 
-Hence, the contribution from the host galaxy to the total flux is important at low redshift, but becomes gradually less significant towards higher redshifts. 
-
-We choose a reference redshift $z_{\rm nrm}$ at which the fractional contribution of the host galaxy to the total flux is determined.
-If $\eta$ is the fractional contribution of the host galaxy to the total flux, then the galaxy spectrum must be scaled by the multiplicative factor $C$ in 
-
-
-
-
-
-where the scaling factor $C$ is ter the factor by which we must multiply the unnormalised galaxy spectrum in order for Equation \ref{eq:eta} to hold true. 
-Rearranging for the constant $C$ we find
-
- 
-Hence at redshift $z_{\rm nrm}$ the host galaxy flux we add to our rest frame quasar continuum is 
-
-\begin{eqnarray}
-  \label{eq:flambda}
-  F_{\lambda} = \frac{\eta}{1 - \eta} \frac{F_{\rm AGN}(z_{\rm nrm})}{F_{\rm Gal}(z_{\rm nrm})} F_{\lambda,{\rm Gal}}
-\end{eqnarray}
-
-where $F_{\lambda,{\rm Gal}}$ is our host galaxy template spectrum in the quasar rest frame. 
-The contribution from the host galaxy at a different redshift $z$ is given by  
-
-\begin{eqnarray}
-  F_{\lambda} & = & \frac{\eta}{1 - \eta} \frac{F_{\rm AGN}(z)}{F_{\rm Gal}(z)} \frac{F_{\rm AGN}(z_{\rm nrm})}{F_{\rm Gal}(z_{\rm nrm})} \left( \frac{F_{\rm AGN}(z)}{F_{\rm Gal}(z)} \right)^{-1}  F_{\lambda,{\rm Gal}} \\ 
-& = &  \frac{\eta}{1 - \eta} \frac{F_{\rm AGN}(z)}{F_{\rm Gal}(z)} \frac{F_{\rm AGN}(z_{\rm nrm})}{F_{\rm Gal}(z_{\rm nrm})}  \frac{F_{\rm Gal}(z)}{F_{\rm AGN}(z)}   F_{\lambda,{\rm Gal}} \\ & = &  \frac{\eta}{1 - \eta} \frac{F_{\rm AGN}(z)}{F_{\rm Gal}(z)} \frac{L_{\rm AGN}(z_{\rm nrm})}{L_{\rm Gal}(z_{\rm nrm})}  \frac{L_{\rm Gal}(z)}{L_{\rm AGN}(z)}  F_{\lambda,{\rm Gal}}  \\ & = & \frac{\eta}{1 - \eta} \frac{F_{\rm AGN}(z)}{F_{\rm Gal}(z)} \frac{L_{\rm AGN}(z_{\rm nrm})}{L_{\rm AGN}(z_{\rm nrm})^\beta}  \frac{L_{\rm AGN}(z)^\beta}{L_{\rm AGN}(z)}  F_{\lambda,{\rm Gal}} \\ & = &  \frac{\eta}{1 - \eta} \frac{F_{\rm AGN}(z)}{F_{\rm Gal}(z)} \left( \frac{L_{\rm AGN}(z)}{L_{\rm AGN}(z_{\rm nrm})} \right)^{\beta - 1}  F_{\lambda,{\rm Gal}}
-\end{eqnarray}
-
-We need to know how the luminosity of the AGN depends on redshift. 
-This is given by:
-
-\begin{eqnarray}
-  \frac{L_{\rm AGN}(z)}{L_{\rm AGN}(z_{\rm nrm})} = 10^{-0.4(M_{\rm AGN}(z)-M_{\rm AGN}(z_{\rm nrm}))}
-\end{eqnarray}
-
-where $M_{\rm AGN}(z)$, the absolute magnitude of an AGN at redshift $z$, is given by
-
-\begin{eqnarray}
-  M(z) = m - 5({\rm log_{10}}D_{\rm L}(z) - 1)
-\end{eqnarray}
-
-and $D_{\rm L}(z)$ is the luminosity distance to a source at redshift $z$ in parsecs. 
-Hence:
-
-\begin{eqnarray}
-  \frac{L_{\rm AGN}(z)}{L_{\rm AGN}(z_{\rm nrm})} & = & 10^{-0.4(M_{\rm AGN}(z)-M_{\rm AGN}(z_{\rm nrm}))} \\
-  & = & 10^{({\rm log_{10}} \left( \frac{D_{\rm L}(z)}{D_{\rm L}(z_{\rm nrm})} \right)^2 )}
-\end{eqnarray}
-
-\subsection{Lyman-$\alpha$ Forest Absorption}
-\todo{As Paul how he implements this. My code for this can easily be sped up.}
-
-The optical spectra of high redshift quasars show hundreds of sharp absorption lines, which mostly correspond to the redshifted neutral hydrogen Ly$\alpha$ 1216\AA~transition. 
-These absorption features are collectively referred to as the {\it Lyman-$\alpha$ forest}. 
-To simulate the effect of Lyman-$\alpha$ forest absorption on our model SED we use the parametrisation of \citet{becker13}, who derived an analytic function for the effective optical depth $\tau_{\rm eff}$ over the redshift range 2 $< z <$ 5 made using 6065 quasar spectra from SDSS DR7. 
-In their model the effective optical depth $\tau_{\rm eff}$ is given by 
-
-\begin{eqnarray}
-  \label{eq:taueff}
-  \tau_{\rm eff} & = & \tau_0 \times ( \left( \frac{ 1 + z }{ 1 + z_0 } \right)^b + C )
-\end{eqnarray}
-
-where,
-
-\begin{eqnarray*}
-  t_0 & = & 0.751 \\
-  b & = & 2.9 \\
-  C & = & -0.132 \\
-  z_0 & = & 3.5 
-\end{eqnarray*}
-
-The transmitted flux $F_{\lambda,{\rm trans}}$ at redshift $z$ is then given by 
-
-\begin{eqnarray}
-  \label{eq:ftrans}
-  f_{\lambda,{\rm trans}} = F_\lambda \times e^{ -\tau_{\rm eff} }
-\end{eqnarray}
-
-An absorption line at $\lambda_{\rm abs}$ in the rest-frame of an AGN at redshift $z_{\rm AGN}$ has wavelength 
-
-\begin{eqnarray}
-  (1 + z_{\rm AGN})\lambda_{\rm abs} 
-\end{eqnarray}
-
-in the rest frame of an observer on Earth. 
-In the rest-frame of a cloud of neutral hydrogen at redshift $z_{\rm cloud}$ the absorption line has wavelength 
-
-\begin{eqnarray}
-  \frac{ (1 + z_{\rm AGN}) \lambda_{\rm abs} } { (1 + z_{\rm cloud}) }
-\end{eqnarray}
-
-and so to absorb Lyman-$\alpha$ at 1216 \AA~ the gas cloud must be at a redshift
-
-\begin{eqnarray}
-  \label{eq:zcloud}
-  z_{\rm cloud} = \frac{ (1 + z_{\rm AGN}) \lambda_{\rm abs} } { 1216{\rm \AA} } - 1
-\end{eqnarray}
-
-For every wavelength $\lambda_{\rm abs} < 1216$ \AA~ in the rest-frame of an AGN at redshift $z > 2$ we calculate $z_{\rm cloud}$ using Equation \ref{eq:zcloud} and then calculate the transmitted flux at $\lambda_{\rm abs}$ by substituting $z_{\rm cloud}$ in to Equations \ref{eq:taueff} and \ref{eq:ftrans}. 
-
-\subsection{Lyman-Limit Systems}
-
-\todo{Ask Paul if this should be implemented}
-{\it Lyman-limit systems} are clouds of HI which are optically thick at the Lyman limit ($912$\AA), which generally implies a neutral hydrogen column density $N(HI) > 10^{17} {\rm cm}^{-2}$. 
-Photons at wavelengths shorter than the Lyman-limit will be absorbed, which creates a sharp break in the observed continuum. 
-We model the effect of a Lyman-limit system at the redshift of the quasar by setting the flux at wavelengths less that 912\AA~ in the quasar rest frame to zero.   
+where $z_{\rm nrm}$ is an arbitary redshift at which the fractional contribution from the host galaxy is by definition $\eta$. 
+The redshift dependence of the mean \ac{AGN} luminosity for the SDSS quasar catalogue has been determined empirically, and is used to compute the term in the square brackets. 
 
 \subsection{Dust Extinction}
 \label{sec:sed-extinction} 
