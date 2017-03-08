@@ -731,6 +731,32 @@
   \field{year}{2007}
 \endentry
 
+\entry{grandi82}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {{Grandi}}{G.}%
+     {S.~A.}{S.~A.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Astronomical Spectroscopy, Balmer Series, Quasars, Spectrophotometry,
+  Ultraviolet Spectra, Cosmic Dust, Interstellar Extinction, Iron, Optical
+  Thickness}
+  \strng{namehash}{GSA1}
+  \strng{fullhash}{GSA1}
+  \field{labelyear}{1982}
+  \field{sortinit}{G}
+  \verb{doi}
+  \verb 10.1086/159799
+  \endverb
+  \field{pages}{25\bibrangedash 38}
+  \field{title}{{The 3000 A bump in quasars}}
+  \field{volume}{255}
+  \field{journaltitle}{\apj}
+  \field{month}{04}
+  \field{year}{1982}
+\endentry
+
 \entry{hao10}{article}{}
   \name{author}{16}{}{%
     {{}%

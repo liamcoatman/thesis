@@ -150,41 +150,15 @@ Thermal accretion disk emission in the 0.1 - 1 $\mu$m region is characterised by
 
 \subsection{Balmer Continuum}
 
+High order Balmer lines, optically thin Balmer continuum emission, two-photon emission and \ion{Fe}{II} emission blend together to for a distinct feature in quasar spectra at $\sim3000$\AA. 
+We simulate the Balmer continuum we use the empirical model given by \citet{grandi82}: 
 
+\begin{equation}
+  F(\lambda) = C \times B_\lambda(T_e)(1-e^{-\tau_\lambda}); \qquad \lambda \leq \lambda_{\rm BE}
+\end{equation}
 
-
-
-
-
- # Add Balmer Continuum and blur to simulate effect of bulk-velocity
-    # shifts comparable to those present in emission lines
-
-    wbcnrm = parfile['quasar']['balmercont']['wbcnrm']
-    wbedge = parfile['quasar']['balmercont']['wbedge']
-    bcnrm = parfile['quasar']['balmercont']['bcnrm']
-    tbc = parfile['quasar']['balmercont']['tbc']
-    taube = parfile['quasar']['balmercont']['taube']
-    vfwhm = parfile['quasar']['balmercont']['vfwhm']
-
-gauss = Gaussian1DKernel(stddev=psigma)
-    flux_bc = convolve(flux_bc, gauss)
-
-    """
-    inputs 
-    
-    wavlen = wavelength array 
-    tbb = balmer continuum temperature
-    fnorm = balmer continuum normalisation 
-    taube = optical depth at balmer edge 
-    wavbe = wavelength of balmer edge 
-    wnorm = arbitary normalisation wavelength  
-    relacc = related to computer precision - get rid of this 
-
-    returns flux density per unit frequency 
-
-    See https://arxiv.org/pdf/1311.6653 and Grandi (1982)
-
-    See also Shen & Liu (2012)
+where $C$ is a normalisation factor, $B_\lambda(T_e)$ is the Planck function, $T_e=13150$K is the effective temperature, $\lambda_{\rm BE}=3460$\AA\, is the Balmer edge, $\tau_\lambda = \tau_{BE}\left( \nicefrac{\lambda_{BE}} {\lambda} \right)^{-3}$ is the optical depth with $\tau_{\rm BE}=45$ the optical depth at $\lambda_{\rm BE}$. 
+This function is convolved with a Gaussian with $\sigma=5000$\kms to simulate the effect of bulk velocity shifts comparable to those present in broad quasar emission lines. 
 
 
 \subsection{Hot Dust}
@@ -195,7 +169,7 @@ Thermal emission from hot dust, which dominates the \ac{SED} at wavelengths long
   F_\lambda =\frac{2 hc^2}{\lambda^5}\frac{1}{ e^{\frac{hc}{\lambda k_\mathrm{B}T}} - 1}, 
 \end{eqnarray}
 
-with two free parameters: the temperature $T_$ and normalisation relative to the power-law continuum. 
+with two free parameters: the temperature $T$ and normalisation relative to the power-law continuum. 
 
 \subsection{Emission Lines}
 
@@ -209,48 +183,48 @@ A single free parameter, EL$_{\rm scale}$, scales the equivalent widths of all e
 where $F_{\lambda, \rm el}$ is the line flux in the template, $F_{\lambda,\rm cont}$ is the continuum flux in the template, and $F_{\lambda}$ is the continuum flux in the model.  
 
 
-scahal = params['scahal'].value
+% scahal = params['scahal'].value
 
-    # Normalise such that continuum flux at wavnrm equal to that
-    # of the reference continuum at wavnrm
-    inorm = wav2num(wavlen, wavnrm)
-    flux = conval[inorm] * flux / flux[inorm]
+%     # Normalise such that continuum flux at wavnrm equal to that
+%     # of the reference continuum at wavnrm
+%     inorm = wav2num(wavlen, wavnrm)
+%     flux = conval[inorm] * flux / flux[inorm]
 
-    # Calculate Baldwin Effect Scaling for Halpha
-    zbenrm = parfile['quasar']['el']['zbenrm']
-    beslp = parfile['quasar']['el']['beslp']
+%     # Calculate Baldwin Effect Scaling for Halpha
+%     zbenrm = parfile['quasar']['el']['zbenrm']
+%     beslp = parfile['quasar']['el']['beslp']
 
-    # Line added to stop enormous BE evolution at low z 
-    zval = np.max([redshift, zbenrm]) 
+%     # Line added to stop enormous BE evolution at low z 
+%     zval = np.max([redshift, zbenrm]) 
 
-    # I think this is the absolute magnitude of the SDSS sample as 
-    # a function of redshift, which is not the same as how the 
-    # absolute magnitude of a object of a given flux changes 
-    # as a function of redshift 
-    qsomag_itp = interp1d(qsomag[:, 0], qsomag[:, 1])
+%     # I think this is the absolute magnitude of the SDSS sample as 
+%     # a function of redshift, which is not the same as how the 
+%     # absolute magnitude of a object of a given flux changes 
+%     # as a function of redshift 
+%     qsomag_itp = interp1d(qsomag[:, 0], qsomag[:, 1])
 
-    # Absolute magnitude at redshift z minus
-    # normalisation absolute magnitude
-    vallum = qsomag_itp(zval) - qsomag_itp(zbenrm) 
+%     # Absolute magnitude at redshift z minus
+%     # normalisation absolute magnitude
+%     vallum = qsomag_itp(zval) - qsomag_itp(zbenrm) 
 
-    # Convert to luminosity 
-    vallum = 10.0**(-0.4*vallum)
+%     # Convert to luminosity 
+%     vallum = 10.0**(-0.4*vallum)
 
-    scabe = vallum**(-beslp) 
+%     scabe = vallum**(-beslp) 
      
-    # ftmp = np.zeros_like(flux)
-    # ftmp[:whmin] = linval[:whmin] * np.abs(elscal) * flux[:whmin] / conval[:whmin]
-    # ftmp[whmax:] = linval[whmax:] * np.abs(elscal) * flux[whmax:] / conval[whmax:]
+%     # ftmp = np.zeros_like(flux)
+%     # ftmp[:whmin] = linval[:whmin] * np.abs(elscal) * flux[:whmin] / conval[:whmin]
+%     # ftmp[whmax:] = linval[whmax:] * np.abs(elscal) * flux[whmax:] / conval[whmax:]
 
      
-    flux[:whmin] = flux[:whmin] + linval[:whmin] * np.abs(elscal) * flux[:whmin] / conval[:whmin]
-    flux[whmax:] = flux[whmax:] + linval[whmax:] * np.abs(elscal) * flux[whmax:] / conval[whmax:]
+%     flux[:whmin] = flux[:whmin] + linval[:whmin] * np.abs(elscal) * flux[:whmin] / conval[:whmin]
+%     flux[whmax:] = flux[whmax:] + linval[whmax:] * np.abs(elscal) * flux[whmax:] / conval[whmax:]
 
-    # Scaling for Ha with Baldwin effect 
-    scatmp = elscal * scahal / scabe
-    # ftmp[whmin:whmax] = linval[whmin:whmax] * np.abs(scatmp) * flux[whmin:whmax] / conval[whmin:whmax] 
-    flux[whmin:whmax] = flux[whmin:whmax] + \
-                        linval[whmin:whmax] * np.abs(scatmp) * flux[whmin:whmax] / conval[whmin:whmax] 
+%     # Scaling for Ha with Baldwin effect 
+%     scatmp = elscal * scahal / scabe
+%     # ftmp[whmin:whmax] = linval[whmin:whmax] * np.abs(scatmp) * flux[whmin:whmax] / conval[whmin:whmax] 
+%     flux[whmin:whmax] = flux[whmin:whmax] + \
+%                         linval[whmin:whmax] * np.abs(scatmp) * flux[whmin:whmax] / conval[whmin:whmax] 
 
 
 \subsection{Host Galaxy}
