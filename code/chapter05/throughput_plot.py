@@ -157,7 +157,6 @@ def plot():
     ax2.set_yticks([])
     labs = ['u','g','r','i','z','Y','J','H','K','W1','W2','W3']
     colormap = plt.cm.jet 
-    plt.gca().set_color_cycle([colormap(k) for k in np.linspace(0, 1.0, len(fittingobj.get_lameff())-1)])
     xpos = fittingobj.get_lameff()
     xpos[:5] = xpos[:5] - 200.0
     xpos[5] = 10405
@@ -172,10 +171,16 @@ def plot():
     ax2.text(11674,3.099,r'$z=2.0$',ha='right')
     ax2.text(6735,2.135,r'$z=0.5$',ha='right')
 
+    
+    color_idx = np.linspace(0, 1, 12)
+    
+    from palettable.colorbrewer.diverging import Spectral_11
+
     for i in range(len(bp[:-1])):
         wavtmp = ( bp[i][0,:] )  
         flxtmp = bp[i][1,:] / np.max(bp[i][1,:])
-        ax2.plot(wavtmp,flxtmp)
+        ax2.plot(wavtmp,flxtmp,color=Spectral_11.mpl_colormap(color_idx[i]))
+        ax2.fill_between(wavtmp, flxtmp, alpha=0.2, facecolor=Spectral_11.mpl_colormap(color_idx[i]))
         ax2.text(xpos[i],0.2,r'${}$'.format(labs[i]), ha='center')
     
     ax2.set_ylim(0,5)
