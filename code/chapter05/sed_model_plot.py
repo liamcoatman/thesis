@@ -14,6 +14,7 @@ from qsosed.bc import bc
 import astropy.constants as const
 from astropy.convolution import Gaussian1DKernel, convolve
 from scipy.interpolate import interp1d
+import os 
 
 set_plot_properties() # change style 
 cs = palettable.colorbrewer.qualitative.Set1_9.mpl_colors
@@ -37,13 +38,6 @@ def plot():
     galspc = fittingobj.get_galspc()
 
     wavlen = fittingobj.get_wavlen()
-    flxcorr = np.array( [1.0] * len(wavlen) ) 
-
-
-    magtmp, wavlentmp, fluxtmp = model(redshift=redshift,
-                                       parfile=parfile)
-    
-    
 
     fig, ax = plt.subplots(figsize=figsize(1, vscale=0.9))
         
@@ -282,7 +276,6 @@ def plot():
     flux = flux + cscale * scagal * galspc 
 
 
-    ax.plot(wavlen, wavlen*flux, color='black')
     ax.plot(wavlen[:wavnumbrk], wavlen[:wavnumbrk]*flux_pl[:wavnumbrk], color=cs[1], label='Accretion Disc')
     ax.fill_between(wavlen[:wavnumbrk], wavlen[:wavnumbrk]*flux_pl[:wavnumbrk], facecolor=cs[1], alpha=0.2)
     ax.plot(wavlen[wavnumbrk:], wavlen[wavnumbrk:]*flux_pl[wavnumbrk:], color=cs[0], label='Accretion Disc')
@@ -293,6 +286,16 @@ def plot():
     ax.fill_between(wavlen, wavlen*(flux_bb), facecolor=cs[4], alpha=0.2)
     ax.plot(wavlen, wavlen*(flux_gal), color=cs[3], label='Galaxy')
     ax.fill_between(wavlen, wavlen*(flux_gal), facecolor=cs[3], alpha=0.2)
+
+     
+    ax.plot(wavlen, wavlen*flux, color='grey', label='Total')
+    flxcorr = np.genfromtxt(os.path.join('/home/lc585/qsosed', 'flxcorr.dat'))
+    f = interp1d(flxcorr[:, 0], flxcorr[:, 1], bounds_error=False, fill_value=1.0)
+    flxcorr = f(wavlen) 
+    ax.plot(wavlen, wavlen*flux*flxcorr, color='black', label='Total (Corrected)') 
+
+
+
 
     ax.legend() 
 

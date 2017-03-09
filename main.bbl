@@ -16,33 +16,47 @@
   {}
 \endgroup
 
-\entry{boroson92}{article}{}
-  \name{author}{2}{}{%
+\entry{allen11}{article}{}
+  \name{author}{5}{}{%
     {{}%
-     {{Boroson}}{B.}%
-     {T.~A.}{T.~A.}%
+     {{Allen}}{A.}%
+     {J.~T.}{J.~T.}%
      {}{}%
      {}{}}%
     {{}%
-     {{Green}}{G.}%
-     {R.~F.}{R.~F.}%
+     {{Hewett}}{H.}%
+     {P.~C.}{P.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Maddox}}{M.}%
+     {N.}{N.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Richards}}{R.}%
+     {G.~T.}{G.~T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Belokurov}}{B.}%
+     {V.}{V.}%
      {}{}%
      {}{}}%
   }
-  \keyw{Emission Spectra, Line Spectra, Quasars, Seyfert Galaxies, Astronomical
-  Spectroscopy, Computational Astrophysics, Principal Components Analysis, Red
-  Shift, Sky Surveys (Astronomy)}
-  \strng{namehash}{BTAGRF1}
-  \strng{fullhash}{BTAGRF1}
-  \field{labelyear}{1992}
-  \field{sortinit}{B}
-  \field{pages}{109\bibrangedash 135}
-  \field{title}{{The emission-line properties of low-redshift quasi-stellar
-  objects}}
-  \field{volume}{80}
-  \field{journaltitle}{\apjs}
-  \field{month}{05}
-  \field{year}{1992}
+  \keyw{methods: data analysis, galaxies: active, galaxies: nuclei, quasars:
+  absorption lines, galaxies: statistics}
+  \strng{namehash}{AJT+1}
+  \strng{fullhash}{AJTHPCMNRGTBV1}
+  \field{labelyear}{2011}
+  \field{sortinit}{A}
+  \field{pages}{860\bibrangedash 884}
+  \field{title}{{A strong redshift dependence of the broad absorption line
+  quasar fraction}}
+  \field{volume}{410}
+  \field{journaltitle}{\mnras}
+  \field{month}{01}
+  \field{year}{2011}
 \endentry
 
 \entry{bowler14}{article}{}

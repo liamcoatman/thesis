@@ -944,3 +944,31 @@ def shang_sed():
     plt.show() 
     
     return None 
+
+def lum_z():
+
+    fig, ax = plt.subplots(figsize=figsize(1, 0.8)) 
+
+    # Created by DefiningSample.ipynb 
+    t = Table.read('/data/lc585/SDSS/matched_catalogue.fits')
+
+    t = t[t['LOGLBOL'] > 20]
+    
+    ax.plot(t['Z_HEWETT'], 
+            t['LOGLBOL'], 
+            linestyle='', 
+            marker='o',
+            markersize=1,
+            markerfacecolor=cs[1],
+            markeredgecolor='None')
+
+    ax.set_ylim(44.5, None)
+
+    ax.set_xlabel(r'Redshift $z$')
+    ax.set_ylabel(r'Log L$_{\rm Bol}$ [erg~$\rm{s}^{-1}$]')
+
+    plt.tight_layout()
+    
+    plt.savefig('/home/lc585/thesis/figures/chapter05/lum_z.pdf')
+
+    plt.show() 

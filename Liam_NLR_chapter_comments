@@ -1,0 +1,33 @@
+General thought when reading through this chapter is that there is clearly a lot of content but I think the chapter could do with some re-structuring and re-organising to make it a bit more focussed in terms of the overall interesting scientific result that is being presented. My view is that you really aren’t starved for content for your thesis and I would vote for moving some of the things to “Discussions/Future Work” and possibly even removing some of the content to make things clearer. 
+
+The way I see this chapter is that you are trying to demonstrate four key things:
+
+1. This is the largest study of NLR properties in high-L, high-z Type 1 quasars conducted 
+2. The spectra you have and the methods you have developed allow you to estimate NLR line properties e.g. centroids, line-widths, velocities robustly for a significant proportion of the sample
+3. Using your large sample you extend the dynamic range and confirm previously seen trends in terms of the luminosity and redshift evolution of [OIII] line properties as well as the relationship between [OIII] and EV1
+4. You uncover a new and potentially very interesting correlation between CIV outflows and [OIII] outflows even after properly accounting for above trends. 
+
+With this in mind, I think you could maybe re-jig the text and also title your sections and sub-sections to lead the reader through these points. This might be better than having subsections called Results: Gaussian fits, Results: Equivalent Widths etc. 
+
+There is currently a fair bit of text following the introduction of the Gaussian fitting method, which concerns the flagging of low SNR sources, the flux calibration of the spectra etc. all of which are also relevant for the ICA fitting. It may be that the SNR threshold you can go down to with the ICA is lower, but nevertheless, some kind of SNR cut will undoubtedly need to be made. Then the text regarding the reliability of the redshift estimates comes much later in the Chapter whereas this is something I would want to know earlier on. 
+
+The ICA stuff is all really nice and looks very promising. However, I am still a little bit concerned about using only the three [OIII] components to reconstruct the line and how reliable that is. We previously discussed some of the systematic differences between the line-width estimates from the Gaussian reconstructions and the ICA reconstructions, particularly for broad-line objects and this is currently not really discussed in the Chapter. Also the current way of doing the ICA reconstruction of the [OIII] line ignores any cross-talk between the components and, as you point out at the end of Section 1.3.6.1, there is potentially flux being ascribed to the line that could be coming from some other component. I'm sure a lot of this could be solved quite easily e.g. by Paul finding some more representative broad [OIII] lines in SDSS from which to derive the components as well as producing a set of components for [OIII] only. However I don't think you necessarily need this for the purposes of this thesis. 
+
+My vote would be to focus on the Gaussian reconstructions only for the thesis in order to demonstrate the main results. This is standard methodology adopted by many papers in the literature. I would then show the trends with luminosity, redshift and EV1 before moving on to your most interesting result which is the CIV-OIII outflows correlation (I am assuming Fig. 1.19 looks very similar if you use Gaussian versus ICA estimates of v10?). Currently I think the CIV-OIII outflows result comes very late in the chapter. Also, you could put some more text and maybe a figure to explicitly demonstrate that the trend remains even after you have accounted for the trends with luminosity. This is the highlight result for me and personally I think needs a little more fleshing out.  
+
+Then having presented the main results, I would go on to discuss the limitations of the Gaussian approach - e.g. FeII can't be properly subtracted in many cases - and use this as an intro to the much more flexible ICA method. You could then have a much briefer description of the ICA reconstructions and present this more as work in progress. You could show that your main results (as above) still hold with the ICA (e.g. Figs 1.15, 1.16, 1.17) and that this allows you to solve the FeII problem and push to lower SNR. Finally, you could discuss some of the potential improvements to the ICA components that would allow the derived line properties from the ICA to become even more robust. 
+
+In the same vein some of the ideas of about using the ICA components to create a mapping to EV1 (Section 1.4.3.2) are really nice but I feel not really fully developed here. Once again, I would be tempted to just present this as an idea for future work right at the end rather than having this sandwiched in the middle. 
+
+Some more minor things:
+
+- Definitely need some more details about low-z composite at the end of Section 1.3.1. Is this really representative of your high-z sample in terms of line properties?
+- Need some discussion on how much v95 and v05 in particular depend on SNR. You have some discussion about making sure w80 is robust to SNR changes. Did you also do similar tests for v95, v05, v10 etc?
+- Section 1.4.2.1 - when looking at trends in [OIII] with luminosity and redshift by combining your sample with other literature samples, need some discussion about potenial selection biases in these samples e.g. Zakamska & Green objects are obscured. Does this make a difference? Also, many studies only present detections and do not publish non-detections... I thought there were some Type 1 quasars at low-z with [OIII] measurements from Shen? but I could be wrong..
+- Section 1.7 - might be useful to estimate a timescale for how long the NLR would take to be cleared given typical size of galaxy and velocity of outflow
+- Section 1.7.1 - Wasn't too sure about what this section was trying to say... Have you considered the SDSS Type 2 samples from e.g. Alexandroff et al. ? (http://adsabs.harvard.edu/abs/2013MNRAS.435.3306A). I thought those were pretty luminous, narrow-line objects? 
+
+
+
+Introduce ICA at end. 
+Give examples of FeII poor fit and low S/N - effectively constraints on parameters. 
