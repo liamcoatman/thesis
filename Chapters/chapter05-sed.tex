@@ -161,42 +161,42 @@ with two free parameters: the temperature $T_{\rm BB}$ and normalisation.
 
 \subsection{Emission Lines}
 
-We use an emission line template taken from \citet{maddox06}, who extend the composite of \citet{francis91} to include the H$\alpha$ (6560\AA) and Pa$\alpha$ (18750\AA) emission lines. 
-All emission lines, with the exception of \hans, are scaled using a single free parameter $C$, which preserves relative equivalent widths:
+We use an emission line template taken from \citet{francis91}, which has been extended by \citet{maddox06} to include the \hans and Pa$\alpha$ emission lines. 
+All emission lines, with the exception of \hans, are scaled using a single free parameter $C_{\rm EL}$, which preserves relative equivalent widths:
 
 \begin{eqnarray}
-  F_{\lambda} =  C \times \frac{F_{\lambda, \rm el}}{F_{\lambda, \rm cont}} \times F_{\lambda} ; \quad \lambda < 4700{\rm \AA} \;{\rm and}\; \lambda > 7000{\rm \AA} 
+  F_{\lambda} =  C_{\rm EL} \times \frac{F_{\lambda, \rm el}}{F_{\lambda, \rm cont}} \times F_{\lambda} ; \quad \lambda < 4700{\rm \AA} \;{\rm and}\; \lambda > 7000{\rm \AA} 
 \end{eqnarray} 
 
 where $F_{\lambda, \rm el}$ is the emission line template, $F_{\lambda,\rm cont}$ is the continuum flux in the template, and $F_{\lambda}$ is the continuum flux in the \ac{SED} model.  
-\hans, which in general is very strong, is scaled separately.
-We also include a Baldwin effect scaling for \hans. 
+\hans, one of the strongest broad emission lines, is scaled separately: 
 
 \begin{equation}
-  F_{\lambda} =  C \times C_{{\rm H} \alpha} \times \left( \frac{L(z)} {L(z_{\rm nrm})} \right)^{-\beta} \times \frac{F_{\lambda, \rm el}}{F_{\lambda, \rm cont}} \times F_{\lambda}; \quad 4700{\rm \AA} < \lambda < 7000{\rm \AA} 
+  F_{\lambda} =  C_{\rm EL} \times C_{{\rm H} \alpha} \times \left( \frac{L(z)} {L(z_{\rm nrm})} \right)^{-\beta} \times \frac{F_{\lambda, \rm el}}{F_{\lambda, \rm cont}} \times F_{\lambda}; \quad 4700{\rm \AA} < \lambda < 7000{\rm \AA} 
 \end{equation}
 
-where $\beta=0.04$. 
+The luminosity dependence of the \ha EQW (i.e. the Baldwin effect) is parametrised with a simple power-law with slope $\beta=0.04$.
+The redshift dependence of the mean \ac{AGN} luminosity $L(z)$ for the SDSS quasar catalogue has been determined empirically.
 
 \subsection{Host Galaxy}
 
-Emission from the host galaxy must be accounted for, particularly in the region around the $1\mu$m inflection point in the quasar SED. 
+Emission from the host galaxy is important for \ac{AGN} at redshifts $z\lesssim1$, particularly in the region around the $1\mu$m inflection point in the quasar \ac{SED}. 
 We use a $z=0$ Sb template from \citet{mannucci01}, which does not evolve with redshift.
-The template is scaled by a multiplicative factor $C$ and added to the \ac{AGN} \ac{SED}. 
+The template is scaled by a multiplicative factor $C_{\rm Gal}$ and added to the \ac{AGN} \ac{SED}. 
 We define a new parameter, $\eta$, the fractional contribution from the host galaxy to the total flux in the interval 4000 and 5000\AA:
 
 \begin{eqnarray}
-  \eta \equiv \frac{CF_{\rm Gal}}{F_{\rm AGN} + CF_{\rm Gal}},
+  \eta \equiv \frac{C_{\rm Gal}F_{\rm Gal}}{F_{\rm AGN} + C_{\rm Gal}F_{\rm Gal}},
 \end{eqnarray}
 
 where $F_{\rm Gal}$ and $F_{\rm AGN}$ are the flux of the galaxy and \ac{AGN} respectively. 
-Rearranging for the scaling factor $C$ gives:
+Rearranging for the scaling factor $C_{\rm Gal}$ gives:
 
 \begin{eqnarray}
-  C = \frac{\eta}{1 - \eta} \frac{F_{\rm AGN}}{F_{\rm Gal}}.
+  C_{\rm Gal} = \frac{\eta}{1 - \eta} \frac{F_{\rm AGN}}{F_{\rm Gal}}.
 \end{eqnarray}
 
-The fractional contribution to the total emission coming from the host galaxy changes as a function of the \ac{AGN} luminosity and, in a flux-limited sample, the mean \ac{AGN} luminosity increases as the redshift increases. 
+The fractional contribution to the total emission from the host galaxy changes as a function of the \ac{AGN} luminosity and, in a flux-limited sample, the mean \ac{AGN} luminosity increases as the redshift increases. 
 We parametrize the \ac{AGN} luminosity dependence of the host galaxy luminosity as a power-law:
 
 \begin{eqnarray}
@@ -205,22 +205,21 @@ We parametrize the \ac{AGN} luminosity dependence of the host galaxy luminosity 
 \end{eqnarray}
 
 with slope $\beta=0.42$ \citep{maddox06}. 
-The galaxy scaling factor $C$ becomes 
+The galaxy scaling factor $C_{\rm Gal}$ becomes 
 
 \begin{eqnarray}
-  C &=& \frac{\eta}{1 - \eta} \frac{F_{\rm AGN}}{F_{\rm Gal}} \left[ \frac{ L_{\rm Gal}(z)} {L_{\rm AGN}(z)} \right] \left[ \frac{ L_{\rm Gal}(z_{\rm nrm})} {L_{\rm AGN}(z_{\rm nrm})} \right]^{-1} \\
+  C_{\rm Gal} &=& \frac{\eta}{1 - \eta} \frac{F_{\rm AGN}}{F_{\rm Gal}} \left[ \frac{ L_{\rm Gal}(z)} {L_{\rm AGN}(z)} \right] \left[ \frac{ L_{\rm Gal}(z_{\rm nrm})} {L_{\rm AGN}(z_{\rm nrm})} \right]^{-1} \\
   &=& \frac{\eta}{1 - \eta} \frac{F_{\rm AGN}}{F_{\rm Gal}} \left[ \frac{L_{\rm AGN(z)}} {L_{\rm AGN(z_{\rm nrm}})} \right]^{\beta -1}, 
 \end{eqnarray}
 
 where $z_{\rm nrm}$ is an arbitrary redshift at which the fractional contribution from the host galaxy is by definition $\eta$. 
-The redshift dependence of the mean \ac{AGN} luminosity for the SDSS quasar catalogue has been determined empirically, and is used to compute the term in the brackets. 
 
 \subsection{Dust Extinction}
 \label{sec:sed-extinction} 
 
-The selection criteria of the SDSS DR7Q catalogue are sensitive to quasars with moderate amounts of dust reddening \citep[possibly as high as E(B-V) $\sim$ 0.5;][]{richards03} at the redshift of the quasar, and so we included the effect of dust extinction in our model. 
+The selection criteria of the SDSS DR7Q catalogue are sensitive to quasars with moderate amounts of dust reddening \citep[possibly as high as $E(B-V)$ $\sim$ 0.5;][]{richards03} at the redshift of the quasar, and so we included the effect of dust extinction in our model. 
 We use an extinction curve appropriate for the quasar population which has been derived by Paul Hewett. 
-To derive the quasar extinction curve, UKIDSS photometry was used to provide an E(B-V) estimate, via the magnitude displacement of each quasar from the locus of un-reddened objects. 
+To derive the quasar extinction curve, UKIDSS photometry was used to provide an $E(B-V)$ estimate, via the magnitude displacement of each quasar from the locus of un-reddened objects. 
 At redshifts $2 < z < 3$ the reddening measure is made at rest-frame wavelengths 3500-7000\AA, where Galaxy, LMC and SMC extinction curves are very similar. 
 The SDSS spectra of the same objects are then employed to generate an empirical extinction curve in the ultraviolet, down to 1200\AA. 
 The resulting curve has no 2200\AA~ feature and rises rapidly with decreasing wavelength but is not as steep as the SMC curve. 
@@ -231,7 +230,7 @@ The colour excess $E(B-V)$ is related to the extinction in the $V$ band, $A(V)$,
   A(V) = R \times E(B -V )
 \end{eqnarray}
 
-where $R = 3.1$ in the MW and $R \simeq 3$ in the Magellanic Clouds. 
+where $R = 3$. 
 Hence the extinction at a wavelength lambda $A(\lambda)$ is 
 
 \begin{eqnarray}
@@ -259,14 +258,6 @@ in the rest frame of the quasar.
 \end{itemize}  
 }
 
-Our aim is to determine the hot dust properties of individual quasars. 
-Because we can't constrain all model parameters for an individual object, as a first step we derive a `standard' \ac{SED} model fit to all quasars simultaneously. 
-We will begin by deriving a `standard' SED model by constraining a single set of parameters with a large sample of $0.2 < z < 4$ quasars encompassing a range of luminosities, accretion rates etc. 
-The free parameters in our model are the blue power-law slope, the red power-law slope, the power-law break wavelength, the blackbody temperature, the blackbody normalisation, the emission line equivalent width scaling, the \ha scaling and the fractional contribution from the host galaxy to the total flux. 
-The reddening E(B-V) is fixed to zero, since a large fraction of SDSS quasars have very small amounts of dust reddening \citep{richards03}. 
-With some choice of initial parameters, we generate a set of model observed spectra at redshifts from $z=0.25$ to $z=3.75$ in intervals of $\Delta z = 0.1$. 
-We then transform our set of model spectra into a set of model $ugrizYJHKW1W2$ SEDs 
-
 \begin{figure}
   \centering
   \includegraphics[width=\textwidth]{figures/chapter05/throughput.pdf}
@@ -274,8 +265,18 @@ We then transform our set of model spectra into a set of model $ugrizYJHKW1W2$ S
   \label{fig:filters}
 \end{figure}
 
-The throughput functions of the SDSS $ugriz$, UKIDSS $YJHK$ and WISE $W1W2W3$ band-passes are shown in Figure \ref{fig:filters}, along with our model AGN spectra at three different redshifts. 
-The mean flux density in a band-pass P is given by 
+We will begin by deriving a `standard' \ac{SED} model by constraining a single set of parameters with our sample of 19,853 quasars, encompassing a range of redshifts, luminosities, accretion rates etc. 
+The free parameters in our model are the blue power-law slope, the red power-law slope, the power-law break wavelength, the blackbody temperature, the blackbody normalisation, the emission line equivalent width scaling, the \ha scaling and the fractional contribution from the host galaxy to the total flux. 
+The reddening $E(B-V)$ is fixed to zero, since a large fraction of \ac{SDSS} quasars have very small amounts of dust reddening \citep{richards03}. 
+We generate a set of model observed spectra at redshifts from $z=0.25$ to $z=3.75$ in intervals of $\Delta z = 0.1$. 
+The \ac{SED} model is shown at three different redshifts in Figure~\ref{fig:filters}. 
+The magnitude of the model is given by 
+
+\begin{eqnarray}
+  m_\lambda(P) & = & -2.5{\rm log}(f_\lambda(P)) - m_0(P), 
+\end{eqnarray}
+
+where $m_0(P)$ is the zero-point magnitude of band $P$ and the mean flux density $f_{\lambda}(P)$ is given by 
 
 \begin{eqnarray}
   \label{eq:flux}
@@ -283,35 +284,31 @@ The mean flux density in a band-pass P is given by
 \end{eqnarray}
 
 where $P(\lambda)$ is the dimensionless throughput function of the band-pass. 
-The corresponding magnitude, $m_\lambda(P)$, is then 
+Magnitudes are calculated in the AB system, in which case the zero-point flux per unit wavelength is 
 
 \begin{eqnarray}
-  m_\lambda(P) & = & -2.5{\rm log}(f_\lambda(P)) - m_0(P)
+  \frac{f_\lambda(\lambda)}{{\rm erg}~{\rm cm}^{-2}~{\rm s}^{-1} {\rm\AA}^{-1}} = 0.1087 \left(\frac{\lambda}{\rm \AA}\right)^{-2}.
 \end{eqnarray}
 
-where $m_0(P)$ is the zero-point magnitude of band $P$. In the AB magnitude system, the zero-point flux per unit wavelength is 
+We divide our quasar sample in to the same redshift bins.
+In each bin we normalise the quasar \ac{SED}s in the SDSS $i$ band, and then calculate the median \ac{SED}. 
+The model \ac{SED} in each redshift bin is similarly normalised. 
+The chi-squared statistic is then minimised using the `nelder-mead' algorithm. 
 
-\begin{eqnarray}
-  \frac{f_\lambda(\lambda)}{{\rm erg}~{\rm cm}^{-2}~{\rm s}^{-1} {\rm\AA}^{-1}} = 0.1087 \left(\frac{\lambda}{\rm \AA}\right)^{-2} .
-\end{eqnarray}
-
-This is substituted into Equation \ref{eq:flux} to give a zero-point mean flux density which is then converted into a corresponding magnitude.  
-
-The model SEDs are normalised such that the $i$ magnitude of each model SED is 18.0 mag. 
-This gives us an array of model magnitudes as a function of redshift and band-pass. 
-We generate an equivalent data array by dividing our quasar sample into redshift bins from $z=0.2$ to $z=3.8$ with bin width $\Delta z = 0.1$. 
-We normalise the individual quasar SEDs such that the observed $i$ magnitude is equal to 18.0 mag, and then calculate a median SED in each redshift bin. 
-
-To fit the model to the data we minimise the sum of the squares of the differences between the elements in the model magnitude array and the elements in the data magnitude array. 
-The minimisation is done using the `nelder-mead' algorithm. 
-Our SED model is valid only up to $\lambda \sim 3\mu$m in the quasar rest frame (the approximate wavelength of the peak in hot dust emission); beyond this additional contributions to the total flux from cooler dust will become significant. 
+Our \ac{SED} model is valid only up to $\lambda \sim 3\mu$m in the quasar rest frame (the approximate wavelength of the peak in hot dust emission); beyond this additional contributions to the total flux from cooler dust will become significant. 
 This prevents us from using the two highest wavelength WISE bands in the fit. 
-We also exclude the SDSS $u$ and $g$ band-passes from the fit at $z > 2.7$ and $z > 3.7$ respectively, where absorption in the Lyman$\alpha$ forest becomes large. 
+We also exclude the SDSS $u$ and $g$ band-passes from the fit at $z > 2.7$ and $z > 3.7$ respectively, where these bands start to be affected by Lyman$\alpha$ forest absorption.
+
+\section{Results}
 
 The best-fitting parameters from the fit are shown in Table \ref{tab:params}. 
 \todo{Re-do fit}
-The colours ($u - g$, $g - r$, etc.) of the median SED, the individual quasars, and the best-fitting model are plotted as a function of redshift in Figs.~\ref{fig:color_1} and \ref{fig:color_2}.  
-Most of the large variations that can be seen in the median colours of the quasars as a function of redshift are due to strong emission lines being redshifted in to and out of the band-passes of the band-passes being used. 
+The colours ($u - g$, $g - r$, etc.) of the median SED, the individual quasars, and the best-fitting model are plotted as a function of redshift in Figs.~\ref{fig:color_1} and \ref{fig:color_2}.
+\todo{Need to show individual quasars.}  
+Most of the large variations that can be seen in the median colours of the quasars as a function of redshift are due to strong emission lines being redshifted in to and out of the band-passes.
+Take away message is that a single, fairly simple parametric is able to reproduce the median colours of tens of thousands of \ac{AGN} with a large dynamic range in redshift and luminosity. 
+However, there is a significant scatter about the median model, which we will investigate in the next section?
+Does any part of this scatter have a systematic dependence on properties of the BH (mass, accretion rate) or outflow diagnostics.  
 
 \begin{table}
   \centering
@@ -325,7 +322,7 @@ Most of the large variations that can be seen in the median colours of the quasa
     Blackbody temperature & $T_{\rm BB}$ & 1216 K \\
     Blackbody normalisation & $C_{\rm BB}$ & 0.22 \\
     Emission line scaling & $C_{\rm EL}$  & 0.63 \\
-    \ha emission line scaling & $C_{\rm EL}$  & 0.63 \\
+    \ha emission line scaling & $C_{{\rm H}\alpha}$  & 0.63 \\
     Galaxy fraction & $\eta$ & 0.29 \\
     \hline
     E(B-V) & E(B-V) & 0.00 \\
@@ -337,7 +334,7 @@ Most of the large variations that can be seen in the median colours of the quasa
 
 \begin{figure}
 \includegraphics[width=\textwidth]{figures/chapter05/sed_color_plot_1.pdf}
-\caption{Colours of median SED and best-fitting model, with and without correction}
+\caption{Colours of median SED and best-fitting model, with and without correction. \todoinline{Corrected is in orange, uncorrected in green. Check with Paul. Correction often makes colours a lot worse. Once got to the bottom of this just show with correction.}}
   \label{fig:color_1}
 \end{figure} 
 
@@ -353,7 +350,7 @@ Most of the large variations that can be seen in the median colours of the quasa
 \begin{figure}
   \centering
   \includegraphics[width=\textwidth]{figures/chapter05/model_residuals.pdf}
-  \caption{Residuals from fit as a function of rest-frame wavelength. \todoinline{Show before and after correction.}}
+  \caption{Residuals from fit as a function of rest-frame wavelength.}
   \label{fig:residuals}
 \end{figure}
 
@@ -364,7 +361,7 @@ Differences between residuals from different band-passes at the same rest-frame 
 
 The residuals indicate that over a large redshift range the model does a fairly good at reproducing the median observed colours of the sample. 
 Most discrepancies are at the $<0.1$ mag level. 
-It is remarkable that a single model is so effective; the properties of a typical quasar to not change significantly over a wide range of redshifts and luminosities. 
+A single model is effective at reproducing the median colours, suggesting that the properties of a typical quasar do not change significantly over a wide range of redshifts and luminosities. 
 Many authors have found no significant dependence of the mean \ac{SED} on properties such as redshift, bolometric luminosity, \ac{BH} mass, or accretion rate \citep[e.g.][]{elvis12,hao13}. 
 On the other hand, for the individual objects there is a significant scatter about the mean.
 \todo{Need individual points on plot to show this.} 
