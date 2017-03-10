@@ -114,6 +114,34 @@ We verified that above the $i=19.1$ limit the sample is 95\% complete in all ban
 % readdat.py
 % DefingSample.ipynb 
 
+\subsection{Generating the quasar catalogue}
+
+We match the Seventh Data Release (DR7) of the \ac{SDSS} spectroscopic quasar catalogue \citep{schneider10} to the tenth data release of the UKIRT Infrared Deep Sky Survey \citep[UKIDSS;][]{lawrence07} Large Area Survey (matching radius 2$''$) and to the Wide-field Infrared Explorer \citep[WISE;][]{wright10} `AllWISE' data release (matching radius 3$''$). 
+The cross-matched catalogue contains 36,607 objects. 
+
+UKIDSS photometry corresponds to the `apermag3' values while WISE photometry is from profile fitting (w1mpro, w2mpro etc.) - see AllWISE Explanatory supplement. 
+SDSS is the BEST point-spread function (PSF) magnitudes.
+
+We need to correct for galactic extinction (using quasar template) and apply AB-to-Vega zero points. 
+
+Vega (V=+0.026) to AB offsets compared to Manda's [= Hewett et al. 2006]
+
+u  0.913  0.927
+g -0.081 -0.103
+r  0.169  0.146
+i  0.383  0.366
+z  0.542  0.533
+Y  0.641  0.634
+J  0.941  0.938
+H  1.378  1.379
+K  1.897  1.900
+W1 2.691  2.699
+W2 3.331  3.339 
+
+
+
+
+
 \section{Quasar SED}
 
 We have 19,853 quasars with photometric data from SDSS, UKIDSS and WISE. 
@@ -219,18 +247,20 @@ where $z_{\rm nrm}$ is an arbitrary redshift at which the fractional contributio
 
 The selection criteria of the SDSS DR7Q catalogue are sensitive to quasars with moderate amounts of dust reddening \citep[possibly as high as $E(B-V)$ $\sim$ 0.5;][]{richards03} at the redshift of the quasar, and so we included the effect of dust extinction in our model. 
 We use an extinction curve appropriate for the quasar population which has been derived by Paul Hewett. 
-To derive the quasar extinction curve, UKIDSS photometry was used to provide an $E(B-V)$ estimate, via the magnitude displacement of each quasar from the locus of un-reddened objects. 
+To derive the quasar extinction curve, UKIDSS photometry was used to provide an $E(B-V)$\footnote{$E(B-V)=A(B)-A(V)$} estimate, via the magnitude displacement of each quasar from the locus of un-reddened objects. 
 At redshifts $2 < z < 3$ the reddening measure is made at rest-frame wavelengths 3500-7000\AA, where Galaxy, LMC and SMC extinction curves are very similar. 
 The SDSS spectra of the same objects are then employed to generate an empirical extinction curve in the ultraviolet, down to 1200\AA. 
 The resulting curve has no 2200\AA~ feature and rises rapidly with decreasing wavelength but is not as steep as the SMC curve. 
-The extinctions curves give the colour excess $E(B-\lambda)$ relative to the colour excess $E(B-V)$ as a function of wavelength $\lambda$. 
-The colour excess $E(B-V)$ is related to the extinction in the $V$ band, $A(V)$, via a parameter $R$, 
+The extinctions curves give the colour excess $E(B-\lambda) = A$ relative to the colour excess $E(B-V)$ as a function of wavelength $\lambda$. 
+The ratio of total to selective extinction, $R$, is defined as: 
+
+colour excess $E(B-V)$ is related to the extinction in the $V$ band, $A(V)$, via the ratio  $R$, 
 
 \begin{eqnarray}
-  A(V) = R \times E(B -V )
+  R_V = \frac{A(V)}{E(B-V)}
 \end{eqnarray}
 
-where $R = 3$. 
+where we assume $R = 3$. 
 Hence the extinction at a wavelength lambda $A(\lambda)$ is 
 
 \begin{eqnarray}
@@ -274,7 +304,7 @@ The free parameters in our model are the blue power-law slope, the red power-law
 The reddening $E(B-V)$ is fixed to zero, since a large fraction of \ac{SDSS} quasars have very small amounts of dust reddening \citep{richards03}. 
 We generate a set of model observed spectra at redshifts from $z=0.25$ to $z=3.75$ in intervals of $\Delta z = 0.1$. 
 The \ac{SED} model is shown at three different redshifts in Figure~\ref{fig:filters}. 
-The magnitude of the model is given by 
+The predicted broadband magnitude of the model is given by integrating the spectrum over the throughput for each of the bands.  
 
 \begin{eqnarray}
   m_\lambda(P) & = & -2.5{\rm log}(f_\lambda(P)) - m_0(P), 
@@ -288,11 +318,12 @@ where $m_0(P)$ is the zero-point magnitude of band $P$ and the mean flux density
 \end{eqnarray}
 
 where $P(\lambda)$ is the dimensionless throughput function of the band-pass. 
-Magnitudes are calculated in the AB system, in which case the zero-point flux per unit wavelength is 
+Magnitudes are calculated in the AB system (Oke \& Gunn 1983), in which case the zero-point flux per unit wavelength is 
 
 \begin{eqnarray}
   \frac{f_\lambda(\lambda)}{{\rm erg}~{\rm cm}^{-2}~{\rm s}^{-1} {\rm\AA}^{-1}} = 0.1087 \left(\frac{\lambda}{\rm \AA}\right)^{-2}.
 \end{eqnarray}
+
 
 We divide our quasar sample in to the same redshift bins.
 In each bin we normalise the quasar \ac{SED}s in the SDSS $i$ band, and then calculate the median \ac{SED}. 
