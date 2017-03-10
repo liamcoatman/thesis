@@ -6,6 +6,7 @@ import palettable
 cs = palettable.colorbrewer.qualitative.Set1_9.mpl_colors
 from scipy import stats 
 from PlottingTools.plot_setup_thesis import figsize, set_plot_properties
+from PlottingTools.kde_contours import kde_contours
 set_plot_properties() # change style 
 
 def bbt_vs_z_with_correction():
@@ -952,15 +953,27 @@ def lum_z():
     # Created by DefiningSample.ipynb 
     t = Table.read('/data/lc585/SDSS/matched_catalogue.fits')
 
-    t = t[t['LOGLBOL'] > 20]
+    t = t[(t['Z_HEWETT'] > 0) & (t['Z_HEWETT'] < 5)]
+    t = t[(t['LOGLBOL'] > 44.5) & (t['LOGLBOL'] < 48.5)]
+    t = t[~t['Z_HEWETT'].mask & ~t['Z_HEWETT'].mask]
     
-    ax.plot(t['Z_HEWETT'], 
-            t['LOGLBOL'], 
-            linestyle='', 
-            marker='o',
-            markersize=1,
-            markerfacecolor=cs[1],
-            markeredgecolor='None')
+    # ax.plot(t['Z_HEWETT'], 
+    #         t['LOGLBOL'], 
+    #         linestyle='', 
+    #         marker='o',
+    #         markersize=1,
+    #         markerfacecolor=cs[1],
+    #         markeredgecolor='None')
+
+    lims = (0, 5, 44.5, 48.5)
+
+
+    kde_contours(np.array(t['Z_HEWETT'].data), 
+                 np.array(t['LOGLBOL'].data), 
+                 ax,
+                 lims=lims,
+                 color='black',
+                 filled=True)
 
     ax.set_ylim(44.5, None)
 
