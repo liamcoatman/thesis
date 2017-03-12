@@ -119,7 +119,7 @@ In the double Gaussian fit, the peak flux ratio of the second components is agai
 In 71 objects [\ion{O}{III}] is undetected, or is very low \ac{S/N}. 
 In these cases we do not attempt to measure the width of the [\ion{O}{III}] emission, but determine only the normalisation of a fixed [\ion{O}{III}] template.
 This template is derived by running our fitting routine on a very high \ac{S/N} composite spectra of low redshift \ac{AGN}. 
-\todo{Composite details?}
+\todo{Composite details? Is this really representative of your high-z sample in terms of line properties?}
 
 As in Chapter~\ref{ch:bhmass}, model parameters were derived using a standard variance-weighted least-squares minimisation procedure employing the Levenberg-Marquardt algorithm. 
 Prior to the fit, the spectra were inspected visually and regions significantly affected by telluric absorption or of low \ac{S/N} were masked out.
@@ -230,6 +230,8 @@ As expected, the uncertainty on $w_{80}$ increases as the \ac{S/N} of the spectr
 The \ac{S/N} in to two spectra are similar, but the [\ion{O}{III}] line in the  first object is stronger. 
 Hence it can still be measured reliably even at low \ac{S/N}. 
 The first object would passes our \ac{S/N} cut, whereas the latter fails it. 
+
+\todo{Need some discussion on how much v95 and v05 in particular depend on SNR. You have some discussion about making sure w80 is robust to SNR changes. Did you also do similar tests for v95, v05, v10 etc?}
 
 \section{Reliability of redshift estimates}
 
@@ -358,6 +360,8 @@ On the other hand, at fixed redshift, we see a significant correlation between t
 The fact that we don't see many broad lines in the \citet{zakamska14} objects even at luminosities $>$43 erg/s could be due to the fact that these are all type II quasars, whereas the sample presented in this chapter are all type I. 
 \citet{mullaney13} showed that the [\ion{O}{III}] lines of type I quasars are typically broader than in type II quasars. 
 
+\todoinline{Need some discussion about potenial selection biases in these samples e.g. Zakamska \& Green objects are obscured. Does this make a difference? Also, many studies only present detections and do not publish non-detections... I thought there were some Type 1 quasars at low-$z$ with [\ion{O}{III}] measurements from Shen? but I could be wrong.}
+
 
 \subsubsection{Eigenvector 1 correlations}
 
@@ -415,19 +419,6 @@ One consequence of this is that there is a significant degeneracy when the emiss
 We note that there is a similarity between these objects and the four quasars presented in \citet{zakamska16}. 
 \todo{Say more about this and compare to WIISH sample}
 
-
-
-
-
-
-\subsection{\ac{ICA}}
-
-Benefit of \ac{ICA} is that it works regardless of the [\ion{O}{III}] strength. 
-
-Can also describe what I found trying to get redshifts from broad \hans, \hbns? (Narrow components generally very weak at these luminosities so can't be used.)
-Generally find no systematic errors but large ($\sim$1000\kms\, scatter).
-Comparing NIR \ac{ICA} to [\ion{O}{III}] for the [\ion{O}{III}] with high \ac{S/N} I find small (few hundred \kms) scatter. 
-
 \subsubsection{Comparison}
 
 In Figure~\ref{fig:redshift_comparison} we compare systemic redshift estimates made using [\ion{O}{III}], \hb and \ha. 
@@ -435,6 +426,7 @@ The scatter is around 300\kms.
 There is a small offset, such that [\ion{O}{III}] is normally slightly bluer than expected. 
 
 \subsection{[\ion{O}{III}] and \ion{C}{IV} outflows are linked}
+
 
 \begin{figure}
     \includegraphics[width=\columnwidth]{figures/chapter04/civ_blueshift_oiii_blueshift.pdf} 
@@ -463,6 +455,9 @@ Therefore, it is plausible that the correlation between the \ion{C}{IV} and [\io
 However, no strong luminosity-dependent trends are apparent in Figure~\ref{fig:oiii_civ_blueshifts}. 
 We find that both the [\ion{O}{III}] and \ion{C}{IV} blueshifts are correlated with the luminosity, but that these correlations are much weaker than the correlation between the [\ion{O}{III}] and \ion{C}{IV} blueshifts. 
 
+
+\todoinline{Also, you could put some more text and maybe a figure to explicitly demonstrate that the trend remains even after you have accounted for the trends with luminosity. This is the highlight result for me and personally I think needs a little more fleshing out.}
+
 \section{Broad Absorption Line Quasars}
 
 \todo{Check all of this}
@@ -485,18 +480,19 @@ On the other hand, \citet{mullaney13} find that once the correlation between the
 
 Is the \ac{AGN} \ac{NLR} absent in objects where outflows have reached kiloparsec scales, sweeping up the low-density material responsible for the [\ion{O}{III}]-emission?
 If the \ac{BLR} outflows can escape, they are very fast and wouldn't need long to clear out the \ac{NLR} gas. 
-
+\todo{Might be useful to estimate a timescale for how long the NLR would take to be cleared given typical size of galaxy and velocity of outflow}. 
 
 \subsection{Type II quasars}
 
 Implications of our findings on searches for high-redshift type 2 quasars. It could be that type II quasars exist. If you look at CIV/MgII the narrow line components are very weak. So the contribution from the narrow line region is very weak in luminous quasars, and you just won't see it even if the broad line region is obscured.
 Findings in this paper seem to suggest that the startic narrow line region is very weak in luminous quasars. 
 
+\todo{Wasn't too sure about what this section was trying to say... Have you considered the SDSS Type 2 samples from e.g. Alexandroff et al. ? (http://adsabs.harvard.edu/abs/2013MNRAS.435.3306A). I thought those were pretty luminous, narrow-line objects?}
 
 \section{ICA}
 
-Introduce ICA at end. 
-Give examples of FeII poor fit and low S/N - effectively constraints on parameters. 
+Then having presented the main results, I would go on to discuss the limitations of the Gaussian approach - e.g. FeII can't be properly subtracted in many cases and sensitive to S/N - and use this as an intro to the much more flexible ICA method. You could then have a much briefer description of the ICA reconstructions and present this more as work in progress. You could show that your main results (as above) still hold with the ICA (e.g. Figs 1.15, 1.16, 1.17) and that this allows you to solve the FeII problem and push to lower SNR. Finally, you could discuss some of the potential improvements to the ICA components that would allow the derived line properties from the ICA to become even more robust. ICA works better at low S/N because we are effectively putting priors on the model parameters. 
+
 
 The second model consists of six spectral components derived from an \ac{ICA} of a large sample of low-redshift \ac{AGN} with SDSS spectra covering the same spectral region.
 As we will demonstrate, a linear combination of these spectral components is able to reproduce the spectra around \hbns/[\ion{O}{III}] to a high degree of precision.  
@@ -608,6 +604,11 @@ We then subtract a constant, because the flux does not always go to zero (sugges
 An examples of a reconstructed [\ion{O}{III}] emission line is shown in Figure~\ref{fig:oiii_reconstruction}. 
 \todoinline{At present I am summing the flux all the way from 4950\AA. However, this is quite a lot of flux to sum up, and we can't ascribe this flux to the wing of the [\ion{O}{III}] emission with any certainty. This is bourne out by the fact that there are quite large differences between, for example, $v_{10}$ measured from the Gaussian fit and $v_{10}$ measured from the \ac{ICA} fit.} 
 
+Unforunately, there are systematic differences between the line-width estimates from the Gaussian reconstructions and the ICA reconstructions, particularly for broad-line objects.
+The current way of doing the ICA reconstruction of the [OIII] line ignores any cross-talk between the components and there is potentially flux being ascribed to the line that could be coming from some other component. 
+We can solve this by finding some more representative broad [OIII] lines in SDSS from which to derive the components as well as producing a set of components for [OIII] only.
+Therefore we don't use these reconstructions and leave this for future work. 
+
 \subsection{\ac{ICA} fits}
 
 \begin{figure}
@@ -678,4 +679,5 @@ Most of the variance in \ac{EV1} is the anti-correlation between the strengths o
 So at one end we have objects with strong \ion{Fe}{II} and weak [\ion{O}{III}], and at the other end objects with weak \ion{Fe}{II} and strong [\ion{O}{III}]. 
 Other properties, including the \ion{C}{IV} blueshift and the \hb FWHM, also change systematically. 
 Our work shows that the \ac{ICA} component weights change systematically along the \ac{EV1} sequence. 
-\todo{What is the best way to actually do this mapping?}. 
+
+\todo{Just present this as an idea for future work right at the end rather than having this sandwiched in the middle.} 
