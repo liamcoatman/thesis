@@ -2276,3 +2276,96 @@ def oiii_luminosity_z_w80():
     plt.show() 
 
     return None 
+
+def mfica_oiii_weight():
+
+    df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0) 
+    df = df[df.mfica_flag == 1]
+    
+    col_list = ['mfica_w1',
+                'mfica_w2',
+                'mfica_w3',
+                'mfica_w4',
+                'mfica_w5',
+                'mfica_w6',
+                'mfica_w7',
+                'mfica_w8',
+                'mfica_w9',
+                'mfica_w10']
+    
+    fig, axs = plt.subplots(1, 2, figsize=figsize(1, vscale=0.5))
+    
+    w_norm = df[col_list[3:6]].sum(axis=1) / df[col_list[:6]].sum(axis=1) # sum positive components 
+    w_norm = w_norm[~np.isnan(w_norm) & ~np.isinf(w_norm)]
+    
+    hist = axs[0].hist(w_norm,
+                      normed=True,
+                      histtype='step',
+                      color=cs[1],
+                      bins=np.arange(0, 0.5, 0.02),
+                      zorder=1) 
+        
+    fname = '/data/vault/phewett/ICAtest/DR12exp/Spectra/hbeta_2154_c10.weight'
+    t = np.genfromtxt(fname)
+    
+    w_norm = np.sum(t[:, 3:6], axis=1) / np.sum(t[:, :6], axis=1) # sum positive components 
+    
+    hist = axs[0].hist(w_norm,
+                       normed=True,
+                       histtype='step',
+                       color=cs[8], 
+                       bins=np.arange(0, 0.5, 0.02),
+                       zorder=0)
+
+    axs[0].set_yticks([]) 
+    axs[0].get_xaxis().tick_bottom()
+
+    axs[0].set_xlabel(r"$\displaystyle {\sum_{i=3}^6 w_i} / {\sum_{i=1}^6 w_i}$")
+    axs[0].set_ylabel('Normalised counts')
+
+    #----------------------------------------------------------------
+
+
+    w_norm = df[col_list[5]] / df[col_list[3:6]].sum(axis=1) # sum positive components 
+    w_norm = w_norm[~np.isnan(w_norm) & ~np.isinf(w_norm)]
+    
+    hist = axs[1].hist(w_norm,
+                       normed=True,
+                       histtype='step',
+                       color=cs[1],
+                       bins=np.arange(0, 0.8, 0.02),
+                       zorder=1) 
+        
+    
+    w_norm = t[:, 5] / np.sum(t[:, 3:6], axis=1) # sum positive components 
+    
+    hist = axs[1].hist(w_norm,
+                       normed=True,
+                       histtype='step',
+                       color=cs[8], 
+                       bins=np.arange(0, 0.8, 0.02),
+                       zorder=0)
+
+    axs[1].set_yticks([])
+    axs[1].xaxis.set_ticks_position('bottom')
+    axs[1].set_xlabel(r"$\displaystyle w_6 / {\sum_{i=3}^6 w_i}$")
+
+    #----------------------------------------------------------------
+
+    axs[0].text(0.9, 0.9, '(a)',
+                horizontalalignment='center',
+                verticalalignment='center',
+                transform = axs[0].transAxes)
+
+    axs[1].text(0.9, 0.9, '(b)',
+                horizontalalignment='center',
+                verticalalignment='center',
+                transform = axs[1].transAxes)
+
+    fig.tight_layout() 
+
+    fig.savefig('/home/lc585/thesis/figures/chapter04/mfica_oiii_weight.pdf')
+    
+    plt.show() 
+
+    return None 
