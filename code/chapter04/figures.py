@@ -2369,3 +2369,111 @@ def mfica_oiii_weight():
     plt.show() 
 
     return None 
+
+def composite():
+
+    from SpectraTools.get_nir_spec import get_nir_spec
+    from SpectraTools.make_composite import make_composite
+    from SpectraTools.fit_line import fit_line
+
+    set_plot_properties() # change style  
+
+    cs = palettable.colorbrewer.qualitative.Set1_3.mpl_colors
+
+    fig, ax = plt.subplots(figsize=figsize(1, vscale=0.8))
+
+    # Hb --------------------------------------------------------------------------------------
+
+    df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0)
+    df = df[df.OIII_FLAG_2 > 0]
+    df = df[df.OIII_EQW_FLAG == 0]
+    df = df[df.OIII_SNR_FLAG == 0]
+    df = df[df.OIII_BAD_FIT_FLAG == 0]
+    df = df[df.FE_FLAG == 0]
+ 
+    wav_new = np.arange(4700.0, 5100.0, 1.0) 
+
+    flux_array = []
+    wav_array = [] 
+    z_array = [] 
+    name_array = [] 
+        
+    for idx, row in df.iterrows():
+
+        save_dir = os.path.join('/data/lc585/nearIR_spectra/linefits/', idx, 'OIII') 
+
+        wav, flux = np.genfromtxt(os.path.join(save_dir, 'spec_cont_sub.txt'), unpack=True)
+
+        wav = wav * (1.0 + row.z_IR_OIII_FIT)
+
+        z = row.OIII_FIT_HB_Z
+        if row.OIII_Z_FLAG == 1:
+            z = row.OIII_FIT_Z_FULL_OIII_PEAK
+
+        flux_array.append(flux)
+        wav_array.append(wav)
+        z_array.append(z)
+        name_array.append(idx)
+
+    wav_array = np.array(wav_array)
+    flux_array = np.array(flux_array)
+    z_array = np.array(z_array)
+
+
+    wav_new, flux, err, ns  = make_composite(wav_new,
+                                             wav_array, 
+                                             flux_array, 
+                                             z_array,
+                                             names=name_array,
+                                             verbose=False)
+
+    # add power-law background
+    from SpectraTools.fit_line import PLModel
+
+    bkgdmod = Model(PLModel, 
+                    param_names=['amplitude','exponent'], 
+                    independent_vars=['x']) 
+
+    bkgdpars = bkgdmod.make_params()
+
+    bkgdpars['exponent'].value = 1.0
+    bkgdpars['amplitude'].value = 1.0 
+
+    wav_bkgd = np.arange(4435.0, 5535.0, 1.0)
+
+    spec_min = np.argmin(np.abs(wav_bkgd - 4700.0))
+    spec_max = np.argmin(np.abs(wav_bkgd - 5100.0))
+
+    flux_new = bkgdmod.eval(params=bkgdpars, x=wav_bkgd)
+
+    flux_new[spec_min:spec_max] = flux_new[spec_min:spec_max] + flux 
+    
+
+
+
+    np.savetxt('composite.dat', np.array([wav_bkgd, flux_new, 0.1*np.ones_like(wav_bkgd)]).T)
+
+    vdat = wave2doppler(wav_new*u.AA, w0=4862.721*u.AA)
+
+
+    ax.plot(wav_bkgd, flux_new, color=cs[0])
+
+
+  
+    # ax.set_xlim(-20000, 20000)
+    # ax.set_ylim(-0.2, 1.2)
+    ax.set_xlabel(r'$\Delta v$ [km~$\rm{s}^{-1}$]')
+    ax.set_ylabel(r'$F_{\lambda}$ [Arbitrary units]')
+    plt.grid()
+
+    fig.tight_layout() 
+    
+    # fig.savefig('/home/lc585/thesis/figures/chapter04/ha_hb_composite.pdf')
+
+    plt.show() 
+
+    return None 
+
+
+
+
