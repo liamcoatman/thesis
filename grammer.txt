@@ -1,0 +1,2 @@
+in to -> into
+kiloparsec/kpc -> kilo-parsec

@@ -783,7 +783,8 @@ def eqw_lum():
                     zorder=10, 
                     linestyle='None', 
                     uplims=True,
-                    color=cs[1])
+                    color=cs[1],
+                    capsize=2)
 
 
 
