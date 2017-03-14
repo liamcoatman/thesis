@@ -112,18 +112,8 @@ In the double Gaussian model, the peak flux ratio of the additional components i
 
 In 71 objects [\ion{O}{III}] is undetected, or is detected with very low \ac{S/N}. 
 In these cases we do not attempt to measure the width of the [\ion{O}{III}] emission, but determine only the normalisation of a fixed [\ion{O}{III}] template.
-This template is derived by running our fitting routine on a very high \ac{S/N} composite spectra of low redshift \ac{AGN}. 
-\todo{Composite details? Is this really representative of your high-z sample in terms of line properties?}
-
-
-Generate median composite from fe and continuum subtracted good sample. 
-Did fit to this. 
-Maybe give FWHM of OIII = 900 km/s
-
-
-
-
-
+To generate this template we generate a median composite spectrum from the continuum- and \ion{Fe}{II}-subtracted spectra of the XX quasars with reliable [\ion{O}{III}] line measurements (see below). 
+We then run our line-fitting routine on the composite spectrum, and use the best-fitting [\ion{O}{III}] model as a template. 
 
 Some example fits are shown in Figure~\ref{fig:example_spectrum_grid}
 
@@ -136,23 +126,18 @@ Some example fits are shown in Figure~\ref{fig:example_spectrum_grid}
 
 \subsection{Derived parameters}
 
-All [\ion{O}{III}] line properties are derived from the [\ion{O}{III}]5008 emission, but, as described above, the kinematics of the peak at 4960\AA\, are constrained by our fitting routine to be identical.
+All [\ion{O}{III}] line properties are derived from the [\ion{O}{III}]\l5008 emission, but, as described above, the kinematics of [\ion{O}{III}]\l4960 are constrained by our fitting routine to be identical.
 
 We do not attach any physical meaning to the individual Gaussian components used in the model. 
-While it is true that in some quasars the [\ion{O}{III}] emission can be clearly separated in to a narrow component at the systemic redshift and a lower-amplitude, blueshifted broad component \citep[e.g.][]{shen16a}, often this decomposition is highly uncertain and dependent on the spectral \ac{S/N}, resolution etc.
-In addition, there is no theoretical justification that the wing component should have a Gaussian profile.  
+Decomposing the [\ion{O}{III}] emission in to a narrow component component at the systemic redshift and a lower-amplitude, blueshifted broad component is subject to large uncertainties and is highly dependent on the spectral \ac{S/N} and resolution. 
+Furthermore, there is no theoretical justification that the broad component should have a Gaussian profile.  
 
 We therefore choose to characterize the [\ion{O}{III}] line profile using a number of non-parametric measures, which are commonly used in the literature \citep[e.g.][]{zakamska14,zakamska16}. 
-A normalised cumulative velocity distribution is constructed from the best-fitting model, from which the velocities below which 5, 10, 25, 50, 75, 90, and 95 per cent of the total flux accumulates can be read off. 
-The width of the emission line can then be defined, for example, using $w_{80} = v_{90} - v_{10}$. 
-The absolute asymmetry in the line profile $A$ is defined as $((v_{95} - v_{50}) - (v_{50} - v_{5})) / (v_{95} - v_{5})$ \citep{zakamska14}. 
+A normalised cumulative velocity distribution is constructed from the best-fitting model, from which the velocities below which 5, 10, 25, 50, 75, 90, and 95 per cent of the total flux accumulates can be calculated. 
+The width of the emission line can then be defined, for example, using $w_{80} \equiv v_{90} - v_{10}$. 
+We also define the absolute asymmetry in the line profile $A$ as $((v_{95} - v_{50}) - (v_{50} - v_{5})) / (v_{95} - v_{5})$ \citep[e.g.][]{zakamska14}. 
 \todo{The line width measures are not corrected for instrumental broadening}
 \todo{Add outline of table of derived properties for this chapter}
-
-The monochromatic continuum luminosity - used as a proxy for the \ac{AGN} bolometric luminosity - is also used below. 
-This is calculated in the same way as in Chapter~\ref{ch:bhmass}. 
-\todo{Check if any missing normalisation / monochromatic luminosities.} 
-\todo{Check factor of (1+z) in luminosity calculation}
 
 \subsection{Flux calibration of spectra}
 
@@ -165,6 +150,60 @@ We use our standard quasar \ac{SED} model (Chapter~\ref{ch:sed}) to bridge the g
 The quasar \ac{SED} model is fit to the \ac{SDSS}/\ac{BOSS} spectra, with the normalisation and extinction E(B-V) as free parameters. 
 The near-infrared spectra are then normalised to the \ac{SED} model using a linear error weighted least-squares regression.  
 The second approach is identical, except rather than using the \ac{SDSS}/\ac{BOSS} spectra we fit the same \ac{SED} model to the available photometric data from the optical (\ac{SDSS}) to the near-infrared (VHS, Viking, UKIDSS, 2MASS). 
+
+The monochromatic continuum luminosity - used as a proxy for the \ac{AGN} bolometric luminosity - is also used below. 
+This is calculated in the same way as in Chapter~\ref{ch:bhmass}. 
+\todo{Check if any missing normalisation / monochromatic luminosities.} 
+\todo{Check factor of (1+z) in luminosity calculation}
+
+
+% The reported line-width measures are corrected for instrumental broadening by subtracting the resolution of the spectrograph in quadrature. 
+% The spectrograph resolutions, which we estimate from the line widths in the observed sky spectra, are given in Table XX. 
+
+% \begin{table}
+%   \centering
+%   \small 
+%   \caption{Measured spectral resolutions of the spectrographs used in this thesis.}
+%   \label{tab:specnums_ch4}
+%     \begin{tabular}{ccc} 
+%     \hline
+%     Spectrograph & Telescope & Number \\
+%                  &           & \\
+%     \hline
+%     FIRE         & MAGELLAN  & 31 \\
+%     GNIRS        & GEMINI-N  & 28 \\
+%     ISAAC        & VLT       & 9 \\
+%     LIRIS        & WHT       & 7 \\
+%     NIRI         & GEMINI-N  & 29 \\
+%     NIRSPEC      & Keck II   & 3 \\
+%     SINFONI      & VLT       & 80 \\
+%     SOFI         & NTT       & 76 \\
+%     TRIPLESPEC   & ARC-3.5m  & 27 \\
+%     TRIPLESPEC   & P200      & 45 \\
+%     XSHOOTER     & VLT       & 21 \\
+%     \hline
+%     \multicolumn{2}{c}{Total} & 356 \\
+%     \hline
+%     \end{tabular}
+% \end{table} 
+
+
+
+%     # instr_width = {'GNIRS':136.0, 
+%     #                'NIRSPEC':122.0, 
+%     #                'XSHOOT':25.0, 
+%     #                'NIRI':465.0, 
+%     #                'ISAAC':46.0, 
+%     #                'TRIPLE_P200':88.0, 
+%     #                'SOFI_MR':323.0, 
+%     #                'LIRIS':477.0, 
+%     #                'SOFI_LR':535.0,
+%     #                'FIRE':59.0,
+%     #                'TRIPLE_ARC':97.0,
+%     #                'SINF':124.0}
+
+
+
 
 \subsection{Reliability of derived parameters}
 
