@@ -2315,74 +2315,6 @@
   \field{year}{2015}
 \endentry
 
-\entry{reyes08}{article}{}
-  \name{author}{9}{}{%
-    {{}%
-     {{Reyes}}{R.}%
-     {R.}{R.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Zakamska}}{Z.}%
-     {N.~L.}{N.~L.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Strauss}}{S.}%
-     {M.~A.}{M.~A.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Green}}{G.}%
-     {J.}{J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Krolik}}{K.}%
-     {J.~H.}{J.~H.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Shen}}{S.}%
-     {Y.}{Y.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Richards}}{R.}%
-     {G.~T.}{G.~T.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Anderson}}{A.}%
-     {S.~F.}{S.~F.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Schneider}}{S.}%
-     {D.~P.}{D.~P.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{galaxies: active, quasars: emission lines, quasars: general, surveys}
-  \strng{namehash}{RR+1}
-  \strng{fullhash}{RRZNLSMAGJKJHSYRGTASFSDP1}
-  \field{labelyear}{2008}
-  \field{sortinit}{R}
-  \verb{doi}
-  \verb 10.1088/0004-6256/136/6/2373
-  \endverb
-  \verb{eprint}
-  \verb 0801.1115
-  \endverb
-  \field{pages}{2373\bibrangedash 2390}
-  \field{title}{{Space Density of Optically Selected Type 2 Quasars}}
-  \field{volume}{136}
-  \field{journaltitle}{\aj}
-  \field{eprinttype}{arXiv}
-  \field{month}{12}
-  \field{year}{2008}
-\endentry
-
 \entry{richards06}{article}{}
   \name{author}{17}{}{%
     {{}%
@@ -3116,45 +3048,6 @@
   \field{journaltitle}{\mnras}
   \field{month}{03}
   \field{year}{1985}
-\endentry
-
-\entry{yuan16}{article}{}
-  \name{author}{3}{}{%
-    {{}%
-     {{Yuan}}{Y.}%
-     {S.}{S.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Strauss}}{S.}%
-     {M.~A.}{M.~A.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Zakamska}}{Z.}%
-     {N.~L.}{N.~L.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{galaxies: active, quasars: emission lines, quasars: general}
-  \strng{namehash}{YSSMAZNL1}
-  \strng{fullhash}{YSSMAZNL1}
-  \field{labelyear}{2016}
-  \field{sortinit}{Y}
-  \verb{doi}
-  \verb 10.1093/mnras/stw1747
-  \endverb
-  \verb{eprint}
-  \verb 1606.04976
-  \endverb
-  \field{pages}{1603\bibrangedash 1615}
-  \field{title}{{Spectroscopic identification of type 2 quasars at z $\lt$ 1 in
-  SDSS-III/BOSS}}
-  \field{volume}{462}
-  \field{journaltitle}{\mnras}
-  \field{eprinttype}{arXiv}
-  \field{month}{10}
-  \field{year}{2016}
 \endentry
 
 \entry{zakamska14}{article}{}

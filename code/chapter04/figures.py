@@ -449,59 +449,170 @@ def civ_blueshift_oiii_eqw():
 
     return None  
 
-def civ_blueshift_oiii_blueshift():
+def civ_blueshift_oiii_blueshift(check_lum=False):
 
     set_plot_properties() # change style 
 
-    fig, ax = plt.subplots(figsize=figsize(0.9, vscale=0.8))
-    
+   
     df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0) 
+    
     df = df[df.OIII_FLAG_2 > 0]
-    df = df[df.OIII_EQW_FLAG == 0]
-    df = df[df.OIII_SNR_FLAG == 0]
+    df = df[df.OIII_EQW_FLAG == 0] # more or less greater than 8 A 
     df = df[df.OIII_BAD_FIT_FLAG == 0]
     df = df[df.FE_FLAG == 0]
-    df = df[df.WARN_CIV_BEST == 0]
+    df = df[(df.WARN_CIV_BEST == 0) | (df.WARN_CIV_BEST == 1)] 
     df = df[df.BAL_FLAG != 1]
-    df1 = df[df.OIII_EXTREM_FLAG == 0]
-    df2 = df[df.OIII_EXTREM_FLAG == 1]
+    
+    df['yval'] = df['OIII_5007_V10_Blueshift']
+    df['yerr'] = df['OIII_5007_V10_Blueshift_ERR']
 
-  
+    ycut = 500.0 
+    
+    # two XSHOOTER errors are missing
+    # the fits both look good, so just assign typical error 
+    print np.sum(df.Median_CIV_BEST_Err.isnull()), np.sum(df.OIII_FIT_VEL_FULL_OIII_PEAK_ERR.isnull())
+    df.Median_CIV_BEST_Err.fillna(df.Median_CIV_BEST_Err.median(), inplace=True)
+    
     w0 = np.mean([1548.202,1550.774])*u.AA  
-
-    median_wav = doppler2wave(df1.Median_CIV_BEST.values*(u.km/u.s), w0) * (1.0 + df1.z_IR.values)
-    blueshift_civ = const.c.to('km/s') * (w0 - median_wav / (1.0 + df1.OIII_FIT_Z_FULL_OIII_PEAK)) / w0
-
-
-    ax.plot(blueshift_civ, 
-            df1.OIII_FIT_VEL_FULL_OIII_PEAK - df1.OIII_5007_V10,
-            linestyle='',
-            marker='o', 
-            markerfacecolor=cs[1],
-            markeredgecolor='None')
-
-    median_wav = doppler2wave(df2.Median_CIV_BEST.values*(u.km/u.s), w0) * (1.0 + df2.z_IR.values)
-    blueshift_civ = const.c.to('km/s') * (w0 - median_wav / (1.0 + df2.OIII_FIT_Z_FULL_OIII_PEAK)) / w0
-
-
-    ax.plot(blueshift_civ, 
-            df2.OIII_FIT_VEL_FULL_OIII_PEAK - df2.OIII_5007_V10,
-            linestyle='',
-            marker='o', 
-            markerfacecolor=cs[0],
-            markeredgecolor='None')    
-
-
-
-    ax.set_xlabel(r'C\,{\sc iv} Blueshift [km~$\rm{s}^{-1}$]')
-    ax.set_ylabel(r'[O\,{\sc iii}] Blueshift [km~$\rm{s}^{-1}$]')
+    median_wav = doppler2wave(df.Median_CIV_BEST.values*(u.km/u.s), w0) * (1.0 + df.z_IR.values)
+    blueshift_civ = const.c.to('km/s') * (w0 - median_wav / (1.0 + df.OIII_FIT_Z_FULL_OIII_PEAK)) / w0
     
+    df['xval'] = blueshift_civ.value 
+    df['xerr'] = np.sqrt(df['OIII_FIT_VEL_FULL_OIII_PEAK_ERR']**2 + df['Median_CIV_BEST_Err']**2).values
     
-    fig.tight_layout()
+    # check for missing data 
+    print df.yerr.isnull().any()
+    print df.xerr.isnull().any()
+    print df.xval.isnull().any()
+    print df.yval.isnull().any()
     
-    fig.savefig('/home/lc585/thesis/figures/chapter04/civ_blueshift_oiii_blueshift.pdf')
+    xcut = 250.0 
+
+    # cheeky, but this is low S/N
+    df.ix['QSO642', 'yval'] = np.nan
+
+
+    if not check_lum: 
+
+        fig = plt.figure(figsize=figsize(1.0, vscale=1.2))
+        gs = gridspec.GridSpec(3, 2) 
+    
+        ax1 = fig.add_subplot(gs[0, 0])
+        ax2 = fig.add_subplot(gs[0, 1])
+        ax3 = fig.add_subplot(gs[1:, :])
+    
+        ax1.plot(df.loc[(df.yerr > ycut) & (df.OIII_EXTREM_FLAG == 0), 'yval'], 
+                 df.loc[(df.yerr > ycut) & (df.OIII_EXTREM_FLAG == 0), 'yerr'], 
+                 marker='o', 
+                 markeredgecolor=cs[1],
+                 markerfacecolor='None',
+                 markersize=3,
+                 linestyle='')
+        
+        ax1.plot(df.loc[(df.yerr < ycut) & (df.OIII_EXTREM_FLAG == 0), 'yval'], 
+                 df.loc[(df.yerr < ycut) & (df.OIII_EXTREM_FLAG == 0), 'yerr'], 
+                 marker='o', 
+                 markeredgecolor='None',
+                 markerfacecolor=cs[1],
+                 markersize=3,
+                 linestyle='')
+        
+        
+        ax1.axhline(ycut, color='black', linestyle='--')
+        
+        
+    
+        ax2.plot(df.loc[(df.xerr > xcut) & (df.OIII_EXTREM_FLAG == 0), 'xval'], 
+                 df.loc[(df.xerr > xcut) & (df.OIII_EXTREM_FLAG == 0), 'xerr'], 
+                 marker='o', 
+                 markeredgecolor=cs[1],
+                 markerfacecolor='None',
+                 markersize=3,
+                 linestyle='')
+        
+        
+        ax2.plot(df.loc[(df.xerr < xcut) & (df.OIII_EXTREM_FLAG == 0), 'xval'], 
+                 df.loc[(df.xerr < xcut) & (df.OIII_EXTREM_FLAG == 0), 'xerr'], 
+                 marker='o', 
+                 markeredgecolor='None',
+                 markerfacecolor=cs[1],
+                 markersize=3,
+                 linestyle='')
+        
+        
+        ax2.axhline(xcut, color='black', linestyle='--')
+    
+        
+        im = ax3.scatter(df.loc[(df.xerr < xcut) & (df.yerr < ycut) & (df.OIII_EXTREM_FLAG == 0), 'xval'], 
+                         df.loc[(df.xerr < xcut) & (df.yerr < ycut) & (df.OIII_EXTREM_FLAG == 0), 'yval'],
+                         c = np.log10(9.26) + df.loc[(df.xerr < xcut) & (df.yerr < ycut) & (df.OIII_EXTREM_FLAG == 0), 'LogL5100'],
+                         marker='o', 
+                         edgecolor='None',
+                         cmap=palettable.matplotlib.Viridis_10.mpl_colormap)       
+
+        cb = fig.colorbar(im, ticks=[46, 46.5, 47, 47.5, 48])
+
+        cb.set_label('log L$_{\mathrm{Bol}}$ [erg~s$^{-1}$]')
+
+        
+        # ax3.plot(df.loc[(df.xerr < xcut) & (df.yerr < ycut) & (df.OIII_EXTREM_FLAG == 0), 'xval'], 
+        #          df.loc[(df.xerr < xcut) & (df.yerr < ycut) & (df.OIII_EXTREM_FLAG == 0), 'yval'],
+        #          linestyle='',
+        #          marker='o', 
+        #          markerfacecolor=cs[1],
+        #          markersize = 4,
+        #          markeredgecolor='None')
+    
+        ax3.set_ylim(0, 2000)
+        
+        ax1.xaxis.set_major_locator(MaxNLocator(4)) 
+        ax2.xaxis.set_major_locator(MaxNLocator(4)) 
+    
+        ax1.yaxis.set_major_locator(MaxNLocator(4)) 
+        ax2.yaxis.set_major_locator(MaxNLocator(4)) 
+        
+        ax3.set_xlabel(r'$\Delta v$(C\,{\sc iv}) [km~$\rm{s}^{-1}$]')
+        ax3.set_ylabel(r'$\Delta v$([O\,{\sc iii}]) [km~$\rm{s}^{-1}$]')
+        
+        ax1.set_xlabel(r'$\Delta v$([O\,{\sc iii}])', fontsize=9)
+        ax1.set_ylabel(r'$\sigma \Delta v$([O\,{\sc iii}])', fontsize=9)
+    
+        ax2.set_xlabel(r'$\Delta v$(C\,{\sc iv})', fontsize=9)
+        ax2.set_ylabel(r'$\sigma \Delta v$(C\,{\sc iv})', fontsize=9)
+    
+        fig.tight_layout()
+    
+        fig.savefig('/home/lc585/thesis/figures/chapter04/civ_blueshift_oiii_blueshift.pdf')
+    
+    else:
+
+        fig, ax = plt.subplots(figsize=figsize(1, 0.7))
+        
+        im = ax.scatter(df.loc[(df.xerr < xcut) & (df.yerr < ycut) & (df.OIII_EXTREM_FLAG == 0), 'xval'], 
+                        df.loc[(df.xerr < xcut) & (df.yerr < ycut) & (df.OIII_EXTREM_FLAG == 0), 'yval'],
+                        c = np.log10(9.26) + df.loc[(df.xerr < xcut) & (df.yerr < ycut) & (df.OIII_EXTREM_FLAG == 0), 'LogL5100'],
+                        marker='o', 
+                        edgecolor='None',
+                        cmap=palettable.matplotlib.Viridis_10.mpl_colormap)       
+
+        cb = fig.colorbar(im, ticks=[46, 46.5, 47, 47.5, 48])
+
+        cb.set_label('log L$_{\mathrm{Bol}}$ [erg~s$^{-1}$]')
+
+
+        ax.set_xlabel(r'$\Delta v$(C\,{\sc iv}) [km~$\rm{s}^{-1}$]')
+        ax.set_ylabel(r'$\Delta v$([O\,{\sc iii}]) [km~$\rm{s}^{-1}$]')
+
+        fig.tight_layout()
+
+        fig.savefig('/home/lc585/thesis/figures/chapter04/civ_blueshift_oiii_blueshift_luminosity.pdf')
+
 
     plt.show() 
+    
+
+
+
 
     return None 
 
@@ -2175,7 +2286,7 @@ def parameters_grid():
     df = df[df.OIII_BAD_FIT_FLAG == 0]
     df = df[df.FE_FLAG == 0]
     df = df[df.OIII_5007_EQW_3 < 100.0] # just for the purposes of plotting 
-    df = df[df.OIII_BROAD_OFF == False] # otherwise asymetry always zero
+    # df = df[df.OIII_BROAD_OFF == False] # otherwise asymetry always zero
 
     print len(df)
     
@@ -2202,34 +2313,44 @@ def oiii_luminosity_z_w80():
 
     fig, ax = plt.subplots(figsize=figsize(1, vscale=0.8))
     
+    props = {'vmin': 500.0, 
+             'vmax': 3000.0, 
+             'cmap': 'YlGnBu', 
+             'edgecolor':'None'}
+
+    # Mullaney
+    
+    t = Table.read('/data/lc585/Mullaney13/ALPAKA_liam.fits')
+    t = t[t['AGN_TYPE'] == 1] # Only type 1 AGN 
+    
+    ax.hexbin(t['Z'],
+              np.log10(t['OIII_5007_LUM']),
+              C=t['w80'],
+              vmin=props['vmin'],
+              vmax=props['vmax'],
+              cmap=props['cmap'],
+              gridsize=(5, 20),
+              edgecolor='black')
+    
+    
     # Our sample ------------------------------------------------
-
+    
     df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0) 
-    df = df[df.OIII_FLAG_2 == 1]
+    df = df[df.OIII_FLAG_2 > 0]
+    df = df[df.OIII_EQW_FLAG == 0]
+    df = df[df.OIII_SNR_FLAG == 0]
+    df = df[df.OIII_BAD_FIT_FLAG == 0]
+    df = df[df.FE_FLAG == 0]
     
-    ax.scatter(df.z_IR.values, 
-               df.OIII_5007_LUM_2, 
-               c=df.OIII_5007_W80,
-               edgecolor='None',
-               vmin=192.0,
-               vmax=3268.0,
-               cmap='YlGnBu',
-               marker='o')
-
+    ax.hexbin(df.z_IR.values, 
+              df.OIII_5007_LUM_2, 
+              C=df.OIII_5007_W80,
+              vmin=props['vmin'],
+              vmax=props['vmax'],
+              cmap=props['cmap'],
+              gridsize=(30, 15),
+              edgecolor='black')
     
-    # Zakamska & Greene 2014 --------------------------------------------
-    
-    t = Table.read('/home/lc585/Dropbox/IoA/nirspec/tables/Reyes_kinematics.fits')
-    
-    ax.scatter(t['z'].data, 
-               np.log10(t['oiiilum']*1e42), 
-               c=t['w80'],
-               edgecolor='None',
-               vmin=192.0,
-               vmax=3268.0,
-               cmap='YlGnBu',
-               marker='^')
-        
     # Harrison+16 ----------------------------------------------------------------
     
     df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/harrison+16.dat', index_col=0)
@@ -2251,15 +2372,15 @@ def oiii_luminosity_z_w80():
     
     lum_oiii = flx * (1.0 + df['zL'].values) * 4.0 * math.pi * lumdist**2 
     
-    im = ax.scatter(df.zL, 
-                    np.log10(lum_oiii.value), 
-                    c=df.W80,
-                    edgecolor='None',
-                    vmin=192.0,
-                    vmax=3268.0,
-                    cmap='YlGnBu',
-                    marker='s')
-
+    im = ax.hexbin(df.zL, 
+                   np.log10(lum_oiii.value), 
+                   C=df.W80,
+                   vmin=props['vmin'],
+                   vmax=props['vmax'],
+                   cmap=props['cmap'],
+                   gridsize=(8, 10),
+                   edgecolor='black')
+   
     #---------------------------------------------------------------------------
 
     cb = fig.colorbar(im) 
@@ -2378,7 +2499,9 @@ def composite():
 
     set_plot_properties() # change style  
 
-    cs = palettable.colorbrewer.qualitative.Set1_3.mpl_colors
+    cs = palettable.matplotlib.qualitative.Set1_3.mpl_colors
+
+
 
     fig, ax = plt.subplots(figsize=figsize(1, vscale=0.8))
 
@@ -2474,6 +2597,44 @@ def composite():
 
     return None 
 
+def eqw_cut(): 
 
 
+    fig, ax = plt.subplots(1, 1, figsize=figsize(1, 0.75))
+    
+    df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0) 
+    
+    df = df[df.OIII_FLAG_2 > 0]
+    df = df[df.OIII_BAD_FIT_FLAG == 0]
+    df = df[df.FE_FLAG == 0]
+    
+    ax.plot(df.loc[df.OIII_5007_EQW_3 > 8.0, 'OIII_5007_EQW_3'],
+            df.loc[df.OIII_5007_EQW_3 > 8.0, 'OIII_5007_V10_ERR'],
+            linestyle='', 
+            markerfacecolor=cs[1],
+            markeredgecolor='None',
+            markersize=4,
+            marker='o')
+    
+    ax.plot(df.loc[df.OIII_5007_EQW_3 < 8.0, 'OIII_5007_EQW_3'],
+            df.loc[df.OIII_5007_EQW_3 < 8.0, 'OIII_5007_V10_ERR'],
+            linestyle='',
+            markerfacecolor='None',
+            markeredgecolor=cs[1],
+            markersize=4,
+            marker='o')
+    
+    ax.axvline(8, color='black', linestyle=':')
+    
+    ax.set_xlim(-1, 100)
+    ax.set_ylim(-50, 7000)
 
+    ax.set_xlabel(r'EQW [\AA]')
+    ax.set_ylabel(r'$\sigma(v_{10})$ [km~$\rm{s}^{-1}$]')
+
+
+    fig.tight_layout() 
+    
+    fig.savefig('/home/lc585/thesis/figures/chapter04/eqw_cut.pdf')
+
+    plt.show() 
