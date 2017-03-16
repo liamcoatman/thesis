@@ -254,47 +254,6 @@ In many objects [\ion{O}{III}] is undetected.
 In others, [\ion{O}{III}] is detected, but is too weak for its shape (i.e. the width and asymmetry) to be measured reliably. 
 We define \ac{EQW}$=8$\AA\, as the limit below which we can no longer reliably determine the shape of the [\ion{O}{III}] emission. 
 
-\subsubsection{Low \ac{S/N} [\ion{O}{III}]}
- 
-\begin{figure}
-    \centering
-    \includegraphics[width=0.7\columnwidth]{figures/chapter04/snr_test.pdf} 
-    \caption[{Fractional change in the [\ion{O}{III}] line parameter $w_{80}$ as a function of the \ac{S/N} of six simulated spectra.}]{Fractional change in the [\ion{O}{III}] line parameter $w_{80}$ as a function of the \ac{S/N} of six simulated spectra. At each \ac{S/N}, our line-fitting procedure is run on 100 mock spectra, and the points and error-bars indicate the 50th percentile and 16-84 percentile range respectively. The $w_{80}$ parameter is considered `unreliable' if $|\Delta w_{80}|>0.1$ at the \ac{S/N} of the real spectrum (represented by the vertical line). Our $w_{80}$ measurement is `reliable' for J100627+480420 and `unreliable' for J124948+060714.}
-    \label{fig:snr_test}
-\end{figure}
-
-In this section, we identify objects for which the spectral \ac{S/N} is insufficient for the [\ion{O}{III}] line width to be measured reliably.  
-A single \ac{S/N} cut is not adequate because, for a given \ac{S/N}, it is much easier to measure the properties of a strong line than a weaker one. 
-We use $w_{80}$ as a representative parameter. 
-A low \ac{S/N} flag is assigned if the relative error in $w_{80}$ exceeds 50 per cent at the \ac{S/N} of the spectra.
-A low \ac{S/N} flag can also be assigned using the following test: 
-
-\begin{enumerate}
-\item For each object, we use the best-fitting parametric model as a high \ac{S/N} representation of the spectra. 
-\item We then add the noise array to this spectrum, which is scaled so that the \ac{S/N} (measured in the continuum and quoted per pixel) ranges from 2.5 to 50.
-\item At each \ac{S/N}, we generate 100 mock spectra by randomly drawing the flux in each pixel from a Normal distribution with centre equal to the model flux and width equal to the scaled error. 
-\item We run our line-fitting procedure on each of the 100 mock spectra and record the value of $w_{80}$ for the best-fitting model in each trial. 
-\item We calculate the 16th, 50th and 84th percentiles of the distribution of $w_{80}$ values.
-\item We calculate the the median $w_{80}$ value at \ac{S/N}$=50$ and at the \ac{S/N} of the real spectrum (by linearly interpolating between the results of our simulations). The low \ac{S/N} flag is assigned to the object if the fractional change in the median $w_{80}$ exceeds 10 per cent between these two \ac{S/N} realisations.   
-\end{enumerate}
-
-Examples of this test for two different objects are shown in Figure~\ref{fig:snr_test}.
-The marker denotes the 50th percentile, and the lower and upper error bars the 16th and 84th percentiles respectively. 
-As expected, the uncertainty on $w_{80}$ increases as the \ac{S/N} of the spectra decreases. 
-The \ac{S/N} in the two spectra are similar, but the [\ion{O}{III}] line in J100627+480420 is stronger. 
-Hence $w_{80}$ can still be measured reliably even at low \ac{S/N}. 
-J100627+480420 passes our \ac{S/N} cut, whereas the latter fails it. 
-
-\todoinline{I don't think I've justified why I use the simulations. Wouldn't a simple cut the error be more appropriate? Once I've finished try this. Then do cut's when appropriate. For instance, when doing the redshift comparison, do a cut on the fractional uncertainty in the position of the [\ion{O}{III}] peak.}
-
-\subsection{Which to use?}
-
-How do we decide whether to use, $v_{5}$, $v_{10}$, $v_{25}$ to measure the blueshift, or $w_{90}$, $w_{80}$, $w_{50}$ to measure the line width? 
-Clearly, if [\ion{O}{III}] is modelled with a single Gaussian it doesn't matter. 
-Look at error on each? 
-Expect errors on $v_{5}$ to be the largest. 
-As long as I can show the parameter is reliable, best to show our results hold no matter how these parameters are defined. 
-
 \section{Reliability of redshift estimates}
 
 \begin{figure}
