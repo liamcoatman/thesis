@@ -83,6 +83,7 @@ We then derive emission line parameters from the best-fitting models.
 The model-fitting is procedure is more robust when analysing spectra with limited \ac{S/N} (in comparison to measuring line properties directly from the data) and allows the emission from different transitions to be isolated. 
 
 \subsection{Description of model}
+\todo{A handful with different [\ion{O}{III}] ratio - check these}
 
 Before a spectrum can be modelled, it must first be transformed to the quasar rest-frame.  
 The redshift used in this transformation is either derived from the peak of the broad \ha emission ($\sim$ 40 per cent of our sample), from the peak of the broad \hb emission ($\sim$ 40 per cent) or from the peak of the narrow [\ion{O}{III}] emission (20 per cent).
@@ -743,6 +744,8 @@ However, for high luminosity quasars with strong [\ion{O}{III}] this gives \ac{N
 
 \section{Description of catalogue}
 
+\todoinline{Move table code from OIIIProperties.ipynb to code/. Make sure I'm happy with flags.}
+
 \begin{itemize}
     
   \item[1] ID: Jhhmmss+ddmmss (J2000; truncated coordinates).
@@ -755,13 +758,33 @@ However, for high luminosity quasars with strong [\ion{O}{III}] this gives \ac{N
 
   \item[19-24] $w_{50}$ ($\equiv v_{75} - v_{25}$), $w_{80}$ ($\equiv v_{90} - v_{10}$) and $w_{90}$ ($\equiv v_{95} - v_{5}$) velocity width of [\ion{O}{III}], and their errors, in \kms.
 
-  \item[25-26] Dimensionless asymmetry of [\ion{O}{III}] ($A = (v_{90} + v_{10}) / (v_{90} - v_{10})$), and its.  
+  \item[25-26] Dimensionless asymmetry of [\ion{O}{III}] ($A = (v_{90} + v_{10}) / (v_{90} - v_{10})$), and its error.  
 
   \item[27-28] Rest-frame [\ion{O}{III}] EQW, and its error, in \AA.
 
   \item[29-30] [\ion{O}{III}] luminosity, and its error, in \ergs. 
 
+  \item[31-32] 4434 - 4684 \AA rest-frame \ac{EQW} of \ion{Fe}{II}, and its error, in \AA. % Not the same as used in EV1 plots 
 
+  \item[33-34] Velocity of \hb peak, relative to [\ion{O}{III}] peak, in \kms, and its error. 
+
+  \item[35-36] Velocity of \ha peak, relative to [\ion{O}{III}] peak, in \kms, and its error. 
+
+  \item[37-39] Redshift of \hb, and its error.
+
+  \item[40-41] Redshift of \ha, and its error.
+
+  \item[37] Reduced $\chi$-squared from [\ion{O}{III}]/\hb fit. 
+
+  \item[38] 5$\mu$m luminosity, in \ergs. Luminosity is derived by linearly interpolating between WISE magnitudes. 
+
+  \item[39] \ion{Fe}{II} flag. 
+
+  \item[40] [\ion{O}{III}] \ac{EQW} flag. 
+
+  \item[41] [\ion{O}{III}] bad fit flag (mention in text)
+
+  \item[42] Extreme [\ion{O}{III}] flag  
 
 
 

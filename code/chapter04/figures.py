@@ -121,7 +121,7 @@ def redshift_comparison():
 
     print len(df)
     
-    x = const.c.to(u.km/u.s)*(df.OIII_FIT_Z_FULL_OIII_PEAK - df.OIII_FIT_HB_Z)/(1.0 + df.OIII_FIT_Z_FULL_OIII_PEAK)
+    x = df.OIII_FIT_VEL_FULL_OIII_PEAK - df.OIII_FIT_VEL_HB_PEAK 
     x = x.value 
     print np.mean(x), np.median(x), np.std(x)
  
@@ -159,7 +159,7 @@ def redshift_comparison():
     df = df[df.FE_FLAG == 0]
     df = df[df.OIII_EXTREM_FLAG == 0]
 
-    df = df[df.OIII_FIT_HA_Z_FLAG >= 0] # Hb missing (6 objects)
+    df = df[df.OIII_FIT_HA_Z_FLAG > 0] 
     # df = df[df.OIII_FIT_VEL_HA_PEAK_ERR < 750.0] # Really bad 
     df = df[df.OIII_FIT_VEL_FULL_OIII_PEAK_ERR < 400.0] # Really bad 
 

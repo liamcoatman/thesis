@@ -210,29 +210,279 @@ The spectrograph resolutions, which we estimate from the line widths in the obse
     \begin{minipage}{\linewidth}
     \small
     \renewcommand\footnoterule{}
-    \captionof{table}{Quasars in our near-infrared spectroscopic database. Only the first 15 entries are shown. The full table (including 462 objects) is available online. Columns are as follows: (1) identifier, (2) date near-infrared spectra acquired, (3)-(4) coordinates, (5) instrument/telescope, (6) wavelength coverage, (7) velocity per pixel, (8) S/N per pixel, (9)-(11) redshifts from peak of [\ion{O}{III}], \hans, and \hb - see Chapter~\ref{ch:nlr} for details. \todoinline{Add unique ID to this?}}
+    \captionof{table}{Quasars in our near-infrared spectroscopic database. Only the first 15 entries are shown. The full table (including 462 objects) is available online. Columns are as follows: (1) identifier, (2) unique catalogue name, (3) date near-infrared spectra acquired, (4)-(5) coordinates, (6) instrument/telescope, (7) wavelength coverage, (8) velocity per pixel, (9) S/N per pixel, (10) redshift.}
     \label{tab:database}
-    \begin{tabular}{ccccccccccc} 
+    \begin{tabular}{cccccccccc} 
     \toprule
-     ID &        Date &             Ra &            Dec &            Instr. &  $\Delta\lambda$ [$\mu$m] &  $\Delta v$ [\kms] & S/N &  $z$([\ion{O}{III}]) & $z$(\hans) & $z$(\hbns) \\
-     (1) &        (2) &             (3) &            (4) &            (5) &  (6) &  (7) & (8) &  (9) & (10) & (11) \\
+     ID &   Cat. Name &  Date &             Ra &            Dec &            Instr. &  $\Delta\lambda$ [$\mu$m] &  $\Delta v$ [\kms] & S/N &  $z$ \\
+     (1) &        (2) &             (3) &            (4) &            (5) &  (6) &  (7) & (8) &  (9) & (10) \\
     \midrule
-     J000039-001804 &  2015-09-02 &  +00h00m39.00s &  -00d18m03.90s &         SofI/NTT &  1.50-2.54 &     154.0 &   4.9 &         &  2.1412 &  2.1391 \\
- J000345-232353 &  2009-07-07 &  +00h03m45.00s &  -23d23m53.40s &      SINFONI/VLT &  1.44-1.87 &      36.0 &  12.7 &  2.2657 &         &  2.2653 \\
- J000345-232353 &  2011-09-18 &  +00h03m45.00s &  -23d23m53.40s &         SofI/NTT &  1.48-1.83 &      63.0 &  36.0 &  2.2644 &         &  2.2776 \\
- J000451-084450 &  2013-07-12 &  +00h04m50.66s &  -08d44m49.63s &     XSHOOTER/VLT &  0.31-2.28 &      15.0 &  10.3 &  3.0038 &         &  3.0052 \\
- J000451-084452 &  2013-08-08 &  +00h04m50.91s &  -08d44m51.98s &     XSHOOTER/VLT &  0.31-2.28 &      15.0 &   5.4 &  2.9991 &         &         \\
- J000500-003348 &  2015-09-01 &  +00h05m00.42s &  -00d33m48.20s &         SofI/NTT &  1.50-2.54 &     154.0 &   8.2 &         &  2.1842 &  2.1850 \\
- J000501+010221 &  2015-09-02 &  +00h05m00.53s &  +01d02m20.80s &         SofI/NTT &  1.50-2.54 &     154.0 &   6.8 &         &  2.1334 &  2.1317 \\
- J001016+001228 &  2015-09-04 &  +00h10m16.49s &  +00d12m27.60s &         SofI/NTT &  1.50-2.54 &     154.0 &   8.9 &         &  2.2855 &  2.2828 \\
- J001247+001239 &  2013-06-06 &  +00h12m47.12s &  +00d12m39.49s &        ISAAC/VLT &  1.52-1.60 &      15.0 &  19.1 &         &         &  2.1618 \\
- J001708+813508 &  2012-08-04 &  +00h17m08.48s &  +81d35m08.10s &  TRIPLESPEC/Hale &  0.94-2.80 &      39.0 &  36.5 &  3.3934 &         &         \\
- J001919+010152 &  2015-09-04 &  +00h19m19.31s &  +01d01m52.20s &         SofI/NTT &  1.50-2.54 &     154.0 &   6.5 &  2.3120 &  2.3158 &  2.3154 \\
- J001955-091316 &  2004-11-26 &  +00h19m54.67s &  -09d13m16.45s &     GNIRS/Gemini &  0.60-2.61 &      88.0 &   9.9 &         &  2.1207 &  2.1308 \\
- J002018-233654 &  2009-07-07 &  +00h20m18.41s &  -23d36m53.80s &      SINFONI/VLT &  1.44-1.87 &      36.0 &  16.9 &  2.2975 &         &  2.2931 \\
- J002023-414639 &  2009-07-08 &  +00h20m23.38s &  -41d46m38.90s &      SINFONI/VLT &  1.09-1.41 &      35.0 &  33.4 &  1.5733 &         &  1.5730 \\
- J002111-242247 &  2009-07-16 &  +00h21m10.90s &  -24d22m47.20s &      SINFONI/VLT &  1.44-1.86 &      36.0 &  11.1 &  2.2622 &         &  2.2595 \\
+    J000039-001804  &  QSO460 & 2015-09-02 &  +00h00m39.00s &  -00d18m03.90s &         SofI/NTT &  1.50-2.54 &     154.0 &   4.9 &  2.14 \\
+    J000345-232353  &  QSO552 & 2009-07-07 &  +00h03m45.00s &  -23d23m53.40s &      SINFONI/VLT &  1.44-1.87 &      36.0 &  12.7 &  2.27 \\
+    J000345-232353  &  QSO330 & 2011-09-18 &  +00h03m45.00s &  -23d23m53.40s &         SofI/NTT &  1.48-1.83 &      63.0 &  36.0 &  2.26 \\
+    J000451-084450  &  QSO290 & 2013-07-12 &  +00h04m50.66s &  -08d44m49.63s &     XSHOOTER/VLT &  0.31-2.28 &      15.0 &  10.3 &  3.00 \\
+    J000451-084452  &  QSO289 & 2013-08-08 &  +00h04m50.91s &  -08d44m51.98s &     XSHOOTER/VLT &  0.31-2.28 &      15.0 &   5.4 &  3.00 \\
+    J000500-003348  &  QSO454 & 2015-09-01 &  +00h05m00.42s &  -00d33m48.20s &         SofI/NTT &  1.50-2.54 &     154.0 &   8.2 &  2.18 \\
+    J000501+010221  &  QSO459 & 2015-09-02 &  +00h05m00.53s &  +01d02m20.80s &         SofI/NTT &  1.50-2.54 &     154.0 &   6.8 &  2.13 \\
+    J001016+001228  &  QSO475 & 2015-09-04 &  +00h10m16.49s &  +00d12m27.60s &         SofI/NTT &  1.50-2.54 &     154.0 &   8.9 &  2.28 \\
+    J001247+001239  &  QSO082 & 2013-06-06 &  +00h12m47.12s &  +00d12m39.49s &        ISAAC/VLT &  1.52-1.60 &      15.0 &  19.1 &  2.16 \\
+    J001708+813508  &  QSO107 & 2012-08-04 &  +00h17m08.48s &  +81d35m08.10s &  TRIPLESPEC/Hale &  0.94-2.80 &      39.0 &  36.5 &  3.40 \\
+    J001919+010152  &  QSO476 & 2015-09-04 &  +00h19m19.31s &  +01d01m52.20s &         SofI/NTT &  1.50-2.54 &     154.0 &   6.5 &  2.32 \\
+    J001955-091316  &  QSO001 & 2004-11-26 &  +00h19m54.67s &  -09d13m16.45s &     GNIRS/Gemini &  0.60-2.61 &      88.0 &   9.9 &  2.12 \\
+    J002018-233654  &  QSO553 & 2009-07-07 &  +00h20m18.41s &  -23d36m53.80s &      SINFONI/VLT &  1.44-1.87 &      36.0 &  16.9 &  2.30 \\
+    J002023-414639  &  QSO554 & 2009-07-08 &  +00h20m23.38s &  -41d46m38.90s &      SINFONI/VLT &  1.09-1.41 &      35.0 &  33.4 &  1.57 \\
+    J002111-242247  &  QSO555 & 2009-07-16 &  +00h21m10.90s &  -24d22m47.20s &      SINFONI/VLT &  1.44-1.86 &      36.0 &  11.1 &  2.26 \\
     \bottomrule
     \end{tabular}
     \end{minipage}
 \end{landscape}
+
+\section{Description of catalogue}
+
+We have tabulated supplementary information for our spectroscopic catalogue.
+This information is used extensively throughout this thesis. 
+Here, we describe the format of this extended catalogue. 
+
+\begin{itemize}
+
+\item[1] ID: Jhhmmss+ddmmss (J2000; truncated coordinates). 
+
+\item[2-3] ID: RA and DEC (in decimal degrees; J2000.0).  
+
+\item[4] Origin of optical spectra, if applicable. 
+
+\item[5] BAL flag. -1 = no optical spectrum, 0 = non-BAL, 1 = BAL. BAL quasars are identified using flags from \citet{shen11}, \citet{allen11} and \citet{paris17}, and by visual inspection. 
+
+\item[6] Radio flag (-1 = not in FIRST footprint, 0=FIRST undetected, 1=core dominant, 2=lobe dominant) from matching out sample to the FIRST radio catalogue \citep{white97}. Following \citet{shen11}, we classify quasars with matches within 5\,arcseconds as core-dominated, while, if multiple matches were found within 30 arcseconds, quasars are classified as lobe-dominated. 
+  
+\item[2-11] SDSS DR9 $ugriz$ magnitudes, and their errors. 
+
+\item[12-14] SuperCosmos $bri$ magnitudes. 
+
+\item[15-20] 2MASS $JHK$ magnitudes, and their errors. 
+
+\item[21-26] UKIDSS DR10 $YJHK$ magnitudes, and their errors. 
+
+\item[27-34] VHS $YJHK$ magnitudes, and their errors. 
+
+\item[35-44] Viking $ZYJHK$ magnitudes, and their errors. 
+
+\item[45-52] WISE $W1W2W3W4$ magnitudes. 
+
+\end{itemize}
+
+
+
+ 
+% In chapter 4 table: 
+
+
+
+
+% ID
+% Make sure nothing depends on z_IR
+
+% CIV v50 relative to OIII peak velocity 
+
+
+
+
+% OIII_FIT_HA_MODEL
+% OIII_FIT_HA_NGAUSSIANS
+% OIII_FIT_HA_FIX_BROAD_PEAKS
+% OIII_FIT_HA_BROAD_OFFSET
+% OIII_FIT_HA_REDCHI
+
+
+% In chapter 3 table:
+
+% # Make sure nothing depends on z_IR 
+
+% ID
+
+% LogL5100
+% LogL1350
+
+% # Check these are the values going in to figure 6 in paper 
+% LogMBH_Ha
+% LogMBH_Ha_Err
+% Edd_Ratio_Ha
+% Edd_Ratio_Ha_Err
+% LogMBH_Hb
+% LogMBH_Hb_Err
+% Edd_Ratio_Hb
+% Edd_Ratio_Hb_Err
+% LogMBH_CIV_VP06
+% LogMBH_CIV_VP06_Err
+% Edd_Ratio_CIV_VP06
+% Edd_Ratio_CIV_VP06_Err
+
+% # Add corrected BH mass 
+
+% FWHM_Broad_Ha
+% FWHM_Broad_Ha_Err
+% Sigma_Broad_Ha
+% Sigma_Broad_Ha_Err
+% Median_Broad_Ha (remove z_IR dependence)
+% Median_Broad_Ha_Err
+% Peak_Broad_Ha
+% Peak_Broad_Ha_Err
+% EQW_Broad_Ha
+% EQW_Broad_Ha_Err
+% LogL_Broad_Ha
+% LogL_Broad_Ha_Err
+
+% (Do I include these?)
+% FWHM_Narrow_Ha
+% FWHM_Narrow_Ha_Err
+% LogL_Narrow_Ha
+% LogL_Narrow_Ha_Err
+% VOFF_Narrow_Ha (remove z_IR dependence)
+% VOFF_Narrow_Ha_Err
+
+% RedChi_Ha
+% WARN_Ha (Remove 2, just flag 1 as low S/N)
+% SNR_Ha
+% dv_Ha
+% Model_Ha
+
+% # These will be repeated in chapter 4 with slightly different model 
+% z_Broad_Ha
+% z_Broad_Hb
+
+
+
+% FWHM_Broad_Hb
+% FWHM_Broad_Hb_Err
+% Sigma_Broad_Hb
+% Sigma_Broad_Hb_Err
+% Median_Broad_Hb
+% Median_Broad_Hb_Err
+% Peak_Broad_Hb
+% Peak_Broad_Hb_Err
+% EQW_Broad_Hb
+% EQW_Broad_Hb_Err
+% LogL_Broad_Hb
+% LogL_Broad_Hb_Err
+
+% # Do I use these? 
+% FWHM_Narrow_Hb
+% FWHM_Narrow_Hb_Err
+% LogL_Narrow_Hb
+% LogL_Narrow_Hb_Err
+% VOFF_Narrow_Hb
+% VOFF_Narrow_Hb_Err
+
+% (remove best, make sure it's clear where it comes from)
+% FWHM_CIV_BEST
+% FWHM_CIV_BEST_Err 
+% Sigma_CIV_BEST
+% Sigma_CIV_BEST_Err
+% Median_CIV_BEST
+% Median_CIV_BEST_Err
+% Peak_CIV_BEST
+% Peak_CIV_BEST_Err
+% EQW_CIV_BEST
+% EQW_CIV_BEST_Err
+% LogL_CIV_BEST
+% LogL_CIV_BEST_Err
+% Max_CIV_BEST
+% Max_CIV_BEST_Err
+
+% RedChi_CIV_BEST
+% WARN_CIV_BEST (will have removed warn=2, so should just be warn=1 low S/N flag)
+% BAL_BEST
+% SNR_CIV_BEST
+% dv_CIV_BEST
+
+
+% Model_CIV_BEST
+
+% Max_1400_BEST
+% Max_1400_BEST_Err
+
+% WARN_1400_BEST
+
+% Make sure this is BEST: 
+% 1400: Make sure best and just give what I used in paper. 
+% If people want anything else they can generate it from my parameters and the code I give 
+
+
+% EQW_FE_4434_4684
+% EQW_FE_4434_4684_Err
+
+
+
+
+% OIII_FIT_HB_BROAD_OFFSET_ERR
+
+
+
+
+
+% RedChi_Hb
+% WARN_Hb
+% Use_OIII
+% SNR_Hb
+% dv_Hb
+% Model_Hb
+
+
+% FWHM_CIV_BEST_Err_New
+% Median_CIV_BEST_Err_New
+% FWHM_CIV_BEST_Err_New.1
+% Median_CIV_BEST_Err_New.1
+% Blueshift_CIV_HW_DR7_Paul
+% EQW_CIV_HW_DR7_Paul
+% Blueshift_CIV_ICA_DR7_Paul
+% EQW_CIV_ICA_DR7_Paul
+% z_ICA_DR7
+
+
+
+
+
+
+% Blueshift_CIV_Ha
+% Blueshift_CIV_Ha_Err
+
+% Blueshift_CIV_Hb
+% Blueshift_CIV_Hb_Err
+
+% Blueshift_CIV_OIII
+% Blueshift_CIV_OIII_Err
+
+% Blueshift_CIV_ICA_DR7
+% Blueshift_CIV_ICA_DR10
+% Blueshift_CIV_ICA_DR12
+% Blueshift_CIV_HW
+% Blueshift_CIV_ICA
+% Blueshift_CIV_Balmer_Best
+
+% OIII_5007_EQW_MEAN
+% OIII_5007_EQW_STD
+% EBV_SDSS_SPEC
+
+% EBV_MAG
+
+% kMag
+% kSDSS
+% k
+
+% 1400_CIV_BEST
+% 1400_CIV_BEST_ERR 
+
+
+% Just give BEST values then note of which optical spectrum was used
+
+
+
+
+
+
+
+% Don't need to give any other Hb properties, just make sure give model parameters and code to generate spectra. 
+
+% Make table of OIII line properties and provide code to turn these in to spectrum. When OIII_Broad_OFF just set amplitude of second component to zero. Check none with FIX_OIII_PEAK_RATIO=True. 
+
+% Details of model, oiii ngaussians, hb ngaussians, hb fix centroids. 
