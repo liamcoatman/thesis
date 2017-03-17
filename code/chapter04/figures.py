@@ -100,166 +100,167 @@ def mfica_component_weights():
 
 def redshift_comparison(): 
 
-    fig, axs = plt.subplots(3, 1, figsize=figsize(1, 2))
+    from sklearn.neighbors import KernelDensity
+    from sklearn.grid_search import GridSearchCV
+    from sklearn.cross_validation import LeaveOneOut
 
+    fig, axs = plt.subplots(3, 1, figsize=figsize(1, 2), sharex=True, sharey=True)
+
+    # OIII vs Hb -----------------------------------------------------------
  
     df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0) 
     df = df[df.OIII_FLAG_2 > 0]
     df = df[df.OIII_EQW_FLAG == 0]
-    df = df[df.OIII_SNR_FLAG == 0]
     df = df[df.OIII_BAD_FIT_FLAG == 0]
     df = df[df.FE_FLAG == 0]
+    df = df[df.OIII_EXTREM_FLAG == 0]
+
+    df = df[df.OIII_FIT_HB_Z_FLAG >= 0] # Hb missing (6 objects)
+    df = df[df.OIII_FIT_VEL_HB_PEAK_ERR < 750.0] # Really bad 
+    df = df[df.OIII_FIT_VEL_FULL_OIII_PEAK_ERR < 400.0] # Really bad 
+
+    print len(df)
     
-    df = df[df.OIII_FIT_HB_Z_FLAG == 1] # need to relax this 
-
-    print len(df)
-
-    xi = const.c.to(u.km/u.s)*(df.OIII_FIT_Z_FULL_OIII_PEAK - df.OIII_FIT_HB_Z)/(1.0 + df.OIII_FIT_Z_FULL_OIII_PEAK)
-
-    axs[0].hist(xi,
-                histtype='stepfilled',
-                color=cs[1],
-                bins=np.arange(-1000, 1000, 100),
-                zorder=1,
-                normed=True)
-
-    def gaussian(mu, sig, x):
-        return (2.0 * np.pi * sig**2)**-0.5 * np.exp(-(x - mu)**2 / (2.0*sig**2))
-
-    def log_likelihood(p, x):
-        return np.sum(np.log(gaussian(p[0], p[1], x.value) ))
-
+    x = const.c.to(u.km/u.s)*(df.OIII_FIT_Z_FULL_OIII_PEAK - df.OIII_FIT_HB_Z)/(1.0 + df.OIII_FIT_Z_FULL_OIII_PEAK)
+    x = x.value 
+    print np.mean(x), np.median(x), np.std(x)
  
-    min_func = lambda p: -log_likelihood(p, xi)
-    p_fit = optimize.fmin(min_func, x0=[0.0, 200.0])
+    norm = np.std(x)
+    x = x / norm
 
-    axs[0].plot(np.arange(-1000, 1000, 1), 
-                gaussian(p_fit[0], p_fit[1], np.arange(-1000, 1000, 1)),
-                color=cs[0])
+    x_d = np.linspace(-4, 4, 1000)
+    
+    bandwidths = 10 ** np.linspace(-1, 1, 100)
+    grid = GridSearchCV(KernelDensity(kernel='gaussian'),
+                        {'bandwidth': bandwidths},
+                        cv=LeaveOneOut(len(x)))
+    grid.fit(x[:, None]);
 
-    axs[0].axvline(0.0, color='black', linestyle='--')
+    print grid.best_params_['bandwidth'] * norm 
+        
+    kde = KernelDensity(bandwidth=grid.best_params_['bandwidth'], kernel='gaussian')
+    kde.fit(x[:, None])
 
-    axs[0].text(0.05, 0.9, r'$\mu = {0:.0f}$'.format(p_fit[0]),
-                horizontalalignment='left',
-                verticalalignment='center',
-                transform = axs[0].transAxes)
+    # score_samples returns the log of the probability density
+    logprob = kde.score_samples(x_d[:, None])
+    
+    axs[0].fill_between(x_d*norm, np.exp(logprob), color=cs[1])
+    axs[0].plot(x*norm, np.full_like(x, -0.01), '|k', markeredgewidth=1)
 
-    axs[0].text(0.05, 0.82, r'$\sigma = {0:.0f}$'.format(p_fit[1]),
-                horizontalalignment='left',
-                verticalalignment='center',
-                transform = axs[0].transAxes)
+    axs[0].grid() 
 
-    axs[0].text(0.9, 0.9, '(a)',
-                horizontalalignment='center',
-                verticalalignment='center',
-                transform = axs[0].transAxes)
+    # OIII vs Ha-----------------------------------------------------------------------------
 
-    #------------------------------------------------------------
 
     df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0) 
     df = df[df.OIII_FLAG_2 > 0]
     df = df[df.OIII_EQW_FLAG == 0]
-    df = df[df.OIII_SNR_FLAG == 0]
     df = df[df.OIII_BAD_FIT_FLAG == 0]
     df = df[df.FE_FLAG == 0]
+    df = df[df.OIII_EXTREM_FLAG == 0]
 
-    df = df[df.OIII_FIT_HA_Z_FLAG == 1] # need to relax this 
+    df = df[df.OIII_FIT_HA_Z_FLAG >= 0] # Hb missing (6 objects)
+    # df = df[df.OIII_FIT_VEL_HA_PEAK_ERR < 750.0] # Really bad 
+    df = df[df.OIII_FIT_VEL_FULL_OIII_PEAK_ERR < 400.0] # Really bad 
 
     print len(df)
 
-    xi = const.c.to(u.km/u.s)*(df.OIII_FIT_Z_FULL_OIII_PEAK - df.OIII_FIT_HA_Z)/(1.0 + df.OIII_FIT_Z_FULL_OIII_PEAK)
+    x = const.c.to(u.km/u.s)*(df.OIII_FIT_Z_FULL_OIII_PEAK - df.OIII_FIT_HA_Z)/(1.0 + df.OIII_FIT_Z_FULL_OIII_PEAK)
+    x = x.value 
+    print np.mean(x), np.median(x), np.std(x)
+ 
+    norm = np.std(x)
+    x = x / norm
 
-    axs[1].hist(xi,
-                histtype='stepfilled',
-                color=cs[1],
-                bins=np.arange(-1000, 1000, 100),
-                zorder=1,
-                normed=True)
+    x_d = np.linspace(-4, 4, 1000)
+    
+    bandwidths = 10 ** np.linspace(-1, 1, 100)
+    grid = GridSearchCV(KernelDensity(kernel='gaussian'),
+                        {'bandwidth': bandwidths},
+                        cv=LeaveOneOut(len(x)))
+    grid.fit(x[:, None]);
 
-    min_func = lambda p: -log_likelihood(p, xi)
-    p_fit = optimize.fmin(min_func, x0=[0.0, 200.0])
+    print grid.best_params_['bandwidth'] * norm 
+        
+    kde = KernelDensity(bandwidth=grid.best_params_['bandwidth'], kernel='gaussian')
+    kde.fit(x[:, None])
 
-    axs[1].plot(np.arange(-1000, 1000, 1), 
-                gaussian(p_fit[0], p_fit[1], np.arange(-1000, 1000, 1)),
-                color=cs[0])
+    # score_samples returns the log of the probability density
+    logprob = kde.score_samples(x_d[:, None])
+    
+    axs[1].fill_between(x_d*norm, np.exp(logprob), color=cs[1])
+    axs[1].plot(x*norm, np.full_like(x, -0.01), '|k', markeredgewidth=1)
 
-    axs[1].axvline(0.0, color='black', linestyle='--')
+    axs[1].grid() 
 
-    axs[1].text(0.05, 0.9, r'$\mu = {0:.0f}$'.format(p_fit[0]),
-                horizontalalignment='left',
-                verticalalignment='center',
-                transform = axs[1].transAxes)
+    # Hb vs Ha-----------------------------------------------------------------------------
 
-    axs[1].text(0.05, 0.82, r'$\sigma = {0:.0f}$'.format(p_fit[1]),
-                horizontalalignment='left',
-                verticalalignment='center',
-                transform = axs[1].transAxes)
-
-    axs[1].text(0.9, 0.9, '(b)',
-                horizontalalignment='center',
-                verticalalignment='center',
-                transform = axs[1].transAxes)
-    #-------------------------------------------------------------
 
     df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0) 
-    df = df[df.OIII_FIT_HB_Z_FLAG == 1] # need to relax this 
-    df = df[df.OIII_FIT_HA_Z_FLAG == 1] # need to relax this 
+    df = df[df.OIII_FIT_HA_Z_FLAG >= 0] # Ha missing
+    df = df[df.OIII_FIT_HB_Z_FLAG >= 0] # Ha missing
+
+
+    df = df[df.OIII_FIT_VEL_HB_PEAK_ERR < 750.0] 
+    # df = df[df.OIII_FIT_VEL_HA_PEAK_ERR < 400.0] #  Waiting for this to finish running 
+    # print len(df)
 
     print len(df)
+    
+    x = const.c.to(u.km/u.s)*(df.OIII_FIT_HB_Z - df.OIII_FIT_HA_Z)/(1.0 + df.OIII_FIT_HA_Z)
+    x = x.value 
+    print np.mean(x), np.median(x), np.std(x)
+ 
+    norm = np.std(x)
+    x = x / norm
 
-    xi = const.c.to(u.km/u.s)*(df.OIII_FIT_HB_Z - df.OIII_FIT_HA_Z)/(1.0 + df.OIII_FIT_HB_Z)
+    x_d = np.linspace(-4, 4, 1000)
+    
+    bandwidths = 10 ** np.linspace(-1, 1, 100)
+    grid = GridSearchCV(KernelDensity(kernel='gaussian'),
+                        {'bandwidth': bandwidths},
+                        cv=LeaveOneOut(len(x)))
+    grid.fit(x[:, None]);
+        
+    print grid.best_params_['bandwidth'] * norm 
 
-    axs[2].hist(xi,
-                histtype='stepfilled',
-                color=cs[1],
-                bins=np.arange(-1000, 1000, 100),
-                zorder=1,
-                normed=True)
+    kde = KernelDensity(bandwidth=grid.best_params_['bandwidth'], kernel='gaussian')
+    kde.fit(x[:, None])
 
-    min_func = lambda p: -log_likelihood(p, xi)
-    p_fit = optimize.fmin(min_func, x0=[0.0, 200.0])
+    # score_samples returns the log of the probability density
+    logprob = kde.score_samples(x_d[:, None])
+    
+    axs[2].fill_between(x_d*norm, np.exp(logprob), color=cs[1])
+    axs[2].plot(x*norm, np.full_like(x, -0.01), '|k', markeredgewidth=1)
 
-    axs[2].plot(np.arange(-1000, 1000, 1), 
-                gaussian(p_fit[0], p_fit[1], np.arange(-1000, 1000, 1)),
-                color=cs[0])
+    axs[2].grid() 
 
-    axs[2].axvline(0.0, color='black', linestyle='--')
+    # ----------------------------------------------------------------------------------
 
-    axs[2].text(0.05, 0.9, r'$\mu = {0:.0f}$'.format(p_fit[0]),
-                horizontalalignment='left',
-                verticalalignment='center',
-                transform = axs[2].transAxes)
+    axs[0].set_ylim(-0.05, 0.45)
 
-    axs[2].text(0.05, 0.82, r'$\sigma = {0:.0f}$'.format(p_fit[1]),
-                horizontalalignment='left',
-                verticalalignment='center',
-                transform = axs[2].transAxes)
-
-    axs[2].text(0.9, 0.9, '(c)',
-                horizontalalignment='center',
-                verticalalignment='center',
-                transform = axs[2].transAxes)
-
-    #----------------------------------------------------------
-
-
-    axs[0].set_yticks([])
-    axs[1].set_yticks([])
-    axs[2].set_yticks([])
-
-    axs[0].xaxis.set_ticks_position('bottom')
-    axs[1].xaxis.set_ticks_position('bottom')
-    axs[2].xaxis.set_ticks_position('bottom')
-
-    axs[0].set_xlabel(r'$c(z_{[{\rm OIII}]} - z_{{\rm H}\beta}) / (1 + z_{[{\rm OIII}]})$ [km~$\rm{s}^{-1}$]')
-    axs[1].set_xlabel(r'$c(z_{[{\rm OIII}]} - z_{{\rm H}\alpha}) / (1 + z_{[{\rm OIII}]})$ [km~$\rm{s}^{-1}$]')
-    axs[2].set_xlabel(r'$c(z_{{\rm H}\beta} - z_{{\rm H}\alpha}) / (1 + z_{{\rm H}\beta})$ [km~$\rm{s}^{-1}$]')
+    labels = ['(a)', '(b)', '(c)']
 
 
+    for i, label in enumerate(labels):
 
-    # # ax.get_xaxis().tick_bottom()
+        axs[i].text(0.9, 0.93, label,
+                    horizontalalignment='center',
+                    verticalalignment='center',
+                    transform = axs[i].transAxes)
 
-    # # ax.set_xlabel(r'$\Delta z / (1 + z)$ [km~$\rm{s}^{-1}$]')
+    # #----------------------------------------------------------
+
+
+    axs[0].set_xlabel(r'$c(z{[{\rm OIII}]} - z{{\rm H}\beta}) / (1 + z{[{\rm OIII}]})$ [km~$\rm{s}^{-1}$]')
+    axs[1].set_xlabel(r'$c(z{[{\rm OIII}]} - z{{\rm H}\alpha}) / (1 + z{[{\rm OIII}]})$ [km~$\rm{s}^{-1}$]')
+    axs[2].set_xlabel(r'$c(z{{\rm H}\beta} - z{{\rm H}\alpha}) / (1 + z{{\rm H}\beta})$ [km~$\rm{s}^{-1}$]')
+
+    axs[0].set_ylabel('PDF')
+    axs[1].set_ylabel('PDF')
+    axs[2].set_ylabel('PDF')
+
+
     
     fig.tight_layout() 
 
@@ -2638,3 +2639,5 @@ def eqw_cut():
     fig.savefig('/home/lc585/thesis/figures/chapter04/eqw_cut.pdf')
 
     plt.show() 
+
+    return None 

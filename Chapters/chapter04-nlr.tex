@@ -111,19 +111,18 @@ When a single Gaussian is used to model each line, the peak flux ratio of the [\
 In the double Gaussian model, the peak flux ratio of the additional components is again fixed at 1:3, and the width and velocity offsets are again set to be equal. 
 Some example fits are shown in Figure~\ref{fig:example_spectrum_grid}
 
-In 71 objects [\ion{O}{III}] is undetected, or is detected with very low \ac{S/N}. 
-In these cases we do not attempt to measure the width of the [\ion{O}{III}] emission, but determine only the normalisation of a fixed [\ion{O}{III}] template.
-To generate this template we generate a median composite spectrum from the continuum- and \ion{Fe}{II}-subtracted spectra of the XX quasars with reliable [\ion{O}{III}] line measurements (see below). 
-We then run our line-fitting routine on the composite spectrum, and use the best-fitting [\ion{O}{III}] model as a template. 
-
 \subsection{Deriving upper limits on the [\ion{O}{III}] \ac{EQW}}
 % oiii_upper_limits.py
+
+In 71 objects [\ion{O}{III}] is undetected, or is detected with very low \ac{S/N}. 
 
 Firstly, the best-fitting model comprising the continuum, \ion{Fe}{II}, and \hb emission is subtracted from the spectra, leaving behind only emission due to [\ion{O}{III}].
 These spectra are then smoothed by convolving with a Gaussian of width 200\kms. 
 From each of these spectra we generate 100 mock spectra, with the flux at each wavelength randomly drawn from a Normal distribution with a mean equal to the flux and a width equal to the known error. 
 
-We then perform an error-weighted linear least-squares regression with the [\ion{O}{III}] template described in the previous section. 
+We then perform an error-weighted linear least-squares regression with a [\ion{O}{III}] template.
+To generate this template we generate a median composite spectrum from the continuum- and \ion{Fe}{II}-subtracted spectra of the XX quasars with reliable [\ion{O}{III}] line measurements (see below).
+We then run our line-fitting routine on the composite spectrum, and use the best-fitting [\ion{O}{III}] model as a template. 
 The equivalent width of the best-fitting model is recorded for each of the 100 realisations of the spectra. 
 The error in the equivalent width is defined as the root-mean-square of these values.
 We define the upper limit as the mean plus the standard deviation of these trials. 
@@ -171,6 +170,22 @@ The model we select is the simplest model for which the fractional change in the
 
 \subsection{Derived parameters}
 
+\begin{table}
+  \centering
+  \small
+  \caption{The format of the table containing the emission line properties from our parametric model fits. \todoinline{Copy format of Shen et al. (2011). Give all velocities relative to [\ion{O}{III}] peak?}}
+  \label{tab:specmeasure}
+  \centering
+    \begin{tabular}{ccc} 
+    \hline
+    & Units & Description \\ 
+    \hline
+    NAME & & Catalogue name \\
+    OIII\_V$10$ & & $v_{10}$ \\
+    \hline
+    \end{tabular}
+\end{table}
+
 All [\ion{O}{III}] line properties are derived from the [\ion{O}{III}]\l5008 emission, but, as described above, the kinematics of [\ion{O}{III}]\l4960 are constrained by our fitting routine to be identical.
 
 We do not attach any physical meaning to the individual Gaussian components used in the model. 
@@ -179,7 +194,7 @@ Furthermore, there is no theoretical justification that the broad component shou
 
 We therefore choose to characterize the [\ion{O}{III}] line profile using a number of non-parametric measures, which are commonly used in the literature \citep[e.g.][]{zakamska14,zakamska16}. 
 A normalised cumulative velocity distribution is constructed from the best-fitting model, from which the velocities below which 5, 10, 25, 50, 75, 90, and 95 per cent of the total flux accumulates can be calculated. 
-The width of the emission line can then be defined using either $w50$ ($\equiv v_{75} - v_{25}$), $w80$ ($\equiv v_{90} - v_{10}$) or $w90$ ($\equiv v_{95} - v_{5}$). 
+The width of the emission line can then be defined using either $w_{50}$ ($\equiv v_{75} - v_{25}$), $w_{80}$ ($\equiv v_{90} - v_{10}$) or $w_{90}$ ($\equiv v_{95} - v_{5}$). 
 In terms of the \ac{FWHM}, $w_{50} \simeq {\mathrm FWHM} / 1.746$, $w_{80} \simeq {\mathrm FWHM} / 0.919$, $w_{90} \simeq {\mathrm FWHM} / 0.716$.  
 Line-width measures are corrected for instrumental broadening by subtracting the resolution of the spectrograph (Table~\ref{tab:specres}) in quadrature.
 Because the line profiles are typically non-Gaussian, this deconvolution procedure is only approximate. 
@@ -250,6 +265,7 @@ Because of the difficulty measuring the [\ion{O}{III}] properties of these objec
 
 
 In Figure~\ref{fig:oiii_strength_hist} we show the distribution of the [\ion{O}{III}] rest-frame \ac{EQW} distribution for the 330 objects in our sample (objects where \ion{Fe}{II} emission has been sub-optimally removed are excluded). 
+\todo{Need to change reference and explain new figure.}
 In many objects [\ion{O}{III}] is undetected. 
 In others, [\ion{O}{III}] is detected, but is too weak for its shape (i.e. the width and asymmetry) to be measured reliably. 
 We define \ac{EQW}$=8$\AA\, as the limit below which we can no longer reliably determine the shape of the [\ion{O}{III}] emission. 
@@ -259,18 +275,31 @@ We define \ac{EQW}$=8$\AA\, as the limit below which we can no longer reliably d
 \begin{figure}
     \centering
     \includegraphics[width=0.8\linewidth]{figures/chapter04/redshift_comparison.pdf} 
-    \caption[{Comparison of systemic redshift estimates using [\ion{O}{III}], broad \hb and broad \hans.}]{Comparison of systemic redshift estimates using [\ion{O}{III}], broad \hb and broad \hans. In all cases the line location is defined as the peak wavelength of the best-fitting model. There are 93, 73 and 83 objects in (a), (b) and (c) respectively. The mean and standard deviation have been calculated by fitting a Gaussian function (shown in red) to the distribution.}       
+    \caption[{Comparison of systemic redshift estimates using [\ion{O}{III}], broad \hb and broad \hans.}]{Comparison of systemic redshift estimates using [\ion{O}{III}], broad \hb and broad \hans. The probability density functions are generated using a Gaussian kernel density estimator with a $\simeq150$\kms kernel width. The short black lines show the locations of the individual points.}       
     \label{fig:redshift_comparison}
 \end{figure}
 
-We adopt the peak of the [\ion{O}{III}] emission to define the systemic redshift. 
 In this section we do a comparison of systemic redshift estimates from [\ion{O}{III}], broad \hb and \hans. 
 The wavelength of each of these lines is measured at the peak of the emission. 
 This measurement is done on the best-fitting parameter model. 
 In the case of the Balmer lines, this model includes both broad and narrow emission features. 
 
-Our redshift comparison is shown in Figure~\ref{fig:redshift_comparison} 
-\todoinline{Don't fit with Gaussian. Show Gaussian KDE? (see scratch.ipdnb). Remove EQW (easy to understand), bad fits, bad iron, and extreme profiles. Then once simulations have finished do a cut on the uncertainty in the [\ion{O}{III}] peak. Similarly, can do cut on hb\_full\_peak\_vel, but check other hb\_z flags in case bad fits etc. or very low EQW. Don't spend too long - it's not the main point of this chapter.} 
+The redshift comparison is shown in Figure~\ref{fig:redshift_comparison}. 
+We compare systemic redshift estimates based on [\ion{O}{III}] and \hb (Figure~\ref{fig:redshift_comparison}a), [\ion{O}{III}] and \ha (Figure~\ref{fig:redshift_comparison}b) and \hb and \ha (Figure~\ref{fig:redshift_comparison}c). 
+In (a) and (b) we consider only the subset of objects with [\ion{O}{III}] detections that do not suffer from poor \ion{Fe}{II} subtraction or have extreme [\ion{O}{III}] profiles (210 quasars). 
+The available spectroscopic data extends to \hb and \ha for 204 and 99 of these objects respectively. 
+Spectroscopic data that covers both \hb and \ha is available for 219 quasars. 
+We also exclude objects with extremely large peak wavelength uncertainties due to poor spectra \ac{S/N}. 
+We choose cut-offs of 750, XX and 400 for errors on the \hbns, \ha and [\ion{O}{III}] peaks respectively. 
+\todo{Do Ha when simulations finish.}
+This leaves 187, 93 and 152 in samples (a), (b) and (c) respectively. 
+
+We generate probability density functions using a Gaussian kernel density estimator.
+The bandwidth, which is optimised using leave-one-out cross-validation, is 170, 140 and 140 \kms for (a), (b) and (c) respectively. 
+The means (medians) of the distributions shown in (a), (b) and (c) are -120 (-90), -90 (-40) and 20 (40) \kms. 
+The standard deviations are 360, 300 and 250 \kms. 
+The scatter in these distributions is consistent with previous studies of redshift uncertainties from broad emission lines \citep[e.g.][]{shen16b}. 
+\todo{Ask Paul what to say about offset.}
 
 \section{Results}
 
@@ -709,3 +738,37 @@ The size of the narrow line region is roughly expected to scale as $L^{0.5}$ \ci
 However, for high luminosity quasars with strong [\ion{O}{III}] this gives \ac{NLR} sizes which are unreasonably large \citep[$\sim$100 kpc;][]{netzer04}. 
 
 \todoinline{See extra text from Brotherton paper. I could be confused here, but I think the Netzer argument goes that the nlr size increase with luminosity because there are more ionising photons. but then you run out of nlr to ionise. the luminosity of the quasar keeps increasing but the luminosity of the nlr flattens out. so the eqw starts to decrease. but we see a huge scatter in eqw at high luminosities. we can relate this to the \ion{C}{IV} blueshift, which I don't think Netzer will have been able to.}
+
+
+
+\section{Description of catalogue}
+
+\begin{itemize}
+    
+  \item[1] ID: Jhhmmss+ddmmss (J2000; truncated coordinates).
+  
+  \item[2] Unique ID: QSOXXX.
+  
+  \item[3-16] $v_{5}$, $v_{10}$, $v_{25}$, $v_{50}$, $v_{75}$, $v_{90}$ and $v_{95}$ velocity of [\ion{O}{III}], relative to [\ion{O}{III}] peak, and their errors, in \kms.  
+
+  \item[17-18] Systemic redshift measured at [\ion{O}{III}] peak wavelength, and its error. 
+
+  \item[19-24] $w_{50}$ ($\equiv v_{75} - v_{25}$), $w_{80}$ ($\equiv v_{90} - v_{10}$) and $w_{90}$ ($\equiv v_{95} - v_{5}$) velocity width of [\ion{O}{III}], and their errors, in \kms.
+
+  \item[25-26] Dimensionless asymmetry of [\ion{O}{III}] ($A = (v_{90} + v_{10}) / (v_{90} - v_{10})$), and its.  
+
+  \item[27-28] Rest-frame [\ion{O}{III}] EQW, and its error, in \AA.
+
+  \item[29-30] [\ion{O}{III}] luminosity, and its error, in \ergs. 
+
+
+
+
+
+
+\end{itemize}
+
+
+
+
+
