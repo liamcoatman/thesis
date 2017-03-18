@@ -122,7 +122,6 @@ def redshift_comparison():
     print len(df)
     
     x = df.OIII_FIT_VEL_FULL_OIII_PEAK - df.OIII_FIT_VEL_HB_PEAK 
-    x = x.value 
     print np.mean(x), np.median(x), np.std(x)
  
     norm = np.std(x)
@@ -160,7 +159,7 @@ def redshift_comparison():
     df = df[df.OIII_EXTREM_FLAG == 0]
 
     df = df[df.OIII_FIT_HA_Z_FLAG > 0] 
-    # df = df[df.OIII_FIT_VEL_HA_PEAK_ERR < 750.0] # Really bad 
+    df = df[df.OIII_FIT_VEL_HA_PEAK_ERR < 400.0] # Really bad 
     df = df[df.OIII_FIT_VEL_FULL_OIII_PEAK_ERR < 400.0] # Really bad 
 
     print len(df)
@@ -202,7 +201,7 @@ def redshift_comparison():
 
 
     df = df[df.OIII_FIT_VEL_HB_PEAK_ERR < 750.0] 
-    # df = df[df.OIII_FIT_VEL_HA_PEAK_ERR < 400.0] #  Waiting for this to finish running 
+    df = df[df.OIII_FIT_VEL_HA_PEAK_ERR < 400.0] #  Waiting for this to finish running 
     # print len(df)
 
     print len(df)
@@ -867,7 +866,7 @@ def test():
 
 def eqw_lum():
 
-    fig, ax = plt.subplots(figsize=figsize(0.8, vscale=0.9))
+    fig, ax = plt.subplots(figsize=figsize(1, vscale=0.9))
     
     df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0) 
     df = df[df.OIII_FLAG_2 > 0]
@@ -1736,7 +1735,7 @@ def example_spectrum_grid_extreme_oiii():
         ax.set_xticks([])
         ax.set_yticks([])
         ax.spines['bottom'].set_visible(False)
-        example_spectra(names[i], ax, rebins[i])
+        example_spectra(names[i], ax, rebins[i], data_color='lightgrey')
         ax.set_ylim(ylims[i])
         ax.set_xlim(-5000, 15000)
         ax.set_title(titles[i], size=9, y=0.95)

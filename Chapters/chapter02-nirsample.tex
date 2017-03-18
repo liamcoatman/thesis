@@ -2,7 +2,7 @@
 
 %*****************************************
 \chapter{A near-infrared spectroscopic database of high-redshift quasars}
-\label{ch:chapter02}
+\label{ch:nirsample}
 %*****************************************
 
 \section{Introduction}
@@ -204,6 +204,60 @@ The spectrograph resolutions, which we estimate from the line widths in the obse
     \end{tabular}
 \end{table} 
 
+\subsection{Optical spectra}
+\todo{Numbers reflect chapter 3. Need to update}
+
+Optical SDSS DR7 spectra are employed for 70 quasars in the full catalogue.  
+The SDSS DR7 spectra are moderate resolution ($R$$\simeq2000$) and S/N (S/N$\simeq20$) and cover the observed-frame wavelength interval $\sim3800-9180$\,\AA.
+Many of the quasars in the SDSS DR7 catalogue have been re-observed as part of the Sloan Digital Sky Survey-III: Baryon Oscillation Spectroscopic Survey \citep[SDSS-III/BOSS;][]{dawson13}. 
+As the BOSS-spectra typically have higher S/N than the SDSS DR7 spectra, we have used the BOSS spectra when available (126 quasars).  
+We also use optical spectra from the Hamburg/ESO survey (15 quasars), and high-resolution spectra taken with VLT/UVES (11 quasars) and VLT/XSHOOTER (8 quasars). 
+The Hamburg/ESO optical spectra have a typical $\sim400$\kms\, spectral resolution and S/N $\gtrsim$ 10 per pixel. 
+The reduced and fluxed UVES spectra were made available to us by A. Dall'Aglio (a description of the reduction procedure is contained in \citet{dallaglio08}).
+The spectral resolution of the UVES observations is very high ($R$$\sim$40\,000) and the S/N of the spectra re-binned to a resolution of $\simeq2000$ is S/N$\simeq300$.  
+The XSHOOTER spectra are moderate resolution ($\sim6000$) and conver the full optical-near-infrared spectral region ($0.30-2.50\mu$m). 
+
+\subsection{Flux calibration of spectra}
+\todo{Ask Manda: (1+z) in luminosity calculation.}
+
+When \ac{NIR} photometric data is available, the absolute flux scale of the spectra may be established by ensuring that broad-band magnitudes measured from the spectra are consistent with the photometry. 
+Because this information is unavailable for a sizeable fraction of our sample, we consider two alternative approaches. 
+
+In the first approach, we leverage the excellent flux-calibration of the \ac{SDSS}/\ac{BOSS} spectra, which are available for XX objects in our sample. 
+We use our standard quasar \ac{SED} model (Chapter~\ref{ch:sed}) to bridge the gap between the wavelength coverage of the \ac{NIR} and optical \ac{SDSS}/\ac{BOSS} spectra.
+The quasar \ac{SED} model is first fit to the \ac{SDSS}/\ac{BOSS} spectra, with the normalisation and extinction E(B-V) as free parameters. 
+The \ac{NIR} spectra are then fit to the normalised \ac{SED} model. 
+The second approach is identical, except that the \ac{SED} model is first fit to the available optical (\ac{SDSS}) and \ac{NIR} (VHS, Viking, UKIDSS or 2MASS) photometric data \footnote{We are unable to verify the absolute flux calibration of the near-infrared spectra for XX objects () because neither SDSS/BOSS spectra nor optical/near-infrared data is available.}. 
+
+\subsection{Quasar monochromatic luminosity}
+\todo{Numbers reflect chapter 3 sample only, and so need updating}
+
+Relative flux-calibration of the infrared spectra as a function of wavelength has been achieved through observations of appropriate flux standards. 
+The absolute flux levels, however, can be in error by large factors due to variable atmospheric conditions combined with the narrow slit widths. 
+For the majority of the quasars we have, therefore, established the absolute flux scale for each near-infrared spectrum by fitting an SED-model to the optical-infrared photometry. 
+The SED model, described in Chapter~\ref{ch:sed}, gives a very good fit to the SDSS and UKIDSS magnitudes of SDSS DR7 quasars, reproducing the individual magnitudes with a $\sigma <$0.1\,mag. 
+For 207 quasars, ($Y$)$JHK$ passband magnitudes from the UKIRT Infrared Deep Sky Survey \citep[UKIDSS;][]{lawrence07} Large Area Survey, the Two Micron All Sky Survey \citep[2MASS;][]{skrutskie06} and the Visible and Infrared Survey Telescope for Astronomy (VISTA) Hemisphere Survey \citep[VHS;][]{mcmahon13} and Kilo-Degree Infrared Galaxy \citep[VIKING;][]{edge13} survey are available. 
+The SED model was fit to the infrared magnitudes; integrating the SED model through the pass-band transmission functions, to give model magnitudes, and performing a variance weighted least-squares fit to the observed magnitudes. 
+The flux at 5100\,\AA\, was then taken from the normalised model.
+
+For 19 of the remaining 23 quasars, where near-infrared photometry was not available, the quasar SED model was fit to the SDSS spectra, the flux calibration of which are known to be excellent.  
+The fit was done using a simple variance-weighted chi-squared minimisation procedure in emission line-free intervals of the optical spectra.   
+The model includes a reddening, $E(B-V)$, based on a Small Magellanic Cloud-like extinction curve and described in detail in Section~\ref{sec:sed-extinction}, and an overall normalisation as free parameters.
+In practice, the quasars possess only very modest reddenings, with $E(B-V)\simeq$0.0-0.1.
+The flux at 5100\,\AA\, was then, again, taken from the normalised SED model.
+
+For the four remaining quasars, which possess neither near-infrared photometry nor SDSS DR7 spectra, we fit the SED model to the BOSS DR12 spectra. 
+To avoid the known issues in the flux calibration of the BOSS DR12 quasar spectra at observed-frame blue wavelengths \citep{lee13}, our fitting was confined to rest-frame wavelengths long-ward of 1275\AA. 
+
+The monochromatic luminosity at 1350\AA\, was also measured by fitting our quasar SED model to the SDSS/BOSS spectra. 
+For 26 quasars in the catalogue the optical spectra come from surveys other than SDSS/BOSS and optical magnitudes from recent epochs are not available. 
+In order to obtain an estimate of the luminosity at 1350\,\AA\, for the 26 quasars, we normalise the quasar SED model to the near-infrared photometric data, and read off the flux at 1350\,\AA. 
+
+Comparison of the 5100\,\AA\, luminosity, computed using the photometry- and spectrum-based methods for 177 quasars, showed a scatter of just $\sim$0.1\,dex.
+We therefore assume 0.1\,dex to be the measurement uncertainty on the 5100\,\AA\, luminosities.
+We expect the uncertainties on the 1350\,\AA\, luminosities to be at similar level.  
+For all the catalogue quasars, the optical and near-infrared spectra as well as the near-infrared photometry were obtained at different epochs, with rest-frame time differences of up to $\sim$5\,years. 
+Intrinsic quasar photometric variability in the rest-frame ultraviolet and optical will therefore add additional scatter of $\sim$0.2\,mag \citep[e.g.][]{macleod10} to the derived 1350- and 5100\,\AA-luminosities.
 
 \begin{landscape}% Landscape page
     \centering % Center table
@@ -269,220 +323,14 @@ Here, we describe the format of this extended catalogue.
 
 \item[45-52] WISE $W1W2W3W4$ magnitudes. 
 
+\item[] LogL5100
+
+\item[] LogL1350
+
+
+
 \end{itemize}
 
 
 
  
-% In chapter 4 table: 
-
-
-
-
-% ID
-% Make sure nothing depends on z_IR
-
-% CIV v50 relative to OIII peak velocity 
-
-
-
-
-% OIII_FIT_HA_MODEL
-% OIII_FIT_HA_NGAUSSIANS
-% OIII_FIT_HA_FIX_BROAD_PEAKS
-% OIII_FIT_HA_BROAD_OFFSET
-% OIII_FIT_HA_REDCHI
-
-
-% In chapter 3 table:
-
-% # Make sure nothing depends on z_IR 
-
-% ID
-
-% LogL5100
-% LogL1350
-
-% # Check these are the values going in to figure 6 in paper 
-% LogMBH_Ha
-% LogMBH_Ha_Err
-% Edd_Ratio_Ha
-% Edd_Ratio_Ha_Err
-% LogMBH_Hb
-% LogMBH_Hb_Err
-% Edd_Ratio_Hb
-% Edd_Ratio_Hb_Err
-% LogMBH_CIV_VP06
-% LogMBH_CIV_VP06_Err
-% Edd_Ratio_CIV_VP06
-% Edd_Ratio_CIV_VP06_Err
-
-% # Add corrected BH mass 
-
-% FWHM_Broad_Ha
-% FWHM_Broad_Ha_Err
-% Sigma_Broad_Ha
-% Sigma_Broad_Ha_Err
-% Median_Broad_Ha (remove z_IR dependence)
-% Median_Broad_Ha_Err
-% Peak_Broad_Ha
-% Peak_Broad_Ha_Err
-% EQW_Broad_Ha
-% EQW_Broad_Ha_Err
-% LogL_Broad_Ha
-% LogL_Broad_Ha_Err
-
-% (Do I include these?)
-% FWHM_Narrow_Ha
-% FWHM_Narrow_Ha_Err
-% LogL_Narrow_Ha
-% LogL_Narrow_Ha_Err
-% VOFF_Narrow_Ha (remove z_IR dependence)
-% VOFF_Narrow_Ha_Err
-
-% RedChi_Ha
-% WARN_Ha (Remove 2, just flag 1 as low S/N)
-% SNR_Ha
-% dv_Ha
-% Model_Ha
-
-% # These will be repeated in chapter 4 with slightly different model 
-% z_Broad_Ha
-% z_Broad_Hb
-
-
-
-% FWHM_Broad_Hb
-% FWHM_Broad_Hb_Err
-% Sigma_Broad_Hb
-% Sigma_Broad_Hb_Err
-% Median_Broad_Hb
-% Median_Broad_Hb_Err
-% Peak_Broad_Hb
-% Peak_Broad_Hb_Err
-% EQW_Broad_Hb
-% EQW_Broad_Hb_Err
-% LogL_Broad_Hb
-% LogL_Broad_Hb_Err
-
-% # Do I use these? 
-% FWHM_Narrow_Hb
-% FWHM_Narrow_Hb_Err
-% LogL_Narrow_Hb
-% LogL_Narrow_Hb_Err
-% VOFF_Narrow_Hb
-% VOFF_Narrow_Hb_Err
-
-% (remove best, make sure it's clear where it comes from)
-% FWHM_CIV_BEST
-% FWHM_CIV_BEST_Err 
-% Sigma_CIV_BEST
-% Sigma_CIV_BEST_Err
-% Median_CIV_BEST
-% Median_CIV_BEST_Err
-% Peak_CIV_BEST
-% Peak_CIV_BEST_Err
-% EQW_CIV_BEST
-% EQW_CIV_BEST_Err
-% LogL_CIV_BEST
-% LogL_CIV_BEST_Err
-% Max_CIV_BEST
-% Max_CIV_BEST_Err
-
-% RedChi_CIV_BEST
-% WARN_CIV_BEST (will have removed warn=2, so should just be warn=1 low S/N flag)
-% BAL_BEST
-% SNR_CIV_BEST
-% dv_CIV_BEST
-
-
-% Model_CIV_BEST
-
-% Max_1400_BEST
-% Max_1400_BEST_Err
-
-% WARN_1400_BEST
-
-% Make sure this is BEST: 
-% 1400: Make sure best and just give what I used in paper. 
-% If people want anything else they can generate it from my parameters and the code I give 
-
-
-% EQW_FE_4434_4684
-% EQW_FE_4434_4684_Err
-
-
-
-
-% OIII_FIT_HB_BROAD_OFFSET_ERR
-
-
-
-
-
-% RedChi_Hb
-% WARN_Hb
-% Use_OIII
-% SNR_Hb
-% dv_Hb
-% Model_Hb
-
-
-% FWHM_CIV_BEST_Err_New
-% Median_CIV_BEST_Err_New
-% FWHM_CIV_BEST_Err_New.1
-% Median_CIV_BEST_Err_New.1
-% Blueshift_CIV_HW_DR7_Paul
-% EQW_CIV_HW_DR7_Paul
-% Blueshift_CIV_ICA_DR7_Paul
-% EQW_CIV_ICA_DR7_Paul
-% z_ICA_DR7
-
-
-
-
-
-
-% Blueshift_CIV_Ha
-% Blueshift_CIV_Ha_Err
-
-% Blueshift_CIV_Hb
-% Blueshift_CIV_Hb_Err
-
-% Blueshift_CIV_OIII
-% Blueshift_CIV_OIII_Err
-
-% Blueshift_CIV_ICA_DR7
-% Blueshift_CIV_ICA_DR10
-% Blueshift_CIV_ICA_DR12
-% Blueshift_CIV_HW
-% Blueshift_CIV_ICA
-% Blueshift_CIV_Balmer_Best
-
-% OIII_5007_EQW_MEAN
-% OIII_5007_EQW_STD
-% EBV_SDSS_SPEC
-
-% EBV_MAG
-
-% kMag
-% kSDSS
-% k
-
-% 1400_CIV_BEST
-% 1400_CIV_BEST_ERR 
-
-
-% Just give BEST values then note of which optical spectrum was used
-
-
-
-
-
-
-
-% Don't need to give any other Hb properties, just make sure give model parameters and code to generate spectra. 
-
-% Make table of OIII line properties and provide code to turn these in to spectrum. When OIII_Broad_OFF just set amplitude of second component to zero. Check none with FIX_OIII_PEAK_RATIO=True. 
-
-% Details of model, oiii ngaussians, hb ngaussians, hb fix centroids. 

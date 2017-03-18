@@ -60,9 +60,11 @@ This will allow us to directly compare virial BH mass estimates based on the \io
 The sample is considerably larger than previous studies of the rest-frame optical spectra of high-$z$ quasars \citep[e.g.][]{shen12}. 
 As we demonstrate in Section~\ref{sec:effectiveness}, the quasars have \ion{C}{IV} blueshifts of up to $\sim$5000\kms, and span the full range observed in the population. 
 
-\subsection{Near-infrared data}
+\subsection{Spectroscopic data}
 
-The near-infrared data has been described in Chapter~\ref{ch:chapter02} and the telescopes/spectrographs used are summarised in Table~\ref{tab:specnums_ch3}. 
+The near-infrared data has been described in Chapter~\ref{ch:nirsample} and the telescopes/spectrographs used are summarised in Table~\ref{tab:specnums_ch3}. 
+Corresponding optical spectroscopy was obtained from the SDSS (70 quasars), BOSS (126 quasars) and Hamburg/ESO surveys (15 quasars), and with VLT/UVES (11 quasars) and VLT/XSHOOTER (8 quasars). 
+Once more, further details are provided in Chapter~\ref{ch:nirsample}. 
 We have sub-divided our sample into two overlapping groups: quasars with reliable \ha line measurements (the `\ha sample') and quasars with reliable \hb measurements (the `\hb sample').
 
 \begin{table*}
@@ -90,18 +92,6 @@ We have sub-divided our sample into two overlapping groups: quasars with reliabl
     \hline
     \end{tabular}
 \end{table*}
-
-\subsection{Optical data}
-
-Optical SDSS DR7 spectra are employed for 70 quasars in the full catalogue.  
-The SDSS DR7 spectra are moderate resolution ($R$$\simeq2000$) and S/N (S/N$\simeq20$) and cover the observed-frame wavelength interval $\sim3800-9180$\,\AA.
-Many of the quasars in the SDSS DR7 catalogue have been re-observed as part of the Sloan Digital Sky Survey-III: Baryon Oscillation Spectroscopic Survey \citep[SDSS-III/BOSS;][]{dawson13}. 
-As the BOSS-spectra typically have higher S/N than the SDSS DR7 spectra, we have used the BOSS spectra when available (126 quasars).  
-We also use high-resolution optical spectra taken with VLT/UVES (11 quasars) and VLT/XSHOOTER (8 quasars), and Hamburg/ESO spectra for a further 15 quasars. 
-The reduced and fluxed UVES spectra were made available to us by A. Dall'Aglio (a description of the reduction procedure is contained in \citet{dallaglio08}).
-The spectral resolution of the UVES observations is very high ($R$$\sim$40\,000) and the S/N of the spectra re-binned to a resolution of $\simeq2000$ is S/N$\simeq300$.  
-The Hamburg/ESO optical spectra have a typical $\sim400$\kms\, spectral resolution and S/N $\gtrsim$ 10 per pixel. 
-The XSHOOTER spectra are moderate resolution ($\sim6000$) and conver the full optical-near-infrared spectral region ($0.30-2.50\mu$m). 
 
 \section{Spectral Measurements}
 \label{sec:spec_measures}
@@ -338,33 +328,9 @@ We conclude therefore that any intrinsic changes with time do not materially aff
 Computing virial BH masses also requires the quasar luminosity in an emission-line free region of the continuum adjacent to the broad line being used. 
 The luminosity is used as a proxy for the size of the BLR. 
 The monochromatic continuum flux is generally measured at 1350\,\AA\ for \ion{C}{IV} and 5100\,\AA\, for \ha and \hbns. 
+The calculation of these luminosities is described in Chapter~\ref{ch:nirsample}. 
 
-Relative flux-calibration of the infrared spectra as a function of wavelength has been achieved through observations of appropriate flux standards. 
-The absolute flux levels, however, can be in error by large factors due to variable atmospheric conditions combined with the narrow slit widths. 
-For the majority of the quasars we have, therefore, established the absolute flux scale for each near-infrared spectrum by fitting an SED-model to the optical-infrared photometry. 
-The SED model, described in Chapter~\ref{ch:sed}, gives a very good fit to the SDSS and UKIDSS magnitudes of SDSS DR7 quasars, reproducing the individual magnitudes with a $\sigma <$0.1\,mag. 
-For 207 quasars, ($Y$)$JHK$ passband magnitudes from the UKIRT Infrared Deep Sky Survey \citep[UKIDSS;][]{lawrence07} Large Area Survey, the Two Micron All Sky Survey \citep[2MASS;][]{skrutskie06} and the Visible and Infrared Survey Telescope for Astronomy (VISTA) Hemisphere Survey \citep[VHS;][]{mcmahon13} and Kilo-Degree Infrared Galaxy \citep[VIKING;][]{edge13} survey are available. 
-The SED model was fit to the infrared magnitudes; integrating the SED model through the pass-band transmission functions, to give model magnitudes, and performing a variance weighted least-squares fit to the observed magnitudes. 
-The flux at 5100\,\AA\, was then taken from the normalised model.
-
-For 19 of the remaining 23 quasars, where near-infrared photometry was not available, the quasar SED model was fit to the SDSS spectra, the flux calibration of which are known to be excellent.  
-The fit was done using a simple variance-weighted chi-squared minimisation procedure in emission line-free intervals of the optical spectra.   
-The model includes a reddening, $E(B-V)$, based on a Small Magellanic Cloud-like extinction curve and described in detail in Section~\ref{sec:sed-extinction}, and an overall normalisation as free parameters.
-In practice, the quasars possess only very modest reddenings, with $E(B-V)\simeq$0.0-0.1.
-The flux at 5100\,\AA\, was then, again, taken from the normalised SED model.
-
-For the four remaining quasars, which possess neither near-infrared photometry nor SDSS DR7 spectra, we fit the SED model to the BOSS DR12 spectra. 
-To avoid the known issues in the flux calibration of the BOSS DR12 quasar spectra at observed-frame blue wavelengths \citep{lee13}, our fitting was confined to rest-frame wavelengths long-ward of 1275\AA. 
-
-The monochromatic luminosity at 1350\AA\, was also measured by fitting our quasar SED model to the SDSS/BOSS spectra. 
-For 26 quasars in the catalogue the optical spectra come from surveys other than SDSS/BOSS and optical magnitudes from recent epochs are not available. 
-In order to obtain an estimate of the luminosity at 1350\,\AA\, for the 26 quasars, we normalise the quasar SED model to the near-infrared photometric data, and read off the flux at 1350\,\AA. 
-
-Comparison of the 5100\,\AA\, luminosity, computed using the photometry- and spectrum-based methods for 177 quasars, showed a scatter of just $\sim$0.1\,dex.
-We therefore assume 0.1\,dex to be the measurement uncertainty on the 5100\,\AA\, luminosities.
-We expect the uncertainties on the 1350\,\AA\, luminosities to be at similar level.  
-For all the catalogue quasars, the optical and near-infrared spectra as well as the near-infrared photometry were obtained at different epochs, with rest-frame time differences of up to $\sim$5\,years. 
-Intrinsic quasar photometric variability in the rest-frame ultraviolet and optical will therefore add additional scatter of $\sim$0.2\,mag \citep[e.g.][]{macleod10} to the derived 1350- and 5100\,\AA-luminosities. 
+As described in Chapter~\ref{ch:nirsample}, we estimate the uncertainties on the monochromatic luminosities to be $\sim$0.3 dex. 
 Given that the luminosity enters into the calculation of BH-mass only as the square-root, the uncertainty on the luminosities does not make a large contribution to the uncertainties in the BH mass estimates.  
 
 \subsection{Characterising the emission-line widths}
@@ -984,3 +950,83 @@ The correction depends only on the \ion{C}{IV} line properties - i.e. the FWHM a
 \item Clustering
 \item Data-driven mapping
 \end{itemize}
+
+\section{Description of catalogue}
+
+\begin{itemize}
+    
+  \item[2] Unique ID: QSOXXX.
+
+  \item[] LogMBH\_Ha, LogMBH\_Ha\_Err
+
+  \item[] Edd\_Ratio\_Ha, Edd\_Ratio\_Ha\_Err
+
+  \item[] LogMBH\_Hb, LogMBH\_Hb\_Err
+
+  \item[] Edd\_Ratio\_Hb, Edd\_Ratio\_Hb\_Err
+
+  \item[] LogMBH\_CIV\_VP06, LogMBH\_CIV\_VP06\_Err
+
+  \item[] Edd\_Ratio\_CIV\_VP06, Edd\_Ratio\_CIV\_VP06\_Err
+
+  \item[] Add corrected BH mass 
+
+  \item[] FWHM\_Broad\_Ha, FWHM\_Broad\_Ha\_Err
+
+  \item[] Sigma\_Broad\_Ha, Sigma\_Broad\_Ha\_Err
+
+  \item[] EQW\_Broad\_Ha, EQW\_Broad\_Ha\_Err
+
+  \item[] LogL\_Broad\_Ha, LogL\_Broad\_Ha\_Err
+
+  \item[] FWHM\_Broad\_Hb, FWHM\_Broad\_Hb\_Err
+
+  \item[] Sigma\_Broad\_Hb, Sigma\_Broad\_Hb\_Err
+
+  \item[] EQW\_Broad\_Hb, EQW\_Broad\_Hb\_Err
+ 
+  \item[] LogL\_Broad\_Hb, LogL\_Broad\_Hb\_Err
+
+  \item[] z\_Broad\_Ha. Repeated in chapter 4 with slightly different model.
+
+  \item[] z\_Broad\_Hb. Repeated in chapter 4 with slightly different model. 
+
+  \item[] WARN\_Ha (Remove 2, just flag 1 as low S/N)
+
+  \item[] RedChi\_Ha
+
+  \item[] WARN\_Hb (Remove 2, just flag 1 as low S/N)
+
+  \item[] RedChi\_Hb
+
+  \item[] FWHM\_CIV\_BEST, FWHM\_CIV\_BEST\_Err (remove best, make sure it's clear where it comes from) (Just give BEST values then note of which optical spectrum was used). 
+
+  \item[] Sigma\_CIV\_BEST, Sigma\_CIV\_BEST\_Err
+
+  \item[] Median\_CIV\_BEST, Median\_CIV\_BEST\_Err
+
+  \item[] EQW\_CIV\_BEST, EQW\_CIV\_BEST\_Err
+
+  \item[] LogL\_CIV\_BEST, LogL\_CIV\_BEST\_Err
+
+  \item[] Max\_CIV\_BEST, Max\_CIV\_BEST\_Err   
+
+  \item[] Max\_1400\_BEST, Max\_1400\_BEST\_Err
+
+  \item[] 1400\_CIV\_BEST, 1400\_CIV\_BEST\_ERR
+
+  \item[] RedChi\_CIV\_BEST
+
+  \item[] WARN\_CIV\_BEST (will have removed warn=2, so should just be warn=1 low S/N flag)
+
+  \item[] WARN\_1400\_BEST (remove 1400 max if warn=2)
+
+  \item[] Blueshift\_CIV\_Ha, Blueshift\_CIV\_Ha\_Err
+
+  \item[] Blueshift\_CIV\_Hb, Blueshift\_CIV\_Hb\_Err
+
+
+
+
+\end{itemize}
+
