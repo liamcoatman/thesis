@@ -199,9 +199,9 @@ def redshift_comparison():
     df = df[df.OIII_FIT_HA_Z_FLAG >= 0] # Ha missing
     df = df[df.OIII_FIT_HB_Z_FLAG >= 0] # Ha missing
 
-
     df = df[df.OIII_FIT_VEL_HB_PEAK_ERR < 750.0] 
-    df = df[df.OIII_FIT_VEL_HA_PEAK_ERR < 400.0] #  Waiting for this to finish running 
+    df = df[df.OIII_FIT_VEL_HA_PEAK_ERR < 400.0]  
+    df.drop('QSO546', inplace=True) # Hb clearly not fit in this 
     # print len(df)
 
     print len(df)
@@ -405,10 +405,13 @@ def civ_blueshift_oiii_eqw():
     
     df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0) 
     df = df[df.OIII_FLAG_2 > 0]
+    # df = df[df.OIII_EQW_FLAG == 0]
+    # df = df[df.OIII_SNR_FLAG == 0]
     df = df[df.OIII_BAD_FIT_FLAG == 0]
     df = df[df.FE_FLAG == 0]
-    df = df[df.WARN_CIV_BEST == 0]
+    df = df[(df.WARN_CIV_BEST == 0) | (df.WARN_CIV_BEST == 1)]
     df = df[df.BAL_FLAG != 1]
+    df = df[np.log10(df.EQW_CIV_BEST) > 1.2]
         
     df.dropna(subset=['Median_CIV_BEST'], inplace=True)
     
@@ -793,6 +796,8 @@ def ev1_lowz():
     plt.show()
 
     return None 
+
+
 
 def test():
 

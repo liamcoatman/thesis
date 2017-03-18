@@ -217,8 +217,8 @@ Because of the difficulty measuring the [\ion{O}{III}] properties of these objec
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.7\textwidth]{figures/chapter04/eqw_cut.pdf} 
-    \caption[Uncertainty in $v_{10}$ as a function of the \ac{EQW}, for [\ion{O}{III}].]{Uncertainty in $v_{10}$ as a function of the \ac{EQW}, for [\ion{O}{III}]. Uncertainties in $v_{10}$ are large to the left of the vertical line, at 8\AA. These objects are ignored in our subsequent analysis of the [\ion{O}{III}] line shape.}     
+    \includegraphics[width=0.8\textwidth]{figures/chapter04/eqw_cut.pdf} 
+    \caption[{Uncertainty in $v_{10}$ as a function of the \ac{EQW}, for [\ion{O}{III}].}]{Uncertainty in $v_{10}$ as a function of the \ac{EQW}, for [\ion{O}{III}]. Uncertainties in $v_{10}$ are large to the left of the vertical line, at 8\AA. These objects are ignored in our subsequent analysis of the [\ion{O}{III}] line shape.}     
     \label{fig:eqw_cut}
 \end{figure}
 
@@ -226,7 +226,7 @@ In Figure~\ref{fig:eqw_cut} we show how the uncertainty in $v_{10}$ depends on t
 As the strength of [\ion{O}{III}] decreases, the average uncertainty in $v_{10}$ increases. 
 As the \ac{EQW} drops below 8\AA\,, typical uncertainties in $v_{10}$ become very large (exceeding 1000\kms in many objects). 
 Clearly, the emission line is too weak for it's shape to be reliably characterised in many of these objects. 
-Therefore, when the [\ion{O}{III}] line shape is analysed in later sections, these objects with \ac{EQW} $<$ 8\AA will be excluded. fghg
+Therefore, when the [\ion{O}{III}] line shape is analysed in later sections, these objects with \ac{EQW} $<$ 8\AA will be excluded.
 
 \section{Reliability of redshift estimates}
 
@@ -248,16 +248,15 @@ In (a) and (b) we consider only the subset of objects with [\ion{O}{III}] detect
 The available spectroscopic data extends to \hb and \ha for 204 and 99 of these objects respectively. 
 Spectroscopic data that covers both \hb and \ha is available for 219 quasars. 
 We also exclude objects with extremely large peak wavelength uncertainties due to poor spectra \ac{S/N}. 
-We choose cut-offs of 750, XX and 400 for errors on the \hbns, \ha and [\ion{O}{III}] peaks respectively. 
-\todo{Do Ha when simulations finish.}
-This leaves 187, 93 and 152 in samples (a), (b) and (c) respectively. 
+We choose cut-offs of 750, 400 and 400 for errors on the \hbns, \ha and [\ion{O}{III}] peaks respectively. 
+This leaves 187, 85 and 142 objects in samples (a), (b) and (c) respectively. 
 
 We generate probability density functions using a Gaussian kernel density estimator.
 The bandwidth, which is optimised using leave-one-out cross-validation, is 170, 140 and 140 \kms for (a), (b) and (c) respectively. 
 The means (medians) of the distributions shown in (a), (b) and (c) are -120 (-90), -90 (-40) and 20 (40) \kms. 
 The standard deviations are 360, 300 and 250 \kms. 
 The scatter in these distributions is consistent with previous studies of redshift uncertainties from broad emission lines \citep[e.g.][]{shen16b}. 
-\todo{Ask Paul what to say about offset.}
+\todo{Paul: what can I say about these results?}
 
 \section{Results}
 
@@ -269,12 +268,14 @@ The scatter in these distributions is consistent with previous studies of redshi
 
 In our sample of 356 quasars, there is a huge diversity in [\ion{O}{III}] emission properties (Fig.~\ref{fig:example_spectrum_grid}). 
 [\ion{O}{III}] is detected in XX per cent. 
-\todo{What is the definition of detected?}
-[\ion{O}{III}] is typically very broad, with a prominent blue wing to the emission.  
+\todo{Paul: what is the definition of detected?}
+When detected, [\ion{O}{III}] is typically very broad, with a prominent blue wing to the emission.  
 
-In Figure~\ref{fig:parameters_grid} we show correlations between the [\ion{O}{III}] $w_{80}$, EQW, asymmetry for 119 quasars: objects with low \ac{EQW}, poor \ac{S/N}, poor \ion{Fe}{II} subtraction are not included. 
+In Figure~\ref{fig:parameters_grid} we show correlations between the [\ion{O}{III}] $w_{80}$, EQW, asymmetry for 119 quasars: objects with \ac{EQW} $<$ 8\AA or poor \ion{Fe}{II} subtraction are not included. 
+
+
+
 \todo{Again, might want to ditch this \ac{S/N} flag.}
-Objects for which [\ion{O}{III}] is modelled using a single Gaussian are also excluded, because the asymmetry is by definition zero for these objects.   
 
 \subsection{Luminosity/redshift-evolution of [\ion{O}{III}] properties}
 
@@ -358,6 +359,16 @@ Objects for which the \hb or \ion{C}{IV} line properties could not be measured r
 Finally, we consider only objects for which the \ion{C}{IV} EQW exceeds 15\AA. 
 
 Most of the diversity in \ion{C}{IV} properties is correlated with the [\ion{O}{III}] \ac{EQW}. 
+This is seen more clearly in Fig.~\ref{fig:civ_blueshift_oiii_eqw}, in which we plot the [\ion{O}{III}] \ac{EQW} as a function of the \ion{C}{IV} blueshift. 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\columnwidth]{figures/chapter04/civ_blueshift_oiii_eqw.pdf} 
+    \caption{\todoinline{Need to change systemtic redshift to \ha and \hb}}     
+    \label{fig:civ_blueshift_oiii_eqw}
+\end{figure}
+
+
 On the other hand, the \ion{C}{IV} blueshift and \ac{EQW} cannot be used to predict the \hb \ac{FWHM}. 
 This is consistent with what we found in Chapter~\ref{ch:bhmass}: objects with large \ion{C}{IV} blueshifts have narrow Balmer emission lines, but objects with modest \ion{C}{IV} blueshifts have a wide range of Balmer line widths. 
 
@@ -406,7 +417,7 @@ It is impossible to determine unambiguously what combination of \hb, [\ion{O}{II
 
 \begin{figure}
     \includegraphics[width=\columnwidth]{figures/chapter04/civ_blueshift_oiii_blueshift.pdf} 
-    \caption[{The relation between the blueshifts of \ion{C}{IV} and [\ion{O}{III}].}]{The relation between the blueshifts of \ion{C}{IV} and [\ion{O}{III}].}     
+    \caption[{The relation between the blueshifts of \ion{C}{IV} and [\ion{O}{III}].}]{The relation between the blueshifts of \ion{C}{IV} and [\ion{O}{III}]. \todoinline{Move colorbar to bottom.}}     
     \label{fig:oiii_civ_blueshifts}
 \end{figure}
 
@@ -418,6 +429,7 @@ Therefore, the [\ion{O}{III}] emission is weaker and more blueshifted in high ac
 In Chapter~\ref{ch:bhmass} we found that all quasars with strong \ac{BLR} outflows have high Eddington ratios. 
 In this section, we show that the \ion{C}{IV} and [\ion{O}{III}] blueshifts are directly linked. 
 This suggests a direct connection between the gas kinematics in the broad and narrow line regions. 
+
 
 As described above, \ion{C}{IV} emission properties are available for XX quasars in our sample. 
 We use the \ion{C}{IV} velocity centroid measurements we derived in Chapter~\ref{ch:bhmass}.
