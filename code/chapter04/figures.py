@@ -507,6 +507,8 @@ def civ_blueshift_oiii_blueshift(check_lum=False):
 
     set_plot_properties() # change style 
 
+    cs = palettable.matplotlib.Viridis_3.mpl_colors
+
    
     df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0) 
     
@@ -548,7 +550,7 @@ def civ_blueshift_oiii_blueshift(check_lum=False):
 
     if not check_lum: 
 
-        fig = plt.figure(figsize=figsize(1.0, vscale=1.2))
+        fig = plt.figure(figsize=figsize(1.0, vscale=1.5))
         gs = gridspec.GridSpec(3, 2) 
     
         ax1 = fig.add_subplot(gs[0, 0])
@@ -603,8 +605,10 @@ def civ_blueshift_oiii_blueshift(check_lum=False):
                          marker='o', 
                          edgecolor='None',
                          cmap=palettable.matplotlib.Viridis_10.mpl_colormap)       
-
-        cb = fig.colorbar(im, ticks=[46, 46.5, 47, 47.5, 48])
+       
+        # cbaxes = fig.add_axes([0.8, 0.1, 0.03, 0.8]) 
+        # cb = plt.colorbar(im, cax = cbaxes, ticks=[46, 46.5, 47, 47.5, 48])  
+        cb = fig.colorbar(im, ticks=[46, 46.5, 47, 47.5, 48], orientation='horizontal')
 
         cb.set_label('log L$_{\mathrm{Bol}}$ [erg~s$^{-1}$]')
 
@@ -635,6 +639,8 @@ def civ_blueshift_oiii_blueshift(check_lum=False):
         ax2.set_ylabel(r'$\sigma \Delta v$(C\,{\sc iv})', fontsize=9)
     
         fig.tight_layout()
+
+
     
         fig.savefig('/home/lc585/thesis/figures/chapter04/civ_blueshift_oiii_blueshift.pdf')
     

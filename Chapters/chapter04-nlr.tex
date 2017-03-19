@@ -424,7 +424,7 @@ It is impossible to determine unambiguously what combination of \hb, [\ion{O}{II
 
 \begin{figure}
     \includegraphics[width=\columnwidth]{figures/chapter04/civ_blueshift_oiii_blueshift.pdf} 
-    \caption[{The relation between the blueshifts of \ion{C}{IV} and [\ion{O}{III}].}]{The relation between the blueshifts of \ion{C}{IV} and [\ion{O}{III}]. \todoinline{Move colorbar to bottom.}}     
+    \caption[{The relation between the blueshifts of \ion{C}{IV} and [\ion{O}{III}].}]{The relation between the blueshifts of \ion{C}{IV} and [\ion{O}{III}].}     
     \label{fig:oiii_civ_blueshifts}
 \end{figure}
 
@@ -437,19 +437,14 @@ In Chapter~\ref{ch:bhmass} we found that all quasars with strong \ac{BLR} outflo
 In this section, we show that the \ion{C}{IV} and [\ion{O}{III}] blueshifts are directly linked. 
 This suggests a direct connection between the gas kinematics in the broad and narrow line regions. 
 
-
 As described above, \ion{C}{IV} emission properties are available for XX quasars in our sample. 
 We use the \ion{C}{IV} velocity centroid measurements we derived in Chapter~\ref{ch:bhmass}.
 We take a subset of quasars with [\ion{O}{III}] \ac{EQW} $>8$\AA. 
-\todo{Other flags - fe, bad fit - should just be assumed at this point}. 
 We also remove objects where the fractional uncertainty on $v_{10}$ exceeds 50 per cent (XX quasars). 
 
 In Figure~\ref{fig:oiii_civ_blueshifts} we show the \ion{C}{IV} blueshifts against the [\ion{O}{III}] blueshifts.
-This comparison is done for a sub-sample of 146 objects where we have good measurements of the \ion{C}{IV}, [\ion{O}{III}] profiles. 
-\todo{What is good?}
-
 There is a clear and strong correlation. 
-Our EQW cut removes most of the quasars with large \ion{C}{IV} blueshifts, since [\ion{O}{III}] is on average very weak in these quasars. 
+The \ac{EQW} cut removes most of the quasars with large \ion{C}{IV} blueshifts, since [\ion{O}{III}] is on average very weak in these quasars. 
 Similar correlations have been tentatively found in lower redshift quasars and \ac{AGN} \citep{zamanov02}. 
 
 The blueshifting of \ion{C}{IV} is known to correlate with luminosity \citep{richards11}.
@@ -457,9 +452,6 @@ In [\ion{O}{III}], the blueshifted wing becomes relatively more prominent as the
 Therefore, it is plausible that the correlation between the \ion{C}{IV} and [\ion{O}{III}] blueshifts is a secondary effect that is driven by the correlation of each with the luminosity. 
 However, no strong luminosity-dependent trends are apparent in Figure~\ref{fig:oiii_civ_blueshifts}. 
 We find that both the [\ion{O}{III}] and \ion{C}{IV} blueshifts are correlated with the luminosity, but that these correlations are much weaker than the correlation between the [\ion{O}{III}] and \ion{C}{IV} blueshifts. 
-
-\todoinline{Also, you could put some more text and maybe a figure to explicitly demonstrate that the trend remains even after you have accounted for the trends with luminosity. This is the highlight result for me and personally I think needs a little more fleshing out.}
-
 
 The [\ion{O}{III}] `blueshift' is parametrized using as $v_{10} - v_{\mathrm peak}$.
 For the \ion{C}{IV} blueshift we use $v_{50}$ as a measure of the line location, and again use the peak of the [\ion{O}{III}] emission to define the systemic redshift. 
@@ -472,21 +464,8 @@ As expected, very similar trends are observed when the [\ion{O}{III}] line shape
 \end{equation} 
 
 The same trend is also observed when the systemic redshift is defined using the peak of the \hb emission. 
-
-Discuss cuts
-We don't show extreme objects
-
-
-\section{Broad Absorption Line Quasars}
-
-\todo{Check all of this}
-19 quasars in our catalogue are classified as broad absorption line (BAL) quasars, using the either the \ac{SDSS} classification flags or the \citet{allen11} catalogue. 
-We find that the BAL quasars have typically broader [\ion{O}{III}] than the rest of the sample. 
-Note that in the \citet{zakamska16} sample of very red quasars, the incidence of BALs is very high, and these objects have extremely broad [\ion{O}{III}] profiles. 
-A two-sided Kolmogorov-Smirnov statistic on the $w_{80}$ distributions returned a p-value of 0.10. 
-What does this mean?
-Try with different parameters?
-Histograms look rubbish so maybe just give the numbers. 
+\todo{Discuss cuts}
+\todo{We don't show extreme objects}
 
 \section{Discussion}
 
@@ -499,22 +478,15 @@ On the other hand, \citet{mullaney13} find that once the correlation between the
 
 Is the \ac{AGN} \ac{NLR} absent in objects where outflows have reached kilo-parsec scales, sweeping up the low-density material responsible for the [\ion{O}{III}]-emission?
 If the \ac{BLR} outflows can escape, they are very fast and wouldn't need long to clear out the \ac{NLR} gas. 
-\todo{Might be useful to estimate a time-scale for how long the NLR would take to be cleared given typical size of galaxy and velocity of outflow}. 
-
-\subsection{Type II quasars}
-
-Implications of our findings on searches for high-redshift type II quasars. 
-It could be that type II quasars exist. 
-If you look at CIV/MgII the narrow line components are very weak. 
-So the contribution from the \ac{BLR} is very weak in luminous quasars, and you just won't see it even if the broad line region is obscured.
-Findings in this paper seem to suggest that the static \ac{NLR} is very weak in luminous quasars. 
-
-\todo{Wasn't too sure about what this section was trying to say... Have you considered the \ac{SDSS} Type 2 samples from e.g. Alexandroff et al. ? (http://adsabs.harvard.edu/abs/2013MNRAS.435.3306A). I thought those were pretty luminous, narrow-line objects?}
+\todo{Manda/Paul: Estimate a time-scale for how long the NLR would take to be cleared given typical size of galaxy and velocity of outflow}. 
 
 \section{ICA}
 
-Then having presented the main results, I would go on to discuss the limitations of the Gaussian approach - e.g. FeII can't be properly subtracted in many cases and sensitive to S/N - and use this as an intro to the much more flexible ICA method. You could then have a much briefer description of the ICA reconstructions and present this more as work in progress. You could show that your main results (as above) still hold with the ICA (e.g. Figs 1.15, 1.16, 1.17) and that this allows you to solve the FeII problem and push to lower SNR. Finally, you could discuss some of the potential improvements to the ICA components that would allow the derived line properties from the ICA to become even more robust. ICA works better at low S/N because we are effectively putting priors on the model parameters. 
-
+Then having presented the main results, I would go on to discuss the limitations of the Gaussian approach - e.g. FeII can't be properly subtracted in many cases and sensitive to S/N - and use this as an intro to the much more flexible ICA method. 
+You could then have a much briefer description of the ICA reconstructions and present this more as work in progress. 
+You could show that your main results (as above) still hold with the ICA (e.g. Figs 1.15, 1.16, 1.17) and that this allows you to solve the FeII problem and push to lower SNR. 
+Finally, you could discuss some of the potential improvements to the ICA components that would allow the derived line properties from the ICA to become even more robust. 
+ICA works better at low S/N because we are effectively putting priors on the model parameters. 
 
 The second model consists of six spectral components derived from an \ac{ICA} of a large sample of low-redshift \ac{AGN} with \ac{SDSS} spectra covering the same spectral region.
 As we will demonstrate, a linear combination of these spectral components is able to reproduce the spectra around \hbns/[\ion{O}{III}] to a high degree of precision.  
