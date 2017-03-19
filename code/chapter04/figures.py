@@ -24,6 +24,9 @@ from scipy.interpolate import interp1d
 import numpy.ma as ma 
 from astropy.cosmology import WMAP9 as cosmoWMAP
 import math
+from sklearn.neighbors import KernelDensity
+from sklearn.grid_search import GridSearchCV
+from sklearn.cross_validation import LeaveOneOut
 
 set_plot_properties() # change style 
 cs = palettable.colorbrewer.qualitative.Set1_9.mpl_colors 
@@ -405,31 +408,35 @@ def civ_blueshift_oiii_eqw():
     
     df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0) 
     df = df[df.OIII_FLAG_2 > 0]
-    # df = df[df.OIII_EQW_FLAG == 0]
-    # df = df[df.OIII_SNR_FLAG == 0]
     df = df[df.OIII_BAD_FIT_FLAG == 0]
     df = df[df.FE_FLAG == 0]
     df = df[(df.WARN_CIV_BEST == 0) | (df.WARN_CIV_BEST == 1)]
     df = df[df.BAL_FLAG != 1]
-    df = df[np.log10(df.EQW_CIV_BEST) > 1.2]
+    df = df[np.log10(df.EQW_CIV_BEST) > 1.2] # need to say this 
+
+    df['z'] = np.nan
+    
+    useoiii = (df.OIII_EQW_FLAG == 0) & (df.OIII_EXTREM_FLAG == 0) & (df.OIII_FIT_VEL_FULL_OIII_PEAK_ERR < 400.0)
+    df.loc[useoiii, 'z'] = df.loc[useoiii, 'OIII_FIT_Z_FULL_OIII_PEAK'] 
+    
+    useha = df.z.isnull() & (df.OIII_FIT_HA_Z_FLAG > 0) & (df.OIII_FIT_VEL_HA_PEAK_ERR < 400.0)
+    df.loc[useha, 'z'] = df.loc[useha, 'OIII_FIT_HA_Z'] 
         
+    usehb = df.z.isnull() & (df.OIII_FIT_HB_Z_FLAG >= 0) & (df.OIII_FIT_VEL_HB_PEAK_ERR < 750.0)
+    df.loc[usehb, 'z'] = df.loc[usehb, 'OIII_FIT_HB_Z']
+
     df.dropna(subset=['Median_CIV_BEST'], inplace=True)
     
     w0 = np.mean([1548.202,1550.774])*u.AA  
     median_wav = doppler2wave(df.Median_CIV_BEST.values*(u.km/u.s), w0) * (1.0 + df.z_IR.values)
-    blueshift_civ = const.c.to('km/s') * (w0 - median_wav / (1.0 + df.z_ICA_FIT)) / w0
-
-    
-    from LiamUtils import colormaps as cmaps
-    plt.register_cmap(name='viridis', cmap=cmaps.viridis)
-    plt.set_cmap(cmaps.viridis)
-
+    blueshift_civ = const.c.to('km/s') * (w0 - median_wav / (1.0 + df.z)) / w0
 
     im = ax.scatter(blueshift_civ,
                     df.OIII_5007_EQW_3,
                     c=df.LogL5100,
                     edgecolor='None',
                     zorder=2,
+                    cmap=palettable.matplotlib.Viridis_10.mpl_colormap,
                     s=30)    
 
     
@@ -451,6 +458,50 @@ def civ_blueshift_oiii_eqw():
     plt.show() 
 
     return None  
+
+def lum_w80():
+
+    cs = palettable.colorbrewer.qualitative.Set1_3.mpl_colors
+    
+    fig, ax = plt.subplots(figsize=figsize(1, 0.8))
+    
+    df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0) 
+    df = df[df.OIII_EXTREM_FLAG == 1]
+    print 'Number of extreme: {}'.format(len(df))
+    
+    s = ax.scatter(np.log10(9.26) + df.LogL5100,
+                   df.OIII_5007_W80, 
+                   facecolor=cs[0], 
+                   edgecolor='None',
+                   s=25,
+                   zorder=1)
+    
+    df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0) 
+    df = df[df.OIII_FLAG_2 > 0]
+    df = df[df.OIII_BAD_FIT_FLAG == 0]
+    df = df[df.FE_FLAG == 0]
+    df = df[df.OIII_EQW_FLAG == 0]
+    df = df[df.OIII_EXTREM_FLAG == 0]
+    
+    s = ax.scatter(np.log10(9.26) + df.LogL5100,
+                   df.OIII_5007_W80, 
+                   facecolor=cs[1], 
+                   edgecolor='None',
+                   s=25,
+                   zorder=0)
+
+    ax.set_xlabel('log L$_{\mathrm{Bol}}$ [erg~s$^{-1}$]')
+    ax.set_ylabel(r'$w_{80}$ [km~$\rm{s}^{-1}$]')
+
+    fig.tight_layout()
+
+    fig.savefig('/home/lc585/thesis/figures/chapter04/lum_w80.pdf')
+
+    plt.show() 
+
+
+
+    return None 
 
 def civ_blueshift_oiii_blueshift(check_lum=False):
 
@@ -621,27 +672,34 @@ def civ_blueshift_oiii_blueshift(check_lum=False):
 
 def ev1():
 
-    """
-    Try change CIV blueshift to relative to ICA redshift
-    """ 
 
     df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0) 
     df = df[df.OIII_FLAG_2 > 0]
-    # df = df[df.OIII_EQW_FLAG == 0]
-    # df = df[df.OIII_SNR_FLAG == 0]
     df = df[df.OIII_BAD_FIT_FLAG == 0]
     df = df[df.FE_FLAG == 0]
-    df = df[df.OIII_FIT_HB_Z_FLAG > 0] # not really what this flag was for, so be careful 
     df = df[(df.WARN_CIV_BEST == 0) | (df.WARN_CIV_BEST == 1)]
     df = df[df.BAL_FLAG != 1]
-    df = df[np.log10(df.EQW_CIV_BEST) > 1.2]
+    df = df[np.log10(df.EQW_CIV_BEST) > 1.2] # need to say this 
+
+    # So I guess since I have shown the redshifts are (relatively) unbiased 
+    # we can use whatever. 
+    
+    df['z'] = np.nan
+    
+    useoiii = (df.OIII_EQW_FLAG == 0) & (df.OIII_EXTREM_FLAG == 0) & (df.OIII_FIT_VEL_FULL_OIII_PEAK_ERR < 400.0)
+    df.loc[useoiii, 'z'] = df.loc[useoiii, 'OIII_FIT_Z_FULL_OIII_PEAK'] 
+    
+    useha = df.z.isnull() & (df.OIII_FIT_HA_Z_FLAG > 0) & (df.OIII_FIT_VEL_HA_PEAK_ERR < 400.0)
+    df.loc[useha, 'z'] = df.loc[useha, 'OIII_FIT_HA_Z'] 
+        
+    usehb = df.z.isnull() & (df.OIII_FIT_HB_Z_FLAG >= 0) & (df.OIII_FIT_VEL_HB_PEAK_ERR < 750.0)
+    df.loc[usehb, 'z'] = df.loc[usehb, 'OIII_FIT_HB_Z'] 
+
+    print len(df)
+
 
     fig, axs = plt.subplots(2, 1, figsize=figsize(1, vscale=1.6), sharex=True)
-
-    from LiamUtils import colormaps as cmaps
-    plt.register_cmap(name='viridis', cmap=cmaps.viridis)
-    plt.set_cmap(cmaps.viridis)
-
+ 
     # ---------------------------------------------------------------------------------------------------
 
     t_ica = Table.read('/data/vault/phewett/LiamC/liam_civpar_zica_160115.dat', format='ascii') # new ICA 
@@ -673,13 +731,14 @@ def ev1():
 
     w0 = np.mean([1548.202,1550.774])*u.AA  
     median_wav = doppler2wave(df.Median_CIV_BEST.values*(u.km/u.s), w0) * (1.0 + df.z_IR.values)
-    blueshift_civ = const.c.to('km/s') * (w0 - median_wav / (1.0 + df.z_ICA_FIT)) / w0
+    blueshift_civ = const.c.to('km/s') * (w0 - median_wav / (1.0 + df.z)) / w0
 
     im = axs[0].scatter(blueshift_civ,
                         np.log10(df.EQW_CIV_BEST),
                         c = np.log10(df.OIII_5007_EQW_3), 
                         edgecolor='None',
                         s=25,
+                        cmap=palettable.matplotlib.Viridis_10.mpl_colormap,
                         vmin=-0.4, vmax=1.4)
 
     cb = fig.colorbar(im, ax=axs[0])
@@ -697,6 +756,7 @@ def ev1():
                         c = df.FWHM_Broad_Hb, 
                         edgecolor='None',
                         s=25,
+                        cmap=palettable.matplotlib.Viridis_10.mpl_colormap,
                         vmin=1500, vmax=10000)
 
     cb = fig.colorbar(im, ax=axs[1])
@@ -2280,6 +2340,161 @@ def oiii_reconstruction(name):
     return None 
 
 
+def parameter_hists():
+
+    
+    fig, axs = plt.subplots(3, 1, figsize=figsize(1, vscale=2)) 
+
+    # ----------------------------------------------
+
+    df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0)     
+    df = df[df.OIII_FLAG_2 > 0]
+    df = df[df.OIII_BAD_FIT_FLAG == 0]
+    df = df[df.FE_FLAG == 0]
+    df = df[df.OIII_EQW_FLAG == 0]
+    df = df[df.OIII_BROAD_OFF == False]
+
+    
+    x = df.OIII_5007_R_80
+    
+    x_d = np.linspace(-1, 0.8, 1000)
+    
+    # bandwidths = 10 ** np.linspace(-2, 0, 100)
+    # grid = GridSearchCV(KernelDensity(kernel='gaussian'),
+    #                     {'bandwidth': bandwidths},
+    #                     cv=LeaveOneOut(len(x)))
+    # grid.fit(x[:, None]);
+    
+    # print grid.best_params_
+    
+    kde = KernelDensity(bandwidth=0.0774, kernel='gaussian')
+    kde.fit(x[:, None])
+    
+    # score_samples returns the log of the probability density
+    logprob = kde.score_samples(x_d[:, None])
+    
+    axs[2].fill_between(x_d, np.exp(logprob), color=cs[1])
+    axs[2].plot(x, np.full_like(x, -0.01), '|k', markeredgewidth=1)
+
+    axs[2].set_ylim(-0.1, None)
+
+    axs[2].grid() 
+
+    axs[2].set_xlabel('Asymmetry R')
+    axs[2].set_ylabel('PDF')
+    
+    axs[2].yaxis.set_major_locator(MaxNLocator(5))
+
+    # -------------------------------------------------------------
+
+    df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0) 
+    
+    df = df[df.OIII_FLAG_2 > 0]
+    df = df[df.OIII_BAD_FIT_FLAG == 0]
+    df = df[df.FE_FLAG == 0]
+    df = df[df.OIII_EQW_FLAG == 0]
+    
+    x = df.OIII_5007_W80
+    norm = np.std(x)
+    x = x / norm
+    
+    x_d = np.linspace(0, 6, 1000)
+    
+    # bandwidths = 10 ** np.linspace(-1, 1, 100)
+    # grid = GridSearchCV(KernelDensity(kernel='gaussian'),
+    #                     {'bandwidth': bandwidths},
+    #                     cv=LeaveOneOut(len(x)))
+    # grid.fit(x[:, None]);
+    
+    # print grid.best_params_
+    
+    kde = KernelDensity(bandwidth=0.242, kernel='gaussian')
+    kde.fit(x[:, None])
+    
+    # score_samples returns the log of the probability density
+    logprob = kde.score_samples(x_d[:, None])
+    
+    axs[1].fill_between(x_d*norm, np.exp(logprob), color=cs[1])
+    axs[1].plot(x*norm, np.full_like(x, -0.01), '|k', markeredgewidth=1);
+
+    axs[1].set_xlabel(r'$w_{80}$ [km~$\rm{s}^{-1}$]')
+    axs[1].set_ylabel('PDF')
+
+    axs[1].set_ylim(-0.05, None)
+
+    axs[1].grid() 
+
+    axs[1].yaxis.set_major_locator(MaxNLocator(5))
+
+    # -----------------------------------------------------
+    
+    df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0) 
+    
+    df = df[df.OIII_FLAG_2 > 0]
+    df = df[df.OIII_BAD_FIT_FLAG == 0]
+    df = df[df.FE_FLAG == 0]
+    
+    x = df.OIII_5007_EQW_3
+    x[x < 0.01] = 0.01
+    x = np.log10(x)
+    
+    x_d = np.linspace(-2, 3, 1000)
+    
+    # bandwidths = 10 ** np.linspace(-1, 1, 100)
+    # grid = GridSearchCV(KernelDensity(kernel='gaussian'),
+    #                     {'bandwidth': bandwidths},
+    #                     cv=LeaveOneOut(len(x)))
+    # grid.fit(x[:, None]);
+    
+    # print grid.best_params_
+    
+    kde = KernelDensity(bandwidth=0.138, kernel='gaussian')
+    kde.fit(x[:, None])
+    
+    # score_samples returns the log of the probability density
+    logprob = kde.score_samples(x_d[:, None])
+    
+    axs[0].fill_between(x_d, np.exp(logprob), color=cs[1])
+    axs[0].plot(x, np.full_like(x, -0.01), '|k', markeredgewidth=1);
+
+    axs[0].set_xlabel(r'EQW [\AA]')
+    axs[0].set_ylabel('PDF')
+
+    axs[0].set_ylim(-0.05, None)
+
+    axs[0].yaxis.set_major_locator(MaxNLocator(5))
+
+    axs[0].grid() 
+
+    
+    axs[0].xaxis.set_ticklabels(['$10^{-2}$', '$10^{-1}$', '$10^{0}$', '$10^{1}$', '$10^{2}$', '$10^{3}$']); 
+
+    # ---------------------------------------------------
+
+
+    labels = ['(a)', '(b)', '(c)']
+
+
+    for i, label in enumerate(labels):
+
+        axs[i].text(0.9, 0.93, label,
+                    horizontalalignment='center',
+                    verticalalignment='center',
+                    transform = axs[i].transAxes)
+
+
+
+    fig.tight_layout() 
+
+    fig.savefig('/home/lc585/thesis/figures/chapter04/parameter_hists.pdf')
+
+    plt.show() 
+
+
+    return None 
+
+
+
 def parameters_grid():
 
     from PlottingTools.corner_plot import corner_plot
@@ -2316,6 +2531,8 @@ def parameters_grid():
 
 def oiii_luminosity_z_w80():
 
+    greys = palettable.colorbrewer.sequential.Greys_4.mpl_colors
+
     fig, ax = plt.subplots(figsize=figsize(1, vscale=0.8))
     
     props = {'vmin': 500.0, 
@@ -2335,7 +2552,7 @@ def oiii_luminosity_z_w80():
               vmax=props['vmax'],
               cmap=props['cmap'],
               gridsize=(5, 20),
-              edgecolor='black')
+              edgecolor=greys[3])
     
     
     # Our sample ------------------------------------------------
@@ -2354,7 +2571,7 @@ def oiii_luminosity_z_w80():
               vmax=props['vmax'],
               cmap=props['cmap'],
               gridsize=(30, 15),
-              edgecolor='black')
+              edgecolor=greys[1])
     
     # Harrison+16 ----------------------------------------------------------------
     
@@ -2384,7 +2601,7 @@ def oiii_luminosity_z_w80():
                    vmax=props['vmax'],
                    cmap=props['cmap'],
                    gridsize=(8, 10),
-                   edgecolor='black')
+                   edgecolor=greys[2])
    
     #---------------------------------------------------------------------------
 
