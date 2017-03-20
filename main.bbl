@@ -1711,6 +1711,32 @@
   \field{year}{1981}
 \endentry
 
+\entry{hewett10}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {{Hewett}}{H.}%
+     {P.~C.}{P.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Wild}}{W.}%
+     {V.}{V.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{catalogues, surveys, quasars: emission lines, quasars: general}
+  \strng{namehash}{HPCWV1}
+  \strng{fullhash}{HPCWV1}
+  \field{labelyear}{2010}
+  \field{sortinit}{H}
+  \field{pages}{2302\bibrangedash 2316}
+  \field{title}{{Improved redshifts for SDSS quasar spectra}}
+  \field{volume}{405}
+  \field{journaltitle}{\mnras}
+  \field{month}{07}
+  \field{year}{2010}
+\endentry
+
 \entry{kim13}{article}{}
   \name{author}{6}{}{%
     {{}%

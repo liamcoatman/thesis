@@ -27,6 +27,7 @@ import math
 from sklearn.neighbors import KernelDensity
 from sklearn.grid_search import GridSearchCV
 from sklearn.cross_validation import LeaveOneOut
+from astropy.convolution import Gaussian1DKernel, convolve
 
 set_plot_properties() # change style 
 cs = palettable.colorbrewer.qualitative.Set1_9.mpl_colors 
@@ -1443,7 +1444,8 @@ def example_spectra(name,
                     nrebin, 
                     plot_model=True, 
                     data_color='black',
-                    voffset=0.0):
+                    voffset=0.0,
+                    smooth=None):
 
     from lmfit import Model
 
@@ -1611,6 +1613,14 @@ def example_spectra(name,
                 color='black',
                 lw=1,
                 zorder=6)
+
+  
+
+    if smooth is not None:
+
+        smooth_scale = np.rint(smooth / np.median(np.diff(wave2doppler(wav, w0).value)))
+        gauss = Gaussian1DKernel(stddev=smooth_scale)
+        flx = convolve(flx, gauss)
 
     ax.plot(vdat - voffset,
             flx,
@@ -1985,85 +1995,85 @@ def example_spectrum_grid_extreme_fe():
 
     df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0)  
 
-    # names = ['QSO015',
-    #          'QSO038',
-    #          'QSO169',
-    #          'QSO307',
-    #          'QSO381',
-    #          'QSO537',
-    #          'QSO538',
-    #          'QSO540',
-    #          'QSO546',
-    #          'QSO551',
-    #          'QSO560',
-    #          'QSO569']
+    names = ['QSO015',
+             'QSO038',
+             'QSO169',
+             'QSO307',
+             'QSO381',
+             'QSO537',
+             'QSO538',
+             'QSO540',
+             'QSO546',
+             'QSO551',
+             'QSO560',
+             'QSO569']
 
-    # ylims = [[0.0, 0.7],
-    #          [0.0, 1.2],
-    #          [0.0, 0.7],
-    #          [0.0, 0.4],
-    #          [0.0, 1.0],
-    #          [0.0, 0.5],
-    #          [0.0, 1.2],
-    #          [0.0, 0.9],
-    #          [0.0, 1.0],
-    #          [0.0, 0.2],
-    #          [0.0, 0.7],
-    #          [0.0, 0.9]]  
-
-
-    # titles = ['J104915-011038',
-    #           'J092747+290721',
-    #           'J212912-153841',
-    #           'J214507-303046',
-    #           'J102510+045247',
-    #           'J123355+031328',
-    #           'J125141+080718',
-    #           'J141949+060654',
-    #           'J204010-065403',
-    #           'J223820-092106',
-    #           'J005202+010129',
-    #           'J012257-334844']
-
-    names = ['QSO570',
-             'QSO587',
-             'QSO589',
-             'QSO590',
-             'QSO601',
-             'QSO611',
-             'QSO618',
-             'QSO619',
-             'QSO624',
-             'QSO629',
-             'QSO640',
-             'QSO591']
-
-    ylims = [[0.0, 0.8],
+    ylims = [[0.0, 0.7],
+             [0.0, 1.2],
+             [0.0, 0.7],
              [0.0, 0.4],
+             [0.0, 1.0],
              [0.0, 0.5],
-             [0.0, 1.1],
+             [0.0, 1.2],
+             [0.0, 0.9],
+             [0.0, 1.0],
+             [0.0, 0.2],
              [0.0, 0.7],
-             [0.0, 1],
-             [0.0, 0.5],
-             [0.0, 0.5],
-             [0.0, 0.7],
-             [0.0, 0.3],
-             [0.0, 0.8],
-             [0.0, 0.8]]  
+             [0.0, 0.9]]  
 
 
-    titles = ['J012337-323828',
-              'J025055-361635',
-              'J025634-401300',
-              'J030211-314030',
-              'J105651-114122',
-              'J134104-073947',
-              'J214950-444405',
-              'J215052-315824',
-              'J223246-363203',
-              'J232539-065259',
-              'J115302+215118',
-              'J032944-233835']
+    titles = ['J104915-011038',
+              'J092747+290721',
+              'J212912-153841',
+              'J214507-303046',
+              'J102510+045247',
+              'J123355+031328',
+              'J125141+080718',
+              'J141949+060654',
+              'J204010-065403',
+              'J223820-092106',
+              'J005202+010129',
+              'J012257-334844']
+
+    # names = ['QSO570',
+    #          'QSO587',
+    #          'QSO589',
+    #          'QSO590',
+    #          'QSO601',
+    #          'QSO611',
+    #          'QSO618',
+    #          'QSO619',
+    #          'QSO624',
+    #          'QSO629',
+    #          'QSO640',
+    #          'QSO591']
+
+    # ylims = [[0.0, 0.8],
+    #          [0.0, 0.4],
+    #          [0.0, 0.5],
+    #          [0.0, 1.1],
+    #          [0.0, 0.7],
+    #          [0.0, 1],
+    #          [0.0, 0.5],
+    #          [0.0, 0.5],
+    #          [0.0, 0.7],
+    #          [0.0, 0.3],
+    #          [0.0, 0.8],
+    #          [0.0, 0.8]]  
+
+
+    # titles = ['J012337-323828',
+    #           'J025055-361635',
+    #           'J025634-401300',
+    #           'J030211-314030',
+    #           'J105651-114122',
+    #           'J134104-073947',
+    #           'J214950-444405',
+    #           'J215052-315824',
+    #           'J223246-363203',
+    #           'J232539-065259',
+    #           'J115302+215118',
+    #           'J032944-233835']
 
 
     rebins = [1,
@@ -2085,7 +2095,7 @@ def example_spectrum_grid_extreme_fe():
         ax = plt.subplot(outer_grid[i])
         ax.set_xticks([])
         ax.set_yticks([])
-        example_spectra(names[i], ax, rebins[i], plot_model=False, data_color=cs[-1])
+        example_spectra(names[i], ax, rebins[i], plot_model=False, data_color=cs[-1], smooth=100.0)
         ax.set_ylim(ylims[i])
         ax.set_xlim(-5000, 15000)
         ax.set_title(titles[i], size=10, y=0.95)
@@ -2107,7 +2117,7 @@ def example_spectrum_grid_extreme_fe():
     fig.text(0.5, 0.02, r'$\Delta v$ [km~$\rm{s}^{-1}$]', ha='center')
     fig.text(0.05, 0.55, r'Relative $F_{\lambda}$', rotation=90)
     
-    fig.savefig('/home/lc585/thesis/figures/chapter04/example_spectrum_grid_extreme_fe_2.pdf')
+    fig.savefig('/home/lc585/thesis/figures/chapter04/example_spectrum_grid_extreme_fe_1.pdf')
 
     plt.show() 
 

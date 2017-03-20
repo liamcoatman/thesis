@@ -1,5 +1,10 @@
 def make_table(): 
 
+    import pandas as pd 
+    import numpy as np
+    import astropy.constants as const 
+    import astropy.units as u 
+
     df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0) 
     df = df[df.OIII_FLAG_2 > 0]
     df.reset_index(inplace=True)
@@ -34,7 +39,6 @@ def make_table():
     
     columns = []
     
-    columns.append('ID')
     columns.append('index')
     columns.append('OIII_5007_V5_PEAK')
     columns.append('OIII_5007_V5_PEAK_ERR')
@@ -75,10 +79,7 @@ def make_table():
     columns.append('OIII_FIT_HA_Z') 
     columns.append('OIII_FIT_HA_Z_ERR') 
     columns.append('REDCHI') 
-    columns.append('LogL5micron') 
     columns.append('FE_FLAG') 
-    columns.append('OIII_EQW_FLAG')
-    columns.append('OIII_BAD_FIT_FLAG')
     columns.append('OIII_EXTREM_FLAG')
     columns.append('OIII_FIT_HA_REDCHI')
     
@@ -87,7 +88,7 @@ def make_table():
     df = df[columns]
     
     df.rename(columns={'ID': 'ID',
-                       'index': 'index',
+                       'index': 'UID',
                        'OIII_5007_V5_PEAK': 'OIII_V5',
                        'OIII_5007_V5_PEAK_ERR': 'OIII_V5_ERR',
                        'OIII_5007_V10_PEAK': 'OIII_V10',
