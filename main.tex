@@ -68,17 +68,6 @@
 \newcommand\todo[1]{\marginpar{\textcolor{red}{#1}}} 
 \newcommand\todoinline[1]{\textcolor{red}{#1}} 
 
-% Remove special color from acronyms 
-\makeatletter
-\AtBeginDocument{%
-  \renewcommand*{\AC@hyperlink}[2]{%
-    \begingroup
-      \hypersetup{hidelinks}%
-      \hyperlink{#1}{#2}%
-    \endgroup
-  }%
-}
-\makeatother
 
 
 %********************************************************************

@@ -1981,23 +1981,51 @@ def example_spectrum_grid_extreme_fe():
     fig = plt.figure(figsize=figsize(1, vscale=1.5))
 
     # gridspec inside gridspec
-    outer_grid = gridspec.GridSpec(6, 4, wspace=0.0, hspace=0.17)
+    outer_grid = gridspec.GridSpec(4, 3, wspace=0.0, hspace=0.17)
 
     df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0)  
-    
-    names = ['QSO015',
-             'QSO038',
-             'QSO169',
-             'QSO307',
-             'QSO381',
-             'QSO537',
-             'QSO538',
-             'QSO540',
-             'QSO546',
-             'QSO551',
-             'QSO560',
-             'QSO569',
-             'QSO570',
+
+    # names = ['QSO015',
+    #          'QSO038',
+    #          'QSO169',
+    #          'QSO307',
+    #          'QSO381',
+    #          'QSO537',
+    #          'QSO538',
+    #          'QSO540',
+    #          'QSO546',
+    #          'QSO551',
+    #          'QSO560',
+    #          'QSO569']
+
+    # ylims = [[0.0, 0.7],
+    #          [0.0, 1.2],
+    #          [0.0, 0.7],
+    #          [0.0, 0.4],
+    #          [0.0, 1.0],
+    #          [0.0, 0.5],
+    #          [0.0, 1.2],
+    #          [0.0, 0.9],
+    #          [0.0, 1.0],
+    #          [0.0, 0.2],
+    #          [0.0, 0.7],
+    #          [0.0, 0.9]]  
+
+
+    # titles = ['J104915-011038',
+    #           'J092747+290721',
+    #           'J212912-153841',
+    #           'J214507-303046',
+    #           'J102510+045247',
+    #           'J123355+031328',
+    #           'J125141+080718',
+    #           'J141949+060654',
+    #           'J204010-065403',
+    #           'J223820-092106',
+    #           'J005202+010129',
+    #           'J012257-334844']
+
+    names = ['QSO570',
              'QSO587',
              'QSO589',
              'QSO590',
@@ -2007,21 +2035,10 @@ def example_spectrum_grid_extreme_fe():
              'QSO619',
              'QSO624',
              'QSO629',
-             'QSO640']
+             'QSO640',
+             'QSO591']
 
-    ylims = [[0.0, 0.7],
-             [0.0, 1.2],
-             [0.0, 0.7],
-             [0.0, 0.4],
-             [0.0, 1.0],
-             [0.0, 0.5],
-             [0.0, 1.2],
-             [0.0, 0.9],
-             [0.0, 1.0],
-             [0.0, 0.2],
-             [0.0, 0.7],
-             [0.0, 0.9],
-             [0.0, 0.8],
+    ylims = [[0.0, 0.8],
              [0.0, 0.4],
              [0.0, 0.5],
              [0.0, 1.1],
@@ -2031,22 +2048,11 @@ def example_spectrum_grid_extreme_fe():
              [0.0, 0.5],
              [0.0, 0.7],
              [0.0, 0.3],
+             [0.0, 0.8],
              [0.0, 0.8]]  
 
 
-    titles = ['J104915-011038',
-              'J092747+290721',
-              'J212912-153841',
-              'J214507-303046',
-              'J102510+045247',
-              'J123355+031328',
-              'J125141+080718',
-              'J141949+060654',
-              'J204010-065403',
-              'J223820-092106',
-              'J005202+010129',
-              'J012257-334844',
-              'J012337-323828',
+    titles = ['J012337-323828',
               'J025055-361635',
               'J025634-401300',
               'J030211-314030',
@@ -2056,7 +2062,8 @@ def example_spectrum_grid_extreme_fe():
               'J215052-315824',
               'J223246-363203',
               'J232539-065259',
-              'J115302+215118']
+              'J115302+215118',
+              'J032944-233835']
 
 
     rebins = [1,
@@ -2070,39 +2077,25 @@ def example_spectrum_grid_extreme_fe():
               1,
               1,
               1,
-              1,
-              1,
-              1,
-              1,
-              1,
-              1,
-              1,
-              1,
-              1,
-              1,
-              1,
               1]
+              
              
     for i in range(len(names)):
- 
-        
-        
+              
         ax = plt.subplot(outer_grid[i])
         ax.set_xticks([])
         ax.set_yticks([])
         example_spectra(names[i], ax, rebins[i], plot_model=False, data_color=cs[-1])
         ax.set_ylim(ylims[i])
         ax.set_xlim(-5000, 15000)
-        ax.set_title(titles[i], size=9, y=0.94)
+        ax.set_title(titles[i], size=10, y=0.95)
         # ax.axvline(df.loc[names[i], 'OIII_FIT_VEL_HB_PEAK'], c=cs[0], linestyle=':')
         v4959 = wave2doppler(4960.295*u.AA, w0=4862.721*u.AA).value 
         v5007 = wave2doppler(5008.239*u.AA, w0=4862.721*u.AA).value 
         ax.axvline(df.loc[names[i], 'OIII_FIT_VEL_HB_PEAK'] + v4959, c=cs[0], linestyle=':')
         ax.axvline(df.loc[names[i], 'OIII_FIT_VEL_HB_PEAK'] + v5007, c=cs[0], linestyle=':')
 
-        fig.add_subplot(ax)
-
-        if i < 19:
+        if i < 11:
             ax.set_xticks([])
         else:
             ax.set_xticks([0, 5000, 10000])
@@ -2114,7 +2107,7 @@ def example_spectrum_grid_extreme_fe():
     fig.text(0.5, 0.02, r'$\Delta v$ [km~$\rm{s}^{-1}$]', ha='center')
     fig.text(0.05, 0.55, r'Relative $F_{\lambda}$', rotation=90)
     
-    fig.savefig('/home/lc585/thesis/figures/chapter04/example_spectrum_grid_extreme_fe.pdf')
+    fig.savefig('/home/lc585/thesis/figures/chapter04/example_spectrum_grid_extreme_fe_2.pdf')
 
     plt.show() 
 
@@ -2727,7 +2720,7 @@ def composite():
 
     set_plot_properties() # change style  
 
-    cs = palettable.matplotlib.qualitative.Set1_3.mpl_colors
+    cs = palettable.colorbrewer.qualitative.Set1_3.mpl_colors
 
 
 
@@ -2737,10 +2730,11 @@ def composite():
 
     df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0)
     df = df[df.OIII_FLAG_2 > 0]
-    df = df[df.OIII_EQW_FLAG == 0]
-    df = df[df.OIII_SNR_FLAG == 0]
-    df = df[df.OIII_BAD_FIT_FLAG == 0]
+    # df = df[df.OIII_EQW_FLAG == 0]
+    # df = df[df.OIII_SNR_FLAG == 0]
+    # df = df[df.OIII_BAD_FIT_FLAG == 0]
     df = df[df.FE_FLAG == 0]
+    df = df[df.OIII_TEMPLATE== False]
  
     wav_new = np.arange(4700.0, 5100.0, 1.0) 
 
@@ -2802,7 +2796,7 @@ def composite():
 
 
 
-    np.savetxt('composite.dat', np.array([wav_bkgd, flux_new, 0.1*np.ones_like(wav_bkgd)]).T)
+    # np.savetxt('composite.dat', np.array([wav_bkgd, flux_new, 0.1*np.ones_like(wav_bkgd)]).T)
 
     vdat = wave2doppler(wav_new*u.AA, w0=4862.721*u.AA)
 

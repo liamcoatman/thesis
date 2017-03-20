@@ -2570,6 +2570,33 @@
   \field{year}{2014}
 \endentry
 
+\entry{shen12}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {{Shen}}{S.}%
+     {Y.}{Y.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Liu}}{L.}%
+     {X.}{X.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{black hole physics, galaxies: active, quasars: general}
+  \strng{namehash}{SYLX1}
+  \strng{fullhash}{SYLX1}
+  \field{labelyear}{2012}
+  \field{sortinit}{S}
+  \field{pages}{125}
+  \field{title}{{Comparing Single-epoch Virial Black Hole Mass Estimators for
+  Luminous Quasars}}
+  \field{volume}{753}
+  \field{journaltitle}{\apj}
+  \field{month}{07}
+  \field{year}{2012}
+\endentry
+
 \entry{shen11}{article}{}
   \name{author}{13}{}{%
     {{}%
