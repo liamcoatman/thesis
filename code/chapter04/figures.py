@@ -110,6 +110,8 @@ def redshift_comparison():
 
     fig, axs = plt.subplots(3, 1, figsize=figsize(1, 2), sharex=True, sharey=True)
 
+    mean, median, sigma = np.zeros(3), np.zeros(3), np.zeros(3)
+
     # OIII vs Hb -----------------------------------------------------------
  
     df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0) 
@@ -119,16 +121,12 @@ def redshift_comparison():
     df = df[df.FE_FLAG == 0]
     df = df[df.OIII_EXTREM_FLAG == 0]
 
-    df = df[df.OIII_FIT_HB_Z_FLAG >= 0] # Hb missing (6 objects)
-    
-    l1 = float(len(df))
-    df = df[df.OIII_FIT_VEL_HB_PEAK_ERR < 750.0] # Really bad 
+    df = df[df.OIII_FIT_HB_Z_FLAG > 0 ] 
+    df = df[df.OIII_FIT_VEL_HB_PEAK_ERR < 600.0] # Really bad 
     df = df[df.OIII_FIT_VEL_FULL_OIII_PEAK_ERR < 400.0] # Really bad 
-    l2 = float(len(df))
-    print (l1 - l2) / l1   
-        
+
     x = df.OIII_FIT_VEL_FULL_OIII_PEAK - df.OIII_FIT_VEL_HB_PEAK 
-    print np.mean(x), np.median(x), np.std(x)
+    mean[0], median[0], sigma[0] = np.mean(x), np.median(x), np.std(x)
  
     norm = np.std(x)
     x = x / norm
@@ -154,6 +152,8 @@ def redshift_comparison():
 
     axs[0].grid() 
 
+    
+
     # OIII vs Ha-----------------------------------------------------------------------------
 
 
@@ -165,18 +165,15 @@ def redshift_comparison():
     df = df[df.OIII_EXTREM_FLAG == 0]
 
     df = df[df.OIII_FIT_HA_Z_FLAG > 0] 
-    l1 = float(len(df))
+
     df = df[df.OIII_FIT_VEL_HA_PEAK_ERR < 400.0] # Really bad 
     df = df[df.OIII_FIT_VEL_FULL_OIII_PEAK_ERR < 400.0] # Really bad 
-    l2 = float(len(df))
-    print (l1 - l2) / l1   
-    
 
     print len(df)
 
     x = const.c.to(u.km/u.s)*(df.OIII_FIT_Z_FULL_OIII_PEAK - df.OIII_FIT_HA_Z)/(1.0 + df.OIII_FIT_Z_FULL_OIII_PEAK)
     x = x.value 
-    print np.mean(x), np.median(x), np.std(x)
+    mean[1], median[1], sigma[1] = np.mean(x), np.median(x), np.std(x)
  
     norm = np.std(x)
     x = x / norm
@@ -206,24 +203,22 @@ def redshift_comparison():
 
 
     df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0) 
-    df = df[df.OIII_FIT_HA_Z_FLAG >= 0] # Ha missing
-    df = df[df.OIII_FIT_HB_Z_FLAG >= 0] # Ha missing
-
-    l1 = float(len(df))
-    df = df[df.OIII_FIT_VEL_HB_PEAK_ERR < 750.0] 
-    df = df[df.OIII_FIT_VEL_HA_PEAK_ERR < 400.0]  
-    df.drop('QSO546', inplace=True) # Hb clearly not fit in this 
-    l2 = float(len(df))
-    print (l1 - l2) / l1   
     
+    df.drop(['QSO394', 'QSO391'], inplace=True) # Duplicates 
+    
+    df = df[df.OIII_FIT_HA_Z_FLAG > 0 ]
+    df = df[df.OIII_FIT_HB_Z_FLAG > 0 ]
+    
+    df = df[df.OIII_FIT_VEL_HA_PEAK_ERR < 400.0]
+    df = df[df.OIII_FIT_VEL_HB_PEAK_ERR < 600.0]
 
-    # print len(df)
+    df.drop(['QSO546'], inplace=True) # bad fit
 
     print len(df)
-    
+
     x = const.c.to(u.km/u.s)*(df.OIII_FIT_HB_Z - df.OIII_FIT_HA_Z)/(1.0 + df.OIII_FIT_HA_Z)
     x = x.value 
-    print np.mean(x), np.median(x), np.std(x)
+    mean[2], median[2], sigma[2] =  np.mean(x), np.median(x), np.std(x)
  
     norm = np.std(x)
     x = x / norm
@@ -258,10 +253,17 @@ def redshift_comparison():
 
     for i, label in enumerate(labels):
 
-        axs[i].text(0.9, 0.93, label,
-                    horizontalalignment='center',
-                    verticalalignment='center',
-                    transform = axs[i].transAxes)
+        axs[i].text(0.70, 
+                    0.93, 
+                    labels[i] + ' \n'\
+                    + r'$\mu = {0:.0f}$'.format(mean[i]) + '\n'\
+                    + r'median$ = {0:.0f}$'.format(median[i]) + '\n'\
+                    + r'$\sigma = {0:.0f}$'.format(sigma[i]),
+                    horizontalalignment='left',
+                    verticalalignment='top',
+                    multialignment='left',
+                    transform = axs[i].transAxes,
+                    bbox=dict(facecolor='white', edgecolor='black', boxstyle='round,pad=1'))
 
     # #----------------------------------------------------------
 
@@ -2415,10 +2417,12 @@ def parameter_hists():
     df = df[df.OIII_EQW_FLAG == 0]
     
     x = df.OIII_5007_W80
+    print np.mean(x), np.std(x), np.median(x), np.min(x), np.max(x)
     norm = np.std(x)
     x = x / norm
     
     x_d = np.linspace(0, 6, 1000)
+
     
     # bandwidths = 10 ** np.linspace(-1, 1, 100)
     # grid = GridSearchCV(KernelDensity(kernel='gaussian'),

@@ -386,6 +386,30 @@
   \field{year}{2008}
 \endentry
 
+\entry{baldwin77}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {{Baldwin}}{B.}%
+     {J.~A.}{J.~A.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{BJA1}
+  \strng{fullhash}{BJA1}
+  \field{labelyear}{1977}
+  \field{sortinit}{B}
+  \verb{doi}
+  \verb 10.1086/155294
+  \endverb
+  \field{pages}{679\bibrangedash 684}
+  \field{title}{{Luminosity Indicators in the Spectra of Quasi-Stellar
+  Objects}}
+  \field{volume}{214}
+  \field{journaltitle}{\apj}
+  \field{month}{06}
+  \field{year}{1977}
+\endentry
+
 \entry{baskin05b}{article}{}
   \name{author}{2}{}{%
     {{}%
@@ -1792,6 +1816,55 @@
   \field{year}{2013}
 \endentry
 
+\entry{liu13}{article}{}
+  \name{author}{5}{}{%
+    {{}%
+     {{Liu}}{L.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Zakamska}}{Z.}%
+     {N.~L.}{N.~L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Greene}}{G.}%
+     {J.~E.}{J.~E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Nesvadba}}{N.}%
+     {N.~P.~H.}{N.~P.~H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Liu}}{L.}%
+     {X.}{X.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{quasars: emission lines}
+  \strng{namehash}{LG+1}
+  \strng{fullhash}{LGZNLGJENNPHLX1}
+  \field{labelyear}{2013}
+  \field{sortinit}{L}
+  \verb{doi}
+  \verb 10.1093/mnras/stt1755
+  \endverb
+  \verb{eprint}
+  \verb 1305.6922
+  \endverb
+  \field{pages}{2576\bibrangedash 2597}
+  \field{title}{{Observations of feedback from radio-quiet quasars - II.
+  Kinematics of ionized gas nebulae}}
+  \field{volume}{436}
+  \field{journaltitle}{\mnras}
+  \field{eprinttype}{arXiv}
+  \field{month}{12}
+  \field{year}{2013}
+\endentry
+
 \entry{moe09}{article}{}
   \name{author}{4}{}{%
     {{}%
@@ -2507,6 +2580,43 @@
   \field{year}{2011}
 \endentry
 
+\entry{runnoe13}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {{Runnoe}}{R.}%
+     {J.~C.}{J.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Brotherton}}{B.}%
+     {M.~S.}{M.~S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Shang}}{S.}%
+     {Z.}{Z.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{DiPompeo}}{D.}%
+     {M.~A.}{M.~A.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{galaxies: active, quasars: general}
+  \strng{namehash}{RJC+1}
+  \strng{fullhash}{RJCBMSSZDMA1}
+  \field{labelyear}{2013}
+  \field{sortinit}{R}
+  \field{pages}{848\bibrangedash 861}
+  \field{title}{{Rehabilitating C IV-based black hole mass estimates in
+  quasars}}
+  \field{volume}{434}
+  \field{journaltitle}{\mnras}
+  \field{month}{09}
+  \field{year}{2013}
+\endentry
+
 \entry{rupke13}{article}{}
   \name{author}{2}{}{%
     {{}%
@@ -2786,6 +2896,40 @@
   \field{year}{2016}
 \endentry
 
+\entry{stern12}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {{Stern}}{S.}%
+     {J.}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Laor}}{L.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{galaxies: Seyfert}
+  \strng{namehash}{SJLA1}
+  \strng{fullhash}{SJLA1}
+  \field{labelyear}{2012}
+  \field{sortinit}{S}
+  \verb{doi}
+  \verb 10.1111/j.1365-2966.2012.21772.x
+  \endverb
+  \verb{eprint}
+  \verb 1207.5543
+  \endverb
+  \field{pages}{2703\bibrangedash 2718}
+  \field{title}{{Type 1 AGN at low z - II. The relative strength of narrow
+  lines and the nature of intermediate type AGN}}
+  \field{volume}{426}
+  \field{journaltitle}{\mnras}
+  \field{eprinttype}{arXiv}
+  \field{month}{11}
+  \field{year}{2012}
+\endentry
+
 \entry{stockton76}{article}{}
   \name{author}{1}{}{%
     {{}%
@@ -2899,6 +3043,60 @@
   \field{journaltitle}{\aap}
   \field{month}{08}
   \field{year}{2004}
+\endentry
+
+\entry{sulentic06}{article}{}
+  \name{author}{6}{}{%
+    {{}%
+     {{Sulentic}}{S.}%
+     {J.~W.}{J.~W.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Repetto}}{R.}%
+     {P.}{P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Stirpe}}{S.}%
+     {G.~M.}{G.~M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Marziani}}{M.}%
+     {P.}{P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Dultzin-Hacyan}}{D.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Calvani}}{C.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{galaxies: quasars: emission lines, galaxies: quasars: general, line:
+  profiles, black hole physics}
+  \strng{namehash}{SJW+1}
+  \strng{fullhash}{SJWRPSGMMPDDCM1}
+  \field{labelyear}{2006}
+  \field{sortinit}{S}
+  \verb{doi}
+  \verb 10.1051/0004-6361:20054153
+  \endverb
+  \verb{eprint}
+  \verb astro-ph/0606309
+  \endverb
+  \field{pages}{929\bibrangedash 939}
+  \field{title}{{VLT/ISAAC spectra of the H{$\beta$} region in
+  intermediate-redshift quasars. II. Black hole mass and Eddington ratio}}
+  \field{volume}{456}
+  \field{journaltitle}{\aap}
+  \field{month}{09}
+  \field{year}{2006}
 \endentry
 
 \entry{sulentic07}{article}{}
