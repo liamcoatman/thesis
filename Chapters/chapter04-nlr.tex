@@ -121,7 +121,7 @@ The Gaussians we fit to the spectra to model [\ion{O}{III}] are therefore strong
 For example, J223819-092106 was analysed by \citet{shen16a} using a very similar model. 
 \citet{shen16a} reported the [\ion{O}{III}] emission in this object to be shifted by $\sim7500$\kms relative to the \citet{hewett10} systemic redshift. 
 Our analysis suggests that emission which was modelled by \citet{shen16a} as [\ion{O}{III}] is more likely to be [poorly-subtracted \ion{Fe}{II} emission.  
-Because the derived [\ion{O}{III}] emission properties can be strongly biased in objects so-affected, these objects are flagged and are excluded from our analysis in the remainder of this chapter. 
+Because the derived [\ion{O}{III}] emission properties can be strongly biased in objects so-affected, these objects are flagged and are excluded from our analysis in the remainder of this chapter (leaving 330 objects). 
 
 \subsection{Modelling \hbns/[\ion{O}{III}]}
 \label{sec:oiiimodel}
@@ -350,9 +350,11 @@ In Figure~\ref{fig:eqw_cut} we show how the uncertainty in $v_{10}$ depends on t
 As the strength of [\ion{O}{III}] decreases, the average uncertainty in $v_{10}$ increases. 
 As the EQW drops below 8\AA\,, typical uncertainties in $v_{10}$ become very large (exceeding 1000\kms in many objects). 
 Clearly, the emission line is too weak for properties - in this case $v_{10}$ - to be reliably measured in many of these objects. 
-Therefore, when the [\ion{O}{III}] line shape is analysed in later sections, these objects with EQW $<$ 8\AA\, will be excluded.
+Therefore, when the [\ion{O}{III}] line properties (e.g. velocity-width, centroid) are analysed in later sections, these objects with EQW $<$ 8\AA\, will be excluded. 
+This leaves 226 quasars in the sample. 
 
 \subsection{Reliability of redshift estimates}
+\todo{Need to finish defining samples}
 
 \begin{figure}
     \centering
@@ -361,14 +363,16 @@ Therefore, when the [\ion{O}{III}] line shape is analysed in later sections, the
     \label{fig:redshift_comparison}
 \end{figure}
 
-In this section we do a comparison of systemic redshift estimates from [\ion{O}{III}], broad \hb and \hans. 
-The wavelength of each of these lines is measured at the peak of the emission. 
-This measurement is done on the best-fitting parameter model. 
-In the case of the Balmer lines, this model includes both broad and narrow emission features. 
+In this section we compare systemic redshift estimates based on [\ion{O}{III}], \hb and \hans. 
+The wavelength of each of these lines is measured at the peak of the emission and this measurement is done on the best-fitting parameter model. 
+In the case of the Balmer lines, this model includes both broad and (if present) narrow emission features. 
 
-The redshift comparison is shown in Figure~\ref{fig:redshift_comparison}. 
 We compare systemic redshift estimates based on [\ion{O}{III}] and \hb (Figure~\ref{fig:redshift_comparison}a), [\ion{O}{III}] and \ha (Figure~\ref{fig:redshift_comparison}b) and \hb and \ha (Figure~\ref{fig:redshift_comparison}c). 
-In (a) and (b) we consider only the subset of objects with [\ion{O}{III}] detections that do not suffer from poor \ion{Fe}{II} subtraction or have extreme [\ion{O}{III}] profiles (210 quasars). 
+We exclude [\ion{O}{III}], \hb and \ha measurements when the uncertainties on the peak velocities exceed 400, 750 and 400 \kms respectively. 
+This removes 8, 12 and 35 per cent of objects in (a), (b) and (c) respectively. 
+We also exclude [\ion{O}{III}] measurements from 16 objects with very broad, blueshifted [\ion{O}{III}] emission that is strongly blended with the red wing of \hbns (these objects are discussed in Section~\ref{sec:extreme_oiii}). 
+The uncertainties on these redshifts are large and almost certainly strongly biased. 
+
 The available spectroscopic data extends to \hb and \ha for 204 and 99 of these objects respectively. 
 Spectroscopic data that covers both \hb and \ha is available for 219 quasars. 
 We also exclude objects with extremely large peak wavelength uncertainties due to poor spectra S/N. 
@@ -509,6 +513,7 @@ One interpretation of this is that the strength of the narrow core is decreasing
 \end{figure}
 
 \subsubsection{Extreme [\ion{O}{III}] emitters}
+\label{sec:extreme_oiii}
 
 \begin{figure}
     \centering
@@ -599,6 +604,10 @@ On the other hand, \citet{mullaney13} find that once the correlation between the
 Is the AGN NLR absent in objects where outflows have reached kilo-parsec scales, sweeping up the low-density material responsible for the [\ion{O}{III}]-emission?
 If the BLR outflows can escape, they are very fast and wouldn't need long to clear out the NLR gas. 
 \todo{Manda/Paul: Estimate a time-scale for how long the NLR would take to be cleared given typical size of galaxy and velocity of outflow}. 
+
+\subsection{Zakamska}
+
+
 
 \section{ICA}
 

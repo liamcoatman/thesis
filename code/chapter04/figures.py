@@ -120,11 +120,13 @@ def redshift_comparison():
     df = df[df.OIII_EXTREM_FLAG == 0]
 
     df = df[df.OIII_FIT_HB_Z_FLAG >= 0] # Hb missing (6 objects)
+    
+    l1 = float(len(df))
     df = df[df.OIII_FIT_VEL_HB_PEAK_ERR < 750.0] # Really bad 
     df = df[df.OIII_FIT_VEL_FULL_OIII_PEAK_ERR < 400.0] # Really bad 
-
-    print len(df)
-    
+    l2 = float(len(df))
+    print (l1 - l2) / l1   
+        
     x = df.OIII_FIT_VEL_FULL_OIII_PEAK - df.OIII_FIT_VEL_HB_PEAK 
     print np.mean(x), np.median(x), np.std(x)
  
@@ -163,8 +165,12 @@ def redshift_comparison():
     df = df[df.OIII_EXTREM_FLAG == 0]
 
     df = df[df.OIII_FIT_HA_Z_FLAG > 0] 
+    l1 = float(len(df))
     df = df[df.OIII_FIT_VEL_HA_PEAK_ERR < 400.0] # Really bad 
     df = df[df.OIII_FIT_VEL_FULL_OIII_PEAK_ERR < 400.0] # Really bad 
+    l2 = float(len(df))
+    print (l1 - l2) / l1   
+    
 
     print len(df)
 
@@ -203,9 +209,14 @@ def redshift_comparison():
     df = df[df.OIII_FIT_HA_Z_FLAG >= 0] # Ha missing
     df = df[df.OIII_FIT_HB_Z_FLAG >= 0] # Ha missing
 
+    l1 = float(len(df))
     df = df[df.OIII_FIT_VEL_HB_PEAK_ERR < 750.0] 
     df = df[df.OIII_FIT_VEL_HA_PEAK_ERR < 400.0]  
     df.drop('QSO546', inplace=True) # Hb clearly not fit in this 
+    l2 = float(len(df))
+    print (l1 - l2) / l1   
+    
+
     # print len(df)
 
     print len(df)
