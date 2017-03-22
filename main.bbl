@@ -3122,6 +3122,33 @@
   \field{year}{1981}
 \endentry
 
+\entry{hoyle63}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {{Hoyle}}{H.}%
+     {F.}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Fowler}}{F.}%
+     {W.~A.}{W.~A.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{HFFWA1}
+  \strng{fullhash}{HFFWA1}
+  \field{labelyear}{1963}
+  \field{sortinit}{H}
+  \verb{doi}
+  \verb 10.1093/mnras/125.2.169
+  \endverb
+  \field{pages}{169}
+  \field{title}{{On the nature of strong radio sources}}
+  \field{volume}{125}
+  \field{journaltitle}{\mnras}
+  \field{year}{1963}
+\endentry
+
 \entry{jarvis06}{article}{}
   \name{author}{2}{}{%
     {{}%
@@ -3795,6 +3822,33 @@
   \field{journaltitle}{\nat}
   \field{month}{08}
   \field{year}{1969}
+\endentry
+
+\entry{lynden-bell71}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {{Lynden-Bell}}{L.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Rees}}{R.}%
+     {M.~J.}{M.~J.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{LDRMJ1}
+  \strng{fullhash}{LDRMJ1}
+  \field{labelyear}{1971}
+  \field{sortinit}{L}
+  \verb{doi}
+  \verb 10.1093/mnras/152.4.461
+  \endverb
+  \field{pages}{461}
+  \field{title}{{On quasars, dust and the galactic centre}}
+  \field{volume}{152}
+  \field{journaltitle}{\mnras}
+  \field{year}{1971}
 \endentry
 
 \entry{marchese12}{article}{}
@@ -4628,26 +4682,6 @@
   \field{year}{1993}
 \endentry
 
-\entry{peterson97}{book}{}
-  \name{author}{1}{}{%
-    {{}%
-     {{Peterson}}{P.}%
-     {B.~M.}{B.~M.}%
-     {}{}%
-     {}{}}%
-  }
-  \strng{namehash}{PBM1}
-  \strng{fullhash}{PBM1}
-  \field{labelyear}{1997}
-  \field{sortinit}{P}
-  \field{booktitle}{An introduction to active galactic nuclei, Publisher:
-  Cambridge, New York Cambridge University Press, 1997 Physical description
-  xvi, 238 p.~ISBN 0521473489}
-  \field{title}{{An Introduction to Active Galactic Nuclei}}
-  \field{month}{02}
-  \field{year}{1997}
-\endentry
-
 \entry{peterson10}{inproceedings}{}
   \name{author}{1}{}{%
     {{}%
@@ -5440,6 +5474,52 @@
   \field{eprinttype}{arXiv}
   \field{month}{09}
   \field{year}{2013}
+\endentry
+
+\entry{salpeter64}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {{Salpeter}}{S.}%
+     {E.~E.}{E.~E.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{SEE1}
+  \strng{fullhash}{SEE1}
+  \field{labelyear}{1964}
+  \field{sortinit}{S}
+  \verb{doi}
+  \verb 10.1086/147973
+  \endverb
+  \field{pages}{796\bibrangedash 800}
+  \field{title}{{Accretion of Interstellar Matter by Massive Objects.}}
+  \field{volume}{140}
+  \field{journaltitle}{\apj}
+  \field{month}{08}
+  \field{year}{1964}
+\endentry
+
+\entry{schmidt63}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {{Schmidt}}{S.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{SM1}
+  \strng{fullhash}{SM1}
+  \field{labelyear}{1963}
+  \field{sortinit}{S}
+  \verb{doi}
+  \verb 10.1038/1971040a0
+  \endverb
+  \field{pages}{1040}
+  \field{title}{{3C 273 : A Star-Like Object with Large Red-Shift}}
+  \field{volume}{197}
+  \field{journaltitle}{\nat}
+  \field{month}{03}
+  \field{year}{1963}
 \endentry
 
 \entry{shang11}{article}{}
