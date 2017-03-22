@@ -1201,6 +1201,55 @@
   \field{year}{2002}
 \endentry
 
+\entry{netzer97}{inproceedings}{}
+  \name{author}{2}{}{%
+    {{}%
+     {{Netzer}}{N.}%
+     {H.}{H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Peterson}}{P.}%
+     {B.~M.}{B.~M.}%
+     {}{}%
+     {}{}}%
+  }
+  \name{editor}{3}{}{%
+    {{}%
+     {{Maoz}}{M.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Sternberg}}{S.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Leibowitz}}{L.}%
+     {E.~M.}{E.~M.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{NHPBM1}
+  \strng{fullhash}{NHPBM1}
+  \field{labelyear}{1997}
+  \field{sortinit}{N}
+  \field{booktitle}{Astronomical Time Series}
+  \verb{doi}
+  \verb 10.1007/978-94-015-8941-3_8
+  \endverb
+  \verb{eprint}
+  \verb astro-ph/9706039
+  \endverb
+  \field{pages}{85}
+  \field{series}{Astrophysics and Space Science Library}
+  \field{title}{{Reverberation Mapping and the Physics of Active Galactic
+  Nuclei}}
+  \field{volume}{218}
+  \field{year}{1997}
+\endentry
+
 \entry{onken08}{article}{}
   \name{author}{2}{}{%
     {{}%
