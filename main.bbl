@@ -269,6 +269,49 @@
   \field{year}{2010}
 \endentry
 
+\entry{allen11}{article}{}
+  \name{author}{5}{}{%
+    {{}%
+     {{Allen}}{A.}%
+     {J.~T.}{J.~T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hewett}}{H.}%
+     {P.~C.}{P.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Maddox}}{M.}%
+     {N.}{N.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Richards}}{R.}%
+     {G.~T.}{G.~T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Belokurov}}{B.}%
+     {V.}{V.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{methods: data analysis, galaxies: active, galaxies: nuclei, quasars:
+  absorption lines, galaxies: statistics}
+  \strng{namehash}{AJT+1}
+  \strng{fullhash}{AJTHPCMNRGTBV1}
+  \field{labelyear}{2011}
+  \field{sortinit}{A}
+  \field{pages}{860\bibrangedash 884}
+  \field{title}{{A strong redshift dependence of the broad absorption line
+  quasar fraction}}
+  \field{volume}{410}
+  \field{journaltitle}{\mnras}
+  \field{month}{01}
+  \field{year}{2011}
+\endentry
+
 \entry{aller07}{article}{}
   \name{author}{2}{}{%
     {{}%
@@ -297,6 +340,30 @@
   \field{journaltitle}{\apj}
   \field{month}{08}
   \field{year}{2007}
+\endentry
+
+\entry{antonucci93}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {{Antonucci}}{A.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Active Galactic Nuclei, Astronomical Polarimetry, Quasars, Radio
+  Galaxies, Astronomical Spectroscopy, Bl Lacertae Objects, Blazars}
+  \strng{namehash}{AR1}
+  \strng{fullhash}{AR1}
+  \field{labelyear}{1993}
+  \field{sortinit}{A}
+  \verb{doi}
+  \verb 10.1146/annurev.aa.31.090193.002353
+  \endverb
+  \field{pages}{473\bibrangedash 521}
+  \field{title}{{Unified models for active galactic nuclei and quasars}}
+  \field{volume}{31}
+  \field{journaltitle}{\araa}
+  \field{year}{1993}
 \endentry
 
 \entry{arav08}{article}{}
@@ -625,6 +692,34 @@
   \field{year}{2011}
 \endentry
 
+\entry{begelman85}{inproceedings}{}
+  \name{author}{1}{}{%
+    {{}%
+     {{Begelman}}{B.}%
+     {M.~C.}{M.~C.}%
+     {}{}%
+     {}{}}%
+  }
+  \name{editor}{1}{}{%
+    {{}%
+     {{Miller}}{M.}%
+     {J.~S.}{J.~S.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Accretion Disks, Active Galactic Nuclei, Black Holes (Astronomy),
+  Compton Effect, Coronas, Radio Galaxies, Seyfert Galaxies, Thermal Radiation,
+  Toruses}
+  \strng{namehash}{BMC1}
+  \strng{fullhash}{BMC1}
+  \field{labelyear}{1985}
+  \field{sortinit}{B}
+  \field{booktitle}{Astrophysics of Active Galaxies and Quasi-Stellar Objects}
+  \field{pages}{411\bibrangedash 452}
+  \field{title}{{Accretion disks in active galactic nuclei}}
+  \field{year}{1985}
+\endentry
+
 \entry{bentz09}{article}{}
   \name{author}{27}{}{%
     {{}%
@@ -911,6 +1006,71 @@
   \field{eprinttype}{arXiv}
   \field{month}{12}
   \field{year}{2016}
+\endentry
+
+\entry{blandford82a}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {{Blandford}}{B.}%
+     {R.~D.}{R.~D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{McKee}}{M.}%
+     {C.~F.}{C.~F.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Astronomical Spectroscopy, Emission Spectra, Quasars, Seyfert Galaxies,
+  Spectral Line Width, Radial Velocity, Radiative Transfer, Spatial
+  Distribution, Stellar Mass Accretion, Transfer Functions, Velocity
+  Distribution}
+  \strng{namehash}{BRDMCF1}
+  \strng{fullhash}{BRDMCF1}
+  \field{labelyear}{1982}
+  \field{sortinit}{B}
+  \verb{doi}
+  \verb 10.1086/159843
+  \endverb
+  \field{pages}{419\bibrangedash 439}
+  \field{title}{{Reverberation mapping of the emission line regions of Seyfert
+  galaxies and quasars}}
+  \field{volume}{255}
+  \field{journaltitle}{\apj}
+  \field{month}{04}
+  \field{year}{1982}
+\endentry
+
+\entry{blandford82b}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {{Blandford}}{B.}%
+     {R.~D.}{R.~D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Payne}}{P.}%
+     {D.~G.}{D.~G.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Astrophysics, Energy Transfer, Magnetohydrodynamic Flow, Momentum
+  Transfer, Radio Jets (Astronomy), Stellar Mass Accretion, Angular Momentum,
+  Black Holes (Astronomy), Critical Point, Disks (Shapes), Solar Corona}
+  \strng{namehash}{BRDPDG1}
+  \strng{fullhash}{BRDPDG1}
+  \field{labelyear}{1982}
+  \field{sortinit}{B}
+  \verb{doi}
+  \verb 10.1093/mnras/199.4.883
+  \endverb
+  \field{pages}{883\bibrangedash 903}
+  \field{title}{{Hydromagnetic flows from accretion discs and the production of
+  radio jets}}
+  \field{volume}{199}
+  \field{journaltitle}{\mnras}
+  \field{month}{06}
+  \field{year}{1982}
 \endentry
 
 \entry{boroson92}{article}{}
@@ -1502,6 +1662,60 @@
   \field{year}{2013}
 \endentry
 
+\entry{crenshaw99}{article}{}
+  \name{author}{6}{}{%
+    {{}%
+     {{Crenshaw}}{C.}%
+     {D.~M.}{D.~M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Kraemer}}{K.}%
+     {S.~B.}{S.~B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Boggess}}{B.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Maran}}{M.}%
+     {S.~P.}{S.~P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Mushotzky}}{M.}%
+     {R.~F.}{R.~F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Wu}}{W.}%
+     {C.-C.}{C.-C.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{GALAXIES: SEYFERT, LINE: IDENTIFICATION, ULTRAVIOLET: GALAXIES,
+  Galaxies: Seyfert, Line: Identification, Ultraviolet: Galaxies}
+  \strng{namehash}{CDM+1}
+  \strng{fullhash}{CDMKSBBAMSPMRFWCC1}
+  \field{labelyear}{1999}
+  \field{sortinit}{C}
+  \verb{doi}
+  \verb 10.1086/307144
+  \endverb
+  \verb{eprint}
+  \verb astro-ph/9812265
+  \endverb
+  \field{pages}{750\bibrangedash 768}
+  \field{title}{{Intrinsic Absorption Lines in Seyfert 1 Galaxies. I.
+  Ultraviolet Spectra from the Hubble Space Telescope}}
+  \field{volume}{516}
+  \field{journaltitle}{\apj}
+  \field{month}{05}
+  \field{year}{1999}
+\endentry
+
 \entry{denney10}{article}{}
   \name{author}{43}{}{%
     {{}%
@@ -1840,6 +2054,67 @@
   \field{year}{2010}
 \endentry
 
+\entry{elitzur06}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {{Elitzur}}{E.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Shlosman}}{S.}%
+     {I.}{I.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Galaxies: Active, Galaxies: Nuclei, Galaxies: Seyfert, Infrared:
+  Galaxies, Galaxies: Quasars: General}
+  \strng{namehash}{EMSI1}
+  \strng{fullhash}{EMSI1}
+  \field{labelyear}{2006}
+  \field{sortinit}{E}
+  \verb{doi}
+  \verb 10.1086/508158
+  \endverb
+  \verb{eprint}
+  \verb astro-ph/0605686
+  \endverb
+  \field{pages}{L101\bibrangedash L104}
+  \field{title}{{The AGN-obscuring Torus: The End of the ``Doughnut''
+  Paradigm?}}
+  \field{volume}{648}
+  \field{journaltitle}{\apjl}
+  \field{month}{09}
+  \field{year}{2006}
+\endentry
+
+\entry{elvis00}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {{Elvis}}{E.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Galaxies: Quasars: Absorption Lines, Galaxies: Quasars: General}
+  \strng{namehash}{EM1}
+  \strng{fullhash}{EM1}
+  \field{labelyear}{2000}
+  \field{sortinit}{E}
+  \verb{doi}
+  \verb 10.1086/317778
+  \endverb
+  \verb{eprint}
+  \verb astro-ph/0008064
+  \endverb
+  \field{pages}{63\bibrangedash 76}
+  \field{title}{{A Structure for Quasars}}
+  \field{volume}{545}
+  \field{journaltitle}{\apj}
+  \field{month}{12}
+  \field{year}{2000}
+\endentry
+
 \entry{elvis94}{article}{}
   \name{author}{9}{}{%
     {{}%
@@ -1905,6 +2180,79 @@
   \field{journaltitle}{\apjs}
   \field{month}{11}
   \field{year}{1994}
+\endentry
+
+\entry{everett05}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {{Everett}}{E.}%
+     {J.~E.}{J.~E.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Galaxies: Active, Galaxies: Jets, Hydrodynamics, Magnetohydrodynamics:
+  MHD, Galaxies: Quasars: General, Radiative Transfer}
+  \strng{namehash}{EJE1}
+  \strng{fullhash}{EJE1}
+  \field{labelyear}{2005}
+  \field{sortinit}{E}
+  \field{pages}{689\bibrangedash 706}
+  \field{title}{{Radiative Transfer and Acceleration in Magnetocentrifugal
+  Winds}}
+  \field{volume}{631}
+  \field{journaltitle}{\apj}
+  \field{month}{10}
+  \field{year}{2005}
+\endentry
+
+\entry{everett09}{inproceedings}{}
+  \name{author}{3}{}{%
+    {{}%
+     {{Everett}}{E.}%
+     {J.}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Gallagher}}{G.}%
+     {S.}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Keating}}{K.}%
+     {S.}{S.}%
+     {}{}%
+     {}{}}%
+  }
+  \name{editor}{2}{}{%
+    {{}%
+     {{Heinz}}{H.}%
+     {S.}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Wilcots}}{W.}%
+     {E.}{E.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{galactic nuclei, X-rays, Monte Carlo methods, accretion disks, stellar
+  winds, Galactic nuclei circumnuclear matter and bulges, X-ray sources, X-ray
+  bursts, Applications of Monte Carlo methods, Infall accretion and accretion
+  disks, Mass loss and stellar winds}
+  \strng{namehash}{EJGSKS1}
+  \strng{fullhash}{EJGSKS1}
+  \field{labelyear}{2009}
+  \field{sortinit}{E}
+  \field{booktitle}{American Institute of Physics Conference Series}
+  \verb{doi}
+  \verb 10.1063/1.3293086
+  \endverb
+  \field{pages}{56\bibrangedash 59}
+  \field{series}{American Institute of Physics Conference Series}
+  \field{title}{{Blowing Away the ``Torus'': Dusty Winds in AGN}}
+  \field{volume}{1201}
+  \field{month}{12}
+  \field{year}{2009}
 \endentry
 
 \entry{fabian12}{article}{}
@@ -2093,6 +2441,69 @@
   \field{eprinttype}{arXiv}
   \field{month}{07}
   \field{year}{2010}
+\endentry
+
+\entry{gallagher12}{inproceedings}{}
+  \name{author}{5}{}{%
+    {{}%
+     {{Gallagher}}{G.}%
+     {S.~C.}{S.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Everett}}{E.}%
+     {J.~E.}{J.~E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Keating}}{K.}%
+     {S.~K.}{S.~K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hill}}{H.}%
+     {A.~R.}{A.~R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Deo}}{D.}%
+     {R.~P.}{R.~P.}%
+     {}{}%
+     {}{}}%
+  }
+  \name{editor}{3}{}{%
+    {{}%
+     {{Chartas}}{C.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hamann}}{H.}%
+     {F.}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Leighly}}{L.}%
+     {K.~M.}{K.~M.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{GSC+1}
+  \strng{fullhash}{GSCEJEKSKHARDRP1}
+  \field{labelyear}{2012}
+  \field{sortinit}{G}
+  \field{booktitle}{AGN Winds in Charleston}
+  \verb{eprint}
+  \verb 1201.5018
+  \endverb
+  \field{pages}{199}
+  \field{series}{Astronomical Society of the Pacific Conference Series}
+  \field{title}{{Looking for the Wind in the Dust}}
+  \field{volume}{460}
+  \field{eprinttype}{arXiv}
+  \field{eprintclass}{astro-ph.CO}
+  \field{month}{08}
+  \field{year}{2012}
 \endentry
 
 \entry{gebhardt00}{article}{}
@@ -2872,6 +3283,47 @@
   \field{year}{2013}
 \endentry
 
+\entry{hamann97}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {{Hamann}}{H.}%
+     {F.}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Barlow}}{B.}%
+     {T.~A.}{T.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Junkkarinen}}{J.}%
+     {V.}{V.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Burbidge}}{B.}%
+     {E.~M.}{E.~M.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Galaxies: Abundances, Galaxies: Quasars: Absorption Lines, quasars:
+  individuals (UM 675)}
+  \strng{namehash}{HF+1}
+  \strng{fullhash}{HFBTAJVBEM1}
+  \field{labelyear}{1997}
+  \field{sortinit}{H}
+  \verb{doi}
+  \verb 10.1086/303781
+  \endverb
+  \field{pages}{80\bibrangedash 86}
+  \field{title}{{High-Resolution Spectra of Intrinsic Absorption Lines in the
+  Quasi-stellar Object UM 675}}
+  \field{volume}{478}
+  \field{journaltitle}{\apj}
+  \field{month}{03}
+  \field{year}{1997}
+\endentry
+
 \entry{harrison12}{article}{}
   \name{author}{13}{}{%
     {{}%
@@ -3122,6 +3574,40 @@
   \field{year}{1981}
 \endentry
 
+\entry{hewett03}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {{Hewett}}{H.}%
+     {P.~C.}{P.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Foltz}}{F.}%
+     {C.~B.}{C.~B.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Galaxies: Quasars: Absorption Lines, Galaxies: Quasars: General, Radio
+  Continuum, Surveys}
+  \strng{namehash}{HPCFCB1}
+  \strng{fullhash}{HPCFCB1}
+  \field{labelyear}{2003}
+  \field{sortinit}{H}
+  \verb{doi}
+  \verb 10.1086/368392
+  \endverb
+  \verb{eprint}
+  \verb astro-ph/0301191
+  \endverb
+  \field{pages}{1784\bibrangedash 1794}
+  \field{title}{{The Frequency and Radio Properties of Broad Absorption Line
+  Quasars}}
+  \field{volume}{125}
+  \field{journaltitle}{\aj}
+  \field{month}{04}
+  \field{year}{2003}
+\endentry
+
 \entry{hoyle63}{article}{}
   \name{author}{2}{}{%
     {{}%
@@ -3272,6 +3758,52 @@
   \field{journaltitle}{\apj}
   \field{month}{04}
   \field{year}{2007}
+\endentry
+
+\entry{keating12}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {{Keating}}{K.}%
+     {S.~K.}{S.~K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Everett}}{E.}%
+     {J.~E.}{J.~E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Gallagher}}{G.}%
+     {S.~C.}{S.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Deo}}{D.}%
+     {R.~P.}{R.~P.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{galaxies: active, galaxies: Seyfert, hydrodynamics, infrared: general,
+  magnetohydrodynamics: MHD, quasars: general, radiative transfer}
+  \strng{namehash}{KSK+1}
+  \strng{fullhash}{KSKEJEGSCDRP1}
+  \field{labelyear}{2012}
+  \field{sortinit}{K}
+  \verb{doi}
+  \verb 10.1088/0004-637X/749/1/32
+  \endverb
+  \field{eid}{32}
+  \verb{eprint}
+  \verb 1202.4681
+  \endverb
+  \field{pages}{32}
+  \field{title}{{Sweeping Away the Mysteries of Dusty Continuous Winds in
+  Active Galactic Nuclei}}
+  \field{volume}{749}
+  \field{journaltitle}{\apj}
+  \field{eprinttype}{arXiv}
+  \field{month}{04}
+  \field{year}{2012}
 \endentry
 
 \entry{kim13}{article}{}
@@ -3464,6 +3996,37 @@
   \field{journaltitle}{\apj}
   \field{month}{09}
   \field{year}{2006}
+\endentry
+
+\entry{konigl94}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {{Konigl}}{K.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Kartje}}{K.}%
+     {J.~F.}{J.~F.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Accretion Disks, Active Galactic Nuclei, Astronomical Models, Bl
+  Lacertae Objects, Computerized Simulation, Jet Flow, Magnetohydrodynamic
+  Flow, Quasars, Seyfert Galaxies, Stellar Winds, Cosmic Dust, Infrared
+  Spectra, Photoionization, Radiative Transfer, Radio Emission, Ultraviolet
+  Spectra, X Ray Spectra}
+  \strng{namehash}{KAKJF1}
+  \strng{fullhash}{KAKJF1}
+  \field{labelyear}{1994}
+  \field{sortinit}{K}
+  \field{pages}{446\bibrangedash 467}
+  \field{title}{{Disk-driven hydromagnetic winds as a key ingredient of active
+  galactic nuclei unification schemes}}
+  \field{volume}{434}
+  \field{journaltitle}{\apj}
+  \field{month}{10}
+  \field{year}{1994}
 \endentry
 
 \entry{kormendy13}{article}{}
@@ -4146,6 +4709,43 @@
   \field{year}{2013}
 \endentry
 
+\entry{murray95}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {{Murray}}{M.}%
+     {N.}{N.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Chiang}}{C.}%
+     {J.}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Grossman}}{G.}%
+     {S.~A.}{S.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Voit}}{V.}%
+     {G.~M.}{G.~M.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{ACCRETION, ACCRETION DISKS, GALAXIES: NUCLEI, GALAXIES: QUASARS:
+  ABSORPTION LINES}
+  \strng{namehash}{MN+1}
+  \strng{fullhash}{MNCJGSAVGM1}
+  \field{labelyear}{1995}
+  \field{sortinit}{M}
+  \field{pages}{498}
+  \field{title}{{Accretion Disk Winds from Active Galactic Nuclei}}
+  \field{volume}{451}
+  \field{journaltitle}{\apj}
+  \field{month}{10}
+  \field{year}{1995}
+\endentry
+
 \entry{nardini15}{article}{}
   \name{author}{20}{}{%
     {{}%
@@ -4682,6 +5282,26 @@
   \field{year}{1993}
 \endentry
 
+\entry{peterson97}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {{Peterson}}{P.}%
+     {B.~M.}{B.~M.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{PBM1}
+  \strng{fullhash}{PBM1}
+  \field{labelyear}{1997}
+  \field{sortinit}{P}
+  \field{booktitle}{An introduction to active galactic nuclei, Publisher:
+  Cambridge, New York Cambridge University Press, 1997 Physical description
+  xvi, 238 p.~ISBN 0521473489}
+  \field{title}{{An Introduction to Active Galactic Nuclei}}
+  \field{month}{02}
+  \field{year}{1997}
+\endentry
+
 \entry{peterson10}{inproceedings}{}
   \name{author}{1}{}{%
     {{}%
@@ -5016,6 +5636,38 @@
   \field{year}{2007}
 \endentry
 
+\entry{proga00}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {{Proga}}{P.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Stone}}{S.}%
+     {J.~M.}{J.~M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Kallman}}{K.}%
+     {T.~R.}{T.~R.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Accretion, Accretion Disks, Galaxies: Active, Hydrodynamics,
+  Instabilities, Methods: Numerical}
+  \strng{namehash}{PDSJMKTR1}
+  \strng{fullhash}{PDSJMKTR1}
+  \field{labelyear}{2000}
+  \field{sortinit}{P}
+  \field{pages}{686\bibrangedash 696}
+  \field{title}{{Dynamics of Line-driven Disk Winds in Active Galactic Nuclei}}
+  \field{volume}{543}
+  \field{journaltitle}{\apj}
+  \field{month}{11}
+  \field{year}{2000}
+\endentry
+
 \entry{rafiee11}{article}{}
   \name{author}{2}{}{%
     {{}%
@@ -5050,6 +5702,132 @@
   \field{eprinttype}{arXiv}
   \field{month}{06}
   \field{year}{2011}
+\endentry
+
+\entry{reichard03}{article}{}
+  \name{author}{9}{}{%
+    {{}%
+     {{Reichard}}{R.}%
+     {T.~A.}{T.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Richards}}{R.}%
+     {G.~T.}{G.~T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hall}}{H.}%
+     {P.~B.}{P.~B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Schneider}}{S.}%
+     {D.~P.}{D.~P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Vanden Berk}}{V.}%
+     {D.~E.}{D.~E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Fan}}{F.}%
+     {X.}{X.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{York}}{Y.}%
+     {D.~G.}{D.~G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Knapp}}{K.}%
+     {G.~R.}{G.~R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Brinkmann}}{B.}%
+     {J.}{J.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Galaxies: Quasars: Absorption Lines, Galaxies: Quasars: Emission Lines,
+  Galaxies: Quasars: General}
+  \strng{namehash}{RTA+1}
+  \strng{fullhash}{RTARGTHPBSDPVDEFXYDGKGRBJ1}
+  \field{labelyear}{2003}
+  \field{sortinit}{R}
+  \verb{doi}
+  \verb 10.1086/379293
+  \endverb
+  \verb{eprint}
+  \verb astro-ph/0308508
+  \endverb
+  \field{pages}{2594\bibrangedash 2607}
+  \field{title}{{Continuum and Emission-Line Properties of Broad Absorption
+  Line Quasars}}
+  \field{volume}{126}
+  \field{journaltitle}{\aj}
+  \field{month}{12}
+  \field{year}{2003}
+\endentry
+
+\entry{richards02}{article}{}
+  \name{author}{8}{}{%
+    {{}%
+     {{Richards}}{R.}%
+     {G.~T.}{G.~T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Vanden Berk}}{V.}%
+     {D.~E.}{D.~E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Reichard}}{R.}%
+     {T.~A.}{T.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hall}}{H.}%
+     {P.~B.}{P.~B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Schneider}}{S.}%
+     {D.~P.}{D.~P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{SubbaRao}}{S.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Thakar}}{T.}%
+     {A.~R.}{A.~R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{York}}{Y.}%
+     {D.~G.}{D.~G.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{--Galaxies: Quasars: Emission Lines, Galaxies: Quasars: General}
+  \strng{namehash}{RGT+1}
+  \strng{fullhash}{RGTVDERTAHPBSDPSMTARYDG1}
+  \field{labelyear}{2002}
+  \field{sortinit}{R}
+  \field{pages}{1\bibrangedash 17}
+  \field{title}{{Broad Emission-Line Shifts in Quasars: An Orientation Measure
+  for Radio-Quiet Quasars?}}
+  \field{volume}{124}
+  \field{journaltitle}{\aj}
+  \field{month}{07}
+  \field{year}{2002}
 \endentry
 
 \entry{richards06}{article}{}
@@ -5359,6 +6137,68 @@
   \field{journaltitle}{\aj}
   \field{month}{06}
   \field{year}{2006}
+\endentry
+
+\entry{richards11}{article}{}
+  \name{author}{9}{}{%
+    {{}%
+     {{Richards}}{R.}%
+     {G.~T.}{G.~T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Kruczek}}{K.}%
+     {N.~E.}{N.~E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Gallagher}}{G.}%
+     {S.~C.}{S.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hall}}{H.}%
+     {P.~B.}{P.~B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hewett}}{H.}%
+     {P.~C.}{P.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Leighly}}{L.}%
+     {K.~M.}{K.~M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Deo}}{D.}%
+     {R.~P.}{R.~P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Kratzer}}{K.}%
+     {R.~M.}{R.~M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Shen}}{S.}%
+     {Y.}{Y.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{line: profiles, quasars: absorption lines, quasars: emission lines,
+  quasars: general, radio continuum: galaxies}
+  \strng{namehash}{RGT+1}
+  \strng{fullhash}{RGTKNEGSCHPBHPCLKMDRPKRMSY1}
+  \field{labelyear}{2011}
+  \field{sortinit}{R}
+  \field{pages}{167}
+  \field{title}{{Unification of Luminous Type 1 Quasars through CIV Emission}}
+  \field{volume}{141}
+  \field{journaltitle}{\aj}
+  \field{month}{05}
+  \field{year}{2011}
 \endentry
 
 \entry{risaliti04}{inproceedings}{}
@@ -6228,6 +7068,42 @@
   \field{eprintclass}{astro-ph.CO}
   \field{month}{06}
   \field{year}{2012}
+\endentry
+
+\entry{turnshek88}{inproceedings}{}
+  \name{author}{1}{}{%
+    {{}%
+     {{Turnshek}}{T.}%
+     {D.~A.}{D.~A.}%
+     {}{}%
+     {}{}}%
+  }
+  \name{editor}{3}{}{%
+    {{}%
+     {{Blades}}{B.}%
+     {J.~C.}{J.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Turnshek}}{T.}%
+     {D.~A.}{D.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Norman}}{N.}%
+     {C.~A.}{C.~A.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{TDA1}
+  \strng{fullhash}{TDA1}
+  \field{labelyear}{1988}
+  \field{sortinit}{T}
+  \field{booktitle}{QSO Absorption Lines: Probing the Universe}
+  \field{pages}{17}
+  \field{title}{{BAL QSOs: Observations, Models and Implications for Narrow
+  Absorption Line Systems}}
+  \field{year}{1988}
 \endentry
 
 \entry{urrutia09}{article}{}
