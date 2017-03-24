@@ -30,7 +30,7 @@
 
 \documentclass[ twoside,openright,titlepage,numbers=noenddot,headinclude,%1headlines,% letterpaper a4paper
                 footinclude=true,cleardoublepage=empty,abstractoff, % <--- obsolete, remove (todo)
-                BCOR=5mm,paper=a4,fontsize=11pt,%11pt,a4paper,%
+                BCOR=5mm,paper=a4,fontsize=12pt,%11pt,a4paper,%
                 ngerman,american,%
                 ]{scrreprt}
 
@@ -96,14 +96,14 @@
 %********************************************************************
 % Frontmatter
 %*******************************************************
-% \include{FrontBackmatter/DirtyTitlepage}
-% \include{FrontBackmatter/Titlepage}
-% \include{FrontBackmatter/Titleback}
-% \cleardoublepage\include{FrontBackmatter/Dedication}
-% \cleardoublepage\include{FrontBackmatter/Foreword}
-% \cleardoublepage\include{FrontBackmatter/Abstract}
-% \cleardoublepage\include{FrontBackmatter/Publications}
-% \cleardoublepage\include{FrontBackmatter/Acknowledgments}
+%% \include{FrontBackmatter/DirtyTitlepage}
+\include{FrontBackmatter/Titlepage}
+%% \include{FrontBackmatter/Titleback}
+%% \cleardoublepage\include{FrontBackmatter/Dedication}
+%% \cleardoublepage\include{FrontBackmatter/Foreword}
+\cleardoublepage\include{FrontBackmatter/Abstract}
+\cleardoublepage\include{FrontBackmatter/Declaration}
+\cleardoublepage\include{FrontBackmatter/Acknowledgments}
 \pagestyle{scrheadings}
 \cleardoublepage\include{FrontBackmatter/Contents}
 %********************************************************************
@@ -115,11 +115,11 @@
 \cleardoublepage
 
 \include{Chapters/chapter01-intro}
-% \include{Chapters/chapter02-nirsample}
-% \include{Chapters/chapter03-bhm}
-% \include{Chapters/chapter04-nlr}
-% \include{Chapters/chapter05-sed}
-% \include{Chapters/chapter06-conclusions}
+\include{Chapters/chapter02-nirsample}
+\include{Chapters/chapter03-bhm}
+\include{Chapters/chapter04-nlr}
+\include{Chapters/chapter05-sed}
+\include{Chapters/chapter06-conclusions}
 
 % ********************************************************************
 % Backmatter
@@ -133,9 +133,8 @@
 %********************************************************************
 % Other Stuff in the Back
 %*******************************************************
-% \cleardoublepage\include{FrontBackmatter/Bibliography}
-% \cleardoublepage\include{FrontBackmatter/Declaration}
-% \cleardoublepage\include{FrontBackmatter/Colophon}
+\cleardoublepage\include{FrontBackmatter/Bibliography}
+%% \cleardoublepage\include{FrontBackmatter/Colophon}
 % ********************************************************************
 
 \end{document}
