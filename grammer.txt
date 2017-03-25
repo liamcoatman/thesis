@@ -1,2 +1,5 @@
 in to -> into
 kiloparsec/kpc -> kilo-parsec
+space before \kms
+check all short captions
+micron -> $\mu$m

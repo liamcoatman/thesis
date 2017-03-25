@@ -13,14 +13,13 @@ In recent years, a huge amount of resources have been devoted to searching for o
 This has resulted in recent detections of outflows in AGN-host galaxies using tracers of atomic, molecular, and ionised gas \citep[e.g.][]{nesvadba06,arav08,nesvadba08,moe09,dunn10,alexander10,harrison12,harrison14,nesvadba10,rupke13,veilleux13,nardini15,feruglio10,alatalo11,cimatti13,cicone14}.  
 
 One particularly successful technique has been observing forbidden emission lines, which trace warm (T$\sim$$10^4$K) ionised gas in the AGN NLR. 
-Because of its high equivalent width, [\ion{O}{III}]\l5008 is the most studied of the narrow AGN emission lines. 
+Because of its high equivalent width, [\ion{O}{III}]\ll4960,5008 is the most studied of the narrow AGN emission lines. 
 In general, the [\ion{O}{III}] emission consists of two distinct components: a narrow, `core' component, with a velocity close to the systemic redshift of the host galaxy, and a broader `wing' component, which is normally blueshifted. 
-The general consensus is that the core component traces the gravitational potential of the host galaxy, as the width correlates well with the stellar velocity dispersion. 
-On the other hand, the broad, blueshifted wing is tracing outflowing gas. 
+The general consensus is that the core component is dominated by the gravitational potential of the host galaxy whereas the broad, blueshifted wing traces outflowing gas. 
 This emission appears blueshifted because the far-side of the outflow - that is, the side which is moving away from the line of sight - is obscured \citep[e.g.][]{heckman81,vrtilek85}. 
 
 Observations of broad velocity-widths and blueshifts in narrow emission lines stretch back several decades \citep[e.g.][]{weedman70,stockton76,heckman81,veron81,feldman82,heckman84,vrtilek85,whittle85,boroson92}. 
-However, these studies rely on small samples, which are often unrepresentative of the properties of the population. 
+However, these studies rely on small samples, which are often unrepresentative of the properties of the AGN population. 
 More recently, the advent of large optical spectroscopic surveys (e.g. SDSS) have facilitated studies of the NLR in tens of thousands of AGN \citep[e.g.][]{boroson05,greene05a,zhang11,mullaney13,zakamska14,shen14}. 
 This has provided constraints on the prevalence and drivers of ionised outflows.   
 At the same time, there is strong evidence from spatially resolved spectroscopic observations that these outflows are extended over galaxy scales \citep[e.g.][]{greene09,greene11,hainline13,harrison12,harrison14}. 
@@ -29,7 +28,7 @@ However, these studies do not cover the redshift range when star formation and B
 At these redshifts the bright optical emission lines are redshifted to near-infrared wavelengths, where observations are much more challenging. 
 As a consequence, studies at high redshifts have typically relied on relatively small numbers of objects \citep[e.g.][]{netzer04,sulentic04,shen16a}.
 These studies find [\ion{O}{III}] to be broader in more luminous AGN, suggesting that AGN efficiency in driving galaxy-wide outflows increases with luminosity \citep[e.g.][]{netzer04,nesvadba08,kim13,brusa15,carniani15,perna15,bischetti16}. 
-The fraction of objects with very weak [\ion{O}{III}] emission alsp appears to increase with redshift and/or luminosity \citep[e.g.][]{netzer04}. 
+The fraction of objects with very weak [\ion{O}{III}] emission also appears to increase with redshift and/or luminosity \citep[e.g.][]{netzer04}. 
 
 Other recent studies have looked at the [\ion{O}{III}] emission properties of extreme objects - e.g. heavily obscured quasars \citep{zakamska16} and the most luminous quasars \citep{bischetti16} - at redshifts $z\sim2$. 
 The [\ion{O}{III}] emission in these objects is extremely broad and strongly blueshifted. 
@@ -42,7 +41,7 @@ This is the largest study of the NLR properties of high redshift quasars ever un
 
 From our near-infrared spectroscopic catalogue (Chapter~\ref{ch:nirsample}), we have selected 354 quasars which have spectra covering the strong, narrow [\ion{O}{III}] doublet. 
 The broad Balmer \hb line is also observed for all but two of the sample. 
-In 165, the spectra extend to the broad \ha emission line at 6565\AA, and in 260 optical spectra including \ion{C}{IV} are also available (mostly from SDSS/BOSS). 
+For 165 quasars, the spectra extend to the broad \ha emission line at 6565\AA, and in 260 objects optical spectra, including \ion{C}{IV}, are also available (mostly from SDSS/BOSS). 
 The sample covers a wide range in redshifts ($1.5 \lesssim z \lesssim 4$) and luminosities ($45.5 \lesssim \log L_{\mathrm Bol} \lesssim 49$ \ergs). 
 The spectrographs and telescopes used to obtain the near-infrared spectra are summarised in Table~\ref{tab:specnums_ch4}.
 
@@ -76,7 +75,7 @@ The spectrographs and telescopes used to obtain the near-infrared spectra are su
 \section{Parametric model fits}
 
 In this section, we describe how parameters of the [\ion{O}{III}] emission are derived. 
-Our approach is to model the spectra using a power-law continuum, an empirical \ion{Fe}{II} template and multiple Gaussian components to model the emission from the broad and narrow components of \hb and the [\ion{O}{III}] doublet.
+Our approach is to model the spectra using a power-law continuum, an empirical \ion{Fe}{II} template (taken from \citet{boroson92}) and multiple Gaussian components to model the emission from the broad and narrow components of \hb and the [\ion{O}{III}] doublet.
 Non-parametric emission line properties are then derived from the best-fitting model. 
 This approach, which is commonly adopted in the literature \citep[e.g.][]{shen11,shen12,shen16a}, is more robust when analysing spectra with limited S/N (in comparison to measuring line properties directly from the data) and allows different emission lines to be de-blended.
 
@@ -89,7 +88,7 @@ However, a number of small adjustments have been made to the model (Section~\ref
 
 Before a spectrum can be modelled, it must first be transformed to the quasar rest-frame.  
 The redshift used in this transformation is either derived from the peak of the broad \ha emission ($\sim$ 40 per cent of our sample), from the peak of the broad \hb emission ($\sim$ 40 per cent) or from the peak of the narrow [\ion{O}{III}] emission (20 per cent).
-The rest-frame transformation is only required to be accurate to within $\sim$1000\kms\, for our fitting procedure to work. 
+The rest-frame transformation is only required to be accurate to within $\sim$1000 \kms for our fitting procedure to work. 
 In later sections, more precise estimates of the systemic redshift will be calculated using our parametric model fits. 
 
 \subsection{Removal of \ion{Fe}{II} emission}
@@ -97,7 +96,7 @@ In later sections, more precise estimates of the systemic redshift will be calcu
 \begin{figure}
     \centering
     \includegraphics[width=\columnwidth]{figures/chapter04/example_spectrum_grid_extreme_fe_1.pdf} 
-    \caption[{Spectra of the 24 objects for which significant \ion{Fe}{II} emission is still visible following our \ion{Fe}{II}-subtraction procedure.}]{Spectra of the 24 objects for which significant \ion{Fe}{II} emission is still visible following our \ion{Fe}{II}-subtraction procedure. Spectra have been smoothed via convolution with a 100\kms Gaussian kernel. The vertical lines indicate the expected positions of the [\ion{O}{III}] doublet (which is generally very weak) with the systemic redshift defined using the peak of the broad \hb emission.}     
+    \caption[{Spectra of the 24 objects for which significant \ion{Fe}{II} emission is still visible following our \ion{Fe}{II}-subtraction procedure.}]{Spectra of the 24 objects for which significant \ion{Fe}{II} emission is still visible following our \ion{Fe}{II}-subtraction procedure. Spectra have been smoothed via convolution with a 100 \kms Gaussian kernel. The vertical lines indicate the expected positions of the [\ion{O}{III}] doublet (which is generally very weak) with the systemic redshift defined using the peak of the broad \hb emission.}     
     \label{fig:bad_fe_1}
 \end{figure}
 
@@ -119,7 +118,7 @@ The residual \ion{Fe}{II} emission is at rest-frame wavelengths very close to ze
 The Gaussians we fit to the spectra to model [\ion{O}{III}] are therefore strongly biased, and the [\ion{O}{III}] emission properties we infer from the model are in error by large factors. 
 
 For example, J223819-092106 was analysed by \citet{shen16a} using a very similar model. 
-\citet{shen16a} reported the [\ion{O}{III}] emission in this object to be shifted by $\sim7500$\kms relative to the \citet{hewett10} systemic redshift. 
+\citet{shen16a} reported the [\ion{O}{III}] emission in this object to be shifted by $\sim7500$ \kms relative to the \citet{hewett10} systemic redshift. 
 Our analysis suggests that emission which was modelled by \citet{shen16a} as [\ion{O}{III}] is more likely to be [poorly-subtracted \ion{Fe}{II} emission.  
 Because the derived [\ion{O}{III}] emission properties can be strongly biased in objects so-affected, these objects are flagged and are excluded from our analysis in the remainder of this chapter (leaving 330 objects). 
 
@@ -127,39 +126,76 @@ Because the derived [\ion{O}{III}] emission properties can be strongly biased in
 \label{sec:oiiimodel}
 
 The \hb and [\ion{O}{III}] emission is fit using the procedure described in Chapter~\ref{ch:bhmass}. 
-However, we make a number of modifications to the parametric model employed in the fit.
+However, we make a number of modifications to the parametric model employed.
 The model employed in this Chapter is described in detail below.  
 
-In general, \hb is modelled by two Gaussians with non-negative amplitudes and FWHM greater than 1200\kms.
+In general, \hb is modelled by two Gaussians with non-negative amplitudes and FWHM greater than 1200 \kms.
 In 10 objects \hb is modelled with a single Gaussian and in 41 objects \hb is modelled with two Gaussians, but the velocity centroids of the two Gaussians are constrained to be equal. 
 These spectra generally have low S/N, and adding extra freedom to the model does not significantly decrease the  reduced $\chi^2$.
-In addition there are cases where the blue wing of the \hb emission is below the lower wavelength limit of the spectrograph; in these cases models with more freedom are insufficiently constrained by the data.    
+In addition there are cases where the blue wing of the \hb emission is below the lower wavelength limit of the spectra; in these cases models with more freedom are insufficiently constrained by the data.    
 
 Contributions to the \hb emission from the NLR is weak in the vast majority of our sample, and in general we do not include an additional Gaussian component to model this emission. 
-In 9 objects features in the model - data residuals suggest that a narrow emission component is significant, and an additional narrow Gaussian is included for these quasars. 
+In nine objects features in the model - data residuals suggest that a narrow emission component is significant, and an additional narrow Gaussian is included for these quasars. 
 It is likely that there is some not insignificant contribution from the NLR in other quasars in our sample. 
 If this is the case then measures of the \hb velocity width will be biased to lower values on average. 
-However, measurements of the [\ion{O}{III}] emission (the focus of this chapter) will not be affected by not decomposing \hb into distinct broad and narrow components.  
+However, measurements of the [\ion{O}{III}] emission (the focus of this chapter) will not be affected. 
+\todo{Paul: give specific ref forward to sub-section}
+The \hb models, and the numbers of quasars each model is applied to, are summarised in Table~\ref{tab:hbmod}. 
+
+\begin{table}
+  \centering
+  \small 
+  \caption{Summary of models used to fit the \hb emission, and the number of quasars each model is applied to.}
+  \label{tab:hbmod}
+    \begin{tabular}{ccc} 
+    \hline
+    Model & Fix centroids? & Number \\
+    \hline
+    $2$ broad Gaussians + $1$ narrow Gaussian & No & $9$ \\
+    $2$ broad Gaussians & No  &  $274$ \\
+    $2$ broad Gaussians & Yes &  $39$ \\
+    $1$ broad Gaussian  & N/A &  $8$ \\
+    \hline
+    \end{tabular}
+\end{table} 
 
 Each component of the [\ion{O}{III}] doublet is fit with one or two Gaussians, depending on the fractional reduced $\chi^2$ difference between the one- and two-component models. 
 Concretely, if the addition of the second Gaussian decreases the reduced $\chi^2$ by more than 5 per cent then the double-Gaussian model is accepted.
-One hundred and twenty-eight are fit with a single Gaussian and 140 with two Gaussians. 
-The peak flux ratio of the [\ion{O}{III}] 4960\,\AA\, and 5008\AA\, components are fixed at the expected 1:3 ratio and the width and velocity offsets are set to be equal\footnote{For QSO176, a significantly better fit ($\Delta \chi^2_{\nu} \sim 25\%$) is obtained when the peak flux ratio constraint relaxed; the peak ratio of the best-fitting model is 0.47.}.
+One hundred and twenty-eight spectra are fit with a single Gaussian and 140 with two Gaussians. 
+The peak flux ratio of the [\ion{O}{III}] 4960\,\AA\, and 5008\AA\, components are fixed at the expected 1:3 ratio and the width and velocity offsets are set to be equal\footnote{For J003136+003421, a significantly better fit ($\Delta \chi^2_{\nu} \sim 25\%$) is obtained when the peak flux ratio constraint relaxed; the peak ratio of the best-fitting model is 1:2.13.}.
 
-In 62 objects with very weak [\ion{O}{III}] (mean EQW$\sim2$\AA) we found that the Gaussian model has a tendency to fit features of the noise. 
+In 62 objects with very weak [\ion{O}{III}] (mean EQW$\sim2$\AA) we found that the Gaussian model has a tendency to fit features to the noise. 
 In some cases this can lead to large errors on the [\ion{O}{III}] line properties. 
 To avoid this problem, we instead fit a fixed [\ion{O}{III}] template to the spectra, with the overall scaling the only free-parameter in the fit.
 This template is generated by running our line-fitting routine on a median composite spectrum of the 268 quasars with [\ion{O}{III}] line measurements.  
 The spectra used to construct the composite were first de-redshifted and continuum- and \ion{Fe}{II}-subtracted.  
+The [\ion{O}{III}] models, and the numbers of quasars each model is applied to, are summarised in Table~\ref{tab:oiiimod}.
+
+\begin{table}
+  \centering
+  \small 
+  \caption{Summary of models used to fit the [\ion{O}{III}] emission, and the number of quasars each model is applied to.}
+  \label{tab:oiiimod}
+    \begin{tabular}{cc} 
+    \hline
+    Model & Number \\
+    \hline
+    $2$ Gaussians &  $140$ \\
+    $1$ Gaussian  &  $128$ \\
+    Template &  $62$ \\
+    \hline
+    \end{tabular}
+\end{table} 
 
 In Figure~\ref{fig:example_spectrum_grid} we show example fits to 15 objects, chosen at random. 
 The mean reduced chi-squared value is 1.74 and, in general, there are no strong features observable in the spectrum minus model residuals.
+\todo{Comment on why chi-squared is so big}
 
 \subsection{Deriving upper limits on the [\ion{O}{III}] EQW}
 % oiii_upper_limits.py
 
 Firstly, the best-fitting model comprising the continuum, \ion{Fe}{II}, and \hb emission is subtracted from the spectra, leaving behind only emission due to [\ion{O}{III}].
-These spectra are then smoothed by convolving with a Gaussian of width 200\kms. 
+These spectra are then convolved with a Gaussian (width 200 \kms) in order to estimate the noise-free flux.
 From each of these spectra we generate 100 mock spectra, with the flux at each wavelength randomly drawn from a Normal distribution with a mean equal to the smoothed flux and a width equal to the error on the flux. 
 We then perform an error-weighted linear least-squares regression with the [\ion{O}{III}] template described in the preceding section.
 The EQW and its error are then defined as the mean and root-mean-square error of the best-fitting EQW in the 100 realisations.
@@ -178,8 +214,12 @@ We then test five different models with increasing degrees of freedom to model t
 The models are summarised in Table~\ref{tab:hamod}. 
 They are (1) a single broad Gaussian; (2) two broad Gaussians with identical velocity centroids; (3) two broad Gaussians with different velocity centroids; (4) two broad Gaussians with identical velocity centroids, and additional narrower Gaussians to model narrow \ha emission, and the narrow components of [\ion{N}{II}]\ll6548,6584 and [\ion{S}{II}]\ll6717,6731; (5) two broad Gaussians with different velocity centroids, and additional narrower Gaussians. 
 If used, the width and velocity of all narrow components are set to be equal in the fit, and the relative flux ratio of the two [\ion{N}{II}] components is fixed at the expected value of 2.96.
-The model we select is the simplest model for which the fractional change in the reduced $\chi^2$ from the model with the lowest reduced $\chi^2$ is less than ten per cent. 
-The numbers of quasars on which each of the five models was applied are given in Table~\ref{tab:hamod}. 
+
+In order to determine which model is selected for each spectrum, we use the following procedure.  
+Each of the five models are fit to every spectrum and the reduced-$\chi^2$ recorded.
+Initially, the model with the smallest reduced-$\chi^2$ is selected. 
+We then measure how the reduced-$\chi^2$ changes as the complexity of the model is decreased (i.e. considering the models in Table~\ref{tab:hamod} in descending order). 
+If the reduced-$\chi^2$ changes by less than ten per cent, then the simpler model is selected. 
 
 \begin{table}
   \centering
@@ -268,7 +308,7 @@ The numbers of quasars on which each of the five models was applied are given in
 All [\ion{O}{III}] line properties are derived from the [\ion{O}{III}]\l5008 emission, but, as described above, the kinematics of [\ion{O}{III}]\l4960 are constrained by our fitting routine to be identical.
 
 We do not attach any physical meaning to the individual Gaussian components used in the model. 
-Decomposing the [\ion{O}{III}] emission in to a narrow component component at the systemic redshift and a lower-amplitude, blueshifted broad component is subject to large uncertainties and is highly dependent on the spectral S/N and resolution. 
+Decomposing the [\ion{O}{III}] emission into a narrow component component at the systemic redshift and a lower-amplitude, blueshifted broad component is subject to large uncertainties and is highly dependent on the spectral S/N and resolution. 
 Furthermore, there is no theoretical justification that the broad component should have a Gaussian profile.  
 
 We therefore choose to characterize the [\ion{O}{III}] line profile using a number of non-parametric measures, which are commonly used in the literature \citep[e.g.][]{zakamska14,zakamska16}. 
@@ -276,7 +316,7 @@ A normalised cumulative velocity distribution is constructed from the best-fitti
 These velocities are then adjusted so that the peak of the [\ion{O}{III}] emission is at 0 \kms. 
 
 The width of the emission line can then be defined using either $w_{50}$ ($\equiv v_{75} - v_{25}$), $w_{80}$ ($\equiv v_{90} - v_{10}$) or $w_{90}$ ($\equiv v_{95} - v_{5}$). 
-In terms of the FWHM, $w_{50} \simeq {\mathrm FWHM} / 1.746$, $w_{80} \simeq {\mathrm FWHM} / 0.919$, $w_{90} \simeq {\mathrm FWHM} / 0.716$.  
+In terms of the FWHM, $w_{50} \simeq {\mathrm FWHM} / 1.746$, $w_{80} \simeq {\mathrm FWHM} / 0.919$, $w_{90} \simeq {\mathrm FWHM} / 0.716$, assuming a Gaussian line profile.  
 $w_{90}$ is relatively more sensitive to the wings of the line profile, whereas $w_{50}$ is relatively more sensitive to the core.
 We also define the relative asymmetry of the line as:
 
@@ -284,7 +324,7 @@ We also define the relative asymmetry of the line as:
   A = \frac{(v_{90} - v_{\mathrm peak}) - (v_{\mathrm peak} - v_{10})}{(v_{90} - v_{10})}.     
 \end{equation} 
 
-Line-width measures are corrected for instrumental broadening by subtracting the resolution of the spectrograph (Table~\ref{tab:specres}) in quadrature.
+Line-width measures are corrected for instrumental broadening \todo{Paul: what about the 200 \kms (can't read)} by subtracting the resolution of the spectrograph (Table~\ref{tab:specres}) in quadrature.
 Because the line profiles are typically non-Gaussian, this deconvolution procedure is only approximate. 
 All of the derived parameters we have calculated are summarised in Table~\ref{tab:specmeasure}. 
 The columns are as follows: 
@@ -339,12 +379,12 @@ In a slight modification of the procedure in Chapter~\ref{ch:bhmass}, the error 
 
 \subsection{The significance of [\ion{O}{III}] detections}
 
-We require a method of determining weather a measured EQW is significant or not. 
+We require a method of determining whether a measured EQW is significant or not. 
 We measure the rms of the flux density in the emission-line free window between 4500 and 4600 \AA. 
 We multiply the rms by the wavelength per pixel, and then multiply this by the square root of the number of pixels in the full width at zero intensity of the [\ion{O}{III}] profile, to get $\sigma$. 
 \todo{$\sigma$ not the same as upper limit derived above.}
 A line flux is accepted as significant if it is $>3\sigma$. 
-We also adopt an EQW of 1\AA as the lower detection limit to account for systematic errors. 
+We also adopt an EQW of 1\AA\, as the lower detection limit to account for systematic errors. 
 
 \subsection{Low EQW [\ion{O}{III}]}
 
@@ -357,7 +397,7 @@ We also adopt an EQW of 1\AA as the lower detection limit to account for systema
 
 In Figure~\ref{fig:eqw_cut} we show how the uncertainty in $v_{10}$ depends on the EQW. 
 As the strength of [\ion{O}{III}] decreases, the average uncertainty in $v_{10}$ increases. 
-As the EQW drops below 8\AA\,, typical uncertainties in $v_{10}$ become very large (exceeding 1000\kms in many objects). 
+As the EQW drops below 8\AA\,, typical uncertainties in $v_{10}$ become very large (exceeding 1000 \kms in many objects). 
 Clearly, the emission line is too weak for properties - in this case $v_{10}$ - to be reliably measured in many of these objects. 
 Therefore, when the [\ion{O}{III}] line properties (e.g. velocity-width, centroid) are analysed in later sections, these objects with EQW $<$ 8\AA\, will be excluded. 
 This leaves 226 quasars in the sample. 
@@ -367,34 +407,35 @@ This leaves 226 quasars in the sample.
 \begin{figure}
     \centering
     \includegraphics[width=0.8\linewidth]{figures/chapter04/redshift_comparison.pdf} 
-    \caption[{Comparison of systemic redshift estimates using [\ion{O}{III}], broad \hb and broad \hans.}]{Comparison of systemic redshift estimates using [\ion{O}{III}], broad \hb and broad \hans. The probability density functions are generated using a Gaussian kernel density estimator with a $\simeq150$\kms kernel width. The short black lines show the locations of the individual points.}       
+    \caption[{Comparison of systemic redshift estimates using [\ion{O}{III}], broad \hb and broad \hans.}]{Comparison of systemic redshift estimates using [\ion{O}{III}], broad \hb and broad \hans. The probability density functions are generated using a Gaussian kernel density estimator with a $\simeq150$ \kms kernel width. The short black lines show the locations of the individual points.}       
     \label{fig:redshift_comparison}
 \end{figure}
 
 In this section, we compare systemic redshift estimates based on [\ion{O}{III}], \hb and \hans. 
-The wavelength of each of these lines is measured at the peak of the emission and this measurement is done on the best-fitting parameter model. 
+The wavelength of each of these lines is measured at the peak of the emission and this measurement is made using the best-fitting parameter model. 
 In the case of the Balmer lines, this model includes both broad and (if present) narrow emission features. 
 
 We compare systemic redshift estimates based on [\ion{O}{III}] and \hb (Figure~\ref{fig:redshift_comparison}a), [\ion{O}{III}] and \ha (Figure~\ref{fig:redshift_comparison}b) and \hb and \ha (Figure~\ref{fig:redshift_comparison}c). 
 [\ion{O}{III}], \hb and \ha measurements are available for 226, 418 and 226 objects. 
 We exclude [\ion{O}{III}], \hb and \ha measurements when the uncertainties on the peak velocities exceed 400, 600 and 400 \kms respectively. 
 This excludes 4, 6 and 12 per cent of the [\ion{O}{III}], \hb and \ha measurements respectively. 
-We also exclude [\ion{O}{III}] measurements from 16 objects with very broad, blueshifted [\ion{O}{III}] emission that is strongly blended with the red wing of \hbns (these objects are discussed in Section~\ref{sec:extreme_oiii}) because these redshifts are almost certainly strongly biased.
-After these cuts, there are 182, 85 and 162 objects being compared in (a), (b) and (c) respectively. 
+We also exclude [\ion{O}{III}] measurements from 16 objects with very broad, blueshifted [\ion{O}{III}] emission that is strongly blended with the red wing of \hb (these objects are discussed in Section~\ref{sec:extreme_oiii}) because these redshifts are almost certainly strongly biased.
+After these cuts, there are 182, 85 and 162 objects being compared in samples (a), (b) and (c) respectively. 
 
 We generate probability density functions using a Gaussian kernel density estimator.
-The bandwidth, which is optimised using leave-one-out cross-validation, is 170, 120 and 140 \kms for (a), (b) and (c) respectively. 
+The bandwidth, which is optimised using leave-one-out cross-validation, is 170, 120 and 140 \kms for samples (a), (b) and (c) respectively. 
 The systematic offset between the \ha and \hb estimates is consistent with being zero, and the scatter is 230 \kms. 
 The scatter in these distributions is consistent with previous studies of redshift uncertainties from broad emission lines \citep[e.g.][]{shen16b}. 
 The [\ion{O}{III}] redshifts appear to be systematically offset in comparison to both \ha and \hb, in the sense that [\ion{O}{III}] is blueshifted. 
-This effect is strongest when [\ion{O}{III}] is compared to \hb, in which case [\ion{O}{III}] is shifted by $\sim100$\kms to the blue. 
+This effect is strongest when [\ion{O}{III}] is compared to \hb, in which case [\ion{O}{III}] is shifted by $\sim100$ \kms to the blue.
+\todo{Paul: in the same sense as Heckman 1981 and HW10}
 
 \section{Results}
 
 \begin{figure}
     \centering
     \includegraphics[width=0.8\columnwidth]{figures/chapter04/parameter_hists.pdf} 
-    \caption[{Correlations between the line width $w_{80}$, asymmetry $R$ and EQW of [\ion{O}{III}].}]{Correlations between the line width $w_{80}$, asymmetry $R$ and EQW of [\ion{O}{III}].}     
+    \caption[{Probability density distributions of the [\ion{O}{III}] parameters EQW (a), $w_{80}$ (b) and asymmetry $R$ (c).}]{Probability density distributions of the [\ion{O}{III}] parameters EQW (a), $w_{80}$ (b) and asymmetry $R$ (c).}     
     \label{fig:parameter_hists}
 \end{figure}
 
@@ -408,12 +449,12 @@ The strength of [\ion{O}{III}] depends on the covering factor of NLR gas, its de
 \todo{Paul: Define undetected as less than 3$\sigma$?}
 
 The mean and standard deviation of the line width (characterized by $w_{80}$) is 1535$\pm$562 \kms, with a median of 1529, minimum of 206 and maximum of 3214. 
-This is consistent with recent near-infrared spectroscopy of $z>1.5$ quasars which often report velocity widths $\gtrsim1000$\kms \citep[e.g.][]{netzer04,kim13,brusa15,shen16a}. 
+This is consistent with recent near-infrared spectroscopy of $z>1.5$ quasars which often report velocity widths $\gtrsim1000$ \kms \citep[e.g.][]{netzer04,kim13,brusa15,shen16a}. 
 
-For gas discs rotating in the potential of the massive galaxies line widths do not exceed $w_{80}\simeq600$\kms \citep{liu13}. 
+For gas discs rotating in the potential of the massive galaxies line widths do not exceed $w_{80}\simeq600$ \kms \citep{liu13}. 
 Therefore the [\ion{O}{III}] gas cannot be in dynamical equilibrium with the host galaxy. 
 [\ion{O}{III}] emission is suppressed by collisional de-excitation in higher-density environments, and so the large velocity widths cannot be due to the BLR. 
-The 1200\kms upper limit on the velocity width of the Gaussian functions used to model [\ion{O}{III}] is responsible for the peak at 1200\kms. 
+The 1200 \kms upper limit on the velocity width of the Gaussian functions used to model [\ion{O}{III}] is responsible for the peak at 1200 \kms. 
 
 The [\ion{O}{III}] asymmetry is shown in Figure~\ref{fig:parameter_hists}c. 
 In 40 per cent of the sample [\ion{O}{III}] is fit with a single Gaussian. 
@@ -458,7 +499,7 @@ This trend is known as the Baldwin effect for [\ion{O}{III}] \citep[e.g.][]{bald
 
 \begin{figure}[t!]
     \includegraphics[width=\columnwidth]{figures/chapter04/oiii_luminosity_z_w80.pdf} 
-    \caption[{The [\ion{O}{III}] velocity-width, characterised by $w_{80}$, as a function the [\ion{O}{III}] luminosity and the quasar redshift.}]{The [\ion{O}{III}] velocity-width, characterised by $w_{80}$, as a function the [\ion{O}{III}] luminosity and the quasar redshift. The colour of each hexagon denotes the mean $w_{80}$ for the objects in that luminosity-redshift bin. Objects at redshifts $z<0.5$ are from \citet{mullaney13}, lower-luminosity objects at redshifts $z\sim1.5$ (with a darker grey border) are from \citet{harrison16}, and objects with a light grey boarder at $z \gtrsim 1.5$ are from this Chapter.}       
+    \caption[{The [\ion{O}{III}] velocity-width, characterised by $w_{80}$, as a function the [\ion{O}{III}] luminosity and the quasar redshift.}]{The [\ion{O}{III}] velocity-width, characterised by $w_{80}$, as a function the [\ion{O}{III}] luminosity and the quasar redshift. The colour of each hexagon denotes the mean $w_{80}$ for the objects in that luminosity-redshift bin. Objects at redshifts $z<0.5$ are from \citet{mullaney13}, lower-luminosity objects at redshifts $z\sim1.5$ (with a darker grey border) are from \citet{harrison16}, and objects with a light grey border at $z \gtrsim 1.5$ are from this Chapter.}       
     \label{fig:oiii_luminosity_z_w80}
 \end{figure}
 
@@ -484,7 +525,7 @@ The underlying driver behind EV1 is thought to be the Eddington ratio \citep[e.g
 In Figure~\ref{fig:ev1_lowz} we show the [\ion{O}{III}] EQW as a function of the \hb FWHM and the optical \ion{Fe}{II} strength. 
 The optical \ion{Fe}{II} strength is defined as the ratio of the \ion{Fe}{II} and \hb EQW, where the \ion{Fe}{II} EQW is measured between 4434 and 4684\AA.
 Measurements of the \hb line properties are taken from Chapter~\ref{ch:bhmass}. 
-In our sample, these parameters follow very similar correlations to what is observed at low-$z$
+In our sample, these parameters follow very similar correlations to what is observed at low-$z$.
 In particular, we observer a strong anti-correlation between the [\ion{O}{III}] and \ion{Fe}{II} EQW.  
 The \hb FWHM are displaced to higher values, which is consistent with the high-redshift, high-luminosity sample having larger BH masses. 
 Thus, we confirm earlier results using much smaller samples that suggest that the same EV1 correlations exist in high-redshift quasars \citep[e.g.][]{sulentic04,sulentic06,runnoe13,shen16a}. 
@@ -529,7 +570,7 @@ This is consistent with what we found in Chapter~\ref{ch:bhmass}: objects with l
 \begin{figure}
     \centering
     \includegraphics[width=\columnwidth]{figures/chapter04/example_spectrum_grid_extreme_oiii.pdf} 
-    \caption[{Model fits to the continuum- and \ion{Fe}{II}-subtracted \hbns/[\ion{O}{III}] emission in 18 quasars with extreme [\ion{O}{III}] emission profiles.}]{Model fits to the continuum- and \ion{Fe}{II}-subtracted \hbns/[\ion{O}{III}] emission in 18 quasars with extreme [\ion{O}{III}] emission profiles. The data is shown in grey, the best-fitting model in black, and the individual model components in orange. The peak of the [\ion{O}{III}] emission is used to set the redshift, and $\Delta{v}$ is the velocity shift from the rest-frame transition wavelength of \hb. Below each spectrum we plot the data minus model residuals, scaled by the errors on the fluxes.}     
+    \caption[{Model fits to the continuum- and \ion{Fe}{II}-subtracted \hbns/[\ion{O}{III}] emission in 18 quasars with extreme [\ion{O}{III}] emission profiles.}]{Model fits to the continuum- and \ion{Fe}{II}-subtracted \hbns/[\ion{O}{III}] emission in 18 quasars with extreme [\ion{O}{III}] emission profiles. The data is shown in grey, the best-fitting model in black, and the individual model components in orange. The peak of the [\ion{O}{III}] emission is used to set the redshift, and $\Delta{v}$ is the velocity shift from the rest-frame transition wavelength of \hb. Below each spectrum we plot the data minus model residuals, scaled by the errors on the fluxes. \todoinline{1. Residual numbering, 2. Residual scale. 3. Break in to two - 2x5, 2x4. 4. darker colors for residuals and components}}     
     \label{fig:example_spectrum_grid_extreme_oiii}
 \end{figure}
 
@@ -551,8 +592,9 @@ These [\ion{O}{III}] emission lines are similar to the lines observed in a sampl
 The extreme nature of the [\ion{O}{III}] emission in these objects led \citet{zakamska16} to propose that these objects are being observed transitioning from a dust-obscured, star-burst phase to a luminous, blue quasar. 
 A similar [\ion{O}{III}] emission was also observed in J1201+1206 in a sample of five of the most luminous quasars at redshifts $2.3 \lesssim z \lesssim 3.5$ observed by \citet{bischetti16}. 
 
-The four \citet{zakamska16} quasars have 5$\mu$m luminosities of $\sim10^{47}$ erg/s, which is comparable to maximum luminosity of our sample.
-The [\ion{O}{III}] velocity widths of the \citet{zakamska16} objects are extreme in relation to our sample, matched in 5 micron luminosity. 
+The four \citet{zakamska16} quasars have 5 $\mu$m luminosities of $\sim10^{47}$ \ergs, which is comparable to maximum luminosity of our sample.
+The [\ion{O}{III}] velocity widths of the \citet{zakamska16} objects are extreme in relation to our sample, matched in 5 $\mu$m luminosity.
+\todo{A couple of paragraphs above I same they are `similar' so need to be consistent} 
 The quasars in our sample have very modest amounts of dust reddening (\ebv $\sim0.03$ on average). 
 These findings therefore appear to support the idea that strong feedback is occurring in this population of heavily reddened quasars. 
 
@@ -570,7 +612,7 @@ These outflows can reach many thousands of \kms.
 However, to quench star formation quasar-driven outflows must break out to galactic scales. 
 
 Earlier, we saw that the [\ion{O}{III}] EQW has a very strong dependence on the \ion{C}{IV} blueshift. 
-[\ion{O}{III}] is undetected in XX per cent of quasars with \ion{C}{IV} blueshifts greater than 2000\kms. 
+[\ion{O}{III}] is undetected in XX per cent of quasars with \ion{C}{IV} blueshifts greater than 2000 \kms. 
 
 In Figure~\ref{fig:oiii_civ_blueshifts} we show the the [\ion{O}{III}] blueshift as a function of the \ion{C}{IV} blueshift.
 The [\ion{O}{III}] blueshift is defined as $v_{10} - v_{\mathrm peak}$.
@@ -585,7 +627,7 @@ There is a clear and strong correlation.
 This suggests a direct connection between the gas kinematics in the broad and narrow line regions. 
 
 We considered a number of of alternative approaches to parametrising both the [\ion{O}{III}] line shape and the systemic redshift. 
-As expected, very similar trends are observed when the [\ion{O}{III}] line shape is parametrized using $v_{25} - v_{\mathrm peak}$, $v_{50} - v_{\mathrm peak}$, $w_{80} = v_{90} - v_{10}$, or the relative asymmetry $R$.
+As expected, very similar trends are observed when the [\ion{O}{III}] line shape is parametrised using $v_{25} - v_{\mathrm peak}$, $v_{50} - v_{\mathrm peak}$, $w_{80} = v_{90} - v_{10}$, or the relative asymmetry $R$.
 The same trend is also observed when the systemic redshift is defined using the peak of the \hb emission. 
 
 The blueshifting of \ion{C}{IV} is known to correlate with luminosity \citep{richards11}.
@@ -593,6 +635,7 @@ In [\ion{O}{III}], the blueshifted wing becomes relatively more prominent as the
 Therefore, it is plausible that the correlation between the \ion{C}{IV} and [\ion{O}{III}] blueshifts is a secondary effect that is driven by the correlation of each with the luminosity. 
 However, no strong luminosity-dependent trends are apparent in Figure~\ref{fig:oiii_civ_blueshifts}. 
 We find that both the [\ion{O}{III}] and \ion{C}{IV} blueshifts are correlated with the luminosity, but that these correlations are much weaker than the correlation between the [\ion{O}{III}] and \ion{C}{IV} blueshifts. 
+\todo{quantify weaker}
 
 It has been known for some time that the [\ion{O}{III}] EQW is anti-correlated with the strength of optical \ion{Fe}{II}, and this trend is thought to be driven by the Eddington ratio. 
 \citet{shen14} showed that the amplitude of the core [\ion{O}{III}] emission decreases faster than the wing component as the Eddington ratio increases. 
@@ -617,8 +660,8 @@ READ ZAKAMSKA DISCUSSION
 
 \section{Independent Component Analysis}
 
-In this section, we discuss consider an alternative approach to the analysis presented in the bulk of this Chapter. 
-We use an independent component analysis (ICA) to separate the spectrum in to a linear combination of statistically independent sub-components. 
+In this section, we consider an alternative approach to the analysis presented in the bulk of this Chapter. 
+We use an independent component analysis (ICA) to separate the spectrum into a linear combination of statistically independent sub-components. 
 Each individual spectrum can then be reconstructed with a linear combination of these components. 
 The goal of this section is to determine whether or not the relative weights of the different components can be used in place of more commonly used emission line parameters to understand the physical processes occurring in these quasars. 
 
@@ -627,7 +670,7 @@ We also found the empirical template to be a poor match to the \ion{Fe}{II} emis
 
 \subsection{The technique}
  
-ICA is a blind source separation technique for separating a signal in to linearly mixed statistically independent subcomponents. 
+ICA is a blind source separation technique for separating a signal into linearly mixed statistically independent subcomponents. 
 Unlike the more widely-used principle component analysis technique, ICA produces non-negative components which allows for a physical interpretation of the components and weights.  
 ICA has been successfully applied to model the spectra of emission-line galaxies \citep{allen13} and BAL quasars \citep{allen11}. 
 The quasar spectra can be thought of as a set of observations, $\bm{x}$, which are made up of statistically independent components, $\bm{c}$, that are combined by some mixing matrix, $\bm{W}$:
@@ -662,7 +705,7 @@ We then flatten each of the ICA components by dividing by this power-law.
 An identical process is performed on each spectrum we fit, so that both the components and the spectrum to be fitted have essentially zero shape. 
 For each quasar in our sample we perform a variance-weighted least-squares minimisation to determine the optimum value of the components weights.
 The first six component weights are constrained to be non-negative, and the fit is done in logarithmic wavelength space, so that each pixel corresponds to a fixed velocity width.   
-The relative shift of the ICA components is also allowed to vary in the optimisation procedure, to account for errors in the systemic redshifts used to transform the spectra in to rest-frame wavelengths. 
+The relative shift of the ICA components is also allowed to vary in the optimisation procedure, to account for errors in the systemic redshifts used to transform the spectra into rest-frame wavelengths. 
 
 \subsection{Quality of fits}
 
@@ -786,7 +829,7 @@ In Figure~\ref{fig:civ_blueshift_oiii_strength} we show how the [\ion{O}{III}] s
 There is a very well defined relation: when \ion{C}{IV} is strongly blueshifted [\ion{O}{III}] is very weak. 
 This is very similar to what we found when we used Gaussian functions to model the emission. 
 The correlation between \ion{C}{IV} blueshift and [\ion{O}{III}] EQW is shown in a different way in Figure~\ref{fig:mfica_composites}. 
-Here we divide our sample in to four bins according to the \ion{C}{IV} blueshift. 
+Here we divide our sample into four bins according to the \ion{C}{IV} blueshift. 
 From the quasars in each \ion{C}{IV} blueshift bin we then find then generate an ICA spectrum using the median weights from each quasar. 
 The differences in the spectra as a function of the \ion{C}{IV} blueshift are dramatic. 
 [\ion{O}{III}] becomes progressively weaker and more blueshifted.
@@ -804,7 +847,7 @@ Our work shows that the ICA component weights change systematically along the EV
 \todo{Just present this as an idea for future work right at the end rather than having this sandwiched in the middle.} 
 
 Accurate systemic redshift estimates are essential in a number of applications, and researchers have devoted a large amount of telescope time to obtaining near-infrared spectra to access [\ion{O}{III}] for this purpose. 
-HI, CO and absorption line measures of the host galaxy rest frame suggest that [\ion{O}{III}] usually gives consistent results within 200\kms (de Robertis 1985; Whittle 1985; Wilson \& Heckman 1985; Condon et al. 1985; Stripe 1990; Alloin et al. 1992; Evans et al. 2001).  
+HI, CO and absorption line measures of the host galaxy rest frame suggest that [\ion{O}{III}] usually gives consistent results within 200 \kms (de Robertis 1985; Whittle 1985; Wilson \& Heckman 1985; Condon et al. 1985; Stripe 1990; Alloin et al. 1992; Evans et al. 2001).  
 However, our work shows that at high luminosities this can result in large errors (profile can be dominated by blueshifted component, \ion{Fe}{II} emission can be improperly subtracted, or [\ion{O}{III}] might not be detected at all. 
 [\ion{O}{III}] is weaker and broader so it is more difficult to detect and measure [\ion{O}{III}] accurately for these luminous quasars (to for instance obtain reliable redshift estimates based on [\ion{O}{III}])
 

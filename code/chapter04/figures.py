@@ -1744,82 +1744,65 @@ def example_spectrum_grid_extreme_oiii():
     
 
 
-    names = ['QSO007',
-             'QSO053',
-             'QSO055',
-             'QSO058',
-             'QSO107',
-             'QSO152',
+    names = ['QSO107',
              'QSO335',
+             'QSO058',
+             'QSO424',
+             'QSO007',
+             'QSO522',
+             'QSO423',
+             'QSO602',
              'QSO354',
+             'QSO375',
              'QSO360',
              'QSO361',
+             'QSO615',
+             'QSO152',
              'QSO368',
-             'QSO375',
-             'QSO423',
-             'QSO424',
-             'QSO522',
-             'QSO602',
-             'QSO620',
-             'QSO615']      
+             'QSO053',
+             'QSO055',
+             'QSO620']      
 
 
-    ylims = [[0.0, 0.8],
-             [0.0, 0.9],
+    ylims = [[0.0, 0.9],
+             [0.0, 1.0],
+             [0.0, 0.8],
              [0.0, 0.5],
+             [0.0, 0.7],
+             [0.0, 0.35],
+             [0.0, 1.0],
+             [0.0, 0.8],
              [0.0, 0.8],
              [0.0, 0.8],
              [0.0, 0.7],
-             [0.0, 1.0],
              [0.0, 0.8],
+             [0.0, 1.2],
              [0.0, 0.7],
-             [0.0, 0.8],
-             [0.0, 2.0],
-             [0.0, 0.8],
-             [0.0, 1.0],
-             [0.0, 0.5],
-             [0.0, 0.4],
+             [0.0, 1.8],
              [0.0, 0.8],
              [0.0, 0.5],
-             [0.0, 1.5]]
+             [0.0, 0.4]]
 
-    titles = ['J040954-041137',
-              'J162549+264659',
-              'J163456+301438',
-              'J011150+140141',
-              'J001708+813508',
-              'J144516+095836',
+    titles = ['J001708+813508',
               'J005758-264315',
+              'J011150+140141',
+              'J024008-230915',
+              'J040954-041137',
+              'J084402+050358',
+              'J110325-264516',
+              'J110916-115449',
               'J112443-170517',
+              'J120148+120630',
               'J133336+164904',
               'J134427-103542',
+              'J144424-104542',
+              'J144516+095836',
               'J145103-232931',
-              'J120148+120630',
-              'J110325-264516',
-              'J024008-230915',
-              'J084402+050358',
-              'J110916-115449',
-              'J220530-254222',
-              'J144424-104542'] 
+              'J162549+264659',
+              'J163456+301438',
+              'J220530-254222'] 
 
-    rebins = [1,
-              1,
-              1,
-              1,
-              1,
-              1,
-              1,
-              1,
-              1,
-              1,
-              1,
-              1,
-              1,
-              1,
-              1,
-              1,
-              1,
-              1] 
+    rebins = np.ones(len(names))
              
     for i in range(len(names)):
  
@@ -1845,7 +1828,7 @@ def example_spectrum_grid_extreme_oiii():
         ax.set_ylim(-8, 8)
         
         if (i % 3 == 0):
-            ax.set_yticks([-5,0,5])
+            ax.set_yticks([-5,5])
             ax.yaxis.set_ticks_position('left')
         else:
             ax.set_yticks([])
@@ -1874,78 +1857,43 @@ def example_spectrum_grid():
     fig = plt.figure(figsize=figsize(1, vscale=1.5))
 
     # gridspec inside gridspec
-    outer_grid = gridspec.GridSpec(5, 3, wspace=0.0, hspace=0.15)
+    outer_grid = gridspec.GridSpec(4, 2, wspace=0.0, hspace=0.15)
 
     df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0)  
     
 
-
-    names = ['QSO003',
-             'QSO009',
-             'QSO012',
-             'QSO032',
-             'QSO034',
-             'QSO035',
-             'QSO113',
-             'QSO120',
+    names = ['QSO478',
              'QSO176',
-             'QSO177',
-             'QSO178',
-             'QSO329',
-             'QSO478',
+             'QSO113',
              'QSO517',
-             'QSO567']      
+             'QSO120',
+             'QSO034',
+             'QSO012',
+             'QSO329']      
 
 
-    ylims = [[0.0, 1],
-             [0.0, 2.5],
-             [0.0, 3],
-             [0.0, 1.8],
-             [0.0, 9],
-             [0.0, 13],
-             [0.0, 1.2],
-             [0.0, 2],
+    ylims = [[0.0, 1.5],
              [0.0, 0.3],
-             [0.0, 1],
-             [0.0, 0.8],
-             [0.0, 0.6],
              [0.0, 1.2],
-             [0.0, 0.9],
-             [0.0, 0.8]]
+             [0.0, 1],
+             [0.0, 2],
+             [0.0, 9],
+             [0.0, 2.8],
+             [0.0, 0.55]]
 
-    titles = ['J013930+001331',
-              'J091209+005857',
-              'J101900-005420',
-              'J080050+354250',
-              'J084158+392121',
-              'J084200+392140',
-              'J023146+132255',
-              'J080151+113456',
+
+    titles = ['J002948-095639',
               'J003136+003421',
-              'J091432+010912',
-              'J093226+092526',
-              'J222007-280323',
-              'J002948-095639',
+              'J023146+132255',
               'J025906+001122',
-              'J010737-385325'] 
+              'J080151+113456',
+              'J084158+392121',
+              'J101900-005420',
+              'J222007-280323'] 
 
-    rebins = [1,
-              1,
-              1,
-              1,
-              1,
-              1,
-              1,
-              1,
-              1,
-              1,
-              1,
-              1,
-              1,
-              1,
-              1] 
+    rebins = np.zeros(len(names))
              
-    for i in range(len(names)):
+    for i in range(8):
  
         inner_grid = gridspec.GridSpecFromSubplotSpec(4, 1, subplot_spec=outer_grid[i], wspace=0.0, hspace=0.0)
         
@@ -1970,15 +1918,15 @@ def example_spectrum_grid():
         ax.spines['top'].set_visible(False)
         example_residual(names[i], ax)
         ax.set_xlim(-5000, 15000)
-        ax.set_ylim(-8, 8)
+        ax.set_ylim(-6, 6)
         
-        if (i % 3 == 0):
-            ax.set_yticks([-5,5])
+        if (i % 2 == 0):
+            ax.set_yticks([-3,3])
             ax.yaxis.set_ticks_position('left')
         else:
             ax.set_yticks([])
 
-        if i < 12:
+        if i < 8:
             ax.set_xticks([])
         else:
             ax.set_xticks([0, 5000, 10000])
@@ -2008,100 +1956,91 @@ def example_spectrum_grid_extreme_fe():
 
     df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0)  
 
-    names = ['QSO015',
-             'QSO038',
-             'QSO169',
-             'QSO307',
-             'QSO381',
-             'QSO537',
-             'QSO538',
-             'QSO540',
-             'QSO546',
-             'QSO551',
-             'QSO560',
-             'QSO569']
-
-    ylims = [[0.0, 0.7],
-             [0.0, 1.2],
-             [0.0, 0.7],
-             [0.0, 0.4],
-             [0.0, 1.0],
-             [0.0, 0.5],
-             [0.0, 1.2],
-             [0.0, 0.9],
-             [0.0, 1.0],
-             [0.0, 0.2],
-             [0.0, 0.7],
-             [0.0, 0.9]]  
-
-
-    titles = ['J104915-011038',
-              'J092747+290721',
-              'J212912-153841',
-              'J214507-303046',
-              'J102510+045247',
-              'J123355+031328',
-              'J125141+080718',
-              'J141949+060654',
-              'J204010-065403',
-              'J223820-092106',
-              'J005202+010129',
-              'J012257-334844']
-
-    # names = ['QSO570',
+    # names = ['QSO560',
+    #          'QSO569',
+    #          'QSO570',
     #          'QSO587',
     #          'QSO589',
     #          'QSO590',
+    #          'QSO591',
+    #          'QSO038',
+    #          'QSO381',
+    #          'QSO015',
     #          'QSO601',
-    #          'QSO611',
-    #          'QSO618',
-    #          'QSO619',
-    #          'QSO624',
-    #          'QSO629',
-    #          'QSO640',
-    #          'QSO591']
-
-    # ylims = [[0.0, 0.8],
-    #          [0.0, 0.4],
-    #          [0.0, 0.5],
-    #          [0.0, 1.1],
-    #          [0.0, 0.7],
-    #          [0.0, 1],
-    #          [0.0, 0.5],
-    #          [0.0, 0.5],
-    #          [0.0, 0.7],
-    #          [0.0, 0.3],
-    #          [0.0, 0.8],
-    #          [0.0, 0.8]]  
-
-
-    # titles = ['J012337-323828',
+    #          'QSO640']
+    
+    # titles = ['J005202+010129',
+    #           'J012257-334844',
+    #           'J012337-323828',
     #           'J025055-361635',
     #           'J025634-401300',
     #           'J030211-314030',
+    #           'J032944-233835',
+    #           'J092747+290721',
+    #           'J102510+045247',
+    #           'J104915-011038',
     #           'J105651-114122',
-    #           'J134104-073947',
-    #           'J214950-444405',
-    #           'J215052-315824',
-    #           'J223246-363203',
-    #           'J232539-065259',
-    #           'J115302+215118',
-    #           'J032944-233835']
+    #           'J115302+215118']
+
+    # ylims = [[0.0, 0.7],
+    #          [0.0, 0.9],
+    #          [0.0, 0.7],
+    #          [0.0, 0.4],
+    #          [0.0, 0.4],
+    #          [0.0, 1.3],
+    #          [0.0, 0.9],
+    #          [0.0, 1.2],
+    #          [0.0, 1.0],
+    #          [0.0, 0.7],
+    #          [0.0, 0.6],
+    #          [0.0, 0.8]]  
 
 
-    rebins = [1,
-              1,
-              1,
-              1,
-              1,
-              1,
-              1,
-              1,
-              1,
-              1,
-              1,
-              1]
-              
+    
+    titles = ['J123355+031328',
+              'J125141+080718',
+              'J134104-073947',
+              'J141949+060654',
+              'J204010-065403',
+              'J212912-153841',
+              'J214507-303046',
+              'J214950-444405',
+              'J215052-315824',
+              'J223246-363203',
+              'J223820-092106',
+              'J232539-065259']
+
+    names = ['QSO537',
+             'QSO538',
+             'QSO611',
+             'QSO540',
+             'QSO546',
+             'QSO169',
+             'QSO307',
+             'QSO618',
+             'QSO619',
+             'QSO624',
+             'QSO551',
+             'QSO629']
+
+    ylims = [[0.0, 0.5],
+             [0.0, 1.1],
+             [0.0, 1.0],
+             [0.0, 0.9],
+             [0.0, 0.9],
+             [0.0, 0.6],
+             [0.0, 0.3],
+             [0.0, 0.45],
+             [0.0, 0.45],
+             [0.0, 0.7],
+             [0.0, 0.15],
+             [0.0, 0.4]] 
+
+    rebins = np.ones(len(names))
+
+
+
+
              
     for i in range(len(names)):
               
@@ -2118,7 +2057,7 @@ def example_spectrum_grid_extreme_fe():
         ax.axvline(df.loc[names[i], 'OIII_FIT_VEL_HB_PEAK'] + v4959, c=cs[0], linestyle=':')
         ax.axvline(df.loc[names[i], 'OIII_FIT_VEL_HB_PEAK'] + v5007, c=cs[0], linestyle=':')
 
-        if i < 11:
+        if i < 9:
             ax.set_xticks([])
         else:
             ax.set_xticks([0, 5000, 10000])
@@ -2130,7 +2069,7 @@ def example_spectrum_grid_extreme_fe():
     fig.text(0.5, 0.02, r'$\Delta v$ [km~$\rm{s}^{-1}$]', ha='center')
     fig.text(0.05, 0.55, r'Relative $F_{\lambda}$', rotation=90)
     
-    fig.savefig('/home/lc585/thesis/figures/chapter04/example_spectrum_grid_extreme_fe_1.pdf')
+    fig.savefig('/home/lc585/thesis/figures/chapter04/example_spectrum_grid_extreme_fe_2.pdf')
 
     plt.show() 
 
@@ -2855,21 +2794,14 @@ def eqw_cut():
     df = df[df.OIII_BAD_FIT_FLAG == 0]
     df = df[df.FE_FLAG == 0]
     
-    ax.plot(df.loc[df.OIII_5007_EQW_3 > 8.0, 'OIII_5007_EQW_3'],
-            df.loc[df.OIII_5007_EQW_3 > 8.0, 'OIII_5007_V10_ERR'],
+    ax.plot(df['OIII_5007_EQW_3'],
+            df['OIII_5007_V10_ERR'],
             linestyle='', 
             markerfacecolor=cs[1],
             markeredgecolor='None',
             markersize=4,
             marker='o')
     
-    ax.plot(df.loc[df.OIII_5007_EQW_3 < 8.0, 'OIII_5007_EQW_3'],
-            df.loc[df.OIII_5007_EQW_3 < 8.0, 'OIII_5007_V10_ERR'],
-            linestyle='',
-            markerfacecolor='None',
-            markeredgecolor=cs[1],
-            markersize=4,
-            marker='o')
     
     ax.axvline(8, color='black', linestyle=':')
     
