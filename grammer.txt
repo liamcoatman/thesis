@@ -3,3 +3,4 @@ kiloparsec/kpc -> kilo-parsec
 space before \kms
 check all short captions
 micron -> $\mu$m
+emission line -> emission-line
