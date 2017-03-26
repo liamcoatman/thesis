@@ -4,3 +4,4 @@ space before \kms
 check all short captions
 micron -> $\mu$m
 emission line -> emission-line
+Delete DOI, add archivePrefix = "arXiv" if missing
