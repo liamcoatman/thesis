@@ -1457,6 +1457,7 @@ def example_spectra(name,
                     nrebin, 
                     plot_model=True, 
                     data_color='black',
+                    components_color='yellow',
                     voffset=0.0,
                     smooth=None):
 
@@ -1551,7 +1552,7 @@ def example_spectra(name,
     
         ax.plot(np.sort(vdat.value) - voffset, 
                 g1.eval(p1, x=np.sort(vdat.value)),
-                c=cs_light[4],
+                c=components_color,
                 linestyle='-')
     
         g1 = GaussianModel()
@@ -1563,7 +1564,7 @@ def example_spectra(name,
     
         ax.plot(np.sort(vdat.value) - voffset, 
                 g1.eval(p1, x=np.sort(vdat.value)),
-                c=cs_light[4],
+                c=components_color,
                 linestyle='-')        
     
         g1 = GaussianModel()
@@ -1575,7 +1576,7 @@ def example_spectra(name,
     
         ax.plot(np.sort(vdat.value) - voffset, 
                 g1.eval(p1, x=np.sort(vdat.value)),
-                c=cs_light[4],
+                c=components_color,
                 linestyle='-')       
     
         g1 = GaussianModel()
@@ -1587,7 +1588,7 @@ def example_spectra(name,
     
         ax.plot(np.sort(vdat.value) - voffset, 
                 g1.eval(p1, x=np.sort(vdat.value)),
-                c=cs_light[4],
+                c=components_color,
                 linestyle='-')             
     
         for i in range(p.hb_nGaussians):
@@ -1601,7 +1602,7 @@ def example_spectra(name,
     
             ax.plot(np.sort(vdat.value) - voffset, 
                     g1.eval(p1, x=np.sort(vdat.value)),
-                    c=cs_light[4])  
+                    c=components_color)  
     
         if p.hb_narrow is True: 
     
@@ -1614,7 +1615,7 @@ def example_spectra(name,
     
             ax.plot(np.sort(vdat.value) - voffset, 
                     g1.eval(p1, x=np.sort(vdat.value)),
-                    c=cs_light[4],
+                    c=components_color,
                     linestyle='-')                    
     
     
@@ -1648,7 +1649,10 @@ def example_spectra(name,
 
     return None 
 
-def example_residual(name, ax, voffset=0.0):
+def example_residual(name, 
+                     ax, 
+                     voffset=0.0,
+                     data_color='lightgrey'):
 
     from lmfit import Model
 
@@ -1725,7 +1729,7 @@ def example_residual(name, ax, voffset=0.0):
 
     ax.plot(vdat - voffset,
             (flx - mod.eval(params=params, x=vdat.value/sd)) / err,
-            color='lightgray',
+            color=data_color,
             lw=1)
 
     ax.axhline(0.0, color='black', linestyle=':')
@@ -1735,26 +1739,49 @@ def example_residual(name, ax, voffset=0.0):
 
 def example_spectrum_grid_extreme_oiii():
 
-    fig = plt.figure(figsize=figsize(1, vscale=1.8))
+    # fig = plt.figure(figsize=figsize(1, vscale=1.7))
+    fig = plt.figure(figsize=figsize(1, vscale=1.36))
 
     # gridspec inside gridspec
-    outer_grid = gridspec.GridSpec(6, 3, wspace=0.0, hspace=0.15)
+    outer_grid = gridspec.GridSpec(4, 2, wspace=0.0, hspace=0.15)
 
     df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0)  
     
+    # names = ['QSO107',
+    #          'QSO335',
+    #          'QSO058',
+    #          'QSO424',
+    #          'QSO007',
+    #          'QSO522',
+    #          'QSO423',
+    #          'QSO602',
+    #          'QSO354',
+    #          'QSO375']      
 
 
-    names = ['QSO107',
-             'QSO335',
-             'QSO058',
-             'QSO424',
-             'QSO007',
-             'QSO522',
-             'QSO423',
-             'QSO602',
-             'QSO354',
-             'QSO375',
-             'QSO360',
+    # ylims = [[0.0, 0.9],
+    #          [0.0, 1.0],
+    #          [0.0, 0.8],
+    #          [0.0, 0.5],
+    #          [0.0, 0.7],
+    #          [0.0, 0.35],
+    #          [0.0, 1.0],
+    #          [0.0, 0.8],
+    #          [0.0, 0.8],
+    #          [0.0, 0.8]]
+
+    # titles = ['J001708+813508',
+    #           'J005758-264315',
+    #           'J011150+140141',
+    #           'J024008-230915',
+    #           'J040954-041137',
+    #           'J084402+050358',
+    #           'J110325-264516',
+    #           'J110916-115449',
+    #           'J112443-170517',
+    #           'J120148+120630'] 
+
+    names = ['QSO360',
              'QSO361',
              'QSO615',
              'QSO152',
@@ -1764,17 +1791,7 @@ def example_spectrum_grid_extreme_oiii():
              'QSO620']      
 
 
-    ylims = [[0.0, 0.9],
-             [0.0, 1.0],
-             [0.0, 0.8],
-             [0.0, 0.5],
-             [0.0, 0.7],
-             [0.0, 0.35],
-             [0.0, 1.0],
-             [0.0, 0.8],
-             [0.0, 0.8],
-             [0.0, 0.8],
-             [0.0, 0.7],
+    ylims = [[0.0, 0.7],
              [0.0, 0.8],
              [0.0, 1.2],
              [0.0, 0.7],
@@ -1783,17 +1800,7 @@ def example_spectrum_grid_extreme_oiii():
              [0.0, 0.5],
              [0.0, 0.4]]
 
-    titles = ['J001708+813508',
-              'J005758-264315',
-              'J011150+140141',
-              'J024008-230915',
-              'J040954-041137',
-              'J084402+050358',
-              'J110325-264516',
-              'J110916-115449',
-              'J112443-170517',
-              'J120148+120630',
-              'J133336+164904',
+    titles = ['J133336+164904',
               'J134427-103542',
               'J144424-104542',
               'J144516+095836',
@@ -1812,28 +1819,30 @@ def example_spectrum_grid_extreme_oiii():
         ax.set_xticks([])
         ax.set_yticks([])
         ax.spines['bottom'].set_visible(False)
-        example_spectra(names[i], ax, rebins[i], data_color='lightgrey')
+        example_spectra(names[i], 
+                        ax, 
+                        rebins[i], 
+                        data_color=palettable.colorbrewer.sequential.Greys_9.mpl_colors[4],
+                        components_color=palettable.colorbrewer.sequential.Oranges_9.mpl_colors[3])
         ax.set_ylim(ylims[i])
         ax.set_xlim(-5000, 15000)
         ax.set_title(titles[i], size=9, y=0.95)
-
-
 
         fig.add_subplot(ax)
 
         ax = plt.Subplot(fig, inner_grid[3])
         ax.spines['top'].set_visible(False)
-        example_residual(names[i], ax)
+        example_residual(names[i], ax, data_color=palettable.colorbrewer.sequential.Greys_9.mpl_colors[4])
         ax.set_xlim(-5000, 15000)
-        ax.set_ylim(-8, 8)
+        ax.set_ylim(-6, 6)
         
-        if (i % 3 == 0):
-            ax.set_yticks([-5,5])
+        if (i % 2 == 0):
+            ax.set_yticks([-3,3])
             ax.yaxis.set_ticks_position('left')
         else:
             ax.set_yticks([])
 
-        if i < 15:
+        if i < 6:
             ax.set_xticks([])
         else:
             ax.set_xticks([0, 5000, 10000])
@@ -1844,7 +1853,7 @@ def example_spectrum_grid_extreme_oiii():
     fig.text(0.5, 0.05, r'$\Delta v$ [km~$\rm{s}^{-1}$]', ha='center')
     fig.text(0.05, 0.55, r'Relative $F_{\lambda}$', rotation=90)
     
-    fig.savefig('/home/lc585/thesis/figures/chapter04/example_spectrum_grid_extreme_oiii.pdf')
+    fig.savefig('/home/lc585/thesis/figures/chapter04/example_spectrum_grid_extreme_oiii_2.pdf')
 
     plt.show() 
 

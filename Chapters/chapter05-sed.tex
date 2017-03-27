@@ -55,7 +55,7 @@ This would create a dusty wind from the disk.
   \centering
   \begin{tabular}{lcccc}
     \hline 
-    Survey & Band & $\lambda_{\rm eff}$ [$\mu{\rm m}$] & AB offset & $A_{\mathrm filter}/E(B-V)$ \\
+    Survey & Band & $\lambda_{\mathrm eff}$ [$\mu{\mathrm m}$] & AB offset & $A_{\mathrm filter}/E(B-V)$ \\
     \hline 
     SDSS & $u$ & 0.3543 &  0.913 & 4.875 \\
          & $g$ & 0.4770 & -0.081 & 3.793 \\
@@ -114,7 +114,7 @@ WISE magnitudes are given in the Vega system, and Vega to AB conversion factors 
 % Conversions from the selective extinction E(B-V) to the total extinction A in each band-pass were calculated by Paul, assuming a z=1.5 quasar spectral energy distribution and (I think) equation B2 in Schlegel+. 
 % These are given in the table. 
 % Do we also assume an extinction curve? 
-% correcting for Galactic extinction using the maps of \citet{schlegel98}, assuming a Milky Way (MW) extinction curve \citep{pei92} and an extinction to reddening ratio ${\rm A}(V) / {\rm E}(B-V) = 3.1$. 
+% correcting for Galactic extinction using the maps of \citet{schlegel98}, assuming a Milky Way (MW) extinction curve \citep{pei92} and an extinction to reddening ratio ${\mathrm A}(V) / {\mathrm E}(B-V) = 3.1$. 
 
 \subsection{Cross-matching}
 
@@ -166,7 +166,7 @@ The model spectrum is shown in Figure \ref{fig:modelsed}, with each of the main 
 
 \subsection{Accretion Disc}
 
-Thermal accretion disc emission in the 0.1 - 1 $\mu$m region is characterised by a broken power-law with three free parameters: a break-wavelength $\lambda_{\rm break}$, a blue power-law index $\alpha_{\rm blue}$ for wavelengths shorter than the break wavelength, and a red power-law index $\alpha_{\rm red}$ for wavelengths longer than the break wavelength.
+Thermal accretion disc emission in the 0.1 - 1 $\mu$m region is characterised by a broken power-law with three free parameters: a break-wavelength $\lambda_{\mathrm break}$, a blue power-law index $\alpha_{\mathrm blue}$ for wavelengths shorter than the break wavelength, and a red power-law index $\alpha_{\mathrm red}$ for wavelengths longer than the break wavelength.
 
 \subsection{Balmer Continuum}
 
@@ -174,10 +174,10 @@ High order Balmer lines, optically thin Balmer continuum emission, two-photon em
 We simulate the Balmer continuum we use the empirical model given by \citet{grandi82}: 
 
 \begin{equation}
-  F(\lambda) = C_{\rm BC} \times B_\lambda(T_e)(1-e^{-\tau_\lambda}); \quad \lambda \leq \lambda_{\rm BE}
+  F(\lambda) = C_{\mathrm BC} \times B_\lambda(T_e)(1-e^{-\tau_\lambda}); \quad \lambda \leq \lambda_{\mathrm BE}
 \end{equation}
 
-where $C_{\rm BC}$ is a normalisation factor, $B_\lambda(T_e)$ is the Planck function, $T_e=13150$K is the effective temperature, $\lambda_{\rm BE}=3460$\AA\, is the wavelength at the Balmer edge, and $\tau_\lambda = \tau_{BE}\left( \nicefrac{\lambda_{BE}} {\lambda} \right)^{-3}$ is the optical depth with $\tau_{\rm BE}=45$ the optical depth at $\lambda_{\rm BE}$. 
+where $C_{\mathrm BC}$ is a normalisation factor, $B_\lambda(T_e)$ is the Planck function, $T_e=13150$K is the effective temperature, $\lambda_{\mathrm BE}=3460$\AA\, is the wavelength at the Balmer edge, and $\tau_\lambda = \tau_{BE}\left( \nicefrac{\lambda_{BE}} {\lambda} \right)^{-3}$ is the optical depth with $\tau_{\mathrm BE}=45$ the optical depth at $\lambda_{\mathrm BE}$. 
 This function is convolved with a Gaussian with $\sigma=5000$\kms to simulate the effect of bulk velocity shifts comparable to those present in broad AGN emission lines. 
 
 \subsection{Hot Dust}
@@ -185,25 +185,25 @@ This function is convolved with a Gaussian with $\sigma=5000$\kms to simulate th
 Thermal emission from hot dust, which dominates the SED at wavelengths longer than $1\mu$m, is modeled using a blackbody
 
 \begin{eqnarray}  
-  F_\lambda = C_{\rm BB} \times \frac{2 hc^2}{\lambda^5}\frac{1}{ e^{\frac{hc}{\lambda k_\mathrm{B}T_{\rm BB}}} - 1}, 
+  F_\lambda = C_{\mathrm BB} \times \frac{2 hc^2}{\lambda^5}\frac{1}{ e^{\frac{hc}{\lambda k_\mathrm{B}T_{\mathrm BB}}} - 1}, 
 \end{eqnarray}
 
-with two free parameters: the temperature $T_{\rm BB}$ and normalisation. 
+with two free parameters: the temperature $T_{\mathrm BB}$ and normalisation. 
 
 \subsection{Emission Lines}
 
 We use an emission line template taken from \citet{francis91}, which has been extended by \citet{maddox06} to include the \hans and Pa$\alpha$ emission lines \footnote{The spectrum is not significantly different from the \citet{vandenberk01} SDSS composite}. 
-All emission lines, with the exception of \hans, are scaled using a single free parameter $C_{\rm EL}$, which preserves relative EQWs:
+All emission lines, with the exception of \hans, are scaled using a single free parameter $C_{\mathrm EL}$, which preserves relative EQWs:
 
 \begin{eqnarray}
-  F_{\lambda} =  C_{\rm EL} \times \frac{F_{\lambda, \rm el}}{F_{\lambda, \rm cont}} \times F_{\lambda} ; \quad \lambda < 4700{\rm \AA} \;{\rm and}\; \lambda > 7000{\rm \AA} 
+  F_{\lambda} =  C_{\mathrm EL} \times \frac{F_{\lambda, \mathrm el}}{F_{\lambda, \mathrm cont}} \times F_{\lambda} ; \quad \lambda < 4700{\mathrm \AA} \;{\mathrm and}\; \lambda > 7000{\mathrm \AA} 
 \end{eqnarray} 
 
-where $F_{\lambda, \rm el}$ is the emission line template, $F_{\lambda,\rm cont}$ is the continuum flux in the template, and $F_{\lambda}$ is the continuum flux in the SED model.  
+where $F_{\lambda, \mathrm el}$ is the emission line template, $F_{\lambda,\mathrm cont}$ is the continuum flux in the template, and $F_{\lambda}$ is the continuum flux in the SED model.  
 \hans, one of the strongest broad emission lines, is scaled separately: 
 
 \begin{equation}
-  F_{\lambda} =  C_{\rm EL} \times C_{{\rm H} \alpha} \times \left( \frac{L(z)} {L(z_{\rm nrm})} \right)^{-\beta} \times \frac{F_{\lambda, \rm el}}{F_{\lambda, \rm cont}} \times F_{\lambda}; \quad 4700{\rm \AA} < \lambda < 7000{\rm \AA} 
+  F_{\lambda} =  C_{\mathrm EL} \times C_{{\mathrm H} \alpha} \times \left( \frac{L(z)} {L(z_{\mathrm nrm})} \right)^{-\beta} \times \frac{F_{\lambda, \mathrm el}}{F_{\lambda, \mathrm cont}} \times F_{\lambda}; \quad 4700{\mathrm \AA} < \lambda < 7000{\mathrm \AA} 
 \end{equation}
 
 The luminosity dependence of the \ha EQW (i.e. the Baldwin effect) is parametrised with a power-law with slope $\beta=0.04$.
@@ -213,18 +213,18 @@ The redshift dependence of the mean AGN luminosity $L(z)$ for the SDSS quasar ca
 
 Emission from the host galaxy is important for AGN at redshifts $z\lesssim1$, particularly in the region around the $1\mu$m inflection point in the quasar SED. 
 We use a $z=0$ Sb template from \citet{mannucci01}, which does not evolve with redshift.
-The template is scaled by a multiplicative factor $C_{\rm Gal}$ and added to the AGN SED. 
+The template is scaled by a multiplicative factor $C_{\mathrm Gal}$ and added to the AGN SED. 
 We define a new parameter, $\eta$, the fractional contribution from the host galaxy to the total flux in the interval 4000 and 5000\AA:
 
 \begin{eqnarray}
-  \eta \equiv \frac{C_{\rm Gal}F_{\rm Gal}}{F_{\rm AGN} + C_{\rm Gal}F_{\rm Gal}},
+  \eta \equiv \frac{C_{\mathrm Gal}F_{\mathrm Gal}}{F_{\mathrm AGN} + C_{\mathrm Gal}F_{\mathrm Gal}},
 \end{eqnarray}
 
-where $F_{\rm Gal}$ and $F_{\rm AGN}$ are the flux of the galaxy and AGN respectively. 
-Rearranging for the scaling factor $C_{\rm Gal}$ gives:
+where $F_{\mathrm Gal}$ and $F_{\mathrm AGN}$ are the flux of the galaxy and AGN respectively. 
+Rearranging for the scaling factor $C_{\mathrm Gal}$ gives:
 
 \begin{eqnarray}
-  C_{\rm Gal} = \frac{\eta}{1 - \eta} \frac{F_{\rm AGN}}{F_{\rm Gal}}.
+  C_{\mathrm Gal} = \frac{\eta}{1 - \eta} \frac{F_{\mathrm AGN}}{F_{\mathrm Gal}}.
 \end{eqnarray}
 
 The fractional contribution to the total emission from the host galaxy decreases as the AGN luminosity increases and, in a flux-limited sample, the mean AGN luminosity increases as the redshift increases.
@@ -237,18 +237,18 @@ We parametrize the AGN luminosity dependence of the host galaxy luminosity as a 
 
 \begin{eqnarray}
   \label{eq:lgal}
-  \frac{L_{\rm Gal}}{L_{\rm AGN}} &=& L_{\rm AGN}^{\beta - 1} 
+  \frac{L_{\mathrm Gal}}{L_{\mathrm AGN}} &=& L_{\mathrm AGN}^{\beta - 1} 
 \end{eqnarray}
 
 with slope $\beta=0.42$ \citep{croom04}. 
-The galaxy scaling factor $C_{\rm Gal}$ becomes 
+The galaxy scaling factor $C_{\mathrm Gal}$ becomes 
 
 \begin{eqnarray}
-  C_{\rm Gal} &=& \frac{\eta}{1 - \eta} \frac{F_{\rm AGN}}{F_{\rm Gal}} \left[ \frac{ L_{\rm Gal}(z)} {L_{\rm AGN}(z)} \right] \left[ \frac{ L_{\rm Gal}(z_{\rm nrm})} {L_{\rm AGN}(z_{\rm nrm})} \right]^{-1} \\
-  &=& \frac{\eta}{1 - \eta} \frac{F_{\rm AGN}}{F_{\rm Gal}} \left[ \frac{L_{\rm AGN(z)}} {L_{\rm AGN(z_{\rm nrm}})} \right]^{\beta -1}, 
+  C_{\mathrm Gal} &=& \frac{\eta}{1 - \eta} \frac{F_{\mathrm AGN}}{F_{\mathrm Gal}} \left[ \frac{ L_{\mathrm Gal}(z)} {L_{\mathrm AGN}(z)} \right] \left[ \frac{ L_{\mathrm Gal}(z_{\mathrm nrm})} {L_{\mathrm AGN}(z_{\mathrm nrm})} \right]^{-1} \\
+  &=& \frac{\eta}{1 - \eta} \frac{F_{\mathrm AGN}}{F_{\mathrm Gal}} \left[ \frac{L_{\mathrm AGN(z)}} {L_{\mathrm AGN(z_{\mathrm nrm}})} \right]^{\beta -1}, 
 \end{eqnarray}
 
-where $z_{\rm nrm}$ is an arbitrary redshift at which the fractional contribution from the host galaxy is by definition $\eta$. 
+where $z_{\mathrm nrm}$ is an arbitrary redshift at which the fractional contribution from the host galaxy is by definition $\eta$. 
 
 \subsection{Dust Extinction}
 \label{sec:sed-extinction} 
@@ -315,7 +315,7 @@ The SED model is shown at three different redshifts in Figure~\ref{fig:filters}.
 The predicted broadband magnitude of the model is given by integrating the spectrum over the throughput for each of the bands.  
 
 \begin{eqnarray}
-  m_\lambda(P) & = & -2.5{\rm log}(f_\lambda(P)) - m_0(P), 
+  m_\lambda(P) & = & -2.5{\mathrm log}(f_\lambda(P)) - m_0(P), 
 \end{eqnarray}
 
 where $m_0(P)$ is the zero-point magnitude of band $P$ and the mean flux density $f_{\lambda}(P)$ is given by 
@@ -329,7 +329,7 @@ where $P(\lambda)$ is the dimensionless throughput function of the band-pass.
 Magnitudes are calculated in the AB system (Oke \& Gunn 1983), in which case the zero-point flux per unit wavelength is 
 
 \begin{eqnarray}
-  \frac{f_\lambda(\lambda)}{{\rm erg}~{\rm cm}^{-2}~{\rm s}^{-1} {\rm\AA}^{-1}} = 0.1087 \left(\frac{\lambda}{\rm \AA}\right)^{-2}.
+  \frac{f_\lambda(\lambda)}{{\mathrm erg}~{\mathrm cm}^{-2}~{\mathrm s}^{-1} {\mathrm\AA}^{-1}} = 0.1087 \left(\frac{\lambda}{\mathrm \AA}\right)^{-2}.
 \end{eqnarray}
 
 
@@ -359,13 +359,13 @@ Does any part of this scatter have a systematic dependence on properties of the 
     \hline 
     Parameter & Symbol & Value \\
     \hline 
-    Blue power-law index & $\alpha_{\rm blue}$ & 0.58 \\
-    Red power-law index & $\alpha_{\rm red}$ & -0.04 \\
-    Power-law break & $\lambda_{\rm break}$ & 2945 \\
-    Blackbody temperature & $T_{\rm BB}$ & 1216 K \\
-    Blackbody normalisation & $C_{\rm BB}$ & 0.22 \\
-    Emission line scaling & $C_{\rm EL}$  & 0.63 \\
-    \ha emission line scaling & $C_{{\rm H}\alpha}$  & 0.63 \\
+    Blue power-law index & $\alpha_{\mathrm blue}$ & 0.58 \\
+    Red power-law index & $\alpha_{\mathrm red}$ & -0.04 \\
+    Power-law break & $\lambda_{\mathrm break}$ & 2945 \\
+    Blackbody temperature & $T_{\mathrm BB}$ & 1216 K \\
+    Blackbody normalisation & $C_{\mathrm BB}$ & 0.22 \\
+    Emission line scaling & $C_{\mathrm EL}$  & 0.63 \\
+    \ha emission line scaling & $C_{{\mathrm H}\alpha}$  & 0.63 \\
     Galaxy fraction & $\eta$ & 0.29 \\
     \hline
     E(B-V) & E(B-V) & 0.00 \\
@@ -433,7 +433,7 @@ If the inner edge of the torus is further from the accretion disc, then the dust
 If instead the dust is in an outflows, then the interpretation of the dust temperature is less clear.  
 The value of ($L_{NIR}/L_{Bol}$) is related to the covering factor of the hot dust. 
 
-Some previous studies \citep[e.g.][]{wang13,zhang14} have instead parametrised the NIR emission using a power-law ($\propto \lambda^{\beta_{\rm NIR}}$), with $\beta \simeq 0.5$. 
+Some previous studies \citep[e.g.][]{wang13,zhang14} have instead parametrised the NIR emission using a power-law ($\propto \lambda^{\beta_{\mathrm NIR}}$), with $\beta \simeq 0.5$. 
 We tested this parametrisation, and evaluated it's effectiveness relative to using a blackbody. 
 We normalise the power-law at 9000\AA, where its flux is set equal to the flux of the UV/optical model. 
 The NIR power-law slope is fit between $\sim$1 and 2.4$\mu$m (with the exact wavelength region being fit depending on the redshift of the quasar). 

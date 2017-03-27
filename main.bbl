@@ -184,35 +184,6 @@
   \field{year}{2011}
 \endentry
 
-\entry{alexander12}{article}{}
-  \name{author}{2}{}{%
-    {{}%
-     {{Alexander}}{A.}%
-     {D.~M.}{D.~M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Hickox}}{H.}%
-     {R.~C.}{R.~C.}%
-     {}{}%
-     {}{}}%
-  }
-  \strng{namehash}{ADMHRC1}
-  \strng{fullhash}{ADMHRC1}
-  \field{labelyear}{2012}
-  \field{sortinit}{A}
-  \verb{eprint}
-  \verb 1112.1949
-  \endverb
-  \field{pages}{93\bibrangedash 121}
-  \field{title}{{What drives the growth of black holes?}}
-  \field{volume}{56}
-  \field{journaltitle}{\nar}
-  \field{eprinttype}{arXiv}
-  \field{month}{06}
-  \field{year}{2012}
-\endentry
-
 \entry{alexander10}{article}{}
   \name{author}{5}{}{%
     {{}%
@@ -260,7 +231,7 @@
   \field{year}{2010}
 \endentry
 
-\entry{allen11}{article}{}
+\entry{allen13}{article}{}
   \name{author}{5}{}{%
     {{}%
      {{Allen}}{A.}%
@@ -273,90 +244,38 @@
      {}{}%
      {}{}}%
     {{}%
-     {{Maddox}}{M.}%
-     {N.}{N.}%
+     {{Richardson}}{R.}%
+     {C.~T.}{C.~T.}%
      {}{}%
      {}{}}%
     {{}%
-     {{Richards}}{R.}%
-     {G.~T.}{G.~T.}%
+     {{Ferland}}{F.}%
+     {G.~J.}{G.~J.}%
      {}{}%
      {}{}}%
     {{}%
-     {{Belokurov}}{B.}%
-     {V.}{V.}%
+     {{Baldwin}}{B.}%
+     {J.~A.}{J.~A.}%
      {}{}%
      {}{}}%
   }
-  \keyw{methods: data analysis, galaxies: active, galaxies: nuclei, quasars:
-  absorption lines, galaxies: statistics}
+  \keyw{methods: data analysis, galaxies: active, galaxies: evolution,
+  galaxies: nuclei, galaxies: star formation, galaxies: statistics}
   \strng{namehash}{AJT+1}
-  \strng{fullhash}{AJTHPCMNRGTBV1}
-  \field{labelyear}{2011}
+  \strng{fullhash}{AJTHPCRCTFGJBJA1}
+  \field{labelyear}{2013}
   \field{sortinit}{A}
   \verb{eprint}
-  \verb 1007.3991
+  \verb 1301.5930
   \endverb
-  \field{pages}{860\bibrangedash 884}
-  \field{title}{{A strong redshift dependence of the broad absorption line
-  quasar fraction}}
-  \field{volume}{410}
+  \field{pages}{3510\bibrangedash 3536}
+  \field{title}{{Classification and analysis of emission-line galaxies using
+  mean field independent component analysis}}
+  \field{volume}{430}
   \field{journaltitle}{\mnras}
   \field{eprinttype}{arXiv}
-  \field{month}{01}
-  \field{year}{2011}
-\endentry
-
-\entry{aller07}{article}{}
-  \name{author}{2}{}{%
-    {{}%
-     {{Aller}}{A.}%
-     {M.~C.}{M.~C.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Richstone}}{R.}%
-     {D.~O.}{D.~O.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{Black Hole Physics, Galaxies: Bulges, Galaxies: Fundamental Parameters,
-  Galaxies: Nuclei}
-  \strng{namehash}{AMCRDO1}
-  \strng{fullhash}{AMCRDO1}
-  \field{labelyear}{2007}
-  \field{sortinit}{A}
-  \verb{eprint}
-  \verb 0705.1165
-  \endverb
-  \field{pages}{120\bibrangedash 156}
-  \field{title}{{Host Galaxy Bulge Predictors of Supermassive Black Hole Mass}}
-  \field{volume}{665}
-  \field{journaltitle}{\apj}
-  \field{eprinttype}{arXiv}
-  \field{month}{08}
-  \field{year}{2007}
-\endentry
-
-\entry{antonucci93}{article}{}
-  \name{author}{1}{}{%
-    {{}%
-     {{Antonucci}}{A.}%
-     {R.}{R.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{Active Galactic Nuclei, Astronomical Polarimetry, Quasars, Radio
-  Galaxies, Astronomical Spectroscopy, Bl Lacertae Objects, Blazars}
-  \strng{namehash}{AR1}
-  \strng{fullhash}{AR1}
-  \field{labelyear}{1993}
-  \field{sortinit}{A}
-  \field{pages}{473\bibrangedash 521}
-  \field{title}{{Unified models for active galactic nuclei and quasars}}
-  \field{volume}{31}
-  \field{journaltitle}{\araa}
-  \field{year}{1993}
+  \field{month}{04}
+  \field{year}{2013}
 \endentry
 
 \entry{arav08}{article}{}
@@ -412,662 +331,523 @@
   \field{year}{2008}
 \endentry
 
-\entry{barth11}{article}{}
-  \name{author}{49}{}{%
+\entry{baldwin77}{article}{}
+  \name{author}{1}{}{%
     {{}%
-     {{Barth}}{B.}%
-     {A.~J.}{A.~J.}%
+     {{Baldwin}}{B.}%
+     {J.~A.}{J.~A.}%
      {}{}%
      {}{}}%
+  }
+  \strng{namehash}{BJA1}
+  \strng{fullhash}{BJA1}
+  \field{labelyear}{1977}
+  \field{sortinit}{B}
+  \field{pages}{679\bibrangedash 684}
+  \field{title}{{Luminosity Indicators in the Spectra of Quasi-Stellar
+  Objects}}
+  \field{volume}{214}
+  \field{journaltitle}{\apj}
+  \field{month}{06}
+  \field{year}{1977}
+\endentry
+
+\entry{baskin05b}{article}{}
+  \name{author}{2}{}{%
     {{}%
-     {{Pancoast}}{P.}%
+     {{Baskin}}{B.}%
      {A.}{A.}%
      {}{}%
      {}{}}%
     {{}%
-     {{Thorman}}{T.}%
-     {S.~J.}{S.~J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Bennert}}{B.}%
-     {V.~N.}{V.~N.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Sand}}{S.}%
-     {D.~J.}{D.~J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Li}}{L.}%
-     {W.}{W.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Canalizo}}{C.}%
-     {G.}{G.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Filippenko}}{F.}%
-     {A.~V.}{A.~V.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Gates}}{G.}%
-     {E.~L.}{E.~L.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Greene}}{G.}%
-     {J.~E.}{J.~E.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Malkan}}{M.}%
-     {M.~A.}{M.~A.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Stern}}{S.}%
-     {D.}{D.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Treu}}{T.}%
-     {T.}{T.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Woo}}{W.}%
-     {J.-H.}{J.-H.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Assef}}{A.}%
-     {R.~J.}{R.~J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Bae}}{B.}%
-     {H.-J.}{H.-J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Brewer}}{B.}%
-     {B.~J.}{B.~J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Buehler}}{B.}%
-     {T.}{T.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Cenko}}{C.}%
-     {S.~B.}{S.~B.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Clubb}}{C.}%
-     {K.~I.}{K.~I.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Cooper}}{C.}%
-     {M.~C.}{M.~C.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Diamond-Stanic}}{D.}%
-     {A.~M.}{A.~M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Hiner}}{H.}%
-     {K.~D.}{K.~D.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{H{\"o}nig}}{H.}%
-     {S.~F.}{S.~F.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Joner}}{J.}%
-     {M.~D.}{M.~D.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Kandrashoff}}{K.}%
-     {M.~T.}{M.~T.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Laney}}{L.}%
-     {C.~D.}{C.~D.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Lazarova}}{L.}%
-     {M.~S.}{M.~S.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Nierenberg}}{N.}%
-     {A.~M.}{A.~M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Park}}{P.}%
-     {D.}{D.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Silverman}}{S.}%
-     {J.~M.}{J.~M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Son}}{S.}%
-     {D.}{D.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Sonnenfeld}}{S.}%
+     {{Laor}}{L.}%
      {A.}{A.}%
      {}{}%
      {}{}}%
+  }
+  \keyw{galaxies: active, quasars: emission lines, quasars: general}
+  \strng{namehash}{BALA1}
+  \strng{fullhash}{BALA1}
+  \field{labelyear}{2005}
+  \field{sortinit}{B}
+  \verb{eprint}
+  \verb astro-ph/0501436
+  \endverb
+  \field{pages}{1043\bibrangedash 1054}
+  \field{title}{{What controls the [OIII]{$\lambda$}5007 line strength in
+  active galactic nuclei?}}
+  \field{volume}{358}
+  \field{journaltitle}{\mnras}
+  \field{eprinttype}{arXiv}
+  \field{month}{04}
+  \field{year}{2005}
+\endentry
+
+\entry{bischetti16}{article}{}
+  \name{author}{22}{}{%
     {{}%
-     {{Tollerud}}{T.}%
-     {E.~J.}{E.~J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Walsh}}{W.}%
-     {J.~L.}{J.~L.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Walters}}{W.}%
-     {R.}{R.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{da Silva}}{d.}%
-     {R.~L.}{R.~L.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Fumagalli}}{F.}%
+     {{Bischetti}}{B.}%
      {M.}{M.}%
      {}{}%
      {}{}}%
     {{}%
-     {{Gregg}}{G.}%
-     {M.~D.}{M.~D.}%
+     {{Piconcelli}}{P.}%
+     {E.}{E.}%
      {}{}%
      {}{}}%
     {{}%
-     {{Harris}}{H.}%
-     {C.~E.}{C.~E.}%
+     {{Vietri}}{V.}%
+     {G.}{G.}%
      {}{}%
      {}{}}%
     {{}%
-     {{Hsiao}}{H.}%
-     {E.~Y.}{E.~Y.}%
+     {{Bongiorno}}{B.}%
+     {A.}{A.}%
      {}{}%
      {}{}}%
     {{}%
-     {{Lee}}{L.}%
-     {J.}{J.}%
+     {{Fiore}}{F.}%
+     {F.}{F.}%
      {}{}%
      {}{}}%
     {{}%
-     {{Lopez}}{L.}%
+     {{Sani}}{S.}%
+     {E.}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Marconi}}{M.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Duras}}{D.}%
+     {F.}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Zappacosta}}{Z.}%
      {L.}{L.}%
      {}{}%
      {}{}}%
     {{}%
-     {{Rex}}{R.}%
-     {J.}{J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Suzuki}}{S.}%
-     {N.}{N.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Trump}}{T.}%
-     {J.~R.}{J.~R.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Tytler}}{T.}%
-     {D.}{D.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Worseck}}{W.}%
-     {G.}{G.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Yesuf}}{Y.}%
-     {H.~M.}{H.~M.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{galaxies: active, galaxies: individual: Mrk 50, galaxies: nuclei}
-  \strng{namehash}{BAJ+1}
-  \strng{fullhash}{BAJPATSJBVNSDJLWCGFAVGELGJEMMASDTTWJHARJBHJBBJBTCSBCKICMCDAMHKDHSFJMDKMTLCDLMSNAMPDSJMSDSATEJWJLWRdRLFMGMDHCEHEYLJLLRJSNTJRTDWGYHM1}
-  \field{labelyear}{2011}
-  \field{sortinit}{B}
-  \field{eid}{L4}
-  \verb{eprint}
-  \verb 1111.0061
-  \endverb
-  \field{pages}{L4}
-  \field{title}{{The Lick AGN Monitoring Project 2011: Reverberation Mapping of
-  Markarian 50}}
-  \field{volume}{743}
-  \field{journaltitle}{\apjl}
-  \field{eprinttype}{arXiv}
-  \field{month}{12}
-  \field{year}{2011}
-\endentry
-
-\entry{begelman85}{inproceedings}{}
-  \name{author}{1}{}{%
-    {{}%
-     {{Begelman}}{B.}%
-     {M.~C.}{M.~C.}%
-     {}{}%
-     {}{}}%
-  }
-  \name{editor}{1}{}{%
-    {{}%
-     {{Miller}}{M.}%
-     {J.~S.}{J.~S.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{Accretion Disks, Active Galactic Nuclei, Black Holes (Astronomy),
-  Compton Effect, Coronas, Radio Galaxies, Seyfert Galaxies, Thermal Radiation,
-  Toruses}
-  \strng{namehash}{BMC1}
-  \strng{fullhash}{BMC1}
-  \field{labelyear}{1985}
-  \field{sortinit}{B}
-  \field{booktitle}{Astrophysics of Active Galaxies and Quasi-Stellar Objects}
-  \field{pages}{411\bibrangedash 452}
-  \field{title}{{Accretion disks in active galactic nuclei}}
-  \field{year}{1985}
-\endentry
-
-\entry{bennert11}{article}{}
-  \name{author}{5}{}{%
-    {{}%
-     {{Bennert}}{B.}%
-     {V.~N.}{V.~N.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Auger}}{A.}%
-     {M.~W.}{M.~W.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Treu}}{T.}%
-     {T.}{T.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Woo}}{W.}%
-     {J.-H.}{J.-H.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Malkan}}{M.}%
-     {M.~A.}{M.~A.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{accretion, accretion disks, black hole physics, galaxies: active,
-  galaxies: evolution, quasars: general}
-  \strng{namehash}{BVN+1}
-  \strng{fullhash}{BVNAMWTTWJHMMA1}
-  \field{labelyear}{2011}
-  \field{sortinit}{B}
-  \field{eid}{107}
-  \verb{eprint}
-  \verb 1102.1975
-  \endverb
-  \field{pages}{107}
-  \field{title}{{The Relation between Black Hole Mass and Host Spheroid Stellar
-  Mass Out to z \~{} 2}}
-  \field{volume}{742}
-  \field{journaltitle}{\apj}
-  \field{eprinttype}{arXiv}
-  \field{month}{12}
-  \field{year}{2011}
-\endentry
-
-\entry{bentz09}{article}{}
-  \name{author}{27}{}{%
-    {{}%
-     {{Bentz}}{B.}%
-     {M.~C.}{M.~C.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Walsh}}{W.}%
-     {J.~L.}{J.~L.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Barth}}{B.}%
-     {A.~J.}{A.~J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Baliber}}{B.}%
-     {N.}{N.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Bennert}}{B.}%
-     {V.~N.}{V.~N.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Canalizo}}{C.}%
-     {G.}{G.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Filippenko}}{F.}%
-     {A.~V.}{A.~V.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Ganeshalingam}}{G.}%
+     {{Brusa}}{B.}%
      {M.}{M.}%
      {}{}%
      {}{}}%
     {{}%
-     {{Gates}}{G.}%
-     {E.~L.}{E.~L.}%
+     {{Comastri}}{C.}%
+     {A.}{A.}%
      {}{}%
      {}{}}%
     {{}%
-     {{Greene}}{G.}%
-     {J.~E.}{J.~E.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Hidas}}{H.}%
-     {M.~G.}{M.~G.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Hiner}}{H.}%
-     {K.~D.}{K.~D.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Lee}}{L.}%
-     {N.}{N.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Li}}{L.}%
-     {W.}{W.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Malkan}}{M.}%
-     {M.~A.}{M.~A.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Minezaki}}{M.}%
-     {T.}{T.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Sakata}}{S.}%
-     {Y.}{Y.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Serduke}}{S.}%
-     {F.~J.~D.}{F.~J.~D.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Silverman}}{S.}%
-     {J.~M.}{J.~M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Steele}}{S.}%
-     {T.~N.}{T.~N.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Stern}}{S.}%
-     {D.}{D.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Street}}{S.}%
-     {R.~A.}{R.~A.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Thornton}}{T.}%
-     {C.~E.}{C.~E.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Treu}}{T.}%
-     {T.}{T.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Wang}}{W.}%
-     {X.}{X.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Woo}}{W.}%
-     {J.-H.}{J.-H.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Yoshii}}{Y.}%
-     {Y.}{Y.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{galaxies: active, galaxies: nuclei, galaxies: Seyfert}
-  \strng{namehash}{BMC+1}
-  \strng{fullhash}{BMCWJLBAJBNBVNCGFAVGMGELGJEHMGHKDLNLWMMAMTSYSFJDSJMSTNSDSRATCETTWXWJHYY1}
-  \field{labelyear}{2009}
-  \field{sortinit}{B}
-  \verb{eprint}
-  \verb 0908.0003
-  \endverb
-  \field{pages}{199\bibrangedash 217}
-  \field{title}{{The Lick AGN Monitoring Project: Broad-line Region Radii and
-  Black Hole Masses from Reverberation Mapping of H{$\beta$}}}
-  \field{volume}{705}
-  \field{journaltitle}{\apj}
-  \field{eprinttype}{arXiv}
-  \field{month}{11}
-  \field{year}{2009}
-\endentry
-
-\entry{blandford82a}{article}{}
-  \name{author}{2}{}{%
-    {{}%
-     {{Blandford}}{B.}%
-     {R.~D.}{R.~D.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{McKee}}{M.}%
-     {C.~F.}{C.~F.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{Astronomical Spectroscopy, Emission Spectra, Quasars, Seyfert Galaxies,
-  Spectral Line Width, Radial Velocity, Radiative Transfer, Spatial
-  Distribution, Stellar Mass Accretion, Transfer Functions, Velocity
-  Distribution}
-  \strng{namehash}{BRDMCF1}
-  \strng{fullhash}{BRDMCF1}
-  \field{labelyear}{1982}
-  \field{sortinit}{B}
-  \field{pages}{419\bibrangedash 439}
-  \field{title}{{Reverberation mapping of the emission line regions of Seyfert
-  galaxies and quasars}}
-  \field{volume}{255}
-  \field{journaltitle}{\apj}
-  \field{month}{04}
-  \field{year}{1982}
-\endentry
-
-\entry{blandford82b}{article}{}
-  \name{author}{2}{}{%
-    {{}%
-     {{Blandford}}{B.}%
-     {R.~D.}{R.~D.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Payne}}{P.}%
-     {D.~G.}{D.~G.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{Astrophysics, Energy Transfer, Magnetohydrodynamic Flow, Momentum
-  Transfer, Radio Jets (Astronomy), Stellar Mass Accretion, Angular Momentum,
-  Black Holes (Astronomy), Critical Point, Disks (Shapes), Solar Corona}
-  \strng{namehash}{BRDPDG1}
-  \strng{fullhash}{BRDPDG1}
-  \field{labelyear}{1982}
-  \field{sortinit}{B}
-  \field{pages}{883\bibrangedash 903}
-  \field{title}{{Hydromagnetic flows from accretion discs and the production of
-  radio jets}}
-  \field{volume}{199}
-  \field{journaltitle}{\mnras}
-  \field{month}{06}
-  \field{year}{1982}
-\endentry
-
-\entry{boyle98}{article}{}
-  \name{author}{2}{}{%
-    {{}%
-     {{Boyle}}{B.}%
-     {B.~J.}{B.~J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Terlevich}}{T.}%
-     {R.~J.}{R.~J.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{Cosmology, Quasars, Luminous Intensity, Star Formation, Active
-  Galaxies, Starburst Galaxies, Statistical Analysis, Red Shift}
-  \strng{namehash}{BBJTRJ1}
-  \strng{fullhash}{BBJTRJ1}
-  \field{labelyear}{1998}
-  \field{sortinit}{B}
-  \verb{eprint}
-  \verb astro-ph/9710134
-  \endverb
-  \field{pages}{L49\bibrangedash L51}
-  \field{title}{{The cosmological evolution of the QSO luminosity density and
-  of the star formation rate}}
-  \field{volume}{293}
-  \field{journaltitle}{\mnras}
-  \field{eprinttype}{arXiv}
-  \field{month}{01}
-  \field{year}{1998}
-\endentry
-
-\entry{brandt05}{article}{}
-  \name{author}{2}{}{%
-    {{}%
-     {{Brandt}}{B.}%
-     {W.~N.}{W.~N.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Hasinger}}{H.}%
+     {{Cresci}}{C.}%
      {G.}{G.}%
      {}{}%
      {}{}}%
+    {{}%
+     {{Feruglio}}{F.}%
+     {C.}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Giallongo}}{G.}%
+     {E.}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{La Franca}}{L.}%
+     {F.}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Mainieri}}{M.}%
+     {V.}{V.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Mannucci}}{M.}%
+     {F.}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Martocchia}}{M.}%
+     {S.}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Ricci}}{R.}%
+     {F.}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Schneider}}{S.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Testa}}{T.}%
+     {V.}{V.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Vignali}}{V.}%
+     {C.}{C.}%
+     {}{}%
+     {}{}}%
   }
-  \strng{namehash}{BWNHG1}
-  \strng{fullhash}{BWNHG1}
+  \keyw{Astrophysics - Astrophysics of Galaxies}
+  \strng{namehash}{BM+1}
+  \strng{fullhash}{BMPEVGBAFFSEMADFZLBMCACGFCGELFMVMFMSRFSRTVVC1}
+  \field{labelyear}{2016}
+  \field{sortinit}{B}
+  \verb{eprint}
+  \verb 1612.03728
+  \endverb
+  \field{title}{{The WISSH Quasars Project I. Powerful ionised outflows in
+  hyper-luminous quasars}}
+  \field{journaltitle}{ArXiv e-prints}
+  \field{eprinttype}{arXiv}
+  \field{month}{12}
+  \field{year}{2016}
+\endentry
+
+\entry{boroson92}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {{Boroson}}{B.}%
+     {T.~A.}{T.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Green}}{G.}%
+     {R.~F.}{R.~F.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Emission Spectra, Line Spectra, Quasars, Seyfert Galaxies, Astronomical
+  Spectroscopy, Computational Astrophysics, Principal Components Analysis, Red
+  Shift, Sky Surveys (Astronomy)}
+  \strng{namehash}{BTAGRF1}
+  \strng{fullhash}{BTAGRF1}
+  \field{labelyear}{1992}
+  \field{sortinit}{B}
+  \field{pages}{109\bibrangedash 135}
+  \field{title}{{The emission-line properties of low-redshift quasi-stellar
+  objects}}
+  \field{volume}{80}
+  \field{journaltitle}{\apjs}
+  \field{month}{05}
+  \field{year}{1992}
+\endentry
+
+\entry{boroson05}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {{Boroson}}{B.}%
+     {T.}{T.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Galaxies: Active, Galaxies: Seyfert, Galaxies: Quasars: Emission Lines}
+  \strng{namehash}{BT1}
+  \strng{fullhash}{BT1}
   \field{labelyear}{2005}
   \field{sortinit}{B}
   \verb{eprint}
-  \verb astro-ph/0501058
+  \verb astro-ph/0505127
   \endverb
-  \field{pages}{827\bibrangedash 859}
-  \field{title}{{Deep Extragalactic X-Ray Surveys}}
-  \field{volume}{43}
-  \field{journaltitle}{\araa}
+  \field{pages}{381\bibrangedash 386}
+  \field{title}{{Blueshifted [O III] Emission: Indications of a Dynamic
+  Narrow-Line Region}}
+  \field{volume}{130}
+  \field{journaltitle}{\aj}
   \field{eprinttype}{arXiv}
-  \field{month}{09}
+  \field{month}{08}
   \field{year}{2005}
 \endentry
 
-\entry{brotherton15}{article}{}
-  \name{author}{4}{}{%
+\entry{brotherton96}{article}{}
+  \name{author}{1}{}{%
     {{}%
      {{Brotherton}}{B.}%
      {M.~S.}{M.~S.}%
      {}{}%
      {}{}}%
+  }
+  \keyw{LINE: PROFILES, METHODS: STATISTICAL, GALAXIES: QUASARS: EMISSION
+  LINES, GALAXIES: QUASARS: GENERAL, RADIO CONTINUUM: GALAXIES}
+  \strng{namehash}{BMS1}
+  \strng{fullhash}{BMS1}
+  \field{labelyear}{1996}
+  \field{sortinit}{B}
+  \verb{eprint}
+  \verb astro-ph/9507067
+  \endverb
+  \field{pages}{1}
+  \field{title}{{The Profiles of H beta and [O iii] lambda 5007 in Radio-loud
+  Quasars}}
+  \field{volume}{102}
+  \field{journaltitle}{\apjs}
+  \field{eprinttype}{arXiv}
+  \field{month}{01}
+  \field{year}{1996}
+\endentry
+
+\entry{brusa15}{article}{}
+  \name{author}{23}{}{%
     {{}%
-     {{Runnoe}}{R.}%
-     {J.~C.}{J.~C.}%
+     {{Brusa}}{B.}%
+     {M.}{M.}%
      {}{}%
      {}{}}%
     {{}%
-     {{Shang}}{S.}%
-     {Z.}{Z.}%
+     {{Bongiorno}}{B.}%
+     {A.}{A.}%
      {}{}%
      {}{}}%
     {{}%
-     {{DiPompeo}}{D.}%
-     {M.~A.}{M.~A.}%
+     {{Cresci}}{C.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Perna}}{P.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Marconi}}{M.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Mainieri}}{M.}%
+     {V.}{V.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Maiolino}}{M.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Salvato}}{S.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Lusso}}{L.}%
+     {E.}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Santini}}{S.}%
+     {P.}{P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Comastri}}{C.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Fiore}}{F.}%
+     {F.}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Gilli}}{G.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{La Franca}}{L.}%
+     {F.}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Lanzuisi}}{L.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Lutz}}{L.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Merloni}}{M.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Mignoli}}{M.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Onori}}{O.}%
+     {F.}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Piconcelli}}{P.}%
+     {E.}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Rosario}}{R.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Vignali}}{V.}%
+     {C.}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Zamorani}}{Z.}%
+     {G.}{G.}%
      {}{}%
      {}{}}%
   }
-  \keyw{accretion, accretion discs, black hole physics, galaxies: active,
-  quasars: emission lines, quasars: general, quasars: supermassive black holes}
-  \strng{namehash}{BMS+1}
-  \strng{fullhash}{BMSRJCSZDMA1}
+  \keyw{galaxies: active, galaxies: evolution, quasars: emission lines,
+  quasars: supermassive black holes, cosmology: observations}
+  \strng{namehash}{BM+2}
+  \strng{fullhash}{BMBACGPMMAMVMRSMLESPCAFFGRLFLGLDMAMMOFPERDVCZG1}
   \field{labelyear}{2015}
   \field{sortinit}{B}
   \verb{eprint}
-  \verb 1504.03427
+  \verb 1409.1615
   \endverb
-  \field{pages}{1290\bibrangedash 1298}
-  \field{title}{{Bias in C IV-based quasar black hole mass scaling
-  relationships from reverberation mapped samples}}
-  \field{volume}{451}
+  \field{pages}{2394\bibrangedash 2417}
+  \field{title}{{X-shooter reveals powerful outflows in z$\sim$1.5 X-ray
+  selected obscured quasi-stellar objects}}
+  \field{volume}{446}
   \field{journaltitle}{\mnras}
+  \field{eprinttype}{arXiv}
+  \field{month}{01}
+  \field{year}{2015}
+\endentry
+
+\entry{carniani15}{article}{}
+  \name{author}{20}{}{%
+    {{}%
+     {{Carniani}}{C.}%
+     {S.}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Marconi}}{M.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Maiolino}}{M.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Balmaverde}}{B.}%
+     {B.}{B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Brusa}}{B.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Cano-D{\'{\i}}az}}{C.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Cicone}}{C.}%
+     {C.}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Comastri}}{C.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Cresci}}{C.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Fiore}}{F.}%
+     {F.}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Feruglio}}{F.}%
+     {C.}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{La Franca}}{L.}%
+     {F.}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Mainieri}}{M.}%
+     {V.}{V.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Mannucci}}{M.}%
+     {F.}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Nagao}}{N.}%
+     {T.}{T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Netzer}}{N.}%
+     {H.}{H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Piconcelli}}{P.}%
+     {E.}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Risaliti}}{R.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Schneider}}{S.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Shemmer}}{S.}%
+     {O.}{O.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{galaxies: active, galaxies: evolution, quasars: emission lines,
+  techniques: imaging spectroscopy}
+  \strng{namehash}{CS+1}
+  \strng{fullhash}{CSMAMRBBBMCMCCCACGFFFCLFMVMFNTNHPERGSRSO1}
+  \field{labelyear}{2015}
+  \field{sortinit}{C}
+  \field{eid}{A102}
+  \verb{eprint}
+  \verb 1506.03096
+  \endverb
+  \field{pages}{A102}
+  \field{title}{{Ionised outflows in z \~{} 2.4 quasar host galaxies}}
+  \field{volume}{580}
+  \field{journaltitle}{\aap}
   \field{eprinttype}{arXiv}
   \field{month}{08}
   \field{year}{2015}
@@ -1243,294 +1023,6 @@
   \field{year}{2013}
 \endentry
 
-\entry{crenshaw99}{article}{}
-  \name{author}{6}{}{%
-    {{}%
-     {{Crenshaw}}{C.}%
-     {D.~M.}{D.~M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Kraemer}}{K.}%
-     {S.~B.}{S.~B.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Boggess}}{B.}%
-     {A.}{A.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Maran}}{M.}%
-     {S.~P.}{S.~P.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Mushotzky}}{M.}%
-     {R.~F.}{R.~F.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Wu}}{W.}%
-     {C.-C.}{C.-C.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{GALAXIES: SEYFERT, LINE: IDENTIFICATION, ULTRAVIOLET: GALAXIES,
-  Galaxies: Seyfert, Line: Identification, Ultraviolet: Galaxies}
-  \strng{namehash}{CDM+1}
-  \strng{fullhash}{CDMKSBBAMSPMRFWCC1}
-  \field{labelyear}{1999}
-  \field{sortinit}{C}
-  \verb{eprint}
-  \verb astro-ph/9812265
-  \endverb
-  \field{pages}{750\bibrangedash 768}
-  \field{title}{{Intrinsic Absorption Lines in Seyfert 1 Galaxies. I.
-  Ultraviolet Spectra from the Hubble Space Telescope}}
-  \field{volume}{516}
-  \field{journaltitle}{\apj}
-  \field{eprinttype}{arXiv}
-  \field{month}{05}
-  \field{year}{1999}
-\endentry
-
-\entry{denney10}{article}{}
-  \name{author}{43}{}{%
-    {{}%
-     {{Denney}}{D.}%
-     {K.~D.}{K.~D.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Peterson}}{P.}%
-     {B.~M.}{B.~M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Pogge}}{P.}%
-     {R.~W.}{R.~W.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Adair}}{A.}%
-     {A.}{A.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Atlee}}{A.}%
-     {D.~W.}{D.~W.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Au-Yong}}{A.}%
-     {K.}{K.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Bentz}}{B.}%
-     {M.~C.}{M.~C.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Bird}}{B.}%
-     {J.~C.}{J.~C.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Brokofsky}}{B.}%
-     {D.~J.}{D.~J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Chisholm}}{C.}%
-     {E.}{E.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Comins}}{C.}%
-     {M.~L.}{M.~L.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Dietrich}}{D.}%
-     {M.}{M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Doroshenko}}{D.}%
-     {V.~T.}{V.~T.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Eastman}}{E.}%
-     {J.~D.}{J.~D.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Efimov}}{E.}%
-     {Y.~S.}{Y.~S.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Ewald}}{E.}%
-     {S.}{S.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Ferbey}}{F.}%
-     {S.}{S.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Gaskell}}{G.}%
-     {C.~M.}{C.~M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Hedrick}}{H.}%
-     {C.~H.}{C.~H.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Jackson}}{J.}%
-     {K.}{K.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Klimanov}}{K.}%
-     {S.~A.}{S.~A.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Klimek}}{K.}%
-     {E.~S.}{E.~S.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Kruse}}{K.}%
-     {A.~K.}{A.~K.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Lad{\'e}route}}{L.}%
-     {A.}{A.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Lamb}}{L.}%
-     {J.~B.}{J.~B.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Leighly}}{L.}%
-     {K.}{K.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Minezaki}}{M.}%
-     {T.}{T.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Nazarov}}{N.}%
-     {S.~V.}{S.~V.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Onken}}{O.}%
-     {C.~A.}{C.~A.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Petersen}}{P.}%
-     {E.~A.}{E.~A.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Peterson}}{P.}%
-     {P.}{P.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Poindexter}}{P.}%
-     {S.}{S.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Sakata}}{S.}%
-     {Y.}{Y.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Schlesinger}}{S.}%
-     {K.~J.}{K.~J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Sergeev}}{S.}%
-     {S.~G.}{S.~G.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Skolski}}{S.}%
-     {N.}{N.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Stieglitz}}{S.}%
-     {L.}{L.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Tobin}}{T.}%
-     {J.~J.}{J.~J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Unterborn}}{U.}%
-     {C.}{C.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Vestergaard}}{V.}%
-     {M.}{M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Watkins}}{W.}%
-     {A.~E.}{A.~E.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Watson}}{W.}%
-     {L.~C.}{L.~C.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Yoshii}}{Y.}%
-     {Y.}{Y.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{galaxies: active, galaxies: nuclei, galaxies: Seyfert}
-  \strng{namehash}{DKD+1}
-  \strng{fullhash}{DKDPBMPRWAAADWAKBMCBJCBDJCECMLDMDVTEJDEYSESFSGCMHCHJKKSAKESKAKLALJBLKMTNSVOCAPEAPPPSSYSKJSSGSNSLTJJUCVMWAEWLCYY1}
-  \field{labelyear}{2010}
-  \field{sortinit}{D}
-  \verb{eprint}
-  \verb 1006.4160
-  \endverb
-  \field{pages}{715\bibrangedash 737}
-  \field{title}{{Reverberation Mapping Measurements of Black Hole Masses in Six
-  Local Seyfert Galaxies}}
-  \field{volume}{721}
-  \field{journaltitle}{\apj}
-  \field{eprinttype}{arXiv}
-  \field{month}{09}
-  \field{year}{2010}
-\endentry
-
 \entry{dimatteo05}{article}{}
   \name{author}{3}{}{%
     {{}%
@@ -1632,221 +1124,42 @@
   \field{year}{2010}
 \endentry
 
-\entry{elitzur06}{article}{}
-  \name{author}{2}{}{%
+\entry{feldman82}{article}{}
+  \name{author}{4}{}{%
     {{}%
-     {{Elitzur}}{E.}%
-     {M.}{M.}%
+     {{Feldman}}{F.}%
+     {F.~R.}{F.~R.}%
      {}{}%
      {}{}}%
     {{}%
-     {{Shlosman}}{S.}%
-     {I.}{I.}%
+     {{Weedman}}{W.}%
+     {D.~W.}{D.~W.}%
      {}{}%
      {}{}}%
-  }
-  \keyw{Galaxies: Active, Galaxies: Nuclei, Galaxies: Seyfert, Infrared:
-  Galaxies, Galaxies: Quasars: General}
-  \strng{namehash}{EMSI1}
-  \strng{fullhash}{EMSI1}
-  \field{labelyear}{2006}
-  \field{sortinit}{E}
-  \verb{eprint}
-  \verb astro-ph/0605686
-  \endverb
-  \field{pages}{L101\bibrangedash L104}
-  \field{title}{{The AGN-obscuring Torus: The End of the ``Doughnut''
-  Paradigm?}}
-  \field{volume}{648}
-  \field{journaltitle}{\apjl}
-  \field{eprinttype}{arXiv}
-  \field{month}{09}
-  \field{year}{2006}
-\endentry
-
-\entry{elvis00}{article}{}
-  \name{author}{1}{}{%
     {{}%
-     {{Elvis}}{E.}%
-     {M.}{M.}%
+     {{Balzano}}{B.}%
+     {V.~A.}{V.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Ramsey}}{R.}%
+     {L.~W.}{L.~W.}%
      {}{}%
      {}{}}%
   }
-  \keyw{Galaxies: Quasars: Absorption Lines, Galaxies: Quasars: General}
-  \strng{namehash}{EM1}
-  \strng{fullhash}{EM1}
-  \field{labelyear}{2000}
-  \field{sortinit}{E}
-  \verb{eprint}
-  \verb astro-ph/0008064
-  \endverb
-  \field{pages}{63\bibrangedash 76}
-  \field{title}{{A Structure for Quasars}}
-  \field{volume}{545}
+  \keyw{Emission Spectra, Galactic Nuclei, H Beta Line, Oxygen Ions, Seyfert
+  Galaxies, Spectral Line Width, Astronomical Spectroscopy, Forbidden Bands,
+  Galactic Structure, Hot Stars, Spectral Resolution}
+  \strng{namehash}{FFR+1}
+  \strng{fullhash}{FFRWDWBVARLW1}
+  \field{labelyear}{1982}
+  \field{sortinit}{F}
+  \field{pages}{427\bibrangedash 434}
+  \field{title}{{Emission-line widths in galactic nuclei}}
+  \field{volume}{256}
   \field{journaltitle}{\apj}
-  \field{eprinttype}{arXiv}
-  \field{month}{12}
-  \field{year}{2000}
-\endentry
-
-\entry{everett05}{article}{}
-  \name{author}{1}{}{%
-    {{}%
-     {{Everett}}{E.}%
-     {J.~E.}{J.~E.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{Galaxies: Active, Galaxies: Jets, Hydrodynamics, Magnetohydrodynamics:
-  MHD, Galaxies: Quasars: General, Radiative Transfer}
-  \strng{namehash}{EJE1}
-  \strng{fullhash}{EJE1}
-  \field{labelyear}{2005}
-  \field{sortinit}{E}
-  \verb{eprint}
-  \verb astro-ph/0506321
-  \endverb
-  \field{pages}{689\bibrangedash 706}
-  \field{title}{{Radiative Transfer and Acceleration in Magnetocentrifugal
-  Winds}}
-  \field{volume}{631}
-  \field{journaltitle}{\apj}
-  \field{eprinttype}{arXiv}
-  \field{month}{10}
-  \field{year}{2005}
-\endentry
-
-\entry{everett09}{inproceedings}{}
-  \name{author}{3}{}{%
-    {{}%
-     {{Everett}}{E.}%
-     {J.}{J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Gallagher}}{G.}%
-     {S.}{S.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Keating}}{K.}%
-     {S.}{S.}%
-     {}{}%
-     {}{}}%
-  }
-  \name{editor}{2}{}{%
-    {{}%
-     {{Heinz}}{H.}%
-     {S.}{S.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Wilcots}}{W.}%
-     {E.}{E.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{galactic nuclei, X-rays, Monte Carlo methods, accretion disks, stellar
-  winds, Galactic nuclei circumnuclear matter and bulges, X-ray sources, X-ray
-  bursts, Applications of Monte Carlo methods, Infall accretion and accretion
-  disks, Mass loss and stellar winds}
-  \strng{namehash}{EJGSKS1}
-  \strng{fullhash}{EJGSKS1}
-  \field{labelyear}{2009}
-  \field{sortinit}{E}
-  \field{booktitle}{American Institute of Physics Conference Series}
-  \field{pages}{56\bibrangedash 59}
-  \field{series}{American Institute of Physics Conference Series}
-  \field{title}{{Blowing Away the ``Torus'': Dusty Winds in AGN}}
-  \field{volume}{1201}
-  \field{month}{12}
-  \field{year}{2009}
-\endentry
-
-\entry{fabian12}{article}{}
-  \name{author}{1}{}{%
-    {{}%
-     {{Fabian}}{F.}%
-     {A.~C.}{A.~C.}%
-     {}{}%
-     {}{}}%
-  }
-  \strng{namehash}{FAC1}
-  \strng{fullhash}{FAC1}
-  \field{labelyear}{2012}
-  \field{sortinit}{F}
-  \verb{eprint}
-  \verb 1204.4114
-  \endverb
-  \field{pages}{455\bibrangedash 489}
-  \field{title}{{Observational Evidence of Active Galactic Nuclei Feedback}}
-  \field{volume}{50}
-  \field{journaltitle}{\araa}
-  \field{eprinttype}{arXiv}
-  \field{month}{09}
-  \field{year}{2012}
-\endentry
-
-\entry{ferrarese05}{article}{}
-  \name{author}{2}{}{%
-    {{}%
-     {{Ferrarese}}{F.}%
-     {L.}{L.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Ford}}{F.}%
-     {H.}{H.}%
-     {}{}%
-     {}{}}%
-  }
-  \strng{namehash}{FLFH1}
-  \strng{fullhash}{FLFH1}
-  \field{labelyear}{2005}
-  \field{sortinit}{F}
-  \verb{eprint}
-  \verb astro-ph/0411247
-  \endverb
-  \field{pages}{523\bibrangedash 624}
-  \field{title}{{Supermassive Black Holes in Galactic Nuclei: Past, Present and
-  Future Research}}
-  \field{volume}{116}
-  \field{journaltitle}{\ssr}
-  \field{eprinttype}{arXiv}
-  \field{month}{02}
-  \field{year}{2005}
-\endentry
-
-\entry{ferrarese00}{article}{}
-  \name{author}{2}{}{%
-    {{}%
-     {{Ferrarese}}{F.}%
-     {L.}{L.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Merritt}}{M.}%
-     {D.}{D.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{Black Hole Physics, Galaxies: Evolution, Galaxies: Kinematics and
-  Dynamics}
-  \strng{namehash}{FLMD1}
-  \strng{fullhash}{FLMD1}
-  \field{labelyear}{2000}
-  \field{sortinit}{F}
-  \verb{eprint}
-  \verb astro-ph/0006053
-  \endverb
-  \field{pages}{L9\bibrangedash L12}
-  \field{title}{{A Fundamental Relation between Supermassive Black Holes and
-  Their Host Galaxies}}
-  \field{volume}{539}
-  \field{journaltitle}{\apjl}
-  \field{eprinttype}{arXiv}
-  \field{month}{08}
-  \field{year}{2000}
+  \field{month}{05}
+  \field{year}{1982}
 \endentry
 
 \entry{feruglio10}{article}{}
@@ -1906,208 +1219,7 @@
   \field{year}{2010}
 \endentry
 
-\entry{gallagher12}{inproceedings}{}
-  \name{author}{5}{}{%
-    {{}%
-     {{Gallagher}}{G.}%
-     {S.~C.}{S.~C.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Everett}}{E.}%
-     {J.~E.}{J.~E.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Keating}}{K.}%
-     {S.~K.}{S.~K.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Hill}}{H.}%
-     {A.~R.}{A.~R.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Deo}}{D.}%
-     {R.~P.}{R.~P.}%
-     {}{}%
-     {}{}}%
-  }
-  \name{editor}{3}{}{%
-    {{}%
-     {{Chartas}}{C.}%
-     {G.}{G.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Hamann}}{H.}%
-     {F.}{F.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Leighly}}{L.}%
-     {K.~M.}{K.~M.}%
-     {}{}%
-     {}{}}%
-  }
-  \strng{namehash}{GSC+1}
-  \strng{fullhash}{GSCEJEKSKHARDRP1}
-  \field{labelyear}{2012}
-  \field{sortinit}{G}
-  \field{booktitle}{AGN Winds in Charleston}
-  \verb{eprint}
-  \verb 1201.5018
-  \endverb
-  \field{pages}{199}
-  \field{series}{Astronomical Society of the Pacific Conference Series}
-  \field{title}{{Looking for the Wind in the Dust}}
-  \field{volume}{460}
-  \field{eprinttype}{arXiv}
-  \field{month}{08}
-  \field{year}{2012}
-\endentry
-
-\entry{gebhardt00}{article}{}
-  \name{author}{15}{}{%
-    {{}%
-     {{Gebhardt}}{G.}%
-     {K.}{K.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Bender}}{B.}%
-     {R.}{R.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Bower}}{B.}%
-     {G.}{G.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Dressler}}{D.}%
-     {A.}{A.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Faber}}{F.}%
-     {S.~M.}{S.~M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Filippenko}}{F.}%
-     {A.~V.}{A.~V.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Green}}{G.}%
-     {R.}{R.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Grillmair}}{G.}%
-     {C.}{C.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Ho}}{H.}%
-     {L.~C.}{L.~C.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Kormendy}}{K.}%
-     {J.}{J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Lauer}}{L.}%
-     {T.~R.}{T.~R.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Magorrian}}{M.}%
-     {J.}{J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Pinkney}}{P.}%
-     {J.}{J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Richstone}}{R.}%
-     {D.}{D.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Tremaine}}{T.}%
-     {S.}{S.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{Galaxies: General, Galaxies: Nuclei, Galaxies: Statistics}
-  \strng{namehash}{GK+1}
-  \strng{fullhash}{GKBRBGDAFSMFAVGRGCHLCKJLTRMJPJRDTS1}
-  \field{labelyear}{2000}
-  \field{sortinit}{G}
-  \verb{eprint}
-  \verb astro-ph/0006289
-  \endverb
-  \field{pages}{L13\bibrangedash L16}
-  \field{title}{{A Relationship between Nuclear Black Hole Mass and Galaxy
-  Velocity Dispersion}}
-  \field{volume}{539}
-  \field{journaltitle}{\apjl}
-  \field{eprinttype}{arXiv}
-  \field{month}{08}
-  \field{year}{2000}
-\endentry
-
-\entry{graham01}{article}{}
-  \name{author}{4}{}{%
-    {{}%
-     {{Graham}}{G.}%
-     {A.~W.}{A.~W.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Erwin}}{E.}%
-     {P.}{P.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Caon}}{C.}%
-     {N.}{N.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Trujillo}}{T.}%
-     {I.}{I.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{Black Hole Physics, Galaxies: Fundamental Parameters, Galaxies:
-  Kinematics and Dynamics, Galaxies: Nuclei, Galaxies: Photometry, Galaxies:
-  Structure}
-  \strng{namehash}{GAW+1}
-  \strng{fullhash}{GAWEPCNTI1}
-  \field{labelyear}{2001}
-  \field{sortinit}{G}
-  \verb{eprint}
-  \verb astro-ph/0111152
-  \endverb
-  \field{pages}{L11\bibrangedash L14}
-  \field{title}{{A Correlation between Galaxy Light Concentration and
-  Supermassive Black Hole Mass}}
-  \field{volume}{563}
-  \field{journaltitle}{\apjl}
-  \field{eprinttype}{arXiv}
-  \field{month}{12}
-  \field{year}{2001}
-\endentry
-
-\entry{greene05b}{article}{}
+\entry{greene05a}{article}{}
   \name{author}{2}{}{%
     {{}%
      {{Greene}}{G.}%
@@ -2120,316 +1232,81 @@
      {}{}%
      {}{}}%
   }
-  \keyw{Galaxies: Active, Galaxies: Jets, Galaxies: Nuclei, Galaxies: Seyfert,
-  Galaxies: Quasars: General}
+  \keyw{Galaxies: Active, Galaxies: Kinematics and Dynamics, Galaxies: Nuclei,
+  Galaxies: Seyfert}
   \strng{namehash}{GJEHLC1}
   \strng{fullhash}{GJEHLC1}
   \field{labelyear}{2005}
   \field{sortinit}{G}
   \verb{eprint}
-  \verb astro-ph/0508335
+  \verb astro-ph/0503675
   \endverb
-  \field{pages}{122\bibrangedash 129}
-  \field{title}{{Estimating Black Hole Masses in Active Galaxies Using the
-  H{$\alpha$} Emission Line}}
-  \field{volume}{630}
+  \field{pages}{721\bibrangedash 732}
+  \field{title}{{A Comparison of Stellar and Gaseous Kinematics in the Nuclei
+  of Active Galaxies}}
+  \field{volume}{627}
   \field{journaltitle}{\apj}
   \field{eprinttype}{arXiv}
-  \field{month}{09}
+  \field{month}{07}
   \field{year}{2005}
 \endentry
 
-\entry{grier12}{article}{}
-  \name{author}{43}{}{%
+\entry{greene09}{article}{}
+  \name{author}{5}{}{%
     {{}%
-     {{Grier}}{G.}%
-     {C.~J.}{C.~J.}%
+     {{Greene}}{G.}%
+     {J.~E.}{J.~E.}%
      {}{}%
      {}{}}%
     {{}%
-     {{Peterson}}{P.}%
-     {B.~M.}{B.~M.}%
+     {{Zakamska}}{Z.}%
+     {N.~L.}{N.~L.}%
      {}{}%
      {}{}}%
     {{}%
-     {{Pogge}}{P.}%
-     {R.~W.}{R.~W.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Denney}}{D.}%
-     {K.~D.}{K.~D.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Bentz}}{B.}%
-     {M.~C.}{M.~C.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Martini}}{M.}%
-     {P.}{P.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Sergeev}}{S.}%
-     {S.~G.}{S.~G.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Kaspi}}{K.}%
-     {S.}{S.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Minezaki}}{M.}%
-     {T.}{T.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Zu}}{Z.}%
-     {Y.}{Y.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Kochanek}}{K.}%
-     {C.~S.}{C.~S.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Siverd}}{S.}%
-     {R.}{R.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Shappee}}{S.}%
-     {B.}{B.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Stanek}}{S.}%
-     {K.~Z.}{K.~Z.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Araya Salvo}}{A.}%
-     {C.}{C.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Beatty}}{B.}%
-     {T.~G.}{T.~G.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Bird}}{B.}%
-     {J.~C.}{J.~C.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Bord}}{B.}%
-     {D.~J.}{D.~J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Borman}}{B.}%
-     {G.~A.}{G.~A.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Che}}{C.}%
+     {{Liu}}{L.}%
      {X.}{X.}%
      {}{}%
      {}{}}%
     {{}%
-     {{Chen}}{C.}%
-     {C.}{C.}%
+     {{Barth}}{B.}%
+     {A.~J.}{A.~J.}%
      {}{}%
      {}{}}%
     {{}%
-     {{Cohen}}{C.}%
-     {S.~A.}{S.~A.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Dietrich}}{D.}%
-     {M.}{M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Doroshenko}}{D.}%
-     {V.~T.}{V.~T.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Drake}}{D.}%
-     {T.}{T.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Efimov}}{E.}%
-     {Y.~S.}{Y.~S.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Free}}{F.}%
-     {N.}{N.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Ginsburg}}{G.}%
-     {I.}{I.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Henderson}}{H.}%
-     {C.~B.}{C.~B.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{King}}{K.}%
-     {A.~L.}{A.~L.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Koshida}}{K.}%
-     {S.}{S.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Mogren}}{M.}%
-     {K.}{K.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Molina}}{M.}%
-     {M.}{M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Mosquera}}{M.}%
-     {A.~M.}{A.~M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Nazarov}}{N.}%
-     {S.~V.}{S.~V.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Okhmat}}{O.}%
-     {D.~N.}{D.~N.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Pejcha}}{P.}%
-     {O.}{O.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Rafter}}{R.}%
-     {S.}{S.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Shields}}{S.}%
-     {J.~C.}{J.~C.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Skowron}}{S.}%
-     {J.}{J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Szczygiel}}{S.}%
-     {D.~M.}{D.~M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Valluri}}{V.}%
-     {M.}{M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{van Saders}}{v.}%
-     {J.~L.}{J.~L.}%
+     {{Ho}}{H.}%
+     {L.~C.}{L.~C.}%
      {}{}%
      {}{}}%
   }
   \keyw{galaxies: active, galaxies: nuclei, galaxies: Seyfert}
-  \strng{namehash}{GCJ+1}
-  \strng{fullhash}{GCJPBMPRWDKDBMCMPSSGKSMTZYKCSSRSBSKZACBTGBJCBDJBGACXCCCSADMDVTDTEYSFNGIHCBKALKSMKMMMAMNSVODNPORSSJCSJSDMVMvJL1}
-  \field{labelyear}{2012}
+  \strng{namehash}{GJE+1}
+  \strng{fullhash}{GJEZNLLXBAJHLC1}
+  \field{labelyear}{2009}
   \field{sortinit}{G}
-  \field{eid}{60}
   \verb{eprint}
-  \verb 1206.6523
+  \verb 0907.1086
   \endverb
-  \field{pages}{60}
-  \field{title}{{Reverberation Mapping Results for Five Seyfert 1 Galaxies}}
-  \field{volume}{755}
+  \field{pages}{441\bibrangedash 459}
+  \field{title}{{The Growth of Black Holes: Insights from Obscured Active
+  Galaxies}}
+  \field{volume}{702}
   \field{journaltitle}{\apj}
   \field{eprinttype}{arXiv}
-  \field{month}{08}
-  \field{year}{2012}
+  \field{month}{09}
+  \field{year}{2009}
 \endentry
 
-\entry{gultekin09}{article}{}
-  \name{author}{16}{}{%
+\entry{greene11}{article}{}
+  \name{author}{4}{}{%
     {{}%
-     {{G{\"u}ltekin}}{G.}%
-     {K.}{K.}%
+     {{Greene}}{G.}%
+     {J.~E.}{J.~E.}%
      {}{}%
      {}{}}%
     {{}%
-     {{Richstone}}{R.}%
-     {D.~O.}{D.~O.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Gebhardt}}{G.}%
-     {K.}{K.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Lauer}}{L.}%
-     {T.~R.}{T.~R.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Tremaine}}{T.}%
-     {S.}{S.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Aller}}{A.}%
-     {M.~C.}{M.~C.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Bender}}{B.}%
-     {R.}{R.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Dressler}}{D.}%
-     {A.}{A.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Faber}}{F.}%
-     {S.~M.}{S.~M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Filippenko}}{F.}%
-     {A.~V.}{A.~V.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Green}}{G.}%
-     {R.}{R.}%
+     {{Zakamska}}{Z.}%
+     {N.~L.}{N.~L.}%
      {}{}%
      {}{}}%
     {{}%
@@ -2438,81 +1315,74 @@
      {}{}%
      {}{}}%
     {{}%
-     {{Kormendy}}{K.}%
-     {J.}{J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Magorrian}}{M.}%
-     {J.}{J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Pinkney}}{P.}%
-     {J.}{J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Siopis}}{S.}%
-     {C.}{C.}%
+     {{Barth}}{B.}%
+     {A.~J.}{A.~J.}%
      {}{}%
      {}{}}%
   }
-  \keyw{black hole physics, galaxies: general, galaxies: nuclei, galaxies:
-  statistics, stellar dynamics}
-  \strng{namehash}{GK+2}
-  \strng{fullhash}{GKRDOGKLTRTSAMCBRDAFSMFAVGRHLCKJMJPJSC1}
-  \field{labelyear}{2009}
+  \keyw{galaxies: active, galaxies: nuclei, galaxies: Seyfert}
+  \strng{namehash}{GJE+1}
+  \strng{fullhash}{GJEZNLHLCBAJ1}
+  \field{labelyear}{2011}
   \field{sortinit}{G}
+  \field{eid}{9}
   \verb{eprint}
-  \verb 0903.4897
+  \verb 1102.2913
   \endverb
-  \field{pages}{198\bibrangedash 221}
-  \field{title}{{The M-{$\sigma$} and M-L Relations in Galactic Bulges, and
-  Determinations of Their Intrinsic Scatter}}
-  \field{volume}{698}
+  \field{pages}{9}
+  \field{title}{{Feedback in Luminous Obscured Quasars}}
+  \field{volume}{732}
   \field{journaltitle}{\apj}
   \field{eprinttype}{arXiv}
-  \field{month}{06}
-  \field{year}{2009}
+  \field{month}{05}
+  \field{year}{2011}
 \endentry
 
-\entry{hamann97}{article}{}
-  \name{author}{4}{}{%
+\entry{hainline13}{article}{}
+  \name{author}{5}{}{%
     {{}%
-     {{Hamann}}{H.}%
-     {F.}{F.}%
+     {{Hainline}}{H.}%
+     {K.~N.}{K.~N.}%
      {}{}%
      {}{}}%
     {{}%
-     {{Barlow}}{B.}%
-     {T.~A.}{T.~A.}%
+     {{Hickox}}{H.}%
+     {R.}{R.}%
      {}{}%
      {}{}}%
     {{}%
-     {{Junkkarinen}}{J.}%
-     {V.}{V.}%
+     {{Greene}}{G.}%
+     {J.~E.}{J.~E.}%
      {}{}%
      {}{}}%
     {{}%
-     {{Burbidge}}{B.}%
-     {E.~M.}{E.~M.}%
+     {{Myers}}{M.}%
+     {A.~D.}{A.~D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Zakamska}}{Z.}%
+     {N.~L.}{N.~L.}%
      {}{}%
      {}{}}%
   }
-  \keyw{Galaxies: Abundances, Galaxies: Quasars: Absorption Lines, quasars:
-  individuals (UM 675)}
-  \strng{namehash}{HF+1}
-  \strng{fullhash}{HFBTAJVBEM1}
-  \field{labelyear}{1997}
+  \keyw{galaxies: active, quasars: emission lines}
+  \strng{namehash}{HKN+1}
+  \strng{fullhash}{HKNHRGJEMADZNL1}
+  \field{labelyear}{2013}
   \field{sortinit}{H}
-  \field{pages}{80\bibrangedash 86}
-  \field{title}{{High-Resolution Spectra of Intrinsic Absorption Lines in the
-  Quasi-stellar Object UM 675}}
-  \field{volume}{478}
+  \field{eid}{145}
+  \verb{eprint}
+  \verb 1307.5852
+  \endverb
+  \field{pages}{145}
+  \field{title}{{SALT Long-slit Spectroscopy of Luminous Obscured Quasars: An
+  Upper Limit on the Size of the Narrow-line Region?}}
+  \field{volume}{774}
   \field{journaltitle}{\apj}
-  \field{month}{03}
-  \field{year}{1997}
+  \field{eprinttype}{arXiv}
+  \field{month}{09}
+  \field{year}{2013}
 \endentry
 
 \entry{harrison12}{article}{}
@@ -2644,37 +1514,155 @@
   \field{year}{2014}
 \endentry
 
-\entry{heckman14}{article}{}
-  \name{author}{2}{}{%
+\entry{harrison16}{article}{}
+  \name{author}{10}{}{%
+    {{}%
+     {{Harrison}}{H.}%
+     {C.~M.}{C.~M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Alexander}}{A.}%
+     {D.~M.}{D.~M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Mullaney}}{M.}%
+     {J.~R.}{J.~R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Stott}}{S.}%
+     {J.~P.}{J.~P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Swinbank}}{S.}%
+     {A.~M.}{A.~M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Arumugam}}{A.}%
+     {V.}{V.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Bauer}}{B.}%
+     {F.~E.}{F.~E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Bower}}{B.}%
+     {R.~G.}{R.~G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Bunker}}{B.}%
+     {A.~J.}{A.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Sharples}}{S.}%
+     {R.~M.}{R.~M.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{galaxies: active - galaxies: evolution, galaxies: kinematics and
+  dynamics, quasars: emission lines}
+  \strng{namehash}{HCM+1}
+  \strng{fullhash}{HCMADMMJRSJPSAMAVBFEBRGBAJSRM1}
+  \field{labelyear}{2016}
+  \field{sortinit}{H}
+  \verb{eprint}
+  \verb 1511.00008
+  \endverb
+  \field{pages}{1195\bibrangedash 1220}
+  \field{title}{{The KMOS AGN Survey at High redshift (KASHz): the prevalence
+  and drivers of ionized outflows in the host galaxies of X-ray AGN}}
+  \field{volume}{456}
+  \field{journaltitle}{\mnras}
+  \field{eprinttype}{arXiv}
+  \field{month}{02}
+  \field{year}{2016}
+\endentry
+
+\entry{heckman84}{article}{}
+  \name{author}{3}{}{%
     {{}%
      {{Heckman}}{H.}%
      {T.~M.}{T.~M.}%
      {}{}%
      {}{}}%
     {{}%
-     {{Best}}{B.}%
-     {P.~N.}{P.~N.}%
+     {{Miley}}{M.}%
+     {G.~K.}{G.~K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Green}}{G.}%
+     {R.~F.}{R.~F.}%
      {}{}%
      {}{}}%
   }
-  \strng{namehash}{HTMBPN1}
-  \strng{fullhash}{HTMBPN1}
-  \field{labelyear}{2014}
+  \keyw{Active Galaxies, Galactic Nuclei, Kinematics, Oxygen Spectra, Quasars,
+  Radio Galaxies, Spectral Line Width, Astronomical Catalogs, Forbidden
+  Transitions, H Alpha Line, Optical Emission Spectroscopy, Seyfert Galaxies,
+  Spectral Energy Distribution}
+  \strng{namehash}{HTMMGKGRF1}
+  \strng{fullhash}{HTMMGKGRF1}
+  \field{labelyear}{1984}
   \field{sortinit}{H}
-  \verb{eprint}
-  \verb 1403.4620
-  \endverb
-  \field{pages}{589\bibrangedash 660}
-  \field{title}{{The Coevolution of Galaxies and Supermassive Black Holes:
-  Insights from Surveys of the Contemporary Universe}}
-  \field{volume}{52}
-  \field{journaltitle}{\araa}
-  \field{eprinttype}{arXiv}
-  \field{month}{08}
-  \field{year}{2014}
+  \field{pages}{525\bibrangedash 534}
+  \field{title}{{The kinematics of the narrow-line region in active galaxies
+  and quasars. III - Correlations with the broad-line region and radio
+  emission}}
+  \field{volume}{281}
+  \field{journaltitle}{\apj}
+  \field{month}{06}
+  \field{year}{1984}
 \endentry
 
-\entry{hewett03}{article}{}
+\entry{heckman81}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {{Heckman}}{H.}%
+     {T.~M.}{T.~M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Miley}}{M.}%
+     {G.~K.}{G.~K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{van Breugel}}{v.}%
+     {W.~J.~M.}{W.~J.~M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Butcher}}{B.}%
+     {H.~R.}{H.~R.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Emission Spectra, Galactic Nuclei, Radio Galaxies, Seyfert Galaxies,
+  Spectral Line Width, Cosmic Dust, Cosmic Plasma, Gas Ionization, H Lines,
+  Interstellar Gas, Line Spectra, Luminosity, Oxygen, Relativistic Plasmas,
+  Thermal Plasmas, Velocity Distribution}
+  \strng{namehash}{HTM+1}
+  \strng{fullhash}{HTMMGKvWJMBHR1}
+  \field{labelyear}{1981}
+  \field{sortinit}{H}
+  \field{pages}{403\bibrangedash 418}
+  \field{title}{{Emission-line profiles and kinematics of the narrow-line
+  region in Seyfert and radio galaxies}}
+  \field{volume}{247}
+  \field{journaltitle}{\apj}
+  \field{month}{07}
+  \field{year}{1981}
+\endentry
+
+\entry{hewett10}{article}{}
   \name{author}{2}{}{%
     {{}%
      {{Hewett}}{H.}%
@@ -2682,262 +1670,78 @@
      {}{}%
      {}{}}%
     {{}%
-     {{Foltz}}{F.}%
-     {C.~B.}{C.~B.}%
+     {{Wild}}{W.}%
+     {V.}{V.}%
      {}{}%
      {}{}}%
   }
-  \keyw{Galaxies: Quasars: Absorption Lines, Galaxies: Quasars: General, Radio
-  Continuum, Surveys}
-  \strng{namehash}{HPCFCB1}
-  \strng{fullhash}{HPCFCB1}
-  \field{labelyear}{2003}
+  \keyw{catalogues, surveys, quasars: emission lines, quasars: general}
+  \strng{namehash}{HPCWV1}
+  \strng{fullhash}{HPCWV1}
+  \field{labelyear}{2010}
   \field{sortinit}{H}
   \verb{eprint}
-  \verb astro-ph/0301191
+  \verb 1003.3017
   \endverb
-  \field{pages}{1784\bibrangedash 1794}
-  \field{title}{{The Frequency and Radio Properties of Broad Absorption Line
-  Quasars}}
-  \field{volume}{125}
-  \field{journaltitle}{\aj}
-  \field{eprinttype}{arXiv}
-  \field{month}{04}
-  \field{year}{2003}
-\endentry
-
-\entry{hoyle63}{article}{}
-  \name{author}{2}{}{%
-    {{}%
-     {{Hoyle}}{H.}%
-     {F.}{F.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Fowler}}{F.}%
-     {W.~A.}{W.~A.}%
-     {}{}%
-     {}{}}%
-  }
-  \strng{namehash}{HFFWA1}
-  \strng{fullhash}{HFFWA1}
-  \field{labelyear}{1963}
-  \field{sortinit}{H}
-  \field{pages}{169}
-  \field{title}{{On the nature of strong radio sources}}
-  \field{volume}{125}
-  \field{journaltitle}{\mnras}
-  \field{year}{1963}
-\endentry
-
-\entry{jarvis06}{article}{}
-  \name{author}{2}{}{%
-    {{}%
-     {{Jarvis}}{J.}%
-     {M.~J.}{M.~J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{McLure}}{M.}%
-     {R.~J.}{R.~J.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{galaxies: active: galaxies: nuclei: quasars: emission lines: quasars:
-  general: radio continuum: galaxies, galaxies: active, galaxies: nuclei,
-  quasars: emission lines, quasars: general, radio continuum: galaxies}
-  \strng{namehash}{JMJMRJ1}
-  \strng{fullhash}{JMJMRJ1}
-  \field{labelyear}{2006}
-  \field{sortinit}{J}
-  \verb{eprint}
-  \verb astro-ph/0603231
-  \endverb
-  \field{pages}{182\bibrangedash 188}
-  \field{title}{{Orientation dependency of broad-line widths in quasars and
-  consequences for black hole mass estimation}}
-  \field{volume}{369}
+  \field{pages}{2302\bibrangedash 2316}
+  \field{title}{{Improved redshifts for SDSS quasar spectra}}
+  \field{volume}{405}
   \field{journaltitle}{\mnras}
   \field{eprinttype}{arXiv}
-  \field{month}{06}
-  \field{year}{2006}
+  \field{month}{07}
+  \field{year}{2010}
 \endentry
 
-\entry{kaspi00}{article}{}
+\entry{kim13}{article}{}
   \name{author}{6}{}{%
     {{}%
-     {{Kaspi}}{K.}%
-     {S.}{S.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Smith}}{S.}%
-     {P.~S.}{P.~S.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Netzer}}{N.}%
-     {H.}{H.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Maoz}}{M.}%
-     {D.}{D.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Jannuzi}}{J.}%
-     {B.~T.}{B.~T.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Giveon}}{G.}%
-     {U.}{U.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{GALAXIES: ACTIVE, GALAXIES: QUASARS: EMISSION LINES, GALAXIES: QUASARS:
-  GENERAL}
-  \strng{namehash}{KS+1}
-  \strng{fullhash}{KSSPSNHMDJBTGU1}
-  \field{labelyear}{2000}
-  \field{sortinit}{K}
-  \verb{eprint}
-  \verb astro-ph/9911476
-  \endverb
-  \field{pages}{631\bibrangedash 649}
-  \field{title}{{Reverberation Measurements for 17 Quasars and the
-  Size-Mass-Luminosity Relations in Active Galactic Nuclei}}
-  \field{volume}{533}
-  \field{journaltitle}{\apj}
-  \field{eprinttype}{arXiv}
-  \field{month}{04}
-  \field{year}{2000}
-\endentry
-
-\entry{kaspi07}{article}{}
-  \name{author}{6}{}{%
-    {{}%
-     {{Kaspi}}{K.}%
-     {S.}{S.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Brandt}}{B.}%
-     {W.~N.}{W.~N.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Maoz}}{M.}%
-     {D.}{D.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Netzer}}{N.}%
-     {H.}{H.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Schneider}}{S.}%
-     {D.~P.}{D.~P.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Shemmer}}{S.}%
-     {O.}{O.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{Galaxies: Active, Galaxies: Nuclei, Galaxies: Seyfert, Galaxies:
-  Quasars: General}
-  \strng{namehash}{KS+1}
-  \strng{fullhash}{KSBWNMDNHSDPSO1}
-  \field{labelyear}{2007}
-  \field{sortinit}{K}
-  \verb{eprint}
-  \verb astro-ph/0612722
-  \endverb
-  \field{pages}{997\bibrangedash 1007}
-  \field{title}{{Reverberation Mapping of High-Luminosity Quasars: First
-  Results}}
-  \field{volume}{659}
-  \field{journaltitle}{\apj}
-  \field{eprinttype}{arXiv}
-  \field{month}{04}
-  \field{year}{2007}
-\endentry
-
-\entry{kauffmann00}{article}{}
-  \name{author}{2}{}{%
-    {{}%
-     {{Kauffmann}}{K.}%
-     {G.}{G.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Haehnelt}}{H.}%
+     {{Kim}}{K.}%
      {M.}{M.}%
      {}{}%
      {}{}}%
-  }
-  \keyw{BLACK HOLE PHYSICS, GALAXIES: FORMATION, GALAXIES: NUCLEI, QUASARS:
-  GENERAL}
-  \strng{namehash}{KGHM1}
-  \strng{fullhash}{KGHM1}
-  \field{labelyear}{2000}
-  \field{sortinit}{K}
-  \verb{eprint}
-  \verb astro-ph/9906493
-  \endverb
-  \field{pages}{576\bibrangedash 588}
-  \field{title}{{A unified model for the evolution of galaxies and quasars}}
-  \field{volume}{311}
-  \field{journaltitle}{\mnras}
-  \field{month}{01}
-  \field{year}{2000}
-\endentry
-
-\entry{keating12}{article}{}
-  \name{author}{4}{}{%
     {{}%
-     {{Keating}}{K.}%
-     {S.~K.}{S.~K.}%
+     {{Ho}}{H.}%
+     {L.~C.}{L.~C.}%
      {}{}%
      {}{}}%
     {{}%
-     {{Everett}}{E.}%
-     {J.~E.}{J.~E.}%
+     {{Lonsdale}}{L.}%
+     {C.~J.}{C.~J.}%
      {}{}%
      {}{}}%
     {{}%
-     {{Gallagher}}{G.}%
-     {S.~C.}{S.~C.}%
+     {{Lacy}}{L.}%
+     {M.}{M.}%
      {}{}%
      {}{}}%
     {{}%
-     {{Deo}}{D.}%
-     {R.~P.}{R.~P.}%
+     {{Blain}}{B.}%
+     {A.~W.}{A.~W.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Kimball}}{K.}%
+     {A.~E.}{A.~E.}%
      {}{}%
      {}{}}%
   }
-  \keyw{galaxies: active, galaxies: Seyfert, hydrodynamics, infrared: general,
-  magnetohydrodynamics: MHD, quasars: general, radiative transfer}
-  \strng{namehash}{KSK+1}
-  \strng{fullhash}{KSKEJEGSCDRP1}
-  \field{labelyear}{2012}
+  \keyw{quasars: general}
+  \strng{namehash}{KM+1}
+  \strng{fullhash}{KMHLCLCJLMBAWKAE1}
+  \field{labelyear}{2013}
   \field{sortinit}{K}
-  \field{eid}{32}
+  \field{eid}{L9}
   \verb{eprint}
-  \verb 1202.4681
+  \verb 1303.7194
   \endverb
-  \field{pages}{32}
-  \field{title}{{Sweeping Away the Mysteries of Dusty Continuous Winds in
-  Active Galactic Nuclei}}
-  \field{volume}{749}
-  \field{journaltitle}{\apj}
+  \field{pages}{L9}
+  \field{title}{{Evidence for Active Galactic Nucleus Driven Outflows in Young
+  Radio Quasars}}
+  \field{volume}{768}
+  \field{journaltitle}{\apjl}
   \field{eprinttype}{arXiv}
-  \field{month}{04}
-  \field{year}{2012}
+  \field{month}{05}
+  \field{year}{2013}
 \endentry
 
 \entry{king03}{article}{}
@@ -2996,350 +1800,50 @@
   \field{year}{2015}
 \endentry
 
-\entry{kollmeier06}{article}{}
-  \name{author}{12}{}{%
+\entry{liu13}{article}{}
+  \name{author}{5}{}{%
     {{}%
-     {{Kollmeier}}{K.}%
-     {J.~A.}{J.~A.}%
+     {{Liu}}{L.}%
+     {G.}{G.}%
      {}{}%
      {}{}}%
     {{}%
-     {{Onken}}{O.}%
-     {C.~A.}{C.~A.}%
+     {{Zakamska}}{Z.}%
+     {N.~L.}{N.~L.}%
      {}{}%
      {}{}}%
     {{}%
-     {{Kochanek}}{K.}%
-     {C.~S.}{C.~S.}%
+     {{Greene}}{G.}%
+     {J.~E.}{J.~E.}%
      {}{}%
      {}{}}%
     {{}%
-     {{Gould}}{G.}%
-     {A.}{A.}%
+     {{Nesvadba}}{N.}%
+     {N.~P.~H.}{N.~P.~H.}%
      {}{}%
      {}{}}%
     {{}%
-     {{Weinberg}}{W.}%
-     {D.~H.}{D.~H.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Dietrich}}{D.}%
-     {M.}{M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Cool}}{C.}%
-     {R.}{R.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Dey}}{D.}%
-     {A.}{A.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Eisenstein}}{E.}%
-     {D.~J.}{D.~J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Jannuzi}}{J.}%
-     {B.~T.}{B.~T.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Le Floc'h}}{L.}%
-     {E.}{E.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Stern}}{S.}%
-     {D.}{D.}%
+     {{Liu}}{L.}%
+     {X.}{X.}%
      {}{}%
      {}{}}%
   }
-  \keyw{Galaxies: Active, Galaxies: Nuclei, Surveys}
-  \strng{namehash}{KJA+1}
-  \strng{fullhash}{KJAOCAKCSGAWDHDMCRDAEDJJBTLESD1}
-  \field{labelyear}{2006}
-  \field{sortinit}{K}
-  \verb{eprint}
-  \verb astro-ph/0508657
-  \endverb
-  \field{pages}{128\bibrangedash 139}
-  \field{title}{{Black Hole Masses and Eddington Ratios at 0.3 $\lt$ z $\lt$
-  4}}
-  \field{volume}{648}
-  \field{journaltitle}{\apj}
-  \field{eprinttype}{arXiv}
-  \field{month}{09}
-  \field{year}{2006}
-\endentry
-
-\entry{konigl94}{article}{}
-  \name{author}{2}{}{%
-    {{}%
-     {{Konigl}}{K.}%
-     {A.}{A.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Kartje}}{K.}%
-     {J.~F.}{J.~F.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{Accretion Disks, Active Galactic Nuclei, Astronomical Models, Bl
-  Lacertae Objects, Computerized Simulation, Jet Flow, Magnetohydrodynamic
-  Flow, Quasars, Seyfert Galaxies, Stellar Winds, Cosmic Dust, Infrared
-  Spectra, Photoionization, Radiative Transfer, Radio Emission, Ultraviolet
-  Spectra, X Ray Spectra}
-  \strng{namehash}{KAKJF1}
-  \strng{fullhash}{KAKJF1}
-  \field{labelyear}{1994}
-  \field{sortinit}{K}
-  \field{pages}{446\bibrangedash 467}
-  \field{title}{{Disk-driven hydromagnetic winds as a key ingredient of active
-  galactic nuclei unification schemes}}
-  \field{volume}{434}
-  \field{journaltitle}{\apj}
-  \field{month}{10}
-  \field{year}{1994}
-\endentry
-
-\entry{kormendy13}{article}{}
-  \name{author}{2}{}{%
-    {{}%
-     {{Kormendy}}{K.}%
-     {J.}{J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Ho}}{H.}%
-     {L.~C.}{L.~C.}%
-     {}{}%
-     {}{}}%
-  }
-  \strng{namehash}{KJHLC1}
-  \strng{fullhash}{KJHLC1}
+  \keyw{quasars: emission lines}
+  \strng{namehash}{LG+1}
+  \strng{fullhash}{LGZNLGJENNPHLX1}
   \field{labelyear}{2013}
-  \field{sortinit}{K}
+  \field{sortinit}{L}
   \verb{eprint}
-  \verb 1304.7762
+  \verb 1305.6922
   \endverb
-  \field{pages}{511\bibrangedash 653}
-  \field{title}{{Coevolution (Or Not) of Supermassive Black Holes and Host
-  Galaxies}}
-  \field{volume}{51}
-  \field{journaltitle}{\araa}
+  \field{pages}{2576\bibrangedash 2597}
+  \field{title}{{Observations of feedback from radio-quiet quasars - II.
+  Kinematics of ionized gas nebulae}}
+  \field{volume}{436}
+  \field{journaltitle}{\mnras}
   \field{eprinttype}{arXiv}
-  \field{month}{08}
+  \field{month}{12}
   \field{year}{2013}
-\endentry
-
-\entry{kormendy95}{article}{}
-  \name{author}{2}{}{%
-    {{}%
-     {{Kormendy}}{K.}%
-     {J.}{J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Richstone}}{R.}%
-     {D.}{D.}%
-     {}{}%
-     {}{}}%
-  }
-  \strng{namehash}{KJRD1}
-  \strng{fullhash}{KJRD1}
-  \field{labelyear}{1995}
-  \field{sortinit}{K}
-  \field{pages}{581}
-  \field{title}{{Inward Bound---The Search For Supermassive Black Holes In
-  Galactic Nuclei}}
-  \field{volume}{33}
-  \field{journaltitle}{\araa}
-  \field{year}{1995}
-\endentry
-
-\entry{lynden-bell69}{article}{}
-  \name{author}{1}{}{%
-    {{}%
-     {{Lynden-Bell}}{L.}%
-     {D.}{D.}%
-     {}{}%
-     {}{}}%
-  }
-  \strng{namehash}{LD1}
-  \strng{fullhash}{LD1}
-  \field{labelyear}{1969}
-  \field{sortinit}{L}
-  \field{pages}{690\bibrangedash 694}
-  \field{title}{{Galactic Nuclei as Collapsed Old Quasars}}
-  \field{volume}{223}
-  \field{journaltitle}{\nat}
-  \field{month}{08}
-  \field{year}{1969}
-\endentry
-
-\entry{lynden-bell71}{article}{}
-  \name{author}{2}{}{%
-    {{}%
-     {{Lynden-Bell}}{L.}%
-     {D.}{D.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Rees}}{R.}%
-     {M.~J.}{M.~J.}%
-     {}{}%
-     {}{}}%
-  }
-  \strng{namehash}{LDRMJ1}
-  \strng{fullhash}{LDRMJ1}
-  \field{labelyear}{1971}
-  \field{sortinit}{L}
-  \field{pages}{461}
-  \field{title}{{On quasars, dust and the galactic centre}}
-  \field{volume}{152}
-  \field{journaltitle}{\mnras}
-  \field{year}{1971}
-\endentry
-
-\entry{marconi03}{article}{}
-  \name{author}{2}{}{%
-    {{}%
-     {{Marconi}}{M.}%
-     {A.}{A.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Hunt}}{H.}%
-     {L.~K.}{L.~K.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{Black Hole Physics, Galaxies: Bulges, Galaxies: Fundamental Parameters,
-  Galaxies: Nuclei}
-  \strng{namehash}{MAHLK1}
-  \strng{fullhash}{MAHLK1}
-  \field{labelyear}{2003}
-  \field{sortinit}{M}
-  \verb{eprint}
-  \verb astro-ph/0304274
-  \endverb
-  \field{pages}{L21\bibrangedash L24}
-  \field{title}{{The Relation between Black Hole Mass, Bulge Mass, and
-  Near-Infrared Luminosity}}
-  \field{volume}{589}
-  \field{journaltitle}{\apjl}
-  \field{eprinttype}{arXiv}
-  \field{month}{05}
-  \field{year}{2003}
-\endentry
-
-\entry{marziani12}{article}{}
-  \name{author}{2}{}{%
-    {{}%
-     {{Marziani}}{M.}%
-     {P.}{P.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Sulentic}}{S.}%
-     {J.~W.}{J.~W.}%
-     {}{}%
-     {}{}}%
-  }
-  \strng{namehash}{MPSJW1}
-  \strng{fullhash}{MPSJW1}
-  \field{labelyear}{2012}
-  \field{sortinit}{M}
-  \verb{eprint}
-  \verb 1108.5102
-  \endverb
-  \field{pages}{49\bibrangedash 63}
-  \field{title}{{Estimating black hole masses in quasars using broad optical
-  and UV emission lines}}
-  \field{volume}{56}
-  \field{journaltitle}{\nar}
-  \field{eprinttype}{arXiv}
-  \field{month}{02}
-  \field{year}{2012}
-\endentry
-
-\entry{mcgill08}{article}{}
-  \name{author}{4}{}{%
-    {{}%
-     {{McGill}}{M.}%
-     {K.~L.}{K.~L.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Woo}}{W.}%
-     {J.-H.}{J.-H.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Treu}}{T.}%
-     {T.}{T.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Malkan}}{M.}%
-     {M.~A.}{M.~A.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{Black Hole Physics, Galaxies: Active, Galaxies: Evolution, Galaxies:
-  Quasars: General}
-  \strng{namehash}{MKL+1}
-  \strng{fullhash}{MKLWJHTTMMA1}
-  \field{labelyear}{2008}
-  \field{sortinit}{M}
-  \verb{eprint}
-  \verb 0710.1839
-  \endverb
-  \field{pages}{703\bibrangedash 714}
-  \field{title}{{Comparing and Calibrating Black Hole Mass Estimators for
-  Distant Active Galactic Nuclei}}
-  \field{volume}{673}
-  \field{journaltitle}{\apj}
-  \field{eprinttype}{arXiv}
-  \field{month}{02}
-  \field{year}{2008}
-\endentry
-
-\entry{mclure02}{article}{}
-  \name{author}{2}{}{%
-    {{}%
-     {{McLure}}{M.}%
-     {R.~J.}{R.~J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Jarvis}}{J.}%
-     {M.~J.}{M.~J.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{galaxies: active, galaxies: fundamental parameters, galaxies:
-  high-redshift, galaxies: nuclei, quasars: emission lines, quasars: general}
-  \strng{namehash}{MRJJMJ1}
-  \strng{fullhash}{MRJJMJ1}
-  \field{labelyear}{2002}
-  \field{sortinit}{M}
-  \verb{eprint}
-  \verb astro-ph/0204473
-  \endverb
-  \field{pages}{109\bibrangedash 116}
-  \field{title}{{Measuring the black hole masses of high-redshift quasars}}
-  \field{volume}{337}
-  \field{journaltitle}{\mnras}
-  \field{eprinttype}{arXiv}
-  \field{month}{11}
-  \field{year}{2002}
 \endentry
 
 \entry{moe09}{article}{}
@@ -3384,41 +1888,56 @@
   \field{year}{2009}
 \endentry
 
-\entry{murray95}{article}{}
-  \name{author}{4}{}{%
+\entry{mullaney13}{article}{}
+  \name{author}{6}{}{%
     {{}%
-     {{Murray}}{M.}%
-     {N.}{N.}%
+     {{Mullaney}}{M.}%
+     {J.~R.}{J.~R.}%
      {}{}%
      {}{}}%
     {{}%
-     {{Chiang}}{C.}%
-     {J.}{J.}%
+     {{Alexander}}{A.}%
+     {D.~M.}{D.~M.}%
      {}{}%
      {}{}}%
     {{}%
-     {{Grossman}}{G.}%
-     {S.~A.}{S.~A.}%
+     {{Fine}}{F.}%
+     {S.}{S.}%
      {}{}%
      {}{}}%
     {{}%
-     {{Voit}}{V.}%
-     {G.~M.}{G.~M.}%
+     {{Goulding}}{G.}%
+     {A.~D.}{A.~D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Harrison}}{H.}%
+     {C.~M.}{C.~M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hickox}}{H.}%
+     {R.~C.}{R.~C.}%
      {}{}%
      {}{}}%
   }
-  \keyw{ACCRETION, ACCRETION DISKS, GALAXIES: NUCLEI, GALAXIES: QUASARS:
-  ABSORPTION LINES}
-  \strng{namehash}{MN+1}
-  \strng{fullhash}{MNCJGSAVGM1}
-  \field{labelyear}{1995}
+  \keyw{catalogues, ISM: kinematics and dynamics, galaxies: active, quasars:
+  emission lines, radio continuum: galaxies}
+  \strng{namehash}{MJR+1}
+  \strng{fullhash}{MJRADMFSGADHCMHRC1}
+  \field{labelyear}{2013}
   \field{sortinit}{M}
-  \field{pages}{498}
-  \field{title}{{Accretion Disk Winds from Active Galactic Nuclei}}
-  \field{volume}{451}
-  \field{journaltitle}{\apj}
-  \field{month}{10}
-  \field{year}{1995}
+  \verb{eprint}
+  \verb 1305.0263
+  \endverb
+  \field{pages}{622\bibrangedash 638}
+  \field{title}{{Narrow-line region gas kinematics of 24 264 optically selected
+  AGN: the radio connection}}
+  \field{volume}{433}
+  \field{journaltitle}{\mnras}
+  \field{eprinttype}{arXiv}
+  \field{month}{07}
+  \field{year}{2013}
 \endentry
 
 \entry{nardini15}{article}{}
@@ -3708,306 +2227,206 @@
   \field{year}{2010}
 \endentry
 
-\entry{netzer97}{inproceedings}{}
-  \name{author}{2}{}{%
+\entry{netzer04}{article}{}
+  \name{author}{7}{}{%
     {{}%
      {{Netzer}}{N.}%
      {H.}{H.}%
      {}{}%
      {}{}}%
     {{}%
-     {{Peterson}}{P.}%
-     {B.~M.}{B.~M.}%
-     {}{}%
-     {}{}}%
-  }
-  \name{editor}{3}{}{%
-    {{}%
-     {{Maoz}}{M.}%
-     {D.}{D.}%
+     {{Shemmer}}{S.}%
+     {O.}{O.}%
      {}{}%
      {}{}}%
     {{}%
-     {{Sternberg}}{S.}%
-     {A.}{A.}%
+     {{Maiolino}}{M.}%
+     {R.}{R.}%
      {}{}%
      {}{}}%
     {{}%
-     {{Leibowitz}}{L.}%
-     {E.~M.}{E.~M.}%
-     {}{}%
-     {}{}}%
-  }
-  \strng{namehash}{NHPBM1}
-  \strng{fullhash}{NHPBM1}
-  \field{labelyear}{1997}
-  \field{sortinit}{N}
-  \field{booktitle}{Astronomical Time Series}
-  \verb{eprint}
-  \verb astro-ph/9706039
-  \endverb
-  \field{pages}{85}
-  \field{series}{Astrophysics and Space Science Library}
-  \field{title}{{Reverberation Mapping and the Physics of Active Galactic
-  Nuclei}}
-  \field{volume}{218}
-  \field{eprinttype}{arXiv}
-  \field{year}{1997}
-\endentry
-
-\entry{onken08}{article}{}
-  \name{author}{2}{}{%
-    {{}%
-     {{Onken}}{O.}%
-     {C.~A.}{C.~A.}%
+     {{Oliva}}{O.}%
+     {E.}{E.}%
      {}{}%
      {}{}}%
     {{}%
-     {{Kollmeier}}{K.}%
-     {J.~A.}{J.~A.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{black hole physics, galaxies: active, quasars: emission lines, surveys}
-  \strng{namehash}{OCAKJA1}
-  \strng{fullhash}{OCAKJA1}
-  \field{labelyear}{2008}
-  \field{sortinit}{O}
-  \verb{eprint}
-  \verb 0810.1950
-  \endverb
-  \field{pages}{L13}
-  \field{title}{{An Improved Method for Using Mg II to Estimate Black Hole
-  Masses in Active Galactic Nuclei}}
-  \field{volume}{689}
-  \field{journaltitle}{\apjl}
-  \field{eprinttype}{arXiv}
-  \field{month}{12}
-  \field{year}{2008}
-\endentry
-
-\entry{park13}{article}{}
-  \name{author}{4}{}{%
-    {{}%
-     {{Park}}{P.}%
-     {D.}{D.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Woo}}{W.}%
-     {J.-H.}{J.-H.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Denney}}{D.}%
-     {K.~D.}{K.~D.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Shin}}{S.}%
-     {J.}{J.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{black hole physics, galaxies: active, galaxies: nuclei, methods:
-  statistical}
-  \strng{namehash}{PD+1}
-  \strng{fullhash}{PDWJHDKDSJ1}
-  \field{labelyear}{2013}
-  \field{sortinit}{P}
-  \verb{eprint}
-  \verb 1304.7281
-  \endverb
-  \field{pages}{87}
-  \field{title}{{Calibrating C-IV-based Black Hole Mass Estimators}}
-  \field{volume}{770}
-  \field{journaltitle}{\apj}
-  \field{eprinttype}{arXiv}
-  \field{month}{06}
-  \field{year}{2013}
-\endentry
-
-\entry{peterson93}{article}{}
-  \name{author}{1}{}{%
-    {{}%
-     {{Peterson}}{P.}%
-     {B.~M.}{B.~M.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{Active Galactic Nuclei, Astronomical Maps, Emission Spectra,
-  Reverberation, Astronomical Spectroscopy, Cross Correlation, Luminosity,
-  Spectral Line Width, Transfer Functions}
-  \strng{namehash}{PBM1}
-  \strng{fullhash}{PBM1}
-  \field{labelyear}{1993}
-  \field{sortinit}{P}
-  \field{pages}{247\bibrangedash 268}
-  \field{title}{{Reverberation mapping of active galactic nuclei}}
-  \field{volume}{105}
-  \field{journaltitle}{\pasp}
-  \field{month}{03}
-  \field{year}{1993}
-\endentry
-
-\entry{peterson97}{book}{}
-  \name{author}{1}{}{%
-    {{}%
-     {{Peterson}}{P.}%
-     {B.~M.}{B.~M.}%
-     {}{}%
-     {}{}}%
-  }
-  \strng{namehash}{PBM1}
-  \strng{fullhash}{PBM1}
-  \field{labelyear}{1997}
-  \field{sortinit}{P}
-  \field{booktitle}{An introduction to active galactic nuclei, Publisher:
-  Cambridge, New York Cambridge University Press, 1997 Physical description
-  xvi, 238 p.~ISBN 0521473489}
-  \field{title}{{An Introduction to Active Galactic Nuclei}}
-  \field{month}{02}
-  \field{year}{1997}
-\endentry
-
-\entry{peterson10}{inproceedings}{}
-  \name{author}{1}{}{%
-    {{}%
-     {{Peterson}}{P.}%
-     {B.~M.}{B.~M.}%
-     {}{}%
-     {}{}}%
-  }
-  \name{editor}{3}{}{%
-    {{}%
-     {{Peterson}}{P.}%
-     {B.~M.}{B.~M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Somerville}}{S.}%
-     {R.~S.}{R.~S.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Storchi-Bergmann}}{S.}%
-     {T.}{T.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{galaxies: active, galaxies: nuclei, techniques: spectroscopic}
-  \strng{namehash}{PBM1}
-  \strng{fullhash}{PBM1}
-  \field{labelyear}{2010}
-  \field{sortinit}{P}
-  \field{booktitle}{Co-Evolution of Central Black Holes and Galaxies}
-  \verb{eprint}
-  \verb 1001.3675
-  \endverb
-  \field{pages}{151\bibrangedash 160}
-  \field{series}{IAU Symposium}
-  \field{title}{{Toward Precision Measurement of Central Black Hole Masses}}
-  \field{volume}{267}
-  \field{eprinttype}{arXiv}
-  \field{month}{05}
-  \field{year}{2010}
-\endentry
-
-\entry{peterson11}{article}{}
-  \name{author}{1}{}{%
-    {{}%
-     {{Peterson}}{P.}%
-     {B.~M.}{B.~M.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{Astrophysics - Cosmology and Extragalactic Astrophysics}
-  \strng{namehash}{PBM1}
-  \strng{fullhash}{PBM1}
-  \field{labelyear}{2011}
-  \field{sortinit}{P}
-  \verb{eprint}
-  \verb 1109.4181
-  \endverb
-  \field{title}{{Masses of Black Holes in Active Galactic Nuclei: Implications
-  for NLS1s}}
-  \field{journaltitle}{ArXiv e-prints}
-  \field{eprinttype}{arXiv}
-  \field{month}{09}
-  \field{year}{2011}
-\endentry
-
-\entry{peterson14}{article}{}
-  \name{author}{1}{}{%
-    {{}%
-     {{Peterson}}{P.}%
-     {B.~M.}{B.~M.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{Active galactic nuclei, Black hole, Reverberation mapping}
-  \strng{namehash}{PBM1}
-  \strng{fullhash}{PBM1}
-  \field{labelyear}{2014}
-  \field{sortinit}{P}
-  \field{pages}{253\bibrangedash 275}
-  \field{title}{{Measuring the Masses of Supermassive Black Holes}}
-  \field{volume}{183}
-  \field{journaltitle}{\ssr}
-  \field{month}{09}
-  \field{year}{2014}
-\endentry
-
-\entry{peterson04}{article}{}
-  \name{author}{12}{}{%
-    {{}%
-     {{Peterson}}{P.}%
-     {B.~M.}{B.~M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Ferrarese}}{F.}%
-     {L.}{L.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Gilbert}}{G.}%
-     {K.~M.}{K.~M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Kaspi}}{K.}%
+     {{Croom}}{C.}%
      {S.}{S.}%
      {}{}%
      {}{}}%
     {{}%
-     {{Malkan}}{M.}%
-     {M.~A.}{M.~A.}%
+     {{Corbett}}{C.}%
+     {E.}{E.}%
      {}{}%
      {}{}}%
     {{}%
-     {{Maoz}}{M.}%
-     {D.}{D.}%
+     {{di Fabrizio}}{d.}%
+     {L.}{L.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Galaxies: Active, Galaxies: Nuclei, Galaxies: Seyfert, Galaxies:
+  Starburst, Galaxies: Quasars: Emission Lines}
+  \strng{namehash}{NH+1}
+  \strng{fullhash}{NHSOMROECSCEdL1}
+  \field{labelyear}{2004}
+  \field{sortinit}{N}
+  \verb{eprint}
+  \verb astro-ph/0406560
+  \endverb
+  \field{pages}{558\bibrangedash 567}
+  \field{title}{{Near-Infrared Spectroscopy of High-Redshift Active Galactic
+  Nuclei. II. Disappearing Narrow-Line Regions and the Role of Accretion}}
+  \field{volume}{614}
+  \field{journaltitle}{\apj}
+  \field{eprinttype}{arXiv}
+  \field{month}{10}
+  \field{year}{2004}
+\endentry
+
+\entry{perna15}{article}{}
+  \name{author}{13}{}{%
+    {{}%
+     {{Perna}}{P.}%
+     {M.}{M.}%
      {}{}%
      {}{}}%
     {{}%
-     {{Merritt}}{M.}%
-     {D.}{D.}%
+     {{Brusa}}{B.}%
+     {M.}{M.}%
      {}{}%
      {}{}}%
     {{}%
-     {{Netzer}}{N.}%
-     {H.}{H.}%
+     {{Cresci}}{C.}%
+     {G.}{G.}%
      {}{}%
      {}{}}%
     {{}%
-     {{Onken}}{O.}%
-     {C.~A.}{C.~A.}%
+     {{Comastri}}{C.}%
+     {A.}{A.}%
      {}{}%
      {}{}}%
     {{}%
-     {{Pogge}}{P.}%
-     {R.~W.}{R.~W.}%
+     {{Lanzuisi}}{L.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Lusso}}{L.}%
+     {E.}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Marconi}}{M.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Salvato}}{S.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Zamorani}}{Z.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Bongiorno}}{B.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Mainieri}}{M.}%
+     {V.}{V.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Maiolino}}{M.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Mignoli}}{M.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Galaxy: evolution, quasars: individual: XID2028, galaxies: active,
+  quasars: emission lines}
+  \strng{namehash}{PM+1}
+  \strng{fullhash}{PMBMCGCALGLEMASMZGBAMVMRMM1}
+  \field{labelyear}{2015}
+  \field{sortinit}{P}
+  \field{eid}{A82}
+  \verb{eprint}
+  \verb 1410.5468
+  \endverb
+  \field{pages}{A82}
+  \field{title}{{Galaxy-wide outflows in z \~{} 1.5 luminous obscured quasars
+  revealed through near-IR slit-resolved spectroscopy}}
+  \field{volume}{574}
+  \field{journaltitle}{\aap}
+  \field{eprinttype}{arXiv}
+  \field{month}{02}
+  \field{year}{2015}
+\endentry
+
+\entry{richards06}{article}{}
+  \name{author}{17}{}{%
+    {{}%
+     {{Richards}}{R.}%
+     {G.~T.}{G.~T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Lacy}}{L.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Storrie-Lombardi}}{S.}%
+     {L.~J.}{L.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hall}}{H.}%
+     {P.~B.}{P.~B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Gallagher}}{G.}%
+     {S.~C.}{S.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hines}}{H.}%
+     {D.~C.}{D.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Fan}}{F.}%
+     {X.}{X.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Papovich}}{P.}%
+     {C.}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Vanden Berk}}{V.}%
+     {D.~E.}{D.~E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Trammell}}{T.}%
+     {G.~B.}{G.~B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Schneider}}{S.}%
+     {D.~P.}{D.~P.}%
      {}{}%
      {}{}}%
     {{}%
@@ -4016,248 +2435,8 @@
      {}{}%
      {}{}}%
     {{}%
-     {{Wandel}}{W.}%
-     {A.}{A.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{Galaxies: Active, Galaxies: Nuclei, Galaxies: Seyfert, Galaxies:
-  Quasars: Emission Lines}
-  \strng{namehash}{PBM+1}
-  \strng{fullhash}{PBMFLGKMKSMMAMDMDNHOCAPRWVMWA1}
-  \field{labelyear}{2004}
-  \field{sortinit}{P}
-  \verb{eprint}
-  \verb astro-ph/0407299
-  \endverb
-  \field{pages}{682\bibrangedash 699}
-  \field{title}{{Central Masses and Broad-Line Region Sizes of Active Galactic
-  Nuclei. II. A Homogeneous Analysis of a Large Reverberation-Mapping
-  Database}}
-  \field{volume}{613}
-  \field{journaltitle}{\apj}
-  \field{eprinttype}{arXiv}
-  \field{month}{10}
-  \field{year}{2004}
-\endentry
-
-\entry{proga00}{article}{}
-  \name{author}{3}{}{%
-    {{}%
-     {{Proga}}{P.}%
-     {D.}{D.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Stone}}{S.}%
-     {J.~M.}{J.~M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Kallman}}{K.}%
-     {T.~R.}{T.~R.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{Accretion, Accretion Disks, Galaxies: Active, Hydrodynamics,
-  Instabilities, Methods: Numerical}
-  \strng{namehash}{PDSJMKTR1}
-  \strng{fullhash}{PDSJMKTR1}
-  \field{labelyear}{2000}
-  \field{sortinit}{P}
-  \verb{eprint}
-  \verb astro-ph/0005315
-  \endverb
-  \field{pages}{686\bibrangedash 696}
-  \field{title}{{Dynamics of Line-driven Disk Winds in Active Galactic Nuclei}}
-  \field{volume}{543}
-  \field{journaltitle}{\apj}
-  \field{eprinttype}{arXiv}
-  \field{month}{11}
-  \field{year}{2000}
-\endentry
-
-\entry{rafiee11}{article}{}
-  \name{author}{2}{}{%
-    {{}%
-     {{Rafiee}}{R.}%
-     {A.}{A.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Hall}}{H.}%
-     {P.~B.}{P.~B.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{catalogs, methods: data analysis, quasars: emission lines, quasars:
-  general}
-  \strng{namehash}{RAHPB1}
-  \strng{fullhash}{RAHPB1}
-  \field{labelyear}{2011}
-  \field{sortinit}{R}
-  \field{eid}{42}
-  \verb{eprint}
-  \verb 1104.1828
-  \endverb
-  \field{pages}{42}
-  \field{title}{{Supermassive Black Hole Mass Estimates Using Sloan Digital Sky
-  Survey Quasar Spectra at 0.7 $\lt$ z $\lt$ 2}}
-  \field{volume}{194}
-  \field{journaltitle}{\apjs}
-  \field{eprinttype}{arXiv}
-  \field{month}{06}
-  \field{year}{2011}
-\endentry
-
-\entry{reichard03}{article}{}
-  \name{author}{9}{}{%
-    {{}%
-     {{Reichard}}{R.}%
-     {T.~A.}{T.~A.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Richards}}{R.}%
-     {G.~T.}{G.~T.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Hall}}{H.}%
-     {P.~B.}{P.~B.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Schneider}}{S.}%
-     {D.~P.}{D.~P.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Vanden Berk}}{V.}%
-     {D.~E.}{D.~E.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Fan}}{F.}%
-     {X.}{X.}%
-     {}{}%
-     {}{}}%
-    {{}%
      {{York}}{Y.}%
      {D.~G.}{D.~G.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Knapp}}{K.}%
-     {G.~R.}{G.~R.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Brinkmann}}{B.}%
-     {J.}{J.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{Galaxies: Quasars: Absorption Lines, Galaxies: Quasars: Emission Lines,
-  Galaxies: Quasars: General}
-  \strng{namehash}{RTA+1}
-  \strng{fullhash}{RTARGTHPBSDPVDEFXYDGKGRBJ1}
-  \field{labelyear}{2003}
-  \field{sortinit}{R}
-  \verb{eprint}
-  \verb astro-ph/0308508
-  \endverb
-  \field{pages}{2594\bibrangedash 2607}
-  \field{title}{{Continuum and Emission-Line Properties of Broad Absorption
-  Line Quasars}}
-  \field{volume}{126}
-  \field{journaltitle}{\aj}
-  \field{eprinttype}{arXiv}
-  \field{month}{12}
-  \field{year}{2003}
-\endentry
-
-\entry{richards02}{article}{}
-  \name{author}{8}{}{%
-    {{}%
-     {{Richards}}{R.}%
-     {G.~T.}{G.~T.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Vanden Berk}}{V.}%
-     {D.~E.}{D.~E.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Reichard}}{R.}%
-     {T.~A.}{T.~A.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Hall}}{H.}%
-     {P.~B.}{P.~B.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Schneider}}{S.}%
-     {D.~P.}{D.~P.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{SubbaRao}}{S.}%
-     {M.}{M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Thakar}}{T.}%
-     {A.~R.}{A.~R.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{York}}{Y.}%
-     {D.~G.}{D.~G.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{--Galaxies: Quasars: Emission Lines, Galaxies: Quasars: General}
-  \strng{namehash}{RGT+1}
-  \strng{fullhash}{RGTVDERTAHPBSDPSMTARYDG1}
-  \field{labelyear}{2002}
-  \field{sortinit}{R}
-  \verb{eprint}
-  \verb astro-ph/0204162
-  \endverb
-  \field{pages}{1\bibrangedash 17}
-  \field{title}{{Broad Emission-Line Shifts in Quasars: An Orientation Measure
-  for Radio-Quiet Quasars?}}
-  \field{volume}{124}
-  \field{journaltitle}{\aj}
-  \field{eprinttype}{arXiv}
-  \field{month}{07}
-  \field{year}{2002}
-\endentry
-
-\entry{richards06b}{article}{}
-  \name{author}{37}{}{%
-    {{}%
-     {{Richards}}{R.}%
-     {G.~T.}{G.~T.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Strauss}}{S.}%
-     {M.~A.}{M.~A.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Fan}}{F.}%
-     {X.}{X.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Hall}}{H.}%
-     {P.~B.}{P.~B.}%
      {}{}%
      {}{}}%
     {{}%
@@ -4266,68 +2445,13 @@
      {}{}%
      {}{}}%
     {{}%
-     {{Schneider}}{S.}%
-     {D.~P.}{D.~P.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Vanden Berk}}{V.}%
-     {D.~E.}{D.~E.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Stoughton}}{S.}%
-     {C.}{C.}%
-     {}{}%
-     {}{}}%
-    {{}%
      {{Anderson}}{A.}%
      {S.~F.}{S.~F.}%
      {}{}%
      {}{}}%
     {{}%
-     {{Brunner}}{B.}%
-     {R.~J.}{R.~J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Gray}}{G.}%
-     {J.}{J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Gunn}}{G.}%
-     {J.~E.}{J.~E.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Ivezi{\'c}}}{I.}%
-     {{\v Z}.}{{\v Z}.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Kirkland}}{K.}%
-     {M.~K.}{M.~K.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Knapp}}{K.}%
-     {G.~R.}{G.~R.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Loveday}}{L.}%
-     {J.}{J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Meiksin}}{M.}%
-     {A.}{A.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Pope}}{P.}%
-     {A.}{A.}%
+     {{Budav{\'a}ri}}{B.}%
+     {T.}{T.}%
      {}{}%
      {}{}}%
     {{}%
@@ -4335,113 +2459,24 @@
      {A.~S.}{A.~S.}%
      {}{}%
      {}{}}%
-    {{}%
-     {{Thakar}}{T.}%
-     {A.~R.}{A.~R.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Yanny}}{Y.}%
-     {B.}{B.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{York}}{Y.}%
-     {D.~G.}{D.~G.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Barentine}}{B.}%
-     {J.~C.}{J.~C.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Brewington}}{B.}%
-     {H.~J.}{H.~J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Brinkmann}}{B.}%
-     {J.}{J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Fukugita}}{F.}%
-     {M.}{M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Harvanek}}{H.}%
-     {M.}{M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Kent}}{K.}%
-     {S.~M.}{S.~M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Kleinman}}{K.}%
-     {S.~J.}{S.~J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Krzesi{\'n}ski}}{K.}%
-     {J.}{J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Long}}{L.}%
-     {D.~C.}{D.~C.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Lupton}}{L.}%
-     {R.~H.}{R.~H.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Nash}}{N.}%
-     {T.}{T.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Neilsen}}{N.}%
-     {E.~H.}{E.~H.}%
-     {}{}%
-     {Jr.}{J.}}%
-    {{}%
-     {{Nitta}}{N.}%
-     {A.}{A.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Schlegel}}{S.}%
-     {D.~J.}{D.~J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Snedden}}{S.}%
-     {S.~A.}{S.~A.}%
-     {}{}%
-     {}{}}%
   }
-  \keyw{Cosmology: Observations, Galaxies: Active, Galaxies: Luminosity
-  Function, Mass Function, Galaxies: Quasars: General, Surveys}
+  \keyw{Catalogs, Galaxies: Active, Infrared: Galaxies, Galaxies: Quasars:
+  General, Radio Continuum: Galaxies, Surveys, Ultraviolet: Galaxies, X-Rays:
+  Galaxies}
   \strng{namehash}{RGT+1}
-  \strng{fullhash}{RGTSMAFXHPBJSSDPVDESCASFBRJGJGJEIZKMKKGRLJMAPASASTARYBYDGBJCBHJBJFMHMKSMKSJKJLDCLRHNTNJEHNASDJSSA1}
+  \strng{fullhash}{RGTLMSLJHPBGSCHDCFXPCVDETGBSDPVMYDGJSASFBTSAS1}
   \field{labelyear}{2006}
   \field{sortinit}{R}
   \verb{eprint}
-  \verb astro-ph/0601434
+  \verb astro-ph/0601558
   \endverb
-  \field{pages}{2766\bibrangedash 2787}
-  \field{title}{{The Sloan Digital Sky Survey Quasar Survey: Quasar Luminosity
-  Function from Data Release 3}}
-  \field{volume}{131}
-  \field{journaltitle}{\aj}
+  \field{pages}{470\bibrangedash 497}
+  \field{title}{{Spectral Energy Distributions and Multiwavelength Selection of
+  Type 1 Quasars}}
+  \field{volume}{166}
+  \field{journaltitle}{\apjs}
   \field{eprinttype}{arXiv}
-  \field{month}{06}
+  \field{month}{10}
   \field{year}{2006}
 \endentry
 
@@ -4511,8 +2546,8 @@
   \field{year}{2011}
 \endentry
 
-\entry{runnoe13b}{article}{}
-  \name{author}{5}{}{%
+\entry{runnoe13}{article}{}
+  \name{author}{4}{}{%
     {{}%
      {{Runnoe}}{R.}%
      {J.~C.}{J.~C.}%
@@ -4529,32 +2564,26 @@
      {}{}%
      {}{}}%
     {{}%
-     {{Wills}}{W.}%
-     {B.~J.}{B.~J.}%
-     {}{}%
-     {}{}}%
-    {{}%
      {{DiPompeo}}{D.}%
      {M.~A.}{M.~A.}%
      {}{}%
      {}{}}%
   }
-  \keyw{accretion, accretion discs, black hole physics, galaxies: active,
-  quasars: general}
+  \keyw{galaxies: active, quasars: general}
   \strng{namehash}{RJC+1}
-  \strng{fullhash}{RJCBMSSZWBJDMA1}
+  \strng{fullhash}{RJCBMSSZDMA1}
   \field{labelyear}{2013}
   \field{sortinit}{R}
   \verb{eprint}
-  \verb 1211.3984
+  \verb 1306.3521
   \endverb
-  \field{pages}{135\bibrangedash 149}
-  \field{title}{{The orientation dependence of quasar single-epoch black hole
-  mass scaling relationships}}
-  \field{volume}{429}
+  \field{pages}{848\bibrangedash 861}
+  \field{title}{{Rehabilitating C IV-based black hole mass estimates in
+  quasars}}
+  \field{volume}{434}
   \field{journaltitle}{\mnras}
   \field{eprinttype}{arXiv}
-  \field{month}{02}
+  \field{month}{09}
   \field{year}{2013}
 \endentry
 
@@ -4591,47 +2620,7 @@
   \field{year}{2013}
 \endentry
 
-\entry{salpeter64}{article}{}
-  \name{author}{1}{}{%
-    {{}%
-     {{Salpeter}}{S.}%
-     {E.~E.}{E.~E.}%
-     {}{}%
-     {}{}}%
-  }
-  \strng{namehash}{SEE1}
-  \strng{fullhash}{SEE1}
-  \field{labelyear}{1964}
-  \field{sortinit}{S}
-  \field{pages}{796\bibrangedash 800}
-  \field{title}{{Accretion of Interstellar Matter by Massive Objects.}}
-  \field{volume}{140}
-  \field{journaltitle}{\apj}
-  \field{month}{08}
-  \field{year}{1964}
-\endentry
-
-\entry{schmidt63}{article}{}
-  \name{author}{1}{}{%
-    {{}%
-     {{Schmidt}}{S.}%
-     {M.}{M.}%
-     {}{}%
-     {}{}}%
-  }
-  \strng{namehash}{SM1}
-  \strng{fullhash}{SM1}
-  \field{labelyear}{1963}
-  \field{sortinit}{S}
-  \field{pages}{1040}
-  \field{title}{{3C 273 : A Star-Like Object with Large Red-Shift}}
-  \field{volume}{197}
-  \field{journaltitle}{\nat}
-  \field{month}{03}
-  \field{year}{1963}
-\endentry
-
-\entry{shen13}{article}{}
+\entry{shen16a}{article}{}
   \name{author}{1}{}{%
     {{}%
      {{Shen}}{S.}%
@@ -4639,21 +2628,20 @@
      {}{}%
      {}{}}%
   }
-  \keyw{black hole physics, galaxies: active, quasars: general, surveys}
   \strng{namehash}{SY1}
   \strng{fullhash}{SY1}
-  \field{labelyear}{2013}
+  \field{labelyear}{2016}
   \field{sortinit}{S}
   \verb{eprint}
-  \verb 1302.2643
+  \verb 1512.00005
   \endverb
-  \field{pages}{61\bibrangedash 115}
-  \field{title}{{The mass of quasars}}
-  \field{volume}{41}
-  \field{journaltitle}{Bulletin of the Astronomical Society of India}
+  \field{title}{{Rest-Frame Optical Properties of Luminous 1.5 $\lt$ z $\lt$
+  3.5 Quasars: The H$\beta$-[O\,{\sc iii}] Region}}
+  \field{volume}{in press}
+  \field{journaltitle}{\apj}
   \field{eprinttype}{arXiv}
-  \field{month}{03}
-  \field{year}{2013}
+  \field{month}{01}
+  \field{year}{2016}
 \endentry
 
 \entry{shen14}{article}{}
@@ -4803,6 +2791,86 @@
   \field{year}{2011}
 \endentry
 
+\entry{shen16b}{article}{}
+  \name{author}{12}{}{%
+    {{}%
+     {{Shen}}{S.}%
+     {Y.}{Y.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Brandt}}{B.}%
+     {W.~N.}{W.~N.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Denney}}{D.}%
+     {K.~D.}{K.~D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Greene}}{G.}%
+     {J.~E.}{J.~E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Grier}}{G.}%
+     {C.~J.}{C.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Ho}}{H.}%
+     {L.~C.}{L.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Peterson}}{P.}%
+     {B.~M.}{B.~M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Petitjean}}{P.}%
+     {P.}{P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Richards}}{R.}%
+     {G.~T.}{G.~T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Schneider}}{S.}%
+     {D.~P.}{D.~P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Tao}}{T.}%
+     {C.}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Trump}}{T.}%
+     {J.~R.}{J.~R.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Astrophysics - Astrophysics of Galaxies, Astrophysics - Cosmology and
+  Nongalactic Astrophysics}
+  \strng{namehash}{SY+1}
+  \strng{fullhash}{SYBWNDKDGJEGCJHLCPBMPPRGTSDPTCTJR1}
+  \field{labelyear}{2016}
+  \field{sortinit}{S}
+  \verb{eprint}
+  \verb 1602.03894
+  \endverb
+  \field{title}{{The Sloan Digital Sky Survey Reverberation Mapping Project:
+  Velocity Shifts of Quasar Emission Lines}}
+  \field{journaltitle}{ArXiv e-prints}
+  \field{eprinttype}{arXiv}
+  \field{month}{02}
+  \field{year}{2016}
+\endentry
+
 \entry{silk98}{article}{}
   \name{author}{2}{}{%
     {{}%
@@ -4833,199 +2901,248 @@
   \field{year}{1998}
 \endentry
 
-\entry{trakhtenbrot12}{article}{}
+\entry{stern12}{article}{}
   \name{author}{2}{}{%
     {{}%
-     {{Trakhtenbrot}}{T.}%
-     {B.}{B.}%
+     {{Stern}}{S.}%
+     {J.}{J.}%
      {}{}%
      {}{}}%
     {{}%
-     {{Netzer}}{N.}%
-     {H.}{H.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{galaxies: active, galaxies: nuclei, quasars: emission lines - quasars:
-  general}
-  \strng{namehash}{TBNH1}
-  \strng{fullhash}{TBNH1}
-  \field{labelyear}{2012}
-  \field{sortinit}{T}
-  \verb{eprint}
-  \verb 1209.1096
-  \endverb
-  \field{pages}{3081\bibrangedash 3102}
-  \field{title}{{Black hole growth to z = 2 - I. Improved virial methods for
-  measuring M$_{BH}$ and L/L$_{Edd}$}}
-  \field{volume}{427}
-  \field{journaltitle}{\mnras}
-  \field{eprinttype}{arXiv}
-  \field{month}{12}
-  \field{year}{2012}
-\endentry
-
-\entry{tremaine02}{article}{}
-  \name{author}{15}{}{%
-    {{}%
-     {{Tremaine}}{T.}%
-     {S.}{S.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Gebhardt}}{G.}%
-     {K.}{K.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Bender}}{B.}%
-     {R.}{R.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Bower}}{B.}%
-     {G.}{G.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Dressler}}{D.}%
+     {{Laor}}{L.}%
      {A.}{A.}%
      {}{}%
      {}{}}%
+  }
+  \keyw{galaxies: Seyfert}
+  \strng{namehash}{SJLA1}
+  \strng{fullhash}{SJLA1}
+  \field{labelyear}{2012}
+  \field{sortinit}{S}
+  \verb{eprint}
+  \verb 1207.5543
+  \endverb
+  \field{pages}{2703\bibrangedash 2718}
+  \field{title}{{Type 1 AGN at low z - II. The relative strength of narrow
+  lines and the nature of intermediate type AGN}}
+  \field{volume}{426}
+  \field{journaltitle}{\mnras}
+  \field{eprinttype}{arXiv}
+  \field{month}{11}
+  \field{year}{2012}
+\endentry
+
+\entry{stockton76}{article}{}
+  \name{author}{1}{}{%
     {{}%
-     {{Faber}}{F.}%
-     {S.~M.}{S.~M.}%
+     {{Stockton}}{S.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{SA1}
+  \strng{fullhash}{SA1}
+  \field{labelyear}{1976}
+  \field{sortinit}{S}
+  \field{pages}{L113}
+  \field{title}{{The Structure and Spectrum of Nebulosity Associated with the
+  QSO 4c 37.43}}
+  \field{volume}{205}
+  \field{journaltitle}{\apjl}
+  \field{month}{05}
+  \field{year}{1976}
+\endentry
+
+\entry{sulentic00b}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {{Sulentic}}{S.}%
+     {J.~W.}{J.~W.}%
      {}{}%
      {}{}}%
     {{}%
-     {{Filippenko}}{F.}%
-     {A.~V.}{A.~V.}%
+     {{Zwitter}}{Z.}%
+     {T.}{T.}%
      {}{}%
      {}{}}%
     {{}%
-     {{Green}}{G.}%
-     {R.}{R.}%
+     {{Marziani}}{M.}%
+     {P.}{P.}%
      {}{}%
      {}{}}%
     {{}%
-     {{Grillmair}}{G.}%
-     {C.}{C.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Ho}}{H.}%
-     {L.~C.}{L.~C.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Kormendy}}{K.}%
-     {J.}{J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Lauer}}{L.}%
-     {T.~R.}{T.~R.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Magorrian}}{M.}%
-     {J.}{J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Pinkney}}{P.}%
-     {J.}{J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Richstone}}{R.}%
+     {{Dultzin-Hacyan}}{D.}%
      {D.}{D.}%
      {}{}%
      {}{}}%
   }
-  \keyw{Black Hole Physics, Galaxies: Bulges, Galaxies: Fundamental Parameters,
-  Galaxies: Nuclei, Galaxy: Bulge, Galaxy: Kinematics and Dynamics}
-  \strng{namehash}{TS+1}
-  \strng{fullhash}{TSGKBRBGDAFSMFAVGRGCHLCKJLTRMJPJRD1}
-  \field{labelyear}{2002}
-  \field{sortinit}{T}
+  \keyw{Galaxies: Seyfert, Line: Formation, Line: Profiles, Galaxies: Quasars:
+  General}
+  \strng{namehash}{SJW+1}
+  \strng{fullhash}{SJWZTMPDD1}
+  \field{labelyear}{2000}
+  \field{sortinit}{S}
   \verb{eprint}
-  \verb astro-ph/0203468
+  \verb astro-ph/0005177
   \endverb
-  \field{pages}{740\bibrangedash 753}
-  \field{title}{{The Slope of the Black Hole Mass versus Velocity Dispersion
-  Correlation}}
-  \field{volume}{574}
-  \field{journaltitle}{\apj}
+  \field{pages}{L5\bibrangedash L9}
+  \field{title}{{Eigenvector 1: An Optimal Correlation Space for Active
+  Galactic Nuclei}}
+  \field{volume}{536}
+  \field{journaltitle}{\apjl}
   \field{eprinttype}{arXiv}
-  \field{month}{08}
-  \field{year}{2002}
+  \field{month}{06}
+  \field{year}{2000}
 \endentry
 
-\entry{turnshek88}{inproceedings}{}
-  \name{author}{1}{}{%
+\entry{sulentic04}{article}{}
+  \name{author}{6}{}{%
     {{}%
-     {{Turnshek}}{T.}%
-     {D.~A.}{D.~A.}%
-     {}{}%
-     {}{}}%
-  }
-  \name{editor}{3}{}{%
-    {{}%
-     {{Blades}}{B.}%
-     {J.~C.}{J.~C.}%
+     {{Sulentic}}{S.}%
+     {J.~W.}{J.~W.}%
      {}{}%
      {}{}}%
     {{}%
-     {{Turnshek}}{T.}%
-     {D.~A.}{D.~A.}%
+     {{Stirpe}}{S.}%
+     {G.~M.}{G.~M.}%
      {}{}%
      {}{}}%
     {{}%
-     {{Norman}}{N.}%
-     {C.~A.}{C.~A.}%
-     {}{}%
-     {}{}}%
-  }
-  \strng{namehash}{TDA1}
-  \strng{fullhash}{TDA1}
-  \field{labelyear}{1988}
-  \field{sortinit}{T}
-  \field{booktitle}{QSO Absorption Lines: Probing the Universe}
-  \field{pages}{17}
-  \field{title}{{BAL QSOs: Observations, Models and Implications for Narrow
-  Absorption Line Systems}}
-  \field{year}{1988}
-\endentry
-
-\entry{urry95}{article}{}
-  \name{author}{2}{}{%
-    {{}%
-     {{Urry}}{U.}%
-     {C.~M.}{C.~M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Padovani}}{P.}%
+     {{Marziani}}{M.}%
      {P.}{P.}%
      {}{}%
      {}{}}%
+    {{}%
+     {{Zamanov}}{Z.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Calvani}}{C.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Braito}}{B.}%
+     {V.}{V.}%
+     {}{}%
+     {}{}}%
   }
-  \keyw{GALAXIES: ACTIVE, GALAXIES: FUNDAMENTAL PARAMETERS}
-  \strng{namehash}{UCMPP1}
-  \strng{fullhash}{UCMPP1}
-  \field{labelyear}{1995}
-  \field{sortinit}{U}
+  \keyw{line: profiles, galaxies: quasars: emission lines}
+  \strng{namehash}{SJW+1}
+  \strng{fullhash}{SJWSGMMPZRCMBV1}
+  \field{labelyear}{2004}
+  \field{sortinit}{S}
   \verb{eprint}
-  \verb astro-ph/9506063
+  \verb astro-ph/0405279
   \endverb
-  \field{pages}{803}
-  \field{title}{{Unified Schemes for Radio-Loud Active Galactic Nuclei}}
-  \field{volume}{107}
-  \field{journaltitle}{\pasp}
+  \field{pages}{121\bibrangedash 132}
+  \field{title}{{VLT/ISAAC spectra of the H{$\beta$} region in intermediate
+  redshift quasars}}
+  \field{volume}{423}
+  \field{journaltitle}{\aap}
+  \field{eprinttype}{arXiv}
+  \field{month}{08}
+  \field{year}{2004}
+\endentry
+
+\entry{sulentic06}{article}{}
+  \name{author}{6}{}{%
+    {{}%
+     {{Sulentic}}{S.}%
+     {J.~W.}{J.~W.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Repetto}}{R.}%
+     {P.}{P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Stirpe}}{S.}%
+     {G.~M.}{G.~M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Marziani}}{M.}%
+     {P.}{P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Dultzin-Hacyan}}{D.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Calvani}}{C.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{galaxies: quasars: emission lines, galaxies: quasars: general, line:
+  profiles, black hole physics}
+  \strng{namehash}{SJW+1}
+  \strng{fullhash}{SJWRPSGMMPDDCM1}
+  \field{labelyear}{2006}
+  \field{sortinit}{S}
+  \verb{eprint}
+  \verb astro-ph/0606309
+  \endverb
+  \field{pages}{929\bibrangedash 939}
+  \field{title}{{VLT/ISAAC spectra of the H{$\beta$} region in
+  intermediate-redshift quasars. II. Black hole mass and Eddington ratio}}
+  \field{volume}{456}
+  \field{journaltitle}{\aap}
   \field{eprinttype}{arXiv}
   \field{month}{09}
-  \field{year}{1995}
+  \field{year}{2006}
+\endentry
+
+\entry{sulentic07}{article}{}
+  \name{author}{5}{}{%
+    {{}%
+     {{Sulentic}}{S.}%
+     {J.~W.}{J.~W.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Bachev}}{B.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Marziani}}{M.}%
+     {P.}{P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Negrete}}{N.}%
+     {C.~A.}{C.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Dultzin}}{D.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Line: Profiles, Galaxies: Quasars: Emission Lines, Galaxies: Quasars:
+  General}
+  \strng{namehash}{SJW+1}
+  \strng{fullhash}{SJWBRMPNCADD1}
+  \field{labelyear}{2007}
+  \field{sortinit}{S}
+  \verb{eprint}
+  \verb 0705.1895
+  \endverb
+  \field{pages}{757\bibrangedash 777}
+  \field{title}{{C IV {$\lambda$}1549 as an Eigenvector 1 Parameter for Active
+  Galactic Nuclei}}
+  \field{volume}{666}
+  \field{journaltitle}{\apj}
+  \field{eprinttype}{arXiv}
+  \field{month}{09}
+  \field{year}{2007}
 \endentry
 
 \entry{veilleux13}{article}{}
@@ -5156,160 +3273,258 @@
   \field{year}{2013}
 \endentry
 
-\entry{vestergaard02}{article}{}
+\entry{veron81}{article}{}
   \name{author}{1}{}{%
     {{}%
-     {{Vestergaard}}{V.}%
+     {{Veron}}{V.}%
+     {M.~P.}{M.~P.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Astronomical Spectroscopy, Galactic Nuclei, Seyfert Galaxies, Spectral
+  Line Width, Emission Spectra, Forbidden Bands, H Ii Regions, Nebulae, Oxygen
+  Spectra}
+  \strng{namehash}{VMP1}
+  \strng{fullhash}{VMP1}
+  \field{labelyear}{1981}
+  \field{sortinit}{V}
+  \field{pages}{12\bibrangedash 19}
+  \field{title}{{On the width and profile of nuclear emission lines in
+  galaxies}}
+  \field{volume}{100}
+  \field{journaltitle}{\aap}
+  \field{month}{07}
+  \field{year}{1981}
+\endentry
+
+\entry{vrtilek85}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {{Vrtilek}}{V.}%
+     {J.~M.}{J.~M.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Astronomical Models, Galactic Nuclei, Line Spectra, Seyfert Galaxies,
+  Active Galactic Nuclei, Emission Spectra, High Resolution, Kinematics,
+  Kolmogoroff Theory, Spatial Distribution}
+  \strng{namehash}{VJM1}
+  \strng{fullhash}{VJM1}
+  \field{labelyear}{1985}
+  \field{sortinit}{V}
+  \field{pages}{121\bibrangedash 133}
+  \field{title}{{Seyfert galaxy narrow-line regions. II - Kinematic models}}
+  \field{volume}{294}
+  \field{journaltitle}{\apj}
+  \field{month}{07}
+  \field{year}{1985}
+\endentry
+
+\entry{weedman70}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {{Weedman}}{W.}%
+     {D.~W.}{D.~W.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{WDW1}
+  \strng{fullhash}{WDW1}
+  \field{labelyear}{1970}
+  \field{sortinit}{W}
+  \field{pages}{405}
+  \field{title}{{High-Velocity Gas Motions in Galactic Nuclei}}
+  \field{volume}{159}
+  \field{journaltitle}{\apj}
+  \field{month}{02}
+  \field{year}{1970}
+\endentry
+
+\entry{whittle85}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {{Whittle}}{W.}%
      {M.}{M.}%
      {}{}%
      {}{}}%
   }
-  \keyw{Galaxies: Active, Galaxies: Fundamental Parameters, Galaxies:
-  High-Redshift, Galaxies: Seyfert, Galaxies: Quasars: Emission Lines,
-  Ultraviolet: Galaxies}
-  \strng{namehash}{VM1}
-  \strng{fullhash}{VM1}
-  \field{labelyear}{2002}
-  \field{sortinit}{V}
+  \keyw{Active Galaxies, Astronomical Spectroscopy, Forbidden Transitions,
+  Galactic Nuclei, Line Spectra, Oxygen Spectra, Southern Hemisphere, Error
+  Analysis, Parameterization, Radio Galaxies, Red Shift, Seyfert Galaxies}
+  \strng{namehash}{WM1}
+  \strng{fullhash}{WM1}
+  \field{labelyear}{1985}
+  \field{sortinit}{W}
+  \field{pages}{1\bibrangedash 31}
+  \field{title}{{The narrow line region of active galaxies. I - Nuclear
+  forbidden line profiles. II - Relations between forbidden line profile shape
+  and other properties}}
+  \field{volume}{213}
+  \field{journaltitle}{\mnras}
+  \field{month}{03}
+  \field{year}{1985}
+\endentry
+
+\entry{zakamska14}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {{Zakamska}}{Z.}%
+     {N.~L.}{N.~L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Greene}}{G.}%
+     {J.~E.}{J.~E.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{galaxies: evolution, galaxies: ISM, quasars: emission lines, radio
+  continuum: galaxies}
+  \strng{namehash}{ZNLGJE1}
+  \strng{fullhash}{ZNLGJE1}
+  \field{labelyear}{2014}
+  \field{sortinit}{Z}
   \verb{eprint}
-  \verb astro-ph/0204106
+  \verb 1402.6736
   \endverb
-  \field{pages}{733\bibrangedash 752}
-  \field{title}{{Determining Central Black Hole Masses in Distant Active
-  Galaxies}}
-  \field{volume}{571}
-  \field{journaltitle}{\apj}
+  \field{pages}{784\bibrangedash 804}
+  \field{title}{{Quasar feedback and the origin of radio emission in
+  radio-quiet quasars}}
+  \field{volume}{442}
+  \field{journaltitle}{\mnras}
   \field{eprinttype}{arXiv}
-  \field{month}{06}
+  \field{month}{07}
+  \field{year}{2014}
+\endentry
+
+\entry{zakamska16}{article}{}
+  \name{author}{10}{}{%
+    {{}%
+     {{Zakamska}}{Z.}%
+     {N.~L.}{N.~L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hamann}}{H.}%
+     {F.}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{P{\^a}ris}}{P.}%
+     {I.}{I.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Brandt}}{B.}%
+     {W.~N.}{W.~N.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Greene}}{G.}%
+     {J.~E.}{J.~E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Strauss}}{S.}%
+     {M.~A.}{M.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Villforth}}{V.}%
+     {C.}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Wylezalek}}{W.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Alexandroff}}{A.}%
+     {R.~M.}{R.~M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Ross}}{R.}%
+     {N.~P.}{N.~P.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{galaxies: evolution, quasars: emission lines, quasars: general}
+  \strng{namehash}{ZNL+1}
+  \strng{fullhash}{ZNLHFPIBWNGJESMAVCWDARMRNP1}
+  \field{labelyear}{2016}
+  \field{sortinit}{Z}
+  \verb{eprint}
+  \verb 1512.02642
+  \endverb
+  \field{pages}{3144\bibrangedash 3160}
+  \field{title}{{Discovery of extreme [O III] {$\lambda$}5007 {\AA} outflows in
+  high-redshift red quasars}}
+  \field{volume}{459}
+  \field{journaltitle}{\mnras}
+  \field{eprinttype}{arXiv}
+  \field{month}{07}
+  \field{year}{2016}
+\endentry
+
+\entry{zamanov02}{article}{}
+  \name{author}{6}{}{%
+    {{}%
+     {{Zamanov}}{Z.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Marziani}}{M.}%
+     {P.}{P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Sulentic}}{S.}%
+     {J.~W.}{J.~W.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Calvani}}{C.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Dultzin-Hacyan}}{D.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Bachev}}{B.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Galaxies: Active, Galaxies: Quasars: Emission Lines, Galaxies: Quasars:
+  General}
+  \strng{namehash}{ZR+1}
+  \strng{fullhash}{ZRMPSJWCMDDBR1}
+  \field{labelyear}{2002}
+  \field{sortinit}{Z}
+  \verb{eprint}
+  \verb astro-ph/0207387
+  \endverb
+  \field{pages}{L9\bibrangedash L13}
+  \field{title}{{Kinematic Linkage between the Broad- and Narrow-Line-emitting
+  Gas in Active Galactic Nuclei}}
+  \field{volume}{576}
+  \field{journaltitle}{\apjl}
+  \field{eprinttype}{arXiv}
+  \field{month}{09}
   \field{year}{2002}
 \endentry
 
-\entry{vestergaard09}{article}{}
-  \name{author}{2}{}{%
+\entry{zhang11}{article}{}
+  \name{author}{4}{}{%
     {{}%
-     {{Vestergaard}}{V.}%
-     {M.}{M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Osmer}}{O.}%
-     {P.~S.}{P.~S.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{cosmology: observations, galaxies: active, galaxies: luminosity
-  function, mass function, quasars: emission lines, quasars: general, surveys}
-  \strng{namehash}{VMOPS1}
-  \strng{fullhash}{VMOPS1}
-  \field{labelyear}{2009}
-  \field{sortinit}{V}
-  \verb{eprint}
-  \verb 0904.3348
-  \endverb
-  \field{pages}{800\bibrangedash 816}
-  \field{title}{{Mass Functions of the Active Black Holes in Distant Quasars
-  from the Large Bright Quasar Survey, the Bright Quasar Survey, and the
-  Color-selected Sample of the SDSS Fall Equatorial Stripe}}
-  \field{volume}{699}
-  \field{journaltitle}{\apj}
-  \field{eprinttype}{arXiv}
-  \field{month}{07}
-  \field{year}{2009}
-\endentry
-
-\entry{vestergaard06}{article}{}
-  \name{author}{2}{}{%
-    {{}%
-     {{Vestergaard}}{V.}%
-     {M.}{M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Peterson}}{P.}%
-     {B.~M.}{B.~M.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{Galaxies: Active, Galaxies: Fundamental Parameters, Galaxies:
-  High-Redshift, Galaxies: Seyfert, Galaxies: Quasars: Emission Lines,
-  Ultraviolet: Galaxies}
-  \strng{namehash}{VMPBM1}
-  \strng{fullhash}{VMPBM1}
-  \field{labelyear}{2006}
-  \field{sortinit}{V}
-  \verb{eprint}
-  \verb astro-ph/0601303
-  \endverb
-  \field{pages}{689\bibrangedash 709}
-  \field{title}{{Determining Central Black Hole Masses in Distant Active
-  Galaxies and Quasars. II. Improved Optical and UV Scaling Relationships}}
-  \field{volume}{641}
-  \field{journaltitle}{\apj}
-  \field{eprinttype}{arXiv}
-  \field{month}{04}
-  \field{year}{2006}
-\endentry
-
-\entry{vestergaard11}{inproceedings}{}
-  \name{author}{8}{}{%
-    {{}%
-     {{Vestergaard}}{V.}%
-     {M.}{M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Denney}}{D.}%
+     {{Zhang}}{Z.}%
      {K.}{K.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Fan}}{F.}%
-     {X.}{X.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Jensen}}{J.}%
-     {J.~J.}{J.~J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Kelly}}{K.}%
-     {B.~C.}{B.~C.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Osmer}}{O.}%
-     {P.~S.}{P.~S.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Peterson}}{P.}%
-     {B.~M.}{B.~M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Tremonti}}{T.}%
-     {C.~A.}{C.~A.}%
-     {}{}%
-     {}{}}%
-  }
-  \strng{namehash}{VM+1}
-  \strng{fullhash}{VMDKFXJJJKBCOPSPBMTCA1}
-  \field{labelyear}{2011}
-  \field{sortinit}{V}
-  \field{booktitle}{Narrow-Line Seyfert 1 Galaxies and their Place in the
-  Universe}
-  \field{eid}{38}
-  \field{pages}{38}
-  \field{title}{{Black hole mass estimations: limitations and uncertainties}}
-  \field{year}{2011}
-\endentry
-
-\entry{wang09}{article}{}
-  \name{author}{9}{}{%
-    {{}%
-     {{Wang}}{W.}%
-     {J.-G.}{J.-G.}%
      {}{}%
      {}{}}%
     {{}%
@@ -5323,139 +3538,28 @@
      {}{}%
      {}{}}%
     {{}%
-     {{Ho}}{H.}%
-     {L.~C.}{L.~C.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Yuan}}{Y.}%
-     {W.}{W.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Wang}}{W.}%
-     {H.}{H.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Zhang}}{Z.}%
-     {K.}{K.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Zhang}}{Z.}%
-     {S.}{S.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Zhou}}{Z.}%
-     {H.}{H.}%
+     {{Gaskell}}{G.}%
+     {C.~M.}{C.~M.}%
      {}{}%
      {}{}}%
   }
-  \keyw{black hole physics, galaxies: active, quasars: emission lines, quasars:
-  general}
-  \strng{namehash}{WJG+1}
-  \strng{fullhash}{WJGDXBWTGHLCYWWHZKZSZH1}
-  \field{labelyear}{2009}
-  \field{sortinit}{W}
+  \keyw{galaxies: active, galaxies: Seyfert, quasars: emission lines}
+  \strng{namehash}{ZK+1}
+  \strng{fullhash}{ZKDXBWTGGCM1}
+  \field{labelyear}{2011}
+  \field{sortinit}{Z}
+  \field{eid}{71}
   \verb{eprint}
-  \verb 0910.2848
+  \verb 1105.1094
   \endverb
-  \field{pages}{1334\bibrangedash 1346}
-  \field{title}{{Estimating Black Hole Masses in Active Galactic Nuclei Using
-  the Mg II {$\lambda$}2800 Emission Line}}
-  \field{volume}{707}
+  \field{pages}{71}
+  \field{title}{{The Blueshifting and Baldwin Effects for the [O III]
+  {$\lambda$}5007 Emission Line in Type 1 Active Galactic Nuclei}}
+  \field{volume}{737}
   \field{journaltitle}{\apj}
   \field{eprinttype}{arXiv}
-  \field{month}{12}
-  \field{year}{2009}
-\endentry
-
-\entry{weymann91}{article}{}
-  \name{author}{4}{}{%
-    {{}%
-     {{Weymann}}{W.}%
-     {R.~J.}{R.~J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Morris}}{M.}%
-     {S.~L.}{S.~L.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Foltz}}{F.}%
-     {C.~B.}{C.~B.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Hewett}}{H.}%
-     {P.~C.}{P.~C.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{Continuous Radiation, Emission Spectra, Line Spectra, Quasars, Stellar
-  Spectra, Data Reduction, Spectral Line Width, Spectrum Analysis, Statistical
-  Analysis, quasars}
-  \strng{namehash}{WRJ+1}
-  \strng{fullhash}{WRJMSLFCBHPC1}
-  \field{labelyear}{1991}
-  \field{sortinit}{W}
-  \field{pages}{23\bibrangedash 53}
-  \field{title}{{Comparisons of the emission-line and continuum properties of
-  broad absorption line and normal quasi-stellar objects}}
-  \field{volume}{373}
-  \field{journaltitle}{\apj}
-  \field{month}{05}
-  \field{year}{1991}
-\endentry
-
-\entry{wu04}{article}{}
-  \name{author}{5}{}{%
-    {{}%
-     {{Wu}}{W.}%
-     {X.-B.}{X.-B.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Wang}}{W.}%
-     {R.}{R.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Kong}}{K.}%
-     {M.~Z.}{M.~Z.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Liu}}{L.}%
-     {F.~K.}{F.~K.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Han}}{H.}%
-     {J.~L.}{J.~L.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{black hole physics, galaxies: active, galaxies: nuclei, quasars:
-  general, quasars: emission lines}
-  \strng{namehash}{WXB+1}
-  \strng{fullhash}{WXBWRKMZLFKHJL1}
-  \field{labelyear}{2004}
-  \field{sortinit}{W}
-  \verb{eprint}
-  \verb astro-ph/0403243
-  \endverb
-  \field{pages}{793\bibrangedash 798}
-  \field{title}{{Black hole mass estimation using a relation between the BLR
-  size and emission line luminosity of AGN}}
-  \field{volume}{424}
-  \field{journaltitle}{\aap}
-  \field{eprinttype}{arXiv}
-  \field{month}{09}
-  \field{year}{2004}
+  \field{month}{08}
+  \field{year}{2011}
 \endentry
 
 \lossort
