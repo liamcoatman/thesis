@@ -954,39 +954,44 @@ def eqw_lum():
     fig, ax = plt.subplots(figsize=figsize(1, vscale=0.9))
     
     df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0) 
+
     df = df[df.OIII_FLAG_2 > 0]
     df = df[df.OIII_BAD_FIT_FLAG == 0]
     df = df[df.FE_FLAG == 0]
-    df1 = df[df.OIII_EQW_FLAG == 0]
-    df2 = df[df.OIII_EQW_FLAG == 1]
+    
+
+    df1 = df[df.OIII_5007_EQW_3 > 1] 
+    df2 = df[df.OIII_5007_EQW_3 <= 1] 
 
     
-    s = ax.scatter(np.log10(9.26) + df1.LogL5100,
-                   np.log10(df1.OIII_5007_EQW_3), 
-                   facecolor=cs[1], 
-                   edgecolor='None',
-                   s=10,
-                   zorder=10)
+    ax.plot(np.log10(9.26) + df1.LogL5100,
+            df1.OIII_5007_EQW_3,
+            marker='o',
+            linestyle='',
+            markerfacecolor=cs[1],
+            markeredgecolor='None',
+            markersize=4)
 
 
 
-    df2.loc[df2.OIII_5007_EQW_MEAN < 0.0, 'OIII_5007_EQW_MEAN'] = 0.0 
-    ul = df2.OIII_5007_EQW_MEAN + df2.OIII_5007_EQW_STD
+    ax.errorbar(np.log10(9.26) + df2.LogL5100,
+                np.ones_like(df2.LogL5100),
+                yerr=0.3, 
+                uplims=True,
+                marker='o',
+                linestyle='',
+                capsize=2,
+                color=cs[1],
+                markeredgecolor='None',
+                markersize=4)
 
-    s = ax.errorbar(np.log10(9.26) + df2.LogL5100,
-                    np.log10(ul), 
-                    yerr=0.2,
-                    zorder=10, 
-                    linestyle='None', 
-                    uplims=True,
-                    color=cs[1],
-                    capsize=2)
 
 
 
     t = Table.read('/data/lc585/SDSS/dr7_bh_Nov19_2013.fits')
     t = t[t['LOGLBOL'] > 0.0]
     t = t[t['EW_OIII_5007'] > 0.0]
+    t = t[['LOGLBOL', 'EW_OIII_5007']]
     
     m1, m2 = t['LOGLBOL'], np.log10(t['EW_OIII_5007'])
     
@@ -1003,7 +1008,7 @@ def eqw_lum():
     
     Z = np.reshape(kernel(positions).T, X.shape)
     
-    CS = ax.contour(X, Y, Z, colors=[cs[-1]])
+    CS = ax.contour(X, 10**Y, Z, colors=[cs[-1]])
     
     threshold = CS.levels[0]
     
@@ -1014,20 +1019,61 @@ def eqw_lum():
     y = np.ma.masked_where(z > threshold, m2)
     
     # plot unmasked points
-    ax.plot(x, 
-            y, 
+    ax.plot(x[10**y > 1], 
+            10**y[10**y > 1], 
             markerfacecolor=cs[-1], 
             markeredgecolor='None', 
             linestyle='', 
             marker='o', 
             markersize=2, 
             label='SDSS DR7')
-    
+
+
+    # ax.plot(x[10**y <= 1], 
+    #         np.full_like(x[10**y <= 1], 0.9), 
+    #         markeredgecolor=cs[-1],
+    #         marker='|',
+    #         linestyle='', 
+    #         markeredgewidth=2)
+
+    ax.errorbar(x[10**y <= 1],
+                np.ones_like(x[10**y <= 1]),
+                yerr=0.3, 
+                uplims=True,
+                marker='o',
+                linestyle='',
+                capsize=1,
+                color=cs[-1],
+                markeredgecolor='None',
+                markersize=0,
+                zorder=0)
+
+    #-------------------------------------
+
+    df_sdss = t.to_pandas()
+    df.rename(columns={'OIII_5007_EQW_3': 'EW_OIII_5007'}, inplace=True)
+    df['LOGLBOL'] = np.log10(9.26) + df.LogL5100
+    df = df[['LOGLBOL', 'EW_OIII_5007']]
+
+    df = pd.concat([df[df.EW_OIII_5007 > 1.0], df_sdss[df_sdss.EW_OIII_5007 > 1.0]], ignore_index=True) 
+
+    df['Binned'] = np.digitize(df.LOGLBOL, bins=np.linspace(45, 48, 7))
+    grouped = df.groupby(by = 'Binned')
+    ax.plot(grouped.LOGLBOL.median()[1:-1], grouped.EW_OIII_5007.median()[1:-1], color=cs[0], lw=2)
+
+    print grouped.EW_OIII_5007.median()[1:-1]
+
+    ax.grid() 
+
+
+
     ax.set_ylabel(r'log EQW (\AA)')
     ax.set_xlabel(r'log $L_{\mathrm{Bol}}$ [erg/s]')
     
+    ax.set_yscale('log')
+    
     ax.set_xlim(44.5, 49)
-    ax.set_ylim(-1, 3)
+    ax.set_ylim(5e-1, 5e2)
 
     fig.tight_layout() 
 
@@ -1037,8 +1083,83 @@ def eqw_lum():
 
     return None 
 
-# eqw_lum() 
+def high_eqw_comp():
 
+    df_nir = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0) 
+
+    df_nir = df_nir[df_nir.OIII_FLAG_2 > 0]
+    df_nir = df_nir[df_nir.OIII_BAD_FIT_FLAG == 0]
+    df_nir = df_nir[df_nir.FE_FLAG == 0]
+    df_nir = df_nir[df_nir.OIII_5007_EQW_3 > 1.0]
+    
+    x = df_nir.OIII_5007_EQW_3.values
+    
+    std = np.std(x)
+    mean = np.mean(x)
+    
+    x = (x - mean) / std
+    
+    x_d = np.linspace(-3, 4, 1000)
+    
+    if False:
+        
+        bandwidths = 10 ** np.linspace(-2, 0, 100)
+        grid = GridSearchCV(KernelDensity(kernel='gaussian'),
+                            {'bandwidth': bandwidths},
+                            cv=LeaveOneOut(len(x)))
+        grid.fit(x[:, None]);
+    
+        print grid.best_params_
+
+        
+    kde = KernelDensity(bandwidth=0.25, kernel='gaussian')
+    kde.fit(x[:, None])
+    
+    # score_samples returns the log of the probability density
+    logprob = kde.score_samples(x_d[:, None])
+    
+    fig, ax = plt.subplots(figsize=figsize(1, 0.8))
+
+    ax.plot(x_d * std + mean, np.exp(logprob), color=cs[1], lw=2, label='This work')
+    
+    print 'NIR max: {}'.format(x_d[np.exp(logprob).argmax()] * std + mean)
+
+    t = Table.read('/data/lc585/SDSS/dr7_bh_Nov19_2013.fits')
+    t = t[t['LOGLBOL'] > 0.0]
+    t = t[t['EW_OIII_5007'] > 0.0]
+    t = t[['LOGLBOL', 'EW_OIII_5007']]
+    df_sdss = t.to_pandas()
+    
+
+    x = df_sdss.EW_OIII_5007.values
+    
+    x = (x - mean) / std
+    
+    kde = KernelDensity(bandwidth=0.25, kernel='gaussian')
+    kde.fit(x[:, None])
+    
+    print 'Bandwidth: {}'.format(0.25 * std) 
+    # score_samples returns the log of the probability density
+    logprob = kde.score_samples(x_d[:, None])
+    
+    ax.plot(x_d * std + mean, np.exp(logprob), color=cs[0], lw=2, label='SDSS')
+    
+    ax.set_xlim(1, 150)
+
+    ax.grid()
+    ax.legend()
+
+    print 'SDSS max: {}'.format(x_d[np.exp(logprob).argmax()] * std + mean)
+
+    ax.set_xlabel(r"[O\,{\sc iii}] EQW [\AA]")
+    ax.set_ylabel('PDF')
+  
+    fig.tight_layout()
+    fig.savefig('/home/lc585/thesis/figures/chapter04/high_eqw_comp.pdf')
+
+    plt.show() 
+
+    return None 
 
 def oiii_core_strength_blueshift():
 
@@ -1853,7 +1974,7 @@ def example_spectrum_grid_extreme_oiii():
     fig.text(0.5, 0.05, r'$\Delta v$ [km~$\rm{s}^{-1}$]', ha='center')
     fig.text(0.05, 0.55, r'Relative $F_{\lambda}$', rotation=90)
     
-    fig.savefig('/home/lc585/thesis/figures/chapter04/example_spectrum_grid_extreme_oiii_2.pdf')
+    fig.savefig('/home/lc585/thesis/figures/chapter04/example_spectrum_grid_extreme_oiii_1.pdf')
 
     plt.show() 
 
@@ -1913,7 +2034,8 @@ def example_spectrum_grid():
         example_spectra(names[i], 
                         ax, 
                         rebins[i], 
-                        data_color='lightgrey', 
+                        data_color=palettable.colorbrewer.sequential.Greys_9.mpl_colors[4],
+                        components_color=palettable.colorbrewer.sequential.Oranges_9.mpl_colors[3],
                         voffset=df.loc[names[i], 'OIII_FIT_VEL_FULL_OIII_PEAK'])
         ax.set_ylim(ylims[i])
         ax.set_xlim(-5000, 15000)
@@ -1925,7 +2047,7 @@ def example_spectrum_grid():
 
         ax = plt.Subplot(fig, inner_grid[3])
         ax.spines['top'].set_visible(False)
-        example_residual(names[i], ax)
+        example_residual(names[i], ax, data_color=palettable.colorbrewer.sequential.Greys_9.mpl_colors[4])
         ax.set_xlim(-5000, 15000)
         ax.set_ylim(-6, 6)
         
@@ -2802,6 +2924,10 @@ def eqw_cut():
     df = df[df.OIII_FLAG_2 > 0]
     df = df[df.OIII_BAD_FIT_FLAG == 0]
     df = df[df.FE_FLAG == 0]
+
+    # df['Binned'] = np.digitize(df.OIII_5007_EQW_3, bins=[10, 20, 40, 60, 80, 100])
+    # grouped = df.groupby(by = 'Binned')
+    # grouped[['OIII_5007_EQW_3', 'OIII_5007_V10_ERR']].mean()
     
     ax.plot(df['OIII_5007_EQW_3'],
             df['OIII_5007_V10_ERR'],

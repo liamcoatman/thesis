@@ -5,3 +5,8 @@ check all short captions
 micron -> $\mu$m
 emission line -> emission-line
 Delete DOI, add archivePrefix = "arXiv" if missing
+Spell check
+Check all references
+Chapter, Section: capitalize 
+Check all numbers
+Make all numbers in to math
