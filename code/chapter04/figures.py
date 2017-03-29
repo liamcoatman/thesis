@@ -430,13 +430,13 @@ def civ_blueshift_oiii_eqw():
 
     df['z'] = np.nan
     
-    useoiii = (df.OIII_EQW_FLAG == 0) & (df.OIII_EXTREM_FLAG == 0) & (df.OIII_FIT_VEL_FULL_OIII_PEAK_ERR < 400.0)
+    useoiii = (df.OIII_EQW_FLAG == 0) & (df.OIII_EXTREM_FLAG == 0) & (df.OIII_FIT_VEL_FULL_OIII_PEAK_ERR < 200.0)
     df.loc[useoiii, 'z'] = df.loc[useoiii, 'OIII_FIT_Z_FULL_OIII_PEAK'] 
     
-    useha = df.z.isnull() & (df.OIII_FIT_HA_Z_FLAG > 0) & (df.OIII_FIT_VEL_HA_PEAK_ERR < 400.0)
+    useha = df.z.isnull() & (df.OIII_FIT_HA_Z_FLAG > 0) & (df.OIII_FIT_VEL_HA_PEAK_ERR < 200.0)
     df.loc[useha, 'z'] = df.loc[useha, 'OIII_FIT_HA_Z'] 
         
-    usehb = df.z.isnull() & (df.OIII_FIT_HB_Z_FLAG >= 0) & (df.OIII_FIT_VEL_HB_PEAK_ERR < 750.0)
+    usehb = df.z.isnull() & (df.OIII_FIT_HB_Z_FLAG >= 0) & (df.OIII_FIT_VEL_HB_PEAK_ERR < 375.0)
     df.loc[usehb, 'z'] = df.loc[usehb, 'OIII_FIT_HB_Z']
 
     df.dropna(subset=['Median_CIV_BEST'], inplace=True)
@@ -451,7 +451,9 @@ def civ_blueshift_oiii_eqw():
                     edgecolor='None',
                     zorder=2,
                     cmap=palettable.matplotlib.Viridis_10.mpl_colormap,
-                    s=30)    
+                    s=30)   
+
+    print df.loc[blueshift_civ.value < 500.0, 'OIII_5007_EQW_3'].mean(), df.loc[blueshift_civ.value > 2000.0, 'OIII_5007_EQW_3'].mean() 
 
     
     cb = fig.colorbar(im)
@@ -489,6 +491,8 @@ def lum_w80():
                    edgecolor='None',
                    s=25,
                    zorder=1)
+
+    print df.LogL5100.median() + np.log10(9.26)
     
     df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0) 
     df = df[df.OIII_FLAG_2 > 0]
@@ -496,6 +500,8 @@ def lum_w80():
     df = df[df.FE_FLAG == 0]
     df = df[df.OIII_EQW_FLAG == 0]
     df = df[df.OIII_EXTREM_FLAG == 0]
+
+    print df.LogL5100.median() + np.log10(9.26)
     
     s = ax.scatter(np.log10(9.26) + df.LogL5100,
                    df.OIII_5007_W80, 
@@ -536,7 +542,7 @@ def civ_blueshift_oiii_blueshift(check_lum=False):
     df['yval'] = df['OIII_5007_V10_Blueshift']
     df['yerr'] = df['OIII_5007_V10_Blueshift_ERR']
 
-    ycut = 500.0 
+    ycut = 250.0 
     
     # two XSHOOTER errors are missing
     # the fits both look good, so just assign typical error 
@@ -556,7 +562,7 @@ def civ_blueshift_oiii_blueshift(check_lum=False):
     print df.xval.isnull().any()
     print df.yval.isnull().any()
     
-    xcut = 250.0 
+    xcut = 125.0 
 
     # cheeky, but this is low S/N
     df.ix['QSO642', 'yval'] = np.nan
@@ -574,8 +580,8 @@ def civ_blueshift_oiii_blueshift(check_lum=False):
         ax1.plot(df.loc[(df.yerr > ycut) & (df.OIII_EXTREM_FLAG == 0), 'yval'], 
                  df.loc[(df.yerr > ycut) & (df.OIII_EXTREM_FLAG == 0), 'yerr'], 
                  marker='o', 
-                 markeredgecolor=cs[1],
-                 markerfacecolor='None',
+                 markeredgecolor='None',
+                 markerfacecolor=cs[1],
                  markersize=3,
                  linestyle='')
         
@@ -595,8 +601,8 @@ def civ_blueshift_oiii_blueshift(check_lum=False):
         ax2.plot(df.loc[(df.xerr > xcut) & (df.OIII_EXTREM_FLAG == 0), 'xval'], 
                  df.loc[(df.xerr > xcut) & (df.OIII_EXTREM_FLAG == 0), 'xerr'], 
                  marker='o', 
-                 markeredgecolor=cs[1],
-                 markerfacecolor='None',
+                 markeredgecolor='None',
+                 markerfacecolor=cs[1],
                  markersize=3,
                  linestyle='')
         
@@ -619,6 +625,12 @@ def civ_blueshift_oiii_blueshift(check_lum=False):
                          marker='o', 
                          edgecolor='None',
                          cmap=palettable.matplotlib.Viridis_10.mpl_colormap)       
+
+        x = df.loc[(df.xerr < xcut) & (df.yerr < ycut) & (df.OIII_EXTREM_FLAG == 0), 'xval']
+        y = df.loc[(df.xerr < xcut) & (df.yerr < ycut) & (df.OIII_EXTREM_FLAG == 0), 'yval']
+
+        from scipy.stats import spearmanr 
+        print spearmanr(x, y)
        
         # cbaxes = fig.add_axes([0.8, 0.1, 0.03, 0.8]) 
         # cb = plt.colorbar(im, cax = cbaxes, ticks=[46, 46.5, 47, 47.5, 48])  
@@ -700,10 +712,13 @@ def ev1():
     df = df[(df.WARN_CIV_BEST == 0) | (df.WARN_CIV_BEST == 1)]
     df = df[df.BAL_FLAG != 1]
     df = df[np.log10(df.EQW_CIV_BEST) > 1.2] # need to say this 
+    df.drop('QSO615', inplace=True) # no redshift and civ low S/N anyway 
 
     # So I guess since I have shown the redshifts are (relatively) unbiased 
     # we can use whatever. 
     
+    print len(df)
+
     df['z'] = np.nan
     
     useoiii = (df.OIII_EQW_FLAG == 0) & (df.OIII_EXTREM_FLAG == 0) & (df.OIII_FIT_VEL_FULL_OIII_PEAK_ERR < 400.0)
@@ -715,7 +730,7 @@ def ev1():
     usehb = df.z.isnull() & (df.OIII_FIT_HB_Z_FLAG >= 0) & (df.OIII_FIT_VEL_HB_PEAK_ERR < 750.0)
     df.loc[usehb, 'z'] = df.loc[usehb, 'OIII_FIT_HB_Z'] 
 
-    print len(df)
+    df.ix['QSO055', 'z'] = df.ix['QSO055', 'z_ICA']
 
 
     fig, axs = plt.subplots(2, 1, figsize=figsize(1, vscale=1.6), sharex=True)
@@ -773,11 +788,11 @@ def ev1():
 
     im = axs[1].scatter(blueshift_civ,
                         np.log10(df.EQW_CIV_BEST),
-                        c = df.FWHM_Broad_Hb, 
+                        c = df.OIII_FIT_HB_BROAD_FWHM, 
                         edgecolor='None',
                         s=25,
                         cmap=palettable.matplotlib.Viridis_10.mpl_colormap,
-                        vmin=1500, vmax=10000)
+                        vmin=1500, vmax=7000)
 
     cb = fig.colorbar(im, ax=axs[1])
     cb.set_label(r'H$\beta$ FHWM [km~$\rm{s}^{-1}$]')
@@ -803,76 +818,233 @@ def ev1_lowz():
 
     from PlottingTools.kde_contours import kde_contours
 
-    fig, ax = plt.subplots(1, 1, figsize=figsize(1, vscale=0.9))
+    from fit_properties_oiii_fire import get_line_fit_props as get_line_fit_props_fire
+    from fit_properties_oiii_gnirs import get_line_fit_props as get_line_fit_props_gnirs
+    from fit_properties_oiii_isaac import get_line_fit_props as get_line_fit_props_isaac
+    from fit_properties_oiii_liris import get_line_fit_props as get_line_fit_props_liris
+    from fit_properties_oiii_niri import get_line_fit_props as get_line_fit_props_niri
+    from fit_properties_oiii_nirspec import get_line_fit_props as get_line_fit_props_nirspec
+    from fit_properties_oiii_sofi_jh import get_line_fit_props as get_line_fit_props_sofi_jh
+    from fit_properties_oiii_sofi_lc import get_line_fit_props as get_line_fit_props_sofi_lc
+    from fit_properties_oiii_triple import get_line_fit_props as get_line_fit_props_triple
+    from fit_properties_oiii_triple_shen15 import get_line_fit_props as get_line_fit_props_triple_shen15
+    from fit_properties_oiii_xshooter import get_line_fit_props as get_line_fit_props_xshooter
+    from fit_properties_oiii_sinfoni import get_line_fit_props as get_line_fit_props_sinfoni
+    from fit_properties_oiii_sinfoni_kurk import get_line_fit_props as get_line_fit_props_sinfoni_kurk
+    
+    from SpectraTools.fit_line import wave2doppler, doppler2wave
 
-    t = Table.read('/data/lc585/SDSS/dr7_bh_Nov19_2013.fits') 
-
-    xi = t['EW_FE_HB_4434_4684'] / t['EW_BROAD_HB']
-    yi = t['FWHM_BROAD_HB'] 
-
-    drop = np.isnan(xi) | np.isnan(yi) | np.isinf(xi) | np.isinf(yi)
-
-    xi = xi[~drop]
-    yi = yi[~drop]
-
-    xmin = 0.0
-    xmax = 3.0
-    ymin = 500.0
-    ymax = 12000.0 
-
-    X, Y = np.mgrid[xmin:xmax:100j, ymin:ymax:100j]
-    positions = np.vstack([X.ravel(), Y.ravel()])
-    values = np.vstack([xi, yi])
-
-    kernel = stats.gaussian_kde(values)
-      
-    Z = np.reshape(kernel(positions).T, X.shape)
-
-    ax.imshow(np.flipud(Z.T), 
-              extent=(xmin, xmax, ymin, ymax), 
-              aspect='auto', 
-              zorder=0, 
-              cmap='Blues',
-              vmax=0.00015)
-
-    kde_contours(xi, 
-                 yi, 
-                 ax, 
-                 color='black',
-                 lims=[xmin, xmax, ymin, ymax],
-                 plotpoints=False)
-
-
-    ax.set_xlim(xmin, xmax)
-    ax.set_ylim(ymin, ymax)
-
-    #
+    
 
     df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0) 
-    df = df[df.OIII_FLAG_2 > 0]
-    df = df[df.OIII_BAD_FIT_FLAG == 0]
-    df = df[df.FE_FLAG == 0]
 
-    df = df[df.WARN_Hb == 0]
+    # removes missing hb 
+    df = df[df.OIII_FIT_HB_Z_FLAG > 0]   
+    print len(df)
 
-    df = df[df.INSTR != 'ISAAC'] # don't have wavelength coverage to constrain Fe 
+    # remove duplicates 
+    df.drop(['QSO330',
+             'QSO461',
+             'QSO424',
+             'QSO409',
+             'QSO115',
+             'QSO348',
+             'QSO349',
+             'QSO372',
+             'QSO379',
+             'QSO040',
+             'QSO015',
+             'QSO384',
+             'QSO137',
+             'QSO635',
+             'QSO146',
+             'QSO373',
+             'QSO610',
+             'QSO048',
+             'QSO236',
+             'QSO162',
+             'QSO412',
+             'QSO343',
+             'QSO333'],
+             inplace=True)
     
-    ax.plot(df.EQW_FE_4434_4684 / df.EQW_Broad_Hb,
-            df.FWHM_Broad_Hb,
-            linestyle='',
-            marker='o',
-            markerfacecolor=cs[0])
+    print len(df)
 
 
-    # -----------------------------------------
 
-    ax.set_xlabel(r'R$_{\rm FeII}$')
-    ax.set_ylabel(r'FWHM H$\beta$ [km~$\rm{s}^{-1}$]')
+    df['OIII_FIT_FE_STRENGTH'] = df.OIII_FIT_EQW_FE_4434_4684 / df.OIII_FIT_HB_BROAD_EQW
+
+
+    # Missing Fe --------------------
+    
+    q_fire = get_line_fit_props_fire().all_quasars() 
+    q_gnirs = get_line_fit_props_gnirs().all_quasars() 
+    q_isaac = get_line_fit_props_isaac().all_quasars() 
+    q_liris = get_line_fit_props_liris().all_quasars() 
+    q_niri = get_line_fit_props_niri().all_quasars() 
+    q_nirspec = get_line_fit_props_nirspec().all_quasars() 
+    q_sofi_jh = get_line_fit_props_sofi_jh().all_quasars() 
+    q_sofi_lc = get_line_fit_props_sofi_lc().all_quasars() 
+    q_triple = get_line_fit_props_triple().all_quasars() 
+    q_triple_shen15 = get_line_fit_props_triple_shen15().all_quasars() 
+    q_xshooter = get_line_fit_props_xshooter().all_quasars() 
+    q_sinfoni = get_line_fit_props_sinfoni().all_quasars()
+    q_sinfoni_kurk = get_line_fit_props_sinfoni_kurk().all_quasars()
+    
+    q = q_fire + q_gnirs + q_isaac + q_liris + q_niri + q_nirspec + q_sofi_jh + q_sofi_lc + q_triple + q_triple_shen15 + q_xshooter + q_sinfoni + q_sinfoni_kurk
+    
+    names = np.array([qi.name for qi in q])
+    
+    w0=4862.721*u.AA
+    
+    for idx, row in df.iterrows():
+         
+        qi = q[np.where(names == idx)[0][0]]
+        
+        continuum_region = qi.continuum_region[0] 
+        
+        if continuum_region.unit == (u.km/u.s):
+            continuum_region = doppler2wave(continuum_region, w0)
+    
+        df.ix[idx, 'intersection'] = len(set(range(int(continuum_region.value[0]), int(continuum_region.value[1]))).intersection(range(4434, 4684)))
+        
+            
+    df = df[df.intersection > 150.0] # about half the full region (250 pixels)
+    
+    df.drop('QSO509', inplace=True) # no fe region (might be others, I haven't been very careful)
+
+    print len(df)
+
+    df = df[df.FE_FLAG == 0] # not bad Fe fit 
+
+    print len(df)
+
+    df.dropna(subset=['OIII_FIT_FE_STRENGTH_ERR'], inplace=True) 
+    # removes two with nan's, but fe clearly poorly 
+    # constrained so just drop
+
+    print len(df)
+
+
+
+    # ---------------------------------------------------------------
+    
+
+    yerr = df.OIII_FIT_HB_BROAD_FWHM_ERR / df.OIII_FIT_HB_BROAD_FWHM 
+    xerr = df.OIII_FIT_FE_STRENGTH_ERR
+
+    good = (yerr < 0.5) & (xerr < 0.5)
+    df = df[good]
+
+    print len(df)
+
+    
+    # fig, ax = plt.subplots(1, 1, figsize=figsize(1, vscale=0.9))
+    
+    # ax.plot(df.OIII_FIT_FE_STRENGTH,
+    #         df.OIII_FIT_HB_BROAD_FWHM,
+    #         linestyle='',
+    #         marker='o',
+    #         markerfacecolor=cs[0])
+    
+    
+    # SDSS ---------------------------------------------------------------
+    
+    t = Table.read('/data/lc585/SDSS/dr7_bh_Nov19_2013.fits') 
+    
+    xi = t['EW_FE_HB_4434_4684'] / t['EW_BROAD_HB']
+    yi = t['FWHM_BROAD_HB'] 
+    
+    drop = np.isnan(xi) | np.isnan(yi) | np.isinf(xi) | np.isinf(yi)
+    
+    xi = xi[~drop]
+    yi = yi[~drop]
+    
+    # xmin = 0.0
+    # xmax = 3.0
+    # ymin = 500.0
+    # ymax = 14000.0 
+    
+    # X, Y = np.mgrid[xmin:xmax:100j, ymin:ymax:100j]
+    # positions = np.vstack([X.ravel(), Y.ravel()])
+    # values = np.vstack([xi, yi])
+    
+    # kernel = stats.gaussian_kde(values)
+    
+    # Z = np.reshape(kernel(positions).T, X.shape)
+    
+    
+    # kde_contours(xi, 
+    #              yi, 
+    #              ax, 
+    #              color='black',
+    #              lims=[xmin, xmax, ymin, ymax],
+    #              plotpoints=False)
+    
+    # ax.imshow(np.flipud(Z.T), 
+    #       extent=(xmin, xmax, ymin, ymax), 
+    #       aspect='auto', 
+    #       zorder=0, 
+    #       cmap='Blues',
+    #       vmax=0.00015)
+
+    # # -----------------------------------------
+   
+    # ax.set_xlim(None, None)
+    # ax.set_ylim(None, 14000) 
+
+    # ax.set_xlabel(r'R$_{\rm FeII}$')
+    # ax.set_ylabel(r'FWHM H$\beta$ [km~$\rm{s}^{-1}$]')
+
+    # fig.tight_layout()
+
+    # fig.savefig('/home/lc585/thesis/figures/chapter04/ev1_lowz.pdf')
+    
+    fig, axs = plt.subplots(2, 1, figsize=figsize(1, vscale=1.3))
+
+    axs[0].hist(xi, 
+                normed=True, 
+                bins=np.linspace(0, 3, 14), 
+                histtype='stepfilled', 
+                color=cs[1],
+                label='SDSS')
+
+    axs[0].hist(df.OIII_FIT_FE_STRENGTH, 
+                normed=True, 
+                bins=np.linspace(0, 3, 14), 
+                histtype='step',
+                color=cs[0],
+                lw=2,
+                label='This work')
+
+    axs[0].legend(frameon=False) 
+
+    axs[0].set_xlabel(r'R$_{\rm FeII}$')
+
+    axs[1].hist(yi, 
+                normed=True, 
+                bins=np.arange(1000, 10000, 1000), 
+                histtype='stepfilled', 
+                color=cs[1])
+
+    axs[1].hist(df.OIII_FIT_HB_BROAD_FWHM, 
+                normed=True, 
+                bins=np.arange(1000, 10000, 1000), 
+                histtype='step',
+                color=cs[0],
+                lw=2)
+    
+    axs[1].set_xlabel(r'FWHM H$\beta$ [km~$\rm{s}^{-1}$]')
+
+    axs[0].set_yticks([])
+    axs[1].set_yticks([])
 
     fig.tight_layout()
 
-    fig.savefig('/home/lc585/thesis/figures/chapter04/ev1_lowz.pdf')
-    
+    fig.savefig('/home/lc585/thesis/figures/chapter04/ev1_hists.pdf')
+
+
+
     plt.show()
 
     return None 
@@ -1055,13 +1227,15 @@ def eqw_lum():
     df['LOGLBOL'] = np.log10(9.26) + df.LogL5100
     df = df[['LOGLBOL', 'EW_OIII_5007']]
 
-    df = pd.concat([df[df.EW_OIII_5007 > 1.0], df_sdss[df_sdss.EW_OIII_5007 > 1.0]], ignore_index=True) 
+    df_total = pd.concat([df[df.EW_OIII_5007 > 1.0], df_sdss[df_sdss.EW_OIII_5007 > 1.0]], ignore_index=True) 
 
-    df['Binned'] = np.digitize(df.LOGLBOL, bins=np.linspace(45, 48, 7))
-    grouped = df.groupby(by = 'Binned')
+    df_total['Binned'] = np.digitize(df_total.LOGLBOL, bins=np.linspace(45, 48, 7))
+    grouped = df_total.groupby(by = 'Binned')
     ax.plot(grouped.LOGLBOL.median()[1:-1], grouped.EW_OIII_5007.median()[1:-1], color=cs[0], lw=2)
 
     print grouped.EW_OIII_5007.median()[1:-1]
+    print grouped.LOGLBOL.median()[1:-1]
+
 
     ax.grid() 
 
@@ -2645,7 +2819,7 @@ def oiii_luminosity_z_w80():
               vmin=props['vmin'],
               vmax=props['vmax'],
               cmap=props['cmap'],
-              gridsize=(5, 20),
+              gridsize=(5, 25),
               edgecolor=greys[3])
     
     
@@ -2664,7 +2838,7 @@ def oiii_luminosity_z_w80():
               vmin=props['vmin'],
               vmax=props['vmax'],
               cmap=props['cmap'],
-              gridsize=(30, 15),
+              gridsize=(30, 20),
               edgecolor=greys[1])
     
     # Harrison+16 ----------------------------------------------------------------
@@ -2694,8 +2868,9 @@ def oiii_luminosity_z_w80():
                    vmin=props['vmin'],
                    vmax=props['vmax'],
                    cmap=props['cmap'],
-                   gridsize=(8, 10),
-                   edgecolor=greys[2])
+                   gridsize=(8, 13),
+                   edgecolor=greys[2],
+                   mincnt=2)
    
     #---------------------------------------------------------------------------
 
@@ -2703,6 +2878,7 @@ def oiii_luminosity_z_w80():
     cb.set_label(r'w$_{80}$ [km~$\rm{s}^{-1}$]')
 
     ax.set_xlim(0, 4)
+    ax.set_ylim(41, 45)
 
     ax.set_xlabel(r'Redshift $z$')
     ax.set_ylabel(r'log $L_{\rm[OIII]}$ [erg/s]')
@@ -2941,7 +3117,7 @@ def eqw_cut():
     ax.axvline(8, color='black', linestyle=':')
     
     ax.set_xlim(-1, 100)
-    ax.set_ylim(-50, 7000)
+    ax.set_ylim(-50, 3500)
 
     ax.set_xlabel(r'EQW [\AA]')
     ax.set_ylabel(r'$\sigma(v_{10})$ [km~$\rm{s}^{-1}$]')

@@ -2227,6 +2227,53 @@
   \field{year}{2010}
 \endentry
 
+\entry{netzer90}{inproceedings}{}
+  \name{author}{1}{}{%
+    {{}%
+     {{Netzer}}{N.}%
+     {H.}{H.}%
+     {}{}%
+     {}{}}%
+  }
+  \name{editor}{5}{}{%
+    {{}%
+     {{Blandford}}{B.}%
+     {R.~D.}{R.~D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Netzer}}{N.}%
+     {H.}{H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Woltjer}}{W.}%
+     {L.}{L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Courvoisier}}{C.}%
+     {T.~J.-L.}{T.~J.-L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Mayor}}{M.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Active Galactic Nuclei: Emission Lines, Active Galactic Nuclei: Line
+  Formation, Active Galactic Nuclei: Photoionization}
+  \strng{namehash}{NH1}
+  \strng{fullhash}{NH1}
+  \field{labelyear}{1990}
+  \field{sortinit}{N}
+  \field{booktitle}{Active Galactic Nuclei}
+  \field{pages}{57\bibrangedash 160}
+  \field{title}{{AGN emission lines.}}
+  \field{year}{1990}
+\endentry
+
 \entry{netzer04}{article}{}
   \name{author}{7}{}{%
     {{}%
@@ -3466,58 +3513,6 @@
   \field{eprinttype}{arXiv}
   \field{month}{07}
   \field{year}{2016}
-\endentry
-
-\entry{zamanov02}{article}{}
-  \name{author}{6}{}{%
-    {{}%
-     {{Zamanov}}{Z.}%
-     {R.}{R.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Marziani}}{M.}%
-     {P.}{P.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Sulentic}}{S.}%
-     {J.~W.}{J.~W.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Calvani}}{C.}%
-     {M.}{M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Dultzin-Hacyan}}{D.}%
-     {D.}{D.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Bachev}}{B.}%
-     {R.}{R.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{Galaxies: Active, Galaxies: Quasars: Emission Lines, Galaxies: Quasars:
-  General}
-  \strng{namehash}{ZR+1}
-  \strng{fullhash}{ZRMPSJWCMDDBR1}
-  \field{labelyear}{2002}
-  \field{sortinit}{Z}
-  \verb{eprint}
-  \verb astro-ph/0207387
-  \endverb
-  \field{pages}{L9\bibrangedash L13}
-  \field{title}{{Kinematic Linkage between the Broad- and Narrow-Line-emitting
-  Gas in Active Galactic Nuclei}}
-  \field{volume}{576}
-  \field{journaltitle}{\apjl}
-  \field{eprinttype}{arXiv}
-  \field{month}{09}
-  \field{year}{2002}
 \endentry
 
 \entry{zhang11}{article}{}
