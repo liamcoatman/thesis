@@ -26,7 +26,7 @@ While the physical origin of the blueshifted emission has not been established t
 A favoured interpretation associates the blueshifted emission with out-flowing material \citep[see][for a recent review]{netzer15}, reaching velocities significantly larger than virial-induced velocities associated with the BH \citep[e.g.][]{sulentic07, richards11}.
 These outflows, most likely, result from the presence of a radiation line-driven accretion-disc wind \citep[e.g.][]{konigl94, murray95, proga00, everett05, gallagher15,higginbottom15}.  
 
-\begin{figure}
+\begin{figure}[h!]
     \centering
     \includegraphics[width=0.9\linewidth]{figures/chapter03/civ_composites.pdf}
     \caption[{Composite spectra of the \ion{C}{IV}-emission line as a function of \ion{C}{IV} blueshift for SDSS DR7 quasars.}]{Composite spectra of the \ion{C}{IV}-emission line as a function of \ion{C}{IV} blueshift for SDSS DR7 quasars. Quasars classified as BALs, or possessing strong associated absorbers have been excluded, and the composite-spectra shown are derived using an arithmetic mean of a minimum of 200 spectra at each blueshift. Virtually the entire \ion{C}{IV}-profile appears to shift blueward and the change in line shape is not simply an enhancement of flux in the blue wing of a still identifiable symmetric component. In order of increasing \ion{C}{IV} blueshift, the composite spectra have FWHM 4870, 5610, and 6770 \kms\, and EW 33.1, 31.6, and 28.8 \AA.}
@@ -208,7 +208,7 @@ The $y$-axes of the data-minus-model residual plots have been scaled by the spec
 The mean reduced chi-squared values in our \hans, \hb and \ion{C}{IV} fits are 1.69, 1.62, and 1.77 respectively and, in general, there are no strong features observable in the spectrum minus model residuals. 
 The only significant features seen in the residual \ion{C}{IV} spectra correspond to the location of narrow absorption lines which were excluded in the fitting procedure.
 
-Table~\ref{tab:specmeasure} includes the line parameters of our best-fitting model for each line.
+Table~\ref{tab:bhm-specmeasure} includes the line parameters of our best-fitting model for each line.
 The reported line-width measures are corrected for instrumental broadening by subtracting the resolution of the spectrograph in quadrature. 
 The spectrograph resolutions, which we estimate from the line widths in the observed sky spectra, range from 25\kms\, for XSHOOTER to 477\kms\, for the low-resolution LIRIS grism and are therefore small relative to the quasar broad line widths.
 
@@ -216,7 +216,7 @@ The spectrograph resolutions, which we estimate from the line widths in the obse
   \small 
   \centering
   \caption{The format of the table containing the emission line properties from our parametric model fits. The table is available in machine-readable form in the online version of \citet{coatman17}.}
-  \label{tab:specmeasure}
+  \label{tab:bhm-specmeasure}
    \begin{tabular}{ccc} 
     \hline
     & Units & Description \\ 
@@ -295,7 +295,7 @@ Unsurprisingly, there is a preferential removal of intrinsically faint quasars, 
 \hb is much weaker than \hans, and the \hb spectra are generally of lower S/N. 
 As a result, the fraction of \hb spectra that are flagged -- 39 per cent -- is particularly high.   
 
-\begin{figure}
+\begin{figure}[h!]
     \includegraphics[width=\textwidth]{figures/chapter03/flagged_spectra.pdf} 
     \caption{The redshift and luminosity distributions of the spectra removed from our \hans/\ion{C}{IV} (a, b) and \hbns/\ion{C}{IV} (c, d) samples.} 
     \label{fig:flagged_spectra}
@@ -439,7 +439,7 @@ We infer a power-law index that, although slightly shallower, is consistent with
 The intrinsic scatter in the data, $\sigma_I$, we infer from  the fit is 0.04 dex. 
 This is smaller than the total scatter seen in Fig.~\ref{fig:hahbcomp} (0.06 dex), which suggests that measurement errors make a significant contribution to the total scatter in the relation. 
 
-\begin{figure}
+\begin{figure}[h!]
     \includegraphics[width=\columnwidth]{figures/chapter03/ha_hb_mcmc_parameters.pdf} 
     \caption[{One- and two-dimensional projections of the MCMC sampling of the posterior distribution from the fit in Fig.~\ref{fig:hahbcomp}.}]{One- and two-dimensional projections of the MCMC sampling of the posterior distribution from the fit in Fig.~\ref{fig:hahbcomp}. $\alpha$ is the power-law index, $10^\beta$ is the normalisation, and $\sigma_I$ is the intrinsic scatter. In the two-dimensional projections, 1- and 2-$\sigma$ contours are shown.} 
     \label{fig:ha_hb_mcmc_samples}
@@ -553,13 +553,13 @@ However, we use the \ha measurements to derive an empirical \ion{C}{IV} blueshif
 An extra advantage, which is evident in Figs.~\ref{fig:correction_ha} and \ref{fig:correction_hb}, is that the \ha sample has a better \ion{C}{IV} blueshift coverage. 
 However, as can be seen from the similarity of Equations \ref{eq:hafwhm} and \ref{eq:hbfwhm}, our results would not change significantly were we instead to use the \hb sample. 
 
-\begin{figure}
+\begin{figure}[h!]
     \includegraphics[width=\textwidth]{figures/chapter03/civ_ha_mcmc_parameters.pdf} 
     \caption[{One- and two-dimensional projections of the MCMC sample of the posterior distribution for a linear fit to the FWHM \ion{C}{IV}/\ha ratio as a function of the \ion{C}{IV} blueshift.}]{One- and two-dimensional projections of the MCMC sample of the posterior distribution for a linear fit to the FWHM \ion{C}{IV}/\ha ratio as a function of the \ion{C}{IV} blueshift. In the two-dimensional projections we show 1- and 2-$\sigma$ contours. The posterior distribution for the linear fit to the FWHM \ion{C}{IV}/\hb ratio, which we do not show, has a very similar appearance.} 
     \label{fig:mcmc_parameters}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[h!]
     \centering 
     \includegraphics[width=0.7\textwidth]{figures/chapter03/intrinsic_scatter.pdf} 
     \caption[{The distribution of the orthogonal displacement of each data point from the best-fitting linear relationship in the fit to FWHM(\ion{C}{IV})/FWHM(\hans) as a function of the \ion{C}{IV} blueshift.}]{The distribution of the orthogonal displacement of each data point from the best-fitting linear relationship in the fit to FWHM(\ion{C}{IV})/FWHM(\hans) as a function of the \ion{C}{IV} blueshift (blue histogram). The black curve is a Normal distribution with a width equal to the intrinsic scatter in the population inferred from the fit. The two distributions are well-matched, which demonstrates that our model is a good representation of the data and the measurement errors on the data points are small relative to the intrinsic scatter.} 
@@ -571,7 +571,7 @@ However, as can be seen from the similarity of Equations \ref{eq:hafwhm} and \re
 Virial BH masses were calculated using the widely adopted \citet{vestergaard06} calibrations. 
 The \citet{vestergaard06} \ion{C}{IV} FWHM calibration uses the monochromatic continuum luminosity at 1350\,\AA\, to predict the BLR radius and corresponds to ($a=6.66$, $b=2$, $c=0.53$) in Eq.~\ref{eq:virialmass}. 
 For the \hb calibration, \citet{vestergaard06} use the monochromatic continuum luminosity at 5100\,\AA\, and calibration coefficients corresponding to ($a=6.91$, $b=2$, $c=0.5$).
-BH masses are computed using the line and continuum properties given in Table~\ref{tab:specmeasure}, and we convert our \ha emission-line velocity-width measures to predicted \hb widths using Eq.~\ref{eq:ha2hb}.
+BH masses are computed using the line and continuum properties given in Table~\ref{tab:bhm-specmeasure}, and we convert our \ha emission-line velocity-width measures to predicted \hb widths using Eq.~\ref{eq:ha2hb}.
 
 In the lower panels of Figs.~\ref{fig:correction_ha} and \ref{fig:correction_hb} the \ion{C}{IV}-based estimates are compared to the \hans/\hb estimates as a function of the \ion{C}{IV} blueshift. 
 There is a strong systematic error in the \ion{C}{IV}-based masses as a function of blueshift, which is a direct consequence of the FWHM trend described in the previous section. 
