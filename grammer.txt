@@ -10,3 +10,4 @@ Check all references
 Chapter, Section: capitalize 
 Check all numbers
 Make all numbers in to math
+Space around \sim
