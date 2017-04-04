@@ -19,3 +19,4 @@ footnotesize tables
 \centering figures
 Minimal captitalisation in titles
 chi-squared -> $\chi^2$ 
+ultraviolet / ultra-violet

@@ -318,12 +318,105 @@ We classify quasars with matches within $5$\,arcsecond as core-dominated, while,
     \end{tabular}
 \end{table} 
 
-\section{Instrumental broadening}
+\subsection{Absolute flux calibration of near-infrared spectra}
 
-Throughout this thesis, reported line-width measures are corrected for instrumental broadening by subtracting the resolution of the spectrograph in quadrature. 
-Because the quasar emission line profiles are typically non-Gaussian, this deconvolution procedure is only approximate. 
-The spectrograph resolutions, which we estimate from the line widths in the observed sky spectra, are given in Table~\ref{tab:specres}. 
-The resolutions are generally small relative to the widths of quasar broad emission lines (FWHM $\sim4000$\,\kms).  
+Relative flux-calibration of the infrared spectra as a function of wavelength has been achieved through observations of appropriate flux standards. 
+The absolute flux levels, however, can be in error by large factors due to variable atmospheric conditions combined with the narrow slit widths. 
+For the majority of the quasars we have, therefore, established the absolute flux scale for each near-infrared spectrum using either the available photometric data or the SDSS/BOSS spectroscopy.
+Comparison of the $5100$\,\AA\, luminosity, computed using the photometry- and spectrum-based methods for 177 quasars, shows a scatter of just $\sim0.1$\,dex.
+
+In the first approach, we leverage the excellent flux-calibration of SDSS/BOSS spectra, which are available for 68 per cent of our objects. 
+We use the quasar SED model described in Chapter~\ref{ch:sed} to bridge the gap between the wavelength coverage of the near-infrared and optical SDSS/BOSS spectra.
+The quasar SED model is first fit to the SDSS/BOSS spectrum, with the normalisation and extinction \ebv as free parameters. 
+The near-infrared spectrum is then fit to the normalised SED model. 
+The method is demonstrated in Figure~\ref{fig:normalise_to_sdss}. 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{figures/chapter02/normalise_to_sdss.pdf} 
+    \caption[{}]{Demonstration of how the absolute flux calibration of the near-infrared spectrum (shown in red) is established using the SDSS spectrum (shown in blue). An empirical quasar SED model (shown in black) is used to bridge the discontinuity in the wavelength coverage of the optical/near-infrared spectra. The darker regions of the spectra are used in the fit.}     
+    \label{fig:normalise_to_sdss}
+\end{figure}
+
+
+\subsection{Calculating the quasar monochromatic luminosity}
+
+
+
+
+
+
+
+
+
+
+fitting an SED-model to the optical-infrared photometry. 
+
+
+
+
+When near-infrared photometric data is available, the absolute flux scale of the spectra may be established by ensuring that broad-band magnitudes measured from the spectra are consistent with the photometry. 
+Because this information is unavailable for a sizeable fraction of our sample, we consider two alternative approaches. 
+Maximising informaiton we can get out. 
+
+
+The second approach is identical, except that the SED model is first fit to the available optical (SDSS) and near-infrared (VHS, Viking, UKIDSS or 2MASS) photometric data \footnote{We are unable to verify the absolute flux calibration of the near-infrared spectra for XX objects () because neither SDSS/BOSS spectra nor optical/near-infrared data is available.}. 
+
+
+
+
+
+
+
+The SED model, described in Chapter~\ref{ch:sed}, gives a very good fit to the SDSS and UKIDSS magnitudes of SDSS DR$7$ quasars, reproducing the individual magnitudes with a $\sigma <0.1$\,mag.
+
+
+
+For $207$ quasars, ($Y$)$JHK$ passband magnitudes are available. 
+The SED model was fit to the infrared magnitudes; integrating the SED model through the pass-band transmission functions, to give model magnitudes, and performing a variance weighted least-squares fit to the observed magnitudes. 
+The flux at $5100$\,\AA\, was then taken from the normalised model.
+
+For $19$ of the remaining $23$ quasars, where near-infrared photometry was not available, the quasar SED model was fit to the SDSS spectra, the flux calibration of which are known to be excellent.  
+The fit was done using a simple variance-weighted $\chi^2$ minimisation procedure in emission line-free intervals of the optical spectra.   
+The model includes a reddening, \ebv, based on a Small Magellanic Cloud-like extinction curve and described in detail in Section~\ref{sec:sed-extinction}, and an overall normalisation as free parameters.
+In practice, the quasars possess only very modest reddenings, with \ebv$\simeq0.0-0.1$.
+The flux at $5100$\,\AA\, was then, again, taken from the normalised SED model.
+
+For the four remaining quasars, which possess neither near-infrared photometry nor SDSS DR$7$ spectra, we fit the SED model to the BOSS DR$12$ spectra. 
+To avoid the known issues in the flux calibration of the BOSS DR$12$ quasar spectra at observed-frame blue wavelengths \citep{lee13}, our fitting was confined to rest-frame wavelengths long-ward of $1275$ \AA. 
+
+The monochromatic luminosity at $1350$\,\AA\, was also measured by fitting our quasar SED model to the SDSS/BOSS spectra. 
+For $26$ quasars in the catalogue the optical spectra come from surveys other than SDSS/BOSS and optical magnitudes from recent epochs are not available. 
+In order to obtain an estimate of the luminosity at $1350$\,\AA\, for the $26$ quasars, we normalise the quasar SED model to the near-infrared photometric data, and read off the flux at $1350$\,\AA. 
+
+Comparison of the $5100$\,\AA\, luminosity, computed using the photometry- and spectrum-based methods for 177 quasars, showed a scatter of just $\sim0.1$\,dex.
+
+We therefore assume $0.1$\,dex to be the measurement uncertainty on the $5100$\,\AA\, luminosities.
+We expect the uncertainties on the $1350$\,\AA\, luminosities to be at similar level.  
+For all the catalogue quasars, the optical and near-infrared spectra as well as the near-infrared photometry were obtained at different epochs, with rest-frame time differences of up to $\sim5$ years. 
+Intrinsic quasar photometric variability in the rest-frame ultraviolet and optical will therefore add additional scatter of $\sim0.2$ mag \citep[e.g.][]{macleod10} to the derived $1350$- and $5100$ \AA-luminosities.
+
+We matched our catalogue to the AllWISE release from WISE with a $5$ arcsecond matching radius. 
+Out of $498$ quasars, matches were found for $482$. 
+We did a linear interpolation through the WISE SED to find the flux at rest-frame $5$$\mu$m, which we then convert in to a monochromatic luminosity. 
+5 $\mu$m luminosities were derived in this way for $414$ quasars up to redshift $z=3.4$. 
+At higher redshifts, the longest wavelength WISE pass-band ($W4$ is at $<5\mu$m in the quasar rest-frame.
+
+\todoinline{Eight objects are missing because we do not have enough information to calculate the bolometric luminosity?}
+
+Variable atmospheric conditions combined with the narrow slit width resulted in a significant level of uncertainty in the absolute flux calibration for the quasar observations. 
+The use of the UKIDSS broadband magnitudes ($H$ and $K$) to normalise the spectra results in a significantly improved calibration 
+
+\subsection{Flux calibration of spectra}
+\todo{Ask Manda: (1+z) in luminosity calculation.}
+
+
+We get monochromatic luminosity directly from the SED model. 
+LogL$5100$, LogL$1350$ calculated, used to estimate the black hole mass and bolometric luminosity in chapters 3-5. 
+Also $5$\,$\mu$m luminosity by interpolating through WISE magnitudes.    
+
+
+\section{Instrumental broadening}
 
 \begin{table}
   \centering
@@ -353,65 +446,14 @@ The resolutions are generally small relative to the widths of quasar broad emiss
     \end{tabular}
 \end{table} 
 
+Throughout this thesis, reported line-width measures are corrected for instrumental broadening by subtracting the resolution of the spectrograph in quadrature. 
+Because the quasar emission line profiles are typically non-Gaussian, this deconvolution procedure is only approximate. 
+The spectrograph resolutions, which we estimate from the line widths in the observed sky spectra, are given in Table~\ref{tab:specres}. 
+The resolutions are generally small relative to the widths of quasar broad emission lines (FWHM $\sim4000$\,\kms).  
 
 
 
-\subsection{Quasar monochromatic luminosity}
-\todo{Numbers reflect chapter 3 sample only, and so need updating}
 
-We get monochromatic luminosity directly from the SED model. 
-LogL$5100$, LogL$1350$ calculated, used to estimate the black hole mass and bolometric luminosity in chapters 3-5. 
-Also $5$\,$\mu$m luminosity by interpolating through WISE magnitudes.    
-
-Relative flux-calibration of the infrared spectra as a function of wavelength has been achieved through observations of appropriate flux standards. 
-The absolute flux levels, however, can be in error by large factors due to variable atmospheric conditions combined with the narrow slit widths. 
-For the majority of the quasars we have, therefore, established the absolute flux scale for each near-infrared spectrum by fitting an SED-model to the optical-infrared photometry. 
-The SED model, described in Chapter~\ref{ch:sed}, gives a very good fit to the SDSS and UKIDSS magnitudes of SDSS DR$7$ quasars, reproducing the individual magnitudes with a $\sigma <$$0.1$\,mag. 
-For $207$ quasars, ($Y$)$JHK$ passband magnitudes are available. 
-The SED model was fit to the infrared magnitudes; integrating the SED model through the pass-band transmission functions, to give model magnitudes, and performing a variance weighted least-squares fit to the observed magnitudes. 
-The flux at $5100$\,\AA\, was then taken from the normalised model.
-
-For $19$ of the remaining $23$ quasars, where near-infrared photometry was not available, the quasar SED model was fit to the SDSS spectra, the flux calibration of which are known to be excellent.  
-The fit was done using a simple variance-weighted $\chi^2$ minimisation procedure in emission line-free intervals of the optical spectra.   
-The model includes a reddening, \ebv, based on a Small Magellanic Cloud-like extinction curve and described in detail in Section~\ref{sec:sed-extinction}, and an overall normalisation as free parameters.
-In practice, the quasars possess only very modest reddenings, with \ebv$\simeq0.0-0.1$.
-The flux at $5100$\,\AA\, was then, again, taken from the normalised SED model.
-
-For the four remaining quasars, which possess neither near-infrared photometry nor SDSS DR$7$ spectra, we fit the SED model to the BOSS DR$12$ spectra. 
-To avoid the known issues in the flux calibration of the BOSS DR$12$ quasar spectra at observed-frame blue wavelengths \citep{lee13}, our fitting was confined to rest-frame wavelengths long-ward of $1275$ \AA. 
-
-The monochromatic luminosity at $1350$\,\AA\, was also measured by fitting our quasar SED model to the SDSS/BOSS spectra. 
-For $26$ quasars in the catalogue the optical spectra come from surveys other than SDSS/BOSS and optical magnitudes from recent epochs are not available. 
-In order to obtain an estimate of the luminosity at $1350$\,\AA\, for the $26$ quasars, we normalise the quasar SED model to the near-infrared photometric data, and read off the flux at $1350$\,\AA. 
-
-Comparison of the $5100$\,\AA\, luminosity, computed using the photometry- and spectrum-based methods for 177 quasars, showed a scatter of just $\sim0.1$\,dex.
-We therefore assume $0.1$\,dex to be the measurement uncertainty on the $5100$\,\AA\, luminosities.
-We expect the uncertainties on the $1350$\,\AA\, luminosities to be at similar level.  
-For all the catalogue quasars, the optical and near-infrared spectra as well as the near-infrared photometry were obtained at different epochs, with rest-frame time differences of up to $\sim5$ years. 
-Intrinsic quasar photometric variability in the rest-frame ultraviolet and optical will therefore add additional scatter of $\sim0.2$ mag \citep[e.g.][]{macleod10} to the derived $1350$- and $5100$ \AA-luminosities.
-
-We matched our catalogue to the AllWISE release from WISE with a $5$ arcsecond matching radius. 
-Out of $498$ quasars, matches were found for $482$. 
-We did a linear interpolation through the WISE SED to find the flux at rest-frame $5$$\mu$m, which we then convert in to a monochromatic luminosity. 
-5 $\mu$m luminosities were derived in this way for $414$ quasars up to redshift $z=3.4$. 
-At higher redshifts, the longest wavelength WISE pass-band ($W4$ is at $<5\mu$m in the quasar rest-frame.
-
-\todoinline{Eight objects are missing because we do not have enough information to calculate the bolometric luminosity?}
-
-Variable atmospheric conditions combined with the narrow slit width resulted in a significant level of uncertainty in the absolute flux calibration for the quasar observations. 
-The use of the UKIDSS broadband magnitudes ($H$ and $K$) to normalise the spectra results in a significantly improved calibration 
-
-\subsection{Flux calibration of spectra}
-\todo{Ask Manda: (1+z) in luminosity calculation.}
-
-When near-infrared photometric data is available, the absolute flux scale of the spectra may be established by ensuring that broad-band magnitudes measured from the spectra are consistent with the photometry. 
-Because this information is unavailable for a sizeable fraction of our sample, we consider two alternative approaches. 
-
-In the first approach, we leverage the excellent flux-calibration of the SDSS/BOSS spectra, which are available for XX objects in our sample. 
-We use the quasar SED model described in Chapter~\ref{ch:sed} to bridge the gap between the wavelength coverage of the near-infrared and optical SDSS/BOSS spectra.
-The quasar SED model is first fit to the SDSS/BOSS spectra, with the normalisation and extinction \ebv as free parameters. 
-The near-infrared spectra are then fit to the normalised SED model. 
-The second approach is identical, except that the SED model is first fit to the available optical (SDSS) and near-infrared (VHS, Viking, UKIDSS or 2MASS) photometric data \footnote{We are unable to verify the absolute flux calibration of the near-infrared spectra for XX objects () because neither SDSS/BOSS spectra nor optical/near-infrared data is available.}. 
 
 
 
