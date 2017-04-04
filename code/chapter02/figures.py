@@ -72,7 +72,7 @@ def luminosity_z():
                       edgecolor='None', 
                       label='This work', 
                       zorder=10, 
-                      s=20)
+                      s=10)
     
     axScatter.set_xlabel(r'Redshift $z$')
     axScatter.set_ylabel(r'log $L_{\mathrm{Bol}}$ [erg/s]')

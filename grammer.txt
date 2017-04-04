@@ -9,5 +9,13 @@ Spell check
 Check all references
 Chapter, Section: capitalize 
 Check all numbers
-Make all numbers in to math
+Make all numbers in to math (search \d)
 Space around \sim
+we or I? 
+arcsecond 
+E(B-V) -> \ebv
+Space \, before units 
+footnotesize tables 
+\centering figures
+Minimal captitalisation in titles
+chi-squared -> $\chi^2$ 
