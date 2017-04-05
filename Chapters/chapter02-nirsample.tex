@@ -7,22 +7,23 @@
 
 \section{Introduction}
 
-With the exception of a handful of very nearby objects, the inner regions of AGN cannot be resolved. 
-Spectroscopy is therefore an invaluable tool in all AGN-related science. 
-The optical region of a quasar spectrum includes a number of strong emission features, including the broad Balmer lines \hans ($6565$ \AA) and \hbns ($4863$ \AA) and the narrow [\ion{O}{III}]$\lambda\lambda$$4960$,$5008$ doublet. 
-As we will see in Chapter~\ref{ch:bhmass}, the Balmer lines are routinely used to derive BH masses and quasar accretion rates. 
-As the strongest narrow emission line in the optical spectrum, [\ion{O}{III}] is used to measure systemic redshifts, and to probe quasar-driven outflows in the NLR (see Chapter~\ref{ch:nlr}). 
+With the exception of a handful of very nearby objects, the inner regions of AGNs cannot be resolved. 
+Spectroscopy is therefore an invaluable tool in virtually all AGN-related science. 
+The optical region of a quasar spectrum includes a number of strong emission features, including the broad Balmer lines \ha ($6565$ \AA) and \hb ($4863$ \AA) and the narrow [\ion{O}{III}]$\lambda\lambda$$4960$,$5008$ doublet.
+These emission lines are a rich source of information on fundamental properties of AGNs and quasars.  
+As we will see in Chapter~\ref{ch:bhmass}, the Balmer lines are routinely used to derive BH masses and AGN accretion rates. 
+As the strongest narrow emission line in the optical spectrum, [\ion{O}{III}] is used to measure systemic redshifts, and to probe AGN-driven outflows in the NLR (see Chapter~\ref{ch:nlr}). 
 
 Large optical surveys have provided spectra for hundreds of thousands of AGN and quasars. 
-With it's twelfth data release in $2016$, the number of quasars in the Sloan Digital Sky Survey \citep[SDSS;][]{york00} spectroscopic catalogue alone reached almost $300,000$. 
+With it's twelfth data release in $2016$, the number of AGNs and quasars in the Sloan Digital Sky Survey \citep[SDSS;][]{york00} spectroscopic catalogue alone reached almost $300,000$. 
 However, the rest-frame optical region is redshifted beyond the reach of optical spectrographs at redshifts $z \gtrsim0.4$. 
 Accessing the rest-frame optical lines at redshifts $2 \lesssim z \lesssim 4$, during the peak epoch of galaxy evolution, requires near-infrared spectroscopy.  
-Spectroscopic observations are more challenging at infrared wavelengths than in the optical because the Earth's atmosphere is both bright and highly variable at infrared wavelengths. 
-As a result, the number of high-redshift quasars with near-infrared spectra is limited. 
-Previous investigations of the rest-frame optical spectra of quasars at redshifts $z\sim2$ have typically used samples of a few dozen \citep[e.g.][]{marziani09,shen12,shen16a}. 
+
+Spectroscopic observations are more challenging at near-infrared wavelengths than in the optical because the Earth's atmosphere is both bright and highly variable at infrared wavelengths. 
+As a result, the number of high-redshift quasars with near-infrared spectra is limited and previous investigations of the rest-frame optical spectra of quasars at redshifts $z\sim2$ have typically used samples containing a few dozen objects \citep[e.g.][]{marziani09,shen12,shen16a}. 
 
 In this Chapter, I will describe the construction of a database containing $434$ high-redshift quasars. 
-In later Chapters, I will describe how I have used this data to derive un-biased virial BH mass estimates for quasars at redshifts $z \gtrsim 2$ (Chapter~\ref{ch:bhmass}) and to study quasar-driven galaxy-wide outflows (Chapter~\ref{ch:nlr}). 
+In later Chapters, I will describe how I have used this data to significantly reduce large systematic biases afflicting BH mass estimates for quasars at redshifts $z \gtrsim 2$ (Chapter~\ref{ch:bhmass}) and to study the prevalence and drivers of quasar-driven galaxy-wide outflows (Chapter~\ref{ch:nlr}). 
 The unprecedented size and quality of this dataset make a number of other interesting investigations possible, some of which are described in Chapter~\ref{ch:conclusions}. 
 
 \section{Data}
@@ -63,7 +64,7 @@ The columns in Table~\ref{tab:database} are as follows:
 
 \begin{itemize}
 
-\item[1] ID: Jhhmmss+ddmmss. Note: ID is repeated when multiple spectra exist for the same object. 
+\item[1] ID: Jhhmmss+ddmmss. ID is repeated when multiple spectra exist for the same object. 
 
 \item[2] Unique catalogue name.   
 
@@ -73,7 +74,7 @@ The columns in Table~\ref{tab:database} are as follows:
 
 \item[6] Instrument and telescope used to acquire spectrum. 
 
-\item[7] Approximate wavelength range covered by spectrum. 
+\item[7] Wavelength range covered by spectrum. 
 
 \item[8] Velocity per pixel in spectrum. 
 
@@ -117,20 +118,20 @@ The columns in Table~\ref{tab:database} are as follows:
 
 \subsection{\citet{coatman16} Quasars}
 
-\subsubsection{Selecting targets for observations}
+\subsubsection{Target selection}
 
 We selected quasars from the Seventh Data Release \citep[DR7;][]{schneider10} of the SDSS spectroscopic quasar catalogue.  
 The sample was restricted to objects with redshifts $2.14 < z <2.51$ ($7,258$ quasars), to ensure that the \hb and \ha emission lines fall within the $H$- and $K$-bands respectively, allowing us to observe both simultaneously with the appropriate grism configuration.
 Given the limited number of quasars for which near-infrared spectra could be obtained, the quasar sample was further restricted to objects that are radio-quiet ($5,980$ quasars), show no evidence of broad absorption lines (BALs) in their spectra ($5,299$ quasars), and are free from significant dust extinction. 
-We removed radio-loud objects from our sample using the same radio-loud classification as \citet{shen11}, and BAL quasars using the classifications of both \citet{shen11} and \citet{allen11}. 
-The removal of quasars with significant dust extinction was achieved by identifying quasars with $i-K$ colours redder than a parametric spectral energy distributions (SED) model + SMC-like extinction curve with \ebv=$0.05$ (the SED model is described in Chapter~\ref{ch:sed}). 
+We removed radio-loud objects and BAL quasars using the classification flags described in Section~\ref{sec:ch2-flags}. 
+The removal of quasars with significant dust extinction was achieved by identifying quasars with $i-K$ colours redder than a parametric spectral energy distributions (SED) model combined with a SMC-like extinction curve with \ebv=$0.05$ (the SED model is described in Chapter~\ref{ch:sed}). 
 
-The $K$-magnitude was taken from the UKIRT Infrared Deep Sky Survey \citep[UKIDSS;][]{lawrence07} Large Area Survey (ULAS). 
+The $K$-magnitude (used to compute the $i-K$ colour) was taken from the UKIRT Infrared Deep Sky Survey \citep[UKIDSS;][]{lawrence07} Large Area Survey (ULAS). 
 The requirement to be in the ULAS footprint and have reliable $K$ band photometry reduced our sample of possible targets to $1,683$, and the \ebv\, cut left $1,204$ in our sample. 
 Finally, a flux-limit of $K<18.5$ (AB) was applied to ensure that spectra of sufficient signal-to-noise ratio (S/N) could be obtained (leaving $412$ quasars). 
  
-We were able to obtain new infra-red spectra for $19$ quasars from this sample of $412$ possible targets. 
-The quasars included in this sub-sample were selected to have \ion{C}{IV}-emission shapes which span the full range observed in the population (see Section~\ref{sec:ch3-intro}). 
+We were able to obtain new infrared spectra for $19$ quasars from this sample of $412$ possible targets. 
+The quasars included in this sub-sample were selected to have \ion{C}{IV}-emission shapes which span the full range observed in the population. 
 Reliably quantifying the distribution of \ion{C}{IV}-emission shapes has been made possible thanks to recent improvements in the estimation of systemic redshifts from ultraviolet spectra (see Section~\ref{sec:ch3-recipe} for details). 
 
 \subsubsection{Observations}
@@ -146,7 +147,7 @@ Bright A$0-5$V stars were observed at similar air-masses to the targets in order
 \subsubsection{Data reduction}
 
 The raw LIRIS data frames incorporate a known `pixel shift' which was first removed from all frames using the LIRIS data reduction package {\tt LIRISDR}. 
-Subsequent data reduction was undertaken with standard {\tt IRAF}\footnote{IRAF is distributed by the National Optical Astronomy Observatory, which is operated by the Association of Universities for Research in Astronomy (AURA) under a cooperative agreement with the National Science Foundation.} procedures \footnote{The data reduction pipeline is available at https://github.com/liamcoatman/SpectraTools}.  
+Subsequent data reduction was undertaken with standard {\tt IRAF}\footnote{IRAF is distributed by the National Optical Astronomy Observatory, which is operated by the Association of Universities for Research in Astronomy (AURA) under a cooperative agreement with the National Science Foundation.} procedures\footnote{The data reduction pipeline is available at https://github.com/liamcoatman/SpectraTools}.  
 The flat-field images, which were taken at the beginning of each night via illumination of the dome, were averaged and normalised to remove any wavelength-dependent signature. 
 Each individual two-dimensional spectrum was then flat-field corrected. 
 Consecutive AB and BA pairs of two-dimensional spectra were subtracted to remove the sky background. 
@@ -163,15 +164,16 @@ The spectral type and magnitude of the standard star were used to flux calibrate
 \subsection{\citet{shen12} and \citet{shen16a} Quasars}
 
 \citet{shen16a} and \citet{shen12} obtained near-infrared spectroscopy for a sample of $74$ luminous, $1.5 < z < 3.5$ quasars selected from the SDSS DR$7$ quasar catalogue. 
-Targets had to possess good optical spectra covering the \ion{C}{IV} line and have redshifts $z\sim$ $1.5$, $2.1$, and $3.3$ to ensure that the \hbns-[\ion{O}{iii}] region was covered in one of the near-infrared $JHK$ bands.
+Targets were required to possess good optical spectra covering the \ion{C}{IV} line and have redshifts $z\sim$ $1.5$, $2.1$, and $3.3$ to ensure that the \hbns-[\ion{O}{iii}] region was covered in one of the near-infrared $JHK$ bands.
 Thirty-eight of the quasars were observed with TripleSpec \citep{wilson04} on the Astrophysics Research Consortium (ARC) $3.5$\,m telescope, and $36$ with the Folded-port InfraRed Echellette \citep[FIRE;][]{simcoe10} on the $6.5$\,m Magellan-Baade telescope.
 The reduction of the spectra is described in \citet{shen16a} and \citet{shen12}. 
 
 \subsection{Quasar Pairs}
 
-A large part of our catalogue was observed as part of an ongoing effort to identify quasar pairs at very close projected separations \citep[Quasars Probing Quasars\footnote{www.ucolick.org/\textasciitilde xavier/QPQ/Quasars\_Probing\_Quasars} (QPQ);][]{hennawi06a,hennawi10}. 
+A large part of our catalogue was observed as part of an ongoing effort to identify quasar pairs at very close projected separations \citep[Quasars Probing Quasars\footnote{www.ucolick.org/\textasciitilde xavier/QPQ/Quasars\_Probing\_Quasars};][]{hennawi06a,hennawi10}. 
 The primary science driver of this work is to study the circum-galactic medium of the foreground quasars in absorption \citep{hennawi06b}.
-Very accurate systemic redshift measurements are a requirement and a large amount of resources have been devoted to obtaining near-infrared spectra which cover low-ionisation broad lines or features from the quasar narrow line region \citep{prochaska09,lau16,hennawi15}. 
+Very accurate systemic redshift measurements are a requirement and a large amount of resources have been devoted to obtaining near-infrared spectra which cover low-ionisation broad lines or features from the quasar NLR \citep{prochaska09,lau16,hennawi15}. 
+
 Twenty-nine quasars were observed with the Gemini Near-Infrared Spectrograph \citep[GNIRS;][]{elias06} on the 8.1 m Gemini North telescope, thirteen using the Infrared Spectrometer And Array Camera \citep[ISAAC;][]{moorwood98b} on the European Southern Observatory (ESO) Very Large Telescope (VLT), thirty-one with the Near InfraRed Imager and Spectrometer \citep[NIRI;][]{hodapp03} also on Gemini North and thirty-six with XSHOOTER \citep{vernet11}, again, on the VLT. 
 
 The  XSHOOTER  spectra  were  reduced  with  a  custom  software  package  developed  by  George  Becker \citep[for details, see][]{lau16}. 
@@ -181,7 +183,7 @@ The remaining data was processed with algorithms in the LowRedux\footnote{www.uc
 
 We performed a search of the ESO archive for high-redshift quasars observed with the SINFONI  integral  field  spectrograph \citep{eisenhauer03,bonnet04} at VLT/UT4.
 We found $79$ quasars with redshifts $1.5 < z < 3.7$ which have $H$ and/or $K$ SINFONI spectroscopy, covering the \hb and \ha lines respectively. 
-Seventy-two of the quasars are from a large programme led by L. Wisotzki (programme $083$.B-$0456$(A)) to study the mass function and Eddington ratios of active BHs at redshifts $z\sim 2$ drawn from the Hamburg-ESO survey \citep{wisotzki00}.
+Seventy-two of the quasars are from a large programme led by L. Wisotzki (programme $083$.B-$0456$(A)) to study the mass function and Eddington ratios of active BHs drawn from the Hamburg-ESO survey \citep{wisotzki00}.
 A further seven SINFONI spectra are from a programme led by  J. D. Kurk (programme $090$.B-$0674$(B)) to obtain reliable BH mass estimates from \hans/\hb for a sample of radio-loud/radio-quiet SDSS quasars.
 
 I reduced the SINFONI spectra using the package EASYSINF\footnote{www.mrao.cam.ac.uk/\textasciitilde rw$480$/easysinf}.  
@@ -205,7 +207,7 @@ A further $60$ quasars in our catalogue are bright SDSS quasars which were obser
 The objects were observed with the same science goals as the SOFI NTT large programme. 
 The spectra were reduced using a custom pipeline, again using algorithms in the LowRedux package. 
 
-\subsection{Redshift and luminosity}
+\section{Redshift and luminosity distribution of catalogue}
 
 \begin{figure}[h!]
     \centering
@@ -225,7 +227,7 @@ As a consequence, at fixed redshift, the luminosities of the quasars are brighte
 \begin{table}
   \centering
   \footnotesize 
-  \caption{Percentage of catalogue for which optical spectroscopic data is available.}
+  \caption{Percentage of catalogue for which optical spectroscopic data is available from the given sources.}
   \label{tab:optical-data}
     \begin{tabular}{ccc}
     \hline
@@ -233,9 +235,9 @@ As a consequence, at fixed redshift, the luminosities of the quasars are brighte
     \hline
     ($1$) & SDSS & 60 \\
     ($2$) & BOSS & 45 \\
-    ($3$) & VLT/UVES & 4 \\
-    ($4$) & VLT/XSHOOTER & 8 \\ 
-    ($5$) & HAMBURG-ESO & 7 \\
+    ($3$) & HAMBURG-ESO & 7 \\
+    ($4$) & VLT/UVES & 4 \\
+    ($5$) & VLT/XSHOOTER & 8 \\ 
     \hline
     \end{tabular}
 \end{table} 
@@ -243,27 +245,27 @@ As a consequence, at fixed redshift, the luminosities of the quasars are brighte
 \subsection{Optical spectroscopic data}
 
 Optical spectra are available for 79 per cent of the catalogue. 
-The origin of these spectra are summarised in Table~\ref{tab:optical-data}. 
-The columns in Table~\ref{tab:optical-data} are as follows:
+The origin of these spectra is summarised in Table~\ref{tab:optical-data}. 
+The sources of the optical spectra employed are as follows:
 
 \begin{enumerate}
 
- \item Spectra from the Seventh Data Release \citep[DR7;][]{schneider10} of the SDSS spectroscopic quasar catalogue. Spectra are moderate resolution ($R\simeq2000$) and S/N (S/N$\simeq20$) and cover the observed-frame wavelength interval $\sim3800-9180$\,\AA.   
+ \item The Seventh Data Release \citep[DR7;][]{schneider10} of the SDSS spectroscopic quasar catalogue. Spectra are moderate resolution ($R\simeq2000$) and S/N (S/N$\simeq20$) and cover the observed-frame wavelength interval $\sim3800-9180$\,\AA.   
  
- \item Spectra from the Sloan Digital Sky Survey-III: Baryon Oscillation Spectroscopic Survey \citep[SDSS-III/BOSS;][]{dawson13}. Compared to SDSS spectra, BOSS spectra cover a slightly broader wavelength range and are typically have higher S/N. 
+ \item The Twelfth Data Release \citep[DR12;][]{paris17} of the Sloan Digital Sky Survey-III: Baryon Oscillation Spectroscopic Survey \citep[SDSS-III/BOSS;][]{dawson13}. Compared to SDSS spectra, BOSS spectra cover a slightly broader wavelength range and are typically higher S/N. 
+
+ \item The Hamburg-ESO survey \citep{wisotzki00}. The spectra have a typical $\sim400$\,\kms spectral resolution and S/N $\gtrsim10$ per pixel. 
 
  \item Spectra taken with VLT/UVES. The reduced and fluxed UVES spectra were made available to us by A. Dall'Aglio (a description of the reduction procedure is contained in \citealt{dallaglio08}). The spectral resolution of the UVES observations is very high ($R\sim40,000$) and the S/N of the spectra, re-binned to a resolution of $\simeq2000$, is S/N$\simeq300$. 
 
  \item Spectra taken with VLT/XSHOOTER. The XSHOOTER spectra are moderate resolution ($\sim6000$) and cover the full optical-near-infrared spectral region ($0.30-2.50$\,$\mu$m). 
 
- \item Spectra from the Hamburg-ESO survey. The spectra have a typical $\sim400$\,\kms spectral resolution and S/N $\gtrsim10$ per pixel. 
-
 \end{enumerate}
 
 \subsection{Photometric data}
 
-We cross-matched our catalogue with photometric data from the following sources. 
-The matching was done using a 5 arcsecond matching radius, with the only the closest neighbour retained in the case of multiple matches. 
+We cross-matched our catalogue with photometric data from the sources given below. 
+The matching was done using a 5 arcsecond matching radius, with only the closest neighbour retained in the case of multiple matches. 
 The cross-matched surveys and the percentage of successful matches is summarised in Table~\ref{tab:cross-matching}. 
 The columns in Table~\ref{tab:cross-matching} are as follows:
 
@@ -284,6 +286,7 @@ The columns in Table~\ref{tab:cross-matching} are as follows:
 \end{enumerate}
 
 \subsection{Radio/BALQSO classification}
+\label{sec:ch2-flags}
 
 Using the catalogues provided by \citet{shen11}, \citet{allen11} and \citet{paris17} and visual inspection, 19 quasars in the catalogue are identified as being \ion{C}{IV} BALQSOs.  
 
@@ -294,7 +297,7 @@ We classify quasars with matches within $5$\,arcsecond as core-dominated, while,
 \begin{table}
   \centering
   \footnotesize 
-  \caption{Cross-matched surveys and the percentage of successful matches}
+  \caption{Cross-matched surveys and the percentage of successful matches.}
   \label{tab:cross-matching}
     \begin{tabular}{ccccccc} 
     \hline
@@ -323,23 +326,22 @@ We classify quasars with matches within $5$\,arcsecond as core-dominated, while,
 Relative flux-calibration of the infrared spectra as a function of wavelength has been achieved through observations of appropriate flux standards. 
 The absolute flux levels, however, can be in error by large factors due to variable atmospheric conditions combined with the narrow slit widths. 
 For the majority of the quasars we have, therefore, established the absolute flux scale for each near-infrared spectrum using either the SDSS/BOSS spectroscopy or the available photometric data.
-Two methods are considered, depending on the availability of spectroscopic/photometric data for each object. 
 
-In one method, we leverage the excellent flux-calibration of SDSS spectra, which are available for XX per cent of our objects.
-If an SDSS spectrum is not available, a BOSS spectrum is used instead (XX per cent of our objects). 
+When a SDSS spectrum is available, we leverage the excellent flux calibration of these spectra to calibrate the near-infrared spectra. 
+If a BOSS spectrum available, and an SDSS is not, then this is used instead. 
 We use the quasar SED model described in Chapter~\ref{ch:sed} to bridge the gap between the wavelength coverage of the near-infrared and optical SDSS/BOSS spectra.
 The SED model, described in Chapter~\ref{ch:sed}, gives a very good fit to the SDSS and UKIDSS magnitudes of SDSS DR$7$ quasars, reproducing the individual magnitudes with a $\sigma <0.1$\,mag.
-The first step is to fit the quasar SED model to the SDSS/BOSS spectrum. 
+The first step is to fit this quasar SED model to the SDSS/BOSS spectrum. 
 The fit was done using a simple variance-weighted $\chi^2$ minimisation procedure in several emission line-free intervals of the optical spectra.   
 To avoid the known issues in the flux calibration of the BOSS DR$12$ quasar spectra at observed-frame blue wavelengths \citep{lee13}, our fitting was confined to rest-frame wavelengths long-ward of $1275$ \AA. 
 The second step is to fit the near-infrared spectrum to the normalised SED model. 
-Regions of the spectrum which fall between the near-infrared transmission bands are masked out in the fitting procedure. 
+Regions of the spectrum which fall between the near-infrared transmission bands are masked-out in the fitting procedure. 
 The flux calibration method is demonstrated in Figure~\ref{fig:normalise_to_sdss}a. 
 
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{figures/chapter02/normalise_to_sdss.pdf} 
-    \caption[{}]{Demonstration of how the absolute flux calibration of the near-infrared spectrum (shown in red) is established using the SDSS spectrum (shown in blue, a) and photometric data (b). An empirical quasar SED model (shown in black) is used to bridge the discontinuity in the wavelength coverage of the optical/near-infrared spectroscopic and photometric data. The darker regions of the spectra are used in the fitting procedure.}     
+    \caption[{}]{Demonstration of how the absolute flux calibration of the near-infrared spectrum (shown in red) is established using the SDSS spectrum (shown in blue, a) and photometric data (b). An empirical quasar SED model (shown in black) is used to bridge the discontinuity in the wavelength coverage of the optical/near-infrared spectroscopic and photometric data. The darker regions of the spectra are used in the fitting procedures.}     
     \label{fig:normalise_to_sdss}
 \end{figure}
 
@@ -347,8 +349,9 @@ If a SDSS/BOSS spectrum is unavailable, then a second flux calibration method is
 This method is identical, except that the SED model is first fit to the available optical (SDSS) and near-infrared (VHS, Viking, UKIDSS or 2MASS) photometric data. 
 The SED model was integrated through the pass-band transmission functions, to give model magnitudes, and a variance weighted least-squares fit was done to the observed magnitudes. 
 This is shown in Figure~\ref{fig:normalise_to_sdss}b. 
+
 We are unable to verify the absolute flux calibration of the near-infrared spectra for four objects because neither SDSS/BOSS spectra nor optical/near-infrared data is available. 
-The references used to flux calibrate the near-infrared spectra are summarised in Table~\ref{tab:flux_calibration}. 
+The methods used to flux calibrate the near-infrared spectra are summarised in Table~\ref{tab:flux_calibration}. 
 
 \begin{table}
   \centering
@@ -375,11 +378,11 @@ Comparison of the $5100$\,\AA\, luminosity, computed using the photometry- and s
 We therefore assume $0.1$\,dex to be the measurement uncertainty on the $5100$\,\AA\, luminosities.
 We expect the uncertainties on the $1350$\,\AA\, luminosities to be at similar level.  
 For all the catalogue quasars, the optical and near-infrared spectra as well as the near-infrared photometry were obtained at different epochs, with rest-frame time differences of up to $\sim5$ years. 
-Intrinsic quasar photometric variability in the rest-frame ultraviolet and optical will therefore add additional scatter of $\sim0.2$ mag \citep[e.g.][]{macleod10} to the derived $1350$- and $5100$ \AA-luminosities.
+Intrinsic quasar photometric variability in the rest-frame ultraviolet and optical will therefore add additional scatter of $\sim0.2$ mag \citep[e.g.][]{macleod10} to the derived $1350$ and $5100$ \AA luminosities.
 
 The monochromatic continuum luminosity at 5 $\mu$m was also computed by linearly interpolating through the WISE photometric data points. 
 5 $\mu$m luminosities were derived in this way for 434 quasars up to redshift $z=3.4$. 
-At higher redshifts, the longest wavelength WISE pass-band ($W4$ is at $<5\mu$m in the quasar rest-frame.
+At higher redshifts, the longest wavelength WISE pass-band ($W4$) is at $<5\mu$m in the quasar rest-frame.
 
 \section{Instrumental broadening}
 

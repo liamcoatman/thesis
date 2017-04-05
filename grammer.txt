@@ -20,3 +20,4 @@ footnotesize tables
 Minimal captitalisation in titles
 chi-squared -> $\chi^2$ 
 ultraviolet / ultra-violet
+infra-red -> infrared 
