@@ -1,6 +1,6 @@
 in to -> into
 kiloparsec/kpc -> kilo-parsec
-space before \kms
+space before units 
 check all short captions
 micron -> $\mu$m
 emission line -> emission-line
@@ -14,10 +14,14 @@ Space around \sim
 we or I? 
 arcsecond 
 E(B-V) -> \ebv
-Space \, before units 
+Space \, before units \kms, \AA, \ergs, dex 
+0\,\kms\, next word \AA\, 
 footnotesize tables 
 \centering figures
 Minimal captitalisation in titles
 chi-squared -> $\chi^2$ 
-ultraviolet / ultra-violet
+ultraviolet 
 infra-red -> infrared 
+make fig 1a etc in to real captions
+\ion{C}{IV}-emission line ->  \ion{C}{IV} emission-line
+Fig. -> Figure  

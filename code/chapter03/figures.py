@@ -1452,6 +1452,16 @@ def civ_comparisons_paper2():
     axs[1].set_ylabel(r'$\sigma$ [km~$\rm{s}^{-1}$]')
     axs[2].set_ylabel(r'FWHM/$\sigma$')
 
+    labels = ['(a)', '(b)', '(c)']
+
+
+    for i, label in enumerate(labels):
+
+        axs[i].text(0.1, 0.93, label,
+                    horizontalalignment='center',
+                    verticalalignment='center',
+                    transform = axs[i].transAxes)
+
     fig.tight_layout()  
 
     fig.savefig('/home/lc585/thesis/figures/chapter03/civ_comparisons_paper2.pdf')
@@ -1525,6 +1535,16 @@ def ha_comparisons_paper2():
     axs[0].set_ylabel(r'FWHM [km~$\rm{s}^{-1}$]')
     axs[1].set_ylabel(r'$\sigma$ [km~$\rm{s}^{-1}$]')
     axs[2].set_ylabel(r'FWHM/$\sigma$')
+
+    labels = ['(a)', '(b)', '(c)']
+
+
+    for i, label in enumerate(labels):
+
+        axs[i].text(0.9, 0.93, label,
+                    horizontalalignment='center',
+                    verticalalignment='center',
+                    transform = axs[i].transAxes)
     
     fig.tight_layout()  
 
