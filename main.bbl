@@ -16,53 +16,6 @@
   {}
 \endgroup
 
-\entry{allen13}{article}{}
-  \name{author}{5}{}{%
-    {{}%
-     {{Allen}}{A.}%
-     {J.~T.}{J.~T.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Hewett}}{H.}%
-     {P.~C.}{P.~C.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Richardson}}{R.}%
-     {C.~T.}{C.~T.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Ferland}}{F.}%
-     {G.~J.}{G.~J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Baldwin}}{B.}%
-     {J.~A.}{J.~A.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{methods: data analysis, galaxies: active, galaxies: evolution,
-  galaxies: nuclei, galaxies: star formation, galaxies: statistics}
-  \strng{namehash}{AJT+1}
-  \strng{fullhash}{AJTHPCRCTFGJBJA1}
-  \field{labelyear}{2013}
-  \field{sortinit}{A}
-  \verb{eprint}
-  \verb 1301.5930
-  \endverb
-  \field{pages}{3510\bibrangedash 3536}
-  \field{title}{{Classification and analysis of emission-line galaxies using
-  mean field independent component analysis}}
-  \field{volume}{430}
-  \field{journaltitle}{\mnras}
-  \field{eprinttype}{arXiv}
-  \field{month}{04}
-  \field{year}{2013}
-\endentry
-
 \entry{assef11}{article}{}
   \name{author}{42}{}{%
     {{}%
@@ -356,81 +309,6 @@
   \field{year}{1992}
 \endentry
 
-\entry{brotherton99}{inproceedings}{}
-  \name{author}{2}{}{%
-    {{}%
-     {{Brotherton}}{B.}%
-     {M.~S.}{M.~S.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Francis}}{F.}%
-     {P.~J.}{P.~J.}%
-     {}{}%
-     {}{}}%
-  }
-  \name{editor}{2}{}{%
-    {{}%
-     {{Ferland}}{F.}%
-     {G.}{G.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Baldwin}}{B.}%
-     {J.}{J.}%
-     {}{}%
-     {}{}}%
-  }
-  \strng{namehash}{BMSFPJ1}
-  \strng{fullhash}{BMSFPJ1}
-  \field{labelyear}{1999}
-  \field{sortinit}{B}
-  \field{booktitle}{Quasars and Cosmology}
-  \verb{eprint}
-  \verb astro-ph/9811088
-  \endverb
-  \field{pages}{395}
-  \field{series}{Astronomical Society of the Pacific Conference Series}
-  \field{title}{{The Intermediate Line Region and the Baldwin Effect}}
-  \field{volume}{162}
-  \field{year}{1999}
-\endentry
-
-\entry{brotherton15b}{article}{}
-  \name{author}{3}{}{%
-    {{}%
-     {{Brotherton}}{B.}%
-     {M.~S.}{M.~S.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Singh}}{S.}%
-     {V.}{V.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Runnoe}}{R.}%
-     {J.}{J.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{galaxies: active, quasars: general}
-  \strng{namehash}{BMSSVRJ1}
-  \strng{fullhash}{BMSSVRJ1}
-  \field{labelyear}{2015}
-  \field{sortinit}{B}
-  \verb{eprint}
-  \verb 1509.06468
-  \endverb
-  \field{pages}{3864\bibrangedash 3871}
-  \field{title}{{Orientation and quasar black hole mass estimation}}
-  \field{volume}{454}
-  \field{journaltitle}{\mnras}
-  \field{eprinttype}{arXiv}
-  \field{month}{12}
-  \field{year}{2015}
-\endentry
-
 \entry{brotherton15}{article}{}
   \name{author}{4}{}{%
     {{}%
@@ -533,96 +411,6 @@
   \field{eprinttype}{arXiv}
   \field{month}{10}
   \field{year}{2002}
-\endentry
-
-\entry{coatman16}{article}{}
-  \name{author}{4}{}{%
-    {{}%
-     {{Coatman}}{C.}%
-     {L.}{L.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Hewett}}{H.}%
-     {P.~C.}{P.~C.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Banerji}}{B.}%
-     {M.}{M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Richards}}{R.}%
-     {G.~T.}{G.~T.}%
-     {}{}%
-     {}{}}%
-  }
-  \strng{namehash}{CL+1}
-  \strng{fullhash}{CLHPCBMRGT1}
-  \field{labelyear}{2016}
-  \field{sortinit}{C}
-  \verb{eprint}
-  \verb 1606.02726
-  \endverb
-  \field{pages}{647\bibrangedash 665}
-  \field{title}{{CIV emission-line properties and systematic trends in quasar
-  black hole mass estimates}}
-  \field{volume}{461}
-  \field{journaltitle}{\mnras}
-  \field{eprinttype}{arXiv}
-  \field{month}{09}
-  \field{year}{2016}
-\endentry
-
-\entry{coatman17}{article}{}
-  \name{author}{6}{}{%
-    {{}%
-     {{Coatman}}{C.}%
-     {L.}{L.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Hewett}}{H.}%
-     {P.~C.}{P.~C.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Banerji}}{B.}%
-     {M.}{M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Richards}}{R.}%
-     {G.~T.}{G.~T.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Hennawi}}{H.}%
-     {J.~F.}{J.~F.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Prochaska}}{P.}%
-     {J.~X.}{J.~X.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{galaxies: evolution}
-  \strng{namehash}{CL+1}
-  \strng{fullhash}{CLHPCBMRGTHJFPJX1}
-  \field{labelyear}{2017}
-  \field{sortinit}{C}
-  \verb{eprint}
-  \verb 1610.08977
-  \endverb
-  \field{pages}{2120\bibrangedash 2142}
-  \field{title}{{Correcting C IV-based virial black hole masses}}
-  \field{volume}{465}
-  \field{journaltitle}{\mnras}
-  \field{eprinttype}{arXiv}
-  \field{month}{02}
-  \field{year}{2017}
 \endentry
 
 \entry{collin06}{article}{}
@@ -2149,47 +1937,6 @@
   \field{eprinttype}{arXiv}
   \field{month}{03}
   \field{year}{2016}
-\endentry
-
-\entry{marziani03}{article}{}
-  \name{author}{4}{}{%
-    {{}%
-     {{Marziani}}{M.}%
-     {P.}{P.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Zamanov}}{Z.}%
-     {R.~K.}{R.~K.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Sulentic}}{S.}%
-     {J.~W.}{J.~W.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Calvani}}{C.}%
-     {M.}{M.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{galaxies: active, quasars: emission lines, quasars: general}
-  \strng{namehash}{MP+1}
-  \strng{fullhash}{MPZRKSJWCM1}
-  \field{labelyear}{2003}
-  \field{sortinit}{M}
-  \verb{eprint}
-  \verb astro-ph/0307367
-  \endverb
-  \field{pages}{1133\bibrangedash 1144}
-  \field{title}{{Searching for the physical drivers of eigenvector 1: influence
-  of black hole mass and Eddington ratio}}
-  \field{volume}{345}
-  \field{journaltitle}{\mnras}
-  \field{eprinttype}{arXiv}
-  \field{month}{11}
-  \field{year}{2003}
 \endentry
 
 \entry{marziani09}{article}{}
@@ -4122,7 +3869,6 @@
   \strng{namehash}{RJC+1}
   \strng{fullhash}{RJCBMSSZDMA1}
   \field{labelyear}{2013}
-  \field{extrayear}{1}
   \field{sortinit}{R}
   \verb{eprint}
   \verb 1306.3521
@@ -4134,54 +3880,6 @@
   \field{journaltitle}{\mnras}
   \field{eprinttype}{arXiv}
   \field{month}{09}
-  \field{year}{2013}
-\endentry
-
-\entry{runnoe13b}{article}{}
-  \name{author}{5}{}{%
-    {{}%
-     {{Runnoe}}{R.}%
-     {J.~C.}{J.~C.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Brotherton}}{B.}%
-     {M.~S.}{M.~S.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Shang}}{S.}%
-     {Z.}{Z.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Wills}}{W.}%
-     {B.~J.}{B.~J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{DiPompeo}}{D.}%
-     {M.~A.}{M.~A.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{accretion, accretion discs, black hole physics, galaxies: active,
-  quasars: general}
-  \strng{namehash}{RJC+1}
-  \strng{fullhash}{RJCBMSSZWBJDMA1}
-  \field{labelyear}{2013}
-  \field{extrayear}{2}
-  \field{sortinit}{R}
-  \verb{eprint}
-  \verb 1211.3984
-  \endverb
-  \field{pages}{135\bibrangedash 149}
-  \field{title}{{The orientation dependence of quasar single-epoch black hole
-  mass scaling relationships}}
-  \field{volume}{429}
-  \field{journaltitle}{\mnras}
-  \field{eprinttype}{arXiv}
-  \field{month}{02}
   \field{year}{2013}
 \endentry
 
@@ -5193,57 +4891,6 @@
   \field{year}{2008}
 \endentry
 
-\entry{wang13}{article}{}
-  \name{author}{6}{}{%
-    {{}%
-     {{Wang}}{W.}%
-     {H.}{H.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Xing}}{X.}%
-     {F.}{F.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Zhang}}{Z.}%
-     {K.}{K.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Wang}}{W.}%
-     {T.}{T.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Zhou}}{Z.}%
-     {H.}{H.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Zhang}}{Z.}%
-     {S.}{S.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{dust, extinction, galaxies: nuclei, infrared: galaxies, quasars:
-  emission lines, quasars: general}
-  \strng{namehash}{WH+1}
-  \strng{fullhash}{WHXFZKWTZHZS1}
-  \field{labelyear}{2013}
-  \field{sortinit}{W}
-  \verb{eprint}
-  \verb 1309.4465
-  \endverb
-  \field{pages}{L15}
-  \field{title}{{Outflow and Hot Dust Emission in High-redshift Quasars}}
-  \field{volume}{776}
-  \field{journaltitle}{\apjl}
-  \field{eprinttype}{arXiv}
-  \field{month}{10}
-  \field{year}{2013}
-\endentry
-
 \entry{wang09}{article}{}
   \name{author}{9}{}{%
     {{}%
@@ -5309,6 +4956,40 @@
   \field{eprinttype}{arXiv}
   \field{month}{12}
   \field{year}{2009}
+\endentry
+
+\entry{yuan03}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {{Yuan}}{Y.}%
+     {M.~J.}{M.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Wills}}{W.}%
+     {B.~J.}{B.~J.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Accretion, Accretion Disks, Black Hole Physics, Galaxies: Active,
+  Galaxies: Evolution, Galaxies: Quasars: Emission Lines, Galaxies: Quasars:
+  General}
+  \strng{namehash}{YMJWBJ1}
+  \strng{fullhash}{YMJWBJ1}
+  \field{labelyear}{2003}
+  \field{sortinit}{Y}
+  \verb{doi}
+  \verb 10.1086/378037
+  \endverb
+  \verb{eprint}
+  \verb astro-ph/0306518
+  \endverb
+  \field{pages}{L11\bibrangedash L14}
+  \field{title}{{Eddington Accretion and QSO Emission Lines at z\~{}2}}
+  \field{volume}{593}
+  \field{journaltitle}{\apjl}
+  \field{month}{08}
+  \field{year}{2003}
 \endentry
 
 \entry{zamfir10}{article}{}

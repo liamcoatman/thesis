@@ -20,6 +20,7 @@ from SpectraTools.fit_line import wave2doppler
 from lmfit.models import GaussianModel, ConstantModel
 from PlottingTools.gausshermite import gausshermite_4, gausshermite_2
 from scipy.interpolate import interp1d
+from lmfit import Model
 
 def plot_MCMC_model(ax, xdata, ydata, sigma_y, trace, linestyle='--', label='', show_sigma=True):
 
@@ -928,7 +929,7 @@ def test_corrections():
 
     cs = palettable.colorbrewer.qualitative.Set1_3.mpl_colors
 
-    fig, axs = plt.subplots(4, 1, figsize=figsize(0.9, vscale=2), sharex=True, sharey=True)
+    fig, axs = plt.subplots(3, 1, figsize=figsize(0.9, vscale=1.5), sharex=True, sharey=True)
     
 
     df = pd.read_csv('/home/lc585/BHMassPaper2_Submitted_Data/masterlist_liam_resubmitted.csv', index_col=0)
@@ -945,38 +946,38 @@ def test_corrections():
 
     #----- Our correction ------------------------------------
 
-    xi = df.LogMBH_Ha.values 
+    # xi = df.LogMBH_Ha.values 
     
-    fwhm = df['FWHM_Broad_Ha'] * 1.e-3 
+    # fwhm = df['FWHM_Broad_Ha'] * 1.e-3 
             
-    fwhm_hb = 1.23e3 * np.power(fwhm, 0.97)
+    # fwhm_hb = 1.23e3 * np.power(fwhm, 0.97)
     
-    m, b = 0.41, 0.62
+    # m, b = 0.41, 0.62
    
-    fwhm_ha = df.FWHM_CIV_BEST / (m * df.Blueshift_CIV_Ha * 1e-3 + b)
+    # fwhm_ha = df.FWHM_CIV_BEST / (m * df.Blueshift_CIV_Ha * 1e-3 + b)
 
-    fwhm_ha = fwhm_ha * 1e-3   
-    l1350 = 10**(df['LogL1350'].values) * 1e-44
+    # fwhm_ha = fwhm_ha * 1e-3   
+    # l1350 = 10**(df['LogL1350'].values) * 1e-44
 
-    p1 = np.power(10, 6.71)
-    p2 = np.power(fwhm_ha, 2)
-    p3 = np.power(l1350, 0.53)
+    # p1 = np.power(10, 6.71)
+    # p2 = np.power(fwhm_ha, 2)
+    # p3 = np.power(l1350, 0.53)
 
-    yi = p1 * p2 * p3
+    # yi = p1 * p2 * p3
 
-    axs[3].scatter(df['Blueshift_CIV_Ha'], 
-                   yi / 10**df['LogMBH_Ha'], 
-                   facecolor=cs[1], 
-                   label='This paper', 
-                   edgecolor='None', 
-                   marker='o', 
-                   alpha=1.0,
-                   zorder=1,
-                   s=25)
+    # axs[3].scatter(df['Blueshift_CIV_Ha'], 
+    #                yi / 10**df['LogMBH_Ha'], 
+    #                facecolor=cs[1], 
+    #                label='This paper', 
+    #                edgecolor='None', 
+    #                marker='o', 
+    #                alpha=1.0,
+    #                zorder=1,
+    #                s=25)
 
-    axs[3].set_yscale('log')
-    axs[3].set_ylim(0.1, 10)
-    axs[3].set_xlabel(r'C\,{\sc iv} Blueshift [km~$\rm{s}^{-1}$]')
+    # axs[3].set_yscale('log')
+    # axs[3].set_ylim(0.1, 10)
+    # axs[3].set_xlabel(r'C\,{\sc iv} Blueshift [km~$\rm{s}^{-1}$]')
 
     #-----------------------------------------------------------------------------------
 
@@ -1031,9 +1032,13 @@ def test_corrections():
     
     axs[2].set_yscale('log')
 
+    axs[2].set_ylim(0.1, 10)
+    axs[2].set_xlabel(r'C\,{\sc iv} Blueshift [km~$\rm{s}^{-1}$]')
+
+
     fig.text(0.04, 0.5, r'BHM C\,{\sc iv} (Corrected) / BHM H$\alpha$', va='center', rotation='vertical')
 
-    axs[3].text(0.05, 0.9, '(d) This work', transform = axs[3].transAxes)
+    # axs[3].text(0.05, 0.9, '(d) This work', transform = axs[3].transAxes)
     axs[0].text(0.05, 0.9, '(a) Denney (2012)', transform = axs[0].transAxes)
     axs[1].text(0.05, 0.9, '(b) Runnoe et al. (2013)', transform = axs[1].transAxes) 
     axs[2].text(0.05, 0.9, '(c) Park et al. (2013)', transform = axs[2].transAxes) 
@@ -1051,6 +1056,71 @@ def test_corrections():
     plt.subplots_adjust(hspace=0.1, left = 0.15)
 
     fig.savefig('/home/lc585/thesis/figures/chapter03/corrections.pdf')
+
+    plt.show() 
+
+    return None 
+
+def test_corrections_coatman():
+
+    set_plot_properties() # change style 
+
+    cs = palettable.colorbrewer.qualitative.Set1_3.mpl_colors
+
+    fig, ax = plt.subplots(1, 1, figsize=figsize(0.9, vscale=0.6))
+    
+
+    df = pd.read_csv('/home/lc585/BHMassPaper2_Submitted_Data/masterlist_liam_resubmitted.csv', index_col=0)
+
+
+    df = df[df.WARN_Ha == 0]
+    df = df[df.WARN_CIV_BEST == 0]
+    df = df[df.BAL_FLAG != 1]
+    df = df[df.WARN_1400_BEST == 0]
+    df = df[['rescale' not in i for i in df.SPEC_NIR.values]]
+
+    ax.grid() 
+
+
+    #----- Our correction ------------------------------------
+
+    xi = df.LogMBH_Ha.values 
+    
+    fwhm = df['FWHM_Broad_Ha'] * 1.e-3 
+            
+    fwhm_hb = 1.23e3 * np.power(fwhm, 0.97)
+    
+    m, b = 0.41, 0.62
+   
+    fwhm_ha = df.FWHM_CIV_BEST / (m * df.Blueshift_CIV_Ha * 1e-3 + b)
+
+    fwhm_ha = fwhm_ha * 1e-3   
+    l1350 = 10**(df['LogL1350'].values) * 1e-44
+
+    p1 = np.power(10, 6.71)
+    p2 = np.power(fwhm_ha, 2)
+    p3 = np.power(l1350, 0.53)
+
+    yi = p1 * p2 * p3
+
+    ax.scatter(df['Blueshift_CIV_Ha'], 
+               yi / 10**df['LogMBH_Ha'], 
+               facecolor=cs[1], 
+               label='This paper', 
+               edgecolor='None', 
+               marker='o', 
+               alpha=1.0,
+               zorder=1,
+               s=25)
+
+    ax.set_yscale('log')
+    ax.set_ylim(0.1, 10)
+    ax.set_xlabel(r'C\,{\sc iv} Blueshift [km~$\rm{s}^{-1}$]')
+    ax.set_ylabel(r'BHM C\,{\sc iv} (Corrected) / BHM H$\alpha$')
+
+    fig.tight_layout()
+
+    fig.savefig('/home/lc585/thesis/figures/chapter03/corrections_coatman.pdf')
 
     plt.show() 
 
@@ -1629,7 +1699,7 @@ def hb_comparisons_paper2():
 
 def example_spectra(name, line, ax, offset):
 
-    from lmfit import Model
+    
 
 
     cs = palettable.colorbrewer.qualitative.Set1_9.mpl_colors
@@ -2286,7 +2356,12 @@ def ha_hb_composite():
     # Hb --------------------------------------------------------------------------------------
 
     df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0)
-    df = df[df.OIII_FIT_HB_Z_FLAG == 1]
+    df = df[df.OIII_FIT_HB_Z_FLAG > 0 ] 
+    df = df[df.OIII_FIT_VEL_HB_PEAK_ERR < 600.0] # Really bad 
+    df = df[df.OIII_FIT_VEL_FULL_OIII_PEAK_ERR < 400.0] # Really bad 
+    df = df[df.OIII_BAD_FIT_FLAG == 0]
+    df = df[df.FE_FLAG == 0]
+    df = df[df.OIII_EXTREM_FLAG == 0]
  
     wav_new = np.arange(4700.0, 5100.0, 1.0) 
 
@@ -2326,13 +2401,15 @@ def ha_hb_composite():
 
     vdat = wave2doppler(wav_new*u.AA, w0=4862.721*u.AA) 
 
-    ax.plot(vdat, flux / np.nanmax(flux), color=cs[0])
+    ax.plot(vdat, flux / np.nanmax(flux), color=cs[0], label=r'H$\beta$ + [OIII]')
 
 
     # Ha --------------------------------------------------------------------------------------
     
     df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0)
-    df = df[df.OIII_FIT_HA_Z_FLAG == 1]
+    df = df[df.OIII_FIT_HA_Z_FLAG > 0] 
+    df = df[df.OIII_FIT_VEL_HA_PEAK_ERR < 400.0] # Really bad 
+    df = df[df.OIII_FIT_VEL_FULL_OIII_PEAK_ERR < 400.0] # Really bad 
 
     wav_new = np.arange(6400.0, 6800.0, 1.0) 
 
@@ -2367,7 +2444,9 @@ def ha_hb_composite():
 
     vdat = wave2doppler(wav_new*u.AA, w0=6564.89*u.AA) 
 
-    ax.plot(vdat, flux / np.nanmax(flux), color=cs[1])
+    ax.plot(vdat, flux / np.nanmax(flux), color=cs[1], label=r'H$\alpha$')
+
+    ax.legend(fancybox=True)
 
     ax.set_xlim(-10000, 10000)
     ax.set_ylim(-0.2, 1.2)
@@ -2524,7 +2603,7 @@ def civ_space_plot():
                       c=cs[1],
                       s=20,
                       edgecolor='None',
-                      label = 'This paper',
+                      label = 'This work',
                       zorder=10)
    
     
@@ -2574,3 +2653,582 @@ def civ_space_plot():
     plt.show()
 
     return None 
+
+def civ_comparison():
+
+    from lmfit import Parameters
+    import cPickle as pickle 
+    from SpectraTools.fit_line import wave2doppler
+    import astropy.units as u 
+    from lmfit.models import GaussianModel, ConstantModel 
+    from SpectraTools.fit_line import gausshermite_3
+ 
+
+    cs = palettable.colorbrewer.qualitative.Set2_3.mpl_colors
+    
+    fig, ax = plt.subplots(figsize=figsize(1, vscale=0.6))
+    
+    xs, step = np.linspace(-20000,
+                           20000,
+                           1000,
+                           retstep=True)
+    
+    save_dir = os.path.join('/data/lc585/nearIR_spectra/linefits/','QSO442','CIV')
+    
+    parfile = open(os.path.join(save_dir,'my_params.txt'), 'r')
+    params_CIV = Parameters()
+    params_CIV.load(parfile)
+    parfile.close()
+    
+    wav_file = os.path.join(save_dir, 'wav.txt')
+    parfile = open(wav_file, 'rb')
+    wav_CIV = pickle.load(parfile)
+    parfile.close()
+    
+    flx_file = os.path.join(save_dir, 'flx.txt')
+    parfile = open(flx_file, 'rb')
+    flx_CIV = pickle.load(parfile)
+    parfile.close()
+    
+    err_file = os.path.join(save_dir, 'err.txt')
+    parfile = open(err_file, 'rb')
+    err_CIV = pickle.load(parfile)
+    parfile.close()
+    
+    sd_file = os.path.join(save_dir, 'sd.txt')
+    parfile = open(sd_file, 'rb')
+    sd = pickle.load(parfile)
+    parfile.close()
+
+
+    param_names = []
+
+    for i in range(4):
+        
+        param_names.append('amp{}'.format(i))
+        param_names.append('sig{}'.format(i))
+        param_names.append('cen{}'.format(i))
+
+ 
+    mod = Model(gausshermite_3, independent_vars=['x'], param_names=param_names) 
+   
+    norm = np.sum(mod.eval(params=params_CIV, x=xs/sd)) / 200.0
+    
+    line1, = ax.plot(xs - 38.0,
+                     mod.eval(params=params_CIV, x=xs/sd) / norm,
+                     color = 'black',
+                     linestyle='--',
+                     lw=2,
+                     label='J123611+112922')
+
+    save_dir = os.path.join('/data/lc585/nearIR_spectra/linefits/','QSO437','CIV')
+    
+    parfile = open(os.path.join(save_dir,'my_params.txt'), 'r')
+    params_CIV = Parameters()
+    params_CIV.load(parfile)
+    parfile.close()
+    
+    wav_file = os.path.join(save_dir, 'wav.txt')
+    parfile = open(wav_file, 'rb')
+    wav_CIV = pickle.load(parfile)
+    parfile.close()
+    
+    flx_file = os.path.join(save_dir, 'flx.txt')
+    parfile = open(flx_file, 'rb')
+    flx_CIV = pickle.load(parfile)
+    parfile.close()
+    
+    err_file = os.path.join(save_dir, 'err.txt')
+    parfile = open(err_file, 'rb')
+    err_CIV = pickle.load(parfile)
+    parfile.close()
+    
+    sd_file = os.path.join(save_dir, 'sd.txt')
+    parfile = open(sd_file, 'rb')
+    sd = pickle.load(parfile)
+    parfile.close()
+
+    param_names = []
+
+    for i in range(5):
+        
+        param_names.append('amp{}'.format(i))
+        param_names.append('sig{}'.format(i))
+        param_names.append('cen{}'.format(i))
+
+ 
+    mod = Model(gausshermite_4, independent_vars=['x'], param_names=param_names) 
+
+    norm = np.sum(mod.eval(params=params_CIV, x=xs/sd)) / 200.0
+
+    line1, = ax.plot(xs + 357.,
+                     mod.eval(params=params_CIV, x=xs/sd) / norm,
+                     color = 'black',
+                     lw=2,
+                     label = 'J152529+292813')
+    
+    
+    ax.set_xlim(-20000,20000)
+    # ax.set_ylim(-0.05,0.8) 
+    
+    plt.legend(loc='upper right') 
+
+    ax.set_xlabel(r'$\Delta v$ [km~$\rm{s}^{-1}$]')
+    ax.set_ylabel(r'F$_{\lambda}$ [Arbitrary units]')
+
+    ax.axvline(0.0, color='grey', lw=1, linestyle='--')
+
+    fig.tight_layout() 
+
+    fig.savefig('/home/lc585/thesis/figures/chapter03/civ_comparison.pdf')
+    
+    plt.show() 
+
+    return None 
+
+
+def ha_hb_width_comparison():
+
+    cs = palettable.colorbrewer.qualitative.Set1_3.mpl_colors
+
+    fig, ax = plt.subplots(figsize=figsize(1, vscale=1))
+
+    df = pd.read_csv('/home/lc585/BHMassPaper2_Submitted_Data/masterlist_liam_resubmitted.csv', index_col=0)
+    
+    df = df[df.WARN_Ha == 0]
+    df = df[df.WARN_Hb == 0]
+    df = df[['rescale' not in i for i in df.SPEC_NIR.values]]
+
+    xi = df.FWHM_Broad_Ha.apply(np.log10)
+    dxi = df.FWHM_Broad_Ha_Err / df.FWHM_Broad_Ha / np.log(10)  
+    yi = df.FWHM_Broad_Hb.apply(np.log10)
+    dyi = df.FWHM_Broad_Hb_Err / df.FWHM_Broad_Hb / np.log(10)  
+
+    print np.std(xi - yi)
+
+    ax.errorbar(xi, yi, xerr=dxi, yerr=dyi, linestyle='', color='grey', alpha=0.4, zorder=2)
+    ax.scatter(xi, yi, color=cs[1], s=8, zorder=3)
+
+    logx = np.linspace(3.2, 4, 50)
+    logy = np.log10(1.07) - 0.09 + 1.03*logx
+    ax.plot(logx, logy, c='black', label='Green \& Ho', linestyle='--')
+
+  
+    # ----------------Plot fit--------------------------------
+
+    trace = np.load('/data/lc585/BHMassPaper2_Resubmitted_MCMC_Traces/trace_ha_hb_relation.npy')
+   
+    m, b = trace[:2]
+    # xfit = np.linspace(xdata.min(), xdata.max(), 10)
+    yfit = b[:, None] + m[:, None] * (logx - 3.0) # 3 because divided x by 10**3 in model
+    mu = yfit.mean(0)
+    sig = 2 * yfit.std(0)
+    trace = None 
+
+    print np.std(yi - (np.median(b[:, None]) + np.median(m[:, None]) * (xi.values - 3.0)) )
+
+    ax.plot(logx, mu, 'k', linestyle='-', zorder=5, label='This work')
+    ax.fill_between(logx, mu - sig, mu + sig, color=palettable.colorbrewer.qualitative.Pastel1_6.mpl_colors[1], zorder=1)
+
+    #--------------------------------------------------------
+
+    plt.legend(loc='lower right', handlelength=2.5, frameon=False)
+
+    ax.set_xlim(3.3, 4)
+    ax.set_ylim(ax.get_xlim())
+
+    ax.set_xlabel(r'log FWHM H$\alpha$ [km~$\rm{s}^{-1}$]')
+    ax.set_ylabel(r'log FWHM H$\beta$ [km~$\rm{s}^{-1}$]')
+
+    fig.tight_layout()
+
+    fig.savefig('/home/lc585/thesis/figures/chapter03/ha_hb_width_comparison.pdf')
+
+    plt.show()
+
+    return None 
+
+
+
+def civ_ha_bhm_comparison():
+
+    from matplotlib.ticker import FormatStrFormatter
+
+    cs = palettable.colorbrewer.qualitative.Set1_9.mpl_colors 
+
+    fig, axs = plt.subplots(2, 1, figsize=figsize(0.8, vscale=1.6), sharex=True)
+     
+    df = pd.read_csv('/home/lc585/BHMassPaper2_Submitted_Data/masterlist_liam_resubmitted.csv', index_col=0)
+    df = df[df.WARN_Ha == 0]
+    df = df[df.WARN_CIV_BEST == 0]
+    df = df[df.BAL_FLAG != 1]
+    df = df[['rescale' not in i for i in df.SPEC_NIR.values]]
+
+    # uncorrected mass comparison 
+    xi = df.LogMBH_Ha.values
+    yi = df.LogMBH_CIV_VP06.values
+    dxi = df.LogMBH_Ha_Err.values
+    dyi = df.LogMBH_CIV_VP06_Err.values
+
+    print np.std(xi - yi) 
+
+
+    axs[0].scatter(xi, 
+                   yi, 
+                   s=15,
+                   edgecolor='None',
+                   color='black',
+                   zorder=2)
+
+    xmin = 8.5 
+    xmax = 10.5
+    ymin = 8.5
+    ymax = 10.5
+
+    X, Y = np.mgrid[xmin:xmax:100j, ymin:ymax:100j]
+    positions = np.vstack([X.ravel(), Y.ravel()])
+    values = np.vstack([xi, yi])
+
+    kernel = stats.gaussian_kde(values)
+      
+    Z = np.reshape(kernel(positions).T, X.shape)
+
+    axs[0].imshow(np.flipud(Z.T), 
+                  extent=(xmin, xmax, ymin, ymax), 
+                  aspect='auto', 
+                  zorder=0, 
+                  cmap='Blues')
+
+    axs[0].plot([xmin, xmax], 
+                [ymin, ymax], 
+                color='black', 
+                zorder=1, 
+                linestyle='--')
+
+
+    axs[0].set_xlim(xmin, xmax)
+    axs[0].set_ylim(ymin, ymax)
+
+    axs[0].set_ylabel(r'log BHM C\,{\sc iv} [M$_\odot$]')
+
+    axs[0].text(0.1, 0.9, '(a)', transform= axs[0].transAxes)
+    
+    #-----------------------------------------------------------------
+    # corrected mass comparison  
+
+    xi = df.LogMBH_Ha.values 
+    dxi = df.LogMBH_Ha_Err.values 
+
+    fwhm = df['FWHM_Broad_Ha'] * 1.e-3 
+    fwhm_err = df['FWHM_Broad_Ha_Err'] * 1.e-3 
+        
+    fwhm_hb = 1.23e3 * np.power(fwhm, 0.97)
+    fwhm_hb_err = 1.23e3 * np.power(fwhm, 0.97-1.0) * 0.97 * fwhm_err
+
+    m, b = 0.41, 0.62
+   
+    fwhm_ha = df.FWHM_CIV_BEST / (m * df.Blueshift_CIV_Ha * 1e-3 + b)
+
+    fwhm_ha = fwhm_ha * 1e-3   
+    l1350 = 10**(df['LogL1350'].values) * 1e-44
+
+    p1 = np.power(10, 6.71)
+    p2 = np.power(fwhm_ha, 2)
+    p3 = np.power(l1350, 0.53)
+
+    yi = np.log10(p1 * p2 * p3)
+
+    print np.std(xi - yi) 
+
+    axs[1].scatter(xi, 
+                   yi, 
+                   s=15,
+                   edgecolor='None',
+                   color='black',
+                   zorder=2)
+
+    xmin = 8.5 
+    xmax = 10.5
+    ymin = 8.5
+    ymax = 10.5
+
+    X, Y = np.mgrid[xmin:xmax:100j, ymin:ymax:100j]
+    positions = np.vstack([X.ravel(), Y.ravel()])
+    values = np.vstack([xi, yi])
+
+    kernel = stats.gaussian_kde(values)
+      
+    Z = np.reshape(kernel(positions).T, X.shape)
+
+    axs[1].imshow(np.flipud(Z.T), 
+                  extent=(xmin, xmax, ymin, ymax), 
+                  aspect='auto', 
+                  zorder=0, 
+                  cmap='Blues')
+
+    axs[1].plot([xmin, xmax], 
+                [ymin, ymax], 
+                color='black', 
+                zorder=1, 
+                linestyle='--')
+
+
+    axs[1].set_xlim(xmin, xmax)
+    axs[1].set_ylim(ymin, ymax)
+
+    axs[1].set_xlabel(r'log BHM H$\alpha$ [M$_\odot$]')
+    axs[1].set_ylabel(r'log BHM C\,{\sc iv} (Corrected) [M$_\odot$]')  
+    
+    axs[1].text(0.1, 0.9, '(b)', transform= axs[1].transAxes)
+
+
+    fig.tight_layout()
+    plt.subplots_adjust(hspace=0.05)
+
+
+    fig.savefig('/home/lc585/thesis/figures/chapter03/bhm_comparison.pdf')
+
+    plt.show() 
+
+
+    return None 
+
+def dispersion_comparison():
+
+    fig, ax = plt.subplots(1, 1, figsize=figsize(1, vscale=0.9))
+     
+    df = pd.read_csv('/home/lc585/BHMassPaper2_Submitted_Data/masterlist_liam_resubmitted.csv', index_col=0)
+    df = df[df.WARN_Ha == 0]
+    df = df[df.WARN_CIV_BEST == 0]
+    df = df[df.BAL_FLAG != 1]
+    df = df[['rescale' not in i for i in df.SPEC_NIR.values]]
+
+    ax.scatter(df.Sigma_Broad_Ha, 
+               df.Sigma_CIV_BEST, 
+               s=15,
+               edgecolor='None',
+               color='black',
+               zorder=2)
+
+    from scipy.stats import spearmanr
+    print spearmanr(df.Sigma_Broad_Ha, df.Sigma_CIV_BEST)
+    
+
+    m1, m2 = df.Sigma_Broad_Ha, df.Sigma_CIV_BEST
+    xmin = 800.0
+    xmax = 5000.0
+    ymin = 800.0
+    ymax = 5000.0
+
+    X, Y = np.mgrid[xmin:xmax:100j, ymin:ymax:100j]
+    positions = np.vstack([X.ravel(), Y.ravel()])
+    values = np.vstack([m1, m2])
+
+    kernel = stats.gaussian_kde(values)
+      
+    Z = np.reshape(kernel(positions).T, X.shape)
+
+    # cs = ax.contourf(X, Y, Z, 100, hold='on', cmap='Blues', zorder=0)
+
+    # for c in cs.collections:
+    #     c.set_edgecolor("face")
+
+    # cs = ax.contour(X, Y, Z, 5, hold='on', colors='black', zorder=1)
+
+    ax.imshow(np.flipud(Z.T), extent=(xmin, xmax, ymin, ymax), aspect='auto', zorder=0, cmap='Blues')
+
+    # ax.plot([xmin, xmax], [ymin, ymax], color='black', zorder=1, linestyle='--')
+    
+    ax.set_xlim(xmin, xmax)
+    ax.set_ylim(ymin, ymax)
+
+    ax.set_xlabel(r'$\sigma$ H$\alpha$ [km~$\rm{s}^{-1}$]')
+    ax.set_ylabel(r'$\sigma$ C\,{\sc iv} [km~$\rm{s}^{-1}$]')
+
+    ax.xaxis.set_ticks([1000, 2000, 3000, 4000, 5000])
+    ax.yaxis.set_ticks([1000, 2000, 3000, 4000, 5000])
+
+    # ax.text(0.8, 
+    #         0.1, 
+    #         r'$\rho$ = {0:.2f}'.format(pearsonr(df.Sigma_Broad_Ha, df.Sigma_CIV_BEST)[0]), 
+    #         fontsize=12,
+    #         transform= ax.transAxes)
+    
+    fig.tight_layout() 
+
+    fig.savefig('/home/lc585/thesis/figures/chapter03/dispersion_comparison.pdf')
+
+    plt.show() 
+
+    return None 
+
+
+def bal_composite():
+
+    from SpectraTools.get_nir_spec import get_nir_spec
+    from SpectraTools.make_composite import make_composite
+    from SpectraTools.fit_line import fit_line, doppler2wave
+
+    set_plot_properties() # change style  
+
+    cs = palettable.colorbrewer.qualitative.Set2_3.mpl_colors
+
+    fig, ax = plt.subplots(figsize=figsize(1, vscale=0.9))
+    fig.tight_layout() 
+
+    plt.subplots_adjust(top=0.85, bottom=0.15, left=0.15)
+
+    wav_new = np.arange(4700.0, 5100.0, 1.0) 
+
+    # Hb --------------------------------------------------------------------------------------
+
+    df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0)
+    df = df[df.BAL_FLAG == 1]
+    df = df[(df.WARN_Hb == 0) | (df.WARN_Hb == 1)]
+    df.drop('QSO179', inplace=True) # Duplicated 
+
+    df['z'] = np.nan
+
+    useoiii = (df.OIII_EQW_FLAG == 0) & (df.OIII_EXTREM_FLAG == 0) & (df.OIII_FIT_VEL_FULL_OIII_PEAK_ERR < 400.0)
+    df.loc[useoiii, 'z'] = df.loc[useoiii, 'OIII_FIT_Z_FULL_OIII_PEAK'] 
+    
+    useha = df.z.isnull() & (df.OIII_FIT_HA_Z_FLAG > 0) & (df.OIII_FIT_VEL_HA_PEAK_ERR < 400.0)
+    df.loc[useha, 'z'] = df.loc[useha, 'OIII_FIT_HA_Z'] 
+        
+    usehb = df.z.isnull() & (df.OIII_FIT_HB_Z_FLAG >= 0) & (df.OIII_FIT_VEL_HB_PEAK_ERR < 750.0)
+    df.loc[usehb, 'z'] = df.loc[usehb, 'OIII_FIT_HB_Z']  
+
+    flux_array, wav_array, z_array, name_array = [], [], [], [] 
+
+    # deredshift spectra 
+    for idx, row in df.iterrows():
+        save_dir = os.path.join('/data/lc585/nearIR_spectra/linefits/', idx, 'OIII') 
+        wav, flux = np.genfromtxt(os.path.join(save_dir, 'spec_cont_sub.txt'), unpack=True)
+        wav = wav * (1.0 + row.z_IR_OIII_FIT)
+
+        flux_array.append(flux)
+        wav_array.append(wav)
+        z_array.append(row.z)
+        name_array.append(idx)
+
+    wav_array = np.array(wav_array)
+    flux_array = np.array(flux_array)
+    z_array = np.array(z_array)
+
+    wav_new, flux, err, ns  = make_composite(wav_new,
+                                             wav_array, 
+                                             flux_array, 
+                                             z_array,
+                                             names=name_array,
+                                             verbose=False)
+
+    vdat = wave2doppler(wav_new*u.AA, w0=4862.721*u.AA) 
+
+    ax.plot(vdat, flux / np.nanmax(flux), color=cs[0], label=r'BAL')
+
+    # --------------------------------------------------------------------
+
+    df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0)
+    df = df[df.OIII_FIT_HB_Z_FLAG > 0 ] 
+    df = df[df.OIII_BAD_FIT_FLAG == 0]
+    df = df[df.FE_FLAG == 0]
+    df = df[df.OIII_EXTREM_FLAG == 0]
+    df = df[(df.WARN_CIV_BEST == 0) | (df.WARN_CIV_BEST == 1)]
+    df = df[df.BAL_FLAG != 1]
+   
+    df['z'] = np.nan
+
+    useoiii = (df.OIII_EQW_FLAG == 0) & (df.OIII_EXTREM_FLAG == 0) & (df.OIII_FIT_VEL_FULL_OIII_PEAK_ERR < 400.0)
+    df.loc[useoiii, 'z'] = df.loc[useoiii, 'OIII_FIT_Z_FULL_OIII_PEAK'] 
+    
+    useha = df.z.isnull() & (df.OIII_FIT_HA_Z_FLAG > 0) & (df.OIII_FIT_VEL_HA_PEAK_ERR < 400.0)
+    df.loc[useha, 'z'] = df.loc[useha, 'OIII_FIT_HA_Z'] 
+        
+    usehb = df.z.isnull() & (df.OIII_FIT_HB_Z_FLAG >= 0) & (df.OIII_FIT_VEL_HB_PEAK_ERR < 750.0)
+    df.loc[usehb, 'z'] = df.loc[usehb, 'OIII_FIT_HB_Z'] 
+
+    w0 = np.mean([1548.202,1550.774])*u.AA  
+    median_wav = doppler2wave(df.Median_CIV_BEST.values*(u.km/u.s), w0) * (1.0 + df.z_IR.values)
+    blueshift_civ = const.c.to('km/s') * (w0 - median_wav / (1.0 + df.z)) / w0
+
+    df1 = df[blueshift_civ.value < 1000.0]
+    df2 = df[blueshift_civ.value > 1500.0]
+
+    flux_array, wav_array, z_array, name_array = [], [], [], [] 
+
+    # deredshift spectra 
+    for idx, row in df.iterrows():
+        save_dir = os.path.join('/data/lc585/nearIR_spectra/linefits/', idx, 'OIII') 
+        wav, flux = np.genfromtxt(os.path.join(save_dir, 'spec_cont_sub.txt'), unpack=True)
+        wav = wav * (1.0 + row.z_IR_OIII_FIT)
+
+        flux_array.append(flux)
+        wav_array.append(wav)
+        z_array.append(row.z)
+        name_array.append(idx)
+
+    wav_array = np.array(wav_array)
+    flux_array = np.array(flux_array)
+    z_array = np.array(z_array)
+
+    wav_new, flux, err, ns  = make_composite(wav_new,
+                                             wav_array, 
+                                             flux_array, 
+                                             z_array,
+                                             names=name_array,
+                                             verbose=False)
+
+    vdat = wave2doppler(wav_new*u.AA, w0=4862.721*u.AA) 
+
+    ax.plot(vdat, flux / np.nanmax(flux), color=cs[1], label=r'non-BAL, C\,{\sc iv} Blueshift $<$ 1000 km~$\rm{s}^{-1}$')
+
+    # # ----------------------------------
+
+    flux_array, wav_array, z_array, name_array = [], [], [], [] 
+
+    # deredshift spectra 
+    for idx, row in df2.iterrows():
+        save_dir = os.path.join('/data/lc585/nearIR_spectra/linefits/', idx, 'OIII') 
+        wav, flux = np.genfromtxt(os.path.join(save_dir, 'spec_cont_sub.txt'), unpack=True)
+        wav = wav * (1.0 + row.z_IR_OIII_FIT)
+
+        flux_array.append(flux)
+        wav_array.append(wav)
+        z_array.append(row.z)
+        name_array.append(idx)
+
+    wav_array = np.array(wav_array)
+    flux_array = np.array(flux_array)
+    z_array = np.array(z_array)
+
+    wav_new, flux, err, ns  = make_composite(wav_new,
+                                             wav_array, 
+                                             flux_array, 
+                                             z_array,
+                                             names=name_array,
+                                             verbose=False)
+
+    vdat = wave2doppler(wav_new*u.AA, w0=4862.721*u.AA) 
+
+    ax.plot(vdat, flux / np.nanmax(flux), color=cs[2], label=r'non-BAL, C\,{\sc iv} Blueshift $>$ 1500 km~$\rm{s}^{-1}$')
+
+    
+
+    ax.legend(loc='upper center', bbox_to_anchor=(0.5, 1.2), fancybox=True, shadow=True)
+
+    ax.set_xlim(-10000, 12000)
+    ax.set_ylim(-0.2, 1.2)
+    ax.set_xlabel(r'$\Delta v$ [km~$\rm{s}^{-1}$]')
+    ax.set_ylabel(r'$F_{\lambda}$ [Arbitrary units]')
+    ax.grid()
+
+    
+    fig.savefig('/home/lc585/thesis/figures/chapter03/bal_composite.pdf')
+
+    plt.show() 
+
+    return None 
+
+
+
+
