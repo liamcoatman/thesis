@@ -1,6 +1,5 @@
 in to -> into
 kiloparsec/kpc -> kilo-parsec
-space before units 
 check all short captions
 micron -> $\mu$m
 emission line -> emission-line
@@ -20,7 +19,7 @@ footnotesize tables
 \centering figures
 Minimal captitalisation in titles
 chi-squared -> $\chi^2$ 
-ultraviolet 
+UV, ultra-violet -> ultraviolet 
 infra-red -> infrared 
 make fig 1a etc in to real captions
 \ion{C}{IV}-emission line ->  \ion{C}{IV} emission-line
@@ -29,8 +28,10 @@ Fig. -> Figure
 Hamburg-ESO
 SDSSJXXXX+XXXX -> JXXXXXX+XXXXXX
 EW -> EQW 
+host-galaxy
 Sec. -> Section
 Eq. -> Equation
 BH-mass -> BH mass
 if reference (e.g. figures 11 and 12) don't $$ 
 Allen \& Hewett (2017, in preparation)
+absorption line -> absorption-line 
