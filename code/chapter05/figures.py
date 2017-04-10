@@ -804,7 +804,7 @@ def ratio_tbb_contours():
 
     fig.tight_layout() 
 
-    fig.savefig('/home/lc585/thesis/figures/chapter06/ratio_tbb_contours.pdf')
+    fig.savefig('/home/lc585/thesis/figures/chapter05/ratio_tbb_contours.pdf')
     
     plt.show() 
 
@@ -847,9 +847,9 @@ def civ_hot_dust_beta():
                     linewidth=0.5)
     
     cb = fig.colorbar(im,ax=ax)
-    cb.set_label(r'Hot Dust Abundance')
+    cb.set_label(r'$R_{NIR/UV}$')
     cb.set_ticks(np.linspace(0.1, 0.7, 5))
-    cb.set_ticklabels(np.linspace(0, 1, 5))
+    cb.set_ticklabels(np.linspace(0.1, 0.5, 5))
 
     ax.set_xlabel(r'C\,{\sc iv} Blueshift [km~$\rm{s}^{-1}$]')
     ax.set_ylabel(r'Log C\,{\sc iv} EQW [\AA]')
@@ -859,7 +859,7 @@ def civ_hot_dust_beta():
     plt.tick_params(axis='both',which='major')
     plt.tight_layout()
 
-    fig.savefig('/home/lc585/thesis/figures/chapter06/hot_dust_beta.pdf')
+    fig.savefig('/home/lc585/thesis/figures/chapter05/hot_dust_beta.pdf')
     plt.show()
 
     return None 
@@ -910,7 +910,7 @@ def civ_hot_dust_ratio():
     
     fig.tight_layout()
 
-    fig.savefig('/home/lc585/thesis/figures/chapter06/hot_dust_ratio.pdf')
+    fig.savefig('/home/lc585/thesis/figures/chapter05/hot_dust_ratio.pdf')
     plt.show()
 
     return None 

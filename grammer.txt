@@ -1,7 +1,7 @@
 in to -> into
 kiloparsec/kpc -> kilo-parsec
 check all short captions
-micron -> $\mu$m
+$\mu$m -> micron 
 emission line -> emission-line
 Delete DOI, add archivePrefix = "arXiv" if missing
 Spell check
@@ -19,7 +19,7 @@ footnotesize tables
 \centering figures
 Minimal captitalisation in titles
 chi-squared -> $\chi^2$ 
-UV, ultra-violet -> ultraviolet 
+UV, ultraviolet -> ultra-violet 
 infra-red -> infrared 
 make fig 1a etc in to real captions
 \ion{C}{IV}-emission line ->  \ion{C}{IV} emission-line

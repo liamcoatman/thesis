@@ -56,6 +56,21 @@ def plot():
                  facecolor=cs[1], 
                  normed=True)
 
+    # Sample from single (T,Norm) with gaussian errors on photometry. 
+    # Mock magnitude file made in model.py and then fit in runsingleobjfit.py.
+    
+    tab2 = Table.read('/data/lc585/QSOSED/Results/150309/sample5/out_add.fits')
+    
+    
+    
+    axScatter.scatter(tab2['BBT'],
+                      tab2['RATIO_IR_UV'],
+                      edgecolor='None',
+                      color=cs[0], 
+                      s=8,
+                      zorder=10)
+
+
     axHistx.set_xlim(axScatter.get_xlim())
     axHisty.set_ylim(axScatter.get_ylim())
 

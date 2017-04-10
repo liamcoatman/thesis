@@ -184,26 +184,33 @@ We also find blue-asymmetries in the [\ion{O}{III}] emission to be stronger at h
 The fraction of objects with no or very weak [\ion{O}{III}] is an order of magnitude larger than in a sample of low-luminosity SDSS AGN.
 However, among the objects which do have strong [\ion{O}{III}] emission we do not observe any correlation between the [\ion{O}{III}] EQW and the quasar luminosity (the `Baldwin' effect), despite a dynamic range in luminosity spanning three orders of magnitude. 
 
-We confirm earlier results using much smaller samples that the EV$1$ correlations found in low-luminosity AGN also exist in high-redshift quasars. 
+We confirm earlier results that the EV$1$ correlations found in low-luminosity AGN also exist in high-redshift quasars. 
 The \ion{C}{IV} EQW-blueshift parameter space similarly spans the diversity of broad emission-line properties in high redshift quasars. 
 We find a strong anti-correlation between the \ion{C}{IV} blueshift and the [\ion{O}{III}] EQW, which directly connects the low-redshift EV$1$ and high-redshift \ion{C}{IV} parameter spaces.  
-One possible explanation for this correlation is that the NLR gas is being swept away on relatively short time-scales by quasar-driven outflows. 
+One explanation for this correlation is that the NLR gas is being swept away on relatively short time-scales by quasar-driven outflows. 
 In quasars for which [\ion{O}{III}] is detected, we find that the blueshifting of [\ion{O}{III}] and \ion{C}{IV} are correlated. 
 This establishes a connection between quasar-driven outflows in the broad and narrow line regions.  
 Finally, we demonstrate that Independent Component Analysis (ICA) can be used to extend these results to spectra with lower signal-to-noise. 
 
-\section{The spectral energy distributions of AGN}
+\section{The spectral energy distributions of AGNs}
 
-AGN emit strongly over many decades of the electromagnetic spectrum. 
-Different physical processes dominate AGN spectral energy distributions at different frequencies. 
-X-rays are generated in a hot corona surrounding the accretion disc, the ultraviolet/optical region is dominated by thermal accretion disc emission, re-processed radiation from dust dominates at infrared wavelengths, while radio jets are launched from close to the BH. 
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{figures/chapter05/shangsed.pdf}
+  \caption{Median radio-loud SED from \citet{shang11}.}
+  \label{fig:seyfert_sed}
+\end{figure}
+
+AGNs emit strongly over many decades of the electromagnetic spectrum (Figure~\ref{fig:seyfert_sed}). 
+Different physical processes dominate AGN spectral energy distributions (SEDs) at different frequencies. 
+Hard X-ray emission is dominated by Compton up-scattering of accretion disk photons by electrons in a hot corona \citep[e.g.][]{sunyaev80}, ultra-violet/optical by thermal accretion disc emission, IR by dust at a wide range of temperatures, and radio by synchrotron emission in relativistic jets.   
 A complete understanding of AGN properties therefore critically depends on the availability of multi-wavelength data that spans the full SED. 
 This has been achieved in recent years with sensitive, wide-field photometric surveys, including the ultraviolet/optical SDSS, the near-infrared UKIRT Infrared Deep Sky Survey \citep[UKIDSS;][]{lawrence07} and the mid-infrared Wide-field Infrared Explorer \citep[WISE;][]{wright10}. 
 
-To first order, AGNs have remarkably similar SEDs that have very little dependence on luminosity, redshift, BH mass of accretion rate \citep[e.g.][]{elvis12,hao13}. 
-In Chapter~\ref{ch:sed}, we build a simple parametric SED model that is able to reproduce the median optical-infrared colours of tens of thousands of SDSS AGN at redshifts $1 \lesssim z \lesssim 4$. 
+To first order, AGNs have remarkably similar SEDs that show very little dependence on luminosity, redshift, BH mass or accretion rate \citep[e.g.][]{elvis12,hao13}. 
+In Chapter~\ref{ch:sed}, we build a simple parametric SED model that is able to reproduce the median optical-infrared colours of tens of thousands of SDSS AGN at redshifts $0 \lesssim z \lesssim 4$. 
 On the other hand, the SED properties of individual quasars do show significant variation.
-In particular, the spread at $1-2$ $\mu$m is large and suggests the presence of real variation in the hot dust temperature and luminosity among the quasars.
+In particular, we find the spread at $1-2$ $\mu$m is large and suggests the presence of real variation in the hot dust temperature and luminosity among the quasars.
 We find that the amount of hot dust is strongly correlated with the strength of outflows in the quasar BLR (parametrised using the \ion{C}{IV} blueshift). 
 We consider the implications of this result in the context of accretion disc wind models \citep[e.g.][]{elitzur06}.
 

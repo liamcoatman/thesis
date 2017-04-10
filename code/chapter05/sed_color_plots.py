@@ -73,11 +73,11 @@ def plot():
         datz = np.loadtxt(f, usecols=(0,))
 
     # Load filters
-    ftrlst = fittingobj.get_ftrlst()[:-2] 
-    lameff = fittingobj.get_lameff()[:-2]
-    bp = fittingobj.get_bp()[:-2] # these are in ab and data is in vega 
-    dlam = fittingobj.get_bp()[:-2]
-    zromag = fittingobj.get_zromag()[:-2]
+    ftrlst = fittingobj.get_ftrlst()[2:-2] 
+    lameff = fittingobj.get_lameff()[2:-2]
+    bp = fittingobj.get_bp()[2:-2] # these are in ab and data is in vega 
+    dlam = fittingobj.get_bp()[2:-2]
+    zromag = fittingobj.get_zromag()[2:-2]
   
     modarr = residual(params,
                       parfile,
@@ -104,29 +104,35 @@ def plot():
                       qsomag)
     
     fname = '/home/lc585/qsosed/sdss_ukidss_wise_medmag_ext.dat'
-    datarr = np.genfromtxt(fname, usecols=(1,3,5,7,9,11,13,15,17,19,21)) 
+    datarr = np.genfromtxt(fname, usecols=(5,7,9,11,13,15,17,19,21)) 
     datarr[datarr < 0.0] = np.nan 
 
-    col1 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 7, 8]
-    col2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 9, 10]
+
+    # remove less than lyman break
+
+   
+    lameff = lameff[np.newaxis, :] / (1.0 + datz[:, np.newaxis]) 
     
-    col_label = ['$u$ - $g$',
-                 '$g$ - $r$',
-                 '$r$ - $i$',
+    mask = lameff < 1500.0
+    
+    datarr[mask] = np.nan
+
+    col1 = np.arange(8)
+    col2 = col1 + 1 
+    
+    col_label = ['$r$ - $i$',
                  '$i$ - $z$',
                  '$z$ - $y$',
                  '$Y$ - $J$',
                  '$J$ - $H$',
                  '$H$ - $K$',
                  '$K$ - $W1$',
-                 '$W1$ - $W2$',
-                 '$H - W1$',
-                 '$K - W2$']
+                 '$W1$ - $W2$']
 
 
 
-    fig1, axs1 = plt.subplots(3, 2, figsize=figsize(1, vscale=1.4), sharex=True) 
-    fig2, axs2 = plt.subplots(3, 2, figsize=figsize(1, vscale=1.4), sharex=True) 
+    fig1, axs1 = plt.subplots(2, 2, figsize=figsize(1, vscale=1), sharex=True) 
+    fig2, axs2 = plt.subplots(2, 2, figsize=figsize(1, vscale=1), sharex=True) 
 
     for i, ax in enumerate(axs1.flatten()):
 
@@ -150,7 +156,8 @@ def plot():
 
     for i, ax in enumerate(axs2.flatten()):
     
-        i += 6 
+        i += 4 
+
 
         #data definition
         ydat = datarr[:, col1[i]] - datarr[:, col2[i]]
@@ -211,7 +218,7 @@ def plot():
 
     for i, ax in enumerate(axs2.flatten()):
     
-        i += 6 
+        i += 4
 
         ax.plot(datz,
                 modarr[:,col1[i]] - modarr[:, col2[i]],
@@ -220,10 +227,10 @@ def plot():
         ax.yaxis.set_major_locator(MaxNLocator(6))
 
 
-    axs1[2, 0].set_xlabel(r'Redshift $z$')
-    axs2[2, 0].set_xlabel(r'Redshift $z$')
-    axs1[2, 1].set_xlabel(r'Redshift $z$')
-    axs2[2, 1].set_xlabel(r'Redshift $z$')
+    axs1[1, 0].set_xlabel(r'Redshift $z$')
+    axs2[1, 0].set_xlabel(r'Redshift $z$')
+    axs1[1, 1].set_xlabel(r'Redshift $z$')
+    axs2[1, 1].set_xlabel(r'Redshift $z$')
 
     fig1.tight_layout()
     fig2.tight_layout()
