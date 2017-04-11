@@ -1,30 +1,29 @@
 in to -> into
 kiloparsec/kpc -> kilo-parsec
 check all short captions
-$\mu$m -> micron 
+micron -> $\mu$m  
 emission line -> emission-line
 Delete DOI, add archivePrefix = "arXiv" if missing
 Spell check
 Check all references
 Chapter, Section: capitalize 
-Check all numbers
 Make all numbers in to math (search \d)
 Space around \sim
 we or I? 
-arcsecond 
+" -> arcsecond 
 E(B-V) -> \ebv
-Space \, before units \kms, \AA, \ergs, dex 
+Space \, before units \kms, \AA, \ergs, dex, mag, arcsecond
 0\,\kms\, next word \AA\, 
 footnotesize tables 
 \centering figures
 Minimal captitalisation in titles
 chi-squared -> $\chi^2$ 
-UV, ultraviolet -> ultra-violet 
+UV, ultra-violet -> ultraviolet 
 infra-red -> infrared 
 make fig 1a etc in to real captions
 \ion{C}{IV}-emission line ->  \ion{C}{IV} emission-line
 Fig. -> Figure  
-60\,000 for numbers
+60\,000 for numbers (not for 1000)
 Hamburg-ESO
 SDSSJXXXX+XXXX -> JXXXXXX+XXXXXX
 EW -> EQW 

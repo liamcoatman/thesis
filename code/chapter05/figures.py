@@ -950,26 +950,14 @@ def lum_z():
 
     fig, ax = plt.subplots(figsize=figsize(1, 0.8)) 
 
-    # Created by DefiningSample.ipynb 
-    t = Table.read('/data/lc585/SDSS/matched_catalogue.fits')
-
-    t = t[(t['Z_HEWETT'] > 0) & (t['Z_HEWETT'] < 5)]
-    t = t[(t['LOGLBOL'] > 44.5) & (t['LOGLBOL'] < 48.5)]
-    t = t[~t['Z_HEWETT'].mask & ~t['Z_HEWETT'].mask]
-    
-    # ax.plot(t['Z_HEWETT'], 
-    #         t['LOGLBOL'], 
-    #         linestyle='', 
-    #         marker='o',
-    #         markersize=1,
-    #         markerfacecolor=cs[1],
-    #         markeredgecolor='None')
+    from qsosed.get_data import get_data 
+    df = get_data() 
 
     lims = (0, 5, 44.5, 48.5)
 
 
-    kde_contours(np.array(t['Z_HEWETT'].data), 
-                 np.array(t['LOGLBOL'].data), 
+    kde_contours(df.z_HW, 
+                 df.LOGLBOL, 
                  ax,
                  lims=lims,
                  color='black',

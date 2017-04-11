@@ -160,7 +160,7 @@ def normalise_to_sdss():
     
     wav_nir = wav_nir / (1.0 + row.z_IR)
 
-    axs[0].plot(wav_nir, flux_nir, color=cs_light[0])
+    axs[0].plot(wav_nir, flux_nir*1e15, color=cs_light[0])
     
 
     if (row.SPEC_OPT == 'SDSS') | (row.SPEC_OPT == 'BOSS+SDSS'):
@@ -173,7 +173,7 @@ def normalise_to_sdss():
   
     wav_opt = wav_opt / (1.0 + row.z_IR)
     
-    axs[0].plot(wav_opt, flux_opt, color=cs_light[1])
+    axs[0].plot(wav_opt, flux_opt*1e15, color=cs_light[1])
     
     
     # Normalise SED model to SDSS spectra ----------------------------------------------------
@@ -193,7 +193,7 @@ def normalise_to_sdss():
     tmp[~fit_mask] = ma.masked 
 
     for item in ma.extras.flatnotmasked_contiguous(tmp):
-        axs[0].plot(wav_opt[item], flux_opt[item], color=cs[1])
+        axs[0].plot(wav_opt[item], flux_opt[item]*1e15, color=cs[1])
     
     # ax.plot(wav_opt[fit_mask], flux_opt[fit_mask], color=cs[0])
 
@@ -336,13 +336,13 @@ def normalise_to_sdss():
     wav_nir[inds] = np.nan
     flux_nir[inds] = np.nan
 
-    axs[0].plot(wav_nir, flux_nir / k, color=cs[0], alpha=1.0)
+    axs[0].plot(wav_nir, flux_nir*1e15 / k, color=cs[0], alpha=1.0)
 
 
-    axs[0].plot(xs, spc(xs), color='black', lw=1)
+    axs[0].plot(xs, spc(xs)*1e15, color='black', lw=1)
         
     axs[0].set_xlim(1300,7300)
-    axs[0].set_ylim(2e-17, 1e-15)
+    axs[0].set_ylim(0, 1)
 
     # axs[0].set_xlabel(r'Rest-frame wavelength [${\mathrm \AA}$]')
     axs[0].set_ylabel(r'F$_{\lambda}$ [Arbitary units]')
@@ -357,7 +357,7 @@ def normalise_to_sdss():
     wav_nir = wav_nir / (1.0 + row.z_IR)
 
     
-    axs[1].plot(wav_nir[wav_nir > 2800.0], flux_nir[wav_nir > 2800.0], color=cs_light[0])
+    axs[1].plot(wav_nir[wav_nir > 2800.0], flux_nir[wav_nir > 2800.0]*1e16, color=cs_light[0])
 
     ftrlst, maglst, errlst, lameff = [], [], [], []  
 
@@ -500,7 +500,7 @@ def normalise_to_sdss():
     flxlst = f_0 * 10.0**(-0.4 * maglst) # data fluxes in erg/cm^2/s/A
     flxerrlst = flxlst * (-0.4) * np.log(10) * errlst 
 
-    axs[1].scatter(lameff / (1.0 + row.z_IR), flxlst, s=50, facecolor=cs[5], edgecolor='black', zorder=10)
+    axs[1].scatter(lameff / (1.0 + row.z_IR), flxlst*1e16, s=50, facecolor=cs[5], edgecolor='black', zorder=10)
    
 
     plslp1 = 0.46
@@ -601,7 +601,7 @@ def normalise_to_sdss():
     
     xs = np.arange(1000, 10000, 10)
 
-    axs[1].plot(xs, spc(xs), color='black', lw=1)
+    axs[1].plot(xs, spc(xs)*1e16, color='black', lw=1)
 
     
 
@@ -631,10 +631,10 @@ def normalise_to_sdss():
     wav_nir[inds] = np.nan
     flux_nir[inds] = np.nan
 
-    axs[1].plot(wav_nir, flux_nir / k, color=cs[0])
+    axs[1].plot(wav_nir, flux_nir*1e16 / k, color=cs[0])
 
     axs[1].set_xlim(1250, 9000)
-    axs[1].set_ylim(0, 5e-16)
+    axs[1].set_ylim(0, 5)
 
     axs[1].set_xlabel(r'Rest-frame wavelength [${\mathrm \AA}$]')
     axs[1].set_ylabel(r'F$_{\lambda}$ [Arbitary units]')

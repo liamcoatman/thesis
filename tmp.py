@@ -12,21 +12,36 @@ from PlottingTools.truncate_colormap import truncate_colormap
 # import matplotlib.colors as colors
 from qsosed.bb import bb
 from PlottingTools.plot_setup_thesis import figsize, set_plot_properties
-from qsosed.get_data import get_data 
-import astropy.units as u 
+
 
 def plot():
 
     set_plot_properties() # change style 
 
-    with open('/home/lc585/qsosed/input.yml', 'r') as f:
+    with open('input.yml', 'r') as f:
         parfile = yaml.load(f)
 
     fittingobj = load(parfile)
 
-    df = get_data() 
+    flxcorr_file = '/data/lc585/QSOSED/Results/140811/allsample_2/fluxcorr.array'
 
-    zs = np.linspace(0.25, 3.0, 50)
+    with open(flxcorr_file,'rb') as f:
+        flxcorr = pickle.load(f)
+
+    plslp1 = parfile['quasar']['pl']['slp1']
+    plslp2 = parfile['quasar']['pl']['slp2']
+    plbrk = parfile['quasar']['pl']['brk']
+    bbt = parfile['quasar']['bb']['t']
+    bbflxnrm = parfile['quasar']['bb']['flxnrm']
+    elscal = parfile['quasar']['el']['scal']
+    scahal = parfile['quasar']['el']['scahal']
+    galfra = parfile['gal']['fra']
+    ebv = parfile['ext']['EBV']
+    imod = parfile['quasar']['imod']
+
+    tab = Table.read('/data/lc585/QSOSED/Results/150118/sample6/tabout.fits')
+
+    zs = np.linspace(0.25,3.0,100)
     wavlen = fittingobj.get_wavlen()
 
     uvintmin = np.argmin(np.abs(wavlen - 2000.))
@@ -40,35 +55,45 @@ def plot():
         ratio = 0.0
         bbflxnrm = 0.0
         z = 2.0
-        bbt = 1306
-
-
 
         while ratio < rg:
 
-            parfile['quasar']['bb']['flxnrm'] = bbflxnrm 
-
-            bbflux = bb(wavlen*u.AA,
-                        bbt*u.K,
-                        bbflxnrm,
-                        20000.0*u.AA, 
-                        units='wav')
-
-            magtmp, wavlentmp, fluxtmp = model(redshift=z,
-                                               parfile=parfile)
+            bbflux = bb(wavlen,bbt,bbflxnrm,20000.0)
+            magtmp, wavlentmp, fluxtmp = model(plslp1,
+                                               plslp2,
+                                               plbrk,
+                                               bbt,
+                                               bbflxnrm,
+                                               elscal,
+                                               scahal,
+                                               galfra,
+                                               ebv,
+                                               imod,
+                                               z,
+                                               fittingobj,
+                                               flxcorr,
+                                               parfile)
 
             ratio = np.sum(bbflux[irintmin:irintmax]) / np.sum(fluxtmp[uvintmin:uvintmax])
-            bbflxnrm = bbflxnrm + 0.01
-
-        print ratio
+            bbflxnrm = bbflxnrm + 0.001
 
         cols = []
 
-
         for z in zs:
-
-            magtmp, wavlentmp, fluxtmp = model(redshift=z,
-                                               parfile=parfile)
+            magtmp, wavlentmp, fluxtmp = model(plslp1,
+                                               plslp2,
+                                               plbrk,
+                                               bbt,
+                                               bbflxnrm,
+                                               elscal,
+                                               scahal,
+                                               galfra,
+                                               ebv,
+                                               imod,
+                                               z,
+                                               fittingobj,
+                                               flxcorr,
+                                               parfile)
 
             cols.append(magtmp[9] - magtmp[10])
 
@@ -89,7 +114,9 @@ def plot():
     thresh = 4  #density threshold
 
     #data definition
-    xdat, ydat = df.z_HW, df.W1VEGA - df.W2VEGA
+    w1mag = tab['W1MPRO_ALLWISE'] + 2.699
+    w2mag = tab['W2MPRO_ALLWISE'] + 3.339
+    xdat, ydat = tab['Z_HEWETT'], w1mag - w2mag
 
     # histogram the data
     hh, locx, locy = histogram2d(xdat, ydat, range=xyrange, bins=bins)
@@ -114,7 +141,7 @@ def plot():
     cb = plt.colorbar(im)
     cb.set_label('Number of Objects')
 
-    ax.scatter(xdat1, ydat1,color=cset[-1],s=3)
+    ax.scatter(xdat1, ydat1,color=cset[-1],s=5)
 
     cset = brewer2mpl.get_map('YlGnBu', 'sequential', 8).mpl_colors
 

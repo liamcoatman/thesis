@@ -26,6 +26,8 @@ from PlottingTools.truncate_colormap import truncate_colormap
 import palettable 
 from scipy.interpolate import interp1d
 from matplotlib.ticker import MaxNLocator
+from qsosed.get_data import get_data
+
 
 set_plot_properties() # change style 
 
@@ -33,7 +35,7 @@ def plot():
 
     set_plot_properties() # change style 
 
-    cs = palettable.colorbrewer.qualitative.Set2_8.mpl_colors
+    cs = palettable.colorbrewer.qualitative.Set1_8.mpl_colors
 
     with open('/home/lc585/qsosed/input.yml', 'r') as f:
         parfile = yaml.load(f)
@@ -57,20 +59,23 @@ def plot():
     cosmo = fittingobj.get_cosmo() 
 
     params = Parameters()
-    params.add('plslp1', value = parfile['quasar']['pl']['slp1'])
-    params.add('plslp2', value = parfile['quasar']['pl']['slp2'])
-    params.add('plbrk', value = parfile['quasar']['pl']['brk'])
-    params.add('bbt', value = parfile['quasar']['bb']['t'])
-    params.add('bbflxnrm', value = parfile['quasar']['bb']['flxnrm'])
-    params.add('elscal', value = parfile['quasar']['el']['scal'])
-    params.add('galfra',value = parfile['gal']['fra'])
-    params.add('ebv',value = parfile['ext']['EBV'])
-    params.add('imod',value = parfile['quasar']['imod'])
-    params.add('scahal',value=parfile['quasar']['el']['scahal'])
+    params.add('plslp1', value = -0.478)
+    params.add('plslp2', value = -0.199)
+    params.add('plbrk', value = 2.40250)
+    params.add('bbt', value = 1.30626)
+    params.add('bbflxnrm', value = 2.673)
+    params.add('elscal', value = 1.240)
+    params.add('scahal',value = 0.713)
+    params.add('galfra',value = 0.0)
+    params.add('bcnrm',value = 0.135)
+    params.add('ebv',value = 0.0)
+    params.add('imod',value = 18.0)
     
     # Load median magnitudes 
     with open('/home/lc585/qsosed/sdss_ukidss_wise_medmag_ext.dat') as f:
         datz = np.loadtxt(f, usecols=(0,))
+
+    datz = datz[:-5]
 
     # Load filters
     ftrlst = fittingobj.get_ftrlst()[2:-2] 
@@ -78,7 +83,10 @@ def plot():
     bp = fittingobj.get_bp()[2:-2] # these are in ab and data is in vega 
     dlam = fittingobj.get_bp()[2:-2]
     zromag = fittingobj.get_zromag()[2:-2]
-  
+
+    with open('ftgd_dr7.dat') as f:
+        ftgd = np.loadtxt(f, skiprows=1, usecols=(1,2,3,4,5,6,7,8,9))
+
     modarr = residual(params,
                       parfile,
                       wavlen,
@@ -101,34 +109,61 @@ def plot():
                       whmax,
                       cosmo,
                       flxcorr,
-                      qsomag)
+                      qsomag,
+                      ftgd)
     
     fname = '/home/lc585/qsosed/sdss_ukidss_wise_medmag_ext.dat'
     datarr = np.genfromtxt(fname, usecols=(5,7,9,11,13,15,17,19,21)) 
     datarr[datarr < 0.0] = np.nan 
 
+    datarr = datarr[:-5, :]
+
+
+
 
     # remove less than lyman break
-
-   
-    lameff = lameff[np.newaxis, :] / (1.0 + datz[:, np.newaxis]) 
-    
-    mask = lameff < 1500.0
-    
-    datarr[mask] = np.nan
 
     col1 = np.arange(8)
     col2 = col1 + 1 
     
     col_label = ['$r$ - $i$',
                  '$i$ - $z$',
-                 '$z$ - $y$',
+                 '$z$ - $Y$',
                  '$Y$ - $J$',
                  '$J$ - $H$',
                  '$H$ - $K$',
                  '$K$ - $W1$',
                  '$W1$ - $W2$']
 
+    df = get_data() 
+    df = df[(df.z_HW > 1) & (df.z_HW < 3)]
+
+    colstr1 = ['rVEGA',
+               'iVEGA',
+               'zVEGA',
+               'YVEGA',
+               'JVEGA',
+               'HVEGA',
+               'KVEGA',
+               'W1VEGA']
+    
+    colstr2 = ['iVEGA',
+               'zVEGA',
+               'YVEGA',
+               'JVEGA',
+               'HVEGA',
+               'KVEGA',
+               'W1VEGA',
+               'W2VEGA']
+
+    ylims = [[0, 0.6], 
+             [-0.1, 0.5], 
+             [-0.1, 0.5],
+             [-0.1, 0.5],
+             [0.2, 0.9],
+             [0.2, 0.9],
+             [0.5, 1.6],
+             [0.8, 1.5]]
 
 
     fig1, axs1 = plt.subplots(2, 2, figsize=figsize(1, vscale=1), sharex=True) 
@@ -146,12 +181,15 @@ def plot():
 
         ax.plot(datz,
                 modarr[:,col1[i]] - modarr[:, col2[i]],
-                color=cs[0])
+                color=cs[1])
+
+        # ax.scatter(df.z_HW, df[colstr1[i]] - df[colstr2[i]], s=1, alpha=0.1) 
 
 
         ax.set_title(col_label[i], size=10)
     
-        ax.set_ylim(np.nanmin(ydat)-0.2, np.nanmax(ydat)+0.2)
+        ax.set_ylim(ylims[i])
+        ax.set_xlim(0.75, 3.25)
 
 
     for i, ax in enumerate(axs2.flatten()):
@@ -169,64 +207,14 @@ def plot():
 
         ax.plot(datz,
                 modarr[:,col1[i]] - modarr[:, col2[i]],
-                color=cs[0])
+                color=cs[1])
 
 
         ax.set_title(col_label[i], size=10)
     
         ax.set_ylim(np.nanmin(ydat)-0.2, np.nanmax(ydat)+0.2)
 
-    # Now with flux correction 
-
-    mydir = '/home/lc585/qsosed'
-    flxcorr = np.genfromtxt(os.path.join(mydir, 'flxcorr.dat'))
-    f = interp1d(flxcorr[:, 0], flxcorr[:, 1], bounds_error=False, fill_value=1.0)
-    flxcorr = f(wavlen) 
-
-    modarr = residual(params,
-                      parfile,
-                      wavlen,
-                      datz,
-                      lin,
-                      bp,
-                      dlam,
-                      zromag,
-                      galspc,
-                      ext,
-                      galcnt,
-                      ignmin,
-                      ignmax,
-                      ztran,
-                      lyatmp,
-                      lybtmp,
-                      lyctmp,
-                      ftrlst,
-                      whmin,
-                      whmax,
-                      cosmo,
-                      flxcorr,
-                      qsomag)
-
-    for i, ax in enumerate(axs1.flatten()):
-
-        ax.plot(datz,
-                modarr[:,col1[i]] - modarr[:, col2[i]],
-                color=cs[1])
-
-        ax.yaxis.set_major_locator(MaxNLocator(6))
-
-
-    for i, ax in enumerate(axs2.flatten()):
-    
-        i += 4
-
-        ax.plot(datz,
-                modarr[:,col1[i]] - modarr[:, col2[i]],
-                color=cs[1])
-
-        ax.yaxis.set_major_locator(MaxNLocator(6))
-
-
+   
     axs1[1, 0].set_xlabel(r'Redshift $z$')
     axs2[1, 0].set_xlabel(r'Redshift $z$')
     axs1[1, 1].set_xlabel(r'Redshift $z$')

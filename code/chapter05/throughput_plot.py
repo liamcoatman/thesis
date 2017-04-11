@@ -41,16 +41,17 @@ def plot():
     flxcorr = np.array([1.0] * len(wavlen))
      
     params = Parameters()
-    params.add('plslp1', value = plslp1)
-    params.add('plslp2', value = plslp2)
-    params.add('plbrk', value = plbrk)
-    params.add('bbt', value = bbt)
-    params.add('bbflxnrm', value = 2.0)
-    params.add('elscal', value = elscal)
-    params.add('galfra', value = galfra)
-    params.add('ebv', value = ebv)
-    params.add('imod', value = imod)
-    params.add('scahal', value = scahal)
+    params.add('plslp1', value = -0.478)
+    params.add('plslp2', value = -0.199)
+    params.add('plbrk', value = 2.40250)
+    params.add('bbt', value = 1.30626)
+    params.add('bbflxnrm', value = 2.673)
+    params.add('elscal', value = 1.240)
+    params.add('scahal',value = 0.713)
+    params.add('galfra',value = 0.0)
+    params.add('bcnrm',value = 0.135)
+    params.add('ebv',value = 0.0)
+    params.add('imod',value = 18.0)
 
 
     lin = fittingobj.get_lin()
@@ -169,7 +170,7 @@ def plot():
 
     ax2.text(19225,3.923,r'$z=3.5$',ha='right')
     ax2.text(11674,3.099,r'$z=2.0$',ha='right')
-    ax2.text(6735,2.135,r'$z=0.5$',ha='right')
+    ax2.text(6000,2.135,r'$z=0.5$',ha='right')
 
     
     color_idx = np.linspace(0, 1, 12)
@@ -180,7 +181,7 @@ def plot():
         wavtmp = ( bp[i][0,:] )  
         flxtmp = bp[i][1,:] / np.max(bp[i][1,:])
         ax2.plot(wavtmp,flxtmp,color=Spectral_11.mpl_colormap(color_idx[i]))
-        ax2.fill_between(wavtmp, flxtmp, alpha=0.2, facecolor=Spectral_11.mpl_colormap(color_idx[i]))
+        # ax2.fill_between(wavtmp, flxtmp, alpha=0.2, facecolor=Spectral_11.mpl_colormap(color_idx[i]))
         ax2.text(xpos[i],0.2,r'${}$'.format(labs[i]), ha='center')
     
     ax2.set_ylim(0,5)

@@ -63,15 +63,16 @@ def plot():
 
     # lineid_plot.plot_line_ids(wavlen, wavlen*fluxtmp, line_wave, line_names, ax=ax, arrow_tip=10000)
 
-    plslp1 = parfile['quasar']['pl']['slp1']
-    plslp2 = parfile['quasar']['pl']['slp2']
-    plbrk = parfile['quasar']['pl']['brk']
-    bbt = parfile['quasar']['bb']['t']
-    bbflxnrm = parfile['quasar']['bb']['flxnrm']
-    elscal = parfile['quasar']['el']['scal']
-    galfra = parfile['gal']['fra']
-    ebv = parfile['ext']['EBV']
-    scahal = parfile['quasar']['el']['scahal']
+    plslp1 = -0.478
+    plslp2 = -0.199
+    plbrk = 2402
+    bbt = 1306
+    bbflxnrm = 2.673
+    elscal = 1.240
+    scahal = 0.713
+    galfra = 0.4
+    bcnrm = 0.135
+    ebv = 0.0
 
     flux = np.zeros(len(wavlen), dtype=np.float) 
 
@@ -127,7 +128,6 @@ def plot():
 
     wbcnrm = parfile['quasar']['balmercont']['wbcnrm']
     wbedge = parfile['quasar']['balmercont']['wbedge']
-    bcnrm = parfile['quasar']['balmercont']['bcnrm']
     tbc = parfile['quasar']['balmercont']['tbc']
     taube = parfile['quasar']['balmercont']['taube']
     vfwhm = parfile['quasar']['balmercont']['vfwhm']
@@ -277,25 +277,18 @@ def plot():
 
 
     ax.plot(wavlen[:wavnumbrk], wavlen[:wavnumbrk]*flux_pl[:wavnumbrk], color=cs[1], label='Accretion Disc')
-    ax.fill_between(wavlen[:wavnumbrk], wavlen[:wavnumbrk]*flux_pl[:wavnumbrk], facecolor=cs[1], alpha=0.2)
+    # ax.fill_between(wavlen[:wavnumbrk], wavlen[:wavnumbrk]*flux_pl[:wavnumbrk], facecolor=cs[1], alpha=0.2)
     ax.plot(wavlen[wavnumbrk:], wavlen[wavnumbrk:]*flux_pl[wavnumbrk:], color=cs[0], label='Accretion Disc')
-    ax.fill_between(wavlen[wavnumbrk:], wavlen[wavnumbrk:]*flux_pl[wavnumbrk:], facecolor=cs[0], alpha=0.2)
+    # ax.fill_between(wavlen[wavnumbrk:], wavlen[wavnumbrk:]*flux_pl[wavnumbrk:], facecolor=cs[0], alpha=0.2)
     ax.plot(wavlen, wavlen*(flux_bc), color=cs[2], label='Balmer Continuum')
-    ax.fill_between(wavlen, wavlen*(flux_bc), facecolor=cs[2], alpha=0.2)
+    # ax.fill_between(wavlen, wavlen*(flux_bc), facecolor=cs[2], alpha=0.2)
     ax.plot(wavlen, wavlen*(flux_bb), color=cs[4], label='Hot Dust')
-    ax.fill_between(wavlen, wavlen*(flux_bb), facecolor=cs[4], alpha=0.2)
+    # ax.fill_between(wavlen, wavlen*(flux_bb), facecolor=cs[4], alpha=0.2)
     ax.plot(wavlen, wavlen*(flux_gal), color=cs[3], label='Galaxy')
-    ax.fill_between(wavlen, wavlen*(flux_gal), facecolor=cs[3], alpha=0.2)
+    # ax.fill_between(wavlen, wavlen*(flux_gal), facecolor=cs[3], alpha=0.2)
 
      
-    ax.plot(wavlen, wavlen*flux, color='grey', label='Total')
-    flxcorr = np.genfromtxt(os.path.join('/home/lc585/qsosed', 'flxcorr.dat'))
-    f = interp1d(flxcorr[:, 0], flxcorr[:, 1], bounds_error=False, fill_value=1.0)
-    flxcorr = f(wavlen) 
-    ax.plot(wavlen, wavlen*flux*flxcorr, color='black', label='Total (Corrected)') 
-
-
-
+    ax.plot(wavlen, wavlen*flux, color='black', label='Total')
 
     ax.legend() 
 

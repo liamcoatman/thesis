@@ -63,28 +63,7 @@
   \field{year}{2011}
 \endentry
 
-\entry{antonucci93}{article}{}
-  \name{author}{1}{}{%
-    {{}%
-     {{Antonucci}}{A.}%
-     {R.}{R.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{Active Galactic Nuclei, Astronomical Polarimetry, Quasars, Radio
-  Galaxies, Astronomical Spectroscopy, Bl Lacertae Objects, Blazars}
-  \strng{namehash}{AR1}
-  \strng{fullhash}{AR1}
-  \field{labelyear}{1993}
-  \field{sortinit}{A}
-  \field{pages}{473\bibrangedash 521}
-  \field{title}{{Unified models for active galactic nuclei and quasars}}
-  \field{volume}{31}
-  \field{journaltitle}{\araa}
-  \field{year}{1993}
-\endentry
-
-\entry{barvainis92}{article}{}
+\entry{barvainis87}{article}{}
   \name{author}{1}{}{%
     {{}%
      {{Barvainis}}{B.}%
@@ -92,20 +71,23 @@
      {}{}%
      {}{}}%
   }
-  \keyw{Active Galactic Nuclei, Cosmic Dust, Infrared Radiation, Interstellar
-  Extinction, Light Curve, Quasars, Accretion Disks, Emission Spectra,
-  Ultraviolet Astronomy}
+  \keyw{Active Galactic Nuclei, Cosmic Dust, Infrared Spectra, Near Infrared
+  Radiation, Quasars, Thermal Radiation, Black Body Radiation, Continuous
+  Spectra, Graphite, Ultraviolet Radiation}
   \strng{namehash}{BR1}
   \strng{fullhash}{BR1}
-  \field{labelyear}{1992}
+  \field{labelyear}{1987}
   \field{sortinit}{B}
-  \field{pages}{502\bibrangedash 509}
-  \field{title}{{Dust reverberation - A model for the infrared variations of
-  Fairall 9}}
-  \field{volume}{400}
+  \verb{doi}
+  \verb 10.1086/165571
+  \endverb
+  \field{pages}{537\bibrangedash 544}
+  \field{title}{{Hot dust and the near-infrared bump in the continuum spectra
+  of quasars and active galactic nuclei}}
+  \field{volume}{320}
   \field{journaltitle}{\apj}
-  \field{month}{12}
-  \field{year}{1992}
+  \field{month}{09}
+  \field{year}{1987}
 \endentry
 
 \entry{croom04}{article}{}
@@ -163,6 +145,94 @@
   \field{eprinttype}{arXiv}
   \field{month}{04}
   \field{year}{2004}
+\endentry
+
+\entry{deo11}{article}{}
+  \name{author}{7}{}{%
+    {{}%
+     {{Deo}}{D.}%
+     {R.~P.}{R.~P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Richards}}{R.}%
+     {G.~T.}{G.~T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Nikutta}}{N.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Elitzur}}{E.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Gallagher}}{G.}%
+     {S.~C.}{S.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Ivezi{\'c}}}{I.}%
+     {{\v Z}.}{{\v Z}.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hines}}{H.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{galaxies: high-redshift, infrared: galaxies, quasars: general}
+  \strng{namehash}{DRP+1}
+  \strng{fullhash}{DRPRGTNREMGSCIZHD1}
+  \field{labelyear}{2011}
+  \field{sortinit}{D}
+  \field{eid}{108}
+  \verb{eprint}
+  \verb 1101.2855
+  \endverb
+  \field{pages}{108}
+  \field{title}{{Dusty Tori of Luminous Type 1 Quasars at z \~{} 2}}
+  \field{volume}{729}
+  \field{journaltitle}{\apj}
+  \field{eprinttype}{arXiv}
+  \field{month}{03}
+  \field{year}{2011}
+\endentry
+
+\entry{edelson86}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {{Edelson}}{E.}%
+     {R.~A.}{R.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Malkan}}{M.}%
+     {M.~A.}{M.~A.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Active Galactic Nuclei, Quasars, Seyfert Galaxies, Spectral Energy
+  Distribution, Spectrophotometry, Accretion Disks, Infrared Astronomy
+  Satellite, Iue, Synchrotron Radiation}
+  \strng{namehash}{ERAMMA1}
+  \strng{fullhash}{ERAMMA1}
+  \field{labelyear}{1986}
+  \field{sortinit}{E}
+  \verb{doi}
+  \verb 10.1086/164479
+  \endverb
+  \field{pages}{59\bibrangedash 77}
+  \field{title}{{Spectral energy distributions of active galactic nuclei
+  between 0.1 and 100 microns}}
+  \field{volume}{308}
+  \field{journaltitle}{\apj}
+  \field{month}{09}
+  \field{year}{1986}
 \endentry
 
 \entry{elitzur06}{article}{}
@@ -577,6 +647,97 @@
   \field{year}{2011}
 \endentry
 
+\entry{hewett10}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {{Hewett}}{H.}%
+     {P.~C.}{P.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Wild}}{W.}%
+     {V.}{V.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{catalogues, surveys, quasars: emission lines, quasars: general}
+  \strng{namehash}{HPCWV1}
+  \strng{fullhash}{HPCWV1}
+  \field{labelyear}{2010}
+  \field{sortinit}{H}
+  \verb{eprint}
+  \verb 1003.3017
+  \endverb
+  \field{pages}{2302\bibrangedash 2316}
+  \field{title}{{Improved redshifts for SDSS quasar spectra}}
+  \field{volume}{405}
+  \field{journaltitle}{\mnras}
+  \field{eprinttype}{arXiv}
+  \field{month}{07}
+  \field{year}{2010}
+\endentry
+
+\entry{honig12}{article}{}
+  \name{author}{7}{}{%
+    {{}%
+     {{H{\"o}nig}}{H.}%
+     {S.~F.}{S.~F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Kishimoto}}{K.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Antonucci}}{A.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Marconi}}{M.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Prieto}}{P.}%
+     {M.~A.}{M.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Tristram}}{T.}%
+     {K.}{K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Weigelt}}{W.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{galaxies: active, galaxies: individual: NGC 424, galaxies: Seyfert,
+  infrared: galaxies, techniques: high angular resolution}
+  \strng{namehash}{HSF+1}
+  \strng{fullhash}{HSFKMARMAPMATKWG1}
+  \field{labelyear}{2012}
+  \field{sortinit}{H}
+  \verb{doi}
+  \verb 10.1088/0004-637X/755/2/149
+  \endverb
+  \field{eid}{149}
+  \verb{eprint}
+  \verb 1206.4307
+  \endverb
+  \field{pages}{149}
+  \field{title}{{Parsec-scale Dust Emission from the Polar Region in the Type 2
+  Nucleus of NGC 424}}
+  \field{volume}{755}
+  \field{journaltitle}{\apj}
+  \field{eprinttype}{arXiv}
+  \field{month}{08}
+  \field{year}{2012}
+\endentry
+
 \entry{honig13}{article}{}
   \name{author}{10}{}{%
     {{}%
@@ -772,6 +933,50 @@
   \field{year}{2012}
 \endentry
 
+\entry{kishimoto07}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {{Kishimoto}}{K.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{H{\"o}nig}}{H.}%
+     {S.~F.}{S.~F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Beckert}}{B.}%
+     {T.}{T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Weigelt}}{W.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{galaxies: active, techniques: interferometric}
+  \strng{namehash}{KM+1}
+  \strng{fullhash}{KMHSFBTWG1}
+  \field{labelyear}{2007}
+  \field{sortinit}{K}
+  \verb{doi}
+  \verb 10.1051/0004-6361:20077911
+  \endverb
+  \verb{eprint}
+  \verb 0709.0431
+  \endverb
+  \field{pages}{713\bibrangedash 721}
+  \field{title}{{The innermost region of AGN tori: implications from the
+  HST/NICMOS type 1 point sources and near-IR reverberation}}
+  \field{volume}{476}
+  \field{journaltitle}{\aap}
+  \field{eprinttype}{arXiv}
+  \field{month}{12}
+  \field{year}{2007}
+\endentry
+
 \entry{konigl94}{article}{}
   \name{author}{2}{}{%
     {{}%
@@ -893,6 +1098,61 @@
   \field{eprinttype}{arXiv}
   \field{month}{06}
   \field{year}{2003}
+\endentry
+
+\entry{landt11}{article}{}
+  \name{author}{6}{}{%
+    {{}%
+     {{Landt}}{L.}%
+     {H.}{H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Elvis}}{E.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Ward}}{W.}%
+     {M.~J.}{M.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Bentz}}{B.}%
+     {M.~C.}{M.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Korista}}{K.}%
+     {K.~T.}{K.~T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Karovska}}{K.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{galaxies: active, galaxies: nuclei, quasars: general, infrared:
+  galaxies}
+  \strng{namehash}{LH+1}
+  \strng{fullhash}{LHEMWMJBMCKKTKM1}
+  \field{labelyear}{2011}
+  \field{sortinit}{L}
+  \verb{doi}
+  \verb 10.1111/j.1365-2966.2011.18383.x
+  \endverb
+  \verb{eprint}
+  \verb 1101.3342
+  \endverb
+  \field{pages}{218\bibrangedash 240}
+  \field{title}{{The near-infrared broad emission line region of active
+  galactic nuclei - II. The 1-{$\mu$}m continuum}}
+  \field{volume}{414}
+  \field{journaltitle}{\mnras}
+  \field{eprinttype}{arXiv}
+  \field{month}{06}
+  \field{year}{2011}
 \endentry
 
 \entry{lawrence07}{article}{}
@@ -1607,6 +1867,43 @@
   \field{year}{2004}
 \endentry
 
+\entry{mor09}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {{Mor}}{M.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Netzer}}{N.}%
+     {H.}{H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Elitzur}}{E.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{galaxies: active, galaxies: nuclei, infrared: galaxies, quasars:
+  general}
+  \strng{namehash}{MRNHEM1}
+  \strng{fullhash}{MRNHEM1}
+  \field{labelyear}{2009}
+  \field{sortinit}{M}
+  \verb{eprint}
+  \verb 0907.1654
+  \endverb
+  \field{pages}{298\bibrangedash 313}
+  \field{title}{{Dusty Structure Around Type-I Active Galactic Nuclei: Clumpy
+  Torus Narrow-line Region and Near-nucleus Hot Dust}}
+  \field{volume}{705}
+  \field{journaltitle}{\apj}
+  \field{eprinttype}{arXiv}
+  \field{month}{11}
+  \field{year}{2009}
+\endentry
+
 \entry{mor11}{article}{}
   \name{author}{2}{}{%
     {{}%
@@ -2164,6 +2461,47 @@
   \field{eprinttype}{arXiv}
   \field{month}{05}
   \field{year}{2011}
+\endentry
+
+\entry{riffel09}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {{Riffel}}{R.}%
+     {R.~A.}{R.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Storchi-Bergmann}}{S.}%
+     {T.}{T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{McGregor}}{M.}%
+     {P.~J.}{P.~J.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{galaxies: active, galaxies: individual: NGC 4151, galaxies: ISM,
+  galaxies: nuclei}
+  \strng{namehash}{RRASTMPJ1}
+  \strng{fullhash}{RRASTMPJ1}
+  \field{labelyear}{2009}
+  \field{sortinit}{R}
+  \verb{doi}
+  \verb 10.1088/0004-637X/698/2/1767
+  \endverb
+  \verb{eprint}
+  \verb 0903.2798
+  \endverb
+  \field{pages}{1767\bibrangedash 1770}
+  \field{title}{{The Dusty Nuclear Torus in NGC 4151: Constraints from Gemini
+  Near-Infrared Integral Field Spectrograph Observations}}
+  \field{volume}{698}
+  \field{journaltitle}{\apj}
+  \field{eprinttype}{arXiv}
+  \field{eprintclass}{astro-ph.CO}
+  \field{month}{06}
+  \field{year}{2009}
 \endentry
 
 \entry{risaliti04}{inproceedings}{}
@@ -2896,36 +3234,6 @@
   \field{eprinttype}{arXiv}
   \field{month}{06}
   \field{year}{2012}
-\endentry
-
-\entry{urry95}{article}{}
-  \name{author}{2}{}{%
-    {{}%
-     {{Urry}}{U.}%
-     {C.~M.}{C.~M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Padovani}}{P.}%
-     {P.}{P.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{GALAXIES: ACTIVE, GALAXIES: FUNDAMENTAL PARAMETERS}
-  \strng{namehash}{UCMPP1}
-  \strng{fullhash}{UCMPP1}
-  \field{labelyear}{1995}
-  \field{sortinit}{U}
-  \verb{eprint}
-  \verb astro-ph/9506063
-  \endverb
-  \field{pages}{803}
-  \field{title}{{Unified Schemes for Radio-Loud Active Galactic Nuclei}}
-  \field{volume}{107}
-  \field{journaltitle}{\pasp}
-  \field{eprinttype}{arXiv}
-  \field{month}{09}
-  \field{year}{1995}
 \endentry
 
 \entry{vandenberk01}{article}{}

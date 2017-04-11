@@ -50,29 +50,37 @@ def plot():
     with open('/home/lc585/qsosed/sdss_ukidss_wise_medmag_ext.dat') as f:
         datz = np.loadtxt(f, usecols=(0,))
 
-    # Load filters
-    ftrlst = fittingobj.get_ftrlst()[:-2] 
-    lameff = fittingobj.get_lameff()[:-2]
-    bp = fittingobj.get_bp()[:-2] # these are in ab and data is in vega 
-    dlam = fittingobj.get_bp()[:-2]
-    zromag = fittingobj.get_zromag()[:-2]
+    datz = datz[:-5]
 
-    # load data 
+    # Load filters
+    ftrlst = fittingobj.get_ftrlst()[2:-2] 
+    lameff = fittingobj.get_lameff()[2:-2]
+    bp = fittingobj.get_bp()[2:-2] # these are in ab and data is in vega 
+    dlam = fittingobj.get_bp()[2:-2]
+    zromag = fittingobj.get_zromag()[2:-2]
+
+    with open('ftgd_dr7.dat') as f:
+        ftgd = np.loadtxt(f, skiprows=1, usecols=(1,2,3,4,5,6,7,8,9))
+
     fname = '/home/lc585/qsosed/sdss_ukidss_wise_medmag_ext.dat'
-    datarr = np.genfromtxt(fname, usecols=(1,3,5,7,9,11,13,15,17,19,21)) 
+    datarr = np.genfromtxt(fname, usecols=(5,7,9,11,13,15,17,19,21)) 
     datarr[datarr < 0.0] = np.nan 
 
+    datarr = datarr[:-5, :]
+
+
     params = Parameters()
-    params.add('plslp1', value = parfile['quasar']['pl']['slp1'])
-    params.add('plslp2', value = parfile['quasar']['pl']['slp2'])
-    params.add('plbrk', value = parfile['quasar']['pl']['brk'])
-    params.add('bbt', value = parfile['quasar']['bb']['t'])
-    params.add('bbflxnrm', value = parfile['quasar']['bb']['flxnrm'])
-    params.add('elscal', value = parfile['quasar']['el']['scal'])
-    params.add('galfra',value = parfile['gal']['fra'])
-    params.add('ebv',value = parfile['ext']['EBV'])
-    params.add('imod',value = parfile['quasar']['imod'])
-    params.add('scahal',value=parfile['quasar']['el']['scahal'])            
+    params.add('plslp1', value = -0.478)
+    params.add('plslp2', value = -0.199)
+    params.add('plbrk', value = 2.40250)
+    params.add('bbt', value = 1.30626)
+    params.add('bbflxnrm', value = 2.673)
+    params.add('elscal', value = 1.240)
+    params.add('scahal',value = 0.713)
+    params.add('galfra',value = 0.0)
+    params.add('bcnrm',value = 0.135)
+    params.add('ebv',value = 0.0)
+    params.add('imod',value = 18.0)       
 
     modarr = residual(params,
                       parfile,
@@ -96,53 +104,35 @@ def plot():
                       whmax,
                       cosmo,
                       flxcorr,
-                      qsomag)
+                      qsomag,
+                      ftgd)
     
-    lameff = fittingobj.get_lameff()
     lameff = lameff.reshape( len(lameff), 1)
     lameff = np.repeat(lameff,len(datz),axis=1)
+    
     datz = datz.reshape(1, len(datz) )
     datz = np.repeat(datz,len(lameff),axis=0)
     lam = lameff / (1.0 + datz)
     res = np.ndarray.transpose(modarr - datarr)
     
-    # Not used in fit
-    res[0,10:] = 0.0
-    res[1,17:] = 0.0
-    res[2,30:] = 0.0
+
     
     fig = plt.figure(figsize=figsize(1, 0.8))
     ax = fig.add_subplot(1,1,1)
     colormap = plt.cm.Paired
-    plt.gca().set_color_cycle([colormap(i) for i in np.linspace(0, 0.9, 11)])
-    labels = ['u','g','r','i','z','Y','J','H','K','W1','W2']
-    for i in range(11):
-        ax.semilogx(lam[i,:],res[i,:],label=labels[i])
+    plt.gca().set_color_cycle([colormap(i) for i in np.linspace(0, 0.8, 9)])
+    labels = ['r','i','z','Y','J','H','K','W1','W2']
+    for i in range(9):
+        ax.plot(lam[i,:], res[i,:], label=labels[i])
     
-    ax.axhline(0,color='black')
-    # ax.axvline(x = 1216.0, color='r', linestyle='--') # Ly_alpha / NV
-    # plt.axvline(x = 1400.0, color='r', linestyle='--') # SiIV / OIV
-    # plt.axvline(x = 1549.0, color='r', linestyle='--') # CIV
-    # ax.axvline(x = 1909.0, color='r', linestyle='--') # CIII]
-    # plt.axvline(x = 2326.0, color='r', linestyle='--') # CII]
-    # plt.axvline(x = 2798.0, color='r', linestyle='--') # MgII
-    # plt.axvline(x = 3426.0, color='r', linestyle='--') # [NeV]
-    # plt.axvline(x = 3727.0, color='r', linestyle='--') # [OII]
-    # plt.axvline(x = 3869.0, color='r', linestyle='--') # [NeIII]
-    # plt.axvline(x = 4102.0, color='r', linestyle='--') # H_delta
-    # plt.axvline(x = 4340.0, color='r', linestyle='--') # H_gamma
-    # ax.axvline(x = 4861.0, color='r', linestyle='--') # H_beta
-    # ax.axvline(x = 4983.0, color='r', linestyle='--') # [OIII]
-    # ax.axvline(x = 6563.0, color='black', linestyle='--') # H_alpha
-    # ax.text(7000,-0.35,r'H$\alpha$',horizontalalignment='left',verticalalignment='center')
-    # plt.axvline(x = 18700.0, color='r', linestyle='--') # Pa_alpha
-    
-    ax.set_xlim(1000,50000)
+    ax.grid() 
+        
+    ax.set_xlim(1000,30000)
     ax.set_ylim(-0.3,0.3)
-    ax.set_xlabel(r'Rest Frame Wavelength [${\rm \AA}$]',fontsize=12)
-    ax.set_ylabel(r'$m_{\rm mod} - m_{\rm dat}$',fontsize=12)
+    ax.set_xlabel(r'Rest Frame Wavelength [${\rm \AA}$]')
+    ax.set_ylabel(r'$m_{\rm mod} - m_{\rm dat}$')
     plt.legend(prop={'size':10})
-    plt.tick_params(axis='both',which='major',labelsize=10)
+    plt.tick_params(axis='both',which='major')
     plt.tight_layout()
 
     plt.savefig('/home/lc585/thesis/figures/chapter05/model_residuals.pdf')

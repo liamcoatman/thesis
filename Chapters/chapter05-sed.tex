@@ -16,48 +16,35 @@
 
 \section{Introduction}
 
-Reverberation measurements of nearby AGNs suggest that the near-infrared emission originates from very close to the central source \citep[few tens of light days; e.g.][]{minezaki04,suganuma06}. 
-The inferred temperature of the dust is high (${\mathrm T}\sim1200$\,K), and is close to the sublimation temperature of the dust grains \citep[e.g.][]{barvainis92}.
-A natural interpretation is that the hot dust is at the innermost edge of the dusty torus, which is a key ingredient in unification schemes of AGN \citep{antonucci93,urry95}. 
-The dust reprocesses optical/ultraviolet photons from the accretion disc and re-emits in the near-infrared. 
+Many quasars and AGN show an excess in their near-infrared continuum emission. 
+This feature is generally attributed to thermal emission from dust heated by optical/ultraviolet radiation from the accretion disc. 
+The wavelength of the feature ($\sim2$\,$\mu$m) corresponds to the spectral peak for graphite dust at its sublimation temperature \citep[${\mathrm T}\sim1500$\,K;][]{barvainis87}. 
+Reverberation measurements of nearby AGNs suggest that the hot dust is very close to the central source \citep[few tens of light days; e.g.][]{minezaki04,suganuma06}.
+This places the dust at the innermost edge of the putative torus-like structure, at a radius set by the sublimation temperature of the dust grains.  
 
-However, in recent years the picture has evolved away from a static `doughnut' towards a more general circum-nuclear, geometrically and optically thick dust distribution. 
-In the dusty wind model - first proposed by \citet{konigl94} and later developed by, amongst others, \citet{everett05}, \citet{elitzur06}, \citet{keating12} - the torus is the dusty part of a magneto-hydrodynamic wind beyond the dust sublimation radius. 
-Beyond some radius, this accretion disc is cool enough for dust accreting into it from the host interstellar medium not to be destroyed. 
-Outflows may emerge from the outer region of the accretion disc, in which the gas clouds are dusty and relatively cold.
-The dusty clouds are uplifted above the disk where they are exposed to the central engine. 
-The dust is heated by accretion disc photons, and radiates in the near-infrared band.
-The wind is roughly polar, and so the dust forms a vertical `wall' around the accretion disc.  
-This provides the circum-nuclear obscuration required by unification schemes. 
-Recent results from mid-infrared interferometry, which find that the mid-infrared emission in nearby Seyfert galaxies is dominated by dust in the polar regions appear to support this picture \citep[e.g.][]{honig13}.  
+Studies have fitted the near-infrared SEDs of AGNs using a blackbody spectrum to represent emission from hot dust \citep[e.g.][]{edelson86,barvainis87,kishimoto07,mor09,riffel09,deo11,landt11,mor11,roseboom13}. 
+A hot dust component is present in the vast majority of AGNs, although populations of `dust-free' objects have been discovered \citep{hao10,hao11,jiang10,mor11}. 
+However, it is not yet clear how the hot dust relates to other AGN properties such as BH mass, luminosity and accretion rate. 
 
-Since the physical processes that power AGN are generally understood only qualitatively, almost all AGN SED templates are empirical. 
-The empirical template of \citet{elvis94} is still the most commonly cited, despite many additions and updates \citep[e.g.][]{polletta00, kuraszkiewicz03, risaliti04, richards06,  polletta07, lusso10, shang11, marchese12, trichas12}. 
-However, these composite spectra are often constructed from quasars with a huge range in luminosity as a function of wavelength. 
-In addition, the presence of significant host galaxy at optical wavelengths in low-redshift objects is an additional complication which has not always been taken care of adequately. 
-There is therefore a strong rationale for taking a parametric approach to modelling quasar SEDs. 
-This is the approach we take in this Chapter. 
-We then investigate whether the systematic dependence of the model parameters on quasar properties including the BH mass, luminosity, accretion rate and outflow diagnostics. 
+In recent years the picture of the torus has evolved away from a static `doughnut' towards a more general circum-nuclear, geometrically and optically thick dust distribution. 
+As we have previously discussed (e.g. Section~\ref{sec:ch1-winds}), winds and outflows launched from the accretion disc are very common in AGN. 
+In the dusty wind model - first proposed by \citet{konigl94} and later developed by, amongst others, \citet{everett05}, \citet{elitzur06}, \citet{keating12} - the torus is the dusty part of an accretion disc wind beyond the dust sublimation radius.  
+The dusty clouds are uplifted above the disc where they are directly exposed to the central engine. 
+The dust is heated, and radiates in the near-infrared band.
+At the same time, radiation pressure due to dust can efficiently accelerate the wind. 
+The wind is roughly polar, and so naturally provides circum-nuclear obscuration around the accretion disc and dust-free BLR.   
+This model is supported by recent interferometric observations of nearby Seyfert galaxies which find that the mid-infrared emission is dominated by dust in the polar regions \citep[e.g.][]{honig12,honig13}.  
 
-The hot dust signature could contain information about inner face of an obscuring torus structure and/or constrain the dust content of an accretion disc wind.  
-With large-scale surveys from SDSS, UKIDSS, and WISE providing information on the ultra-violet to infra-red SEDs of thousands of quasars at redshifts $2\lesssim z \lesssim3$, it is now possible to study the emission from hot (${\mathrm T}\sim1200$\,K), parsec-scale dust in big samples with large dynamic range in luminosity and redshift. 
-In recent years, many authors have investigated the hot dust properties of high redshift ($z\sim2$) quasars. 
-Found anti-correlations between the hot dust abundance and the torus covering factor \citep{roseboom13}, the quasar bolometric luminosity \citep{mor11}. 
-However, need to be careful looking at trends with luminosity, as it means probing different parts of the SED. 
-\citet{gallagher07} undertook a similar investigation for a much smaller sample of $234$ radio-quiet quasars.
-\citet{wang13}, fitting the near-infrared emission with a single power-law, found that objects with strong outflow signatures (blue-shifted \ion{C}{IV}) have more hot dust emission relative to the accretion disc emission in a large sample of $z\sim2$ non-BAL quasars. 
-At lower redshifts, \citet{shen14} have found that the hot dust properties are correlated with EV$1$. 
-Several other investigations have drawn attention to the rest-frame near-infrared SEDs, with populations of `dust free' objects postulated \citep{hao10,hao11,jiang10,mor11}.
-
-We can link it to the detailed investigations we have done using the SDSS spectra. 
-In this Chapter, we investigate the relationship between hot dust properties and BLR outflows in a large sample of high redshift quasars. 
-We use the information built up in previous Chapters of this thesis. 
-Our approach has two stages. 
-First, we build a simple parametric SED model that is able to reproduce the median optical-infrared colours of tens of thousands of SDSS AGN at redshifts $0 \lesssim z \lesssim 4$ (Section XX). 
-Second, we measure the near-infrared SED properties of individual quasars, to understand the diversity of hot dust properties in the population (XX).
-We analyse the dependence of hot dust properties on BH mass, luminosity, accretion rate, and the strength of outflows in the BLR. 
+Studying the relation between emission from hot dust and outflow diagnostics in the BLR can place constraints on this dusty wind model \citep[e.g.][]{wang13}. 
+This is now possible with large-scale surveys from SDSS, UKIDSS, and WISE providing information on the ultra-violet to infra-red SEDs of tens of thousands of AGNs. 
+In this Chapter, we focus on the hot dust properties of SDSS quasars at redshifts $2\lesssim z \lesssim3$. 
+In this redshift range the WISE photometry is probing the near-infrared SED. 
+At the same time, using the machinary developed in Chapter~\ref{ch:bhmass}, we can for the first time reliably measure BH masses, accretion rates, and the strength of BLR outflows in this population. 
 
 \section{Data}
+
+The basis for our investigation is the Seventh Data Release (DR7) of the SDSS spectroscopic quasar catalogue \citep{schneider10}.
+We cross-match this with UKIDSS and WISE photometric catalogues to provide full coverage from optical to infrared wavelengths.   
 
 \begin{table}
   \footnotesize
@@ -77,19 +64,17 @@ We analyse the dependence of hot dust properties on BH mass, luminosity, accreti
            & $K$ & $2.2010$ &  $1.897$ & $0.352$ \\
     WISE & $W1$ & $3.4$ & $2.691$ & $0.182$\\
          & $W2$ & $4.6$ & $3.331$ & $0.130$\\
-         & $W3$ & $12.0$ & & \\
-         & $W4$ & $22.0$ & & \\           
+         & $W3$ & $12.0$ & & \\           
     \hline
   \end{tabular}
-  \caption[{Available photometry, effective wavelength, Vega to AB magnitude offsets, conversion from \ebv to extinction.}]{Available photometry, effective wavelength, Vega to AB magnitude offsets, conversion from \ebv to extinction. \todoinline{Need $W3$/$W4$ offsets.}}
+  \caption[{Available photometry, effective wavelength, Vega to AB magnitude offsets, conversion from \ebv to extinction.}]{Available photometry, effective wavelength, Vega to AB magnitude offsets, conversion from \ebv to extinction. \todoinline{Need $W3$ offsets.}}
   \label{tab:photometry}
 \end{table}
 
 \subsection{SDSS DR7}
 
-We use the Seventh Data Release (DR7) of the SDSS spectroscopic quasar catalogue \citep{schneider10}, which includes $105\,783$ objects across $\sim 9,380$\,deg$^2$. 
 The SDSS obtained images in five broad optical band-passes: $u$, $g$, $r$, $i$ and $z$ (Table~\ref{tab:photometry}).  
-We use BEST point-spread function magnitudes from the catalogue.
+We use BEST point-spread function magnitudes from the SDSS DR7 quasar catalogue.
 
 \subsection{UKIDSS Large Area Survey}
 
@@ -100,9 +85,10 @@ We use `apermag3' magnitudes, which are aperture corrected magnitudes in a $2''$
 
 The Wide-field Infrared Explorer \citep[WISE;][]{wright10} mapped the entire sky in four mid-IR bands: $W1$, $W2$, $W3$ and $W4$. 
 The WISE AllWISE Data Release (`AllWISE') combines data from the nine-month cryogenic phase of the mission that led to the `AllSky' data release with data from the NEOWISE program \citep{mainzer11}. 
-We use the profile-fitting magnitudes (`w1mpro', 'w2mpro' etc.)  
+We use the profile-fitting `mpro' magnitudes.   
+We are interested in the rest-frame near-infrared emission, and so only use information from the first three WISE bands in this work.
 
-\subsection{Photometry}
+\subsection{Computing Vega-AB magnitude offsets}
 
 The mean flux density $f_\lambda(P)$ in a bandpass defined by a throughput function $P(\lambda)$ is given by: 
 
@@ -117,17 +103,16 @@ In the Vega system this is the star Vega.
 Magnitude offsets to convert Vega-based magnitudes onto the AB system are given in Table~\ref{tab:photometry}. 
 In calculating these offsets we assume that the magnitude of Vega is $0.026$ in the Vega magnitude system. 
 
-\todoinline{Ask Paul: 
 Although the SDSS asinh magnitude system is intended to be on the AB system, the photometric zero-points are known to be slightly off the AB standard. 
 According to the documentation\footnote{http://classic.sdss.org/dr7/algorithms/fluxcal.html}, the $u$ band zero-point is in error by $0.04$\,mag ($u_{\mathrm AB} = u_{\mathrm SDSS} - 0.04$) while the $z$ band is in error by $0.02$ ($z_{\mathrm AB} = z_{\mathrm SDSS} + 0.02$). 
 The $g$, $r$ and $i$ zero-points are consistent with the AB system. 
 These numbers do NOT incorporate any SDSS to ABmag systematic offsets, except that the u-band offset should now be 0.000 mag.
-}
+
+adjust the zero-point of the Y-band by 0.08 mag to bring the photometry into better agreement with the SDSS z and UKIDSS J photometry.
+
 
 
 \subsection{Galactic extinction correction}
-
-\todo{Confirm with Paul how this is calculated}
 
 $A(u)$, the Galactic extinction in the $u$ band at the position of the object, is given in the SDSS catalogue. 
 It is computed using the maps of \citet{schlegel98}. 
@@ -140,16 +125,16 @@ Do we also assume an extinction curve?
 
 \subsection{Cross-matching}
 
-There are $105\,783$ objects in the SDSS DR7 quasar catalogue. 
-Cross-matching this catalogue to the UKIDSS (with a $2''$ matching radius) and WISE (with a $3$$''$ matching radius) catalogue leaves $36\,607$ objects. 
-The UKIDSS footprint is only a fraction of the SDSS footprint, which is the reason a large fraction of objects could not be matched to UKIDSS.
-
+There are $105\,783$ objects in the SDSS DR$7$ quasar catalogue. 
+While WISE mapped virtually the entires sky, the UKIDSS footprint covers approxmiately one third of the SDSS footprint. 
+$36\,607$ are cross-matched to the UKIDSS (with a $2''$ matching radius) and WISE (with a $3$$''$ matching radius) catalogues. 
 We include only the $20\,637$ quasars with $i$ band magnitudes brighter than $19.1$, i.e. the quasars selected by the main SDSS quasar selection algorithm for quasars with colours consistent with being at redshifts $z < 3$ \citep{richards02}. 
 For a given $i$ magnitude, a quasar with a blue spectrum is more likely to be undetected at longer wavelengths than a quasar with a red spectrum. 
 Therefore, as we allow fainter quasars into our sample we will be biased towards objects with redder spectra.
 We verified that above the $i=19.1$ limit the sample is $95$ per cent complete in all band-passes (excluding WISE $W3$ and $W4$).
 
 Broad absorption line (BAL) quasars typically have redder spectra than non-BAL quasars. 
+because the CIV line parameters of these quasars can not be reliably measured.
 We therefore exclude these objects from our sample using the catalogue of BALs generated by \citet{allen11}.
 
 The redshift and luminosity distribution of the final sample, containing $19,837$ quasars, is shown in Figure~\ref{fig:lum_z}. 
@@ -157,7 +142,7 @@ The redshift and luminosity distribution of the final sample, containing $19,837
 \begin{figure}
   \centering
   \includegraphics[width=\textwidth]{figures/chapter05/lum_z.pdf}
-  \caption[{Distribution of our sample in the redshift-luminosity plane.}]{Distribution of our sample in the redshift-luminosity plane. \todoinline{Remake with new sample}}
+  \caption[{Distribution of our sample in the redshift-luminosity plane.}]{Distribution of our sample in the redshift-luminosity plane.}
   \label{fig:lum_z}
 \end{figure}
 
@@ -165,28 +150,36 @@ The redshift and luminosity distribution of the final sample, containing $19,837
 % readdat.py
 % DefingSample.ipynb 
 
-\subsection{Generating the quasar catalogue}
-
 \section{Quasar SED}
 
-We have $19\,853$ quasars with photometric data from SDSS, UKIDSS and WISE. 
-Our quasars cover the redshift range $0.2 < z < 4$, and so this data covers the rest-frame wavelength range from $800$\,\AA\, to $3.8$\,micron. 
+Our approach has two stages. 
+First, we build a simple parametric SED model that is able to reproduce the median optical-infrared colours of tens of thousands of SDSS AGN at redshifts $0 \lesssim z \lesssim 4$ (Section XX). 
+Second, we measure the near-infrared SED properties of individual quasars, to understand the diversity of hot dust properties in the population (XX).
+
+Since the physical processes that power AGN are generally understood only qualitatively, almost all AGN SED templates are empirical. 
+The empirical template of \citet{elvis94} is still the most commonly cited, despite many additions and updates \citep[e.g.][]{polletta00, kuraszkiewicz03, risaliti04, richards06,  polletta07, lusso10, shang11, marchese12, trichas12}. 
+However, these composite spectra are often constructed from quasars with a huge range in luminosity as a function of wavelength. 
+In addition, the presence of significant host galaxy at optical wavelengths in low-redshift objects is an additional complication which has not always been taken care of adequately. 
+There is therefore a strong rationale for taking a parametric approach to modelling quasar SEDs. 
+
+Our quasars cover the redshift range $0.2 < z < 4$, and so this data covers the rest-frame wavelength range from $800$\,\AA\, to $3.8$\,$\mu$m. 
 In this region the SED is dominated by the accretion disc, emission-lines and thermal emission from the hottest (${\mathrm T}\sim1200$K) dust. 
 Host galaxy emission is also significant for quasars at redshifts $z\lesssim1$, and the effect of dust extinction at the AGN redshift is another factor which must be considered.   
 In this Section, we describe how we have modelled emission from these different physical processes.
+Our model is valud between $1216$\,\AA and $3$\,$\mu$m.
 At high redshifts, absorption due to Ly-$\alpha$ forest absorption becomes significant. 
 Because we do not attempt to model this effect, our model is valid only at wavelengths long-ward of $1216$\,\AA. 
 We model dust emission using a single temperature (${\mathrm T}\sim1200$\,K) blackbody, which peaks at $\sim2$ micron. 
-At longer wavelengths, emission from cooler dust at greater radii from the central engine becomes increasingly important. 
+At longer wavelengths, emission from cooler dust farther from the central engine becomes increasingly important. 
 We do not include this emission in our model, which restricts its validity to $\lesssim3$ micron.
 The model spectrum is shown in Figure \ref{fig:modelsed}, with each of the main components indicated. 
 
 \section{SED Model}
 
-\begin{figure}
+\begin{figure}[h!]
   \centering
   \includegraphics[width=\textwidth]{figures/chapter05/sed_model.pdf}
-  \caption[{Model quasar spectrum at $z=1$, showing the contributions to the total flux from the blue power-law slope, red power-law slope, Balmer continuum, blackbody, emission-line spectrum and host galaxy.}]{Model quasar spectrum at $z=1$, showing the contributions to the total flux from the blue power-law slope, red power-law slope, Balmer continuum, blackbody, emission-line spectrum and host galaxy. \todoinline{Make sure it is immediately clear in every caption what is being shown in the figure.}}
+  \caption[{Model quasar spectrum at $z=1$, showing the contributions to the total flux from the blue power-law slope, red power-law slope, Balmer continuum, blackbody, emission-line spectrum and host galaxy.}]{Model quasar spectrum at $z=1$, showing the contributions to the total flux from the blue power-law slope, red power-law slope, Balmer continuum, blackbody, emission-line spectrum and host galaxy. }
   \label{fig:modelsed}
 \end{figure}
 
@@ -310,21 +303,7 @@ The attenuation of the flux at a given wavelength is then:
 
 in the rest frame of the quasar. 
 
-\subsection{Empirical Correction}
-
-\todoinline{Describe Paul's empirical correction.}
-
 \section{The `Standard' SED Model} 
-
-\todoinline{
-\begin{itemize}
-    \item Given the same parameters, my model and Paul's look identical 
-    \item I'm generating model colours using my model and Paul's best-fit parameters, and Paul's correction
-    \item Do my model colours look the same as Paul's? (i.e. is there a bug in my code?)
-    \item Can I generate the same median colours as Paul? (i.e. what sample is being used? what magnitudes?)
-    \item Can I do my own fit to the data?  
-\end{itemize}  
-}
 
 \begin{figure}
   \centering
@@ -371,9 +350,7 @@ We also exclude the SDSS $u$ and $g$ band-passes from the fit at $z > 2.7$ and $
 \section{Results}
 
 The best-fitting parameters from the fit are shown in Table \ref{tab:params}. 
-\todo{Re-do fit}
-The colours ($u - g$, $g - r$, etc.) of the median SED, the individual quasars, and the best-fitting model are plotted as a function of redshift in Figs.~\ref{fig:color_1} and \ref{fig:color_2}.
-\todo{Need to show individual quasars.}  
+The colours ($r-i$, $i-z$, etc.) of the median SED, the individual quasars, and the best-fitting model are plotted as a function of redshift in Figs.~\ref{fig:color_1} and \ref{fig:color_2}.
 Most of the large variations that can be seen in the median colours of the quasars as a function of redshift are due to strong emission-lines being redshifted into and out of the band-passes.
 Take away message is that a single, fairly simple parametric is able to reproduce the median colours of tens of thousands of AGN with a large dynamic range in redshift and luminosity. 
 However, there is a significant scatter about the median model, which we will investigate in the next Section?
@@ -386,14 +363,17 @@ Does any part of this scatter have a systematic dependence on properties of the 
     \hline 
     Parameter & Symbol & Value \\
     \hline 
-    Blue power-law index & $\alpha_{\mathrm blue}$ & $0.58$ \\
-    Red power-law index & $\alpha_{\mathrm red}$ & $-0.04$ \\
-    Power-law break & $\lambda_{\mathrm break}$ & $2945$ \\
-    Blackbody temperature & $T_{\mathrm BB}$ & $1216$\,K \\
-    Blackbody normalisation & $C_{\mathrm BB}$ & $0.22$ \\
-    Emission-line scaling & $C_{\mathrm EL}$  & $0.63$ \\
-    \ha emission-line scaling & $C_{{\mathrm H}\alpha}$  & $0.63$ \\
-    Galaxy fraction & $\eta$ & $0.29$ \\
+    Blue power-law index & $\alpha_{\mathrm blue}$ & $-0.478$ \\
+    Red power-law index & $\alpha_{\mathrm red}$ & $-0.199$ \\
+    Power-law break & $\lambda_{\mathrm break}$ & $2402$ \\
+    Blackbody temperature & $T_{\mathrm BB}$ & $1306$\,K \\
+    Blackbody normalisation & $C_{\mathrm BB}$ & $2.673$ \\
+    Emission-line scaling & $C_{\mathrm EL}$  & $1.240$ \\
+    \ha emission-line scaling & $C_{{\mathrm H}\alpha}$  & $0.713$ \\
+    Galaxy fraction & $\eta$ & $0.0$ \\
+    Balmer continuum scaling & & $0.135$ \\
+    \ebv & \ebv & $0.0$ \\
+
     \hline
   \end{tabular}
   \caption{Model parameters.}
@@ -402,7 +382,7 @@ Does any part of this scatter have a systematic dependence on properties of the 
 
 \begin{figure}
 \includegraphics[width=\textwidth]{figures/chapter05/sed_color_plot_1.pdf}
-\caption[{Colours of median quasar SED and best-fitting model, with and without correction.}]{Colours of median quasar SED and best-fitting model, with and without correction. \todoinline{Corrected is in orange, uncorrected in green. Check with Paul. Correction often makes colours a lot worse. Once got to the bottom of this just show with correction. Is Lyman forest absorption / Lyman limit important for the quasars shown here.}}
+\caption[{Colours of median quasar SED and best-fitting model, with and without correction.}]{Colours of median quasar SED and best-fitting model, with and without correction.}
   \label{fig:color_1}
 \end{figure} 
 
@@ -439,7 +419,7 @@ One needs to take care in looking at trends with luminosity given the observed-f
 \begin{figure}
 \centering
 \includegraphics[width=\columnwidth]{figures/chapter05/w1w2_versus_redshift_ratio.pdf}
-\caption[{$W1 - W2$ colours of sample as a function of redshift.}]{$W1 - W2$ colours of sample as a function of redshift. Above a certain density threshold points are represented by a density plot. On top we plot the colours of our standard SED model, with a fixed temperature and a varying near-infrared ($1 - 3$\,micron) to ultra-violet ratio.}
+\caption[{$W1 - W2$ colours of sample as a function of redshift.}]{$W1 - W2$ colours of sample as a function of redshift. Above a density threshold of four points per pixel points are represented by a density plot. On top we plot the colours of our standard SED model, with a fixed temperature and a varying near-infrared ($1 - 3$\,micron) to ultra-violet ratio.}
   \label{fig:w1w2colorsratio}
 \end{figure}
 
@@ -644,7 +624,7 @@ We note that the correlation between the hot dust and the \ion{C}{IV} emission p
 \begin{figure}
 \centering
   \includegraphics[width=\columnwidth]{figures/chapter05/hot_dust_beta.pdf}
-\caption[{Hot dust abundance as a function of rest-frame EQW and blueshift of the \ion{C}{IV} line.}]{Rest-frame EQWand blueshift of the \ion{C}{IV} line for 7,115 SDSS DR7 quasars. The colours of the hexagons denote the median hot dust (T$\simeq$1200\,K) abundance for all quasars at a given EQW and blueshift. Quasars with the most extreme outflow signatures are predominantly hot-dust rich. Only bins containing a minimum of two objects are plotted. }
+\caption[{Hot dust abundance as a function of rest-frame EQW and blueshift of the \ion{C}{IV} line.}]{Rest-frame EQW and blueshift of the \ion{C}{IV} line for 7,115 SDSS DR7 quasars. The colours of the hexagons denote the median hot dust (T$\simeq$1200\,K) abundance for all quasars at a given EQW and blueshift. Quasars with the most extreme outflow signatures are predominantly hot-dust rich. Only bins containing a minimum of two objects are plotted. \citet{hewett10} redshifts are adopted to calculated \ion{C}{IV} blueshifts.}
   \label{fig:hot_dust_beta}
 \end{figure}
 
@@ -655,44 +635,37 @@ We note that the correlation between the hot dust and the \ion{C}{IV} emission p
   \label{fig:blueshift_composite}
 \end{figure}
 
-\section{Discussion}
-
-\citet{roseboom13} studied a similar sample of luminous type 1 quasars. 
-They, like us, modelled the near-infrared emission using a blackbody and modelled the emission at longer wavelengths using a clumpy torus model. 
-They find that while $L_{1-5\mu m}$/$L_{IR}$ appears relatively insensitive to $L_{bol}$ and $L_{IR}$, a strong correlation appears between $L_{1-5\mu m}$/$L_{IR}$ and $L_{IR}/L_{bol}$ (i.e. the dust covering factor). 
-They explain this correlation by postulating that as the covering factor of the torus decreases, the maximum inclination at which a type 1 quasar would be seen increases. 
-An increase in the inclination will mean direct sight lines to more of the inner wall of obscuring material closest to the accretion disc.
-
-\citet{mor11} also looked at the hot dust properties of a sample of $0.75 < z < 2$ quasars, with photometry from SDSS and WISE. 
-They modelled the near-infrared emission with hot clouds of pure graphite dust. 
-They reported an anti-correlation between the covering factor of hot dust clouds and the quasar bolometric luminosity. 
-Like us, they neglect cooler dust components which will dominate the SED at longer wavelengths. 
-As we have discovered (see Figure residual plot), the missing flux decreases with redshift because we observe shorter rest-frame wavelengths when the observed spectrum is redshifted to a greater degree. 
-This will induce an anti-correlation between the luminosity of the hot dust component and the luminosity of the quasar (which is correlated with redshift). 
-At $z=0.75$, the $W3$ band-pass (the longest in their fits) is sensitive to flux from $6.9$\,micron; at this wavelength we expect the contribution from cooler dust to dominate over the hot dust. 
-It is possible that this effect could explain the tension with our own result that $R_{NIR/UV}$ does not depend on the quasar luminosity in our low-$z$ sample. 
-
-\citet{shen14} quantify the relative torus emission using the $r-W1$ colour for a sample of $0.4 < z < 0.8$ SDSS quasars. 
-At these redshifts $W1$ is observing between $1.9$ and $2.4$\,micron in the rest-frame of the quasar, which suggests that they are sensitive to the same component of hot dust which we are investigating. 
-They observe a mild trend of decreasing relative torus emission as the quasar luminosity increases. 
-We note that their use of the $r-W1$ at much higher redshifts may be problematic, as the $W1$ flux will be increasingly dominated by direct emission from the accretion disc. 
-
-\citet{gallagher07} undertook a similar investigation for a much smaller sample of $234$ radio-quiet quasars.
-
- 
-\citet{wang13}, fitting the near-infrared emission with a single power-law, found that objects with strong outflow signatures (blue-shifted \ion{C}{IV}) have more hot dust emission relative to the accretion disc emission in a large sample of $z\sim2$ non-BAL quasars. 
-Also found by \citet{shen14}. 
 
 
 
 \section{Discussion}
 
+R isn't necessarily the total mass of hot dust, but more the covering factor of hot dust and the area which is intercepted by our line of sight. 
 Ultra-violet photons from the accretion disc accelerate the wind via radiation line driving.
 Dust absorption contributes to the outflow acceleration. 
+Wind could be driven by radiation pressure on dust grains. 
+For an AGN radiating at 0.1Ledd radiation pressure is sufficient to unbind dust from the gravitational porential (e.g. Pier \& Krolik 1992; Honig \& Beckert 2007). 
 It would be efficiently accelerated by the central continuum source because of the high cross-section of dust \citep[e.g.][]{fabian12}.  
 That flattens the geometry of the wind and exposes more surface area that is viewable on a relatively face-on line of sight.  
 The radiation pressure is increased at higher luminosities and/or accretion rates.
 This can flatten the geometry of the wind, thereby increasing the range of angles for which the inner edge of the dusty wind - where dust is at it's sublimation temperature - can be observed. 
 A direct prediction is therefore that the in a quasars with high accretion rates and strong outflows, the emission from hot dust should be enhanced. 
 (See Kishimoto picture)
+Also maybe supported by Roseboom - strong anti-correlation between torus covering factor and hot dust. as the covering factor of the torus decreases, the maximum inclination at which a type 1 quasar would be seen increases. 
+An increase in the inclination will mean direct sight lines to more of the inner wall of obscuring material closest to the accretion disc. 
+\citet{roseboom13} studied a similar sample of luminous type 1 quasars. 
+They, like us, modelled the near-infrared emission using a blackbody and modelled the emission at longer wavelengths using a clumpy torus model. 
+They find that while $L_{1-5\mu m}$/$L_{IR}$ appears relatively insensitive to $L_{bol}$ and $L_{IR}$, a strong correlation appears between $L_{1-5\mu m}$/$L_{IR}$ and $L_{IR}/L_{bol}$ (i.e. the dust covering factor). 
+They explain this correlation by postulating that as the covering factor of the torus decreases, the maximum inclination at which a type 1 quasar would be seen increases. 
+An increase in the inclination will mean direct sight lines to more of the inner wall of obscuring material closest to the accretion disc.
+
+\citet{wang13}, fitting the near-infrared emission with a single power-law, found that objects with strong outflow signatures (blueshift and asymmetry index (BAI) and full width at half-maximum (FWHM) of CIV) have more hot dust emission relative to the accretion disc emission in a large sample of $z\sim2$ non-BAL quasars. 
+Also found by \citet{shen14}. 
+Compared to Wang we have larger sample, better blueshift meaurements (try use ICA?) and use blackbody (find power-law poor fit), data from UKIDSS, full sed model
+
+At lower redshifts, \citet{shen14} have found that the hot dust properties are correlated with EV$1$. 
+\citet{shen14} quantify the relative torus emission using the $r-W1$ colour for a sample of $0.4 < z < 0.8$ SDSS quasars. 
+At these redshifts $W1$ is observing between $1.9$ and $2.4$\,micron in the rest-frame of the quasar, which suggests that they are sensitive to the same component of hot dust which we are investigating. 
+Restrict redshift range t limit effect of band shifting due to redshift. 
+Relative high flux in in the infrared than in the optical as Eddington ratio increases. 
 
