@@ -90,63 +90,6 @@
   \field{year}{1987}
 \endentry
 
-\entry{croom04}{article}{}
-  \name{author}{7}{}{%
-    {{}%
-     {{Croom}}{C.}%
-     {S.~M.}{S.~M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Smith}}{S.}%
-     {R.~J.}{R.~J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Boyle}}{B.}%
-     {B.~J.}{B.~J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Shanks}}{S.}%
-     {T.}{T.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Miller}}{M.}%
-     {L.}{L.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Outram}}{O.}%
-     {P.~J.}{P.~J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Loaring}}{L.}%
-     {N.~S.}{N.~S.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{catalogues, surveys, white dwarfs, galaxies: active, quasars: general,
-  galaxies: Seyfert}
-  \strng{namehash}{CSM+1}
-  \strng{fullhash}{CSMSRJBBJSTMLOPJLNS1}
-  \field{labelyear}{2004}
-  \field{sortinit}{C}
-  \verb{eprint}
-  \verb astro-ph/0403040
-  \endverb
-  \field{pages}{1397\bibrangedash 1418}
-  \field{title}{{The 2dF QSO Redshift Survey - XII. The spectroscopic catalogue
-  and luminosity function}}
-  \field{volume}{349}
-  \field{journaltitle}{\mnras}
-  \field{eprinttype}{arXiv}
-  \field{month}{04}
-  \field{year}{2004}
-\endentry
-
 \entry{deo11}{article}{}
   \name{author}{7}{}{%
     {{}%
@@ -1694,63 +1637,6 @@
   \field{eprinttype}{arXiv}
   \field{month}{04}
   \field{year}{2011}
-\endentry
-
-\entry{mannucci01}{article}{}
-  \name{author}{7}{}{%
-    {{}%
-     {{Mannucci}}{M.}%
-     {F.}{F.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Basile}}{B.}%
-     {F.}{F.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Poggianti}}{P.}%
-     {B.~M.}{B.~M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Cimatti}}{C.}%
-     {A.}{A.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Daddi}}{D.}%
-     {E.}{E.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Pozzetti}}{P.}%
-     {L.}{L.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Vanzi}}{V.}%
-     {L.}{L.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{GALAXIES: ELLIPTICAL AND LENTICULAR, CD, GALAXIES: EVOLUTION, GALAXIES:
-  PHOTOMETRY, GALAXIES: SPIRAL, GALAXIES: STELLAR CONTENT, INFRARED: GALAXIES}
-  \strng{namehash}{MF+1}
-  \strng{fullhash}{MFBFPBMCADEPLVL1}
-  \field{labelyear}{2001}
-  \field{sortinit}{M}
-  \verb{eprint}
-  \verb astro-ph/0104427
-  \endverb
-  \field{pages}{745\bibrangedash 758}
-  \field{title}{{Near-infrared template spectra of normal galaxies:
-  k-corrections, galaxy models and stellar populations}}
-  \field{volume}{326}
-  \field{journaltitle}{\mnras}
-  \field{eprinttype}{arXiv}
-  \field{month}{09}
-  \field{year}{2001}
 \endentry
 
 \entry{marchese12}{article}{}

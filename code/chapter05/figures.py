@@ -866,38 +866,52 @@ def civ_hot_dust_beta():
 
 def civ_hot_dust_ratio():
 
-    tab = Table.read('/data/lc585/QSOSED/Results/150211/sample2/out_add.fits')
-    
-    tab = tab[ ~np.isnan(tab['BBT_STDERR'])]
-    tab = tab[ tab['BBT_STDERR'] < 500. ]
-    tab = tab[ tab['BBT_STDERR'] > 5.0 ]
-    tab = tab[ (tab['LUM_IR_SIGMA']*tab['RATIO_IR_UV']) < 0.4] 
-    
-    civtab = Table.read('/data/lc585/QSOSED/Results/140827/civtab.fits')
-    
-    newtab = Table()
-        
-    newtab['NAME'] = civtab['NAME']
-    newtab['CIV_BLUESHIFT_PAUL'] = civtab['BLUESHIFT']
-    newtab['CIV_EW_PAUL'] = civtab['EW']
-    
-    tab = join( tab, newtab, keys='NAME', join_type= 'left')
-    
-    xdat = tab['CIV_BLUESHIFT_PAUL']
-    ydat = np.log10(tab['CIV_EW_PAUL'])
-    C = tab['RATIO_IR_UV']
-    
-    fig, ax = plt.subplots(figsize=figsize(1, vscale=0.9))
+    """
+    df = get_data()
+    df = extcut(df)
+    df = df[(df.z_HW >= 2.0) & (df.z_HW < 2.7)]
+    df.to_csv('/home/lc585/qsosed/temp.csv')
 
+    to make sample, and then runsingleobjfit
+
+    temp is fixed 
+
+    """
+
+
+
+    t = Table.read('/home/lc585/qsosed/out.fits')
+
+    t_ica = Table.read('/data/vault/phewett/LiamC/liam_civpar_zica_160115.dat', format='ascii') # new ICA
+    t_ica.rename_column('col1', 'NAME')
+    t_ica.rename_column('col2', 'CIV_BLUESHIFT_ICA')
+    t_ica.rename_column('col3', 'CIV_EQW_ICA')
+    
+    print len(t)
+    t = join(t, t_ica, join_type='inner', keys='NAME') 
+    print len(t)
+    
+    t = t[np.log10(t['CIV_EQW_ICA']) > 1.2]
+    
+    
+    xdat = t['CIV_BLUESHIFT_ICA']
+    ydat = np.log10(t['CIV_EQW_ICA'])
+    C = t['IR_UV_RATIO']
+    
+        
+    fig, ax = plt.subplots(figsize=figsize(1, vscale=1.0))
+    
     im = ax.hexbin(xdat,
                    ydat,
                    C=C,
-                   gridsize=(55,35),
-                   mincnt=2,
+                   gridsize=(25,18),
+                   mincnt=1,
                    reduce_C_function=np.median,
-                   cmap='jet',
-                   vmax=1.2,
-                   vmin=0.4)
+                   cmap='RdBu_r',
+                   edgecolor='black',
+                   linewidth=0.5,
+                   vmax=0.55,
+                   vmin=0.15)
     
     cb = fig.colorbar(im,ax=ax)
     cb.set_label(r'$R_{NIR/UV}$')
@@ -905,8 +919,8 @@ def civ_hot_dust_ratio():
     ax.set_xlabel(r'C$\,$IV Blueshift (km/s)')
     ax.set_ylabel(r'Log$_{10}$(C$\,$IV REW ($\AA$))')
     
-    ax.set_xlim(-500,3000)
-    ax.set_ylim(1.1,1.9)
+    ax.set_xlim(-750,4000)
+    ax.set_ylim(1.1 ,2)
     
     fig.tight_layout()
 
