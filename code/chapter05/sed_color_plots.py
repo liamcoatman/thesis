@@ -177,11 +177,13 @@ def plot():
         ax.scatter(datz, 
                    ydat, 
                    color='black', 
-                   s=5)
+                   s=5,
+                   label='Data')
 
         ax.plot(datz,
                 modarr[:,col1[i]] - modarr[:, col2[i]],
-                color=cs[1])
+                color=cs[1], 
+                label='Model')
 
         # ax.scatter(df.z_HW, df[colstr1[i]] - df[colstr2[i]], s=1, alpha=0.1) 
 
@@ -191,7 +193,7 @@ def plot():
         ax.set_ylim(ylims[i])
         ax.set_xlim(0.75, 3.25)
 
-
+    
     for i, ax in enumerate(axs2.flatten()):
     
         i += 4 
@@ -203,18 +205,23 @@ def plot():
         ax.scatter(datz, 
                    ydat, 
                    color='black', 
-                   s=5)
+                   s=5,
+                   label='Data')
 
         ax.plot(datz,
                 modarr[:,col1[i]] - modarr[:, col2[i]],
-                color=cs[1])
+                color=cs[1], 
+                label='Model')
 
 
         ax.set_title(col_label[i], size=10)
     
         ax.set_ylim(np.nanmin(ydat)-0.2, np.nanmax(ydat)+0.2)
+ 
+    axs2[0, 0].legend(scatterpoints=1, ncol=2, frameon=False)
+    axs1[0, 0].legend(scatterpoints=1, ncol=2, frameon=False)
 
-   
+
     axs1[1, 0].set_xlabel(r'Redshift $z$')
     axs2[1, 0].set_xlabel(r'Redshift $z$')
     axs1[1, 1].set_xlabel(r'Redshift $z$')

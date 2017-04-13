@@ -18,7 +18,7 @@ footnotesize tables
 \centering figures
 Minimal captitalisation in titles
 chi-squared -> $\chi^2$ 
-UV, ultra-violet -> ultraviolet 
+UV, ultraviolet -> ultra-violet 
 infra-red -> infrared 
 make fig 1a etc in to real captions
 \ion{C}{IV}-emission line ->  \ion{C}{IV} emission-line
@@ -34,3 +34,5 @@ BH-mass -> BH mass
 if reference (e.g. figures 11 and 12) don't $$ 
 Allen \& Hewett (2017, in preparation)
 absorption line -> absorption-line 
+equation -> eqnarray 
+bandpass, band, pass-band -band-pass -> passband 

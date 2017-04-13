@@ -91,7 +91,22 @@ def plot():
     axs[1, 1].set_xlabel(r'Log M$_{\rm BH}$ [M$\odot$]')
     axs[2, 1].set_xlabel(r'Log $\lambda_{\rm Edd}$')
 
+    
+
+    labels = ['(a)', '(b)', '(b)', '(d)', '(c)', '(e)']
+
+    print len(axs.flatten())
+
+    for i, ax in enumerate(axs.flatten()):
+
+        ax.text(0.1, 0.93, labels[i],
+                horizontalalignment='center',
+                verticalalignment='center',
+                transform = ax.transAxes)
+
     fig.delaxes(axs[0, 1])
+
+
 
     
 

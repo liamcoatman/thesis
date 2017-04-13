@@ -117,14 +117,6 @@ def plot():
     lower_bound_2 = col[np.argmin(np.abs(zs-2.0)):np.argmin(np.abs(zs-2.7))]
 
 
-    plt.fill_between(zs[np.argmin(np.abs(zs-1.0)):np.argmin(np.abs(zs-1.5))],
-                     lower_bound_1,
-                     upper_bound_1,
-                     facecolor='None',
-                     edgecolor='black',
-                     linewidth=3.0)
-
-
     plt.fill_between(zs[np.argmin(np.abs(zs-2.0)):np.argmin(np.abs(zs-2.7))],
                      lower_bound_2,
                      upper_bound_2,
@@ -147,18 +139,6 @@ def plot():
 
 
     plt.xlim(0.75,3.5)
-
-    plt.text(1.25,
-             0.5,
-             r'Low-$z$',
-             horizontalalignment='center',
-             verticalalignment='center')
-
-    plt.text(2.35,
-             0.5,
-             r'High-$z$',
-             horizontalalignment='center',
-             verticalalignment='center')
 
 
     plt.text(3.33821,
@@ -195,7 +175,7 @@ def plot():
     plt.ylabel(r'$i$-$K$')
     plt.tight_layout()
 
-    # fig.savefig('/home/lc585/thesis/figures/chapter05/ik_versus_z_low_ext.pdf')
+    fig.savefig('/home/lc585/thesis/figures/chapter05/ik_versus_z_low_ext.pdf')
     plt.show()
 
     return None

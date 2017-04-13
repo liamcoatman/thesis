@@ -63,6 +63,27 @@
   \field{year}{2011}
 \endentry
 
+\entry{baldwin77}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {{Baldwin}}{B.}%
+     {J.~A.}{J.~A.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{BJA1}
+  \strng{fullhash}{BJA1}
+  \field{labelyear}{1977}
+  \field{sortinit}{B}
+  \field{pages}{679\bibrangedash 684}
+  \field{title}{{Luminosity Indicators in the Spectra of Quasi-Stellar
+  Objects}}
+  \field{volume}{214}
+  \field{journaltitle}{\apj}
+  \field{month}{06}
+  \field{year}{1977}
+\endentry
+
 \entry{barvainis87}{article}{}
   \name{author}{1}{}{%
     {{}%
@@ -78,9 +99,6 @@
   \strng{fullhash}{BR1}
   \field{labelyear}{1987}
   \field{sortinit}{B}
-  \verb{doi}
-  \verb 10.1086/165571
-  \endverb
   \field{pages}{537\bibrangedash 544}
   \field{title}{{Hot dust and the near-infrared bump in the continuum spectra
   of quasars and active galactic nuclei}}
@@ -166,9 +184,6 @@
   \strng{fullhash}{ERAMMA1}
   \field{labelyear}{1986}
   \field{sortinit}{E}
-  \verb{doi}
-  \verb 10.1086/164479
-  \endverb
   \field{pages}{59\bibrangedash 77}
   \field{title}{{Spectral energy distributions of active galactic nuclei
   between 0.1 and 100 microns}}
@@ -373,57 +388,6 @@
   \field{year}{1991}
 \endentry
 
-\entry{gallagher07}{article}{}
-  \name{author}{6}{}{%
-    {{}%
-     {{Gallagher}}{G.}%
-     {S.~C.}{S.~C.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Hines}}{H.}%
-     {D.~C.}{D.~C.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Blaylock}}{B.}%
-     {M.}{M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Priddey}}{P.}%
-     {R.~S.}{R.~S.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Brandt}}{B.}%
-     {W.~N.}{W.~N.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Egami}}{E.}%
-     {E.~E.}{E.~E.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{Galaxies: Active, Galaxies: Quasars: Absorption Lines}
-  \strng{namehash}{GSC+1}
-  \strng{fullhash}{GSCHDCBMPRSBWNEEE1}
-  \field{labelyear}{2007}
-  \field{sortinit}{G}
-  \verb{eprint}
-  \verb 0705.0538
-  \endverb
-  \field{pages}{157\bibrangedash 173}
-  \field{title}{{Radio through X-Ray Spectral Energy Distributions of 38 Broad
-  Absorption Line Quasars}}
-  \field{volume}{665}
-  \field{journaltitle}{\apj}
-  \field{eprinttype}{arXiv}
-  \field{month}{08}
-  \field{year}{2007}
-\endentry
-
 \entry{grandi82}{article}{}
   \name{author}{1}{}{%
     {{}%
@@ -590,36 +554,6 @@
   \field{year}{2011}
 \endentry
 
-\entry{hewett10}{article}{}
-  \name{author}{2}{}{%
-    {{}%
-     {{Hewett}}{H.}%
-     {P.~C.}{P.~C.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Wild}}{W.}%
-     {V.}{V.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{catalogues, surveys, quasars: emission lines, quasars: general}
-  \strng{namehash}{HPCWV1}
-  \strng{fullhash}{HPCWV1}
-  \field{labelyear}{2010}
-  \field{sortinit}{H}
-  \verb{eprint}
-  \verb 1003.3017
-  \endverb
-  \field{pages}{2302\bibrangedash 2316}
-  \field{title}{{Improved redshifts for SDSS quasar spectra}}
-  \field{volume}{405}
-  \field{journaltitle}{\mnras}
-  \field{eprinttype}{arXiv}
-  \field{month}{07}
-  \field{year}{2010}
-\endentry
-
 \entry{honig12}{article}{}
   \name{author}{7}{}{%
     {{}%
@@ -664,9 +598,6 @@
   \strng{fullhash}{HSFKMARMAPMATKWG1}
   \field{labelyear}{2012}
   \field{sortinit}{H}
-  \verb{doi}
-  \verb 10.1088/0004-637X/755/2/149
-  \endverb
   \field{eid}{149}
   \verb{eprint}
   \verb 1206.4307
@@ -904,9 +835,6 @@
   \strng{fullhash}{KMHSFBTWG1}
   \field{labelyear}{2007}
   \field{sortinit}{K}
-  \verb{doi}
-  \verb 10.1051/0004-6361:20077911
-  \endverb
   \verb{eprint}
   \verb 0709.0431
   \endverb
@@ -1082,9 +1010,6 @@
   \strng{fullhash}{LHEMWMJBMCKKTKM1}
   \field{labelyear}{2011}
   \field{sortinit}{L}
-  \verb{doi}
-  \verb 10.1111/j.1365-2966.2011.18383.x
-  \endverb
   \verb{eprint}
   \verb 1101.3342
   \endverb
@@ -1226,6 +1151,91 @@
   \field{eprinttype}{arXiv}
   \field{month}{08}
   \field{year}{2007}
+\endentry
+
+\entry{lopez-gonzaga16}{article}{}
+  \name{author}{5}{}{%
+    {{}%
+     {{L{\'o}pez-Gonzaga}}{L.}%
+     {N.}{N.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Burtscher}}{B.}%
+     {L.}{L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Tristram}}{T.}%
+     {K.~R.~W.}{K.~R.~W.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Meisenheimer}}{M.}%
+     {K.}{K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Schartmann}}{S.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{techniques: interferometric, galaxies: active, galaxies: nuclei,
+  galaxies: Seyfert, techniques: high angular resolution, infrared: galaxies}
+  \strng{namehash}{LN+1}
+  \strng{fullhash}{LNBLTKRWMKSM1}
+  \field{labelyear}{2016}
+  \field{sortinit}{L}
+  \field{eid}{A47}
+  \verb{eprint}
+  \verb 1602.05592
+  \endverb
+  \field{pages}{A47}
+  \field{title}{{Mid-infrared interferometry of 23 AGN tori: On the
+  significance of polar-elongated emission}}
+  \field{volume}{591}
+  \field{journaltitle}{\aap}
+  \field{eprinttype}{arXiv}
+  \field{month}{06}
+  \field{year}{2016}
+\endentry
+
+\entry{lupton99}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {{Lupton}}{L.}%
+     {R.~H.}{R.~H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Gunn}}{G.}%
+     {J.~E.}{J.~E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Szalay}}{S.}%
+     {A.~S.}{A.~S.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{CATALOGS, METHODS: STATISTICAL, TECHNIQUES: PHOTOMETRIC}
+  \strng{namehash}{LRHGJESAS1}
+  \strng{fullhash}{LRHGJESAS1}
+  \field{labelyear}{1999}
+  \field{sortinit}{L}
+  \verb{eprint}
+  \verb astro-ph/9903081
+  \endverb
+  \field{pages}{1406\bibrangedash 1410}
+  \field{title}{{A Modified Magnitude System that Produces Well-Behaved
+  Magnitudes, Colors, and Errors Even for Low Signal-to-Noise Ratio
+  Measurements}}
+  \field{volume}{118}
+  \field{journaltitle}{\aj}
+  \field{eprinttype}{arXiv}
+  \field{month}{09}
+  \field{year}{1999}
 \endentry
 
 \entry{lusso10}{article}{}
@@ -2018,6 +2028,54 @@
   \field{year}{2007}
 \endentry
 
+\entry{raban09}{article}{}
+  \name{author}{5}{}{%
+    {{}%
+     {{Raban}}{R.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Jaffe}}{J.}%
+     {W.}{W.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{R{\"o}ttgering}}{R.}%
+     {H.}{H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Meisenheimer}}{M.}%
+     {K.}{K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Tristram}}{T.}%
+     {K.~R.~W.}{K.~R.~W.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{techniques: interferometric , galaxies: individual: NGC 1068 ,
+  galaxies: Seyfert , infrared: galaxies}
+  \strng{namehash}{RD+1}
+  \strng{fullhash}{RDJWRHMKTKRW1}
+  \field{labelyear}{2009}
+  \field{sortinit}{R}
+  \verb{eprint}
+  \verb 0901.1306
+  \endverb
+  \field{pages}{1325\bibrangedash 1337}
+  \field{title}{{Resolving the obscuring torus in NGC 1068 with the power of
+  infrared interferometry: revealing the inner funnel of dust}}
+  \field{volume}{394}
+  \field{journaltitle}{\mnras}
+  \field{eprinttype}{arXiv}
+  \field{eprintclass}{astro-ph.GA}
+  \field{month}{04}
+  \field{year}{2009}
+\endentry
+
 \entry{richards02}{article}{}
   \name{author}{8}{}{%
     {{}%
@@ -2283,72 +2341,6 @@
   \field{year}{2006}
 \endentry
 
-\entry{richards11}{article}{}
-  \name{author}{9}{}{%
-    {{}%
-     {{Richards}}{R.}%
-     {G.~T.}{G.~T.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Kruczek}}{K.}%
-     {N.~E.}{N.~E.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Gallagher}}{G.}%
-     {S.~C.}{S.~C.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Hall}}{H.}%
-     {P.~B.}{P.~B.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Hewett}}{H.}%
-     {P.~C.}{P.~C.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Leighly}}{L.}%
-     {K.~M.}{K.~M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Deo}}{D.}%
-     {R.~P.}{R.~P.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Kratzer}}{K.}%
-     {R.~M.}{R.~M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Shen}}{S.}%
-     {Y.}{Y.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{line: profiles, quasars: absorption lines, quasars: emission lines,
-  quasars: general, radio continuum: galaxies}
-  \strng{namehash}{RGT+1}
-  \strng{fullhash}{RGTKNEGSCHPBHPCLKMDRPKRMSY1}
-  \field{labelyear}{2011}
-  \field{sortinit}{R}
-  \verb{eprint}
-  \verb 1011.2282
-  \endverb
-  \field{pages}{167}
-  \field{title}{{Unification of Luminous Type 1 Quasars through CIV Emission}}
-  \field{volume}{141}
-  \field{journaltitle}{\aj}
-  \field{eprinttype}{arXiv}
-  \field{month}{05}
-  \field{year}{2011}
-\endentry
-
 \entry{riffel09}{article}{}
   \name{author}{3}{}{%
     {{}%
@@ -2373,9 +2365,6 @@
   \strng{fullhash}{RRASTMPJ1}
   \field{labelyear}{2009}
   \field{sortinit}{R}
-  \verb{doi}
-  \verb 10.1088/0004-637X/698/2/1767
-  \endverb
   \verb{eprint}
   \verb 0903.2798
   \endverb
@@ -2512,6 +2501,7 @@
   Reddening and Cosmic Microwave Background Radiation Foregrounds}}
   \field{volume}{500}
   \field{journaltitle}{\apj}
+  \field{eprinttype}{arXiv}
   \field{month}{06}
   \field{year}{1998}
 \endentry
@@ -2915,6 +2905,92 @@
   \field{year}{2014}
 \endentry
 
+\entry{shen11}{article}{}
+  \name{author}{13}{}{%
+    {{}%
+     {{Shen}}{S.}%
+     {Y.}{Y.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Richards}}{R.}%
+     {G.~T.}{G.~T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Strauss}}{S.}%
+     {M.~A.}{M.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hall}}{H.}%
+     {P.~B.}{P.~B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Schneider}}{S.}%
+     {D.~P.}{D.~P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Snedden}}{S.}%
+     {S.}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Bizyaev}}{B.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Brewington}}{B.}%
+     {H.}{H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Malanushenko}}{M.}%
+     {V.}{V.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Malanushenko}}{M.}%
+     {E.}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Oravetz}}{O.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Pan}}{P.}%
+     {K.}{K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Simmons}}{S.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{black hole physics, galaxies: active, quasars: general, surveys}
+  \strng{namehash}{SY+1}
+  \strng{fullhash}{SYRGTSMAHPBSDPSSBDBHMVMEODPKSA1}
+  \field{labelyear}{2011}
+  \field{sortinit}{S}
+  \verb{eprint}
+  \verb 1006.5178
+  \endverb
+  \field{pages}{45}
+  \field{title}{{A Catalog of Quasar Properties from Sloan Digital Sky Survey
+  Data Release 7}}
+  \field{volume}{194}
+  \field{journaltitle}{\apjs}
+  \field{eprinttype}{arXiv}
+  \field{month}{06}
+  \field{year}{2011}
+\endentry
+
 \entry{suganuma06}{article}{}
   \name{author}{9}{}{%
     {{}%
@@ -3120,6 +3196,70 @@
   \field{eprinttype}{arXiv}
   \field{month}{06}
   \field{year}{2012}
+\endentry
+
+\entry{tristram14}{article}{}
+  \name{author}{8}{}{%
+    {{}%
+     {{Tristram}}{T.}%
+     {K.~R.~W.}{K.~R.~W.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Burtscher}}{B.}%
+     {L.}{L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Jaffe}}{J.}%
+     {W.}{W.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Meisenheimer}}{M.}%
+     {K.}{K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{H{\"o}nig}}{H.}%
+     {S.~F.}{S.~F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Kishimoto}}{K.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Schartmann}}{S.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Weigelt}}{W.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{galaxies: active, galaxies: nuclei, galaxies: Seyfert, galaxies:
+  individual: Circinus, galaxies: structure, techniques: interferometric}
+  \strng{namehash}{TKRW+1}
+  \strng{fullhash}{TKRWBLJWMKHSFKMSMWG1}
+  \field{labelyear}{2014}
+  \field{sortinit}{T}
+  \field{eid}{A82}
+  \verb{eprint}
+  \verb 1312.4534
+  \endverb
+  \field{pages}{A82}
+  \field{title}{{The dusty torus in the Circinus galaxy: a dense disk and the
+  torus funnel}}
+  \field{volume}{563}
+  \field{journaltitle}{\aap}
+  \field{eprinttype}{arXiv}
+  \field{eprintclass}{astro-ph.GA}
+  \field{month}{03}
+  \field{year}{2014}
 \endentry
 
 \entry{vandenberk01}{article}{}
@@ -3693,63 +3833,6 @@
   \field{eprinttype}{arXiv}
   \field{month}{12}
   \field{year}{2010}
-\endentry
-
-\entry{zhang14}{article}{}
-  \name{author}{7}{}{%
-    {{}%
-     {{Zhang}}{Z.}%
-     {S.}{S.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Wang}}{W.}%
-     {H.}{H.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Wang}}{W.}%
-     {T.}{T.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Xing}}{X.}%
-     {F.}{F.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Zhang}}{Z.}%
-     {K.}{K.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Zhou}}{Z.}%
-     {H.}{H.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Jiang}}{J.}%
-     {P.}{P.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{dust, extinction, galaxies: nuclei, infrared: galaxies, quasars:
-  absorption lines, quasars: general}
-  \strng{namehash}{ZS+1}
-  \strng{fullhash}{ZSWHWTXFZKZHJP1}
-  \field{labelyear}{2014}
-  \field{sortinit}{Z}
-  \verb{eprint}
-  \verb 1403.3166
-  \endverb
-  \field{pages}{42}
-  \field{title}{{Outflow and Hot Dust Emission in Broad Absorption Line
-  Quasars}}
-  \field{volume}{786}
-  \field{journaltitle}{\apj}
-  \field{eprinttype}{arXiv}
-  \field{month}{05}
-  \field{year}{2014}
 \endentry
 
 \lossort

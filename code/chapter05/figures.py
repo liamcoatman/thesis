@@ -880,7 +880,7 @@ def civ_hot_dust_ratio():
 
 
 
-    t = Table.read('/home/lc585/qsosed/out.fits')
+    t = Table.read('/home/lc585/qsosed/out_bbt_fixed.fits')
 
     t_ica = Table.read('/data/vault/phewett/LiamC/liam_civpar_zica_160115.dat', format='ascii') # new ICA
     t_ica.rename_column('col1', 'NAME')
@@ -916,8 +916,8 @@ def civ_hot_dust_ratio():
     cb = fig.colorbar(im,ax=ax)
     cb.set_label(r'$R_{NIR/UV}$')
     
-    ax.set_xlabel(r'C$\,$IV Blueshift (km/s)')
-    ax.set_ylabel(r'Log$_{10}$(C$\,$IV REW ($\AA$))')
+    ax.set_xlabel(r'C\,{\sc iv} Blueshift [km~$\rm{s}^{-1}$]')
+    ax.set_ylabel(r'log(C\,{\sc iv} EW) [\AA]')
     
     ax.set_xlim(-750,4000)
     ax.set_ylim(1.1 ,2)
@@ -967,7 +967,7 @@ def lum_z():
     from qsosed.get_data import get_data 
     df = get_data() 
 
-    lims = (0, 5, 44.5, 48.5)
+    lims = (1, 3, 45.5, 48)
 
 
     kde_contours(df.z_HW, 
@@ -977,7 +977,7 @@ def lum_z():
                  color='black',
                  filled=True)
 
-    ax.set_ylim(44.5, None)
+    ax.set_ylim(45.5, None)
 
     ax.set_xlabel(r'Redshift $z$')
     ax.set_ylabel(r'Log L$_{\rm Bol}$ [erg~$\rm{s}^{-1}$]')

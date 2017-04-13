@@ -67,7 +67,7 @@ def plot():
     plslp2 = -0.199
     plbrk = 2402
     bbt = 1306
-    bbflxnrm = 2.673
+    bbflxnrm = 3.673
     elscal = 1.240
     scahal = 0.713
     galfra = 0.4
@@ -273,7 +273,7 @@ def plot():
     scagal = (galfra / (1.0 - galfra)) * scaval
 
     flux_gal = cscale * scagal * galspc 
-    flux = flux + cscale * scagal * galspc 
+    # flux = flux + cscale * scagal * galspc 
 
 
     ax.plot(wavlen[:wavnumbrk], wavlen[:wavnumbrk]*flux_pl[:wavnumbrk], color=cs[1], label='Accretion Disc')
@@ -284,7 +284,7 @@ def plot():
     # ax.fill_between(wavlen, wavlen*(flux_bc), facecolor=cs[2], alpha=0.2)
     ax.plot(wavlen, wavlen*(flux_bb), color=cs[4], label='Hot Dust')
     # ax.fill_between(wavlen, wavlen*(flux_bb), facecolor=cs[4], alpha=0.2)
-    ax.plot(wavlen, wavlen*(flux_gal), color=cs[3], label='Galaxy')
+    # ax.plot(wavlen, wavlen*(flux_gal), color=cs[3], label='Galaxy')
     # ax.fill_between(wavlen, wavlen*(flux_gal), facecolor=cs[3], alpha=0.2)
 
      
