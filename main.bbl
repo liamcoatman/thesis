@@ -3981,6 +3981,86 @@
   \field{year}{2005}
 \endentry
 
+\entry{doi10}{article}{}
+  \name{author}{11}{}{%
+    {{}%
+     {{Doi}}{D.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Tanaka}}{T.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Fukugita}}{F.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Gunn}}{G.}%
+     {J.~E.}{J.~E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Yasuda}}{Y.}%
+     {N.}{N.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Ivezi{\'c}}}{I.}%
+     {{\v Z}.}{{\v Z}.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Brinkmann}}{B.}%
+     {J.}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{de Haars}}{d.}%
+     {E.}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Kleinman}}{K.}%
+     {S.~J.}{S.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Krzesinski}}{K.}%
+     {J.}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{French Leger}}{F.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{galaxies: photometry, surveys, techniques: photometric}
+  \strng{namehash}{DM+1}
+  \strng{fullhash}{DMTMFMGJEYNIZBJdEKSJKJFR1}
+  \field{labelyear}{2010}
+  \field{sortinit}{D}
+  \verb{doi}
+  \verb 10.1088/0004-6256/139/4/1628
+  \endverb
+  \verb{eprint}
+  \verb 1002.3701
+  \endverb
+  \field{pages}{1628\bibrangedash 1648}
+  \field{title}{{Photometric Response Functions of the Sloan Digital Sky Survey
+  Imager}}
+  \field{volume}{139}
+  \field{journaltitle}{\aj}
+  \field{eprinttype}{arXiv}
+  \field{eprintclass}{astro-ph.IM}
+  \field{month}{04}
+  \field{year}{2010}
+\endentry
+
 \entry{dunn10}{article}{}
   \name{author}{9}{}{%
     {{}%
@@ -19843,6 +19923,7 @@
   \field{title}{{Eddington Accretion and QSO Emission Lines at z\~{}2}}
   \field{volume}{593}
   \field{journaltitle}{\apjl}
+  \field{eprinttype}{arXiv}
   \field{month}{08}
   \field{year}{2003}
 \endentry

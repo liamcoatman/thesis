@@ -38,7 +38,7 @@ This model is supported by recent interferometric observations of nearby Seyfert
 Studying the relationship between emission from hot dust and outflow diagnostics in the BLR can help place constraints on this dusty wind model \citep[e.g.][]{wang13}. 
 This is now possible by combing data from the SDSS spectroscopic and photometric surveys with photometric surveys such as UKIDSS and WISE. 
 At redshifts $2\lesssim z \lesssim3$, SDSS spectra reveal BH masses, accretion rates and diagnostics of the BLR dynamics. 
-At the same time, the available photometric data provides full UV to infrared rest-frame coverage of the SED.
+At the same time, the available photometric data provides full ultra-violet to infrared rest-frame coverage of the SED.
 In particular, the WISE photometry is sensitive to the 3\,$\mu$m region of the SED which is dominated by hot dust. 
 
 In this Chapter we build a simple parametric SED model that is able to reproduce the median optical-infrared colours of tens of thousands of SDSS AGN at redshifts $1 \lesssim z \lesssim 3$ (Section~\label{sec:ch5-standardmodel}).
@@ -80,7 +80,7 @@ We use BEST point-spread function magnitudes from the SDSS DR$7$ quasar catalogu
 \subsubsection{UKIDSS Large Area Survey}
 
 We use the tenth data release (DR$10$) of the UKIRT Infrared Deep Sky Survey \citep[UKIDSS;][]{lawrence07} Large Area Survey (ULAS) which has observed $\sim 3,200$ deg$^2$ in four near-infrared passbands: $Y$, $J$, $H$ and $K$. 
-We use `apermag3' magnitudes, which are aperture corrected magnitudes in a $2''$ diameter aperture.
+We use `apermag$3$' magnitudes, which are aperture corrected magnitudes in a $2''$ diameter aperture.
 
 \subsubsection{WISE All-WISE Survey}
 
@@ -96,9 +96,9 @@ This is the native magnitude system for UKIDSS and WISE.
 We add $0.08$\,mag to the UKIDSS $Y$ passband magnitudes to bring the photometry into better agreement with the SDSS $z$ and UKIDSS $J$ photometry. 
 SDSS uses an `asinh' magnitude system \citep{lupton99} which is intended to be on the AB system \citep{oke83}.
 However, the photometric zero-points are known to be slightly off the AB standard. 
-The $z$ passband is in error by $0.02$ ($z_{\mathrm AB} = z_{\mathrm SDSS} + 0.02$)\footnote{http://classic.sdss.org/dr7/algorithms/fluxcal.html.}.
+The $z$ passband is in error by $0.02$ ($z_{\mathrm AB} = z_{\mathrm SDSS} + 0.02$)\footnote{http://classic.sdss.org/dr$7$/algorithms/fluxcal.html.}.
 The $u$ passband was in error by $0.04$\,dex at the time of DR$7$. 
-However, using an updated $u$ throughput function, we find that the $u$ zero-point is now consistent with the AB system. 
+However, using an updated $u$ throughput function \citep{doi10}, we find that the $u$ zero-point is now consistent with the AB system. 
 
 Using a reference template, we calculate the AB magnitude of Vega in each passband (Table~\ref{tab:photometry}). 
 The mean flux density $f_\lambda(P)$ in a passband defined by a throughput function $P(\lambda)$ is given by: 
@@ -129,16 +129,14 @@ Although the magnitude of Vega is by design zero in every passband, more recent 
 The Vega to AB magnitudes given in Table~\ref{tab:photometry} assume Vega to have a magnitude $0.026$. 
 
 \subsection{Galactic extinction correction}
-\todo{Ask Paul how this is done, how much of a difference it makes}
 
 $A(u)$, the Galactic extinction in the $u$ passband at the position of the object, is given in the SDSS catalogue. 
-It is computed using the maps of \citet{schlegel98} and assuming a $z=0$ elliptical template. 
-Quasar and galaxy SEDs have very different shapes in the optical/near-infrared region, and therefore we re-derive the extinction corrections using a $z=1.5$ quasar SED template. 
-
-$A(u)$ is divided by $5.155$ to give \ebv, the relative extinction between the $B$ and $V$ passbands (see table 6 in \citealt{schlegel98}). 
-Conversions from the selective extinction \ebv\, to the total extinction $A(\lambda)$ in each passband were calculated using a quasar SED template. 
-These are given in the Table~\ref{tab:photometry}. 
-
+It is computed using the maps of \citet{schlegel98}.
+\citet{schlegel98} calcuted the extinction assuming a $z=0$ elliptical template and found $A(u)/E(B-V)=5.155$, where \ebv is the relative extinction between the $B$ and $V$ passbands. 
+Quasar and galaxy optical SEDs have very different shapes, and so we re-derived the extinction in the SDSS passbands using a $z=1.5$ quasar SED template\footnote{Extinction corrections were derived by Prof. Paul Hewett.}.
+The extinction in the UKIDSS and WISE passbands were also computed using this template. 
+Conversions from the selective extinction \ebv\, to the total extinction $A(\lambda)$ in each passband is given in Table~\ref{tab:photometry}.  
+ 
 \subsection{Cross-matching SDSS to UKIDSS and WISE}
 
 There are $105\,783$ objects in the SDSS DR$7$ quasar catalogue. 
@@ -174,13 +172,13 @@ The redshift and luminosity distribution of the final sample, containing $12\,93
 Since the physical processes that power AGN are generally understood only qualitatively, almost all AGN SED templates are empirical. 
 The empirical template of \citet{elvis94} is still the most commonly cited, despite many additions and updates \citep[e.g.][]{polletta00, kuraszkiewicz03, risaliti04, richards06,  polletta07, lusso10, shang11, marchese12, trichas12}. 
 However, these composite spectra are often constructed from quasars with a huge range in luminosity as a function of wavelength. 
-In addition, the presence of significant host galaxy at optical wavelengths in low-redshift objects is an additional complication which has not always been taken care of adequately.
+In addition, the presence of significant host-galaxy at optical wavelengths in low-redshift objects is an additional complication which has not always been taken care of adequately.
 \todo{Ask Paul for details on this.} 
 There is therefore a strong rationale for taking a parametric approach to modelling quasar SEDs. 
 This the approach adopted in this work. 
 
 We construct an SED model that is valid between $1216$\,\AA\, and $3$\,$\mu$m.
-In this region the SED is dominated by the accretion disc, broad UV/optical emission-lines and thermal emission from the hottest (${\mathrm T}\sim1200$K) dust. 
+In this region the SED is dominated by the accretion disc, broad ultra-violet/optical emission-lines and thermal emission from the hottest (${\mathrm T}\sim1200$K) dust. 
 In this Section, we describe how each of these components are represented in our parametric SED model.  
 The effect of dust extinction at the AGN redshift is also incorporated into the model. 
 At high redshifts, Ly$\alpha$ forest absorption becomes significant. 
@@ -193,7 +191,7 @@ The model spectrum is shown in Figure \ref{fig:modelsed}, with each of the main 
 \begin{figure}[h!]
   \centering
   \includegraphics[width=\textwidth]{figures/chapter05/sed_model.pdf}
-  \caption[{Model quasar spectrum at $z=1$, showing the contributions to the total flux from the accretion disc, Balmer continuum, hot dust and emission lines.}]{Model quasar spectrum at $z=1$, showing the contributions to the total flux from the accretion disc, Balmer continuum, hot dust and emission lines. }
+  \caption[{Model quasar spectrum at $z=1$, showing the contributions to the total flux from the accretion disc, Balmer continuum, hot dust and emission-lines.}]{Model quasar spectrum at $z=1$, showing the contributions to the total flux from the accretion disc, Balmer continuum, hot dust and emission-lines. }
   \label{fig:modelsed}
 \end{figure}
 
@@ -203,15 +201,15 @@ Thermal accretion disc emission in the $0.1 - 1$\,$\mu$m region is characterised
 
 \subsection{Balmer continuum}
 
-High order Balmer lines, optically thin Balmer continuum emission, two-photon emission and \ion{Fe}{II} emission blend together to form the `Balmer' continuum at $\sim3000$\AA.
+High order Balmer lines, optically thin Balmer continuum emission, two-photon emission and \ion{Fe}{II} emission blend together to form the `Balmer' continuum at $\sim3000$\,\AA.
 We simulate the Balmer continuum using the empirical model given by \citet{grandi82}: 
 
 \begin{eqnarray}
   F(\lambda) = C_{\mathrm BC} \times B_\lambda(T_e)(1-e^{-\tau_\lambda}); \quad \lambda \leq \lambda_{\mathrm BE}
 \end{eqnarray}
 
-where $C_{\mathrm BC}$ is a normalisation factor, $B_\lambda(T_e)$ is the Planck function, $T_e=13150$K is the effective temperature, $\lambda_{\mathrm BE}=3460$\AA\, is the wavelength at the Balmer edge, and $\tau_\lambda = \tau_{BE}\left( \nicefrac{\lambda_{BE}} {\lambda} \right)^{-3}$ is the optical depth with $\tau_{\mathrm BE}=45$ the optical depth at $\lambda_{\mathrm BE}$. 
-This function is convolved with a Gaussian with width $\sigma=5000$\kms\, to simulate the effect of bulk velocity shifts comparable to those present in broad AGN emission-lines. 
+where $C_{\mathrm BC}$ is a normalisation factor, $B_\lambda(T_e)$ is the Planck function, $T_e=13150$\,K is the effective temperature, $\lambda_{\mathrm BE}=3460$\,\AA\, is the wavelength at the Balmer edge, and $\tau_\lambda = \tau_{BE}\left( \nicefrac{\lambda_{BE}} {\lambda} \right)^{-3}$ is the optical depth with $\tau_{\mathrm BE}=45$ the optical depth at $\lambda_{\mathrm BE}$. 
+This function is convolved with a Gaussian with width $\sigma=5000$\,\kms\, to simulate the effect of bulk velocity shifts comparable to those present in broad AGN emission-lines. 
 
 \subsection{Hot dust}
 
@@ -246,7 +244,7 @@ The dependence of the mean AGN luminosity on redshift, $L(z)$, is determined emp
 \subsection{Dust extinction}
 \label{sec:sed-extinction} 
 
-We simulate the effect of dust extinction at the quasar redshift using a custom extinction curve that is appropriate for the quasar population. 
+We simulate the effect of dust extinction at the quasar redshift using a custom extinction curve that is appropriate for the quasar population\footnote{The extinction curve has been derived by Prof. Paul Hewett.}.
 To derive the quasar extinction curve, UKIDSS photometry was used to provide an \ebv\, estimate, via the magnitude displacement of each quasar from the locus of un-reddened objects. 
 At redshifts $2 < z < 3$ the reddening measure is made at rest-frame wavelengths $3500-7000$\,\AA, where Galaxy, LMC and SMC\footnote{LMC and SMC: Large and Small Magellanic Clouds.} extinction curves are very similar. 
 The SDSS spectra of the same objects are then employed to generate an empirical extinction curve in the ultra-violet, down to $1200$\,\AA. 
@@ -337,7 +335,7 @@ Most of the large variations that can be seen in the median colours of the quasa
 \ContinuedFloat
     \centering
     \includegraphics[width=\columnwidth]{figures/chapter05/sed_color_plot_2.pdf} 
-    \caption{Continued.}     
+    \caption[]{Continued.}     
 \end{figure}
 
 In Figure~\ref{fig:residuals} we show the data minus model residuals as a function of the rest-frame wavelength. 
@@ -425,10 +423,10 @@ Following this cut we are left with $2030$ quasars in our high-$z$ sample.
 
 We will fit a model to the individual quasar SEDs, allowing the temperature and normalisation of the blackbody component to vary. 
 The model spectrum is redshifted to the redshift of the quasar being fit and passband magnitudes are calculated using Equations~\ref{eq:flux} and \ref{eq:mag}.   
-We minimise the inverse variance weighted chi-squared statistic using the Levenberg-Marquardt algorithm. 
+We minimise the inverse variance weighted $\chi^2$ statistic using the Levenberg-Marquardt algorithm. 
 We impose a minimum error of 0.1\,mag, corresponding to the model error for the medians colours (Figure~\ref{fig:residuals}). 
 Data from $ugrizYJHKW1W2W3$ is used in the model. 
-However, to avoid Ly$\alpha$ forest absorption, passbands are excluded if $\lambda_{\mathrm eff} < 1400$\AA.   
+However, to avoid Ly$\alpha$ forest absorption, passbands are excluded if $\lambda_{\mathrm eff} < 1400$\,\AA.   
 
 \subsection{Distribution of hot dust parameters}
 

@@ -36,3 +36,5 @@ Allen \& Hewett (2017, in preparation)
 absorption line -> absorption-line 
 equation -> eqnarray 
 bandpass, band, pass-band -band-pass -> passband 
+Type 1/2 -> Type I/II 
+Further -> farther 
