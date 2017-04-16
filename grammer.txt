@@ -38,3 +38,13 @@ equation -> eqnarray
 bandpass, band, pass-band -band-pass -> passband 
 Type 1/2 -> Type I/II 
 Further -> farther 
+AGNs -> AGNs.
+Remove all Is
+chapter / section if not numbered (e.g. in this section, ...)
+Check chapter structure
+Check all figures and tables where referenced 
+BALQSO -> BAL quasar 
+Reduce font size to 11 in equations (\begingroup\makeatletter\def\f@size{11}\check@mathfonts$$e=mc^2$$\endgroup and \noindent after 
+Search for "todos"
+look through for commented text
+check extra_text 

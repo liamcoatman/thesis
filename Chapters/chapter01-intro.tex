@@ -13,7 +13,7 @@ For an object this distant to appear so bright it must be extremely luminous: $1
 At the same time, its rapid variability meant that it could be no bigger than a light-week across.
 $3$C $273$ was therefore a new kind of exotic object, at the edge of the known Universe.   
 Understandably, its discovery caused a lot of excitement, both for astronomers and the wider public.
-It was quickly realised that `quasars'\footnote{The term `quasar' originated as a contraction of `quasi-stellar radio source', although $90$ per cent of quasars are now known to be radio-quiet.}, and other lower-luminosity classes of active galactic nuclei (AGN)\footnote{Throughout this thesis we use the terms `quasar' and `Active Galactic Nucleus (AGN)' interchangeably to describe active super-massive black holes, although the term quasar is generally reserved for the luminous (L$_{\mathrm Bol} > 10^{12}{\mathrm L}_{\odot}$) subset of AGNs.}, are powered by the release of gravitational potential energy as mass is accreted onto a super-massive\footnote{Super-massive: $10^{6 - 9}$ M$_\odot$.} black hole (BH) at the centre of a galaxy \citep[e.g.][]{hoyle63,salpeter64,lynden-bell69,lynden-bell71}. 
+It was quickly realised that `quasars'\footnote{The term `quasar' originated as a contraction of `quasi-stellar radio source', although $90$ per cent of quasars are now known to be radio-quiet.}, and other lower-luminosity classes of active galactic nuclei (AGN)\footnote{Throughout this thesis we use the terms `quasar' and `Active Galactic Nucleus (AGN)' interchangeably to describe active super-massive black holes, although the term quasar is generally reserved for the luminous (L$_{\mathrm Bol} > 10^{12}{\mathrm L}_{\odot}$) subset of AGN.}, are powered by the release of gravitational potential energy as mass is accreted onto a super-massive\footnote{Super-massive: $10^{6 - 9}$ M$_\odot$.} black hole (BH) at the centre of a galaxy \citep[e.g.][]{hoyle63,salpeter64,lynden-bell69,lynden-bell71}. 
 
 \section{The AGN-host galaxy connection}
 
@@ -84,16 +84,16 @@ The first eigenvector of their PCA decomposition - generally referred to as `eig
 The underlying driver behind EV$1$ is thought to be the Eddington ratio\footnote{Eddington ratio: $L/L_{\mathrm Edd}$, where the Eddington luminosity $L_{\mathrm Edd}$ ($=3.2\times10^4(M/M_\odot)L_\odot$) is the maximum luminosity set by the balance of outward radiation pressure and inward gravitational force.}. 
 
 With the advent of CCD\footnote{CCD: Charge coupled device.} technology came a new generation of surveys, most notably the Sloan Digital Sky Survey \citep[SDSS;][]{york00} and the $2$QZ survey \citep{croom04}. 
-SDSS, and the next-generation Baryon Oscillation Spectroscopic Survey \citep[BOSS;][]{dawson13}, now contain spectra of $\sim400\,000$ AGN and quasars. 
-These large, uniform data sets have revolutionised the study of AGNs and quasars by facilitating statistical studies of their properties covering wide ranges in redshift and luminosity.
+SDSS, and the next-generation SDSS-III: Baryon Oscillation Spectroscopic Survey \citep[BOSS;][]{dawson13}, now contain spectra of $\sim400\,000$ AGN and quasars. 
+These large, uniform data sets have revolutionised the study of AGN and quasars by facilitating statistical studies of their properties covering wide ranges in redshift and luminosity.
 
-Emission-lines provide a wealth of information about the properties of AGNs and their environments. 
+Emission-lines provide a wealth of information about the properties of AGN and their environments. 
 The optical region in particular includes a number of strong emission features, including the Balmer lines (\ha and \hbns) and the [\ion{O}{III}] doublet that are used to measure BH masses, accretion rates, systemic redshifts and outflow properties. 
 However, at $z\sim2$, rest-frame optical lines are redshifted to near-infrared wavelengths. 
 Near-infrared spectroscopy is therefore essential for a complete understanding of quasars during the peak epoch of galaxy formation. 
 Spectroscopic observations are challenging at infrared wavelengths, and there are far fewer infrared observations of quasars than optical ones. 
-However, in Chapter~\ref{ch:nirsample}, I describe how I have constructed a near-infrared spectroscopic catalogue containing $462$ redshift $1.5 < z < 4$ quasars. 
-This is the largest sample of its kind, and has facilitated investigations of quasar BH masses and outflow properties which are described in Chapters \ref{ch:bhmass} and \ref{ch:nlr}.   
+However, in Chapter~\ref{ch:nirsample}, we describe the construction of a near-infrared spectroscopic catalogue containing $462$ redshift $1.5 < z < 4$ quasars. 
+This is the largest sample of its kind, and has facilitated investigations of quasar BH masses and outflow properties which are described in Chapters~\ref{ch:bhmass} and \ref{ch:nlr}.   
 
 \section{Measuring black hole masses}
 
@@ -104,11 +104,13 @@ Large-scale studies of AGN and quasar demographics have become possible through 
 
 Under the assumptions that the BLR dynamics are virialised\footnote{The virial theorem states that the average kinetic energy of a system is equal to half of the average negative potential energy.} and the gravitational potential is dominated by the BH, the BH mass is given by:
 
+\begingroup\makeatletter\def\f@size{11}\check@mathfonts
 \begin{eqnarray}
 M_{\mathrm BH} \simeq \frac{V_{\mathrm Virial}^2R_{\mathrm BLR}}{G} 
 \end{eqnarray}
+\endgroup
 
-where $V_{\mathrm virial}$ is the virial velocity in the BLR and $R_{\mathrm BLR}$ the characteristic BLR radius.
+\noindent where $V_{\mathrm virial}$ is the virial velocity in the BLR and $R_{\mathrm BLR}$ the characteristic BLR radius.
 The problem of measuring the mass therefore reduces to the problem of measuring the velocity and orbital radius of the line-emitting clouds in the BLR. 
 
 Continuum variability is a common characteristic of quasars, owing to the stochastic nature of the accretion process.  
@@ -125,7 +127,7 @@ However, because reverberation mapping relies on dense spectrophotometric monito
 This sample is strongly biased to low luminosity Seyfert $1$ galaxies\footnote{Seyfert 1: A low-luminosity (L$_{\mathrm Bol} < 10^{12}{\mathrm L}_{\odot}$) class of AGN with broad emission-lines and clearly detectable host-galaxies.}, and the maximum redshift is just $z\sim0.3$. 
 Comprehensive statistical studies of active BHs, particularly during the epoch of peak galaxy formation ($z\gtrsim2$), therefore require a different approach to measuring BH masses. 
 
-\subsection{Single-epoch virial BH mass estimates}
+\subsection{Single-epoch virial estimates}
 
 Reverberation mapping campaigns have also revealed a tight relationship between the radius of the BLR and the quasar optical (or ultra-violet) luminosity \citep[the ${\mathrm R_{BLR}-L}$ relation; e.g.][]{kaspi00,kaspi07}.
 A slope of $\simeq0.5$ is found, which is consistent with naive predictions \citep[e.g.][]{peterson97}. 
@@ -198,18 +200,18 @@ We confirm earlier results that the EV$1$ correlations found in low-luminosity A
   \label{fig:seyfert_sed}
 \end{figure}
 
-AGNs emit strongly over many decades of the electromagnetic spectrum (Figure~\ref{fig:seyfert_sed}). 
+AGN emit strongly over many decades of the electromagnetic spectrum (Figure~\ref{fig:seyfert_sed}). 
 Different physical processes dominate AGN spectral energy distributions (SEDs) at different frequencies. 
 Hard X-ray emission is dominated by Compton up-scattering of accretion disk photons by electrons in a hot corona \citep[e.g.][]{sunyaev80}, ultra-violet/optical by thermal accretion disc emission, IR by dust at a wide range of temperatures, and radio by synchrotron emission in relativistic jets.   
 A complete understanding of AGN properties therefore critically depends on the availability of multi-wavelength data that spans the full SED. 
 Progress has been made in recent years with sensitive, wide-field photometric surveys, including the ultra-violet/optical SDSS, the near-infrared UKIRT Infrared Deep Sky Survey \citep[UKIDSS;][]{lawrence07} and the mid-infrared Wide-field Infrared Explorer \citep[WISE;][]{wright10}. 
 
-To first order, AGNs have remarkably similar SEDs that show very little dependence on luminosity, redshift, BH mass or accretion rate \citep[e.g.][]{elvis12,hao13}. 
+To first order, AGN have remarkably similar SEDs that show very little dependence on luminosity, redshift, BH mass or accretion rate \citep[e.g.][]{elvis12,hao13}. 
 In Chapter~\ref{ch:sed}, we build a simple parametric SED model that is able to reproduce the median optical-infrared colours of tens of thousands of SDSS AGN at redshifts $1<z<3$. 
 On the other hand, the SED properties of individual quasars do show significant variation.
 In particular, we find the spread at $1-2$ $\mu$m is large and suggests the presence of significant diversity in hot dust properties.
 We find that the amount of hot dust is strongly correlated with the strength of outflows in the quasar BLR (parametrised using the \ion{C}{IV} blueshift) and consider the implications of this result in the context of accretion disc wind models \citep[e.g.][]{elitzur06}.
-We demonstrate that apparent correlations between the hot dust abundance and BH mass and Eddington ratio result from systematic biases in the \ion{C}{IV}-based BH masses and disappear when new, unbiased BH mass estimates derived in Chapter~\ref{ch:bhmass} are adopted. 
+We demonstrate that apparent correlations between the hot dust abundance and BH mass and Eddington ratio result from systematic biases in the \ion{C}{IV}-based BH masses and disappear when new, unbiased BH mass estimates (derived in Chapter~\ref{ch:bhmass}) are adopted. 
 
 \section{Note on adopted conventions}
 

@@ -16,6 +16,85 @@
   {}
 \endgroup
 
+\entry{ahn12}{article}{}
+  \name{author}{11}{}{%
+    {{}%
+     {{Ahn}}{A.}%
+     {C.~P.}{C.~P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Alexandroff}}{A.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Allende Prieto}}{A.}%
+     {C.}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Anderson}}{A.}%
+     {S.~F.}{S.~F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Anderton}}{A.}%
+     {T.}{T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Andrews}}{A.}%
+     {B.~H.}{B.~H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Aubourg}}{A.}%
+     {{\'E}.}{{\'E}.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Bailey}}{B.}%
+     {S.}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Balbinot}}{B.}%
+     {E.}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Barnes}}{B.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {al.}{a.}%
+     {}{}%
+     {et}{e.}%
+     {}{}}%
+  }
+  \keyw{atlases, catalogs, surveys}
+  \strng{namehash}{ACP+1}
+  \strng{fullhash}{ACPARACASFATABHAEBSBEBRae1}
+  \field{labelyear}{2012}
+  \field{sortinit}{A}
+  \field{eid}{21}
+  \verb{eprint}
+  \verb 1207.7137
+  \endverb
+  \field{pages}{21}
+  \field{title}{{The Ninth Data Release of the Sloan Digital Sky Survey: First
+  Spectroscopic Data from the SDSS-III Baryon Oscillation Spectroscopic
+  Survey}}
+  \field{volume}{203}
+  \field{journaltitle}{\apjs}
+  \field{eprinttype}{arXiv}
+  \field{eprintclass}{astro-ph.IM}
+  \field{month}{12}
+  \field{year}{2012}
+\endentry
+
 \entry{alatalo11}{article}{}
   \name{author}{29}{}{%
     {{}%
@@ -2487,6 +2566,56 @@
   \field{eprinttype}{arXiv}
   \field{month}{09}
   \field{year}{2016}
+\endentry
+
+\entry{coatman17}{article}{}
+  \name{author}{6}{}{%
+    {{}%
+     {{Coatman}}{C.}%
+     {L.}{L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hewett}}{H.}%
+     {P.~C.}{P.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Banerji}}{B.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Richards}}{R.}%
+     {G.~T.}{G.~T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hennawi}}{H.}%
+     {J.~F.}{J.~F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Prochaska}}{P.}%
+     {J.~X.}{J.~X.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{galaxies: evolution}
+  \strng{namehash}{CL+1}
+  \strng{fullhash}{CLHPCBMRGTHJFPJX1}
+  \field{labelyear}{2017}
+  \field{sortinit}{C}
+  \verb{eprint}
+  \verb 1610.08977
+  \endverb
+  \field{pages}{2120\bibrangedash 2142}
+  \field{title}{{Correcting C IV-based virial black hole masses}}
+  \field{volume}{465}
+  \field{journaltitle}{\mnras}
+  \field{eprinttype}{arXiv}
+  \field{month}{02}
+  \field{year}{2017}
 \endentry
 
 \entry{collin06}{article}{}
@@ -12041,6 +12170,29 @@
   \field{year}{2002}
 \endentry
 
+\entry{osterbrock89}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {{Osterbrock}}{O.}%
+     {D.~E.}{D.~E.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Active Galactic Nuclei, Astrophysics, Planetary Nebulae, Quasars,
+  Seyfert Galaxies, Computational Astrophysics, Cosmic Dust, Emission Spectra,
+  Interstellar Matter, Photoionization, Spectrum Analysis, Stellar Physics,
+  Supernova Remnants, Thermodynamic Equilibrium}
+  \strng{namehash}{ODE1}
+  \strng{fullhash}{ODE1}
+  \field{labelyear}{1989}
+  \field{sortinit}{O}
+  \field{booktitle}{Research supported by the University of California, John
+  Simon Guggenheim Memorial Foundation, University of Minnesota, et al.~Mill
+  Valley, CA, University Science Books, 1989, 422 p.}
+  \field{title}{{Astrophysics of gaseous nebulae and active galactic nuclei}}
+  \field{year}{1989}
+\endentry
+
 \entry{paris12}{article}{}
   \name{author}{76}{}{%
     {{}%
@@ -14811,6 +14963,60 @@
   \field{journaltitle}{\apj}
   \field{month}{08}
   \field{year}{1964}
+\endentry
+
+\entry{sanders88}{article}{}
+  \name{author}{7}{}{%
+    {{}%
+     {{Sanders}}{S.}%
+     {D.~B.}{D.~B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Soifer}}{S.}%
+     {B.~T.}{B.~T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Elias}}{E.}%
+     {J.~H.}{J.~H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Madore}}{M.}%
+     {B.~F.}{B.~F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Matthews}}{M.}%
+     {K.}{K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Neugebauer}}{N.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Scoville}}{S.}%
+     {N.~Z.}{N.~Z.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Active Galactic Nuclei, Galactic Evolution, Infrared Sources
+  (Astronomy), Quasars, Astronomical Maps, Carbon Monoxide, Emission Spectra,
+  Infrared Photometry, Molecular Gases, Nonthermal Radiation, Spectral Energy
+  Distribution}
+  \strng{namehash}{SDB+1}
+  \strng{fullhash}{SDBSBTEJHMBFMKNGSNZ1}
+  \field{labelyear}{1988}
+  \field{sortinit}{S}
+  \field{pages}{74\bibrangedash 91}
+  \field{title}{{Ultraluminous infrared galaxies and the origin of quasars}}
+  \field{volume}{325}
+  \field{journaltitle}{\apj}
+  \field{month}{02}
+  \field{year}{1988}
 \endentry
 
 \entry{schlegel98}{article}{}

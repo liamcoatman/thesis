@@ -1189,6 +1189,8 @@ def ha_z_comparison():
     
     return None 
 
+def mad(data, axis=None):
+    return np.median(np.abs(data - np.median(data, axis)), axis)
 
 def shen_comparison_hb():
 
@@ -1204,6 +1206,8 @@ def shen_comparison_hb():
     df = df[df.BAL_FLAG != 1]
     df = df[['rescale' not in i for i in df.SPEC_NIR.values]]
     df.dropna(subset=['FWHM_BROAD_HB_S16', 'FWHM_Broad_Hb'], inplace=True)
+
+    print mad(df.loc[:, 'FWHM_BROAD_HB_S16'] - df.loc[:,'FWHM_Broad_Hb'])
 
     scatter1 = ax.scatter(df.loc[:, 'FWHM_BROAD_HB_S16'],
                           df.loc[:,'FWHM_Broad_Hb'],
@@ -1246,6 +1250,8 @@ def shen_comparison_ha():
     df = df[df.WARN_CIV_BEST == 0]
     df = df[df.BAL_FLAG != 1]  
     df.dropna(subset=['FWHM_Ha_S12', 'FWHM_Broad_Ha'], inplace=True)  
+
+    print mad(df.loc[:, 'FWHM_Ha_S12'] - df.loc[:, 'FWHM_Broad_Ha'])
 
     scatter1 = ax.scatter(df.loc[:, 'FWHM_Ha_S12'],
                           df.loc[:, 'FWHM_Broad_Ha'],
@@ -1296,7 +1302,7 @@ def shen_comparison_civ():
     df = df.dropna(subset=['FWHM_CIV_S11', 'FWHM_CIV'])
     df = df[df.SPEC_OPT == 'SDSS']
     
-   
+    print mad(df['FWHM_CIV_S11'] - df['FWHM_CIV'])
     scatter1 = ax.scatter(df['FWHM_CIV_S11'],
                           df['FWHM_CIV'],
                           c=cs[1],
@@ -1546,7 +1552,7 @@ def ha_comparisons_paper2():
 
     set_plot_properties() # change style 
 
-    cs = palettable.colorbrewer.qualitative.Set2_3.mpl_colors
+    cs = palettable.colorbrewer.qualitative.Set1_3.mpl_colors
 
     df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0)
     df = df[df.WARN_Ha == 0]
@@ -3232,3 +3238,53 @@ def bal_composite():
 
 
 
+def blueshift_composite():
+
+    import lineid_plot
+    line_wave = [1400, 1549, 1909]
+    # line_label = [r'Ly$\alpha$/N\,{\sc v}',r'C\,{\sc iv}']
+
+
+    cs = palettable.colorbrewer.qualitative.Set1_3.mpl_colors
+
+    t = np.genfromtxt('/data/vault/phewett/GRichards/BlShifts/liam_bscomps_1603.dat')
+
+    fig, ax = plt.subplots(figsize=figsize(1, vscale=0.8))
+
+    ax.plot(t[:, 0], t[:, 1], color=cs[1], label=r'C\,{\sc iv} Blueshift $\sim 3000$~km~$\rm{s}^{-1}$')
+    ax.plot(t[:, 0], t[:, 2], color='black', label=r'C\,{\sc iv} Blueshift $\sim 0$~km~$\rm{s}^{-1}$')
+
+    ax.legend(frameon=False, prop={'size':9}, loc='lower left')
+
+    ax.set_xlim(1080, 2000)
+    ax.set_ylim(0, 5)
+
+    ax.set_xlabel(r'Wavelength [${\mathrm \AA}$]')
+    ax.set_ylabel(r'$F_\lambda$')
+
+    lineid_plot.plot_line_ids(t[:, 0], t[:, 2], line_wave, ['', '', ''], ax=ax, arrow_tip=4)
+    # ax.text(1216, 4.4, r'Ly$\alpha$/N\,{\sc v}', ha='center', va='bottom', fontsize=9)
+    ax.text(1400, 4.4, r'Si\,{\sc iv}/O\,{\sc iv}', ha='center', va='bottom', fontsize=9)
+    ax.text(1549, 4.4, r'C\,{\sc iv}', ha='center', va='bottom', fontsize=9)
+    ax.text(1909, 4.4, r'Si\,{\sc iv}]+C\,{\sc iii}]', ha='center', va='bottom', fontsize=9)
+
+    ax.annotate(r'Ly$\alpha$/N\,{\sc v}',
+                xy=(1216, 4), xycoords='data',
+                xytext=(1090, 4.4), textcoords='data',
+                arrowprops=dict(arrowstyle="-",
+                                connectionstyle="arc3"),
+                fontsize=9
+                )
+
+    ax.set_xticks([1200, 1400, 1600, 1800, 2000])
+    ax.set_yticks([0, 1, 2, 3, 4, 5])
+
+    fig.tight_layout() 
+    fig.subplots_adjust(top=0.85)
+
+    fig.savefig('/home/lc585/thesis/figures/chapter03/blueshift_composite.pdf')
+
+    plt.show() 
+
+
+    return None 
