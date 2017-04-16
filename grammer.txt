@@ -48,3 +48,4 @@ Reduce font size to 11 in equations (\begingroup\makeatletter\def\f@size{11}\che
 Search for "todos"
 look through for commented text
 check extra_text 
+reduced-$\chi^2$
