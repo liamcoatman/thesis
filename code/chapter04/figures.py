@@ -480,16 +480,71 @@ def lum_w80():
     
     fig, ax = plt.subplots(figsize=figsize(1, 0.8))
     
+
+    t = Table.read('/data/lc585/SDSS/dr7_bh_Nov19_2013.fits')
+    t = t[t['LOGLBOL'] > 0.0]
+    t = t[t['EW_OIII_5007'] > 0.0]
+    t = t[['LOGLBOL', 'FWHM_NARROW_HB']]
+
+    # t = t[(t['FWHM_NARROW_HB'] >= 500) & (t['FWHM_NARROW_HB'] < 1200)]
+    
+    m1, m2 = t['LOGLBOL'], t['FWHM_NARROW_HB']
+
+    
+    # xmin = 44.0
+    # xmax = 48.0
+    # ymin = 500
+    # ymax = 1500
+    
+    # X, Y = np.mgrid[xmin:xmax:100j, ymin:ymax:100j]
+    # positions = np.vstack([X.ravel(), Y.ravel()])
+    # values = np.vstack([m1, m2])
+    
+    # kernel = stats.gaussian_kde(values)
+    
+    # Z = np.reshape(kernel(positions).T, X.shape)
+    
+    # CS = ax.contour(X, Y, Z, colors=[cs[-1]])
+    
+    # threshold = CS.levels[0]
+    
+    # z = kernel(values)
+    
+    # # mask points above density threshold
+    # x = np.ma.masked_where(z > threshold, m1)
+    # y = np.ma.masked_where(z > threshold, m2)
+    
+    # # plot unmasked points
+    # ax.plot(x, 
+    #         y, 
+    #         markerfacecolor=cs[-1], 
+    #         markeredgecolor='None', 
+    #         linestyle='', 
+    #         marker='o', 
+    #         markersize=2, 
+    #         label='SDSS DR7')
+
+    ax.plot(m1, 
+            np.log10(m2/0.919), # convert to w80 
+            marker='o', 
+            markersize=1, 
+            markeredgecolor='None', 
+            markerfacecolor='grey', 
+            linestyle='',
+            zorder=0)
+
+
+
     df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0) 
     df = df[df.OIII_EXTREM_FLAG == 1]
     print 'Number of extreme: {}'.format(len(df))
     
     s = ax.scatter(np.log10(9.26) + df.LogL5100,
-                   df.OIII_5007_W80, 
+                   np.log10(df.OIII_5007_W80), 
                    facecolor=cs[0], 
                    edgecolor='None',
                    s=25,
-                   zorder=1)
+                   zorder=2)
 
     print df.LogL5100.median() + np.log10(9.26)
     
@@ -503,14 +558,17 @@ def lum_w80():
     print df.LogL5100.median() + np.log10(9.26)
     
     s = ax.scatter(np.log10(9.26) + df.LogL5100,
-                   df.OIII_5007_W80, 
+                   np.log10(df.OIII_5007_W80), 
                    facecolor=cs[1], 
                    edgecolor='None',
                    s=25,
-                   zorder=0)
+                   zorder=1)
 
     ax.set_xlabel('log L$_{\mathrm{Bol}}$ [erg~s$^{-1}$]')
-    ax.set_ylabel(r'$w_{80}$ [km~$\rm{s}^{-1}$]')
+    ax.set_ylabel(r'$\log w_{80}$ [km~$\rm{s}^{-1}$]')
+
+    ax.set_ylim(2, 3.7)
+    ax.set_xlim(44, 50)
 
     fig.tight_layout()
 
@@ -732,7 +790,7 @@ def ev1():
     df.ix['QSO055', 'z'] = df.ix['QSO055', 'z_ICA']
 
 
-    fig, axs = plt.subplots(2, 1, figsize=figsize(1, vscale=1.6), sharex=True)
+    fig, ax = plt.subplots(1, 1, figsize=figsize(1, vscale=0.9))
  
     # ---------------------------------------------------------------------------------------------------
 
@@ -758,8 +816,8 @@ def ev1():
       
     Z = np.reshape(kernel(positions).T, X.shape)
 
-    CS = axs[0].contour(X, Y, Z, colors=[cs[-1]])
-    CS = axs[1].contour(X, Y, Z, colors=[cs[-1]])
+    CS = ax.contour(X, Y, Z, colors=[cs[-1]])
+    # CS = axs[1].contour(X, Y, Z, colors=[cs[-1]])
 
     #----------------------------------------------------
 
@@ -767,40 +825,40 @@ def ev1():
     median_wav = doppler2wave(df.Median_CIV_BEST.values*(u.km/u.s), w0) * (1.0 + df.z_IR.values)
     blueshift_civ = const.c.to('km/s') * (w0 - median_wav / (1.0 + df.z)) / w0
 
-    im = axs[0].scatter(blueshift_civ,
+    im = ax.scatter(blueshift_civ,
                         np.log10(df.EQW_CIV_BEST),
                         c = np.log10(df.OIII_5007_EQW_3), 
                         edgecolor='None',
                         s=25,
-                        cmap=palettable.matplotlib.Viridis_10.mpl_colormap,
-                        vmin=-0.4, vmax=1.4)
+                        cmap=palettable.colorbrewer.diverging.Spectral_10.mpl_colormap,
+                        vmin=-0.2, vmax=1.5)
 
-    cb = fig.colorbar(im, ax=axs[0])
+    cb = fig.colorbar(im, ax=ax)
     cb.set_label(r'log [O\,{\sc iii}] EW [\AA]')
 
-    axs[0].set_xlim(-1000, 5000)
-    axs[0].set_ylim(1,2.2)
+    ax.set_xlim(-1000, 5000)
+    ax.set_ylim(1,2.2)
 
-    axs[0].set_ylabel(r'log(C\,{\sc iv} EW) [\AA]')
+    ax.set_ylabel(r'log(C\,{\sc iv} EW) [\AA]')
 
     # -----------------------------------------
 
-    im = axs[1].scatter(blueshift_civ,
-                        np.log10(df.EQW_CIV_BEST),
-                        c = df.OIII_FIT_HB_BROAD_FWHM, 
-                        edgecolor='None',
-                        s=25,
-                        cmap=palettable.matplotlib.Viridis_10.mpl_colormap,
-                        vmin=1500, vmax=7000)
+    # im = axs[1].scatter(blueshift_civ,
+    #                     np.log10(df.EQW_CIV_BEST),
+    #                     c = df.OIII_FIT_HB_BROAD_FWHM, 
+    #                     edgecolor='None',
+    #                     s=25,
+    #                     cmap=palettable.matplotlib.Viridis_10.mpl_colormap,
+    #                     vmin=1500, vmax=7000)
 
-    cb = fig.colorbar(im, ax=axs[1])
-    cb.set_label(r'H$\beta$ FHWM [km~$\rm{s}^{-1}$]')
+    # cb = fig.colorbar(im, ax=axs[1])
+    # cb.set_label(r'H$\beta$ FHWM [km~$\rm{s}^{-1}$]')
 
-    axs[1].set_xlim(-1000, 5000)
-    axs[1].set_ylim(1,2.2)
+    # axs[1].set_xlim(-1000, 5000)
+    # axs[1].set_ylim(1,2.2)
 
-    axs[1].set_ylabel(r'log(C\,{\sc iv} EW) [\AA]')
-    axs[1].set_xlabel(r'C\,{\sc iv} Blueshift [km~$\rm{s}^{-1}$]')
+    # axs[1].set_ylabel(r'log(C\,{\sc iv} EW) [\AA]')
+    ax.set_xlabel(r'C\,{\sc iv} Blueshift [km~$\rm{s}^{-1}$]')
 
     # -----------------------------------------
 
@@ -814,6 +872,8 @@ def ev1():
     return None 
 
 def ev1_lowz():
+
+    from matplotlib.ticker import NullFormatter, MaxNLocator, FuncFormatter
 
     from PlottingTools.kde_contours import kde_contours
 
@@ -840,6 +900,8 @@ def ev1_lowz():
     # removes missing hb 
     df = df[df.OIII_FIT_HB_Z_FLAG > 0]   
     print len(df)
+
+    
 
     # remove duplicates 
     df.drop(['QSO330',
@@ -869,8 +931,10 @@ def ev1_lowz():
     
     print len(df)
 
+    df = df[df.OIII_FLAG_2 > 0]
 
-
+    print len(df) 
+   
     df['OIII_FIT_FE_STRENGTH'] = df.OIII_FIT_EQW_FE_4434_4684 / df.OIII_FIT_HB_BROAD_EQW
 
 
@@ -922,9 +986,7 @@ def ev1_lowz():
     # removes two with nan's, but fe clearly poorly 
     # constrained so just drop
 
-    print len(df)
-
-
+    print 'dfdf', len(df)
 
     # ---------------------------------------------------------------
     
@@ -937,14 +999,52 @@ def ev1_lowz():
 
     print len(df)
 
+
+
+    # definitions for the axes
+    left, width = 0.15, 0.6
+    bottom, height = 0.2, 0.6
+    bottom_h = left_h = left + width + 0.0
     
-    # fig, ax = plt.subplots(1, 1, figsize=figsize(1, vscale=0.9))
+    rect_scatter = [left, bottom, width, height]
+    rect_histx = [left, bottom_h+0.05, width, 0.18]
+    rect_histy = [left_h, bottom, 0.22, height]
+
+    # no labels
+    nullfmt = NullFormatter() 
+
+    fig = plt.figure(figsize=figsize(1.0, vscale=1.2))
+
+    axScatter = plt.axes(rect_scatter)
+    axHistx = plt.axes(rect_histx)
+    axHisty = plt.axes(rect_histy)
+
+    # no labels
+    axHistx.xaxis.set_major_formatter(nullfmt)
+    axHistx.yaxis.set_major_formatter(nullfmt)
+    axHisty.xaxis.set_major_formatter(nullfmt)
+    axHisty.yaxis.set_major_formatter(nullfmt)
+
+    axHistx.set_xticks([])
+    axHistx.set_yticks([])
+    axHisty.set_xticks([])
+    axHisty.set_yticks([])
+
     
-    # ax.plot(df.OIII_FIT_FE_STRENGTH,
-    #         df.OIII_FIT_HB_BROAD_FWHM,
-    #         linestyle='',
-    #         marker='o',
-    #         markerfacecolor=cs[0])
+    im = axScatter.scatter(df.OIII_FIT_FE_STRENGTH,
+                           df.OIII_FIT_HB_BROAD_FWHM,
+                           c=np.log10(df.OIII_5007_EQW_3),
+                           marker='o',
+                           edgecolor='None',
+                           vmin=0, 
+                           vmax=1.75,
+                           zorder=6,
+                           cmap=palettable.colorbrewer.diverging.Spectral_10.mpl_colormap)
+
+    cbaxes = fig.add_axes([0.15, 0.1, 0.55, 0.025])
+    cb = fig.colorbar(cax=cbaxes, mappable=im, orientation='horizontal')
+    cb.set_label(r"log [O\,{\sc iii}] EQW [\AA]")
+    cb.set_ticks([0, 0.5, 1, 1.5])
     
     
     # SDSS ---------------------------------------------------------------
@@ -959,90 +1059,80 @@ def ev1_lowz():
     xi = xi[~drop]
     yi = yi[~drop]
     
-    # xmin = 0.0
-    # xmax = 3.0
-    # ymin = 500.0
-    # ymax = 14000.0 
+    xmin = 0.0
+    xmax = 3.0
+    ymin = 500.0
+    ymax = 14000.0 
     
-    # X, Y = np.mgrid[xmin:xmax:100j, ymin:ymax:100j]
-    # positions = np.vstack([X.ravel(), Y.ravel()])
-    # values = np.vstack([xi, yi])
+    X, Y = np.mgrid[xmin:xmax:100j, ymin:ymax:100j]
+    positions = np.vstack([X.ravel(), Y.ravel()])
+    values = np.vstack([xi, yi])
     
-    # kernel = stats.gaussian_kde(values)
+    kernel = stats.gaussian_kde(values)
     
-    # Z = np.reshape(kernel(positions).T, X.shape)
+    Z = np.reshape(kernel(positions).T, X.shape)
     
     
-    # kde_contours(xi, 
-    #              yi, 
-    #              ax, 
-    #              color='black',
-    #              lims=[xmin, xmax, ymin, ymax],
-    #              plotpoints=False)
+    kde_contours(xi, 
+                 yi, 
+                 axScatter, 
+                 color='black',
+                 lims=[xmin, xmax, ymin, ymax],
+                 plotpoints=False)
     
     # ax.imshow(np.flipud(Z.T), 
-    #       extent=(xmin, xmax, ymin, ymax), 
-    #       aspect='auto', 
-    #       zorder=0, 
-    #       cmap='Blues',
-    #       vmax=0.00015)
+    #           extent=(xmin, xmax, ymin, ymax), 
+    #           aspect='auto', 
+    #           zorder=0, 
+    #           cmap='Blues',
+    #           vmax=0.00015)
 
-    # # -----------------------------------------
+    # -----------------------------------------
    
-    # ax.set_xlim(None, None)
-    # ax.set_ylim(None, 14000) 
+    axScatter.set_xlim(0, 3)
+    axScatter.set_ylim(0, 14000) 
 
-    # ax.set_xlabel(r'R$_{\rm FeII}$')
-    # ax.set_ylabel(r'FWHM H$\beta$ [km~$\rm{s}^{-1}$]')
+    axScatter.set_xlabel(r'R$_{\rm FeII}$')
+    axScatter.set_ylabel(r'FWHM H$\beta$ [km~$\rm{s}^{-1}$]')
 
-    # fig.tight_layout()
-
-    # fig.savefig('/home/lc585/thesis/figures/chapter04/ev1_lowz.pdf')
-    
-    fig, axs = plt.subplots(2, 1, figsize=figsize(1, vscale=1.3))
-
-    axs[0].hist(xi, 
+   
+    axHistx.hist(xi, 
                 normed=True, 
                 bins=np.linspace(0, 3, 14), 
                 histtype='stepfilled', 
-                color=cs[1],
+                color='grey',
+                edgecolor='None',
                 label='SDSS')
 
-    axs[0].hist(df.OIII_FIT_FE_STRENGTH, 
+    axHistx.hist(df.OIII_FIT_FE_STRENGTH, 
                 normed=True, 
                 bins=np.linspace(0, 3, 14), 
                 histtype='step',
-                color=cs[0],
-                lw=2,
+                color='black',
+                lw=1,
                 label='This work')
 
-    axs[0].legend(frameon=False) 
+    axHistx.legend(frameon=False) 
+    axHistx.set_ylim(0, 1.2)
 
-    axs[0].set_xlabel(r'R$_{\rm FeII}$')
 
-    axs[1].hist(yi, 
+
+    axHisty.hist(yi, 
                 normed=True, 
-                bins=np.arange(1000, 10000, 1000), 
+                bins=np.arange(1000, 10000, 500), 
                 histtype='stepfilled', 
-                color=cs[1])
+                orientation='horizontal', 
+                color='grey')
 
-    axs[1].hist(df.OIII_FIT_HB_BROAD_FWHM, 
+    axHisty.hist(df.OIII_FIT_HB_BROAD_FWHM, 
                 normed=True, 
-                bins=np.arange(1000, 10000, 1000), 
+                bins=np.arange(1000, 10000, 500), 
                 histtype='step',
-                color=cs[0],
-                lw=2)
-    
-    axs[1].set_xlabel(r'FWHM H$\beta$ [km~$\rm{s}^{-1}$]')
+                color='black',
+                orientation='horizontal', 
+                lw=1)
 
-    axs[0].set_yticks([])
-    axs[1].set_yticks([])
-
-    fig.tight_layout()
-
-    fig.savefig('/home/lc585/thesis/figures/chapter04/ev1_hists.pdf')
-
-
+    fig.savefig('/home/lc585/thesis/figures/chapter04/ev1_lowz.pdf')
 
     plt.show()
 
@@ -1113,6 +1203,8 @@ def test():
 
   
     fig.tight_layout()
+
+
 
     
     plt.show()
@@ -1228,12 +1320,13 @@ def eqw_lum():
 
     df_total = pd.concat([df[df.EW_OIII_5007 > 1.0], df_sdss[df_sdss.EW_OIII_5007 > 1.0]], ignore_index=True) 
 
-    df_total['Binned'] = np.digitize(df_total.LOGLBOL, bins=np.linspace(45, 48, 7))
+    df_total['Binned'] = np.digitize(df_total.LOGLBOL, bins=np.linspace(44.5, 48.5, 9))
     grouped = df_total.groupby(by = 'Binned')
     ax.plot(grouped.LOGLBOL.median()[1:-1], grouped.EW_OIII_5007.median()[1:-1], color=cs[0], lw=2)
 
     print grouped.EW_OIII_5007.median()[1:-1]
     print grouped.LOGLBOL.median()[1:-1]
+    print grouped.LOGLBOL.count()[1:-1]
 
 
     ax.grid() 
@@ -3132,3 +3225,195 @@ def eqw_cut():
 
 
 
+def fivemicron_w90():
+
+    fig, ax = plt.subplots(1, 1, figsize=figsize(0.8, 0.9))
+    
+    df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0) 
+  
+    df = df[df.OIII_FLAG_2 > 0]
+    df = df[df.OIII_BAD_FIT_FLAG == 0]
+    df = df[df.FE_FLAG == 0]
+    df = df[df.OIII_EXTREM_FLAG == 1]
+
+    ax.plot(10**df.LogL5micron, 
+            df.OIII_5007_W90,
+            marker='o',
+            linestyle='',
+            markerfacecolor=cs[1])
+
+    # Zakamska data 
+
+    lum = [46.411262798634816, 46.575085324232084, 46.948805460750854, 46.948805460750854]
+    w90 = [3.597337597756169, 3.8215417748871285, 3.8128948705289742, 3.7688697132962696]
+
+    ax.plot(10**np.array(lum), 
+            10**np.array(w90),
+            marker='o',
+            linestyle='',
+            markerfacecolor=cs[0])
+
+    xs = np.arange(45.5, 47.6, 0.1)
+
+    ax.plot(10**xs,
+            10**(-12.087 + 0.338*xs),
+            color='black')
+
+    ax.set_yscale('log')
+    ax.set_xscale('log')
+
+    ax.set_xlabel(r'$\nu {\mathrm L}_\nu$ (5$\mu$m) [erg~s$^{-1}$]')
+    ax.set_ylabel(r'$w_{90}$ [km~$\rm{s}^{-1}$]')
+
+
+    ax.set_xlim(10**45.5, 10**47.3)
+    ax.set_ylim(1000, 10000)
+
+    fig.tight_layout() 
+    
+    fig.savefig('/home/lc585/thesis/figures/chapter04/fivemicron_w90.pdf')
+
+    plt.show() 
+
+    return None
+
+def mfica_composites():
+
+    from SpectraTools.fit_line import make_model_mfica, mfica_model, mfica_get_comp
+
+    cs = palettable.colorbrewer.diverging.Spectral_5.mpl_colors
+    colors = [cs[0], cs[1], cs[3], cs[4]]
+
+    """
+    Make composites from median mfica components as a function of the 
+    CIV blueshift
+    """
+
+    fig, ax = plt.subplots(figsize=figsize(1, vscale=0.6))
+    
+    df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0) 
+    df = df[(df.mfica_flag == 1)]
+    df = df[df.WARN_CIV_BEST == 0]
+    df = df[df.BAL_FLAG != 1]
+    
+    w0 = np.mean([1548.202,1550.774])*u.AA  
+    median_wav = doppler2wave(df.Median_CIV_BEST.values*(u.km/u.s), w0) * (1.0 + df.z_IR.values)
+    blueshift_civ = const.c.to('km/s') * (w0 - median_wav / (1.0 + df.z_ICA_FIT)) / w0
+
+
+    bins = [[-1000, 500],
+            [500, 1500],
+            [1500, 2500],
+            [2500, 6000]]
+
+    
+    comps_wav, comps, weights = make_model_mfica(mfica_n_weights=10)
+    labels = ['200', '900', '2000', '3300']
+
+    for k in range(4):
+
+        inds = (blueshift_civ.value > bins[k][0]) & (blueshift_civ.value < bins[k][1])
+    
+        for i in range(10): 
+            weights['w{}'.format(i+1)].value = df.loc[inds, 'mfica_w{}'.format(i+1)].median()
+    
+        flux = mfica_model(weights, comps, comps_wav, comps_wav)
+    
+        ax.plot(comps_wav, 
+                flux,
+                color=colors[k],
+                label=labels[k])
+
+    l = plt.legend(frameon=False, 
+                   loc='upper left', 
+                   title=r'C\,{\sc iv} Blueshift [km~$\rm{s}^{-1}$]',
+                   handlelength=4,
+                   handletextpad=2)
+
+    ax.set_xlim(4200, 5600)
+    ax.set_ylim(0.8, 2.5)
+
+    ax.set_xlabel(r'Wavelength [\AA]') 
+    ax.set_ylabel(r'$F_{\lambda}$')
+    
+
+    fig.tight_layout()
+
+    fig.savefig('/home/lc585/thesis/figures/chapter04/mfica_composites.pdf')
+
+
+    plt.show() 
+
+    return None 
+
+
+def test2():
+
+    # cs = palettable.colorbrewer.qualitative.Set1_3.mpl_colors
+    
+    # fig, ax = plt.subplots(figsize=figsize(1, 0.8))
+    
+
+    df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0) 
+    df = df[df.OIII_FLAG_2 > 0]
+    df = df[df.OIII_BAD_FIT_FLAG == 0]
+    df = df[df.FE_FLAG == 0]
+    df['LOGLBOL'] = np.log10(9.26) + df['LogL5100']
+    df.dropna(subset=['RADIO_FLAG'], inplace=True) 
+
+
+    print len(df[df.RADIO_FLAG == 0]), len(df[df.RADIO_FLAG > 0]), len(df)
+    print df.loc[df.RADIO_FLAG == 0, 'OIII_5007_EQW_3'].median() 
+    print df.loc[df.RADIO_FLAG > 0, 'OIII_5007_EQW_3'].median() 
+    print df.loc[df.RADIO_FLAG == 0, 'LOGLBOL'].median()
+    print df.loc[df.RADIO_FLAG > 0, 'LOGLBOL'].median()
+
+
+    df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0) 
+    df = df[df.OIII_FLAG_2 > 0]
+    df = df[df.OIII_BAD_FIT_FLAG == 0]
+    df = df[df.FE_FLAG == 0]
+    df = df[df.OIII_EQW_FLAG == 0]
+    df.dropna(subset=['RADIO_FLAG'], inplace=True) 
+
+    print df.loc[df.RADIO_FLAG == 0, 'OIII_5007_W80'].median() 
+    print df.loc[df.RADIO_FLAG > 0, 'OIII_5007_W80'].median() 
+
+    
+
+
+
+    # df = df[df.OIII_EQW_FLAG == 0]
+    # df.dropna(subset=['RADIO_FLAG'], inplace=True) 
+
+    # df1 = df[df.RADIO_FLAG == 0]
+    # df2 = df[df.RADIO_FLAG > 0]
+  
+    # s = ax.scatter(np.log10(9.26) + df1.LogL5100,
+    #                np.log10(df1.OIII_5007_W80), 
+    #                facecolor=cs[1], 
+    #                edgecolor='None',
+    #                s=25,
+    #                zorder=1)
+
+    # s = ax.scatter(np.log10(9.26) + df2.LogL5100,
+    #                np.log10(df2.OIII_5007_W80), 
+    #                facecolor=cs[0], 
+    #                edgecolor='None',
+    #                s=25,
+    #                zorder=1)
+
+
+    # ax.set_xlabel('log L$_{\mathrm{Bol}}$ [erg~s$^{-1}$]')
+    # ax.set_ylabel(r'$\log w_{80}$ [km~$\rm{s}^{-1}$]')
+
+    # ax.set_ylim(2.4, 3.7)
+    # ax.set_xlim(45, 50)
+
+    # fig.tight_layout()
+
+    # plt.show() 
+
+
+
+    return None 
