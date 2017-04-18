@@ -49,3 +49,6 @@ Search for "todos"
 look through for commented text
 check extra_text 
 reduced-$\chi^2$
+$\rho_{\mathrm S}=\text{-}0.30$, p-value $=4e\text{-}4$)
+velocity-width
+unfortunately we have an author called "doi" so be careful deleting this

@@ -189,9 +189,9 @@ def civ_space_z_compare_plot():
     axs[0].set_ylim(axs[1].get_ylim())
 
     axs[2].set_xlabel(r'C\,{\sc iv} Blueshift [km~$\rm{s}^{-1}$]')
-    axs[0].set_ylabel(r'log(C\,{\sc iv} EW) [\AA]')
-    axs[1].set_ylabel(r'log(C\,{\sc iv} EW) [\AA]')
-    axs[2].set_ylabel(r'log(C\,{\sc iv} EW) [\AA]')
+    axs[0].set_ylabel(r'log(C\,{\sc iv} EQW) [\AA]')
+    axs[1].set_ylabel(r'log(C\,{\sc iv} EQW) [\AA]')
+    axs[2].set_ylabel(r'log(C\,{\sc iv} EQW) [\AA]')
 
     axs[0].text(4000, 2.12, '(a)', ha='center', va='center')
     axs[1].text(4000, 2.12, '(b)', ha='center', va='center')
@@ -2617,7 +2617,7 @@ def civ_space_plot():
     axScatter.set_ylim(1,2.2)
 
     axScatter.set_xlabel(r'C\,{\sc iv} Blueshift [km~$\rm{s}^{-1}$]')
-    axScatter.set_ylabel(r'log(C\,{\sc iv} EW) [\AA]')
+    axScatter.set_ylabel(r'log(C\,{\sc iv} EQW) [\AA]')
 
     legend = axScatter.legend(frameon=True, scatterpoints=1) 
 

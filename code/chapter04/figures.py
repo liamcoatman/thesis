@@ -122,8 +122,8 @@ def redshift_comparison():
     df = df[df.OIII_EXTREM_FLAG == 0]
 
     df = df[df.OIII_FIT_HB_Z_FLAG > 0 ] 
-    df = df[df.OIII_FIT_VEL_HB_PEAK_ERR < 600.0] # Really bad 
-    df = df[df.OIII_FIT_VEL_FULL_OIII_PEAK_ERR < 400.0] # Really bad 
+    df = df[df.OIII_FIT_VEL_HB_PEAK_ERR < 300.0] # Really bad 
+    df = df[df.OIII_FIT_VEL_FULL_OIII_PEAK_ERR < 200.0] # Really bad 
 
     x = df.OIII_FIT_VEL_FULL_OIII_PEAK - df.OIII_FIT_VEL_HB_PEAK 
     mean[0], median[0], sigma[0] = np.mean(x), np.median(x), np.std(x)
@@ -165,8 +165,8 @@ def redshift_comparison():
     df = df[df.OIII_EXTREM_FLAG == 0]
 
     df = df[df.OIII_FIT_HA_Z_FLAG > 0] 
-    df = df[df.OIII_FIT_VEL_HA_PEAK_ERR < 400.0] # Really bad 
-    df = df[df.OIII_FIT_VEL_FULL_OIII_PEAK_ERR < 400.0] # Really bad 
+    df = df[df.OIII_FIT_VEL_HA_PEAK_ERR < 200.0] # Really bad 
+    df = df[df.OIII_FIT_VEL_FULL_OIII_PEAK_ERR < 200.0] # Really bad 
 
     print len(df)
 
@@ -208,8 +208,8 @@ def redshift_comparison():
     df = df[df.OIII_FIT_HA_Z_FLAG > 0 ]
     df = df[df.OIII_FIT_HB_Z_FLAG > 0 ]
     
-    df = df[df.OIII_FIT_VEL_HA_PEAK_ERR < 400.0]
-    df = df[df.OIII_FIT_VEL_HB_PEAK_ERR < 600.0]
+    df = df[df.OIII_FIT_VEL_HA_PEAK_ERR < 200.0]
+    df = df[df.OIII_FIT_VEL_HB_PEAK_ERR < 300.0]
 
     df.drop(['QSO546'], inplace=True) # bad fit
 
@@ -271,9 +271,9 @@ def redshift_comparison():
     axs[1].set_xlabel(r'$c(z{[{\rm OIII}]} - z{{\rm H}\alpha}) / (1 + z{[{\rm OIII}]})$ [km~$\rm{s}^{-1}$]')
     axs[2].set_xlabel(r'$c(z{{\rm H}\beta} - z{{\rm H}\alpha}) / (1 + z{{\rm H}\beta})$ [km~$\rm{s}^{-1}$]')
 
-    axs[0].set_ylabel('PDF')
-    axs[1].set_ylabel('PDF')
-    axs[2].set_ylabel('PDF')
+    axs[0].set_ylabel('Probability density')
+    axs[1].set_ylabel('Probability density')
+    axs[2].set_ylabel('Probability density')
 
 
     
@@ -381,14 +381,10 @@ def civ_blueshift_oiii_strength():
 
     im = ax.scatter(blueshift_civ,
                     w_norm,
-                    c=df.LogL5100,
                     edgecolor='None',
+                    facecolor=cs[1],
                     zorder=2,
                     s=30)    
-
-    
-    cb = fig.colorbar(im)
-    cb.set_label(r'log L$_{5100{\rm \AA}}$')
 
     # ax.scatter(blueshift_civ,
     #           w_norm,
@@ -2318,12 +2314,12 @@ def example_spectrum_grid():
         ax.set_ylim(-6, 6)
         
         if (i % 2 == 0):
-            ax.set_yticks([-3,3])
+            ax.set_yticks([-3, 3])
             ax.yaxis.set_ticks_position('left')
         else:
             ax.set_yticks([])
 
-        if i < 8:
+        if i < 6:
             ax.set_xticks([])
         else:
             ax.set_xticks([0, 5000, 10000])
@@ -2795,6 +2791,8 @@ def parameter_hists():
     df = df[df.FE_FLAG == 0]
     
     x = df.OIII_5007_EQW_3
+
+
     x[x < 0.01] = 0.01
     x = np.log10(x)
     
@@ -3308,6 +3306,7 @@ def mfica_composites():
 
     
     comps_wav, comps, weights = make_model_mfica(mfica_n_weights=10)
+    print comps_wav
     labels = ['200', '900', '2000', '3300']
 
     for k in range(4):
@@ -3339,7 +3338,7 @@ def mfica_composites():
 
     fig.tight_layout()
 
-    fig.savefig('/home/lc585/thesis/figures/chapter04/mfica_composites.pdf')
+    # fig.savefig('/home/lc585/thesis/figures/chapter04/mfica_composites.pdf')
 
 
     plt.show() 
@@ -3417,3 +3416,162 @@ def test2():
 
 
     return None 
+
+def test3():
+
+    cs = palettable.colorbrewer.qualitative.Set1_3.mpl_colors
+    
+    fig, ax = plt.subplots(figsize=figsize(1, 0.8))
+    
+
+    df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0)     
+    df = df[df.OIII_FLAG_2 > 0]
+    df = df[df.OIII_BAD_FIT_FLAG == 0]
+    df = df[df.FE_FLAG == 0]
+    df = df[df.OIII_EQW_FLAG == 0]
+    # df = df[df.OIII_BROAD_OFF == False]
+
+    ax.plot(df.OIII_5007_R_80, 
+            df.OIII_5007_W80, 
+            linestyle='',
+            marker='o',
+            markerfacecolor=cs[1],
+            markeredgecolor='None')
+
+    from scipy.stats import spearmanr
+
+    print spearmanr(df.OIII_5007_R_80, df.OIII_5007_W80) 
+
+
+   
+
+
+    # df = df[df.OIII_EQW_FLAG == 0]
+    # df.dropna(subset=['RADIO_FLAG'], inplace=True) 
+
+    # df1 = df[df.RADIO_FLAG == 0]
+    # df2 = df[df.RADIO_FLAG > 0]
+  
+    # s = ax.scatter(np.log10(9.26) + df1.LogL5100,
+    #                np.log10(df1.OIII_5007_W80), 
+    #                facecolor=cs[1], 
+    #                edgecolor='None',
+    #                s=25,
+    #                zorder=1)
+
+    # s = ax.scatter(np.log10(9.26) + df2.LogL5100,
+    #                np.log10(df2.OIII_5007_W80), 
+    #                facecolor=cs[0], 
+    #                edgecolor='None',
+    #                s=25,
+    #                zorder=1)
+
+
+    # ax.set_xlabel('log L$_{\mathrm{Bol}}$ [erg~s$^{-1}$]')
+    # ax.set_ylabel(r'$\log w_{80}$ [km~$\rm{s}^{-1}$]')
+
+    # ax.set_ylim(2.4, 3.7)
+    # ax.set_xlim(45, 50)
+
+    fig.tight_layout()
+
+    plt.show() 
+
+
+
+    return None 
+
+    
+def test4():
+
+    df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0) 
+    df = df[df.OIII_EXTREM_FLAG == 1]
+    
+    print len(df)
+
+    df['z'] = np.nan
+    
+    
+    
+    useha = df.z.isnull() & (df.OIII_FIT_HA_Z_FLAG > 0) & (df.OIII_FIT_VEL_HA_PEAK_ERR < 400.0)
+    df.loc[useha, 'z'] = df.loc[useha, 'OIII_FIT_HA_Z'] 
+        
+    usehb = df.z.isnull() & (df.OIII_FIT_HB_Z_FLAG >= 0) & (df.OIII_FIT_VEL_HB_PEAK_ERR < 750.0)
+    df.loc[usehb, 'z'] = df.loc[usehb, 'OIII_FIT_HB_Z'] 
+
+    w0 = np.mean([1548.202,1550.774])*u.AA  
+    median_wav = doppler2wave(df.Median_CIV_BEST.values*(u.km/u.s), w0) * (1.0 + df.z_IR.values)
+    blueshift_civ = const.c.to('km/s') * (w0 - median_wav / (1.0 + df.z)) / w0
+    df['CIV_BLUESHIFT'] = blueshift_civ
+
+    print df[['RADIO_FLAG', 'CIV_BLUESHIFT']]
+
+
+
+
+
+    return None 
+
+
+def test5():
+
+    set_plot_properties() # change style 
+
+    fig, ax = plt.subplots(figsize=figsize(0.9, vscale=0.7))
+    
+    df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0) 
+    df = df[(df.mfica_flag == 1)]
+    df = df[df.WARN_CIV_BEST == 0]
+    
+    df.dropna(subset=['Median_CIV_BEST', 'OIII_5007_MFICA_W80'], inplace=True)
+    
+    w0 = np.mean([1548.202,1550.774])*u.AA  
+    median_wav = doppler2wave(df.Median_CIV_BEST.values*(u.km/u.s), w0) * (1.0 + df.z_IR.values)
+    blueshift_civ = const.c.to('km/s') * (w0 - median_wav / (1.0 + df.z_ICA_FIT)) / w0
+
+    col_list = ['mfica_w1',
+                'mfica_w2',
+                'mfica_w3',
+                'mfica_w4',
+                'mfica_w5',
+                'mfica_w6',
+                'mfica_w7',
+                'mfica_w8',
+                'mfica_w9',
+                'mfica_w10']
+
+    w_norm = df[col_list[5]] / df[col_list[:6]].sum(axis=1) # sum positive components 
+    w_norm = w_norm[~np.isnan(w_norm) & ~np.isinf(w_norm)]
+    
+    from LiamUtils import colormaps as cmaps
+    plt.register_cmap(name='viridis', cmap=cmaps.viridis)
+    plt.set_cmap(cmaps.viridis)
+
+
+    im = ax.scatter(blueshift_civ,
+                    w_norm,
+                    edgecolor='None',
+                    facecolor=cs[1],
+                    zorder=2,
+                    s=30)    
+
+    # ax.scatter(blueshift_civ,
+    #           w_norm,
+    #           facecolor=cs[1], 
+    #           edgecolor='None',
+    #           zorder=2,
+    #           s=30)
+
+    ax.set_xlim(-1500, 6000)
+    ax.set_ylim(0.03, 0.4)
+
+    ax.set_xlabel(r'C\,{\sc iv} Blueshift [km~$\rm{s}^{-1}$]')
+    ax.set_ylabel(r"$\displaystyle {(w_4 + w_5)} / {\sum_{i=1}^6 w_i}$")
+
+    # ax.set_yscale('log')
+
+    fig.tight_layout()
+
+    plt.show() 
+
+    return None
