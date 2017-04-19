@@ -442,17 +442,16 @@ def civ_blueshift_oiii_eqw():
 
     im = ax.scatter(blueshift_civ,
                     df.OIII_5007_EQW_3,
-                    c=df.LogL5100,
+                    c=np.log10(9.26) + df.LogL5100,
                     edgecolor='None',
                     zorder=2,
                     cmap=palettable.matplotlib.Viridis_10.mpl_colormap,
-                    s=30)   
+                    s=20)   
 
-    print df.loc[blueshift_civ.value < 500.0, 'OIII_5007_EQW_3'].mean(), df.loc[blueshift_civ.value > 2000.0, 'OIII_5007_EQW_3'].mean() 
 
     
     cb = fig.colorbar(im)
-    cb.set_label(r'log L$_{5100{\rm \AA}}$')
+    cb.set_label(r'$\log L_{\mathrm Bol}$ [erg~s$^{-1}$]')
 
 
     ax.set_xlim(-1000, 5000)
@@ -484,50 +483,83 @@ def lum_w80():
 
     # t = t[(t['FWHM_NARROW_HB'] >= 500) & (t['FWHM_NARROW_HB'] < 1200)]
     
-    m1, m2 = t['LOGLBOL'], t['FWHM_NARROW_HB']
+    m1, m2 = t['LOGLBOL'], np.log10(t['FWHM_NARROW_HB']/0.919)
+    bad = np.isinf(m2)
+
+    m1 = m1[~bad]
+    m2 = m2[~bad]
+
+    good = m2 < 3.1
+
+    m1 = m1[good]
+    m2 = m2[good]
 
     
-    # xmin = 44.0
-    # xmax = 48.0
-    # ymin = 500
-    # ymax = 1500
+    xmin = 44.0
+    xmax = 47.0
+    ymin = 2.34
+    ymax = 3.2
     
-    # X, Y = np.mgrid[xmin:xmax:100j, ymin:ymax:100j]
-    # positions = np.vstack([X.ravel(), Y.ravel()])
-    # values = np.vstack([m1, m2])
+    X, Y = np.mgrid[xmin:xmax:100j, ymin:ymax:100j]
+    positions = np.vstack([X.ravel(), Y.ravel()])
+    values = np.vstack([m1, m2])
     
-    # kernel = stats.gaussian_kde(values)
+    kernel = stats.gaussian_kde(values)
     
-    # Z = np.reshape(kernel(positions).T, X.shape)
+    Z = np.reshape(kernel(positions).T, X.shape)
     
-    # CS = ax.contour(X, Y, Z, colors=[cs[-1]])
+    CS = ax.contour(X, Y, Z, colors=['grey'])
     
-    # threshold = CS.levels[0]
+    threshold = CS.levels[0]
     
-    # z = kernel(values)
+    z = kernel(values)
     
-    # # mask points above density threshold
-    # x = np.ma.masked_where(z > threshold, m1)
-    # y = np.ma.masked_where(z > threshold, m2)
+    # mask points above density threshold
+    x = np.ma.masked_where(z > threshold, m1)
+    y = np.ma.masked_where(z > threshold, m2)
     
-    # # plot unmasked points
-    # ax.plot(x, 
-    #         y, 
-    #         markerfacecolor=cs[-1], 
-    #         markeredgecolor='None', 
-    #         linestyle='', 
-    #         marker='o', 
-    #         markersize=2, 
-    #         label='SDSS DR7')
-
-    ax.plot(m1, 
-            np.log10(m2/0.919), # convert to w80 
-            marker='o', 
-            markersize=1, 
-            markeredgecolor='None', 
+    # plot unmasked points
+    ax.plot(x, 
+            y, 
             markerfacecolor='grey', 
-            linestyle='',
-            zorder=0)
+            markeredgecolor='None', 
+            linestyle='', 
+            marker='o', 
+            markersize=2, 
+            label=r'SDSS~~($z < 1$)')
+
+    t = Table.read('/data/lc585/SDSS/dr7_bh_Nov19_2013.fits')
+    t = t[t['LOGLBOL'] > 0.0]
+    t = t[t['EW_OIII_5007'] > 0.0]
+    t = t[['LOGLBOL', 'FWHM_NARROW_HB']]
+
+    m1, m2 = t['LOGLBOL'], np.log10(t['FWHM_NARROW_HB']/0.919)
+  
+    good = m2 >= 3.1
+
+    m1 = m1[good]
+    m2 = m2[good]
+
+
+    # plot unmasked points
+    ax.plot(m1, 
+            m2, 
+            markerfacecolor='grey', 
+            markeredgecolor='None', 
+            linestyle='', 
+            marker='o', 
+            markersize=2)
+
+
+
+    # ax.plot(m1, 
+    #         m2, # convert to w80 
+    #         marker='o', 
+    #         markersize=1, 
+    #         markeredgecolor='None', 
+    #         markerfacecolor='grey', 
+    #         linestyle='',
+    #         zorder=0)
 
 
 
@@ -540,7 +572,8 @@ def lum_w80():
                    facecolor=cs[0], 
                    edgecolor='None',
                    s=25,
-                   zorder=2)
+                   zorder=2,
+                   label='This work (extreme [O\,{\sc iii}])')
 
     print df.LogL5100.median() + np.log10(9.26)
     
@@ -558,7 +591,10 @@ def lum_w80():
                    facecolor=cs[1], 
                    edgecolor='None',
                    s=25,
-                   zorder=1)
+                   zorder=1,
+                   label='This work')
+
+    ax.legend(numpoints=1, scatterpoints=1, loc='lower right')
 
     ax.set_xlabel('log L$_{\mathrm{Bol}}$ [erg~s$^{-1}$]')
     ax.set_ylabel(r'$\log w_{80}$ [km~$\rm{s}^{-1}$]')
@@ -716,6 +752,19 @@ def civ_blueshift_oiii_blueshift(check_lum=False):
     
         ax2.set_xlabel(r'$\Delta v$(C\,{\sc iv})', fontsize=9)
         ax2.set_ylabel(r'$\sigma \Delta v$(C\,{\sc iv})', fontsize=9)
+
+
+
+        labels = ['(a)', '(b)', '(c)']
+        axs = [ax1, ax2, ax3]
+
+        for i, label in enumerate(labels):
+
+            axs[i].text(0.1, 0.93, label,
+                    horizontalalignment='center',
+                    verticalalignment='center',
+                    transform = axs[i].transAxes)
+
     
         fig.tight_layout()
 
@@ -1229,7 +1278,9 @@ def eqw_lum():
             linestyle='',
             markerfacecolor=cs[1],
             markeredgecolor='None',
-            markersize=4)
+            markersize=4,
+            zorder=1,
+            label='This work')
 
 
 
@@ -1242,7 +1293,8 @@ def eqw_lum():
                 capsize=2,
                 color=cs[1],
                 markeredgecolor='None',
-                markersize=4)
+                markersize=4,
+                zorder=1)
 
 
 
@@ -1267,7 +1319,7 @@ def eqw_lum():
     
     Z = np.reshape(kernel(positions).T, X.shape)
     
-    CS = ax.contour(X, 10**Y, Z, colors=[cs[-1]])
+    CS = ax.contour(X, 10**Y, Z, colors=[cs[-1]], zorder=0)
     
     threshold = CS.levels[0]
     
@@ -1284,8 +1336,9 @@ def eqw_lum():
             markeredgecolor='None', 
             linestyle='', 
             marker='o', 
+            zorder=0,
             markersize=2, 
-            label='SDSS DR7')
+            label=r'SDSS~~($z < 1$)')
 
 
     # ax.plot(x[10**y <= 1], 
@@ -1307,6 +1360,8 @@ def eqw_lum():
                 markersize=0,
                 zorder=0)
 
+    ax.legend(numpoints=1)
+
     #-------------------------------------
 
     df_sdss = t.to_pandas()
@@ -1318,7 +1373,7 @@ def eqw_lum():
 
     df_total['Binned'] = np.digitize(df_total.LOGLBOL, bins=np.linspace(44.5, 48.5, 9))
     grouped = df_total.groupby(by = 'Binned')
-    ax.plot(grouped.LOGLBOL.median()[1:-1], grouped.EW_OIII_5007.median()[1:-1], color=cs[0], lw=2)
+    ax.plot(grouped.LOGLBOL.median()[1:-1], grouped.EW_OIII_5007.median()[1:-1], color=cs[0], lw=2, zorder=2)
 
     print grouped.EW_OIII_5007.median()[1:-1]
     print grouped.LOGLBOL.median()[1:-1]
@@ -1329,7 +1384,7 @@ def eqw_lum():
 
 
 
-    ax.set_ylabel(r'log EQW (\AA)')
+    ax.set_ylabel(r'log EQW [\AA]')
     ax.set_xlabel(r'log $L_{\mathrm{Bol}}$ [erg/s]')
     
     ax.set_yscale('log')
@@ -2734,8 +2789,8 @@ def parameter_hists():
 
     axs[2].grid() 
 
-    axs[2].set_xlabel('Asymmetry R')
-    axs[2].set_ylabel('PDF')
+    axs[2].set_xlabel(r'Asymmetry $A$')
+    axs[2].set_ylabel('Probability density')
     
     axs[2].yaxis.set_major_locator(MaxNLocator(5))
 
@@ -2774,7 +2829,7 @@ def parameter_hists():
     axs[1].plot(x*norm, np.full_like(x, -0.01), '|k', markeredgewidth=1);
 
     axs[1].set_xlabel(r'$w_{80}$ [km~$\rm{s}^{-1}$]')
-    axs[1].set_ylabel('PDF')
+    axs[1].set_ylabel('Probability density')
 
     axs[1].set_ylim(-0.05, None)
 
@@ -2816,7 +2871,7 @@ def parameter_hists():
     axs[0].plot(x, np.full_like(x, -0.01), '|k', markeredgewidth=1);
 
     axs[0].set_xlabel(r'EQW [\AA]')
-    axs[0].set_ylabel('PDF')
+    axs[0].set_ylabel('Probability density')
 
     axs[0].set_ylim(-0.05, None)
 

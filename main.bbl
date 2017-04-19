@@ -10571,6 +10571,86 @@
   \field{year}{2006}
 \endentry
 
+\entry{magorrian98}{article}{}
+  \name{author}{12}{}{%
+    {{}%
+     {{Magorrian}}{M.}%
+     {J.}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Tremaine}}{T.}%
+     {S.}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Richstone}}{R.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Bender}}{B.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Bower}}{B.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Dressler}}{D.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Faber}}{F.}%
+     {S.~M.}{S.~M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Gebhardt}}{G.}%
+     {K.}{K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Green}}{G.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Grillmair}}{G.}%
+     {C.}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Kormendy}}{K.}%
+     {J.}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Lauer}}{L.}%
+     {T.}{T.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{COSMOLOGY: DARK MATTER, GALAXIES: NUCLEI}
+  \strng{namehash}{MJ+1}
+  \strng{fullhash}{MJTSRDBRBGDAFSMGKGRGCKJLT1}
+  \field{labelyear}{1998}
+  \field{sortinit}{M}
+  \verb{eprint}
+  \verb astro-ph/9708072
+  \endverb
+  \field{pages}{2285\bibrangedash 2305}
+  \field{title}{{The Demography of Massive Dark Objects in Galaxy Centers}}
+  \field{volume}{115}
+  \field{journaltitle}{\aj}
+  \field{eprinttype}{arXiv}
+  \field{month}{06}
+  \field{year}{1998}
+\endentry
+
 \entry{mainzer11}{article}{}
   \name{author}{35}{}{%
     {{}%
