@@ -1953,6 +1953,71 @@
   \field{year}{2005}
 \endentry
 
+\entry{bower06}{article}{}
+  \name{author}{8}{}{%
+    {{}%
+     {{Bower}}{B.}%
+     {R.~G.}{R.~G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Benson}}{B.}%
+     {A.~J.}{A.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Malbon}}{M.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Helly}}{H.}%
+     {J.~C.}{J.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Frenk}}{F.}%
+     {C.~S.}{C.~S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Baugh}}{B.}%
+     {C.~M.}{C.~M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Cole}}{C.}%
+     {S.}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Lacey}}{L.}%
+     {C.~G.}{C.~G.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{galaxies: evolution: galaxies: formation: galaxies: luminosity
+  function, galaxies: evolution, galaxies: formation, galaxies: luminosity
+  function}
+  \strng{namehash}{BRG+1}
+  \strng{fullhash}{BRGBAJMRHJCFCSBCMCSLCG1}
+  \field{labelyear}{2006}
+  \field{sortinit}{B}
+  \verb{doi}
+  \verb 10.1111/j.1365-2966.2006.10519.x
+  \endverb
+  \verb{eprint}
+  \verb astro-ph/0511338
+  \endverb
+  \field{pages}{645\bibrangedash 655}
+  \field{title}{{Breaking the hierarchy of galaxy formation}}
+  \field{volume}{370}
+  \field{journaltitle}{\mnras}
+  \field{eprinttype}{arXiv}
+  \field{month}{08}
+  \field{year}{2006}
+\endentry
+
 \entry{boyle98}{article}{}
   \name{author}{2}{}{%
     {{}%
@@ -2220,6 +2285,59 @@
   \field{year}{2015}
 \endentry
 
+\entry{cano-diaz12}{article}{}
+  \name{author}{6}{}{%
+    {{}%
+     {{Cano-D{\'{\i}}az}}{C.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Maiolino}}{M.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Marconi}}{M.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Netzer}}{N.}%
+     {H.}{H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Shemmer}}{S.}%
+     {O.}{O.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Cresci}}{C.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{galaxies: formation, galaxies: high-redshift, galaxies: evolution,
+  quasars: emission lines}
+  \strng{namehash}{CM+1}
+  \strng{fullhash}{CMMRMANHSOCG1}
+  \field{labelyear}{2012}
+  \field{sortinit}{C}
+  \field{eid}{L8}
+  \verb{eprint}
+  \verb 1112.3071
+  \endverb
+  \field{pages}{L8}
+  \field{title}{{Observational evidence of quasar feedback quenching star
+  formation at high redshift}}
+  \field{volume}{537}
+  \field{journaltitle}{\aap}
+  \field{eprinttype}{arXiv}
+  \field{month}{01}
+  \field{year}{2012}
+\endentry
+
 \entry{cappellari02}{article}{}
   \name{author}{8}{}{%
     {{}%
@@ -2266,7 +2384,7 @@
   \keyw{Black Hole Physics, Galaxies: Elliptical and Lenticular, cD, Galaxies:
   Individual: Alphanumeric: IC 1459, Galaxies: Kinematics and Dynamics,
   Galaxies: Nuclei}
-  \strng{namehash}{CM+1}
+  \strng{namehash}{CM+2}
   \strng{fullhash}{CMVEKvRPVGAIGDFMCCMdPT1}
   \field{labelyear}{2002}
   \field{sortinit}{C}
@@ -5096,6 +5214,37 @@
   \field{journaltitle}{\mnras}
   \field{eprinttype}{arXiv}
   \field{month}{02}
+  \field{year}{2012}
+\endentry
+
+\entry{faucher12}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {{Faucher-Gigu{\`e}re}}{F.}%
+     {C.-A.}{C.-A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Quataert}}{Q.}%
+     {E.}{E.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{shock waves, galaxies: active, galaxies: evolution, quasars: general}
+  \strng{namehash}{FCAQE1}
+  \strng{fullhash}{FCAQE1}
+  \field{labelyear}{2012}
+  \field{sortinit}{F}
+  \verb{eprint}
+  \verb 1204.2547
+  \endverb
+  \field{pages}{605\bibrangedash 622}
+  \field{title}{{The physics of galactic winds driven by active galactic
+  nuclei}}
+  \field{volume}{425}
+  \field{journaltitle}{\mnras}
+  \field{eprinttype}{arXiv}
+  \field{month}{09}
   \field{year}{2012}
 \endentry
 
@@ -8454,6 +8603,83 @@
   \field{year}{2010}
 \endentry
 
+\entry{kakkad16}{article}{}
+  \name{author}{11}{}{%
+    {{}%
+     {{Kakkad}}{K.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Mainieri}}{M.}%
+     {V.}{V.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Padovani}}{P.}%
+     {P.}{P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Cresci}}{C.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Husemann}}{H.}%
+     {B.}{B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Carniani}}{C.}%
+     {S.}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Brusa}}{B.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Lamastra}}{L.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Lanzuisi}}{L.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Piconcelli}}{P.}%
+     {E.}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Schramm}}{S.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{galaxies: active, quasars: emission lines, galaxies: kinematics and
+  dynamics, quasars: supermassive black holes}
+  \strng{namehash}{KD+1}
+  \strng{fullhash}{KDMVPPCGHBCSBMLALGPESM1}
+  \field{labelyear}{2016}
+  \field{sortinit}{K}
+  \field{eid}{A148}
+  \verb{eprint}
+  \verb 1605.08631
+  \endverb
+  \field{pages}{A148}
+  \field{title}{{Tracing outflows in the AGN forbidden region with SINFONI}}
+  \field{volume}{592}
+  \field{journaltitle}{\aap}
+  \field{eprinttype}{arXiv}
+  \field{month}{08}
+  \field{year}{2016}
+\endentry
+
 \entry{kaspi00}{article}{}
   \name{author}{6}{}{%
     {{}%
@@ -8856,6 +9082,42 @@
   \field{eprinttype}{arXiv}
   \field{month}{10}
   \field{year}{2015}
+\endentry
+
+\entry{king11}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {{King}}{K.}%
+     {A.~R.}{A.~R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Zubovas}}{Z.}%
+     {K.}{K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Power}}{P.}%
+     {C.}{C.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{accretion, accretion discs, black hole physics, galaxies: evolution,
+  quasars: general}
+  \strng{namehash}{KARZKPC1}
+  \strng{fullhash}{KARZKPC1}
+  \field{labelyear}{2011}
+  \field{sortinit}{K}
+  \verb{eprint}
+  \verb 1104.3682
+  \endverb
+  \field{pages}{L6\bibrangedash L10}
+  \field{title}{{Large-scale outflows in galaxies}}
+  \field{volume}{415}
+  \field{journaltitle}{\mnras}
+  \field{eprinttype}{arXiv}
+  \field{month}{07}
+  \field{year}{2011}
 \endentry
 
 \entry{king03}{article}{}
@@ -11020,6 +11282,37 @@
   \field{eprinttype}{arXiv}
   \field{month}{05}
   \field{year}{2003}
+\endentry
+
+\entry{martini01}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {{Martini}}{M.}%
+     {P.}{P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Weinberg}}{W.}%
+     {D.~H.}{D.~H.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Cosmology: Dark Matter, Cosmology: Large-Scale Structure of Universe,
+  Galaxies: Quasars: General}
+  \strng{namehash}{MPWDH1}
+  \strng{fullhash}{MPWDH1}
+  \field{labelyear}{2001}
+  \field{sortinit}{M}
+  \verb{eprint}
+  \verb astro-ph/0002384
+  \endverb
+  \field{pages}{12\bibrangedash 26}
+  \field{title}{{Quasar Clustering and the Lifetime of Quasars}}
+  \field{volume}{547}
+  \field{journaltitle}{\apj}
+  \field{eprinttype}{arXiv}
+  \field{month}{01}
+  \field{year}{2001}
 \endentry
 
 \entry{marziani12}{article}{}
@@ -16539,6 +16832,111 @@
   \field{journaltitle}{\aj}
   \field{month}{02}
   \field{year}{2006}
+\endentry
+
+\entry{springel05}{article}{}
+  \name{author}{17}{}{%
+    {{}%
+     {{Springel}}{S.}%
+     {V.}{V.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{White}}{W.}%
+     {S.~D.~M.}{S.~D.~M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Jenkins}}{J.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Frenk}}{F.}%
+     {C.~S.}{C.~S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Yoshida}}{Y.}%
+     {N.}{N.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Gao}}{G.}%
+     {L.}{L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Navarro}}{N.}%
+     {J.}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Thacker}}{T.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Croton}}{C.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Helly}}{H.}%
+     {J.}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Peacock}}{P.}%
+     {J.~A.}{J.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Cole}}{C.}%
+     {S.}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Thomas}}{T.}%
+     {P.}{P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Couchman}}{C.}%
+     {H.}{H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Evrard}}{E.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Colberg}}{C.}%
+     {J.}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Pearce}}{P.}%
+     {F.}{F.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{SV+1}
+  \strng{fullhash}{SVWSDMJAFCSYNGLNJTRCDHJPJACSTPCHEACJPF1}
+  \field{labelyear}{2005}
+  \field{sortinit}{S}
+  \verb{eprint}
+  \verb astro-ph/0504097
+  \endverb
+  \field{pages}{629\bibrangedash 636}
+  \field{title}{{Simulations of the formation, evolution and clustering of
+  galaxies and quasars}}
+  \field{volume}{435}
+  \field{journaltitle}{\nat}
+  \field{eprinttype}{arXiv}
+  \field{month}{06}
+  \field{year}{2005}
 \endentry
 
 \entry{stern12}{article}{}

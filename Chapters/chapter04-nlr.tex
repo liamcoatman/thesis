@@ -11,9 +11,9 @@ X-ray and ultra-violet spectroscopy has revealed high-velocity outflows to be ne
 Strong evidence for high-velocity outflows in the vicinity of quasars include BALs, NALs and blueshifted emission-lines. 
 These observations suggest that the energy released by quasars can have a dramatic effect on their immediate environments. 
 
-Quasars driving powerful outflows over galactic scales is a central tenet of galaxy evolution models involving `quasar' feedback \citep[e.g.][]{silk98,king03,dimatteo05,king15}.
+Quasars driving powerful outflows over galactic scales is a central tenet of galaxy evolution models involving `quasar' feedback \citep[e.g.][]{silk98,springel05,bower06}.
 In recent years, a huge amount of resources have been devoted to searching for observational evidence of this phenomenon.  
-This has resulted in recent detections of outflows in quasar-host galaxies using tracers of atomic, molecular, and ionised gas \citep[e.g.][]{nesvadba06,arav08,nesvadba08,moe09,alexander10,dunn10,feruglio10,nesvadba10,alatalo11,harrison12,harrison14,cimatti13,rupke13,veilleux13,cicone14,nardini15}.  
+This has resulted in recent detections of outflows in quasar-host galaxies using tracers of atomic, molecular, and ionised gas \citep[e.g.][]{nesvadba06,arav08,nesvadba08,moe09,alexander10,dunn10,feruglio10,nesvadba10,alatalo11,cano-diaz12,harrison12,harrison14,cimatti13,rupke13,veilleux13,cicone14,nardini15}.  
 
 One particularly successful technique has been to use forbidden quasar emission-lines to probe the dynamical state of the gas in the quasar host-galaxy. 
 Forbidden lines are suppressed by collisional de-excitation in higher-density environments and are only produced in low-density gas.
@@ -445,7 +445,7 @@ In $40$ per cent of the sample [\ion{O}{III}] is fit with a single Gaussian.
 The asymmetry is zero in this model and so these objects are excluded. 
 For the [\ion{O}{III}] emission-lines modelled with two Gaussians, [\ion{O}{III}] is blue-asymmetric in $90$ per cent.
 The median asymmetry is $-0.37$ and the $68$ percentile range is $-0.61$ to $-0.12$.
-Again, the strong blue-asymmetries seen in these objects are highly suggestive that outflows are prevalent in these objects. 
+Blue-asymmetric structure is generally associated with outflows, and so this suggests that outflows are prevalent in the NLRs of these objects. 
 
 We also find weak correlations between these three [\ion{O}{III}] parameters. 
 The EQW is anti-correlated with both the line-width and asymmetry: as the [\ion{O}{III}] emission gets weaker it gets broader and more blue-asymmetric \citep[e.g.][]{shen14}.  
@@ -553,7 +553,10 @@ However, Figure~\ref{fig:civ_blueshift_oiii_eqw} demonstrates that the strong co
 Blueshifted \ion{C}{IV} emission is thought to arise in a high-velocity accretion disc wind.
 The strong anti-correlation between the \ion{C}{IV} blueshift and the [\ion{O}{III}] EQW suggests that these outflows are having a dramatic impact on gas extended over kilo-parsec scales in the NLR.
 Dynamical time-scales for the impact of fast moving outflows even on large NLRs are very short: it would take $10^6$ years for an outflow travelling at $3000$\,\kms\, to reach $3$\,kilo-parsec. 
+Lifetimes of luminous quasars at the these redshifts may be $10^7$ years \citep[e.g.][]{martini01}. 
 Therefore, if the BLR can break out in to the interstellar medium of the host-galaxy, it can sweep away the NLR gas on a relatively short time-scale.
+The winds could collide  with the interstellar medium of the surrounding host and shock and accelerate it to produce a galaxy-wide wind \citep[e.g.][]{king11,faucher12}. 
+
 Large \ion{C}{IV} blueshifts are rarer in lower-luminosity quasars. 
 This could explain our observation that objects with very weak [\ion{O}{III}] ($EQW < 1$\,\AA) are ten times rarer in $z\lesssim$ SDSS quasars than in our sample of luminous quasars.   
 \todo{Ask Paul: is this claim justified? Other explanations?}
@@ -634,9 +637,8 @@ Given the fraction of radio-loud objects in our sample is $11$ per cent, the bin
 In general, the differences between the $30$ radio-loud and $197$ radio-quiet sources in our sample are not large. 
 The radio-loud objects have slightly broader ($w_{80}\simeq1600/1480$\,\kms) and weaker (${\mathrm EQW}\simeq14.5/13.9$\,\AA) [\ion{O}{III}]. 
 However, these modest differences could be explained by the higher luminosity of the radio-loud objects ($L_{\mathrm Bol}\simeq10^{47.5/47.1}$\,\ergs).
-In light of this, the high fraction of radio-loud objects amongst the quasars with broad and peculiar [\ion{O}{III}] emission is interesting. 
-The disturbed gas kinematics could be induced by radio emission. 
-Relativistic jets are known to accelerate gas to velocities of up to a few thousand \kms\, \citep[e.g.][]{nesvadba06,nesvadba08}.
+In light of this, the high fraction of radio-loud objects amongst the quasars with very broad and blueshifted [\ion{O}{III}] emission is interesting. 
+Relativistic jets are known to accelerate gas to velocities of up to a few thousand \kms\, \citep[e.g.][]{nesvadba06,nesvadba08} and so the disturbed gas kinematics could be induced by radio emission. 
 
 \begin{figure}
 \centering 
@@ -647,7 +649,94 @@ Relativistic jets are known to accelerate gas to velocities of up to a few thous
 
 \section{Mass outflow rate and kinetic power}
 
-READ ZAKAMSKA DISCUSSION
+The mass outflow rate and kinetic power of galaxy-wide outflows are important in order to understand the role played by quasars in the evolution of galaxies. 
+In this section, we calculate the mass outflow rate ($\dot{M}$) and kinetic power ($P_{\mathrm K}$) of the ionised outflows in our sample of luminous quasars, using the [\ion{O}{III}] emission as a gas tracer \citep[e.g.][]{harrison12,cano-diaz12,liu13,brusa15,carniani15,bischetti16,kakkad16}.  
+By making reasonable assumptions for unknown quantities (including the geometry, spatial scale and density of the gas in the outflow) we can calculate order of magnitude estimates of the outflow properties.
+Our calculations are based on the model of \citet{cano-diaz12}. 
+
+Following \citet{cano-diaz12}, the mass in the ionised outflow is given by 
+
+\begingroup\makeatletter\def\f@size{11}\check@mathfonts
+\begin{eqnarray}
+M \simeq 5.33 \times 10^7 \left( \frac{C}{10^{\mathrm[O/H] - [O/H]_\odot}} \right) \left( \frac{L([OIII])}{10^{44}\, {\mathrm erg}\,{\mathrm s}^{-1}}\right) \\ \times \left\langle \frac{n_e}{10^3\, {\mathrm cm}^{-3}} \right\rangle^{-1} \, M_\odot
+\end{eqnarray}
+\endgroup
+
+\noindent where $L([OIII])$ is the luminosity of [\ion{O}{III}] emitted in the outflow (in units of $10^{44}$\,\ergs), $\langle n_e \rangle$ is the electron density in the outflowing gas (in units of $10^3$\,cm$^{-3}$), $10^{[{\mathrm O/H}]}$ is metallicity (in units of Solar metallicity), $C$ ($=\langle n_e \rangle ^2 / \langle n_e^2\rangle$) is the condensation factor (assumed to be $\simeq1$). 
+Assuming a conical outflow with uniformly distributed clouds out to a radius $R$ with a constant outflow velocity, the outflow rate of the gas is given by: 
+
+\begingroup\makeatletter\def\f@size{11}\check@mathfonts
+\begin{eqnarray}
+\dot{M} = 164 \left( \frac{R}{1\,{\mathrm kpc}} \right)^{-1} \left( \frac{C}{10^{\mathrm[O/H] - [O/H]_\odot}} \right) \left( \frac{L([OIII])}{10^{44}\, {\mathrm erg}\,{\mathrm s}^{-1}}\right) \nonumber \\ \times \left( \frac{v}{1000\,{\mathrm km}\,{\mathrm s}^{-1}}\right) \times \left\langle \frac{n_e}{10^3\, {\mathrm cm}^{-3}} \right\rangle^{-1} \, M_\odot \, {\mathrm yr^{-1}}
+\end{eqnarray}
+\endgroup
+
+\noindent where $v$ is the outflow velocity (in units of $1000$\,\kms).
+The kinetic power of the outflow ($1/2\dot{M}v^2$) is given by: 
+
+\begingroup\makeatletter\def\f@size{11}\check@mathfonts
+\begin{eqnarray}
+P_{\mathrm K} = 5.17 \times 10^{43} \left( \frac{R}{1\,{\mathrm kpc}} \right)^{-1} \left( \frac{C}{10^{\mathrm[O/H] - [O/H]_\odot}} \right) \left( \frac{L([OIII])}{10^{44}\, {\mathrm erg}\,{\mathrm s}^{-1}}\right) \nonumber \\ \times \left( \frac{v}{1000\,{\mathrm km}\,{\mathrm s}^{-1}}\right)^3 \times \left\langle \frac{n_e}{10^3\, {\mathrm cm}^{-3}} \right\rangle^{-1} \, {\mathrm erg}\,{\mathrm s}^{-1}
+\end{eqnarray}
+\endgroup
+
+\noindent We assume that the maximum outflow velocity ($\simeq v_{5}$) is representative of the average outflow velocity, with the lower velocities due to projection effects \citep{cano-diaz12}.
+For the outflow radius we use $3$\,kilo-parsec \citep[e.g.][]{cano-diaz12,carniani15,brusa16,zakamska16}. 
+
+With these values, we calculate an outflow rate of about $200\,M_\odot\,{\mathrm yr}^{-1}$ and a kinetic power of about $3\times10^{44}$\,\ergs. 
+This is consistent with previous studies at similar luminosities and redshifts (e.g. )
+The kinetic power is about $10^{-3}$ times the bolometric luminosity ($3.8\times10^{46}$\,\ergs).  
+However, if the ionized outflow is accompanied by a neutral/molecular outflow an order of magnitude more massive then the kinetic power is also likely to be an order of magnitude higher, i.e. about $1$ per cent of the bolometric luminosity \citep{cano-diaz12}. 
+Recent AGN feedback models (e.g. King 2010; Zubovas \& King 2012; Lapi et al. 2014) predict a coupling efficiency between AGN-driven outflows and AGN power of $\sim5$ per cent which is needed to explain the $M_{\mathrm BH}-\sigma$ relation observed in local galaxies.
+
+
+
+
+ 
+
+
+I'm assuming 100 electron density so 
+
+
+Going to only do this for the objects fit with two Gaussians
+Computing L[O III] from the integrated flux in the broad component only. 
+
+Need to make sure my luminosities make sense for this! 
+
+L of broader component
+Make sure its blueshifted! 
+
+Seems stupid decomposing - what was the other thing someone used w80/1.2 or something? 
+
+
+
+
+
+
+
+
+
+ 
+
+ 
+
+A comprehensive description of these as-
+sumptions and their impact on the determination of the outflow parameters is presented in Kakkad et al. (2016), which provides
+further details.
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
 
 \section{Mean field independent component analysis}
 
@@ -797,6 +886,9 @@ We can take the median weights as a function of blueshift and use these to gener
 \item Accurate systemic redshift estimates are essential in a number of applications, and researchers have devoted a large amount of telescope time to obtaining near-infrared spectra to access [\ion{O}{III}] for this purpose. While we find a reasonable agreement between redshift estimates based on [\ion{O}{III}] and the broad Balmer lines, we also note that in XX per cent of our sample [\ion{O}{III}] is very weak or strongly blueshifted, and can not be used to measure the systemic redshift. 
 
 \item At fixed luminosity, I find that as the blueshift of the \ion{C}{IV} emission increases, the [\ion{O}{III}] emission becomes weaker and more blueshifted, and disappears entirely in quasars with the most extreme \ion{C}{IV} blueshifts.  
+
+\item Evidence for outflows (blueshifts and broad velocity widths) ubiquitous in this sample. likely
+ascribed to the presence of outflowing wind.
 
 \end{itemize}
 
