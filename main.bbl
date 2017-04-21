@@ -2285,6 +2285,119 @@
   \field{year}{2015}
 \endentry
 
+\entry{brusa16}{article}{}
+  \name{author}{18}{}{%
+    {{}%
+     {{Brusa}}{B.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Perna}}{P.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Cresci}}{C.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Schramm}}{S.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Delvecchio}}{D.}%
+     {I.}{I.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Lanzuisi}}{L.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Mainieri}}{M.}%
+     {V.}{V.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Mignoli}}{M.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Zamorani}}{Z.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Berta}}{B.}%
+     {S.}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Bongiorno}}{B.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Comastri}}{C.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Fiore}}{F.}%
+     {F.}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Kakkad}}{K.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Marconi}}{M.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Rosario}}{R.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Contini}}{C.}%
+     {T.}{T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Lamareille}}{L.}%
+     {F.}{F.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{galaxies: active, galaxies: ISM, quasars: emission lines, galaxies:
+  nuclei, galaxies: starburst}
+  \strng{namehash}{BM+2}
+  \strng{fullhash}{BMPMCGSMDILGMVMMZGBSBACAFFKDMARDCTLF1}
+  \field{labelyear}{2016}
+  \field{sortinit}{B}
+  \field{eid}{A58}
+  \verb{eprint}
+  \verb 1602.03181
+  \endverb
+  \field{pages}{A58}
+  \field{title}{{A fast ionised wind in a star-forming quasar system at z \~{}
+  1.5 resolved through adaptive optics assisted near-infrared data}}
+  \field{volume}{588}
+  \field{journaltitle}{\aap}
+  \field{eprinttype}{arXiv}
+  \field{month}{04}
+  \field{year}{2016}
+\endentry
+
 \entry{cano-diaz12}{article}{}
   \name{author}{6}{}{%
     {{}%
@@ -6727,78 +6840,6 @@
   \field{eprinttype}{arXiv}
   \field{month}{06}
   \field{year}{2009}
-\endentry
-
-\entry{haas03}{article}{}
-  \name{author}{11}{}{%
-    {{}%
-     {{Haas}}{H.}%
-     {M.}{M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Klaas}}{K.}%
-     {U.}{U.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{M{\"u}ller}}{M.}%
-     {S.~A.~H.}{S.~A.~H.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Bertoldi}}{B.}%
-     {F.}{F.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Camenzind}}{C.}%
-     {M.}{M.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Chini}}{C.}%
-     {R.}{R.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Krause}}{K.}%
-     {O.}{O.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Lemke}}{L.}%
-     {D.}{D.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Meisenheimer}}{M.}%
-     {K.}{K.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Richards}}{R.}%
-     {P.~J.}{P.~J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Wilkes}}{W.}%
-     {B.~J.}{B.~J.}%
-     {}{}%
-     {}{}}%
-  }
-  \keyw{galaxies: fundamental parameters, galaxies: photometry, galaxies:
-  quasars: general, infrared: galaxies}
-  \strng{namehash}{HM+1}
-  \strng{fullhash}{HMKUMSAHBFCMCRKOLDMKRPJWBJ1}
-  \field{labelyear}{2003}
-  \field{sortinit}{H}
-  \field{pages}{87\bibrangedash 111}
-  \field{title}{{The ISO view of Palomar-Green quasars}}
-  \field{volume}{402}
-  \field{journaltitle}{\aap}
-  \field{month}{04}
-  \field{year}{2003}
 \endentry
 
 \entry{hainline13}{article}{}
@@ -21112,6 +21153,38 @@
   \field{eprinttype}{arXiv}
   \field{month}{05}
   \field{year}{2014}
+\endentry
+
+\entry{zubovas12}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {{Zubovas}}{Z.}%
+     {K.}{K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{King}}{K.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{accretion, accretion disks, black hole physics, galaxies: evolution,
+  quasars: general}
+  \strng{namehash}{ZKKA1}
+  \strng{fullhash}{ZKKA1}
+  \field{labelyear}{2012}
+  \field{sortinit}{Z}
+  \field{eid}{L34}
+  \verb{eprint}
+  \verb 1201.0866
+  \endverb
+  \field{pages}{L34}
+  \field{title}{{Clearing Out a Galaxy}}
+  \field{volume}{745}
+  \field{journaltitle}{\apjl}
+  \field{eprinttype}{arXiv}
+  \field{month}{02}
+  \field{year}{2012}
 \endentry
 
 \entry{marel93}{article}{}

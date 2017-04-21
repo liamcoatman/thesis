@@ -122,8 +122,13 @@ def redshift_comparison():
     df = df[df.OIII_EXTREM_FLAG == 0]
 
     df = df[df.OIII_FIT_HB_Z_FLAG > 0 ] 
+
+    print len(df)
+
     df = df[df.OIII_FIT_VEL_HB_PEAK_ERR < 300.0] # Really bad 
     df = df[df.OIII_FIT_VEL_FULL_OIII_PEAK_ERR < 200.0] # Really bad 
+
+    print len(df)
 
     x = df.OIII_FIT_VEL_FULL_OIII_PEAK - df.OIII_FIT_VEL_HB_PEAK 
     mean[0], median[0], sigma[0] = np.mean(x), np.median(x), np.std(x)
@@ -165,6 +170,9 @@ def redshift_comparison():
     df = df[df.OIII_EXTREM_FLAG == 0]
 
     df = df[df.OIII_FIT_HA_Z_FLAG > 0] 
+
+    print len(df)
+
     df = df[df.OIII_FIT_VEL_HA_PEAK_ERR < 200.0] # Really bad 
     df = df[df.OIII_FIT_VEL_FULL_OIII_PEAK_ERR < 200.0] # Really bad 
 
@@ -208,6 +216,8 @@ def redshift_comparison():
     df = df[df.OIII_FIT_HA_Z_FLAG > 0 ]
     df = df[df.OIII_FIT_HB_Z_FLAG > 0 ]
     
+    print len(df)
+
     df = df[df.OIII_FIT_VEL_HA_PEAK_ERR < 200.0]
     df = df[df.OIII_FIT_VEL_HB_PEAK_ERR < 300.0]
 
@@ -344,21 +354,32 @@ def bal_hists():
 
     return None 
 
+
 def civ_blueshift_oiii_strength():
 
     set_plot_properties() # change style 
 
-    fig, ax = plt.subplots(figsize=figsize(0.9, vscale=0.7))
+    fig, ax = plt.subplots(figsize=figsize(1, vscale=0.9))
     
     df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0) 
     df = df[(df.mfica_flag == 1)]
-    df = df[df.WARN_CIV_BEST == 0]
-    
+    df = df[(df.WARN_CIV_BEST == 0) | (df.WARN_CIV_BEST == 1)]
+    df = df[df.BAL_FLAG != 1]
+    df = df[np.log10(df.EQW_CIV_BEST) > 1.2] # need to say this  
+    df.drop('QSO615', inplace=True) # no redshift and civ low S/N anyway 
     df.dropna(subset=['Median_CIV_BEST', 'OIII_5007_MFICA_W80'], inplace=True)
     
     w0 = np.mean([1548.202,1550.774])*u.AA  
     median_wav = doppler2wave(df.Median_CIV_BEST.values*(u.km/u.s), w0) * (1.0 + df.z_IR.values)
     blueshift_civ = const.c.to('km/s') * (w0 - median_wav / (1.0 + df.z_ICA_FIT)) / w0
+
+
+
+    ax.set_xlim(-1000, 5000)
+    ax.set_ylim(1,2.2)
+
+    ax.set_ylabel(r'log(C\,{\sc iv} EW) [\AA]')
+    ax.set_xlabel(r'C\,{\sc iv} Blueshift [km~$\rm{s}^{-1}$]')
 
     col_list = ['mfica_w1',
                 'mfica_w2',
@@ -374,32 +395,46 @@ def civ_blueshift_oiii_strength():
     w_norm = df[col_list[3:5]].sum(axis=1) / df[col_list[:6]].sum(axis=1) # sum positive components 
     w_norm = w_norm[~np.isnan(w_norm) & ~np.isinf(w_norm)]
     
-    from LiamUtils import colormaps as cmaps
-    plt.register_cmap(name='viridis', cmap=cmaps.viridis)
-    plt.set_cmap(cmaps.viridis)
-
 
     im = ax.scatter(blueshift_civ,
-                    w_norm,
+                    np.log10(df.EQW_CIV_BEST),
+                    c = w_norm,
                     edgecolor='None',
-                    facecolor=cs[1],
                     zorder=2,
-                    s=30)    
+                    cmap=palettable.colorbrewer.diverging.Spectral_10.mpl_colormap,
+                    s=25,
+                    vmax=0.08)    
 
-    # ax.scatter(blueshift_civ,
-    #           w_norm,
-    #           facecolor=cs[1], 
-    #           edgecolor='None',
-    #           zorder=2,
-    #           s=30)
 
-    ax.set_xlim(-1500, 6000)
-    ax.set_ylim(0.03, 0.4)
+    cb = fig.colorbar(im, ax=ax)
+    cb.set_label(r"$\displaystyle {(w_4 + w_5)} / {\sum_{i=1}^6 w_i}$")
+    cb.set_ticks([0.03, 0.04, 0.05, 0.06, 0.07])
 
-    ax.set_xlabel(r'C\,{\sc iv} Blueshift [km~$\rm{s}^{-1}$]')
-    ax.set_ylabel(r"$\displaystyle {(w_4 + w_5)} / {\sum_{i=1}^6 w_i}$")
+    t_ica = Table.read('/data/vault/phewett/LiamC/liam_civpar_zica_160115.dat', format='ascii') # new ICA 
+        
+    m1, m2 = t_ica['col2'], np.log10( t_ica['col3'])
 
-    ax.set_yscale('log')
+    badinds = np.isnan(m1) | np.isnan(m2) | np.isinf(m1) | np.isinf(m2)
+
+    m1 = m1[~badinds]
+    m2 = m2[~badinds]
+
+    xmin = -1000.0
+    xmax = 3500.0
+    ymin = 1.0
+    ymax = 2.5
+
+    X, Y = np.mgrid[xmin:xmax:100j, ymin:ymax:100j]
+    positions = np.vstack([X.ravel(), Y.ravel()])
+    values = np.vstack([m1, m2])
+
+    kernel = stats.gaussian_kde(values)
+      
+    Z = np.reshape(kernel(positions).T, X.shape)
+
+    CS = ax.contour(X, Y, Z, colors=[cs[-1]], zorder=0)
+
+   
 
     fig.tight_layout()
 
@@ -408,6 +443,61 @@ def civ_blueshift_oiii_strength():
     plt.show() 
 
     return None
+
+
+
+    # So I guess since I have shown the redshifts are (relatively) unbiased 
+    # we can use whatever. 
+    
+    print len(df)
+
+    df['z'] = np.nan
+    
+    useoiii = (df.OIII_EQW_FLAG == 0) & (df.OIII_EXTREM_FLAG == 0) & (df.OIII_FIT_VEL_FULL_OIII_PEAK_ERR < 400.0)
+    df.loc[useoiii, 'z'] = df.loc[useoiii, 'OIII_FIT_Z_FULL_OIII_PEAK'] 
+    
+    useha = df.z.isnull() & (df.OIII_FIT_HA_Z_FLAG > 0) & (df.OIII_FIT_VEL_HA_PEAK_ERR < 400.0)
+    df.loc[useha, 'z'] = df.loc[useha, 'OIII_FIT_HA_Z'] 
+        
+    usehb = df.z.isnull() & (df.OIII_FIT_HB_Z_FLAG >= 0) & (df.OIII_FIT_VEL_HB_PEAK_ERR < 750.0)
+    df.loc[usehb, 'z'] = df.loc[usehb, 'OIII_FIT_HB_Z'] 
+
+    df.ix['QSO055', 'z'] = df.ix['QSO055', 'z_ICA']
+
+
+    fig, ax = plt.subplots(1, 1, figsize=figsize(1, vscale=0.9))
+ 
+    # ---------------------------------------------------------------------------------------------------
+
+    t_ica = Table.read('/data/vault/phewett/LiamC/liam_civpar_zica_160115.dat', format='ascii') # new ICA 
+        
+    m1, m2 = t_ica['col2'], np.log10( t_ica['col3'])
+
+    badinds = np.isnan(m1) | np.isnan(m2) | np.isinf(m1) | np.isinf(m2)
+
+    m1 = m1[~badinds]
+    m2 = m2[~badinds]
+
+    xmin = -1000.0
+    xmax = 3500.0
+    ymin = 1.0
+    ymax = 2.5
+
+    X, Y = np.mgrid[xmin:xmax:100j, ymin:ymax:100j]
+    positions = np.vstack([X.ravel(), Y.ravel()])
+    values = np.vstack([m1, m2])
+
+    kernel = stats.gaussian_kde(values)
+      
+    Z = np.reshape(kernel(positions).T, X.shape)
+
+    CS = ax.contour(X, Y, Z, colors=[cs[-1]])
+    # CS = axs[1].contour(X, Y, Z, colors=[cs[-1]])
+
+    #----------------------------------------------------
+
+
+
 
 def civ_blueshift_oiii_eqw():
 
@@ -2393,6 +2483,184 @@ def example_spectrum_grid():
     
     return None 
 
+def example_oiii():
+
+    fig, ax = plt.subplots(figsize=figsize(0.8, vscale=0.9))
+
+    df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0)  
+    
+    name = 'QSO556'
+
+    voffset=df.loc[name, 'OIII_FIT_VEL_FULL_OIII_PEAK'] 
+
+    from lmfit import Model
+
+    cs = palettable.colorbrewer.qualitative.Set1_9.mpl_colors
+    cs_light = palettable.colorbrewer.qualitative.Pastel1_9.mpl_colors
+
+    instr = df.ix[name, 'INSTR']
+
+    import sys
+    sys.path.insert(1, '/home/lc585/Dropbox/IoA/nirspec/python_code')
+    
+    if instr == 'FIRE': from fit_properties_oiii_fire import get_line_fit_props
+    if instr == 'GNIRS': from fit_properties_oiii_gnirs import get_line_fit_props
+    if instr == 'ISAAC': from fit_properties_oiii_isaac import get_line_fit_props
+    if instr == 'LIRIS': from fit_properties_oiii_liris import get_line_fit_props
+    if instr == 'NIRI': from fit_properties_oiii_niri import get_line_fit_props
+    if instr == 'NIRSPEC': from fit_properties_oiii_nirspec import get_line_fit_props
+    if instr == 'SOFI_JH': from fit_properties_oiii_sofi_jh import get_line_fit_props
+    if instr == 'SOFI_LC': from fit_properties_oiii_sofi_lc import get_line_fit_props
+    if instr == 'TRIPLE': from fit_properties_oiii_triple import get_line_fit_props
+    if instr == 'TRIPLE_S15': from fit_properties_oiii_triple_shen15 import get_line_fit_props
+    if instr == 'XSHOOT': from fit_properties_oiii_xshooter import get_line_fit_props
+    if instr == 'SINF': from fit_properties_oiii_sinfoni import get_line_fit_props
+    if instr == 'SINF_KK': from fit_properties_oiii_sinfoni_kurk import get_line_fit_props
+    
+    q = get_line_fit_props().all_quasars()
+    p = q[df.ix[name, 'NUM']]
+
+    w0 = 4862.721*u.AA
+
+    voffset = voffset + wave2doppler(5008.239*u.AA, w0=w0).value 
+ 
+    xs, step = np.linspace(-20000,
+                            20000,
+                            1000,
+                           retstep=True)
+
+    save_dir = os.path.join('/data/lc585/nearIR_spectra/linefits/', name, 'OIII')
+
+    parfile = open(os.path.join(save_dir,'my_params.txt'), 'r')
+    params = Parameters()
+    params.load(parfile)
+    parfile.close()
+
+    wav_file = os.path.join(save_dir, 'wav.txt')
+    parfile = open(wav_file, 'rb')
+    wav = pickle.load(parfile)
+    parfile.close()
+
+    flx_file = os.path.join(save_dir, 'flx.txt')
+    parfile = open(flx_file, 'rb')
+    flx = pickle.load(parfile)
+    parfile.close()
+
+    err_file = os.path.join(save_dir, 'err.txt')
+    parfile = open(err_file, 'rb')
+    err = pickle.load(parfile)
+    parfile.close()
+
+    sd_file = os.path.join(save_dir, 'sd.txt')
+    parfile = open(sd_file, 'rb')
+    sd = pickle.load(parfile)
+    parfile.close()
+
+    vdat = wave2doppler(wav, w0)
+
+    mod = GaussianModel(prefix='oiii_5007_n_')
+    mod += GaussianModel(prefix='oiii_5007_b_')
+
+    pars = mod.make_params()
+    pars['oiii_5007_n_center'].value = params['oiii_5007_n_center'].value
+    pars['oiii_5007_n_sigma'].value = params['oiii_5007_n_sigma'].value 
+    pars['oiii_5007_n_amplitude'].value = params['oiii_5007_n_amplitude'].value 
+    pars['oiii_5007_b_center'].value = params['oiii_5007_b_center'].value 
+    pars['oiii_5007_b_sigma'].value = params['oiii_5007_b_sigma'].value 
+    pars['oiii_5007_b_amplitude'].value = params['oiii_5007_b_amplitude'].value 
+
+    
+    g1 = GaussianModel()
+    p1 = g1.make_params()
+    
+    p1['center'].value = params['oiii_5007_n_center'].value
+    p1['sigma'].value = params['oiii_5007_n_sigma'].value
+    p1['amplitude'].value = params['oiii_5007_n_amplitude'].value
+    
+    ax.plot(np.sort(vdat.value) - voffset, 
+            g1.eval(p1, x=np.sort(vdat.value)),
+            c=palettable.colorbrewer.sequential.Oranges_9.mpl_colors[3],
+            linestyle='-')
+    
+    g1 = GaussianModel()
+    p1 = g1.make_params()
+    
+    p1['center'].value = params['oiii_5007_b_center'].value
+    p1['sigma'].value = params['oiii_5007_b_sigma'].value
+    p1['amplitude'].value = params['oiii_5007_b_amplitude'].value
+    
+    ax.plot(np.sort(vdat.value) - voffset, 
+            g1.eval(p1, x=np.sort(vdat.value)),
+            c=palettable.colorbrewer.sequential.Oranges_9.mpl_colors[3],
+            linestyle='-')       
+    
+    
+    
+    # vdat, flx, err = rebin(vdat.value, flx, err, nrebin)
+    vdat = vdat.value
+    
+    ax.plot(xs - voffset,
+            mod.eval(params=params, x=xs/sd) ,
+            color='black',
+            lw=1,
+            zorder=6)
+
+    line_wave = [df.ix[name, 'OIII_5007_V5'] - df.ix[name, 'OIII_FIT_VEL_FULL_OIII_PEAK'],
+                 df.ix[name, 'OIII_5007_V10'] - df.ix[name, 'OIII_FIT_VEL_FULL_OIII_PEAK'],
+                 df.ix[name, 'OIII_5007_V25'] - df.ix[name, 'OIII_FIT_VEL_FULL_OIII_PEAK'],
+                 df.ix[name, 'OIII_5007_V50'] - df.ix[name, 'OIII_FIT_VEL_FULL_OIII_PEAK'],
+                 df.ix[name, 'OIII_5007_V75'] - df.ix[name, 'OIII_FIT_VEL_FULL_OIII_PEAK'],
+                 df.ix[name, 'OIII_5007_V90'] - df.ix[name, 'OIII_FIT_VEL_FULL_OIII_PEAK'],
+                 df.ix[name, 'OIII_5007_V95'] - df.ix[name, 'OIII_FIT_VEL_FULL_OIII_PEAK']]
+
+    ax.axvline(line_wave[0], color='grey', linestyle='--')
+    ax.axvline(line_wave[1], color='grey', linestyle='--')
+    ax.axvline(line_wave[2], color='grey', linestyle='--')
+    ax.axvline(line_wave[3], color='grey', linestyle='--')
+    ax.axvline(line_wave[4], color='grey', linestyle='--')
+    ax.axvline(line_wave[5], color='grey', linestyle='--')
+    ax.axvline(line_wave[6], color='grey', linestyle='--')
+
+    line_label = [r'$v_5$', r'$v_{10}$', r'$v_{25}$', r'$v_{50}$', r'$v_{75}$', r'$v_{90}$', r'$v_{95}$']
+
+    for i in range(7):
+
+        ax.text(line_wave[i], 3.55, line_label[i], ha='center', va='bottom', rotation='vertical')
+
+    ax.xaxis.set_ticks_position('bottom')
+
+    ax.set_xlim(-3000, 3000)
+
+    ax.set_xlabel(r'$\Delta v$ [km~$\rm{s}^{-1}$]')
+    ax.set_ylabel(r'$F_{\lambda}$ [Arbitrary units]')
+
+    fig.tight_layout()
+
+    plt.subplots_adjust(top=0.9)
+
+    fig.savefig('/home/lc585/thesis/figures/chapter04/example_oiii.pdf')
+
+
+
+    
+
+    plt.show() 
+
+
+    
+    return None 
+
+
+
+
+
+    
+
+    
+
+
+  
+
 def example_spectrum_grid_extreme_fe():
 
     cs = palettable.colorbrewer.qualitative.Set1_9.mpl_colors
@@ -3293,7 +3561,8 @@ def fivemicron_w90():
             df.OIII_5007_W90,
             marker='o',
             linestyle='',
-            markerfacecolor=cs[1])
+            markerfacecolor=cs[1],
+            label='This work')
 
     # Zakamska data 
 
@@ -3304,7 +3573,10 @@ def fivemicron_w90():
             10**np.array(w90),
             marker='o',
             linestyle='',
-            markerfacecolor=cs[0])
+            markerfacecolor=cs[0],
+            label='Zakamska et al. (2016)')
+
+    ax.legend(loc='lower right', numpoints=1)
 
     xs = np.arange(45.5, 47.6, 0.1)
 
