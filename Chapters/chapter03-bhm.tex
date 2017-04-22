@@ -96,14 +96,14 @@ We have sub-divided our sample into two overlapping groups: quasars with reliabl
 \label{sec:spec_measures}
 
 Conventionally, single-epoch virial estimates of the BH mass are a function of the line-of-sight velocity width of a broad emission-line and the quasar luminosity. 
-The velocity width is a proxy for the virial velocity in the BLR and, as revealed in reverberation-mapping studies, the luminosity is a proxy for the typical size of the BLR \citep[the $R_{\mathrm BLR}-L$ relation; e.g.][]{kaspi00,kaspi07}. 
+The velocity width is a proxy for the virial velocity in the BLR and, as revealed in reverberation-mapping studies, the luminosity is a proxy for the typical size of the BLR \citep[the $R_{\text{BLR}}-L$ relation; e.g.][]{kaspi00,kaspi07}. 
 Most reverberation mapping campaigns have employed \hb time-lags and velocity widths, but the line-widths of \ha and \ion{Mg}{II} have been shown to yield consistent BH masses \citep[e.g.][]{mclure02,greene05b,onken08,shen08,wang09,rafiee11,mejia-restrepo16}. 
 In Section~\ref{sec:hahbcomparison}, we verify that the \ha and \hb line-widths yield consistent BH masses for the $99$ quasars in our sample with measurements of both.     
 
 In our work, a robust measure of the \ion{C}{IV} emission-line `blueshift' provides the basis for the corrected \ion{C}{IV} velocity-width measurements, and hence BH masses.
 The effectiveness of the scheme is validated via a direct comparison of the \ion{C}{IV} velocity-widths to the Balmer emission velocity-widths in the same quasars. 
 Our process is as follows. 
-First, an accurate measure of the quasar's systemic redshift is required, for which we adopt the centre of the Balmer emission, where the centre, $\lambda_{\mathrm half}$, is the wavelength that bisects the cumulative total flux. 
+First, an accurate measure of the quasar's systemic redshift is required, for which we adopt the centre of the Balmer emission, where the centre, $\lambda_{\text{half}}$, is the wavelength that bisects the cumulative total flux. 
 Balmer emission centroids are available for all quasars in the catalogue but we verify that the measure is relatively unbiased through a comparison of the centroids to the wavelengths of the peak of the narrow [\ion{O}{III}]\ll$4960$,$5008$ doublet for the subset of spectra where both are available (Section~\ref{sec:zsys}). 
 Second, the blueshift of the \ion{C}{IV} emission-line is determined. 
 Again, we adopt the line centroid to provide a robust measure of the \ion{C}{IV} emission blueshift.
@@ -112,7 +112,7 @@ The blueshift (in \kms) is defined as
 \begingroup\makeatletter\def\f@size{11}\check@mathfonts
 \begin{eqnarray}
 \label{eq:civblueshift}
-c \times \frac{1549.48{\mathrm \AA}-\lambda_{half}}{1549.48{\mathrm \AA}}
+c \times \frac{1549.48\,{\mathrm \AA}-\lambda_{\text{half}}}{1549.48\,{\mathrm \AA}}
 \end{eqnarray}
 \endgroup
 
@@ -122,7 +122,7 @@ Positive blueshift values indicate an excess of emitting material moving towards
 Emission-line velocity widths are derived from the full-width-at-half-maximum (FWHM) of the lines but we also compute the line dispersion (calculated from the flux-weighted second moment of the velocity distribution) as some authors have claimed this provides a better estimate of the virial velocity \citep{denney13}. 
 
 To minimise the impact of the finite S/N of the quasar spectra and the presence of absorption features superposed on the broad emission-lines we first fit a parametric model to the continuum and the emission-lines. 
-The particular form of the model parametrisations is not important and the fits are used only to provide robust line parameters, such as the centroid $\lambda_{\mathrm half}$, and FWHM, which are measured non-parametrically from the best-fitting model. 
+The particular form of the model parametrisations is not important and the fits are used only to provide robust line parameters, such as the centroid $\lambda_{\text{half}}$, and FWHM, which are measured non-parametrically from the best-fitting model. 
 The models used and the fitting procedure are described below. 
 The issues involved in deriving parameters for broad emission-lines from spectra of modest S/N -- for example, subtraction of narrow line emission, subtraction of \ion{Fe}{II} emission -- have been covered comprehensively by other authors \citep[e.g.][]{shen11,shen12,denney13,shen16a} and, as far as possible, we follow standard procedures described in the literature. 
 
@@ -368,7 +368,7 @@ A further practical advantage is that, given the typical S/N of current survey-q
 \subsection{\hans/\hb FWHM comparison}
 \label{sec:hahbcomparison}
 
-BH mass calibrations which use the width of the broad \hb emission-line as a proxy for the virial velocity are widely regarded as the most reliable, since most reverberation mapping employs the \hb line and the $R_{\mathrm BLR}-L$ relation has been established using \hbns.
+BH mass calibrations which use the width of the broad \hb emission-line as a proxy for the virial velocity are widely regarded as the most reliable, since most reverberation mapping employs the \hb line and the $R_{\text{BLR}}-L$ relation has been established using \hbns.
 When \hb is not available, \ha has been shown to be a reliable substitute \citep[e.g.][]{greene05b,shen11,shen12}. 
 
 \hb is emitted preferentially over \ha when the density and/or ionisation parameter\footnote{Ionisation parameter: the ratio of the ionising photon number density to the particle density \citep[e.g.][]{peterson97}.} is higher \citep[e.g.][]{osterbrock89}. 
@@ -386,7 +386,7 @@ The line widths in individual objects are compared in Figure~\ref{fig:hahbcomp} 
 
 \begingroup\makeatletter\def\f@size{11}\check@mathfonts
 \begin{eqnarray}
-  \mathrm{FWHM}(\mathrm{H}\beta) = \left( 1.07 \pm 0.07 \right) \times 10^3 \left( \frac{ \mathrm{FWHM}(\mathrm{H}\alpha) }{10^3 ~\mathrm{km}~\mathrm{s}^{-1} } \right)^{(1.03 \pm 0.03)}
+  \text{FWHM}(\text{H}\beta) = \left( 1.07 \pm 0.07 \right) \times 10^3 \left( \frac{ \text{FWHM}(\text{H}\alpha) }{10^3 ~\text{km}~\text{s}^{-1} } \right)^{(1.03 \pm 0.03)}
 \end{eqnarray}
 \endgroup
 
@@ -409,7 +409,7 @@ The log-likelihood is then given by
 
 \begingroup\makeatletter\def\f@size{11}\check@mathfonts
 \begin{eqnarray}
-  {\mathrm ln} {\cal L} = - \sum_{i=1}^N \frac{1}{2} {\mathrm ln}\left[2\pi\left(\Sigma_i^2 + V\right)\right] - \sum_{i=1}^N \frac{\Delta_i^2}{2[\Sigma_i^2 + V]} 
+  \text{ln} {\cal L} = - \sum_{i=1}^N \frac{1}{2} \text{ln}\left[2\pi\left(\Sigma_i^2 + V\right)\right] - \sum_{i=1}^N \frac{\Delta_i^2}{2[\Sigma_i^2 + V]} 
 \end{eqnarray}
 \endgroup
 
@@ -433,7 +433,7 @@ The solid line in Figure~\ref{fig:hahbcomp} is the maximum likelihood solution
 \begingroup\makeatletter\def\f@size{11}\check@mathfonts
 \begin{eqnarray}
   \label{eq:ha2hb}
-  \mathrm{FWHM}(\mathrm{H}\beta) = \left( 1.23 \pm 0.10 \right) \times 10^3 \left( \frac{\mathrm{FWHM}(\mathrm{H}\alpha)}{10^3 {\mathrm km\,s^{-1}}} \right)^{0.97 \pm 0.05}
+  \text{FWHM}(\text{H}\beta) = \left( 1.23 \pm 0.10 \right) \times 10^3 \left( \frac{\text{FWHM}(\text{H}\alpha)}{10^3 \text{km}\,\text{s}^{-1}} \right)^{0.97 \pm 0.05}
 \end{eqnarray}
 \endgroup
 
@@ -468,7 +468,7 @@ For $62$ and $86$ quasars in the \ha and \hb samples respectively narrow [\ion{O
 In the model fit to the \hb region the velocity centroids of the broad \hbns-line and the core component of the [\ion{O}{III}] emission were deliberately determined separately.
 We find the intrinsic difference in the velocity centroids of the \ha and \hb emission and the narrow [\ion{O}{III}] emission to have a dispersion of $300$ and $400$\,\kms, which is very similar to the value found by \citet{shen16b}. 
 However, the median velocity centroid of the narrow component of the [\ion{O}{III}] emission is blueshifted by $250$\,\kms\, relative to the centroid of the broad Balmer line. 
-Applying our parametric model fitting routine to the composite spectrum from \citet{hewett10}, which is constructed using relatively low redshift SDSS quasars with $L_{\mathrm Bol}\sim10^{44}$\,erg\,s$^{-1}$, the centroids of the broad component of \hb and the narrow component of [\ion{O}{III}] are found to be at essentially identical velocities, suggesting that the blueshifting of narrow [\ion{O}{III}] could be luminosity dependent.
+Applying our parametric model fitting routine to the composite spectrum from \citet{hewett10}, which is constructed using relatively low redshift SDSS quasars with $L_{\text{Bol}}\sim10^{44}$\,erg\,s$^{-1}$, the centroids of the broad component of \hb and the narrow component of [\ion{O}{III}] are found to be at essentially identical velocities, suggesting that the blueshifting of narrow [\ion{O}{III}] could be luminosity dependent.
 
 As described in Section~\ref{sec:spec_measures}, the broad components of \ha and \hb were modelled with up to two Gaussians, with identical velocity centroids. 
 We also tested models with no constraints on the centroids of the two broad Gaussians, and measured the systemic redshift from the peak of the composite profile. 
@@ -523,7 +523,7 @@ The maximum likelihood line is given by
 \begingroup\makeatletter\def\f@size{10}\check@mathfonts
 \begin{eqnarray}
     \label{eq:hafwhm}
-    \mathrm{FWHM}(\mathrm{C}\,\textsc{iv}, \mathrm{Corr.}) = \frac{\mathrm{FWHM}(\mathrm{C}\,\textsc{iv}, \mathrm{Meas.})}{ (0.41\pm0.02) \left(\frac{\mathrm{C}\,\textsc{iv}\, Blueshift}{10^3 {\mathrm \,km\,s^{-1}}} \right) + (0.62\pm0.04)}
+    \text{FWHM}(\text{C}\,\textsc{iv}, \text{Corr.}) = \frac{\text{FWHM}(\text{C}\,\textsc{iv}, \text{Meas.})}{ (0.41\pm0.02) \left(\frac{\text{C}\,\textsc{iv}\, \text{Blueshift}}{10^3 \,\text{km}\,\text{s}^{-1}} \right) + (0.62\pm0.04)}
 \end{eqnarray}
 \endgroup
 
@@ -532,7 +532,7 @@ The maximum likelihood line is given by
 \begingroup\makeatletter\def\f@size{10}\check@mathfonts
 \begin{eqnarray}
     \label{eq:hbfwhm}
-    \mathrm{FWHM}(\mathrm{C}\,\textsc{iv}, \mathrm{Corr.}) = \frac{\mathrm{FWHM}(\mathrm{C}\,\textsc{iv}, \mathrm{Meas.})}{ (0.36\pm0.03) \left(\frac{\mathrm{C}\,\textsc{iv}\, Blueshift}{10^3 {\mathrm \,km\,s^{-1}}} \right) + (0.61\pm0.04)}
+    \text{FWHM}(\text{C}\,\textsc{iv}, \text{Corr.}) = \frac{\text{FWHM}(\text{C}\,\textsc{iv}, \text{Meas.})}{ (0.36\pm0.03) \left(\frac{\text{C}\,\textsc{iv}\, \text{Blueshift}}{10^3 \,\text{km}\,\text{s}^{-1}} \right) + (0.61\pm0.04)}
 \end{eqnarray}
 \endgroup
 
@@ -571,14 +571,14 @@ There is a strong systematic error in the \ion{C}{IV}-based masses as a function
 The \ion{C}{IV} emission-based BH masses are in error by a factor of more than five at $3000$\,\kms\, in \ion{C}{IV} emission blueshift and the overestimate of the BH masses reaches a factor of $10$ for quasars exhibiting the most extreme blueshifts, $\gtrsim5000$\,\kms. 
 
 The virial product is the product of the virial velocity squared and the BLR radius \citep[e.g.][]{shen13}, and is proportional to the BH mass. 
-We use the corrected \ion{C}{IV} FWHM given by Equation~\ref{eq:hafwhm} as an indicator of the virial velocity, and adopt the same $R_{\mathrm BLR}-L$ relation for the $1350$\,\AA\, continuum luminosity as \citet{vestergaard06} (i.e. $R_{\mathrm BLR} \propto L^{0.53}$). 
+We use the corrected \ion{C}{IV} FWHM given by Equation~\ref{eq:hafwhm} as an indicator of the virial velocity, and adopt the same $R_{\text{BLR}}-L$ relation for the $1350$\,\AA\, continuum luminosity as \citet{vestergaard06} (i.e. $R_{\text{BLR}} \propto L^{0.53}$). 
 To find the constant scaling factor necessary to transform the virial product into a BH mass we compute the inverse-variance weighted mean difference between the virial products and the \hans-based masses. 
 The virial BH mass can then be expressed in terms of the corrected \ion{C}{IV} FWHM and monochromatic continuum luminosity at $1350$\,\AA:
 
 \begingroup\makeatletter\def\f@size{10}\check@mathfonts
 \begin{eqnarray}
   \label{eq:masscorrection}
-  \mathrm{MBH}(\mathrm{C}\,\textsc{iv}, \mathrm{Corr.}) = 10^{6.71}\left( \frac{ \mathrm{FWHM}(\mathrm{C}\,\textsc{iv}, \mathrm{Corr.})}{10^3 \mathrm{\,km\,s^{-1}}} \right)^2 \left( \frac{\lambda \mathrm{L}_{\lambda} (1350 \text{\AA}) }{10^{44} \mathrm{\,erg\,s^{-1}}}  \right)^{0.53}.
+  \text{MBH}(\text{C}\,\textsc{iv}, \text{Corr.}) = 10^{6.71}\left( \frac{ \text{FWHM}(\text{C}\,\textsc{iv}, \text{Corr.})}{10^3 \,\text{km}\,\text{s}^{-1}} \right)^2 \left( \frac{\lambda L_{\lambda} (1350 \text{\AA}) }{10^{44} \,\text{erg}\,\text{s}^{-1}}  \right)^{0.53}.
 \end{eqnarray}
 \endgroup
 
@@ -588,7 +588,7 @@ The virial BH mass can then be expressed in terms of the corrected \ion{C}{IV} F
 
 Reverberation mapping measurements of nearby AGN have revealed the BLR to be stratified, with high-ionisation lines, including \ion{C}{IV}, emitted closer to the BH than low-ionisation lines, including \ha and \hb \citep[e.g.][]{onken02}.
 \citet{vestergaard06} found that the \ion{C}{IV}-emitting region is at approximately half the radius of the \hbns/\ha emitting region.
-Given the $\Delta V \propto R_{\mathrm BLR}^{-0.5}$ virial relation, this leads to the prediction that the \ion{C}{IV} line widths should be $\simeq 1.4$ times broader than \hans/\hb for a given BH mass, and this expectation is reflected in the \citet{vestergaard06} BH mass calibrations.
+Given the $\Delta V \propto R_{\text{BLR}}^{-0.5}$ virial relation, this leads to the prediction that the \ion{C}{IV} line widths should be $\simeq 1.4$ times broader than \hans/\hb for a given BH mass, and this expectation is reflected in the \citet{vestergaard06} BH mass calibrations.
 
 In our sample, the median \ion{C}{IV}/\ha FWHM ratio is $0.97 \pm 0.31$ for the $77$ quasars with \ion{C}{IV} blueshifts $<1200$\,\kms.
 This is significantly smaller than the predicted value of $1.4$. 
@@ -734,7 +734,7 @@ The narrow lines are, on average, `peakier' (with FWHM/$\sigma\simeq1$) than the
 This suggests that the BLR structure (e.g. the balance between rotation, turbulence and radial motions) is changing with the emission-line FWHM \citep[e.g.][]{collin06,kollatschny11,Kollatschny13}. 
 This raises the question of whether the Balmer-line FWHM is a reliable proxy for the virial-induced velocity dispersion for the full range of Balmer line shapes we have in our sample. 
 
-When calibrating the virial-product to masses derived independently using the $M_{\mathrm BH}-\sigma$ relation, \citet{collin06} find that the scaling factor, $f$, is a factor $\sim2$ larger for their Population `$1$' sources (with FWHM/$\sigma < 2.35$ and essentially equivalent to population A of \citealt{sulentic00b}) than for their Population $2$ (with FWHM/$\sigma > 2.35$ and equivalent to population B of \citealt{sulentic00b}). 
+When calibrating the virial-product to masses derived independently using the $M_{\text{BH}}-\sigma$ relation, \citet{collin06} find that the scaling factor, $f$, is a factor $\sim2$ larger for their Population `$1$' sources (with FWHM/$\sigma < 2.35$ and essentially equivalent to population A of \citealt{sulentic00b}) than for their Population $2$ (with FWHM/$\sigma > 2.35$ and equivalent to population B of \citealt{sulentic00b}). 
 For single-epoch BH mass estimates, assuming a constant value of $f$, as is normally done \citep[e.g.][]{vestergaard06}, means that Population $1$ masses will be underestimated and Population $2$ will be overestimated.
 This result could account for some of the remaining scatter between the \ion{C}{IV}- and Balmer-based BH masses (Figure~\ref{fig:residuals_ha_fwhm}). 
 
@@ -878,7 +878,7 @@ No systematic in the BH masses as a function of the \ion{C}{IV} blueshift is evi
 \begin{figure}
     \centering
     \includegraphics[width=0.8\linewidth]{figures/chapter03/ha_edd_civ_bs.pdf}
-    \caption[{\hans-derived Eddington ratio versus \ion{C}{IV} blueshift.}]{\hans-derived Eddington ratio versus \ion{C}{IV} blueshift. At blueshift $\gtrsim2000$\,\kms\, all quasars have high accretion rates ($L/L_{\mathrm Edd} \simeq 1$). This is in agreement with \citet{kratzer15}, but in contrast to what one would derive from naive use of \ion{C}{IV}-based BH mass scaling relations.}
+    \caption[{\hans-derived Eddington ratio versus \ion{C}{IV} blueshift.}]{\hans-derived Eddington ratio versus \ion{C}{IV} blueshift. At blueshift $\gtrsim2000$\,\kms\, all quasars have high accretion rates ($L/L_{\text{Edd}} \simeq 1$). This is in agreement with \citet{kratzer15}, but in contrast to what one would derive from naive use of \ion{C}{IV}-based BH mass scaling relations.}
     \label{fig:ha_edd_civ_bs}
 \end{figure}
 
@@ -890,7 +890,7 @@ Amongst the low-\ion{C}{IV}-blueshift population there are in addition quasars w
 
 The change in the \ha emission-line profiles as a function of \ion{C}{IV}-blueshift means that the \hans-FWHM derived BH masses at high-blueshift are smaller than the sample mean. 
 We transformed the observed luminosity into a mass-normalised accretion rate (Eddington ratio).
-To convert the monochromatic luminosity, which is observed, into a bolometric luminosity we use the bolometric correction factor given by \citet{richards06} ($L_{\mathrm bol} = 9.26L_{5100}$).
+To convert the monochromatic luminosity, which is observed, into a bolometric luminosity we use the bolometric correction factor given by \citet{richards06} ($L_{\text{Bol}} = 9.26L_{5100}$).
 Although there is evidence that the bolometric correction factor is a function of the luminosity, as well as of other parameters including the \ion{C}{IV} blueshift \citep{krawczyk13}, the differences are small over the parameter range covered by our sample, and for simplicity we adopt a constant factor. 
 
 The results, shown in Figure~\ref{fig:ha_edd_civ_bs}, demonstrate that at large blueshifts quasars are accreting at around their Eddington limits (Figure~\ref{fig:ha_edd_civ_bs}). 
@@ -923,7 +923,7 @@ Looking to the future, the results of the large on-going statistical reverberati
 \subsection{The BAL parent population}
 
 Classical high-ionization BAL (HiBAL) quasars are also predominantly Population A objects in the scheme of \citet{sulentic00b}. 
-There are no HiBAL quasars in our sample by design but it is generally accepted that quasars which show high-ionisation BALs are likely to be radiating with relatively high $L/L_{\mathrm Edd}$ \citep[e.g.][]{zhang14}. 
+There are no HiBAL quasars in our sample by design but it is generally accepted that quasars which show high-ionisation BALs are likely to be radiating with relatively high $L/L_{\text{Edd}}$ \citep[e.g.][]{zhang14}. 
 We therefore propose that the subset of the quasar population that exhibits large \ion{C}{IV}-emission blueshifts, with high-EQW and narrow-\ha emission-lines, may be directly related to the HiBAL quasar population \---\ perhaps even the `parent' population \citep{richards06conf}. 
 A prediction of such a linkage is that near-infrared observations of the rest-frame optical spectra of HiBAL quasars will show strong, relatively narrow, Balmer emission-lines, very similar to those of the quasars with high \ion{C}{IV}-blueshifts presented in this chapter. 
 
@@ -974,9 +974,6 @@ The remaining scatter between the corrected \ion{C}{IV}-based masses and the \ha
 This is a significant improvement on the $0.40$\,dex scatter observed between the un-corrected \ion{C}{IV} and \ha BH masses. 
 The correction depends only on the \ion{C}{IV} line properties - i.e. the FWHM and blueshift - and allows single-epoch virial BH mass estimates to be made from optical spectra, such as those provided by the SDSS, out to redshifts exceeding $z\sim 5$. 
 \end{itemize}
-
-
-
 
 \section{Catalogue of derived properties}
 

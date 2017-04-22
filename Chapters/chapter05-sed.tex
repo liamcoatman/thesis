@@ -18,7 +18,7 @@
 
 Many quasars and AGN show an excess in their near-infrared continuum emission. 
 This feature is generally attributed to thermal emission from dust heated by optical/ultra-violet radiation from the accretion disc. 
-The wavelength of the feature ($\sim2$\,$\mu$m) corresponds to the spectral peak for graphite dust at its sublimation temperature \citep[${\mathrm T}\sim1500$\,K;][]{barvainis87}. 
+The wavelength of the feature ($\sim2$\,$\mu$m) corresponds to the spectral peak for graphite dust at its sublimation temperature \citep[$T\sim1500$\,K;][]{barvainis87}. 
 Reverberation measurements of nearby AGN suggest that the hot dust is very close to the central source \citep[few tens of light days; e.g.][]{minezaki04,suganuma06}.
 This places the dust at the innermost edge of the putative torus-like structure, at a radius set by the sublimation temperature of the dust grains.  
 
@@ -51,7 +51,7 @@ We use this model to measure the hot dust properties of a large sample of $2 < z
   \centering
   \begin{tabular}{lcccc}
     \hline 
-    Survey & Passband & $\lambda_{\mathrm eff}$ [$\mu$m] & AB offset & $A_{\mathrm filter}/E(B-V)$ \\
+    Survey & Passband & $\lambda_{\text{Eff}}$ [$\mu$m] & AB offset & $A_{\text{filter}}/E(B-V)$ \\
     \hline 
     SDSS & $u$ & $0.3543$ & $ 0.913$ & $4.875$ \\
          & $g$ & $0.4770$ & $-0.081$ & $3.793$ \\
@@ -96,7 +96,7 @@ This is the native magnitude system for UKIDSS and WISE.
 We add $0.08$\,mag to the UKIDSS $Y$ passband magnitudes to bring the photometry into better agreement with the SDSS $z$ and UKIDSS $J$ photometry. 
 SDSS uses an `asinh' magnitude system \citep{lupton99} which is intended to be on the AB system \citep{oke83}.
 However, the photometric zero-points are known to be slightly off the AB standard. 
-The $z$ passband is in error by $0.02$ ($z_{\mathrm AB} = z_{\mathrm SDSS} + 0.02$)\footnote{http://classic.sdss.org/dr$7$/algorithms/fluxcal.html.}.
+The $z$ passband is in error by $0.02$ ($z_{\text{AB}} = z_{\text{SDSS}} + 0.02$)\footnote{http://classic.sdss.org/dr$7$/algorithms/fluxcal.html.}.
 The $u$ passband was in error by $0.04$\,dex at the time of DR$7$. 
 However, using an updated $u$ throughput function \citep{doi10}, we find that the $u$ zero-point is now consistent with the AB system. 
 
@@ -116,7 +116,7 @@ The predicted passband is then given by:
 \begingroup\makeatletter\def\f@size{11}\check@mathfonts
 \begin{eqnarray}
 \label{eq:mag}
-  m_\lambda(P) & = & -2.5{\mathrm log}(f_\lambda(P)) - m_0(P), 
+  m_\lambda(P) & = & -2.5\text{log}(f_\lambda(P)) - m_0(P), 
 \end{eqnarray}
 \endgroup
 
@@ -126,7 +126,7 @@ In flux per unit wavelength this is:
 
 \begingroup\makeatletter\def\f@size{11}\check@mathfonts
 \begin{eqnarray}
-  \frac{f_\lambda(\lambda)}{{\mathrm erg}~{\mathrm cm}^{-2}~{\mathrm s}^{-1} {\mathrm\AA}^{-1}} = 0.1087 \left(\frac{\lambda}{\mathrm \AA}\right)^{-2}.
+  \frac{f_\lambda(\lambda)}{\text{erg}~\text{cm}^{-2}~\text{s}^{-1} \text{\AA}^{-1}} = 0.1087 \left(\frac{\lambda}{\text{\AA}}\right)^{-2}.
 \end{eqnarray}
 \endgroup
 
@@ -184,12 +184,12 @@ There is therefore a strong rationale for taking a parametric approach to modell
 This the approach adopted in this work. 
 
 We construct an SED model that is valid between $1216$\,\AA\, and $3$\,$\mu$m.
-In this region the SED is dominated by the accretion disc, broad ultra-violet/optical emission-lines and thermal emission from the hottest (${\mathrm T}\sim1200$K) dust. 
+In this region the SED is dominated by the accretion disc, broad ultra-violet/optical emission-lines and thermal emission from the hottest ($T\sim1200$K) dust. 
 In this section, we describe how each of these components are represented in our parametric SED model.  
 The effect of dust extinction at the AGN redshift is also incorporated into the model. 
 At high redshifts, Ly$\alpha$ forest absorption becomes significant. 
 Because we do not attempt to model this effect, our model is valid only at wavelengths long-ward of $1216$\,\AA. 
-We model dust emission using a single temperature (${\mathrm T}\sim1200$\,K) blackbody, which peaks at $\sim2$\,$\mu$m. 
+We model dust emission using a single temperature ($T\sim1200$\,K) blackbody, which peaks at $\sim2$\,$\mu$m. 
 At longer wavelengths, emission from cooler dust farther from the central engine becomes increasingly important. 
 We do not include this emission in our model, which restricts its validity to $\lesssim3$\,$\mu$m.
 The model spectrum is shown in Figure \ref{fig:modelsed}, with each of the main components indicated. 
@@ -203,7 +203,7 @@ The model spectrum is shown in Figure \ref{fig:modelsed}, with each of the main 
 
 \subsection{Accretion disc}
 
-Thermal accretion disc emission in the $0.1 - 1$\,$\mu$m region is characterised by a broken power-law with three free parameters: a break-wavelength, $\lambda_{\mathrm break}$, a blue power-law index, $\alpha_{\mathrm blue}$, for wavelengths shorter than the break wavelength, and a red power-law index, $\alpha_{\mathrm red}$, for wavelengths longer than the break wavelength.
+Thermal accretion disc emission in the $0.1 - 1$\,$\mu$m region is characterised by a broken power-law with three free parameters: a break-wavelength, $\lambda_{\text{break}}$, a blue power-law index, $\alpha_{\text{blue}}$, for wavelengths shorter than the break wavelength, and a red power-law index, $\alpha_{\text{red}}$, for wavelengths longer than the break wavelength.
 
 \subsection{Balmer continuum}
 
@@ -212,11 +212,11 @@ We simulate the Balmer continuum using the empirical model given by \citet{grand
 
 \begingroup\makeatletter\def\f@size{11}\check@mathfonts
 \begin{eqnarray}
-  F(\lambda) = C_{\mathrm BC} \times B_\lambda(T_e)(1-e^{-\tau_\lambda}); \quad \lambda \leq \lambda_{\mathrm BE}
+  F(\lambda) = C_{\text{BC}} \times B_\lambda(T_e)(1-e^{-\tau_\lambda}); \quad \lambda \leq \lambda_{\text{BE}}
 \end{eqnarray}
 \endgroup
 
-\noindent where $C_{\mathrm BC}$ is a normalisation factor, $B_\lambda(T_e)$ is the Planck function, $T_e=13150$\,K is the effective temperature, $\lambda_{\mathrm BE}=3460$\,\AA\, is the wavelength at the Balmer edge, and $\tau_\lambda = \tau_{BE}\left( \nicefrac{\lambda_{BE}} {\lambda} \right)^{-3}$ is the optical depth with $\tau_{\mathrm BE}=45$ the optical depth at $\lambda_{\mathrm BE}$. 
+\noindent where $C_{\text{BC}}$ is a normalisation factor, $B_\lambda(T_e)$ is the Planck function, $T_e=13150$\,K is the effective temperature, $\lambda_{\text{BE}}=3460$\,\AA\, is the wavelength at the Balmer edge, and $\tau_\lambda = \tau_{BE}\left( \nicefrac{\lambda_{BE}} {\lambda} \right)^{-3}$ is the optical depth with $\tau_{\text{BE}}=45$ the optical depth at $\lambda_{\text{BE}}$. 
 This function is convolved with a Gaussian with width $\sigma=5000$\,\kms\, to simulate the effect of bulk velocity shifts comparable to those present in broad AGN emission-lines. 
 
 \subsection{Hot dust}
@@ -225,30 +225,30 @@ Thermal emission from hot dust, which dominates the SED at wavelengths longer th
 
 \begingroup\makeatletter\def\f@size{11}\check@mathfonts
 \begin{eqnarray}  
-  F_\lambda = C_{\mathrm BB} \times \frac{2 hc^2}{\lambda^5}\frac{1}{ e^{\frac{hc}{\lambda k_\mathrm{B}T_{\mathrm BB}}} - 1}, 
+  F_\lambda = C_{\text{BB}} \times \frac{2 hc^2}{\lambda^5}\frac{1}{ e^{\frac{hc}{\lambda k_\text{B}T_{\text{BB}}}} - 1}, 
 \end{eqnarray}
 \endgroup
 
-\noindent with two free parameters: the temperature $T_{\mathrm BB}$ and normalisation $C_{\mathrm BB}$ relative to the power-law continuum. 
+\noindent with two free parameters: the temperature $T_{\text{BB}}$ and normalisation $C_{\text{BB}}$ relative to the power-law continuum. 
 
 \subsection{Emission-lines}
 
 We use an emission-line template taken from \citet{francis91}, which has been extended by \citet{maddox06} to include the \ha and Pa$\alpha$ emission-lines\footnote{The spectrum is not significantly different from the \citet{vandenberk01} SDSS composite.}. 
-All emission-lines, with the exception of \ha and \hbns, are scaled using a single free parameter $C_{\mathrm EL}$, which preserves relative EQWs:
+All emission-lines, with the exception of \ha and \hbns, are scaled using a single free parameter $C_{\text{EL}}$, which preserves relative EQWs:
 
 \begingroup\makeatletter\def\f@size{11}\check@mathfonts
 \begin{eqnarray}
-  F_{\lambda} =  C_{\mathrm EL} \times \frac{F_{\lambda, \mathrm el}}{F_{\lambda, \mathrm cont}} \times F_{\lambda} 
+  F_{\lambda} =  C_{\text{EL}} \times \frac{F_{\lambda, \text{el}}}{F_{\lambda, \text{cont}}} \times F_{\lambda} 
 \end{eqnarray} 
 \endgroup
 
-\noindent where $F_{\lambda, \mathrm el}$ is the emission-line template, $F_{\lambda,\mathrm cont}$ is the continuum flux in the template, and $F_{\lambda}$ is the continuum flux in the SED model.
+\noindent where $F_{\lambda, \text{el}}$ is the emission-line template, $F_{\lambda,\text{cont}}$ is the continuum flux in the template, and $F_{\lambda}$ is the continuum flux in the SED model.
 The redshifts and luminosities of the quasars contributing to the emission-line template change as a function of wavelength. 
 To account for possible variations in the strengths of the different lines, \ha and \hb are scaled separately: 
 
 \begingroup\makeatletter\def\f@size{11}\check@mathfonts
 \begin{eqnarray}
-  F_{\lambda} =  C_{\mathrm EL} \times C_{{\mathrm H} \alpha} \times \left( \frac{L(z)} {L(z_{\mathrm nrm})} \right)^{\beta} \times \frac{F_{\lambda, \mathrm el}}{F_{\lambda, \mathrm cont}} \times F_{\lambda}.
+  F_{\lambda} =  C_{\text{EL}} \times C_{{\text{H}} \alpha} \times \left( \frac{L(z)} {L(z_{\text{nrm}})} \right)^{\beta} \times \frac{F_{\lambda, \text{el}}}{F_{\lambda, \text{cont}}} \times F_{\lambda}.
 \end{eqnarray}
 \endgroup
 
@@ -327,13 +327,13 @@ We find the best-fitting model parameters by minimising the $\chi^2$ statistic f
     \hline 
     Parameter & Symbol & Value \\
     \hline 
-    Blue power-law index & $\alpha_{\mathrm blue}$ & $-0.478$ \\
-    Red power-law index & $\alpha_{\mathrm red}$ & $-0.199$ \\
-    Power-law break & $\lambda_{\mathrm break}$ & $2402$ \\
-    Blackbody temperature & $T_{\mathrm BB}$ & $1306$\,K \\
-    Blackbody normalisation & $C_{\mathrm BB}$ & $2.673$ \\
-    Emission-line scaling & $C_{\mathrm EL}$  & $1.240$ \\
-    \ha emission-line scaling & $C_{{\mathrm H}\alpha}$  & $0.713$ \\
+    Blue power-law index & $\alpha_{\text{blue}}$ & $-0.478$ \\
+    Red power-law index & $\alpha_{\text{red}}$ & $-0.199$ \\
+    Power-law break & $\lambda_{\text{break}}$ & $2402$ \\
+    Blackbody temperature & $T_{\text{BB}}$ & $1306$\,K \\
+    Blackbody normalisation & $C_{\text{BB}}$ & $2.673$ \\
+    Emission-line scaling & $C_{\text{EL}}$  & $1.240$ \\
+    \ha emission-line scaling & $C_{{\text{H}}\alpha}$  & $0.713$ \\
     Balmer continuum scaling & & $0.135$ \\
     \hline
   \end{tabular}
@@ -381,15 +381,15 @@ In this redshift range the $W1$ and $W2$ passbands are probing the $1.2 - 2.8$\,
 The peak wavelength is at $2.4$\,$\mu$m for a blackbody radiating at $1200$\,K.
 Therefore, the large spread in $W1-W2$ colours is highly suggestive of a range of hot dust properties in this sample. 
 
-We characterise the hot dust properties of our sample in terms of the temperature of the blackbody component and the near-infrared to ultra-violet luminosity ratio, $R_{\mathrm NIR/UV}$. 
+We characterise the hot dust properties of our sample in terms of the temperature of the blackbody component and the near-infrared to ultra-violet luminosity ratio, $R_{\text{NIR/UV}}$. 
 The ultra-violet and near-infrared luminosities are calculated between $2000$ and $9000$\,\AA\, and $1$ and $3$\,$\mu$m respectively in the SED.
 
 The temperature is likely related to the distance of the dust from the central engine.
 Dust that is closer in will be hotter, with the sublimation temperature of the dust grains setting the minimum radius.  
-The value of $R_{\mathrm NIR/UV}$ is related to the covering factor of the hot dust. 
+The value of $R_{\text{NIR/UV}}$ is related to the covering factor of the hot dust. 
 However, this simple interpretation is somewhat complicated by the fact that at large inclinations sight-lines to the hot dust may be obscured by cooler dust in the putative torus. 
 
-In Figure~\ref{fig:w1w2colorsratio} we have plotted the $W1-W2$ colours derived from our SED model with a fixed blackbody temperature ($1306$\,K) and varying $R_{\mathrm NIR/UV}$.
+In Figure~\ref{fig:w1w2colorsratio} we have plotted the $W1-W2$ colours derived from our SED model with a fixed blackbody temperature ($1306$\,K) and varying $R_{\text{NIR/UV}}$.
 The $W1-W2$ colours indicate that the hot dust luminosity in this sample varies by a factor of $\sim5$. 
 
 In the remainder of this chapter, we will measure hot dust parameters for individual quasars via SED fitting. 
@@ -410,7 +410,7 @@ At these redshifts, \ion{C}{IV} emission is located within the wavelength covera
 This will allow us to test the relationship between the hot dust and BLR outflow properties. 
 
 The shifting of passbands due to redshift limits the redshift range of the quasars for which hot dust properties can be reliably constrained.
-Constraining a ${\mathrm T}\sim1200$\,K blackbody component in the SED model requires photometric data covering $\sim1-3$\,$\mu$m in the rest-frame of the quasar. 
+Constraining a $T\sim1200$\,K blackbody component in the SED model requires photometric data covering $\sim1-3$\,$\mu$m in the rest-frame of the quasar. 
 At redshifts $2 < z < 2.7$ $W1W2W3$ is probing the $0.9-4$\,$\mu$m region of the SED. 
 Therefore the available data is sensitive to the hot dust component across the entirety of the redshift interval. 
 
@@ -446,16 +446,16 @@ The model spectrum is redshifted to the redshift of the quasar being fit and pas
 We minimise the inverse variance weighted $\chi^2$ statistic using the Levenberg-Marquardt algorithm. 
 We impose a minimum error of 0.1\,mag, corresponding to the model error for the medians colours (Figure~\ref{fig:residuals}). 
 Data from $ugrizYJHKW1W2W3$ is used in the model. 
-However, to avoid Ly$\alpha$ forest absorption, passbands are excluded if $\lambda_{\mathrm eff} < 1400$\,\AA.   
+However, to avoid Ly$\alpha$ forest absorption, passbands are excluded if $\lambda_{\text{Eff}} < 1400$\,\AA.   
 
 \subsection{Distribution of hot dust parameters}
 
-The best-fitting hot dust temperature ($T_{\mathrm BB}$) and abundance ($R_{\mathrm NIR/UV}$) for the individual quasars are shown in Figure~\ref{fig:ratio_tbb_density}.
+The best-fitting hot dust temperature ($T_{\text{BB}}$) and abundance ($R_{\text{NIR/UV}}$) for the individual quasars are shown in Figure~\ref{fig:ratio_tbb_density}.
 Even after restricting the sample to have a relative narrow range of ultra-violet/optical SED shapes, we see significant diversity in the hot dust abundance, with the near-infrared ultra-violet luminosity ratio having a broad range from $0.1$ to $0.6$.
 The temperature takes on a relatively narrow range of values: $1177\pm136$\,K. 
 This is consistent with the dust radius being set by the sublimation temperature of the dust grains. 
 
-We note a strong correlation between the temperature and $R_{\mathrm NIR/UV}$. 
+We note a strong correlation between the temperature and $R_{\text{NIR/UV}}$. 
 This is a result of the dependence of the blackbody peak on temperature and the fixed wavelength interval used to calculate the blackbody luminosity. 
 
 \begin{figure}[t!]
@@ -522,20 +522,20 @@ Therefore, our findings are consistent with \citet{shen14}, in a different lumin
 \end{figure}
 
 The distribution of blackbody temperatures is relatively narrow $\sim200$\,K and so, as expected, we do not observe any correlations between the temperature and other quasar properties. 
-Correlations between the hot dust abundance $R_{\mathrm NIR/UV}$ and the ultra-violet luminosity, BH mass and Eddington ratio are shown in Figure~\ref{fig:correlations_contour}. 
+Correlations between the hot dust abundance $R_{\text{NIR/UV}}$ and the ultra-violet luminosity, BH mass and Eddington ratio are shown in Figure~\ref{fig:correlations_contour}. 
 
 The ultra-violet luminosity is measured at $1350$\,\AA\, in the spectral modelling done by \citet{shen11}. 
-We do not observe any correlation between $R_{\mathrm NIR/UV}$ and the ultra-violet luminosity (Figure~\ref{fig:correlations_contour_a}. 
+We do not observe any correlation between $R_{\text{NIR/UV}}$ and the ultra-violet luminosity (Figure~\ref{fig:correlations_contour_a}. 
 However, the dynamic range in luminosity is small in this sample ($\sim1$\,dex) because of the restricted redshift range. 
 
-In Figure~\ref{fig:correlations_contour_b} we show $R_{\mathrm NIR/UV}$ as a function of the BH mass. 
+In Figure~\ref{fig:correlations_contour_b} we show $R_{\text{NIR/UV}}$ as a function of the BH mass. 
 Masses are \ion{C}{IV} FWHM-based single-epoch virial estimates, as computed by \citet{shen11}. 
-$R_{\mathrm NIR/UV}$ is positively correlated with the BH mass; the Spearman correlation coefficient, $\rho_{\mathrm S}$, is $0.26$. 
-However, in the previous section, we found $R_{\mathrm NIR/UV}$ to be correlated with the \ion{C}{IV} blueshift and, in Chapter~\ref{ch:bhmass}, we demonstrated that BH masses are severely overestimated in quasars with large \ion{C}{IV} blueshifts.
-We therefore predict that the apparent correlation between $R_{\mathrm NIR/UV}$ and the BH mass is due to systematic biases in the \ion{C}{IV}-based masses. 
-We can test this by comparing $R_{\mathrm NIR/UV}$ with BH mass estimates which have been corrected using the prescription described in Chapter~\ref{ch:bhmass} (Figure~\ref{fig:correlations_contour_d}). 
-As expected, the correlation vanishes ($\rho_{\mathrm S}=0.07$)
-A similar result is found when $R_{\mathrm NIR/UV}$ is compared to the Eddington ratio, which is inversely proportional to the BH mass.  
-Using masses from \citet{shen11} an anti-correlation is observed between $R_{\mathrm NIR/UV}$ and the Eddington ratio ($\rho_{\mathrm S}=-0.36$; Figure~\ref{fig:correlations_contour_c}) but this disappears when corrected masses are employed ($\rho_{\mathrm S}=-0.12$; Figure~\ref{fig:correlations_contour_e}). 
+$R_{\text{NIR/UV}}$ is positively correlated with the BH mass; the Spearman correlation coefficient, $\rho_{\text{S}}$, is $0.26$. 
+However, in the previous section, we found $R_{\text{NIR/UV}}$ to be correlated with the \ion{C}{IV} blueshift and, in Chapter~\ref{ch:bhmass}, we demonstrated that BH masses are severely overestimated in quasars with large \ion{C}{IV} blueshifts.
+We therefore predict that the apparent correlation between $R_{\text{NIR/UV}}$ and the BH mass is due to systematic biases in the \ion{C}{IV}-based masses. 
+We can test this by comparing $R_{\text{NIR/UV}}$ with BH mass estimates which have been corrected using the prescription described in Chapter~\ref{ch:bhmass} (Figure~\ref{fig:correlations_contour_d}). 
+As expected, the correlation vanishes ($\rho_{\text{S}}=0.07$)
+A similar result is found when $R_{\text{NIR/UV}}$ is compared to the Eddington ratio, which is inversely proportional to the BH mass.  
+Using masses from \citet{shen11} an anti-correlation is observed between $R_{\text{NIR/UV}}$ and the Eddington ratio ($\rho_{\text{S}}=-0.36$; Figure~\ref{fig:correlations_contour_c}) but this disappears when corrected masses are employed ($\rho_{\text{S}}=-0.12$; Figure~\ref{fig:correlations_contour_e}). 
 This demonstrates how using conventional BH mass estimates based on \ion{C}{IV} can lead to spurious correlations with other quasar properties, but that this can be avoided using the improved mass estimates presented in Chapter~\ref{ch:bhmass}. 
 

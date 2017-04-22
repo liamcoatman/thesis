@@ -34,12 +34,12 @@ cs = palettable.colorbrewer.qualitative.Set1_9.mpl_colors
 
 def mfica_component_weights():
 
-    xs = [np.arange(0.1, 0.6, 0.01),
-          np.arange(0.1, 0.6, 0.01),
-          np.arange(0.0, 0.4, 0.01),
-          np.arange(0.0, 0.15, 0.004),
-          np.arange(0.0, 0.15, 0.004),
-          np.arange(0.0, 0.15, 0.004)]
+    xs = [np.arange(0.1, 0.6, 0.02),
+          np.arange(0.1, 0.6, 0.02),
+          np.arange(0.0, 0.4, 0.02),
+          np.arange(0.0, 0.15, 0.008),
+          np.arange(0.0, 0.15, 0.008),
+          np.arange(0.0, 0.15, 0.008)]
 
     df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0) 
     df = df[df.mfica_flag == 1]
@@ -74,7 +74,8 @@ def mfica_component_weights():
                        bins=xs[i],
                        histtype='step',
                        color=cs[1],
-                       zorder=1)
+                       zorder=1,
+                       label='This work')
         
         w_norm = t[:, i] / np.sum(t[:, :6], axis=1) # sum positive components 
     
@@ -83,12 +84,18 @@ def mfica_component_weights():
                        bins=xs[i],
                        histtype='step',
                        color=cs[8], 
-                       zorder=0)   
+                       zorder=0,
+                       label='SDSS quasars')   
 
         ax.set_yticks([]) 
         ax.get_xaxis().tick_bottom()
         ax.set_title(titles[i])
         ax.xaxis.set_major_locator(MaxNLocator(6))
+
+    axs[0, 0].set_zorder(2)
+    axs[0, 0].legend(bbox_to_anchor=(0.65, 1), 
+                     bbox_transform=plt.gcf().transFigure,
+                     fancybox=True, shadow=True) 
 
     fig.tight_layout()
     fig.subplots_adjust(bottom=0.12, left=0.05)
@@ -362,7 +369,7 @@ def civ_blueshift_oiii_strength():
     fig, ax = plt.subplots(figsize=figsize(1, vscale=0.9))
     
     df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0) 
-    df = df[(df.mfica_flag == 1)]
+    df = df[df.OIII_FLAG_2 > 0] # ignore mfica flag, just plot everything in my sample
     df = df[(df.WARN_CIV_BEST == 0) | (df.WARN_CIV_BEST == 1)]
     df = df[df.BAL_FLAG != 1]
     df = df[np.log10(df.EQW_CIV_BEST) > 1.2] # need to say this  
@@ -2796,9 +2803,11 @@ def example_spectrum_grid_extreme_fe():
 
 def mfica_components(name): 
 
+    # QSO556
+
     from SpectraTools.fit_line import make_model_mfica, mfica_model, mfica_get_comp
 
-    fig, ax = plt.subplots(figsize=figsize(1, vscale=0.8))
+    fig, axs = plt.subplots(2, 1, figsize=figsize(0.8, vscale=1.6))
 
     df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0) 
 
@@ -2811,36 +2820,36 @@ def mfica_components(name):
 
     flux = mfica_model(weights, comps, comps_wav, comps_wav)
 
-    ax.plot(comps_wav, 
-            flux, 
-            color='black', 
-            lw=1)
+    axs[0].plot(comps_wav, 
+                flux, 
+                color='black', 
+                lw=1)
 
     set2 = palettable.colorbrewer.qualitative.Set2_3.mpl_colors 
     set3 = palettable.colorbrewer.qualitative.Set3_5.mpl_colors 
     colors = [set3[0], set3[2], set3[3], set3[4]]
     
 
-    labels = ['w1', 'w2', 'w3', 'w4+w5+w6']
+    labels = [r'$w_1$', r'$w_2$', r'$w_3$', r'$w_4$+$w_5$+$w_6$']
 
     for i in range(3):
 
-        ax.plot(comps_wav, 
-                mfica_get_comp(i+1, weights, comps, comps_wav, comps_wav),
-                color=colors[i],
-                label=labels[i])
+        axs[0].plot(comps_wav, 
+                    mfica_get_comp(i+1, weights, comps, comps_wav, comps_wav),
+                    color=colors[i],
+                    label=labels[i])
 
     flx_oiii_4 = mfica_get_comp(4, weights, comps, comps_wav, comps_wav)
     flx_oiii_5 = mfica_get_comp(5, weights, comps, comps_wav, comps_wav)
     flx_oiii_6 = mfica_get_comp(6, weights, comps, comps_wav, comps_wav)
 
-    ax.plot(comps_wav, 
-            flx_oiii_4 + flx_oiii_5 + flx_oiii_6,
-            color=colors[3],
-            label=labels[3])    
+    axs[0].plot(comps_wav, 
+                flx_oiii_4 + flx_oiii_5 + flx_oiii_6,
+                color=colors[3],
+                label=labels[3])    
 
-    ax.legend(loc='upper center', bbox_to_anchor=(0.5, 1.05),
-              ncol=4, fancybox=True, shadow=True)
+    axs[0].legend(loc='upper center', bbox_to_anchor=(0.35, 1.1),
+                 ncol=2, fancybox=True, shadow=True)
 
 
     save_dir = os.path.join('/data/lc585/nearIR_spectra/linefits/', name, 'MFICA')
@@ -2860,22 +2869,70 @@ def mfica_components(name):
     err = pickle.load(parfile)
     parfile.close()
 
-    ax.plot(wav,
-            flx,
-            linestyle='-',
-            color='lightgrey',
-            lw=1,
-            alpha=1,
-            zorder=0)
+    axs[0].plot(wav,
+               flx,
+               linestyle='-',
+               color='lightgrey',
+               lw=1,
+               alpha=1,
+               zorder=0)
 
  
-    ax.set_xlim(4700, 5100)
-    ax.set_ylim(0, 2.5)
+    axs[0].set_xlim(4700, 5100)
+    axs[0].set_ylim(0, 2.5)
 
-    ax.set_xlabel(r'Wavelength [\AA]') 
-    ax.set_ylabel(r'$F_{\lambda}$ [Arbitrary units]')
+    axs[1].set_xlabel(r'Wavelength [\AA]') 
+    axs[0].set_ylabel(r'$F_{\lambda}$ [Arbitrary units]')
+    axs[1].set_ylabel(r'$F_{\lambda}$ [Arbitrary units]')
+
+    # -------------------------------
+
+    axs[1].plot(wav,
+               flx,
+               linestyle='-',
+               color='lightgrey',
+               lw=1,
+               alpha=1,
+               zorder=0)
+
+    axs[1].set_xlim(4920, 5050)
+    axs[1].set_ylim(-0.5, 4)
+
+    axs[1].plot(comps_wav, 
+                flux, 
+                color='black', 
+                lw=1)    
+
+    colors = [set2[0], set2[1], set2[2]]
+    
+
+    labels = [r'$w_4$', r'$w_5$', r'$w_6$']
+
+    for i in range(3):
+
+        axs[1].plot(comps_wav, 
+                    mfica_get_comp(i+4, weights, comps, comps_wav, comps_wav),
+                    color=colors[i],
+                    label=labels[i])
+
+    axs[1].legend(loc='upper left',
+                 ncol=1, fancybox=True, shadow=True)
+
+
+    labels = ['(a)', '(b)']
+
+
+    for i, label in enumerate(labels):
+
+        axs[i].text(0.9, 0.93, label,
+                    horizontalalignment='center',
+                    verticalalignment='center',
+                    transform = axs[i].transAxes)
+
 
     fig.tight_layout() 
+
+    plt.subplots_adjust(top=0.95)
 
 
     
@@ -3902,3 +3959,4 @@ def test5():
     plt.show() 
 
     return None
+
