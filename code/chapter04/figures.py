@@ -61,7 +61,7 @@ def mfica_component_weights():
     fname = '/data/vault/phewett/ICAtest/DR12exp/Spectra/hbeta_2154_c10.weight'
     t = np.genfromtxt(fname)   
 
-    fig, axs = plt.subplots(3, 2, figsize=figsize(1, vscale=1.2))
+    fig, axs = plt.subplots(3, 2, figsize=figsize(1, vscale=1.5))
 
     
     for i, ax in enumerate(axs.reshape(-1)):
@@ -93,12 +93,12 @@ def mfica_component_weights():
         ax.xaxis.set_major_locator(MaxNLocator(6))
 
     axs[0, 0].set_zorder(2)
-    axs[0, 0].legend(bbox_to_anchor=(0.65, 1), 
+    axs[0, 0].legend(bbox_to_anchor=(0.65, 0.99), 
                      bbox_transform=plt.gcf().transFigure,
                      fancybox=True, shadow=True) 
 
     fig.tight_layout()
-    fig.subplots_adjust(bottom=0.12, left=0.05)
+    fig.subplots_adjust(bottom=0.12, left=0.05, top=0.9)
 
     fig.text(0.50, 0.03, r"$\displaystyle\frac{w_i}{\sum_{i=1}^6 w_i}$", ha='center')
 

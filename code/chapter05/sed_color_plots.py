@@ -166,10 +166,9 @@ def plot():
              [0.8, 1.5]]
 
 
-    fig1, axs1 = plt.subplots(2, 2, figsize=figsize(1, vscale=1), sharex=True) 
-    fig2, axs2 = plt.subplots(2, 2, figsize=figsize(1, vscale=1), sharex=True) 
-
-    for i, ax in enumerate(axs1.flatten()):
+    fig, axs = plt.subplots(4, 2, figsize=figsize(1, vscale=2), sharex=True) 
+    
+    for i, ax in enumerate(axs.flatten()):
 
         #data definition
         ydat = datarr[:, col1[i]] - datarr[:, col2[i]]
@@ -194,49 +193,24 @@ def plot():
         ax.set_xlim(0.75, 3.25)
 
     
-    for i, ax in enumerate(axs2.flatten()):
-    
-        i += 4 
 
-
-        #data definition
-        ydat = datarr[:, col1[i]] - datarr[:, col2[i]]
-
-        ax.scatter(datz, 
-                   ydat, 
-                   color='black', 
-                   s=5,
-                   label='Data')
-
-        ax.plot(datz,
-                modarr[:,col1[i]] - modarr[:, col2[i]],
-                color=cs[1], 
-                label='Model')
-
-
-        ax.set_title(col_label[i], size=10)
-    
-        ax.set_ylim(np.nanmin(ydat)-0.2, np.nanmax(ydat)+0.2)
- 
-    axs2[0, 0].legend(scatterpoints=1, ncol=2, frameon=False)
-    axs1[0, 0].legend(scatterpoints=1, ncol=2, frameon=False)
-
-
-    axs1[1, 0].set_xlabel(r'Redshift $z$')
-    axs2[1, 0].set_xlabel(r'Redshift $z$')
-    axs1[1, 1].set_xlabel(r'Redshift $z$')
-    axs2[1, 1].set_xlabel(r'Redshift $z$')
-
-    fig1.tight_layout()
-    fig2.tight_layout()
-
-    fig1.subplots_adjust(wspace=0.2, hspace=0.15)
-    fig2.subplots_adjust(wspace=0.2, hspace=0.15)
+    axs[0, 0].legend(bbox_to_anchor=(0.7, 0.99), 
+                     bbox_transform=plt.gcf().transFigure,
+                     fancybox=True, 
+                     shadow=True,
+                     scatterpoints=1,
+                     ncol=2) 
 
 
 
-    fig1.savefig('/home/lc585/thesis/figures/chapter05/sed_color_plot_1.pdf')
-    fig2.savefig('/home/lc585/thesis/figures/chapter05/sed_color_plot_2.pdf')
+    axs[3, 0].set_xlabel(r'Redshift $z$')
+    axs[3, 1].set_xlabel(r'Redshift $z$')
+
+    fig.tight_layout()
+
+    fig.subplots_adjust(wspace=0.2, hspace=0.15, top=0.93)
+
+    fig.savefig('/home/lc585/thesis/figures/chapter05/sed_color_plot.pdf')
 
 
     plt.show() 

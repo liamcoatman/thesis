@@ -39,7 +39,7 @@ The fraction of objects with very weak [\ion{O}{III}] emission also appears to i
 In this chapter, we analyse the [\ion{O}{III}] properties of a sample of $354$ high-luminosity, redshift $1.5 < z < 4$ quasars.
 To date, this is the largest study of the NLR properties of high redshift quasars. 
 
-\section{Constructing a sample with [\ion{O}{III}] spectra}
+\section[Sample construction]{Constructing a sample with [\ion{O}{III}] spectra}
 
 From our near-infrared spectroscopic catalogue (Chapter~\ref{ch:nirsample}), we have selected $354$ quasars which have spectra covering the [\ion{O}{III}] doublet. 
 The broad Balmer \hb line has also been observed for all but two of the sample. 
@@ -253,9 +253,7 @@ We also calculate $w_{80}$ ($\equiv v_{90} - v_{10}$) and $w_{50}$ ($\equiv v_{7
 $w_{90}$ is relatively most sensitive to the flux in the wings of the line, whereas $w_{50}$ is relatively most sensitive to the flux in the core.  
 In terms of the FWHM, $w_{50} \simeq \text{FWHM} / 1.746$, $w_{80} \simeq \text{FWHM} / 0.919$, $w_{90} \simeq \text{FWHM} / 0.716$, assuming a Gaussian line profile.  
 
-% remove page number from this page only
-\afterpage{%
-\thispagestyle{empty}
+
 \begin{table}
   \centering
   \footnotesize
@@ -312,8 +310,6 @@ In terms of the FWHM, $w_{50} \simeq \text{FWHM} / 1.746$, $w_{80} \simeq \text{
     \hline
     \end{tabular}
 \end{table}
-\clearpage
-}
 
 All of the derived parameters we have calculated are summarised in Table~\ref{tab:nlr-specmeasure}. The columns are as follows: 
 
@@ -576,7 +572,8 @@ Therefore, this picture also explains our finding that objects with very weak [\
     \label{fig:oiii_civ_blueshifts}
 \end{figure}
 
-In Figure~\ref{fig:oiii_civ_blueshifts_c} we show that the [\ion{O}{III}] blueshift is correlated with the \ion{C}{IV} blueshift ($\rho_{\text{S}}=0.46$, p-value $=6e\text{-}7$). 
+In Figure~\ref{fig:oiii_civ_blueshifts_c} we show that the [\ion{O}{III}] blueshift is correlated with the \ion{C}{IV} blueshift.
+The Spearman correlation coefficient, $\rho_{\text{S}}$, is $0.46$, with p-value $=6\times10^{-7}$. 
 This shows that high-velocity winds in the NLR are preferentially seen when strong winds are being driven in the vicinity of the central engine. 
 As we demonstrate in Figure~\ref{fig:oiii_civ_blueshifts_c}, this correlation is not driven by the luminosity. 
 Although we lack direct spatial information, this correlation suggests a connection between gas kinematics on sub-parsec and kilo-parsec scales. 
@@ -608,7 +605,7 @@ This effect could also explain the anti-correlation between the [\ion{O}{III}] E
     \label{fig:example_spectrum_grid_extreme_oiii}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[t!]
 \ContinuedFloat
     \centering
     \includegraphics[width=\columnwidth]{figures/chapter04/example_spectrum_grid_extreme_oiii_2.pdf} 
@@ -686,7 +683,7 @@ However, if the ionised outflow is accompanied by a neutral/molecular outflow an
 These outflow efficiencies are in same ballpark as recent AGN feedback models \citep[e.g.][]{zubovas12}, which predict a coupling efficiency between AGN-driven outflows and AGN power of $\sim5$ per cent.
 \todo{Double check luminosities!}
 
-\section{Mean field independent component analysis}
+\section[MFICA]{Mean field independent component analysis}
 
 Blind source separation (BSS) techniques can be used to find a set of basis vectors from a set of spectra. 
 An individual spectrum can then be represented as a linear combination of the basis vectors with a corresponding set of weights.  
@@ -815,7 +812,7 @@ The main results of this chapter are as follows:
 
 \item We have analysed the [\ion{O}{III}] emission properties of $330$ quasars at redshifts ($1.5 \lesssim z \lesssim 4$) and luminosities ($45.5 \lesssim \log L_{\text{Bol}} \lesssim 49$\,\ergs). In many of these objects [\ion{O}{III}] is very broad and has a strong blueshifted component, suggesting that kilo-parsec-scale outflows in ionised gas are very common in this population. 
 
-\item There is a strong anti-correlation between the [\ion{O}{III}] EQW and the \ion{C}{IV} blueshift. This suggests that quasar-driven winds are capable of sweeping away gas extended over kilo-parsec scales in the host galaxies. We suggests this as the cause of a factor of ten higher rate of occurrence of quasars with very weak [\ion{O}{III}] in the luminous quasar sample relative to in $z \lesssim 1$ SDSS quasars. 
+\item There is a strong anti-correlation between the [\ion{O}{III}] EQW and the \ion{C}{IV} blueshift. This suggests that quasar-driven winds are capable of sweeping away gas extended over kilo-parsec scales in the host galaxies. We suggest this as the cause of a factor of ten higher rate of occurrence of quasars with very weak [\ion{O}{III}] in the luminous quasar sample relative to in $z \lesssim 1$ SDSS quasars. 
 
 \item The [\ion{O}{III}] blueshift is correlated with the \ion{C}{IV} blueshift, which could indicate a connection between gas kinematics on sub-parsec and kilo-parsec scales. On the other hand, this correlation could be induced by the core component of the [\ion{O}{III}] emission decreasing faster than the wing component, as the stable NLR gas is removed by the quasar-driven winds.  
 

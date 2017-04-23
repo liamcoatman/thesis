@@ -53,13 +53,13 @@ def plot():
 
 
 
-    kde_contours(df.LOGL1350_SDSS, df.IR_UV_RATIO, axs[0, 0], color=cs[1])
-    kde_contours(df.CIV_LOGBH_SDSS, df.IR_UV_RATIO, axs[1, 0], color=cs[1])
-    kde_contours(np.log10(df.EddRatio_Bias), df.IR_UV_RATIO, axs[2, 0], color=cs[1])
+    kde_contours(df.LOGL1350_SDSS, df.IR_UV_RATIO, axs[0, 0], color='black')
+    kde_contours(df.CIV_LOGBH_SDSS, df.IR_UV_RATIO, axs[1, 0], color='black')
+    kde_contours(np.log10(df.EddRatio_Bias), df.IR_UV_RATIO, axs[2, 0], color='black')
 
-    kde_contours(df.LOGL1350_SDSS, df.IR_UV_RATIO, axs[0, 1], color=cs[1])
-    kde_contours(df.CIV_LOGBH_CORR_HW10, df.IR_UV_RATIO, axs[1, 1], color=cs[1])
-    kde_contours(np.log10(df.EddRatio), df.IR_UV_RATIO, axs[2, 1], color=cs[1])
+    kde_contours(df.LOGL1350_SDSS, df.IR_UV_RATIO, axs[0, 1], color='black')
+    kde_contours(df.CIV_LOGBH_CORR_HW10, df.IR_UV_RATIO, axs[1, 1], color='black')
+    kde_contours(np.log10(df.EddRatio), df.IR_UV_RATIO, axs[2, 1], color='black')
  
 
     axs[0, 0].set_xlim(45.8, 47)
@@ -119,3 +119,4 @@ def plot():
     plt.show() 
 
     return None 
+

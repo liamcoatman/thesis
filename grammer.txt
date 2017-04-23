@@ -56,6 +56,8 @@ numbers less than ten in words
 update acronym list 
 update summary bits in intro with summary, add summary to thesis? take these bits out of intro - check it still makes sense
 use \text not \mathrm
+give URLs for online tables 
+
 
 
 Might need to move abstract-like text from introduction. 
