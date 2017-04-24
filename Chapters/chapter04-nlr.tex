@@ -50,8 +50,6 @@ The spectrographs and telescopes used to obtain the near-infrared spectra are su
 \begin{table}
   \centering
   \footnotesize 
-  \caption{The numbers of quasars with [\ion{O}{III}] line measurements and the spectrographs and telescopes used to obtain the near-infrared spectra.}
-  \label{tab:specnums_ch4}
     \begin{tabular}{ccc} 
     \hline
     Spectrograph & Telescope & Number \\
@@ -72,6 +70,8 @@ The spectrographs and telescopes used to obtain the near-infrared spectra are su
     \multicolumn{2}{c}{Total} & $354$ \\
     \hline
     \end{tabular}
+    \caption[{The numbers of quasars with [\ion{O}{III}] line measurements and the spectrographs and telescopes used to obtain the near-infrared spectra.}]{The numbers of quasars with [\ion{O}{III}] line measurements and the spectrographs and telescopes used to obtain the near-infrared spectra.}
+  \label{tab:specnums_ch4}
 \end{table} 
 
 \section{Spectral measurements}
@@ -127,8 +127,6 @@ However, our analysis suggests that the emission which was modelled by \citet{sh
 \begin{table}
   \centering
   \footnotesize 
-  \caption{Summary of models used to fit the \hb emission, and the number of quasars each model is applied to.}
-  \label{tab:hbmod}
     \begin{tabular}{ccc} 
     \hline
     Model & Fix centroids? & Number \\
@@ -139,6 +137,8 @@ However, our analysis suggests that the emission which was modelled by \citet{sh
     $1$ broad Gaussian  & N/A &  $9$ \\
     \hline
     \end{tabular}
+    \caption[{Summary of models used to fit the \hb emission, and the number of quasars each model is applied to.}]{Summary of models used to fit the \hb emission, and the number of quasars each model is applied to.}
+  \label{tab:hbmod}
 \end{table} 
 
 In general, \hb is modelled with two Gaussians with non-negative amplitudes and FWHM greater than $1200$\,\kms.
@@ -168,8 +168,6 @@ The models we use to fit [\ion{O}{III}], and the numbers of quasars each model i
 \begin{table}
   \centering
   \footnotesize 
-  \caption{Summary of models used to fit the [\ion{O}{III}] emission, and the number of quasars each model is applied to.}
-  \label{tab:oiiimod}
     \begin{tabular}{cc} 
     \hline
     Model & Number \\
@@ -179,6 +177,8 @@ The models we use to fit [\ion{O}{III}], and the numbers of quasars each model i
     Template &  $62$ \\
     \hline
     \end{tabular}
+    \caption[{Summary of models used to fit the [\ion{O}{III}] emission, and the number of quasars each model is applied to.}]{Summary of models used to fit the [\ion{O}{III}] emission, and the number of quasars each model is applied to.}
+  \label{tab:oiiimod}
 \end{table} 
 
 In Figure~\ref{fig:example_spectrum_grid} we show example fits to eight objects. 
@@ -187,7 +187,7 @@ The median reduced-$\chi^2$ value in the whole sample is $1.31$ and, in general,
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{figures/chapter04/example_spectrum_grid.pdf} 
-    \caption[{Model fits to the continuum- and \ion{Fe}{II}-subtracted \hbns/[\ion{O}{III}] emission in eight quasars.}]{Example model fits to the continuum- and \ion{Fe}{II}-subtracted \hbns/[\ion{O}{III}] emission in eight quasars. The data is shown in grey, the best-fitting model in black, and the individual model components in orange. The peak of the [\ion{O}{III}] emission is used to set the redshift, and $\Delta{v}$ is the velocity shift from the rest-frame transition wavelength of \hbns. Below each spectrum we plot the data-minus-model residuals, scaled by the errors on the fluxes.}     
+    \caption[{Example model fits to the \hbns/[\ion{O}{III}] emission in eight quasars.}]{Example model fits to the continuum- and \ion{Fe}{II}-subtracted \hbns/[\ion{O}{III}] emission in eight quasars. The data is shown in grey, the best-fitting model in black, and the individual model components in orange. The peak of the [\ion{O}{III}] emission is used to set the redshift, and $\Delta{v}$ is the velocity shift from the rest-frame transition wavelength of \hbns. Below each spectrum we plot the data-minus-model residuals, scaled by the errors on the fluxes.}     
     \label{fig:example_spectrum_grid}
 \end{figure}
 
@@ -197,8 +197,6 @@ The median reduced-$\chi^2$ value in the whole sample is $1.31$ and, in general,
 \begin{table}
   \centering
   \footnotesize 
-  \caption{Summary of models used to fit the \ha emission, and the number of quasars each model is applied to.}
-  \label{tab:hamod}
     \begin{tabular}{cccc} 
     \hline
     Model     & Components & Fix centroids? & Number \\
@@ -210,6 +208,8 @@ The median reduced-$\chi^2$ value in the whole sample is $1.31$ and, in general,
     5        & $2$ broad Gaussians + narrow Gaussians & No  & $48$ \\
     \hline
     \end{tabular}
+    \caption[{Summary of models used to fit the \ha emission, and the number of quasars each model is applied to.}]{Summary of models used to fit the \ha emission, and the number of quasars each model is applied to.}
+  \label{tab:hamod}
 \end{table} 
 
 There are $165$ quasars in our sample with spectra covering the \ha emission-line. 
@@ -233,7 +233,7 @@ If it results in an increase in the reduced-$\chi^2$ which is less than $10$ per
 \begin{figure}[t!]
     \centering
     \includegraphics[width=0.8\textwidth]{figures/chapter04/example_oiii.pdf} 
-    \caption[{}]{Non-parametric measures of the [\ion{O}{III}] velocity-profile, as described in the text.}     
+    \caption[{Non-parametric measures of the [\ion{O}{III}] velocity-profile.}]{Non-parametric measures of the [\ion{O}{III}] velocity-profile, as described in the text.}     
     \label{fig:example_oiii}
 \end{figure}
 
@@ -257,8 +257,6 @@ In terms of the FWHM, $w_{50} \simeq \text{FWHM} / 1.746$, $w_{80} \simeq \text{
 \begin{table}
   \centering
   \footnotesize
-  \caption{The format of the table containing the emission-line properties from our parametric model fits. \todoinline{Available online.}}
-  \label{tab:nlr-specmeasure}
   \centering
     \begin{tabular}{cccc} 
     \hline
@@ -305,10 +303,10 @@ In terms of the FWHM, $w_{50} \simeq \text{FWHM} / 1.746$, $w_{80} \simeq \text{
     39 & HA\_Z\_ERR & & \\
     40 & OIII\_FE\_FLAG & & Bad \ion{Fe}{II} subtraction \\
     41 & OIII\_EXTREM\_FLAG & & Extreme [\ion{O}{III}] emission \\
-    42 & BLUESHIFT\_CIV\_OIII & \kms & \ion{C}{IV} blueshift, relative to [\ion{O}{III}] \\
-    43 & BLUESHIFT\_CIV\_OIII\_ERR & \kms &  \\
     \hline
     \end{tabular}
+    \caption[{The format of the table containing the emission-line properties from our parametric model fits.}]{The format of the table containing the emission-line properties from our parametric model fits. The full table is available online at http://dx.doi.org/10.5281/zenodo.557069.}
+  \label{tab:nlr-specmeasure}
 \end{table}
 
 All of the derived parameters we have calculated are summarised in Table~\ref{tab:nlr-specmeasure}. The columns are as follows: 
@@ -348,8 +346,6 @@ All of the derived parameters we have calculated are summarised in Table~\ref{ta
   \item[40] \ion{Fe}{II} flag. When flag is $1$ \ion{Fe}{II}-subtraction procedure has been unsuccessful (Section~\ref{sec:ch4-fe-removal}).  
 
   \item[41] Extreme [\ion{O}{III}] flag. When flag is $1$ [\ion{O}{III}] emission is extremely broad and blueshifted (Section~\ref{sec:extreme_oiii}). 
-
-  \item[42-43] \ion{C}{IV} $v_{50}$, relative to [\ion{O}{III}] peak, and its error, in \kms.
 
 \end{itemize}
 
@@ -424,7 +420,7 @@ Therefore, the $100$\,\kms offset we measure is consistent with \citet{hewett10}
     \subfloat[\label{fig:parameter_hists_b}]{}
     \subfloat[\label{fig:parameter_hists_c}]{}
     \subfloat[]{{\includegraphics[width=0.8\columnwidth]{figures/chapter04/parameter_hists.pdf} }}
-    \caption[{Probability density distributions of the [\ion{O}{III}] parameters EQW (a), $w_{80}$ (b) and asymmetry $A$ (c).}]{Probability density distributions of the [\ion{O}{III}] parameters EQW (a), $w_{80}$ (b) and asymmetry $A$ (c), generated using Gaussian kernel density estimator. The $1200$\,\kms\, upper limit on the velocity-width of the Gaussian functions used to model [\ion{O}{III}] is responsible for the peak at $1200$\,\kms\, in (b).}     
+    \caption[{Probability density distributions of the [\ion{O}{III}] parameters EQW, $w_{80}$ and asymmetry $A$.}]{Probability density distributions of the [\ion{O}{III}] parameters EQW (a), $w_{80}$ (b) and asymmetry $A$ (c), generated using Gaussian kernel density estimator. The $1200$\,\kms\, upper limit on the velocity-width of the Gaussian functions used to model [\ion{O}{III}] is responsible for the peak at $1200$\,\kms\, in (b).}     
     \label{fig:parameter_hists}
 \end{figure}
 
@@ -459,7 +455,7 @@ The median redshift of these objects is $0.55$ and the median bolometric luminos
 \begin{figure}[t!]
 \centering 
     \includegraphics[width=\columnwidth]{figures/chapter04/eqw_lum.pdf} 
-    \caption[{The [\ion{O}{III}] EQW as a function of the quasar bolometric luminosity for the sample presented in this chapter (blue circles) and the low-$z$ SDSS sample (grey points and contours).}]{The [\ion{O}{III}] EQW as a function of the quasar bolometric luminosity for the sample of luminous quasars presented in this chapter and the $z\lesssim1$ SDSS sample. An upper limit at $\text{EQW}=1$\,\AA\, indicates points with $\text{EQW} < 1$\,\AA. The red line shows the median [\ion{O}{III}] EQW in luminosity as a function of luminosity. The average EQW decreases from $18$ to $12$\,\AA\, over the luminosity range considered. At the same time, the fraction of quasars with very weak [\ion{O}{III}] ($\text{EQW} < 1$\,\AA) is ten times higher in the luminous quasar sample.}     
+    \caption[{The [\ion{O}{III}] EQW as a function of the quasar bolometric luminosity.}]{The [\ion{O}{III}] EQW as a function of the quasar bolometric luminosity for the sample of luminous quasars presented in this chapter and the $z\lesssim1$ SDSS sample. An upper limit at $\text{EQW}=1$\,\AA\, indicates points with $\text{EQW} < 1$\,\AA. The red line shows the median [\ion{O}{III}] EQW in luminosity as a function of luminosity. The average EQW decreases from $18$ to $12$\,\AA\, over the luminosity range considered. At the same time, the fraction of quasars with very weak [\ion{O}{III}] ($\text{EQW} < 1$\,\AA) is ten times higher in the luminous quasar sample.}     
     \label{fig:eqw_lum}
 \end{figure}
 
@@ -479,7 +475,7 @@ In other words, the NLR can't continue to grow beyond the radius at which there 
 \begin{figure}[t!]
     \centering
     \includegraphics[width=\columnwidth]{figures/chapter04/lum_w80.pdf} 
-    \caption[{}]{[\ion{O}{III}] velocity-width $w_{80}$ as a function of quasar bolometric luminosity. Objects with extreme [\ion{O}{III}] profiles (Section~\ref{sec:extreme_oiii}) are shown in red. The grey dots show $z\lesssim1$ SDSS quasars. The FWHM measurements given by \citet{shen11} have been converted into equivalent $w_{80}$ values by assuming $w_{80} \simeq \text{FWHM} / 0.919$. The build-up of points at $w_{80}=1300$\,\kms\, is caused by the upper-limit $1200$\,\kms\, imposed by \citet{shen11} on the [\ion{O}{III}] FWHM. The typical [\ion{O}{III}] velocity-width increases from $440$\,\kms\, at $\log L_{\text{Bol}}=45.5$\,\ergs\, to $1850$\,\kms\, at $\log L_{\text{Bol}}=48$\,\ergs. \todoinline{Need to check 1+z in luminosity calculation.}} 
+    \caption[{[\ion{O}{III}] velocity-width $w_{80}$ as a function of quasar bolometric luminosity.}]{[\ion{O}{III}] velocity-width $w_{80}$ as a function of quasar bolometric luminosity. Objects with extreme [\ion{O}{III}] profiles (Section~\ref{sec:extreme_oiii}) are shown in red. The grey dots show $z\lesssim1$ SDSS quasars. The FWHM measurements given by \citet{shen11} have been converted into equivalent $w_{80}$ values by assuming $w_{80} \simeq \text{FWHM} / 0.919$. The build-up of points at $w_{80}=1300$\,\kms\, is caused by the upper-limit $1200$\,\kms\, imposed by \citet{shen11} on the [\ion{O}{III}] FWHM. The typical [\ion{O}{III}] velocity-width increases from $440$\,\kms\, at $\log L_{\text{Bol}}=45.5$\,\ergs\, to $1850$\,\kms\, at $\log L_{\text{Bol}}=48$\,\ergs. \todoinline{Need to check 1+z in luminosity calculation.}} 
     \label{fig:lum_w80}
 \end{figure}
 
@@ -495,7 +491,7 @@ The lack of any evolution in typical [\ion{O}{III}] properties between $z=0$ and
 \begin{figure}[t!]
 \centering 
     \includegraphics[width=\columnwidth]{figures/chapter04/ev1_lowz.pdf} 
-    \caption[{EV$1$ parameter space.}]{The distribution of objects in the EV$1$ parameter space. The distribution of luminous quasars (shown using circles) is similar to the distribution of $z \lesssim 1$ SDSS quasars (shown using contours), with the displacement to higher \hb FWHM indicative of higher BH masses in the luminous sample.}      
+    \caption[{The distribution of objects in the EV$1$ parameter space.}]{The distribution of objects in the EV$1$ parameter space. The distribution of luminous quasars (shown using circles) is similar to the distribution of $z \lesssim 1$ SDSS quasars (shown using contours), with the displacement to higher \hb FWHM indicative of higher BH masses in the luminous sample.}      
     \label{fig:ev1_lowz}
 \end{figure}
 
@@ -517,7 +513,7 @@ This suggests that similar underlying physical processes govern the spectral pro
 \begin{figure}[t!]
 \centering 
     \includegraphics[width=0.9\textwidth]{figures/chapter04/ev1.pdf} 
-    \caption[]{Parameter space of \ion{C}{IV} blueshift and EQW. Our sample is shown with the coloured circles, and quasars from the full SDSS catalogue are shown with grey contours. The [\ion{O}{III}] EQW varies systematically across the \ion{C}{IV} blueshift-EQW parameter space. In the small \ion{C}{IV} blueshift, high EQW region the mean [\ion{O}{III}] EQW is $47$\,\AA; this drops dramatically to $6$\AA\, in the large \ion{C}{IV} blueshift, low EQW region.}      
+    \caption[{Parameter space of \ion{C}{IV} blueshift and EQW.}]{Parameter space of \ion{C}{IV} blueshift and EQW. Our sample is shown with the coloured circles, and quasars from the full SDSS catalogue are shown with grey contours. The [\ion{O}{III}] EQW varies systematically across the \ion{C}{IV} blueshift-EQW parameter space. In the small \ion{C}{IV} blueshift, high EQW region the mean [\ion{O}{III}] EQW is $47$\,\AA; this drops dramatically to $6$\AA\, in the large \ion{C}{IV} blueshift, low EQW region.}      
     \label{fig:ev1}
 \end{figure}
 
@@ -553,7 +549,7 @@ Blueshifted \ion{C}{IV} emission is thought to arise in a high-velocity accretio
 The strong anti-correlation between the \ion{C}{IV} blueshift and the [\ion{O}{III}] EQW suggests that these outflows are having a dramatic impact on gas extended over kilo-parsec scales in the NLR.
 Dynamical time-scales for the impact of fast moving outflows even on large NLRs are very short: it would take $10^6$ years for an outflow travelling at $3000$\,\kms\, to reach $3$\,kilo-parsec. 
 Lifetimes of luminous quasars at these redshifts may be $10^7$ years \citep[e.g.][]{martini01}. 
-Therefore, if the BLR outflows can break out in to the interstellar medium of the host-galaxy, the NLR can be cleared on a relatively short time-scale.
+Therefore, if the BLR outflows can break out into the interstellar medium of the host-galaxy, the NLR can be cleared on a relatively short time-scale.
 One possibility is that the BLR winds collide with the interstellar medium and shock and accelerate it to produce a galaxy-wide wind \citep[e.g.][]{king11,faucher12}. 
 \ion{C}{IV} blueshifts are generally weaker in lower-luminosity quasars. 
 Therefore, this picture also explains our finding that objects with very weak [\ion{O}{III}] ($\text{EQW} < 1$\,\AA) are ten times rarer in $z \lesssim 1$ SDSS quasars than in our sample of luminous quasars.   
@@ -568,7 +564,7 @@ Therefore, this picture also explains our finding that objects with very weak [\
     \subfloat[\label{fig:oiii_civ_blueshifts_b}]{}
     \subfloat[\label{fig:oiii_civ_blueshifts_c}]{}
     \subfloat[]{{\includegraphics[width=\linewidth]{figures/chapter04/civ_blueshift_oiii_blueshift.pdf} }}
-    \caption[{The relation between the blueshifts of \ion{C}{IV} and [\ion{O}{III}].}]{Relationship between the \ion{C}{IV} ($v_{50}$(\ion{C}{IV}) - $v_{\text{peak}}$([\ion{O}{III}])) and [\ion{O}{III}] ($v_{10}$([\ion{O}{III}]) - $v_{\text{peak}}$([\ion{O}{III}])) blueshift.  The \ion{C}{IV} and [\ion{O}{III}] blueshifts are correlated with $\rho_{\text{S}}=0.46$. This correlation is independent of the luminosity (indicated by the colour of the points). Objects with errors on the [\ion{O}{III}] and \ion{C}{IV} blueshifts exceeding $250$ or $125$\,\kms\, respectively are not shown in (c); these objects fall above the dashed line in (a) and (b). }     
+    \caption[{Relationship between the \ion{C}{IV} and [\ion{O}{III}] blueshifts.}]{Relationship between the \ion{C}{IV} ($v_{50}$(\ion{C}{IV}) - $v_{\text{peak}}$([\ion{O}{III}])) and [\ion{O}{III}] ($v_{10}$([\ion{O}{III}]) - $v_{\text{peak}}$([\ion{O}{III}])) blueshift. The \ion{C}{IV} and [\ion{O}{III}] blueshifts are correlated with $\rho_{\text{S}}=0.46$. This correlation is independent of the luminosity (indicated by the colour of the points). Objects with errors on the [\ion{O}{III}] and \ion{C}{IV} blueshifts exceeding $250$ or $125$\,\kms\, respectively are not shown in (c); these objects fall above the dashed line in (a) and (b). }     
     \label{fig:oiii_civ_blueshifts}
 \end{figure}
 
@@ -601,7 +597,7 @@ This effect could also explain the anti-correlation between the [\ion{O}{III}] E
 \begin{figure}
     \centering
     \includegraphics[width=\columnwidth]{figures/chapter04/example_spectrum_grid_extreme_oiii_1.pdf} 
-    \caption[{Model fits to the continuum- and \ion{Fe}{II}-subtracted \hbns/[\ion{O}{III}] emission in $18$ quasars with extreme [\ion{O}{III}] emission profiles.}]{Model fits to the continuum- and \ion{Fe}{II}-subtracted \hbns/[\ion{O}{III}] emission in $18$ quasars with extreme [\ion{O}{III}] emission profiles. The data is shown in grey, the best-fitting model in black, and the individual model components in orange. The peak of the [\ion{O}{III}] emission is used to set the redshift, and $\Delta{v}$ is the velocity shift from the rest-frame transition wavelength of \hbns. Below each spectrum we plot the data- minus-model residuals, scaled by the errors on the fluxes.}     
+    \caption[{Model fits to the \hbns/[\ion{O}{III}] emission in $18$ quasars with extreme [\ion{O}{III}] emission profiles.}]{Model fits to the continuum- and \ion{Fe}{II}-subtracted \hbns/[\ion{O}{III}] emission in $18$ quasars with extreme [\ion{O}{III}] emission profiles. The data is shown in grey, the best-fitting model in black, and the individual model components in orange. The peak of the [\ion{O}{III}] emission is used to set the redshift, and $\Delta{v}$ is the velocity shift from the rest-frame transition wavelength of \hbns. Below each spectrum we plot the data- minus-model residuals, scaled by the errors on the fluxes.}     
     \label{fig:example_spectrum_grid_extreme_oiii}
 \end{figure}
 
@@ -623,7 +619,7 @@ The \ion{Fe}{II} emission may also be significant in this region of the spectrum
 \begin{figure}
 \centering 
     \includegraphics[width=0.8\textwidth]{figures/chapter04/fivemicron_w90.pdf} 
-    \caption[{}]{Velocity-widths, $w_{90}$, and rest-frame $5$\,$\mu$m luminosities of the $18$ quasars in our sample with extreme [\ion{O}{III}] emission profiles and the four dust-reddened quasars from \citet{zakamska16}. Our sample falls on the width-luminosity relation derived by \citet{zakamska16}.}     
+    \caption[{Velocity-widths and rest-frame $5$\,$\mu$m luminosities of the $18$ quasars in our sample with extreme [\ion{O}{III}] emission profiles and the four dust-reddened quasars from \citet{zakamska16}.}]{Velocity-widths, $w_{90}$, and rest-frame $5$\,$\mu$m luminosities of the $18$ quasars in our sample with extreme [\ion{O}{III}] emission profiles and the four dust-reddened quasars from \citet{zakamska16}. Our sample falls on the width-luminosity relation derived by \citet{zakamska16}.}     
     \label{fig:fivemicron_w90}
 \end{figure}
 
@@ -687,7 +683,7 @@ These outflow efficiencies are in same ballpark as recent AGN feedback models \c
 
 Blind source separation (BSS) techniques can be used to find a set of basis vectors from a set of spectra. 
 An individual spectrum can then be represented as a linear combination of the basis vectors with a corresponding set of weights.  
-Principle component analysis (PCA) is one example of a BSS technique that has been applied extensively to analyse astronomical spectra \citep[e.g.][]{mittaz90,francis92,yip04}. 
+Principal component analysis (PCA) is one example of a BSS technique that has been applied extensively to analyse astronomical spectra \citep[e.g.][]{mittaz90,francis92,yip04}. 
 However, in general it is not possible to physically interpret the individual PCA components. 
 Mean field independent component analysis (MFICA) is more powerful class of BSS technique that works by finding a basis of independent components to represent the data.  
 \citet{allen13} used this technique to analyse the SDSS spectra of emission-line galaxies and demonstrated its effectiveness in identifying distinct emission sources in the spectra. 
@@ -723,10 +719,10 @@ The first six component weights are constrained to be non-negative, and a single
 The median reduced-$\chi^2$ is $1.4$ for quasars with $w_{80} < 2000$\,\kms\, (from fitting multiple Gaussians), which demonstrates that the MFICA components are able to accurately reproduce the spectra of these objects. 
 The MFICA components are also able to accurately reproduce the \ion{Fe}{II} emission in many of the quasars for which the \citet{boroson92} template was a poor model (Section~\ref{sec:ch4-fe-removal}). 
 
-However, the reduced-$\chi^2$ increases as $w_{80}$ increases, and visual inspection of the spectra confirm that the MFICA components are struggling to reproduce the very broad [\ion{O}{III}] emission lines present in our sample of luminous quasars. 
+However, the reduced-$\chi^2$ increases as $w_{80}$ increases, and visual inspection of the spectra confirm that the MFICA components are struggling to reproduce the very broad [\ion{O}{III}] emission-lines present in our sample of luminous quasars. 
 As we showed in Section~\ref{sec:ch4-lumdependence}, the typical [\ion{O}{III}] emission properties in luminous quasars at $z \gtrsim 2$ are significantly different from the properties of $z \lesssim 1$ SDSS quasars. 
 Specifically, [\ion{O}{III}] is broader, weaker and more asymmetric in the more luminous quasars.  
-[\ion{O}{III}] emission-lines with these characteristics are rare in the sample of $z \lesssim 1$ SDSS quasars used to derive the MFICA components, and so very broad [\ion{O}{III}] emission lines are not represented in the components. 
+[\ion{O}{III}] emission-lines with these characteristics are rare in the sample of $z \lesssim 1$ SDSS quasars used to derive the MFICA components, and so very broad [\ion{O}{III}] emission-lines are not represented in the components. 
 This issue may be straightforwardly addressed by increasing the spectral diversity of the training set. 
 Specifically, we can identify objects in the SDSS catalogue with broad [\ion{O}{III}] emission-lines similar to the ones seen in luminous quasars, and add these to the sample used to derive the MFICA components. 
 
@@ -738,7 +734,7 @@ Specifically, we can identify objects in the SDSS catalogue with broad [\ion{O}{
     \subfloat[\label{fig:mfica_components_a}]{}
     \subfloat[\label{fig:mfica_components_b}]{}
     \subfloat[]{{\includegraphics[width=0.8\linewidth]{figures/chapter04/mfica_components.pdf} }}
-    \caption{\hbns/[\ion{O}{III}] emission in quasar J$002952$+$020607$. The MFICA reconstruction is shown in black, and the spectrum in grey. The first three components ($w_1$, $w_2$, $w_3$), and the sum of components $w_4$, $w_5$ and $w_6$ are shown individually in (a). Components $w_4$, $w_5$, $w_6$ are shown individually in (b).}     
+    \caption[{MFICA reconstruction of the \hbns/[\ion{O}{III}] emission in quasar J$002952$+$020607$.}]{\hbns/[\ion{O}{III}] emission in quasar J$002952$+$020607$. The MFICA reconstruction is shown in black, and the spectrum in grey. The first three components ($w_1$, $w_2$, $w_3$), and the sum of components $w_4$, $w_5$ and $w_6$ are shown individually in (a). Components $w_4$, $w_5$, $w_6$ are shown individually in (b).}     
     \label{fig:mfica_components}
 \end{figure}
 
@@ -758,8 +754,6 @@ Although this is a good approximation, we find a non-negligible fraction of the 
 \begin{table}[t!]
   \centering
   \footnotesize 
-  \caption{Physical interpretation of the ICA components.}
-  \label{tab:icacomps}
     \begin{tabular}{cc} 
     \hline
     Component & Origin \\
@@ -772,6 +766,8 @@ Although this is a good approximation, we find a non-negligible fraction of the 
     $w_6$& [\ion{O}{III}] wing \\
     \hline
     \end{tabular}
+    \caption[{Physical interpretation of the MFICA components.}]{Physical interpretation of the MFICA components.}
+  \label{tab:icacomps}
 \end{table} 
 
 \subsection{MFICA component weight distributions}
@@ -779,7 +775,7 @@ Although this is a good approximation, we find a non-negligible fraction of the 
 \begin{figure}
 \centering 
     \includegraphics[width=\textwidth]{figures/chapter04/mfica_component_weights.pdf} 
-    \caption[{The relative weight in each of the six positive ICA components for the high-luminosity and low luminosity samples.}]{Distributions of each of the MFICA component weights in our sample of luminous quasars and in the $z \lesssim 1$ SDSS sample. The core [\ion{O}{III}] emission (represented by components $w_4$ and $w_5$) is weaker in the more luminous quasar sample, but the strength of the [\ion{O}{III}] wing ($w_6$) is similar. }     
+    \caption[{Distributions of each of the MFICA component weights in our sample of luminous quasars and in the $z \lesssim 1$ SDSS sample.}]{Distributions of each of the MFICA component weights in our sample of luminous quasars and in the $z \lesssim 1$ SDSS sample. The core [\ion{O}{III}] emission (represented by components $w_4$ and $w_5$) is weaker in the more luminous quasar sample, but the strength of the [\ion{O}{III}] wing ($w_6$) is similar. }     
     \label{fig:mfica_component_weights}
 \end{figure}
 
@@ -794,7 +790,7 @@ The MFICA component weights suggests that the varying strength of the core compo
 \begin{figure}
     \centering
     \includegraphics[width=\columnwidth]{figures/chapter04/mfica_composites.pdf} 
-    \caption[{Median ICA-reconstructed spectra as a function of the \ion{C}{IV} blueshift.}]{Median ICA-reconstructed spectra as a function of the \ion{C}{IV} blueshift.}     
+    \caption[{Median MFICA-reconstructed spectra as a function of the \ion{C}{IV} blueshift.}]{Median MFICA-reconstructed spectra as a function of the \ion{C}{IV} blueshift.}     
     \label{fig:mfica_composites}
 \end{figure}
 

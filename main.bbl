@@ -90,9 +90,49 @@
   \field{volume}{203}
   \field{journaltitle}{\apjs}
   \field{eprinttype}{arXiv}
-  \field{eprintclass}{astro-ph.IM}
   \field{month}{12}
   \field{year}{2012}
+\endentry
+
+\entry{susie16}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {{Alaghband-Zadeh}}{A.}%
+     {S.}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Banerji}}{B.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hewett}}{H.}%
+     {P.~C.}{P.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{McMahon}}{M.}%
+     {R.~G.}{R.~G.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{galaxies: active, quasars: emission lines, quasars: general}
+  \strng{namehash}{AS+1}
+  \strng{fullhash}{ASBMHPCMRG1}
+  \field{labelyear}{2016}
+  \field{sortinit}{A}
+  \verb{eprint}
+  \verb 1603.06419
+  \endverb
+  \field{pages}{999\bibrangedash 1017}
+  \field{title}{{Heavily reddened $z\sim2$ Type 1 quasars - II. H {$\alpha$}
+  star formation constraints from SINFONI IFU observations}}
+  \field{volume}{459}
+  \field{journaltitle}{\mnras}
+  \field{eprinttype}{arXiv}
+  \field{month}{06}
+  \field{year}{2016}
 \endentry
 
 \entry{alatalo11}{article}{}
@@ -331,7 +371,7 @@
   \endverb
   \field{pages}{2211\bibrangedash 2220}
   \field{title}{{Searching for evidence of energetic feedback in distant
-  galaxies: a galaxy wide outflow in a z \~{} 2 ultraluminous infrared galaxy}}
+  galaxies: a galaxy wide outflow in a $z\sim2$ ultraluminous infrared galaxy}}
   \field{volume}{402}
   \field{journaltitle}{\mnras}
   \field{eprinttype}{arXiv}
@@ -2003,9 +2043,6 @@
   \strng{fullhash}{BRGBAJMRHJCFCSBCMCSLCG1}
   \field{labelyear}{2006}
   \field{sortinit}{B}
-  \verb{doi}
-  \verb 10.1111/j.1365-2966.2006.10519.x
-  \endverb
   \verb{eprint}
   \verb astro-ph/0511338
   \endverb
@@ -4459,7 +4496,6 @@
   \field{volume}{139}
   \field{journaltitle}{\aj}
   \field{eprinttype}{arXiv}
-  \field{eprintclass}{astro-ph.IM}
   \field{month}{04}
   \field{year}{2010}
 \endentry
@@ -12323,6 +12359,54 @@
   \field{year}{2015}
 \endentry
 
+\entry{ness15}{article}{}
+  \name{author}{5}{}{%
+    {{}%
+     {{Ness}}{N.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Hogg}}{H.}%
+     {D.~W.}{D.~W.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Rix}}{R.}%
+     {H.-W.}{H.-W.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Ho}}{H.}%
+     {A.~Y.~Q.}{A.~Y.~Q.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Zasowski}}{Z.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{methods: data analysis, methods: statistical, stars: abundances, stars:
+  fundamental parameters, surveys, techniques: spectroscopic}
+  \strng{namehash}{NM+1}
+  \strng{fullhash}{NMHDWRHWHAYQZG1}
+  \field{labelyear}{2015}
+  \field{sortinit}{N}
+  \field{eid}{16}
+  \verb{eprint}
+  \verb 1501.07604
+  \endverb
+  \field{pages}{16}
+  \field{title}{{The Cannon: A data-driven approach to Stellar Label
+  Determination}}
+  \field{volume}{808}
+  \field{journaltitle}{\apj}
+  \field{eprinttype}{arXiv}
+  \field{month}{07}
+  \field{year}{2015}
+\endentry
+
 \entry{nesvadba06}{article}{}
   \name{author}{6}{}{%
     {{}%
@@ -14388,7 +14472,6 @@
   \field{volume}{394}
   \field{journaltitle}{\mnras}
   \field{eprinttype}{arXiv}
-  \field{eprintclass}{astro-ph.GA}
   \field{month}{04}
   \field{year}{2009}
 \endentry
@@ -15090,7 +15173,6 @@
   \field{volume}{698}
   \field{journaltitle}{\apj}
   \field{eprinttype}{arXiv}
-  \field{eprintclass}{astro-ph.CO}
   \field{month}{06}
   \field{year}{2009}
 \endentry
@@ -17713,7 +17795,6 @@
   \field{volume}{563}
   \field{journaltitle}{\aap}
   \field{eprinttype}{arXiv}
-  \field{eprintclass}{astro-ph.GA}
   \field{month}{03}
   \field{year}{2014}
 \endentry

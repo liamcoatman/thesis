@@ -160,7 +160,7 @@ def normalise_to_sdss():
     
     wav_nir = wav_nir / (1.0 + row.z_IR)
 
-    axs[0].plot(wav_nir, flux_nir*1e15, color=cs_light[0])
+    axs[0].plot(wav_nir, flux_nir*1e15, color=cs_light[0], label='Near-IR')
     
 
     if (row.SPEC_OPT == 'SDSS') | (row.SPEC_OPT == 'BOSS+SDSS'):
@@ -173,7 +173,9 @@ def normalise_to_sdss():
   
     wav_opt = wav_opt / (1.0 + row.z_IR)
     
-    axs[0].plot(wav_opt, flux_opt*1e15, color=cs_light[1])
+    axs[0].plot(wav_opt, flux_opt*1e15, color=cs_light[1], label='SDSS')
+
+    
     
     
     # Normalise SED model to SDSS spectra ----------------------------------------------------
@@ -339,7 +341,9 @@ def normalise_to_sdss():
     axs[0].plot(wav_nir, flux_nir*1e15 / k, color=cs[0], alpha=1.0)
 
 
-    axs[0].plot(xs, spc(xs)*1e15, color='black', lw=1)
+    axs[0].plot(xs, spc(xs)*1e15, color='black', lw=1, label='Model')
+
+    axs[0].legend(loc='upper right')
         
     axs[0].set_xlim(1300,7300)
     axs[0].set_ylim(0, 1)
@@ -500,7 +504,7 @@ def normalise_to_sdss():
     flxlst = f_0 * 10.0**(-0.4 * maglst) # data fluxes in erg/cm^2/s/A
     flxerrlst = flxlst * (-0.4) * np.log(10) * errlst 
 
-    axs[1].scatter(lameff / (1.0 + row.z_IR), flxlst*1e16, s=50, facecolor=cs[5], edgecolor='black', zorder=10)
+    axs[1].scatter(lameff / (1.0 + row.z_IR), flxlst*1e16, s=50, facecolor=cs[5], edgecolor='black', zorder=10, label='Photometry')
    
 
     plslp1 = 0.46
@@ -601,7 +605,7 @@ def normalise_to_sdss():
     
     xs = np.arange(1000, 10000, 10)
 
-    axs[1].plot(xs, spc(xs)*1e16, color='black', lw=1)
+    axs[1].plot(xs, spc(xs)*1e16, color='black', lw=1, label='Model')
 
     
 
@@ -631,7 +635,7 @@ def normalise_to_sdss():
     wav_nir[inds] = np.nan
     flux_nir[inds] = np.nan
 
-    axs[1].plot(wav_nir, flux_nir*1e16 / k, color=cs[0])
+    axs[1].plot(wav_nir, flux_nir*1e16 / k, color=cs[0], label='Near-IR')
 
     axs[1].set_xlim(1250, 9000)
     axs[1].set_ylim(0, 5)
@@ -641,26 +645,18 @@ def normalise_to_sdss():
 
     # -------------------------------------------------
 
-    axs[0].text(0.1, 0.93, 'J092952+355450',
+    axs[1].legend(scatterpoints=1)
+
+    axs[0].text(0.1, 0.93, '(a) J092952+355450',
                 horizontalalignment='left',
                 verticalalignment='center',
                 transform = axs[0].transAxes)
 
-    axs[1].text(0.1, 0.93, 'J100247+002104',
+    axs[1].text(0.1, 0.93, '(b) J100247+002104',
                 horizontalalignment='left',
                 verticalalignment='center',
                 transform = axs[1].transAxes)
 
-
-    labels = ['(a)', '(b)']
-
-
-    for i, label in enumerate(labels):
-
-        axs[i].text(0.9, 0.93, label,
-                    horizontalalignment='center',
-                    verticalalignment='center',
-                    transform = axs[i].transAxes)
 
 
     fig.tight_layout()

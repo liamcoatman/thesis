@@ -36,7 +36,9 @@ def make_table():
     df['OIII_FIT_VEL_HA_PEAK'] = df['OIII_FIT_VEL_HA_PEAK'] + df['zdiff']
     df['OIII_FIT_VEL_HA_PEAK_ERR'] = np.sqrt(df['OIII_FIT_VEL_HA_PEAK_ERR']**2 -     df['OIII_FIT_VEL_FULL_OIII_PEAK_ERR']**2)
     
-    
+
+
+
     columns = []
     
     columns.append('index')
@@ -78,10 +80,9 @@ def make_table():
     columns.append('OIII_FIT_HB_Z_ERR') 
     columns.append('OIII_FIT_HA_Z') 
     columns.append('OIII_FIT_HA_Z_ERR') 
-    columns.append('REDCHI') 
     columns.append('FE_FLAG') 
     columns.append('OIII_EXTREM_FLAG')
-    columns.append('OIII_FIT_HA_REDCHI')
+
     
     
     
@@ -127,8 +128,13 @@ def make_table():
                        'OIII_FIT_HB_Z_ERR': 'HB_Z_ERR',
                        'OIII_FIT_HA_Z': 'HA_Z',
                        'OIII_FIT_HA_Z_ERR': 'HA_Z_ERR',
-                       'REDCHI':'OIII_REDCHI',
                        'FE_FLAG':'OIII_FE_FLAG',
                        'OIII_FIT_HA_REDCHI': 'HA_REDCHI'}, inplace=True)
+
+
+    df.to_csv('/home/lc585/thesis/data/table4.5.csv',
+              index=False,
+              )
+
 
     return df 

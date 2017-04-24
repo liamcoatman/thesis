@@ -1,9 +1,10 @@
 in to -> into
 kiloparsec/kpc -> kilo-parsec
-check all short captions
+check all short captions - figures and tables 
+no missing figures/tables in lists
 micron -> $\mu$m  
 emission line -> emission-line
-Delete DOI, add archivePrefix = "arXiv" if missing
+Delete DOI, add archivePrefix = "arXiv" if missing, remove arxiv subclasses
 Spell check
 Check all references
 Chapter, Section: capitalize 
@@ -45,21 +46,19 @@ Check chapter structure
 Check all figures and tables where referenced 
 BALQSO -> BAL quasar 
 Reduce font size to 11 in equations (\begingroup\makeatletter\def\f@size{11}\check@mathfonts$$e=mc^2$$\endgroup and \noindent after 
-Search for "todos"
-look through for commented text
-check extra_text 
 reduced-$\chi^2$
 $\rho_{\mathrm S}=\text{-}0.30$, p-value $=4e\text{-}4$)
 velocity-width
 unfortunately we have an author called "doi" so be careful deleting this
 numbers less than ten in words
-update acronym list 
-update summary bits in intro with summary, add summary to thesis? take these bits out of intro - check it still makes sense
 use \text not \mathrm
-give URLs for online tables 
+add to acronym list 
 
 
 
-Might need to move abstract-like text from introduction. 
 
 
+
+
+Search for "todos"
+take super-abstracty bits out of intro 
