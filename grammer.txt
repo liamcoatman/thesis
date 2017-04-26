@@ -53,12 +53,13 @@ unfortunately we have an author called "doi" so be careful deleting this
 numbers less than ten in words
 use \text not \mathrm
 add to acronym list 
+set colors to binding color
 
 
 
 
 
 
-
-Search for "todos"
 take super-abstracty bits out of intro 
+Write summary
+

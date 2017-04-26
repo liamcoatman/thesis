@@ -1,7 +1,9 @@
 % !TEX root = ../main.tex
 
 %************************************************
-\chapter[Correcting \ion{C}{IV}-based BH Masses]{Correcting \ion{C}{IV}-Based Virial Black Hole Masses}
+\chapter{Correcting \ion{C}{IV}-Based Virial Black Hole Masses}
+\chaptermark{Correcting \ion{C}{IV}-based BH Masses}
+
 \label{ch:bhmass}
 %************************************************
 
@@ -189,7 +191,7 @@ We therefore fit a combination of a power-law continuum and an optical \ion{Fe}{
 The \ion{Fe}{II} template is convolved with a Gaussian, and the width of this Gaussian, along with the normalisation and velocity offset of the \ion{Fe}{II} template, are free variables in the pseudo-continuum fit.
 We use the same model to fit the broad and narrow components of \hb as was used with \hans. 
 Each line in the [\ion{O}{III}] doublet is fit with two Gaussians, to model both the systemic and any outflow contributions. 
-The peak flux ratio of the [\ion{O}{III}] $4960$\,\AA\, and $5008$\,\AA\, lines is fixed at $1:3$. 
+The peak flux ratio of the [\ion{O}{III}] $4960$\,\AA\, and $5008$\,\AA\, lines is fixed at $1$:$3$. 
 As for the fit to the narrow lines in the spectral region around \hans, the width and velocity offsets of all the narrow components are set to be equal, and an upper limit of $1200$\,\kms\, is placed on the FWHM. 
 
 The parametric model we fit to the \hbns/[\ion{O}{III}] emission region was very similar to the model employed by \citet{shen16a}. 
@@ -708,8 +710,7 @@ To reduce the impact of narrow absorption systems on the emission-line profile a
 Pixels within the \ion{C}{IV} profile that lie more than $2$-$\sigma$ below the pseudo-continuum are deemed to be affected by absorption and added to an `absorber'-mask. 
 Two pixels on either side of each such pixel are also included in the mask. 
 For each masked pixel, the flux values in the spectrum are replaced by values from the pseudo-continuum\footnote{While the absorption identification and interpolation scheme is not effective for spectra that possess
-associated absorption spread over more than $\sim1200$\,\kms, the sample you are using does
-not contain CIV-lines with such extensive absorption. \todoinline{These are in SDSS but have been removed?}}. 
+associated absorption spread over more than $\sim1200$\,\kms, objects containing \ion{C}{IV} lines with such extensive absorption have already been removed from the sample.}. 
 The wavelength that bisects the cumulative total line flux is recorded and the blueshift computed using Equation~\ref{eq:civblueshift}. 
 
 \subsection{Systematic trends in residuals}
@@ -911,27 +912,6 @@ As mentioned in Section~\ref{sec:ch3-intro} and discussed in \citet{richards11},
 In particular, there are currently very few reverberation-mapping measurements of quasars with large \ion{C}{IV} blueshifts. 
 Looking to the future, the results of the large on-going statistical reverberation mapping projects \citep[e.g.][]{shen15,kingoz15} for luminous quasars at high-redshift will shed new light on the Balmer line emitting region of the BLR for quasars with a range of \ion{C}{IV} blueshifts and lead to a greater understanding of the relation between the Balmer line profile and the BH mass.
 
-\subsection{The BAL parent population}
-
-Classical high-ionization BAL (HiBAL) quasars are also predominantly Population A objects in the scheme of \citet{sulentic00b}. 
-There are no HiBAL quasars in our sample by design but it is generally accepted that quasars which show high-ionisation BALs are likely to be radiating with relatively high $L/L_{\text{Edd}}$ \citep[e.g.][]{zhang14}. 
-We therefore propose that the subset of the quasar population that exhibits large \ion{C}{IV}-emission blueshifts, with high-EQW and narrow-\ha emission-lines, may be directly related to the HiBAL quasar population \---\ perhaps even the `parent' population \citep{richards06conf}. 
-A prediction of such a linkage is that near-infrared observations of the rest-frame optical spectra of HiBAL quasars will show strong, relatively narrow, Balmer emission-lines, very similar to those of the quasars with high \ion{C}{IV}-blueshifts presented in this chapter. 
-
-To test this hypothesis, we selected $18$ \ion{C}{IV} BAL quasars from our catalogue with near-infrared spectra including \hbns. 
-Using the same method described in Section~\ref{sec:hahbcomparison}, we constructed a median composite spectrum from this sample. 
-We also constructed composite spectra for quasars with modest and large \ion{C}{IV} blueshifts. 
-The results are shown in Figure~\ref{fig:bal_composite}. 
-We find that [\ion{O}{III}] is very weak and \hb is relatively narrow in the BAL quasars \citep[e.g.][]{yuan03}. 
-Therefore, as predicted, the optical emission-line properties of the BAL quasars are very similar to the properties of the non-BAL quasars with large \ion{C}{IV} blueshifts. 
-\todo{\hb narrower? Ask Paul about this plot.}
-
-\begin{figure}
-    \centering
-    \includegraphics[width=0.8\linewidth]{figures/chapter03/bal_composite.pdf}
-    \caption[{Composite spectra of the \hbns/[\ion{O}{III}] region for BAL and non-BAL quasars.}]{Composite spectra of the \hbns/[\ion{O}{III}] region made of BAL quasars, non-BAL quasars with \ion{C}{IV} blueshifts below $1000$\,\kms, and non-BAL quasars with \ion{C}{IV} blueshifts above $1500$\,\kms. \todoinline{Add sentence explaining what we see.}}
-    \label{fig:bal_composite}
-\end{figure}
 
 \subsection{The frequency of quasars with high accretion rates}
 
@@ -955,15 +935,19 @@ The above calculation, although much idealised, suggests that the intrinsic frac
 The main results of this chapter are as follows: 
 
 \begin{itemize}
+
 \item We have analysed the spectra of $230$ high-luminosity ($10^{45.5}-10^{48}$\,\ergs), redshift $1.5 < z < 4.0$ quasars for which spectra of the Balmer emission-lines and the \ion{C}{IV} emission-line exist.
 The large number of quasars in our spectroscopic catalogue and the wide range in \ion{C}{IV} blueshifts the quasars possess has allowed us to directly investigate biases in \ion{C}{IV}-based BH mass estimates which stem from non-virial contributions to the \ion{C}{IV} emission as a function of the \ion{C}{IV} blueshift, which, in turn, depends directly on the form of the quasar ultra-violet SEDs \citep{richards11}.
+
 \item The \ion{C}{IV} emission-based BH masses are systematically in error by a factor of more than five at $3000$\,\kms\, in \ion{C}{IV} emission blueshift and the overestimate of the BH masses reaches a factor of $10$ for quasars exhibiting the most extreme blueshifts, $\gtrsim5000$\,\kms. 
+
 \item We have derived an empirical correction formula for BH mass estimates based on the \ion{C}{IV} emission-line FWHM and blueshift.
 The correction may be applied using Equations~\ref{eq:hafwhm} and \ref{eq:masscorrection} in Section~\ref{sec:correction}.
 The large SED-dependent systematic error in \ion{C}{IV}-based BH masses is removed using the correction formulae.
 The remaining scatter between the corrected \ion{C}{IV}-based masses and the \hans-based masses is $0.24$\,dex at low \ion{C}{IV} blueshifts ($\sim0$\,\kms) and $0.10$\,dex at high blueshifts ($\sim3000$\,\kms). 
 This is a significant improvement on the $0.40$\,dex scatter observed between the un-corrected \ion{C}{IV} and \ha BH masses. 
 The correction depends only on the \ion{C}{IV} line properties - i.e. the FWHM and blueshift - and allows single-epoch virial BH mass estimates to be made from optical spectra, such as those provided by the SDSS, out to redshifts exceeding $z\sim 5$. 
+
 \end{itemize}
 
 \section{Catalogue of derived properties}

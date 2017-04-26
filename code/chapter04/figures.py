@@ -756,61 +756,41 @@ def civ_blueshift_oiii_blueshift(check_lum=False):
 
     if not check_lum: 
 
-        fig = plt.figure(figsize=figsize(1.0, vscale=1.5))
-        gs = gridspec.GridSpec(3, 2) 
-    
-        ax1 = fig.add_subplot(gs[0, 0])
-        ax2 = fig.add_subplot(gs[0, 1])
-        ax3 = fig.add_subplot(gs[1:, :])
-    
-        ax1.plot(df.loc[(df.yerr > ycut) & (df.OIII_EXTREM_FLAG == 0), 'yval'], 
-                 df.loc[(df.yerr > ycut) & (df.OIII_EXTREM_FLAG == 0), 'yerr'], 
-                 marker='o', 
-                 markeredgecolor='None',
-                 markerfacecolor=cs[1],
-                 markersize=3,
-                 linestyle='')
+        fig1, ax = plt.subplots(figsize=figsize(1.0, vscale=1.0))
+        fig2, axs = plt.subplots(1, 2, figsize=figsize(1.0, vscale=0.5))
+
+        axs[0].plot(df.loc[(df.OIII_EXTREM_FLAG == 0), 'yval'], 
+                    df.loc[(df.OIII_EXTREM_FLAG == 0), 'yerr'], 
+                    marker='o', 
+                    markeredgecolor='None',
+                    markerfacecolor=palettable.colorbrewer.qualitative.Set1_3.mpl_colors[1],
+                    markersize=3,
+                    linestyle='')
         
-        ax1.plot(df.loc[(df.yerr < ycut) & (df.OIII_EXTREM_FLAG == 0), 'yval'], 
-                 df.loc[(df.yerr < ycut) & (df.OIII_EXTREM_FLAG == 0), 'yerr'], 
-                 marker='o', 
-                 markeredgecolor='None',
-                 markerfacecolor=cs[1],
-                 markersize=3,
-                 linestyle='')
+
         
-        
-        ax1.axhline(ycut, color='black', linestyle='--')
+        axs[0].axhline(ycut, color='black', linestyle='--')
         
         
     
-        ax2.plot(df.loc[(df.xerr > xcut) & (df.OIII_EXTREM_FLAG == 0), 'xval'], 
-                 df.loc[(df.xerr > xcut) & (df.OIII_EXTREM_FLAG == 0), 'xerr'], 
+        axs[1].plot(df.loc[(df.OIII_EXTREM_FLAG == 0), 'xval'], 
+                 df.loc[(df.OIII_EXTREM_FLAG == 0), 'xerr'], 
                  marker='o', 
                  markeredgecolor='None',
-                 markerfacecolor=cs[1],
+                 markerfacecolor=palettable.colorbrewer.qualitative.Set1_3.mpl_colors[1],
                  markersize=3,
                  linestyle='')
         
-        
-        ax2.plot(df.loc[(df.xerr < xcut) & (df.OIII_EXTREM_FLAG == 0), 'xval'], 
-                 df.loc[(df.xerr < xcut) & (df.OIII_EXTREM_FLAG == 0), 'xerr'], 
-                 marker='o', 
-                 markeredgecolor='None',
-                 markerfacecolor=cs[1],
-                 markersize=3,
-                 linestyle='')
-        
-        
-        ax2.axhline(xcut, color='black', linestyle='--')
+
+        axs[1].axhline(xcut, color='black', linestyle='--')
     
         
-        im = ax3.scatter(df.loc[(df.xerr < xcut) & (df.yerr < ycut) & (df.OIII_EXTREM_FLAG == 0), 'xval'], 
-                         df.loc[(df.xerr < xcut) & (df.yerr < ycut) & (df.OIII_EXTREM_FLAG == 0), 'yval'],
-                         c = np.log10(9.26) + df.loc[(df.xerr < xcut) & (df.yerr < ycut) & (df.OIII_EXTREM_FLAG == 0), 'LogL5100'],
-                         marker='o', 
-                         edgecolor='None',
-                         cmap=palettable.matplotlib.Viridis_10.mpl_colormap)       
+        im = ax.scatter(df.loc[(df.xerr < xcut) & (df.yerr < ycut) & (df.OIII_EXTREM_FLAG == 0), 'xval'], 
+                        df.loc[(df.xerr < xcut) & (df.yerr < ycut) & (df.OIII_EXTREM_FLAG == 0), 'yval'],
+                        c = np.log10(9.26) + df.loc[(df.xerr < xcut) & (df.yerr < ycut) & (df.OIII_EXTREM_FLAG == 0), 'LogL5100'],
+                        marker='o', 
+                        edgecolor='None',
+                        cmap=palettable.matplotlib.Viridis_10.mpl_colormap)       
 
         x = df.loc[(df.xerr < xcut) & (df.yerr < ycut) & (df.OIII_EXTREM_FLAG == 0), 'xval']
         y = df.loc[(df.xerr < xcut) & (df.yerr < ycut) & (df.OIII_EXTREM_FLAG == 0), 'yval']
@@ -820,40 +800,32 @@ def civ_blueshift_oiii_blueshift(check_lum=False):
        
         # cbaxes = fig.add_axes([0.8, 0.1, 0.03, 0.8]) 
         # cb = plt.colorbar(im, cax = cbaxes, ticks=[46, 46.5, 47, 47.5, 48])  
-        cb = fig.colorbar(im, ticks=[46, 46.5, 47, 47.5, 48], orientation='horizontal')
+        cb = fig1.colorbar(im, ticks=[46, 46.5, 47, 47.5, 48], orientation='horizontal')
 
         cb.set_label('log L$_{\mathrm{Bol}}$ [erg~s$^{-1}$]')
 
-        
-        # ax3.plot(df.loc[(df.xerr < xcut) & (df.yerr < ycut) & (df.OIII_EXTREM_FLAG == 0), 'xval'], 
-        #          df.loc[(df.xerr < xcut) & (df.yerr < ycut) & (df.OIII_EXTREM_FLAG == 0), 'yval'],
-        #          linestyle='',
-        #          marker='o', 
-        #          markerfacecolor=cs[1],
-        #          markersize = 4,
-        #          markeredgecolor='None')
+
     
-        ax3.set_ylim(0, 2000)
+        ax.set_ylim(0, 2000)
         
-        ax1.xaxis.set_major_locator(MaxNLocator(4)) 
-        ax2.xaxis.set_major_locator(MaxNLocator(4)) 
+        axs[0].xaxis.set_major_locator(MaxNLocator(4)) 
+        axs[1].xaxis.set_major_locator(MaxNLocator(4)) 
     
-        ax1.yaxis.set_major_locator(MaxNLocator(4)) 
-        ax2.yaxis.set_major_locator(MaxNLocator(4)) 
+        axs[0].yaxis.set_major_locator(MaxNLocator(4)) 
+        axs[1].yaxis.set_major_locator(MaxNLocator(4)) 
         
-        ax3.set_xlabel(r'$\Delta v$(C\,{\sc iv}) [km~$\rm{s}^{-1}$]')
-        ax3.set_ylabel(r'$\Delta v$([O\,{\sc iii}]) [km~$\rm{s}^{-1}$]')
+        ax.set_xlabel(r'$\Delta v$(C\,{\sc iv}) [km~$\rm{s}^{-1}$]')
+        ax.set_ylabel(r'$\Delta v$([O\,{\sc iii}]) [km~$\rm{s}^{-1}$]')
         
-        ax1.set_xlabel(r'$\Delta v$([O\,{\sc iii}])', fontsize=9)
-        ax1.set_ylabel(r'$\sigma \Delta v$([O\,{\sc iii}])', fontsize=9)
+        axs[0].set_xlabel(r'$\Delta v$([O\,{\sc iii}])')
+        axs[0].set_ylabel(r'$\sigma \Delta v$([O\,{\sc iii}])')
     
-        ax2.set_xlabel(r'$\Delta v$(C\,{\sc iv})', fontsize=9)
-        ax2.set_ylabel(r'$\sigma \Delta v$(C\,{\sc iv})', fontsize=9)
+        axs[1].set_xlabel(r'$\Delta v$(C\,{\sc iv})')
+        axs[1].set_ylabel(r'$\sigma \Delta v$(C\,{\sc iv})')
 
 
 
-        labels = ['(a)', '(b)', '(c)']
-        axs = [ax1, ax2, ax3]
+        labels = ['(a)', '(b)']
 
         for i, label in enumerate(labels):
 
@@ -863,11 +835,13 @@ def civ_blueshift_oiii_blueshift(check_lum=False):
                     transform = axs[i].transAxes)
 
     
-        fig.tight_layout()
+        fig1.tight_layout()
+        fig2.tight_layout()
 
 
     
-        fig.savefig('/home/lc585/thesis/figures/chapter04/civ_blueshift_oiii_blueshift.pdf')
+        fig1.savefig('/home/lc585/thesis/figures/chapter04/civ_blueshift_oiii_blueshift.pdf')
+        fig2.savefig('/home/lc585/thesis/figures/chapter04/civ_blueshift_oiii_blueshift_flagged.pdf')
     
     else:
 
@@ -1438,12 +1412,12 @@ def eqw_lum():
             label=r'SDSS~~($z < 1$)')
 
 
-    # ax.plot(x[10**y <= 1], 
-    #         np.full_like(x[10**y <= 1], 0.9), 
-    #         markeredgecolor=cs[-1],
-    #         marker='|',
-    #         linestyle='', 
-    #         markeredgewidth=2)
+    ax.plot(x[10**y <= 1], 
+            np.full_like(x[10**y <= 1], 0.9), 
+            markeredgecolor=cs[-1],
+            marker='|',
+            linestyle='', 
+            markeredgewidth=2)
 
     ax.errorbar(x[10**y <= 1],
                 np.ones_like(x[10**y <= 1]),
@@ -1470,11 +1444,25 @@ def eqw_lum():
 
     df_total['Binned'] = np.digitize(df_total.LOGLBOL, bins=np.linspace(44.5, 48.5, 9))
     grouped = df_total.groupby(by = 'Binned')
-    ax.plot(grouped.LOGLBOL.median()[1:-1], grouped.EW_OIII_5007.median()[1:-1], color=cs[0], lw=2, zorder=2)
+    ax.plot(grouped.LOGLBOL.median()[2:-2], grouped.EW_OIII_5007.median()[2:-2], color='black', lw=2, zorder=2)
 
-    print grouped.EW_OIII_5007.median()[1:-1]
-    print grouped.LOGLBOL.median()[1:-1]
-    print grouped.LOGLBOL.count()[1:-1]
+    ax.plot(grouped.LOGLBOL.median()[2:-2], 
+            grouped.EW_OIII_5007.median()[2:-2] + (grouped.EW_OIII_5007.std()[2:-2] / np.sqrt(grouped.EW_OIII_5007.count()[2:-2])), 
+            color='black', 
+            lw=1, 
+            linestyle='--',
+            zorder=2)
+
+    ax.plot(grouped.LOGLBOL.median()[2:-2], 
+            grouped.EW_OIII_5007.median()[2:-2] - (grouped.EW_OIII_5007.std()[2:-2] / np.sqrt(grouped.EW_OIII_5007.count()[2:-2])), 
+            color='black', 
+            lw=1, 
+            linestyle='--',
+            zorder=2)
+
+    print grouped.EW_OIII_5007.median()[2:-2]
+    print grouped.LOGLBOL.median()[2:-2]
+    print grouped.LOGLBOL.count()[2:-2]
 
 
     ax.grid() 
@@ -3100,6 +3088,8 @@ def parameter_hists():
     # grid.fit(x[:, None]);
     
     # print grid.best_params_
+
+    print 0.0774 
     
     kde = KernelDensity(bandwidth=0.0774, kernel='gaussian')
     kde.fit(x[:, None])
@@ -3129,7 +3119,7 @@ def parameter_hists():
     df = df[df.OIII_EQW_FLAG == 0]
     
     x = df.OIII_5007_W80
-    print np.mean(x), np.std(x), np.median(x), np.min(x), np.max(x)
+    # print np.mean(x), np.std(x), np.median(x), np.min(x), np.max(x)
     norm = np.std(x)
     x = x / norm
     
@@ -3143,7 +3133,7 @@ def parameter_hists():
     # grid.fit(x[:, None]);
     
     # print grid.best_params_
-    
+    print norm*0.242
     kde = KernelDensity(bandwidth=0.242, kernel='gaussian')
     kde.fit(x[:, None])
     
