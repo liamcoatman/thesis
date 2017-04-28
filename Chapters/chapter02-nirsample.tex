@@ -209,12 +209,13 @@ A further $60$ quasars in our catalogue are bright SDSS quasars which were obser
 The objects were observed with the same science goals as the SOFI NTT large programme. 
 The spectra were reduced using a custom pipeline, again using algorithms in the LowRedux package. 
 
-\section[Redshift and luminosity distribution]{Redshift and luminosity distribution of catalogue}
+\section{Redshift and luminosity distribution of catalogue}
+\sectionmark{Redshift and luminosity distribution}
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.8\textwidth]{figures/chapter02/luminosity_z.pdf} 
-    \caption[{The redshift and luminosity distribution of our sample.}]{The ranges in redshift and luminosity covered by our sample, relative to the redshift-luminosity distribution of the SDSS DR$7$ quasar catalogue. For the SDSS sample we use \citet{hewett10} redshifts and bolometric luminosities computed by \citet{shen11} from $L(3000\,{\mathrm \AA})$ ($z < 1.9$) and $L(1350\,{\mathrm \AA})$ ($z \gtrsim 1.9$) using bolometric corrections ${\mathrm BC}(3000\,{\mathrm \AA})=5.15$ and $\text{BC}(1350{\mathrm \AA})=3.81$ \citep{richards06}. For the quasars in this work the redshift is defined using the peak of the \hans/\hb emission and the bolometric luminosity is computed from $L(5100\,{\mathrm \AA})$ using $\text{BC}(5100\,{\mathrm \AA})=9.26$ \citep{richards06}.}     
+    \caption[{The redshift and luminosity distribution of quasar sample.}]{The ranges in redshift and luminosity covered by our sample, relative to the redshift-luminosity distribution of the SDSS DR$7$ quasar catalogue. For the SDSS sample we use \citet{hewett10} redshifts and bolometric luminosities computed by \citet{shen11} from $L_{3000}$ ($z < 1.9$) and $L_{1350}$ ($z > 1.9$) using bolometric corrections $L_{\text{Bol}} = 5.15 L_{3000}$ and $L_{\text{Bol}} = 3.81 L_{1350}$ \citep{richards06}. For the quasars in this work the redshift is defined using the peak of the \hans/\hb emission and the bolometric luminosity is computed from $L(5100\,{\mathrm \AA})$ using $\text{BC}(5100\,{\mathrm \AA})=9.26$ \citep{richards06}.}     
     \label{fig:lzplane}
 \end{figure}
 
@@ -259,7 +260,7 @@ The sources of the optical spectra (summarised in Table~\ref{tab:optical-data}) 
 
  \item Spectra taken with VLT/UVES. The reduced and fluxed UVES spectra were made available to us by Dr. A. Dall'Aglio (a description of the reduction procedure is contained in \citealt{dallaglio08}). The spectral resolution of the UVES observations is very high ($R\simeq40\,000$) and the S/N of the spectra, re-binned to a resolution of $R\simeq2000$, is $\text{S/N}\simeq300$. 
 
- \item Spectra taken with VLT/XSHOOTER. The XSHOOTER spectra are moderate resolution ($R\simeq6000$) and cover the full observed-frame optical-near-infrared spectral region ($0.30-2.50$\,$\mu$m). 
+ \item Spectra taken with VLT/XSHOOTER. The XSHOOTER spectra are moderate resolution ($R\simeq6000$) and cover the full observed-frame optical to near-infrared spectral region ($0.30-2.50$\,$\mu$m). 
 
 \end{enumerate}
 
@@ -268,7 +269,7 @@ The sources of the optical spectra (summarised in Table~\ref{tab:optical-data}) 
 We cross-matched our catalogue with photometric data from a number of wide-field surveys. 
 The matching was done using a three arcsecond matching radius, with only the closest neighbour retained in the case of multiple matches. 
 The cross-matched surveys and the percentage of successful matches is summarised in Table~\ref{tab:cross-matching}. 
-The columns in Table~\ref{tab:cross-matching} are as follows:
+The cross-matched surveys are as follows:
 
 \begin{enumerate}
 
@@ -276,7 +277,7 @@ The columns in Table~\ref{tab:cross-matching} are as follows:
 
  \item Two Micron All Sky Survey \citep[$2$MASS;][]{skrutskie06} Point Source Catalogue. Default magnitudes.
 
- \item UKIDSS Large Area Survey (DR$10$). One arcsecond radius aperture corrected magnitudes (`apermag$3$').   
+ \item ULAS DR$10$. One arcsecond radius aperture corrected magnitudes (`apermag$3$').   
 
  \item Visible and Infrared Survey Telescope for Astronomy (VISTA) Hemisphere Survey \citep[VHS;][]{mcmahon13}. One arcsecond radius aperture corrected magnitudes (`apermag$3$').   
 
@@ -322,7 +323,8 @@ $128$ objects are outside of the FIRST footprint, $269$ are not detected in FIRS
   \label{tab:cross-matching}
 \end{table} 
 
-\section[Absolute flux calibration]{Absolute flux calibration of near-infrared spectra}
+\section{Absolute flux calibration of near-infrared spectra}
+\sectionmark{Absolute flux calibration}
 
 Relative flux-calibration of the infrared spectra as a function of wavelength has been achieved through observations of appropriate flux standards. 
 The absolute flux levels, however, can be in error by large factors due to variable atmospheric conditions combined with the narrow slit widths. 
@@ -345,7 +347,7 @@ The flux calibration procedure is demonstrated in Figure~\ref{fig:normalise_to_s
 \subsection{BOSS spectrum as a fiducial baseline}
 
 This procedure is identical to one described in the previous section, the only difference being that the SDSS spectrum is substituted for a BOSS spectrum. 
-To avoid the known issues in the flux calibration of the BOSS DR$12$ quasar spectra at observed-frame blue wavelengths \citep{lee13}, our fitting was confined to rest-frame wavelengths long-ward of $1275$\,\AA.
+To avoid the known issues in the flux calibration of the BOSS DR$12$ quasar spectra at blue wavelengths \citep{lee13}, our fitting was confined to rest-frame wavelengths long-ward of $1275$\,\AA.
 
 \begin{figure}
     \captionsetup[subfigure]{labelformat=empty}
@@ -353,7 +355,7 @@ To avoid the known issues in the flux calibration of the BOSS DR$12$ quasar spec
     \subfloat[\label{fig:normalise_to_sdss_a}]{}
     \subfloat[\label{fig:normalise_to_sdss_b}]{}    
     \subfloat[]{{\includegraphics[width=\textwidth]{figures/chapter02/normalise_to_sdss.pdf} }}
-    \caption[{Demonstration of how the absolute flux calibration of a near-infrared spectrum is established.}]{Demonstration of how the absolute flux calibration of a near-infrared spectrum is established using the SDSS spectrum (a) or photometric data (b) as fiducial baselines. An empirical quasar SED model is used to bridge the discontinuity in the wavelength coverage of the optical/near-infrared spectroscopic and photometric data. The darker regions of the spectra are used in the fitting procedures.}     
+    \caption[{Demonstration of absolute flux calibration of near-infrared spectra.}]{Demonstration of how the absolute flux calibration of a near-infrared spectrum is established using the SDSS spectrum (a) or photometric data (b) as fiducial baselines. An empirical quasar SED model is used to bridge the discontinuity in the wavelength coverage between the optical and near-infrared data. The darker regions of the spectra are used in the fitting procedures.}     
     \label{fig:normalise_to_sdss}
 \end{figure}
 
@@ -378,7 +380,7 @@ This procedure is illustrated in Figure~\ref{fig:normalise_to_sdss_b}.
     None               & $1$ \\    
     \hline
     \end{tabular}
-    \caption[{Methods used in absolute flux calibration of near-infrared spectra.}]{Methods used in absolute flux calibration of near-infrared spectra.}
+    \caption[{Methods used in absolute flux calibration of near-infrared spectra.}]{Methods used in absolute flux calibration of near-infrared spectra and the percentage of spectra to which each method is applied.}
   \label{tab:flux_calibration}
 \end{table} 
 
@@ -393,10 +395,11 @@ For all the catalogue quasars, the optical and near-infrared spectra as well as 
 Intrinsic quasar photometric variability in the rest-frame ultra-violet and optical will therefore add additional scatter of $\sim0.2$\,mag \citep[e.g.][]{macleod10} to the derived $1350$ and $5100$\,\AA\, luminosities.
 
 The monochromatic continuum luminosity at $5$\,$\mu$m was also computed by linearly interpolating through the WISE photometric data points. 
-$5$\,$\mu$m luminosities were derived in this way for $434$ quasars up to redshift $z=3.4$. 
+$5$\,$\mu$m luminosities were derived in this way for quasars up to redshift $z=3.4$. 
 At higher redshifts, the longest wavelength WISE passband ($W4$) is at $<5$\,$\mu$m in the quasar rest-frame and so $5$\,$\mu$m luminosities could not be computed using this method.
 
-\section[Instrumental broadening]{Correcting for instrumental broadening}
+\section{Correcting for instrumental broadening}
+\sectionmark{Instrumental broadening}
 
 \begin{table}
   \centering

@@ -11,6 +11,7 @@ import brewer2mpl
 from PlottingTools.truncate_colormap import truncate_colormap
 import matplotlib.colors as colors
 import numpy as np 
+import palettable
 import matplotlib.pyplot as plt 
 from scipy import histogram2d
 from qsosed.get_data import get_data, extcut
@@ -18,6 +19,8 @@ from PlottingTools.plot_setup_thesis import figsize, set_plot_properties
 set_plot_properties() # change style 
 
 def plot():
+
+    cs = palettable.colorbrewer.qualitative.Set1_3.mpl_colors
 
     # Load parameter file
     with open('/home/lc585/qsosed/input.yml', 'r') as f:
@@ -97,7 +100,7 @@ def plot():
 
         col.append(magtmp[3] - magtmp[8])
 
-    plt.plot(zs,col,label='E(B-V) = 0.075',color='black',linewidth=1.0)
+    plt.plot(zs,col,label='E(B-V) = 0.075',color=cs[0],linewidth=1.0)
     upper_bound_1 = col[np.argmin(np.abs(zs-1.0)):np.argmin(np.abs(zs-1.5))]
     upper_bound_2 = col[np.argmin(np.abs(zs-2.0)):np.argmin(np.abs(zs-2.7))]
 
@@ -112,7 +115,7 @@ def plot():
 
         col.append(magtmp[3] - magtmp[8])
 
-    plt.plot(zs,col,label='E(B-V) = -0.075',color='black',linewidth=1.0)
+    plt.plot(zs,col,label='E(B-V) = -0.075',color=cs[0],linewidth=1.0)
     lower_bound_1 = col[np.argmin(np.abs(zs-1.0)):np.argmin(np.abs(zs-1.5))]
     lower_bound_2 = col[np.argmin(np.abs(zs-2.0)):np.argmin(np.abs(zs-2.7))]
 
@@ -121,7 +124,7 @@ def plot():
                      lower_bound_2,
                      upper_bound_2,
                      facecolor='None',
-                     edgecolor='black',
+                     edgecolor=cs[0],
                      linewidth=3.0)
 
     col = []
@@ -135,7 +138,7 @@ def plot():
 
         col.append(magtmp[3] - magtmp[8])
 
-    plt.plot(zs,col,label='E(B-V) = 0.0',color='black',linewidth=1.0)
+    plt.plot(zs,col,label='E(B-V) = 0.0',color=cs[0],linewidth=1.0)
 
 
     plt.xlim(0.75,3.5)

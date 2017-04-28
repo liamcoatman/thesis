@@ -18,7 +18,7 @@ At high redshift, $z \gtrsim 2$, quasar BH masses are derived using the velocity
 However, \ion{C}{IV} exhibits significant asymmetric structure which suggests that the associated gas is not tracing virial motions. 
 We find the \ion{C}{IV} emission-based BH masses to be systematically in error by a factor of more than five at $3000$\,\kms\, in \ion{C}{IV} emission blueshift and the overestimate reaches a factor of $10$ for quasars exhibiting the most extreme blueshifts, $\gtrsim5000$\,\kms. 
 Using the monotonically increasing relationship between the \ion{C}{IV} blueshift and the mass ratio BH(\ion{C}{IV})/BH(\hans) we derive an empirical correction to all \ion{C}{IV} BH-masses.
-The correction depends only on the \ion{C}{IV} line properties - i.e. the FWHM and blueshift - and allows single-epoch virial BH mass estimates to be made from optical spectra, such as those provided by the SDSS, out to redshifts exceeding $z\sim 5$. 
+The correction depends only on the \ion{C}{IV} line properties -- i.e. the FWHM and blueshift -- and allows un-biased single-epoch virial BH mass estimates to be made from optical spectra, such as those provided by the SDSS, out to redshifts exceeding $z\sim 5$. 
 
 \section{Quasar-driven galaxy-wide outflows in ionised gas} 
 
@@ -32,7 +32,7 @@ We estimate the kinetic power of the outflows to be up to a few percent of the q
 
 Using data from a number of recent wide-field photometric surveys, we have built a parametric SED model that is able to reproduce the median optical to infrared colours of tens of thousands of SDSS AGN at redshifts $1 < z < 3$. 
 In individual objects, we find significant variation in the near-infrared SED dominated by emission from hot dust. 
-We find that the hot dust abundance is strongly correlated with the strength of outflows in the quasar BLR (indicated by the \ion{C}{IV} blueshift), suggesting that the hot dust may be in a wind emerging from the outer edges of the accretion disc. 
+We find the hot dust abundance to be strongly correlated with the strength of outflows in the quasar BLR, suggesting that the hot dust may be in a wind emerging from the outer edges of the accretion disc. 
 
 \section{Future prospects}
 
@@ -44,8 +44,8 @@ These enormous surveys will open up new possibilities in large-scale studies of 
 
 Allen \& Hewett (2017, in preparation) will soon publish improved redshifts for all quasars in the SDSS DR$7$ and DR$12$ catalogues. 
 At the same time, we will publish catalogues of unbiased BH masses for both SDSS DR$7$ and DR$12$ based on the Allen \& Hewett redshifts. 
-The components from the MFICA used in the Allen \& Hewett redshift algorithm will also be published.
-With these components, if a rest-frame ultraviolet spectrum is available, it will be straightforward to determine the systemic redshift, via a simple optimisation procedure, and hence calculate the \ion{C}{IV} blueshift and BH mass. 
+The MFICA components used in the Allen \& Hewett redshift algorithm will also be published.
+With these components, if a rest-frame ultra-violet spectrum is available, it will be straightforward to determine the systemic redshift, via a simple optimisation procedure, and hence calculate the \ion{C}{IV} blueshift and BH mass. 
 
 While the large \ion{C}{IV} blueshift-dependent systematic error in the \ion{C}{IV}-based BH masses is removed using the method developed in Chapter~\ref{ch:bhmass}, the remaining scatter between the \ion{C}{IV}- and Balmer-based BH masses is significant, particularly for objects with small \ion{C}{IV} blueshifts.
 It may be possible to reduce this scatter further by adding more features from the rest-frame ultra-violet spectrum to the model. 
@@ -56,16 +56,16 @@ Taking the set of $230$ objects with near-infrared spectra (and hence reliable B
 After the training step, the model could be used to predict a BH mass based only on the MFICA component weights for the ultra-violet spectrum.
 There are numerous algorithms available to tackle this class of supervised learning problem (e.g. random forests). 
 
-Taking this one step further, a data-driven model could be built to predict the unseen rest-frame optical spectrum from the ultra-violet region probed by SDSS spectra at redshifts $z\gtrsim2$.
+Taking this one step further, a data-driven model could be built to predict the unseen rest-frame optical spectrum from the rest-frame ultra-violet region probed by SDSS spectra at redshifts $z\gtrsim2$.
 This approach is inspired by the data-driven model for deriving stellar labels from spectroscopic data developed by \citet{ness15}.
-The MFICA component weights can be thought of as a set of `labels' describing the optical spectrum. 
-A flexible generative model could be built that predicts the flux at each wavelength in the SDSS rest-frame ultra-violet spectrum as a function of these weights.
-The coefficients in this model, which could be linear or a low-order polynomial, could be trained on the sub-sample of quasars with spectra covering the full optical to ultra-violet region. 
-Once the coefficients in the model have been determined, the model can statistically infer the optical MFICA component weights based only on the ultra-violet spectrum. 
-The optical spectrum can then straightforwardly be reconstructed from the MFICA components and parameters of interest, including the BH mass, can be calculated, without the need for follow-up near-infrared spectroscopy. 
+The MFICA component weights can be thought of as a set of `labels' describing the rest-frame optical spectrum. 
+A flexible generative model could be built that predicts the flux at each wavelength in the SDSS ultra-violet spectrum as a function of these weights.
+The coefficients in this model, which could be linear or a low-order polynomial, could be trained on the sub-sample of quasars with spectra covering the full rest-frame optical to ultra-violet region. 
+Once the coefficients in the model have been determined, the model can statistically infer the rest-frame optical MFICA component weights based only on the rest-frame ultra-violet spectrum. 
+The rest-frame optical spectrum can then straightforwardly be reconstructed from the MFICA components and parameters of interest, including the BH mass, can be calculated, without the need for follow-up near-infrared spectroscopy. 
 
 It is important to recall that the sample of AGN with reverberation mapping measurements is strongly biased to low luminosity Seyfert $1$ galaxies, and the maximum redshift is just $z\sim0.3$.
-The reliability of single-epoch virial BH mass estimates for quasars at high-redshifts, even using low-ionisation lines like \hbns, is dependent on the (as of yet untested) extrapolation of reverberation-mapping results to quasars at much higher luminosities. 
+The reliability of single-epoch virial BH mass estimates for quasars at high-redshifts, even using low-ionisation lines like \hbns, is dependent on the (as of yet untested) extrapolation of relations calibrated for sub-Eddington BHs with $M_{\text{BH}}\sim10^7\,M_\odot$ to BHs with masses up to $10^{10}\,M_\odot$ that are radiating near the Eddington luminosity. 
 In the future, this situation will be improved with the results of large on-going statistical reverberation mapping projects for luminous quasars at high-redshifts \citep[e.g.][]{shen15,kingoz15}. 
 
 \subsection{Studying feedback with IFU spectroscopy}
@@ -81,9 +81,9 @@ Measuring the extent of the outflowing gas traced by [\ion{O}{III}] could reveal
 
 Large optical spectroscopic surveys (e.g. SDSS) have provided constraints on the prevalence and drivers of ionised outflows in tens of thousands of quasars.
 A new generation of surveys using multi-object IFU spectrographs \citep[including KMOS, MaNGA and SAMI;][]{croom12,sharples13,bundy15} are now providing spatially-resolved information on the physical properties of galaxies (such as gas kinematics and star formation histories) for statistically powerful samples at a range of redshifts. 
-Ionised gas accounts for only a small fraction of the total gas in galaxies.
+However, ionised gas accounts for only a small fraction of the total gas in galaxies.
 Sub-millimetre interferometers (including ALMA) provide complementary information by probing the cold, molecular gas from which stars are formed. 
-Massive molecular outflows in quasar host galaxies are now being detected with new facilities up to very high redshifts \citep[e.g.][]{maiolino12} and will lead to great advances in our understanding of the AGN/host galaxy connection. 
+Massive molecular outflows in quasar host galaxies are now being detected up to very high redshifts \citep[e.g.][]{maiolino12} and this will lead to great advances in our understanding of the AGN/host galaxy connection. 
 
 
  

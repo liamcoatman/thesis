@@ -39,7 +39,7 @@ equation -> eqnarray
 bandpass, band, pass-band -band-pass -> passband 
 Type 1/2 -> Type I/II 
 Further -> farther 
-AGNs -> AGNs.
+AGNs -> AGN.
 Remove all Is
 chapter / section if not numbered (e.g. in this section, ...)
 Check chapter structure
@@ -58,8 +58,8 @@ set colors to binding color
 
 
 
+finish acknowledgements
+check thesis requirements 
 
 
-take super-abstracty bits out of intro 
-Write summary
 

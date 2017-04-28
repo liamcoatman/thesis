@@ -1208,6 +1208,7 @@ def shen_comparison_hb():
     df.dropna(subset=['FWHM_BROAD_HB_S16', 'FWHM_Broad_Hb'], inplace=True)
 
     print mad(df.loc[:, 'FWHM_BROAD_HB_S16'] - df.loc[:,'FWHM_Broad_Hb'])
+    print np.std(df.loc[:, 'FWHM_BROAD_HB_S16'] - df.loc[:,'FWHM_Broad_Hb'])
 
     scatter1 = ax.scatter(df.loc[:, 'FWHM_BROAD_HB_S16'],
                           df.loc[:,'FWHM_Broad_Hb'],
@@ -1252,6 +1253,7 @@ def shen_comparison_ha():
     df.dropna(subset=['FWHM_Ha_S12', 'FWHM_Broad_Ha'], inplace=True)  
 
     print mad(df.loc[:, 'FWHM_Ha_S12'] - df.loc[:, 'FWHM_Broad_Ha'])
+    print np.std(df.loc[:, 'FWHM_Ha_S12'] - df.loc[:, 'FWHM_Broad_Ha'])
 
     scatter1 = ax.scatter(df.loc[:, 'FWHM_Ha_S12'],
                           df.loc[:, 'FWHM_Broad_Ha'],
@@ -1303,6 +1305,8 @@ def shen_comparison_civ():
     df = df[df.SPEC_OPT == 'SDSS']
     
     print mad(df['FWHM_CIV_S11'] - df['FWHM_CIV'])
+    print np.std(df['FWHM_CIV_S11'] - df['FWHM_CIV'])
+
     scatter1 = ax.scatter(df['FWHM_CIV_S11'],
                           df['FWHM_CIV'],
                           c=cs[1],
@@ -3260,13 +3264,13 @@ def blueshift_composite():
     ax.set_ylim(0, 5)
 
     ax.set_xlabel(r'Wavelength [${\mathrm \AA}$]')
-    ax.set_ylabel(r'$F_\lambda$')
+    ax.set_ylabel(r'$F_\lambda$ [Arbitrary units]')
 
     lineid_plot.plot_line_ids(t[:, 0], t[:, 2], line_wave, ['', '', ''], ax=ax, arrow_tip=4)
     # ax.text(1216, 4.4, r'Ly$\alpha$/N\,{\sc v}', ha='center', va='bottom', fontsize=9)
-    ax.text(1400, 4.4, r'Si\,{\sc iv}/O\,{\sc iv}', ha='center', va='bottom', fontsize=9)
+    ax.text(1400, 4.4, r'Si\,{\sc iv}/O\,{\sc iv}]', ha='center', va='bottom', fontsize=9)
     ax.text(1549, 4.4, r'C\,{\sc iv}', ha='center', va='bottom', fontsize=9)
-    ax.text(1909, 4.4, r'Si\,{\sc iv}]+C\,{\sc iii}]', ha='center', va='bottom', fontsize=9)
+    ax.text(1909, 4.4, r'Si\,{\sc iii}]+C\,{\sc iii}]', ha='center', va='bottom', fontsize=9)
 
     ax.annotate(r'Ly$\alpha$/N\,{\sc v}',
                 xy=(1216, 4), xycoords='data',

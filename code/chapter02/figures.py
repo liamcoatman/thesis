@@ -361,7 +361,7 @@ def normalise_to_sdss():
     wav_nir = wav_nir / (1.0 + row.z_IR)
 
     
-    axs[1].plot(wav_nir[wav_nir > 2800.0], flux_nir[wav_nir > 2800.0]*1e16, color=cs_light[0])
+    
 
     ftrlst, maglst, errlst, lameff = [], [], [], []  
 
@@ -605,7 +605,8 @@ def normalise_to_sdss():
     
     xs = np.arange(1000, 10000, 10)
 
-    axs[1].plot(xs, spc(xs)*1e16, color='black', lw=1, label='Model')
+    
+    axs[1].plot(xs, spc(xs)*1e16, color='black', lw=1, label='Model', zorder=2)
 
     
 
@@ -635,7 +636,16 @@ def normalise_to_sdss():
     wav_nir[inds] = np.nan
     flux_nir[inds] = np.nan
 
-    axs[1].plot(wav_nir, flux_nir*1e16 / k, color=cs[0], label='Near-IR')
+    axs[1].plot(wav_nir, flux_nir*1e16 / k, color=cs[0], zorder=1)
+    
+ 
+    # modified this so need to reload
+    wav_nir, dw_nir, flux_nir, err_nir = get_nir_spec(row.NIR_PATH, row.INSTR)      
+    
+    wav_nir = wav_nir / (1.0 + row.z_IR)
+
+
+    axs[1].plot(wav_nir[wav_nir > 2800.0], flux_nir[wav_nir > 2800.0]*1e16 / k, color=cs_light[0], label='Near-IR', zorder=0)
 
     axs[1].set_xlim(1250, 9000)
     axs[1].set_ylim(0, 5)

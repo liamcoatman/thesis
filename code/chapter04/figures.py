@@ -605,7 +605,7 @@ def lum_w80():
     
     Z = np.reshape(kernel(positions).T, X.shape)
     
-    CS = ax.contour(X, Y, Z, colors=['grey'])
+    CS = ax.contour(X, Y, Z, colors=['grey'], zorder=1)
     
     threshold = CS.levels[0]
     
@@ -623,6 +623,7 @@ def lum_w80():
             linestyle='', 
             marker='o', 
             markersize=2, 
+            zorder=1,
             label=r'SDSS~~($z < 1$)')
 
     t = Table.read('/data/lc585/SDSS/dr7_bh_Nov19_2013.fits')
@@ -644,6 +645,7 @@ def lum_w80():
             markerfacecolor='grey', 
             markeredgecolor='None', 
             linestyle='', 
+            zorder=1,
             marker='o', 
             markersize=2)
 
@@ -669,7 +671,7 @@ def lum_w80():
                    facecolor=cs[0], 
                    edgecolor='None',
                    s=25,
-                   zorder=2,
+                   zorder=3,
                    label='This work (extreme [O\,{\sc iii}])')
 
     print df.LogL5100.median() + np.log10(9.26)
@@ -688,7 +690,7 @@ def lum_w80():
                    facecolor=cs[1], 
                    edgecolor='None',
                    s=25,
-                   zorder=1,
+                   zorder=2,
                    label='This work')
 
     ax.legend(numpoints=1, scatterpoints=1, loc='lower right')
@@ -3553,7 +3555,7 @@ def composite():
 def eqw_cut(): 
 
 
-    fig, ax = plt.subplots(1, 1, figsize=figsize(1, 0.75))
+    fig, ax = plt.subplots(1, 1, figsize=figsize(0.9, 0.75))
     
     df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0) 
     

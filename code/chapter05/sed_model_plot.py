@@ -294,8 +294,8 @@ def plot():
 
     ax.set_xlim(1216,20000)
     ax.set_ylim(0,10000)
-    ax.set_ylabel(r'${\lambda}F_{\lambda}$ (Arbitary Units)')
-    ax.set_xlabel(r'Wavelength $\lambda$ (${\rm \AA}$)')
+    ax.set_ylabel(r'${\lambda}F_{\lambda}$ [Arbitary Units]')
+    ax.set_xlabel(r'Wavelength $\lambda$ [${\rm \AA}$]')
 
     plt.tight_layout()
     plt.subplots_adjust(top=0.85)
