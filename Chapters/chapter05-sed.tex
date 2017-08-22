@@ -4,14 +4,6 @@
 \chapter{Outflows and hot dust emission}
 \label{ch:sed} 
 
-% Refer to: 
-% HotDustPaper/
- % summary-150309.ipynb
- % notes.md
- % correlations_summary_141204.ipynb
- % correlations_summary.md
- % various *.md 
-
 %************************************************
 
 \section{Introduction}
@@ -20,7 +12,7 @@ Many quasars and AGN show an excess in their rest-frame near-infrared continuum 
 This feature is generally attributed to thermal emission from dust heated by optical/ultra-violet radiation from the accretion disc. 
 The wavelength of the feature ($\sim2$\,$\mu$m) corresponds to the spectral peak for graphite dust at its sublimation temperature \citep[$T\sim1500$\,K;][]{barvainis87}. 
 This suggests that the hot dust is very close to the central source, at a radius set by the sublimation temperature of the dust grains.
-In nearby AGN, reverberation measurements suggest that this radius a few tens of light days \citep[e.g.][]{minezaki04,suganuma06}, placing the hot dust at the innermost edge of the putative torus-like structure.   
+In nearby AGN, reverberation measurements suggest that this radius is a few tens of light days \citep[e.g.][]{minezaki04,suganuma06}, placing the hot dust at the innermost edge of the putative torus-like structure.   
 
 Studies have fitted the near-infrared SEDs of AGN using a blackbody spectrum to represent emission from hot dust \citep[e.g.][]{edelson86,barvainis87,kishimoto07,mor09,riffel09,deo11,landt11,mor11,roseboom13}. 
 A hot dust component is present in the vast majority of AGN, although populations of `dust-free' objects have also been uncovered \citep{hao10,hao11,jiang10,mor11}. 
@@ -31,7 +23,7 @@ As we have previously discussed (Section~\ref{sec:ch1-winds}), winds and outflow
 In the dusty wind model -- first proposed by \citet{konigl94} and later developed by, amongst others, \citet{everett05}, \citet{elitzur06}, \citet{keating12} -- the torus is the dusty part of an accretion disc wind that extends beyond the dust sublimation radius.  
 The dusty clouds are uplifted above the disc where they are directly exposed to radiation from the central engine. 
 The dust is heated, and radiates in the near-infrared band.
-At the same time, radiation pressure due to dust can efficiently accelerate the wind \citep[e.g.][]{fabian12}. 
+At the same time, radiation pressure on dust can efficiently accelerate the wind \citep[e.g.][]{fabian12}. 
 The wind is roughly polar, and so naturally provides circum-nuclear obscuration around the accretion disc and dust-free BLR.   
 This model is supported by recent interferometric observations of nearby Seyfert galaxies which find that the mid-infrared emission is dominated by dust in the polar regions \citep[e.g.][]{raban09,honig12,honig13,tristram14,lopez-gonzaga16}.
 
@@ -242,7 +234,7 @@ To account for possible variations in the strengths of the different lines, \ha 
 
 \begingroup\makeatletter\def\f@size{11}\check@mathfonts
 \begin{eqnarray}
-  F_{\lambda} =  C_{\text{EL}} \times  \times \left( \frac{L(z)} {L(z_{\text{nrm}})} \right)^{\beta} \times \frac{F_{\lambda, \text{el}}}{F_{\lambda, \text{cont}}} \times F_{\lambda}.
+  F_{\lambda} =  C_{\text{EL}} \times C_{{\text{H}} \alpha} \times \left( \frac{L(z)} {L(z_{\text{nrm}})} \right)^{\beta} \times \frac{F_{\lambda, \text{el}}}{F_{\lambda, \text{cont}}} \times F_{\lambda}.
 \end{eqnarray}
 \endgroup
 
@@ -257,8 +249,8 @@ To derive the quasar extinction curve, UKIDSS photometry was used to provide an 
 At redshifts $2 < z < 3$ the reddening measure is made at rest-frame wavelengths $3500-7000$\,\AA, where Galaxy, LMC and SMC\footnote{LMC and SMC: Large and Small Magellanic Clouds.} extinction curves are very similar. 
 The SDSS spectra of the same objects are then employed to generate an empirical extinction curve in the ultra-violet, down to $1200$\,\AA. 
 The resulting curve has no $2200$\,\AA\, feature and rises rapidly with decreasing wavelength but is not as steep as the SMC curve. 
-The extinction curve gives the colour excess $E(B-\lambda)$ relative to the colour excess \ebv\, as a function of wavelength $\lambda$. 
-The colour excess \ebv\, is related to the extinction in the $V$ passband, $A(V)$, via the ratio $R$: 
+The extinction curve gives the colour excess $E(\lambda-V)$ relative to the colour excess \ebv\, as a function of wavelength $\lambda$. 
+The colour excess \ebv\, is related to the extinction in the $V$ passband, $A(V)$, via the ratio $R_V$: 
 
 \begingroup\makeatletter\def\f@size{11}\check@mathfonts
 \begin{eqnarray}
@@ -271,7 +263,7 @@ Hence the extinction at a wavelength lambda $A(\lambda)$ is
 
 \begingroup\makeatletter\def\f@size{11}\check@mathfonts
 \begin{eqnarray}
-  A(\lambda) = E(B-V) \times \left[ \frac{E(\lambda-V)}{E(B-V)} + R \right] 
+  A(\lambda) = E(B-V) \times \left[ \frac{E(\lambda-V)}{E(B-V)} + R_V \right] 
 \end{eqnarray}
 \endgroup
 
@@ -501,7 +493,7 @@ In this section, we look for correlations between the hot dust abundance, $R_{\t
 
 In Figure~\ref{fig:correlations_contour_a} we show $R_{\text{NIR/UV}}$ as a function of the ultra-violet luminosity. 
 The ultra-violet luminosity, which is measured at $1350$\,\AA, is reported in the catalogue of SDSS spectral properties from \citet{shen11}. 
-We do not observe any correlation between $R_{\text{NIR/UV}}$ and the ultra-violet luminosity (Figure~\ref{fig:correlations_contour_a}. 
+We do not observe any correlation between $R_{\text{NIR/UV}}$ and the ultra-violet luminosity (Figure~\ref{fig:correlations_contour_a}). 
 However, the dynamic range in luminosity is small ($\sim1$\,dex) because of the restricted redshift range. 
 
 In Figure~\ref{fig:correlations_contour_b} we show $R_{\text{NIR/UV}}$ as a function of the BH mass. 

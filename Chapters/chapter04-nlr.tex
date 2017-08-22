@@ -120,7 +120,7 @@ To illustrate the importance of the \ion{Fe}{II} subtraction procedure in reliab
 This object was also analysed by \citet{shen16a}, who reported the [\ion{O}{III}] emission to have an extreme redshift ($\sim7500$\,\kms) relative to the \citet{hewett10} systemic redshift.
 However, our analysis suggests that the emission which was modelled by \citet{shen16a} as [\ion{O}{III}] is more likely to be poorly-subtracted \ion{Fe}{II}.  
 
-\subsection{Modelling \hbns and [\ion{O}{III}]}
+\subsection{Modelling \hb and [\ion{O}{III}]}
 \label{sec:oiiimodel}
 
 \begin{table}
@@ -245,7 +245,7 @@ Furthermore, there is no theoretical justification that the broad component shou
 We therefore choose to characterize the [\ion{O}{III}] line profile using a number of non-parametric measures, which are commonly used in the literature \citep[e.g.][]{whittle85,zakamska14,zakamska16}. 
 A normalised cumulative velocity distribution is constructed from the best-fitting model, from which the velocities below which $5$, $10$, $25$, $50$, $75$, $90$, and $95$ per cent of the total flux accumulates can be calculated. 
 These velocities are then adjusted so that the peak of the [\ion{O}{III}] emission is at $0$\,\kms. 
-The [\ion{O}{III}] velocities for an example model are shown in Figure~\ref{fig:example_oiii} 
+The [\ion{O}{III}] velocities for an example model are shown in Figure~\ref{fig:example_oiii}.
 
 We calculate the velocity-width containing $90$ per cent of the flux $w_{90}$ by rejecting $5$ per cent of the flux in the blue and red wings of the profile ($w_{90}\equiv v_{95} - v_{5}$).
 We also calculate $w_{80}$ ($\equiv v_{90} - v_{10}$) and $w_{50}$ ($\equiv v_{75} - v_{25}$).
@@ -397,7 +397,7 @@ The kernel width, which is optimised using leave-one-out cross-validation, is $1
 
 There are $182$, $85$ and $162$ objects being compared in Figures~\ref{fig:redshift_comparison_a}, \ref{fig:redshift_comparison_b} and \ref{fig:redshift_comparison_c} respectively. 
 We have excluded [\ion{O}{III}], \hb and \ha measurements when the uncertainties on the peak velocities exceed $200$, $300$ and $200$\,\kms\, respectively. 
-We also exclude [\ion{O}{III}] measurements from 16 objects with very broad, blueshifted [\ion{O}{III}] emission that is strongly blended with the red wing of \hb (these objects are discussed in Section~\ref{sec:extreme_oiii}).
+We also exclude [\ion{O}{III}] measurements from $16$ objects with very broad, blueshifted [\ion{O}{III}] emission that is strongly blended with the red wing of \hb (these objects are discussed in Section~\ref{sec:extreme_oiii}).
 
 The scatter between the different redshift estimates ($360$, $280$, and $230$\,\kms\, in Figures~\ref{fig:redshift_comparison_a}, \ref{fig:redshift_comparison_b} and \ref{fig:redshift_comparison_c} respectively) is consistent with previous studies of redshift uncertainties from broad emission-lines \citep[e.g.][]{shen16b}. 
 The systematic offset between the \ha and \hb estimates is effectively zero. 
@@ -713,7 +713,7 @@ Blind source separation (BSS) techniques can be used to find a set of basis vect
 An individual spectrum can then be represented as a linear combination of the basis vectors with a corresponding set of weights.  
 Principal component analysis (PCA) is one example of a BSS technique that has been applied extensively to analyse astronomical spectra \citep[e.g.][]{mittaz90,francis92,yip04}. 
 However, in general it is not possible to physically interpret the individual PCA components. 
-Mean field independent component analysis (MFICA) is more powerful class of BSS technique that works by finding a basis of independent components to represent the data.  
+Mean field independent component analysis (MFICA) is a more powerful class of BSS technique that works by finding a basis of independent components to represent the data.  
 \citet{allen13} used this technique to analyse the SDSS spectra of emission-line galaxies and demonstrated its effectiveness in identifying distinct emission sources in the spectra. 
 
 In this section, we use a set of ten MFICA-derived spectral components to reconstruct the rest-frame optical spectra of luminous quasars.

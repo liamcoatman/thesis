@@ -47,18 +47,60 @@ A cartoon picture illustrating the basic structure of an AGN is shown in Figure~
 \subsection{Accretion disc}
 
 Material is pulled towards a super-massive BH and sheds angular momentum through viscous and turbulent processes in a hot accretion disc \citep[e.g.][]{begelman85}. 
-The accretion disc reaches temperatures of $\sim10^6$ K, and radiates primarily at ultra-violet to soft-X-ray wavelengths. 
+The basic physics of accretion discs is described by \citet{pringle81}.
+For an optically thick steady thin disc the temperature $T$ depends on the radius $R$ within the disc, and behaves as 
+
+\begin{eqnarray}
+T = \left\{
+\frac {3GM\dot M} {8 \pi R^3 \sigma} \left[ 1- (R_*/R)^{1\over2} \right]
+\right\}^{1\over 4}
+\end{eqnarray}
+
+where $\sigma$ is the Stefan-Boltzmann constant, $M$ the mass of the BH, $\dot M$ the accretion rate and $R_*$ the inner radius of the disc. 
+This results in a spectral energy distribution (SED) which is exponential at high frequencies $\nu$, Rayleigh-Jeans at low frequencies, and is proportional to $\nu^{1\over 3}$ in between. 
+The inner radius of the accretion disc is usually taken as that of the innermost stable orbit, i.e. three times the Schwarzschild radius, so the energy radiated is $\sim {1\over12}\dot M c^2$. 
+In quasars, accretion discs reach temperatures of $\sim10^6$\,K and radiate primarily at ultra-violet to soft X-ray wavelengths. 
+
+The Eddington luminosity ($L_{\mathrm Edd}$) is the luminosity for which the outward force due to radiation pressure on electrons balances the inward gravitational force, so 
+
+\begin{eqnarray}
+\frac{L_{\mathrm Edd}\sigma_{\mathrm T}}{4\pi R^2 c} = \frac{G m_{\text{p}} M_{\text{BH}}}{R^2}
+\end{eqnarray}
+
+where $\sigma_{\mathrm T}$ is the Thompson cross-section and $m_{\text{p}}$ is the proton mass. 
+Rearranging the above equation, we find 
+
+\begin{eqnarray}
+L_{\mathrm Edd} &=& \frac{4 \pi G M_{\text{BH}} m_{\text{p}} c}{\sigma_T} \\
+&\simeq&3.2\times10^4\left(\frac{M_{\text{BH}}}{M_\odot}\right)L_\odot.
+\end{eqnarray}
+
+Because radiation pressure drives a net outflow of material at higher luminosities, the Eddington luminosity is the maximum luminosity an AGN can reach (assuming spherical accretion and neglecting other radiation processes such as bound-free and free-free interactions). 
+The Eddington ratio, $\lambda_{\mathrm Edd}$, relates the AGN bolometric luminosity, $L_{\mathrm Bol}$, to the Eddington luminosity:
+
+\begin{eqnarray}
+\lambda_{\mathrm Edd} = \frac {L_{\mathrm Bol}} {L_{\mathrm Edd}}.
+\end{eqnarray}
+
+Thus, for a quasar accreting at its Eddington limit, $\lambda_{\mathrm Edd} = 1$. 
 
 \subsection{Broad line region}
 
 One of the pre-eminent features of many AGN spectra are broad optical and ultra-violet emission-lines produced in the broad line region (BLR). 
-The BLR consists of gas clouds at distances from several light-days to several light-months that are photo-ionised by the ultra-violet continuum emission emanating from the accretion disc.  
-Because of the close proximity to the central super-massive BH, bulk motions are dominated by gravity and radiation pressure from the accretion disc.
-The very broad emission-line widths are assumed to be Doppler-broadened, and imply line-of-sight velocities of many thousands of \kms. 
+The BLR, which is between several light-days and several light-months from the central BH, is photo-ionised by the ultra-violet continuum emission emanating from the accretion disc.  
+
+The overall geometry of the BLR is as shown in Figure~\ref{fig:agnmodel}.
+It is generally thought to consist of individual clouds, although direct evidence for this is not strong. 
+If BLR were completely uniform then one might expect, e.g., \ion{C}{IV} absorption to be a ubiquitous spectral feature. 
+The absence of this absorption in the majority of objects points to a more clumpy structure for the BLR. 
+
+The very broad velocity-widths of emission lines produced in the BLR are assumed to be Doppler-broadened, and imply line-of-sight velocities of many thousands of \kms. 
+The line widths are much too great to be explained by thermal broadening, and so bulk motion must be involved. 
+Because of the close proximity to the central super-massive BH, bulk motions are likely dominated by gravity and radiation pressure from the accretion disc.
 
 It has long been known that redshifts derived from different broad emission lines can differ by significantly more than typical measurement errors \citep[e.g.][]{gaskell82}.  
 Higher ionisation lines (including \ion{C}{IV}) are often found to be blueshifted relative to lower-ionisation lines (including \ion{Mg}{II} and \hbns), which are approximately at the AGN systemic redshift. 
-This suggests that the structure of the BLR is stratified, with higher-ionisation lines emitted in regions where radial motions are significant.  
+This suggests that the structure of the BLR is stratified, with higher-ionisation lines emitted in regions of the BLR where an outflow component is significant.  
 
 \subsection{Dusty torus}
 
@@ -86,7 +128,7 @@ The Palomar-Green bright quasar survey \citep{schmidt83}, the first large-area q
 \citet{boroson92} were among the first to use the Palomar-Green quasar sample to analyse quasar spectroscopic properties in a systematic way. 
 In their landmark study, they used a principal component analysis (PCA) to identify the features responsible for the largest variance in quasar spectra. 
 The first eigenvector of their PCA decomposition -- generally referred to as `eigenvector 1' (EV$1$) -- is correlated with the full-width at half-maximum (FWHM) of the broad \hb emission-line and the relative strengths of optical \ion{Fe}{II} and \hbns. 
-The underlying driver behind EV$1$ is thought to be the Eddington ratio\footnote{Eddington ratio: $L/L_{\text{Edd}}$, where the Eddington luminosity $L_{\text{Edd}}$ ($=3.2\times10^4(M/M_\odot)L_\odot$) is the maximum luminosity set by the balance of outward radiation pressure and inward gravitational force.}. 
+The underlying driver behind EV$1$ is thought to be the Eddington ratio. 
 
 With the advent of CCD\footnote{CCD: Charge coupled device.} technology came a new generation of optical spectroscopic surveys, most notably the Sloan Digital Sky Survey \citep[SDSS;][]{york00} and the $2$QZ survey \citep{croom04}. 
 SDSS, and the next-generation SDSS-III: Baryon Oscillation Spectroscopic Survey \citep[BOSS;][]{dawson13}, now contain spectra of $\sim400\,000$ AGN and quasars. 
@@ -145,7 +187,7 @@ The uncertainties in reverberation mapped BH masses are estimated to be $\sim 0.
 However, the main concern and biggest unknown is the extension of the method to high redshifts. 
 This requires that the relations calibrated for sub-Eddington BHs with $M_{\text{BH}}\sim10^7\,M_\odot$ are valid for BHs with masses up to $10^{10}\,M_\odot$ that are radiating near the Eddington luminosity. 
 Furthermore, the vast majority of reverberation mapping measurements are for \hb and so the $R_{\text{BLR}}-L$ relation that underpins the virial method has only been established using this line.
-\hb is redshift beyond the reach of optical spectrographs at redshifts $z \gtrsim 0.7$, and extending the method to higher redshifts requires the secondary-calibration of other low-ionization emission-lines such as \ha and \ion{Mg}{II} \citep[e.g.][]{vestergaard02,mclure02,wu04,kollmeier06,onken08,wang09,rafiee11}.
+\hb is redshifted beyond the reach of optical spectrographs at redshifts $z \gtrsim 0.7$, and extending the method to higher redshifts requires the secondary-calibration of other low-ionization emission-lines such as \ha and \ion{Mg}{II} \citep[e.g.][]{vestergaard02,mclure02,wu04,kollmeier06,onken08,wang09,rafiee11}.
 
 At redshifts of $z\gtrsim 2$ the low-ionization hydrogen and \ion{Mg}{II} emission-lines are no longer present in the optical spectra of quasars and it is necessary to employ an emission-line in the rest-frame ultra-violet.  
 The strong \ion{C}{IV} emission doublet is visible in the optical spectra of quasars to redshifts of $z\sim5$ and \ion{C}{IV}-derived BH masses have become the standard \citep[e.g.][]{vestergaard06,park13}.
@@ -157,7 +199,10 @@ As a consequence, single-epoch virial BH mass estimates derived from \ion{C}{IV}
 
 Quasars are very powerful sources of radiation, and are embedded in matter-rich environments at the centres of galaxies.
 Strong winds, driven by some combination of gas pressure, radiation pressure, and magnetic forces, are to be expected under these conditions \citep[e.g.][]{blandford82b,proga00,everett05}. 
-In line with these expectations, evidence for outflowing gas is common in the spectra of quasars. 
+Radiation pressure can act through continuum absorption by neutral hydrogen and by dust, as with electron scattering. 
+In both cases the cross-sections are considerably larger than the Thompson cross-section, and the effectiveness then depends on how much neutral Hydrogen or dust is present. 
+There is evidence that line absorption also plays a role \citep[e.g.][]{bowler14}.
+In line with expectations, evidence for outflowing gas is common in the spectra of quasars. 
 
 Perhaps the most dramatic evidence for outflows is seen in broad absorption-line quasars \citep[BAL quasars;][]{weymann91}.
 BAL quasars are characterised by broad absorption features in the ultra-violet resonance lines of highly ionised \ion{N}{V}, \ion{C}{IV} and \ion{Si}{IV}. 
@@ -182,17 +227,17 @@ By following [\ion{O}{III}] to near-infrared wavelengths, these investigations c
 It is likely that correlations between BHs and their host galaxies (e.g. the $M_{\text{BH}}$-$\sigma$ relation) were established during this epoch, since massive galaxies and BHs grew most of their mass at this time. 
 Therefore, this is the key epoch for studies of quasar feedback. 
 
-\section{AGN spectral energy distributions}
+\section{AGN SEDs}
 
 \begin{figure}
   \centering
-  \includegraphics[width=\textwidth]{figures/chapter05/shangsed.pdf}
+  \includegraphics[width=\textwidth]{figures/chapter01/shangsed.pdf}
   \caption[{Median radio-loud AGN SED.}]{Median radio-loud AGN SED from \citet{shang11}.}
   \label{fig:seyfert_sed}
 \end{figure}
 
 AGN emit strongly over many decades of the electromagnetic spectrum (Figure~\ref{fig:seyfert_sed}). 
-Different physical processes dominate AGN spectral energy distributions (SEDs) at different frequencies. 
+Different physical processes dominate AGN SEDs at different frequencies. 
 Hard X-ray emission is dominated by Compton up-scattering of accretion disk photons by electrons in a hot corona \citep[e.g.][]{sunyaev80}, ultra-violet/optical by thermal accretion disc emission, IR by dust at a wide range of temperatures, and radio by synchrotron emission in relativistic jets.   
 A complete understanding of AGN properties therefore critically depends on the availability of multi-wavelength data that spans the full SED. 
 Progress has been made in recent years using data from new sensitive, wide-field photometric surveys \citep[e.g.][]{roseboom13}. 
