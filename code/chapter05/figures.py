@@ -986,4 +986,27 @@ def lum_z():
     
     plt.savefig('/home/lc585/thesis/figures/chapter05/lum_z.pdf')
 
-    plt.show() 
+    plt.show()
+
+def kishimoto_model():
+
+    set_plot_properties() # change style
+
+    fig, axs = plt.subplots(2, 2, figsize=figsize(0.9, 1.0))
+    plt.subplots_adjust(hspace=0.0, wspace=0.0)
+
+    for ax in axs.flatten():
+        ax.axes.get_xaxis().set_ticks([])
+        ax.axes.get_yaxis().set_ticks([])
+
+    axs[0, 0].set_title('Strong outflows', fontsize=10)
+    axs[0, 1].set_title('Weak outflows', fontsize=10)
+    axs[0, 0].set_ylabel('Face-on')
+    axs[1, 0].set_ylabel('Edge-on')
+
+    fig.savefig('../../figures/chapter05/kishimoto.jpg', dpi=1000)
+
+
+
+
+    plt.show()

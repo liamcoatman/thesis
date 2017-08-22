@@ -8,7 +8,7 @@
 \setcounter{secnumdepth}{3} % <-- 3 numbers up to subsubsections
 \manualmark
 \markboth{\spacedlowsmallcaps{\contentsname}}{\spacedlowsmallcaps{\contentsname}}
-\tableofcontents 
+\tableofcontents
 \automark[section]{chapter}
 \renewcommand{\chaptermark}[1]{\markboth{\spacedlowsmallcaps{#1}}{\spacedlowsmallcaps{#1}}}
 \renewcommand{\sectionmark}[1]{\markright{\thesection\enspace\spacedlowsmallcaps{#1}}}
@@ -17,14 +17,14 @@
 %*******************************************************
 \clearpage
 
-\begingroup 
+\begingroup
     \let\clearpage\relax
     \let\cleardoublepage\relax
     \let\cleardoublepage\relax
     %*******************************************************
     % List of Figures
-    %*******************************************************    
-    %\phantomsection 
+    %*******************************************************
+    %\phantomsection
     \refstepcounter{dummy}
     %\addcontentsline{toc}{chapter}{\listfigurename}
     \pdfbookmark[1]{\listfigurename}{lof}
@@ -41,21 +41,21 @@
     %*******************************************************
     % List of Tables
     %*******************************************************
-    %\phantomsection 
+    %\phantomsection
     \refstepcounter{dummy}
     %\addcontentsline{toc}{chapter}{\listtablename}
     \pdfbookmark[1]{\listtablename}{lot}
     \listoftables
-        
+
     \vspace{8ex}
     \newpage
-    
 
-       
+
+
     %*******************************************************
     % Acronyms
     %*******************************************************
-    %\phantomsection 
+    %\phantomsection
     \refstepcounter{dummy}
     \pdfbookmark[1]{Acronyms}{acronyms}
     \chapter*{Acronyms}
@@ -70,42 +70,41 @@
       \item[BSS]{Blind Source Separation}
       \item[DR]{Data Release}
       \item[EQW]{Equivalent Width}
-      \item[ESO]{European Southern Observatory} 
-      \item[EV$1$]{Eigenvector $1$} 
+      \item[ESO]{European Southern Observatory}
+      \item[EV$1$]{Eigenvector $1$}
       \item[FIRE]{Folded-port InfraRed Echellette}
       \item[FWHM]{Full-Width at Half-Maximum}
       \item[GH]{Gauss-Hermite}
       \item[GNIRS]{Gemini Near-Infrared Spectrograph}
-      \item[HiBAL]{High-ionization Broad Absorption Line} 
+      \item[HiBAL]{High-ionization Broad Absorption Line}
       \item[HIRES]{High Resolution Echelle Spectrometer}
       \item[ISAAC]{Infrared Spectrometer And Array Camera}
       \item[LIRIS]{Long-slit Intermediate Resolution Infrared Spectrograph}
+      \item[MAP]{Maximum A Posteriori}
       \item[MCMC]{Markov Chain Monte Carlo}
       \item[MFICA]{Mean Field Independent Component Analysis}
       \item[NAL]{Narrow Absorption Line}
       \item[NIRI]{Near InfraRed Imager and Spectrometer}
       \item[NLR]{Narrow Line Region}
-      \item[NTT]{New Technology Telescope} 
+      \item[NTT]{New Technology Telescope}
       \item[P$200$]{Palomar $200$-inch Hale telescope}
       \item[PCA]{Principal Component Analysis}
       \item[PI]{Principal Investigator}
-      \item[S/N]{Signal-to-noise ratio}  
+      \item[S/N]{Signal-to-noise ratio}
       \item[SDSS]{Sloan Digital Sky Survey}
       \item[SED]{Spectral Energy Distribution}
       \item[SINFONI]{SINgle Faint Object Near-IR Investigation}
-      \item[SOFI]{Son of ISAAC} 
+      \item[SOFI]{Son of ISAAC}
       \item[UKIDSS]{UKIRT Infrared Deep Sky Survey}
       \item[UKIRT]{United Kingdom Infra-Red Telescope}
       \item[UVES]{UV-Visual Echelle Spectrograph}
       \item[VHS]{VISTA Hemisphere Survey}
       \item[VIKING]{VISTA Kilo-Degree Infrared Galaxy Survey}
       \item[VISTA]{Visible and Infrared Survey Telescope for Astronomy}
-      \item[VLT]{Very Large Telescope} 
+      \item[VLT]{Very Large Telescope}
       \item[WHT]{William Herschel Telescope}
       \item[WISE]{Wide-field Infrared Explorer}
-    \end{itemize}     
+    \end{itemize}
 
-          
+
 \endgroup
-
-

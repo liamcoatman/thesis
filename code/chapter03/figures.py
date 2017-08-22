@@ -1246,7 +1246,7 @@ def shen_comparison_ha():
     fig, ax = plt.subplots(figsize=(figsize(0.8, vscale=0.9)))
 
     
-    df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0)
+    df = pd.read_csv('~/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0)
     df = df[df.WARN_Ha == 0]
     df = df[df.WARN_CIV_BEST == 0]
     df = df[df.BAL_FLAG != 1]  
@@ -1466,7 +1466,10 @@ def civ_ha_comparisons_paper1():
 
     return None 
 
-def civ_comparisons_paper2(): 
+def civ_comparisons_paper2():
+
+    import matplotlib as mpl
+    mpl.style.use('classic')
 
     from matplotlib.ticker import MaxNLocator 
 
@@ -1474,7 +1477,7 @@ def civ_comparisons_paper2():
 
     cs = palettable.colorbrewer.qualitative.Set1_3.mpl_colors
 
-    df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0)
+    df = pd.read_csv('~/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0)
     df = df[df.WARN_Ha == 0]
     df = df[df.WARN_CIV == 0]
     df = df[df.BAL_FLAG != 1]
@@ -1486,41 +1489,62 @@ def civ_comparisons_paper2():
     fig, axs = plt.subplots(3, 
                             1,
                             figsize=(figsize(0.8, vscale=2)), 
-                            sharex=True) 
+                            sharex=True)
 
-    axs[0].plot(bs_civ,
+    xerr = df.Blueshift_CIV_Ha_Err
+    yerr_1 = df.FWHM_CIV_BEST_Err
+    yerr_2 = df.Sigma_CIV_BEST_Err
+    yerr_3 = ((df.FWHM_CIV_BEST / df.Sigma_CIV_BEST) * np.sqrt(
+        (df.FWHM_CIV_BEST_Err / df.FWHM_CIV_BEST) ** 2 + (df.Sigma_CIV_BEST_Err / df.Sigma_CIV_BEST) ** 2
+    ))
+
+    axs[0].errorbar(bs_civ,
                 fwhm_civ,
+                xerr=xerr,
+                yerr=yerr_1,
                 linestyle='',
-                marker='o', 
-                markersize=4,
-                markerfacecolor=cs[1],
-                markeredgecolor='None')
-    
-    axs[1].plot(bs_civ,
-                sigma_civ,
+                color='grey',
+                alpha=0.4,
+                zorder=2)
+
+    axs[0].scatter(bs_civ,
+                   fwhm_civ,
+                   color=cs[1],
+                   s=8,
+                   zorder=3)
+
+    axs[1].errorbar(bs_civ,
+                    sigma_civ,
+                xerr=xerr,
+                yerr=yerr_2,
                 linestyle='',
-                marker='o', 
-                markersize=4,
-                markerfacecolor=cs[1],
-                markeredgecolor='None')
+                color='grey',
+                alpha=0.4,
+                zorder=2)
+
+    axs[1].scatter(bs_civ,
+                   sigma_civ,
+                   color=cs[1],
+                   s=8,
+                   zorder=3)
     
 
-    print df.loc[df.Blueshift_CIV_Ha < 1500.0, 'Sigma_CIV_BEST'].median() 
-    print df.loc[df.Blueshift_CIV_Ha > 1500.0, 'Sigma_CIV_BEST'].median() 
 
-    axs[2].errorbar(bs_civ,
-                    fwhm_civ / sigma_civ,
-                    linestyle='',
-                    marker='o', 
-                    markersize=4,
-                    markerfacecolor=cs[1],
-                    markeredgecolor='None')
+
+    axs[2].scatter(bs_civ,
+                   fwhm_civ / sigma_civ,
+                   color=cs[1],
+                   s=8,
+                   zorder=3)
+
+
+
 
 
     for ax in axs.flatten():
         ax.xaxis.set_major_locator(MaxNLocator(5))
         ax.yaxis.set_major_locator(MaxNLocator(5))
-        ax.grid()
+        # ax.grid()
 
     axs[0].set_ylim(500,11000)
     axs[1].set_ylim(1500, 6000)
@@ -1544,21 +1568,28 @@ def civ_comparisons_paper2():
 
     fig.tight_layout()  
 
-    fig.savefig('/home/lc585/thesis/figures/chapter03/civ_comparisons_paper2.pdf')
+    fig.savefig('../../figures/chapter03/civ_comparisons_paper2.pdf')
+
+
+
     
     plt.show() 
 
     return None 
 
+
 def ha_comparisons_paper2(): 
 
-    from matplotlib.ticker import MaxNLocator 
+    from matplotlib.ticker import MaxNLocator
+
+    import matplotlib as mpl
+    mpl.style.use('classic')
 
     set_plot_properties() # change style 
 
     cs = palettable.colorbrewer.qualitative.Set1_3.mpl_colors
 
-    df = pd.read_csv('/home/lc585/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0)
+    df = pd.read_csv('~/Dropbox/IoA/nirspec/tables/masterlist_liam.csv', index_col=0)
     df = df[df.WARN_Ha == 0]
     df = df[df.WARN_CIV == 0]
     df = df[df.BAL_FLAG != 1]
@@ -1573,13 +1604,28 @@ def ha_comparisons_paper2():
                             figsize=(figsize(0.8, vscale=2)), 
                             sharex=True) 
 
-    axs[0].plot(bs_civ,
+
+
+    xerr = df.Blueshift_CIV_Ha_Err
+    yerr_1 = df.FWHM_Broad_Ha_Err
+    yerr_2 = df.Sigma_Broad_Ha_Err
+    yerr_3 = df.Shape_Broad_Ha_Err
+
+    axs[0].errorbar(bs_civ,
                 fwhm_ha,
+                xerr=xerr,
+                yerr=yerr_1,
                 linestyle='',
-                marker='o', 
-                markersize=4,
-                markerfacecolor=cs[1],
-                markeredgecolor='None')
+                color='grey',
+                alpha=0.4,
+                zorder=2)
+
+    axs[0].scatter(bs_civ,
+                   fwhm_ha,
+                   color=cs[1],
+                   s=8,
+                   zorder=3)
+
 
     print np.mean(fwhm_ha[bs_civ > 2000.0]), np.std(fwhm_ha[bs_civ > 2000.0])     
     
@@ -1591,19 +1637,31 @@ def ha_comparisons_paper2():
                 markerfacecolor=cs[1],
                 markeredgecolor='None')
 
-    
-    axs[2].errorbar(bs_civ,
-                    fwhm_ha / sigma_ha,
-                    linestyle='',
-                    marker='o', 
-                    markersize=4,
-                    markerfacecolor=cs[1],
-                    markeredgecolor='None')
+    axs[1].errorbar(bs_civ,
+                    sigma_ha,
+                xerr=xerr,
+                yerr=yerr_2,
+                linestyle='',
+                color='grey',
+                alpha=0.4,
+                zorder=2)
+
+    axs[1].scatter(bs_civ,
+                   sigma_ha,
+                   color=cs[1],
+                   s=8,
+                   zorder=3)
+
+    axs[2].scatter(bs_civ,
+                   fwhm_ha / sigma_ha,
+                   color=cs[1],
+                   s=8,
+                   zorder=3)
 
     for ax in axs.flatten():
         ax.xaxis.set_major_locator(MaxNLocator(5))
         ax.yaxis.set_major_locator(MaxNLocator(5))
-        ax.grid() 
+        # ax.grid()
 
 
     axs[0].set_ylim(500,11000)
@@ -1628,7 +1686,7 @@ def ha_comparisons_paper2():
     
     fig.tight_layout()  
 
-    fig.savefig('/home/lc585/thesis/figures/chapter03/ha_comparisons_paper2.pdf')
+    fig.savefig('../../figures/chapter03/ha_comparisons_paper2.pdf')
     
     plt.show() 
 
