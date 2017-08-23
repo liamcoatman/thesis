@@ -713,13 +713,13 @@ def correction_and_bhm_ha():
     plt.subplots_adjust(hspace=0.05)
 
     #----------------------------------------------------------------------
-    trace = np.load('/data/lc585/BHMassPaper2_Resubmitted_MCMC_Traces/trace_civ_hb_equiv_relation.npy') 
+    trace = np.load('/data/lc585/BHMassPaper2_Resubmitted_MCMC_Traces/trace_civ_hb_equiv_relation.npy')
     xi, yi, dxi, dyi, rho_xy = get_data(data='linewidths_hb_equiv') 
     
     plot_MCMC_model(axs[0], xi, yi, dyi, trace[:2, :], linestyle='-')
     trace = None 
    
-    axs[0].errorbar(xi, yi, yerr=dyi, xerr=dxi, linestyle='', color='grey', alpha=0.4, zorder=2)
+    axs[0].errorbar(xi, yi, yerr=dyi, xerr=dxi, linestyle='', color=(0.80078431,  0.80078431,  0.80078431), alpha=1.0, zorder=2)
     axs[0].scatter(xi, yi, color=cs[1], s=8, zorder=3)
     axs[0].set_ylabel(r'FWHM C\,{\sc iv} / FWHM H$\alpha$') 
     axs[0].set_ylim(0, 3.5)
@@ -753,9 +753,8 @@ def correction_and_bhm_ha():
                     yi, 
                     yerr=dyi,  
                     xerr=dxi, 
-                    linestyle='', 
-                    color='grey', 
-                    alpha=0.4, 
+                    linestyle='',
+                    color=(0.80078431, 0.80078431, 0.80078431), alpha=1.0,
                     zorder=2)
 
     axs[1].scatter(xi, 
@@ -766,7 +765,7 @@ def correction_and_bhm_ha():
 
     axs[1].axhline(1, color='black', linestyle = '--')
 
-    trace = np.load('/data/lc585/BHMassPaper2_Resubmitted_MCMC_Traces/trace_civ_hb_equiv_relation.npy') 
+    trace = np.load('/data/lc585/BHMassPaper2_Resubmitted_MCMC_Traces/trace_civ_hb_equiv_relation.npy')
  
     m, b = trace[:2]
 
@@ -1503,8 +1502,8 @@ def civ_comparisons_paper2():
                 xerr=xerr,
                 yerr=yerr_1,
                 linestyle='',
-                color='grey',
-                alpha=0.4,
+                color=(0.80078431, 0.80078431, 0.80078431),
+                alpha=1.0,
                 zorder=2)
 
     axs[0].scatter(bs_civ,
@@ -1518,8 +1517,7 @@ def civ_comparisons_paper2():
                 xerr=xerr,
                 yerr=yerr_2,
                 linestyle='',
-                color='grey',
-                alpha=0.4,
+                color=(0.80078431, 0.80078431, 0.80078431),
                 zorder=2)
 
     axs[1].scatter(bs_civ,
@@ -1616,8 +1614,7 @@ def ha_comparisons_paper2():
                 xerr=xerr,
                 yerr=yerr_1,
                 linestyle='',
-                color='grey',
-                alpha=0.4,
+                color=(0.80078431, 0.80078431, 0.80078431),
                 zorder=2)
 
     axs[0].scatter(bs_civ,
@@ -1642,8 +1639,7 @@ def ha_comparisons_paper2():
                 xerr=xerr,
                 yerr=yerr_2,
                 linestyle='',
-                color='grey',
-                alpha=0.4,
+                color=(0.80078431, 0.80078431, 0.80078431),
                 zorder=2)
 
     axs[1].scatter(bs_civ,
