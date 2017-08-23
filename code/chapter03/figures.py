@@ -840,7 +840,7 @@ def correction_and_bhm_hb():
     #--------------------------------------------------------------------
     
 
-    df = pd.read_csv('/home/lc585/BHMassPaper2_Submitted_Data/masterlist_liam_resubmitted.csv', index_col=0)
+    df = pd.read_csv('/home/lc585/Papers/BHMassPaper2_Submitted_Data/masterlist_liam_resubmitted.csv', index_col=0)
     df = df[df.WARN_Hb == 0]
     df = df[df.WARN_CIV_BEST == 0]
     df = df[df.BAL_FLAG != 1]
