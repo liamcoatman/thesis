@@ -524,6 +524,10 @@ We found, however, that the inferred outlier fraction was very low ($0.004$, cor
 
 In Figure~\ref{fig:mcmc_parameters} we show the one- and two-dimensional projections of the posterior distribution from the linear fit to FWHM(\ion{C}{IV})/FWHM(\hans) as a function of the \ion{C}{IV} blueshift.
 The projections from the FWHM(\ion{C}{IV})/FWHM(\hbns) fit, which we do not show, have very similar appearances.
+The strong anti-correlation between the gradient and y-intercept evident in Figure~\ref{fig:mcmc_parameters} is expected: with the origin defined at zero blueshift, a small change in the gradient can lead to a large change in the y-intercept.
+The size of this correlation may be reduced by shifting the origin to the inverse variance weighted mean of the blueshift values.
+However, the BH mass estimates derived below are independent of the choice of origin.
+
 In Figure~\ref{fig:correction_ha_a} we plot the MAP solution and the $2$-$\sigma$ uncertainties on the model parameters.
 The MAP solution is given by
 
@@ -619,7 +623,7 @@ This could explain the low \ion{C}{IV}/\ha FWHM ratio observed in quasars with s
 
 \subsubsection{Measuring the systemic redshift}
 
-Equations~\ref{eq:hafwhm} and \ref{eq:masscorrection} together provide an un-biased estimate of the virial BH mass given the FWHM and blueshift of \ion{C}{IV}, together with the continuum luminosity at $1350$\,\AA.
+Equations~\ref{eq:hafwhm} and \ref{eq:masscorrection} together provide a good estimate of the virial BH mass given the FWHM and blueshift of \ion{C}{IV}, together with the continuum luminosity at $1350$\,\AA.
 The FWHM is readily obtained, either directly from the data, or, via the fitting of a parametric model to the \ion{C}{IV} emission-line.
 The blueshift -- defined as the bisector of the cumulative line flux -- is also straightforward to measure and our preferred procedure is described in Section~\ref{sec:ch3-civmeasure}.
 The only potential complication arises in establishing the quasar systemic redshift and hence defining the zero-point for the \ion{C}{IV}-blueshift measurement, since both the blueshift and the systemic redshift cannot be determined from \ion{C}{IV} alone.
@@ -863,6 +867,8 @@ However, the systematic error in the \ion{C}{IV}-based BH masses as a function o
 
 For comparison, the \ion{C}{IV}-based masses shown in Figure~\ref{fig:compare_corrections_coatman} have been corrected using the \ion{C}{IV} blueshift-based procedure presented in this chapter.
 No systematic in the BH masses as a function of the \ion{C}{IV} blueshift is evident.
+However, there is a suggestion that the model may differ systematically from the data at low blueshifts when \ion{C}{IV} is compared to \hb (see Figure~\ref{fig:correction_hb}).
+If a zero-bias mass correction is desired, one could derive such a correction by directly fitting M$_{\text{BH}}$(\ion{C}{IV})/M$_{\text{BH}}$(\hbns) vs \ion{C}{IV} blueshift.
 
 \section{Population trends with \ion{C}{IV} blueshift}
 \label{sec:hatrends}
