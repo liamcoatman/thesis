@@ -708,7 +708,7 @@ def correction_and_bhm_ha():
 
     cs = palettable.colorbrewer.qualitative.Set1_9.mpl_colors 
 
-    fig, axs = plt.subplots(2, 1, figsize=figsize(0.7, vscale=1.6), sharex=True)
+    fig, axs = plt.subplots(2, 1, figsize=figsize(0.9, vscale=1.6), sharex=True)
 
     plt.subplots_adjust(hspace=0.05)
 
@@ -819,7 +819,7 @@ def correction_and_bhm_hb():
 
     cs = palettable.colorbrewer.qualitative.Set1_9.mpl_colors 
 
-    fig, axs = plt.subplots(2, 1, figsize=figsize(0.7, vscale=1.6), sharex=True)
+    fig, axs = plt.subplots(2, 1, figsize=figsize(0.9, vscale=1.6), sharex=True)
 
     plt.subplots_adjust(hspace=0.05)
 
