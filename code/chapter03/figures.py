@@ -713,7 +713,7 @@ def correction_and_bhm_ha():
     plt.subplots_adjust(hspace=0.05)
 
     #----------------------------------------------------------------------
-    trace = np.load('/data/lc585/Papers/BHMassPaper2_Resubmitted_MCMC_Traces/trace_civ_hb_equiv_relation.npy')
+    trace = np.load('/data/lc585/BHMassPaper2_Resubmitted_MCMC_Traces/trace_civ_hb_equiv_relation.npy')
     xi, yi, dxi, dyi, rho_xy = get_data(data='linewidths_hb_equiv') 
     
     plot_MCMC_model(axs[0], xi, yi, dyi, trace[:2, :], linestyle='-')
@@ -765,7 +765,7 @@ def correction_and_bhm_ha():
 
     axs[1].axhline(1, color='black', linestyle = '--')
 
-    trace = np.load('/data/lc585/Papers/BHMassPaper2_Resubmitted_MCMC_Traces/trace_civ_hb_equiv_relation.npy')
+    trace = np.load('/data/lc585/BHMassPaper2_Resubmitted_MCMC_Traces/trace_civ_hb_equiv_relation.npy')
  
     m, b = trace[:2]
 
